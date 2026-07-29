@@ -746,22 +746,128 @@
         font-weight: 800;
       }
 
-      .planned-card {
+      .service-catalog-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .catalog-card {
         display: flex;
-        min-height: 148px;
+        min-height: 196px;
+        padding: 22px;
         flex-direction: column;
         justify-content: space-between;
-      }
-
-      .planned-card small {
-        color: var(--terra);
-        font-weight: 700;
-      }
-
-      .planned-card a {
-        color: var(--brand);
-        font-weight: 700;
+        color: var(--ink);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
         text-decoration: none;
+        transition:
+          color 220ms ease,
+          background-color 220ms ease,
+          border-color 220ms ease,
+          transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .catalog-card:hover,
+      .catalog-card:focus-visible {
+        color: var(--brand);
+        background: var(--mint);
+        border-color: var(--brand);
+        transform: translateY(-5px);
+      }
+
+      .catalog-card:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--brand) 28%, transparent);
+        outline-offset: 3px;
+      }
+
+      .catalog-index {
+        color: var(--terra);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .catalog-copy {
+        display: grid;
+        gap: 8px;
+        margin: 34px 0;
+      }
+
+      .catalog-copy small {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .catalog-copy strong {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(20px, 2vw, 25px);
+        line-height: 1.1;
+      }
+
+      .catalog-action {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--brand);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .catalog-action::after {
+        content: "→";
+        font-size: 18px;
+        transition: transform 220ms ease;
+      }
+
+      .catalog-card:hover .catalog-action::after,
+      .catalog-card:focus-visible .catalog-action::after {
+        transform: translateX(4px);
+      }
+
+      .scroll-reveal .catalog-card {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0);
+      }
+
+      .scroll-reveal.is-revealed .catalog-card {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(1) {
+        transition-delay: 40ms;
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(2) {
+        transition-delay: 90ms;
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(3) {
+        transition-delay: 140ms;
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(4) {
+        transition-delay: 190ms;
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(5) {
+        transition-delay: 240ms;
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(6) {
+        transition-delay: 290ms;
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(7) {
+        transition-delay: 340ms;
+      }
+
+      .scroll-reveal.is-revealed .catalog-card:nth-child(8) {
+        transition-delay: 390ms;
       }
 
       .quote-panel {
@@ -1420,6 +1526,7 @@
 
       .prototype-frame.is-mobile .service-paths,
       .prototype-frame.is-mobile .card-grid,
+      .prototype-frame.is-mobile .service-catalog-grid,
       .prototype-frame.is-mobile .scope-list,
       .prototype-frame.is-mobile .selector-grid,
       .prototype-frame.is-mobile .factor-row,
@@ -1540,6 +1647,10 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        .service-catalog-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .selector-grid,
         .factor-row {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1629,6 +1740,7 @@
 
         .service-paths,
         .card-grid,
+        .service-catalog-grid,
         .scope-list,
         .selector-grid,
         .factor-row,
@@ -1781,7 +1893,9 @@
         }
 
         .scroll-reveal,
-        .scroll-reveal.is-revealed {
+        .scroll-reveal.is-revealed,
+        .scroll-reveal .catalog-card,
+        .scroll-reveal.is-revealed .catalog-card {
           opacity: 1;
           transform: none;
         }
@@ -2030,89 +2144,127 @@
                 <div class="page-shell section">
                   <div class="section-heading">
                     <div>
-                      <p class="eyebrow">Planned treatments</p>
-                      <h2>Service categories.</h2>
+                      <p class="eyebrow">Service catalogue</p>
+                      <h2>Planned pest-control pages.</h2>
                     </div>
                     <p>
-                      These preview cards are configuration-controlled and remain unpublished
-                      until the business confirms each treatment.
+                      Explore the page layout for each planned treatment. Every page remains
+                      unpublished until the service is confirmed.
                     </p>
                   </div>
-                  <div class="card-grid">
-                    <article class="card planned-card">
-                      <div>
-                        <small>Confirmation required</small>
-                        <h3>Rat control</h3>
-                      </div>
-                      <a
-                        href="#"
-                        data-prototype-link
-                        data-target-page="treatment"
-                        data-treatment="Rat Control"
-                        >View service →</a
-                      >
-                    </article>
-                    <article class="card planned-card">
-                      <div>
-                        <small>Confirmation required</small>
-                        <h3>Mice control</h3>
-                      </div>
-                      <a
-                        href="#"
-                        data-prototype-link
-                        data-target-page="treatment"
-                        data-treatment="Mice Control"
-                        >View service →</a
-                      >
-                    </article>
-                    <article class="card planned-card">
-                      <div>
-                        <small>Confirmation required</small>
-                        <h3>Bed bug treatment</h3>
-                      </div>
-                      <a
-                        href="#"
-                        data-prototype-link
-                        data-target-page="treatment"
-                        data-treatment="Bed Bug Treatment"
-                        >View service →</a
-                      >
-                    </article>
-                    <article class="card planned-card">
-                      <div>
-                        <small>Confirmation required</small>
-                        <h3>Cockroach control</h3>
-                      </div>
-                      <a
-                        href="#"
-                        data-prototype-link
-                        data-target-page="treatment"
-                        data-treatment="Cockroach Control"
-                        >View service →</a
-                      >
-                    </article>
-                    <article class="card planned-card">
-                      <div>
-                        <small>Confirmation required</small>
-                        <h3>Wasp control</h3>
-                      </div>
-                      <a
-                        href="#"
-                        data-prototype-link
-                        data-target-page="treatment"
-                        data-treatment="Wasp Control"
-                        >View service →</a
-                      >
-                    </article>
-                    <article class="card planned-card">
-                      <div>
-                        <small>Confirmation required</small>
-                        <h3>All planned treatments</h3>
-                      </div>
-                      <a href="#" data-prototype-link data-target-page="pest"
-                        >Review service list →</a
-                      >
-                    </article>
+                  <div class="service-catalog-grid">
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Rat Control"
+                    >
+                      <span class="catalog-index">01</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Rat control</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Mice Control"
+                    >
+                      <span class="catalog-index">02</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Mice control</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Bed Bug Treatment"
+                    >
+                      <span class="catalog-index">03</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Bed bug treatment</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Cockroach Control"
+                    >
+                      <span class="catalog-index">04</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Cockroach control</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Ant Control"
+                    >
+                      <span class="catalog-index">05</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Ant control</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Flea Treatment"
+                    >
+                      <span class="catalog-index">06</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Flea treatment</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Wasp Control"
+                    >
+                      <span class="catalog-index">07</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Wasp control</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
+                    <a
+                      class="catalog-card"
+                      href="#"
+                      data-prototype-link
+                      data-target-page="treatment"
+                      data-treatment="Squirrel Control"
+                    >
+                      <span class="catalog-index">08</span>
+                      <span class="catalog-copy">
+                        <small>Planned service page</small>
+                        <strong>Squirrel control</strong>
+                      </span>
+                      <span class="catalog-action">View page</span>
+                    </a>
                   </div>
                 </div>
               </section>
@@ -2583,11 +2735,11 @@
               <section class="page-shell service-hero">
                 <div class="hero-grid">
                   <div>
-                    <p class="eyebrow">Treatment template</p>
+                    <p class="eyebrow">Pest-control enquiry</p>
                     <h1 data-treatment-heading>[Treatment name] support for properties.</h1>
                     <p class="lead">
-                      Neutral draft summary explaining what the service is for. Treatment,
-                      safety, outcome, and timing claims require factual approval.
+                      Share details about the issue you have noticed and the property. The
+                      information will be reviewed before the next step is discussed.
                     </p>
                     <a class="button" href="#" data-prototype-link>Request a Quote</a>
                   </div>
@@ -2605,49 +2757,49 @@
               <section class="surface-band">
                 <div class="page-shell section scope-grid">
                   <div>
-                    <p class="eyebrow">Possible signs</p>
-                    <h2>Help visitors recognise when to enquire.</h2>
+                    <p class="eyebrow">Useful enquiry details</p>
+                    <h2>What to include in your request.</h2>
                     <p class="lead">
-                      All signs and preparation guidance require expert factual review before
-                      publication.
+                      These details make the initial request clearer without making any
+                      treatment, timing, or outcome claims.
                     </p>
                   </div>
                   <div class="scope-list">
                     <div class="scope-item">
-                      <strong>[Reviewed sign 01]</strong>
-                      <small>Treatment-specific approved explanation.</small>
+                      <strong>Where it was noticed</strong>
+                      <small>Tell us the room, area, or part of the property.</small>
                     </div>
                     <div class="scope-item">
-                      <strong>[Reviewed sign 02]</strong>
-                      <small>Treatment-specific approved explanation.</small>
+                      <strong>When it was first noticed</strong>
+                      <small>Add an approximate date or how long it has been happening.</small>
                     </div>
                     <div class="scope-item">
-                      <strong>[Reviewed sign 03]</strong>
-                      <small>Treatment-specific approved explanation.</small>
+                      <strong>Property and affected areas</strong>
+                      <small>Share the property type and any other relevant locations.</small>
                     </div>
                     <div class="scope-item">
-                      <strong>[Reviewed sign 04]</strong>
-                      <small>Treatment-specific approved explanation.</small>
+                      <strong>Access or timing details</strong>
+                      <small>Include anything useful when discussing the next step.</small>
                     </div>
                   </div>
                 </div>
               </section>
               <section class="mint-band">
                 <div class="page-shell section">
-                  <p class="eyebrow">Service process</p>
-                  <h2>Reusable steps, tailored per treatment.</h2>
+                  <p class="eyebrow">Enquiry process</p>
+                  <h2>A clear route from enquiry to next step.</h2>
                   <ol class="timeline">
                     <li>
-                      <strong>Share the signs</strong>
-                      <span>Describe the issue, location, and property context.</span>
+                      <strong>Share the details</strong>
+                      <span>Describe what you noticed and where.</span>
                     </li>
                     <li>
-                      <strong>Review requirements</strong>
-                      <span>Approved treatment-specific next-step wording appears here.</span>
+                      <strong>We review the request</strong>
+                      <span>The submitted information is checked before the next step.</span>
                     </li>
                     <li>
-                      <strong>Discuss the service</strong>
-                      <span>No automatic promise of timing, outcome, or booking.</span>
+                      <strong>Discuss what follows</strong>
+                      <span>You are contacted using the details provided.</span>
                     </li>
                   </ol>
                 </div>
@@ -2657,10 +2809,10 @@
                   <div class="quote-panel">
                     <div>
                       <p class="eyebrow">Treatment enquiry</p>
-                      <h2>[Treatment] is preselected.</h2>
+                      <h2 data-treatment-enquiry-heading>[Treatment] is preselected.</h2>
                       <p>
-                        Users provide property, area, preferred date, contact details, and
-                        privacy consent.
+                        Add what you have noticed now. Property, contact, and consent details
+                        follow in the full enquiry form.
                       </p>
                     </div>
                     <form class="mini-form prototype-form">
@@ -3363,9 +3515,13 @@
           if (target === "treatment" && treatmentName) {
             const heading = selectedPreview.querySelector("[data-treatment-heading]");
             const crumb = selectedPreview.querySelector("[data-treatment-crumb]");
+            const enquiryHeading = selectedPreview.querySelector(
+              "[data-treatment-enquiry-heading]",
+            );
             const selectedTreatment = selectedPreview.querySelector("#treatment-selected");
             if (heading) heading.textContent = `${treatmentName} support for properties.`;
             if (crumb) crumb.textContent = treatmentName;
+            if (enquiryHeading) enquiryHeading.textContent = `${treatmentName} is preselected.`;
             if (selectedTreatment) selectedTreatment.value = treatmentName;
           }
 
