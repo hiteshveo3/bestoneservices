@@ -1,0 +1,29 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+.next/
+out/
+build/
+dist/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Platform and deployment state
+.vercel/
+.firebase/
+firebase-debug.log
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Test output
+coverage/
+test-results/
+playwright-report/
