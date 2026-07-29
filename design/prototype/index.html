@@ -4,22 +4,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Best One Services — Design Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --canvas: #f6f7f2;
+        --canvas: #f7f7f8;
         --surface: #ffffff;
-        --ink: #17342f;
-        --brand: #176453;
-        --brand-dark: #0f493d;
-        --mint: #ddebe5;
-        --terra: #c95f3d;
-        --sand: #e9e4d8;
-        --muted: #5e6c68;
-        --border: #ced8d3;
-        --error: #a43d36;
-        --review-bg: #e7e9e4;
-        --review-ink: #1d2926;
-        --shadow: 0 24px 70px rgba(23, 52, 47, 0.14);
+        --ink: #252b3a;
+        --brand: #e7475e;
+        --brand-dark: #cf334c;
+        --mint: #eef1f5;
+        --terra: #e7475e;
+        --sand: #e9ebef;
+        --muted: #667085;
+        --border: #e1e4ea;
+        --error: #b42318;
+        --review-bg: #eceef2;
+        --review-ink: #24272e;
+        --shadow: 0 22px 64px rgba(27, 31, 43, 0.14);
         --radius-sm: 12px;
         --radius-md: 18px;
         --radius-lg: 28px;
@@ -60,7 +66,7 @@
       input:focus-visible,
       select:focus-visible,
       textarea:focus-visible {
-        outline: 3px solid rgba(201, 95, 61, 0.42);
+        outline: 3px solid rgba(231, 71, 94, 0.42);
         outline-offset: 3px;
       }
 
@@ -75,7 +81,7 @@
         min-height: 64px;
         padding: 10px 22px;
         color: #ffffff;
-        background: #102e29;
+        background: #252b3a;
         border-bottom: 1px solid rgba(255, 255, 255, 0.14);
       }
 
@@ -91,15 +97,15 @@
         width: 34px;
         height: 34px;
         place-items: center;
-        color: #102e29;
-        background: #dcece5;
+        color: #ffffff;
+        background: var(--brand);
         border-radius: 10px;
         font-size: 13px;
       }
 
       .review-subtitle {
         display: block;
-        color: #b8cec6;
+        color: #c8ccd5;
         font-size: 12px;
         font-weight: 500;
       }
@@ -113,7 +119,7 @@
       .view-button {
         min-height: 40px;
         padding: 8px 14px;
-        color: #d9e6e1;
+        color: #e4e6eb;
         background: transparent;
         border: 1px solid rgba(255, 255, 255, 0.23);
         border-radius: 10px;
@@ -121,7 +127,7 @@
       }
 
       .view-button[aria-pressed="true"] {
-        color: #102e29;
+        color: #252b3a;
         background: #ffffff;
         border-color: #ffffff;
       }
@@ -139,13 +145,13 @@
         height: calc(100vh - 64px);
         padding: 24px 18px 28px;
         overflow-y: auto;
-        background: #f1f2ee;
-        border-right: 1px solid #d2d7d2;
+        background: #f5f6f8;
+        border-right: 1px solid #dfe2e8;
       }
 
       .review-nav p {
         margin: 0 8px 10px;
-        color: #63716c;
+        color: #697182;
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.08em;
@@ -159,7 +165,7 @@
         align-items: center;
         gap: 10px;
         padding: 9px 10px;
-        color: #344a44;
+        color: #3f4654;
         background: transparent;
         border: 0;
         border-radius: 10px;
@@ -173,8 +179,8 @@
         width: 24px;
         height: 24px;
         place-items: center;
-        color: #60736c;
-        background: #e2e7e3;
+        color: #697182;
+        background: #e9ebef;
         border-radius: 7px;
         font-size: 11px;
         font-weight: 700;
@@ -182,19 +188,19 @@
 
       .page-link[aria-selected="true"] {
         color: #ffffff;
-        background: #176453;
+        background: var(--brand);
       }
 
       .page-link[aria-selected="true"] span {
-        color: #17342f;
-        background: #dcebe5;
+        color: #252b3a;
+        background: #ffffff;
       }
 
       .review-note {
         margin: 22px 8px 0;
         padding-top: 18px;
-        color: #687771;
-        border-top: 1px solid #d4dad6;
+        color: #697182;
+        border-top: 1px solid #dfe2e8;
         font-size: 13px;
       }
 
@@ -235,8 +241,8 @@
         align-items: center;
         justify-content: center;
         padding: 8px 22px;
-        color: #5b392c;
-        background: #f2dfd4;
+        color: #7a2636;
+        background: #fde8ec;
         font-size: 12px;
         font-weight: 650;
         text-align: center;
@@ -248,15 +254,18 @@
         align-items: center;
         justify-content: space-between;
         gap: 28px;
-        width: min(100% - 48px, 1200px);
-        margin: 0 auto;
+        width: 100%;
+        margin: 0;
+        padding: 0 max(24px, calc((100% - 1200px) / 2));
+        color: #ffffff;
+        background: var(--ink);
       }
 
       .wordmark {
         display: flex;
         align-items: center;
         gap: 11px;
-        color: var(--ink);
+        color: #ffffff;
         font-weight: 780;
         letter-spacing: -0.03em;
         text-decoration: none;
@@ -268,7 +277,7 @@
         height: 34px;
         place-items: center;
         color: #ffffff;
-        background: var(--ink);
+        background: var(--brand);
         border-radius: 10px 4px 10px 4px;
         font-size: 12px;
         letter-spacing: 0;
@@ -281,7 +290,7 @@
       }
 
       .site-nav a {
-        color: var(--ink);
+        color: #f1f2f5;
         font-size: 14px;
         font-weight: 650;
         text-decoration: none;
@@ -298,9 +307,9 @@
         display: none;
         min-width: 44px;
         min-height: 44px;
-        color: var(--ink);
+        color: #ffffff;
         background: transparent;
-        border: 1px solid var(--border);
+        border: 1px solid rgba(255, 255, 255, 0.35);
         border-radius: 11px;
         cursor: pointer;
       }
@@ -410,7 +419,7 @@
 
       .dark-band .lead,
       .dark-band .muted {
-        color: #c8d6d1;
+        color: #d0d3da;
       }
 
       .button-row {
@@ -440,7 +449,7 @@
 
       .button.secondary {
         color: var(--ink);
-        background: transparent;
+        background: #ffffff;
         border-color: var(--border);
       }
 
@@ -455,19 +464,48 @@
       }
 
       .hero {
-        padding: 74px 0 38px;
+        padding: 64px 0 32px;
       }
 
       .hero-grid {
         display: grid;
         grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
-        gap: 58px;
+        gap: 52px;
         align-items: center;
+      }
+
+      .page-preview[data-preview="home"] .hero h1 {
+        max-width: 680px;
+        font-size: clamp(42px, 5vw, 60px);
+      }
+
+      .hero-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .hero-points span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hero-points span::before {
+        width: 7px;
+        height: 7px;
+        content: "";
+        background: var(--brand);
+        border-radius: 50%;
       }
 
       .hero-art {
         position: relative;
-        min-height: 470px;
+        min-height: 380px;
         overflow: hidden;
         background: var(--mint);
         border-radius: var(--radius-lg);
@@ -477,7 +515,7 @@
         position: absolute;
         inset: 12% 12% 22% 18%;
         content: "";
-        background: var(--surface);
+        background: #ffffff;
         border-radius: 120px 120px 24px 24px;
       }
 
@@ -488,7 +526,7 @@
         width: 42%;
         height: 42%;
         content: "";
-        background: var(--terra);
+        background: var(--brand);
         border-radius: 50% 50% 18px 50%;
         opacity: 0.84;
       }
@@ -510,8 +548,8 @@
       .service-paths {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        padding: 0 0 72px;
+        gap: 18px;
+        padding: 0 0 58px;
       }
 
       .service-path {
@@ -519,16 +557,23 @@
         grid-template-columns: auto 1fr auto;
         gap: 16px;
         align-items: center;
-        padding: 24px;
+        padding: 22px 24px;
         color: var(--ink);
         background: var(--surface);
         border: 1px solid var(--border);
+        border-top: 4px solid var(--brand);
         border-radius: var(--radius-md);
         text-decoration: none;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
       }
 
       .service-path:hover {
         border-color: var(--brand);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(37, 43, 58, 0.1);
       }
 
       .path-number {
@@ -536,8 +581,8 @@
         width: 42px;
         height: 42px;
         place-items: center;
-        color: var(--brand);
-        background: var(--mint);
+        color: #ffffff;
+        background: var(--brand);
         border-radius: 12px;
         font-weight: 750;
       }
@@ -718,7 +763,7 @@
       }
 
       .quote-panel p {
-        color: #c7d5d0;
+        color: #d3d6de;
       }
 
       .mini-form {
@@ -821,7 +866,7 @@
 
       .site-footer {
         padding: 56px 0 30px;
-        color: #d7e2de;
+        color: #e1e3e8;
         background: var(--ink);
       }
 
@@ -845,14 +890,14 @@
       .footer-grid a {
         display: block;
         margin: 8px 0;
-        color: #cbd9d4;
+        color: #d0d3da;
         font-size: 14px;
         text-decoration: none;
       }
 
       .footer-note {
         padding-top: 22px;
-        color: #9eb3ac;
+        color: #aeb3bf;
         border-top: 1px solid rgba(255, 255, 255, 0.16);
         font-size: 12px;
       }
@@ -1126,14 +1171,14 @@
       .phone {
         overflow: hidden;
         background: var(--canvas);
-        border: 9px solid #243a35;
+        border: 9px solid #252b3a;
         border-radius: 34px;
         box-shadow: 0 18px 44px rgba(20, 42, 36, 0.18);
       }
 
       .phone-label {
         margin: 0 0 12px;
-        color: #566761;
+        color: #667085;
         font-size: 12px;
         font-weight: 750;
         letter-spacing: 0.1em;
@@ -1158,6 +1203,7 @@
       }
 
       .phone .wordmark {
+        color: var(--ink);
         font-size: 13px;
       }
 
@@ -1259,7 +1305,7 @@
         max-width: 360px;
         padding: 16px 18px;
         color: #ffffff;
-        background: #17342f;
+        background: #252b3a;
         border-radius: 12px;
         box-shadow: 0 14px 42px rgba(13, 35, 30, 0.24);
         font-size: 14px;
@@ -1269,13 +1315,14 @@
         display: block;
       }
 
-      .prototype-frame.is-mobile .site-header,
       .prototype-frame.is-mobile .page-shell {
         width: min(100% - 36px, 1200px);
       }
 
       .prototype-frame.is-mobile .site-header {
         min-height: 66px;
+        width: 100%;
+        padding: 0 18px;
       }
 
       .prototype-frame.is-mobile .site-nav {
@@ -1612,9 +1659,13 @@
           box-shadow: none;
         }
 
-        .site-header,
         .page-shell {
           width: min(100% - 36px, 1200px);
+        }
+
+        .site-header {
+          width: 100%;
+          padding: 0 18px;
         }
 
         h1 {
@@ -1734,7 +1785,7 @@
         <div class="prototype-frame" id="prototype-frame">
           <section class="page-preview is-active" data-preview="home" aria-label="Home page design">
             <div class="design-status">
-              Design review only — no submissions, contact details, prices, or service claims are live
+              V2 design direction — reviewing colour, typography, header and Home hero first
             </div>
             <header class="site-header">
               <a class="wordmark" href="#" data-prototype-link>
@@ -1772,6 +1823,11 @@
                       <a class="button secondary" href="#" data-prototype-link
                         >Explore Services</a
                       >
+                    </div>
+                    <div class="hero-points" aria-label="Enquiry benefits">
+                      <span>No customer account</span>
+                      <span>Tailored quote request</span>
+                      <span>Cleaning or pest control</span>
                     </div>
                   </div>
                   <div class="hero-art" aria-label="Replaceable service photography">
