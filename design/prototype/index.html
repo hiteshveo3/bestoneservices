@@ -37,8 +37,9 @@
         background: var(--review-bg);
         color: var(--review-ink);
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
         font-weight: 400;
-        line-height: 1.55;
+        line-height: 1.5;
       }
 
       button,
@@ -63,8 +64,7 @@
       }
 
       .review-bar {
-        position: sticky;
-        top: 0;
+        position: static;
         z-index: 100;
         display: flex;
         align-items: center;
@@ -72,16 +72,16 @@
         gap: 20px;
         min-height: 64px;
         padding: 10px 22px;
-        color: #ffffff;
-        background: #252b3a;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--ink);
+        background: #ffffff;
+        border-bottom: 1px solid var(--border);
       }
 
       .review-brand {
         display: flex;
         align-items: center;
         gap: 12px;
-        font-weight: 750;
+        font-weight: 500;
       }
 
       .review-mark {
@@ -97,9 +97,9 @@
 
       .review-subtitle {
         display: block;
-        color: #c8ccd5;
-        font-size: 12px;
-        font-weight: 500;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 400;
       }
 
       .viewport-controls {
@@ -111,94 +111,27 @@
       .view-button {
         min-height: 40px;
         padding: 8px 14px;
-        color: #e4e6eb;
+        color: var(--ink);
         background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.23);
+        border: 1px solid var(--border);
         border-radius: 10px;
         cursor: pointer;
       }
 
       .view-button[aria-pressed="true"] {
-        color: #252b3a;
-        background: #ffffff;
-        border-color: #ffffff;
+        color: #ffffff;
+        background: var(--brand);
+        border-color: var(--brand);
       }
 
       .review-layout {
-        display: grid;
-        grid-template-columns: 260px minmax(0, 1fr);
+        display: block;
         min-height: calc(100vh - 64px);
-      }
-
-      .review-nav {
-        position: sticky;
-        top: 64px;
-        align-self: start;
-        height: calc(100vh - 64px);
-        padding: 24px 18px 28px;
-        overflow-y: auto;
-        background: #f5f6f8;
-        border-right: 1px solid #dfe2e8;
-      }
-
-      .review-nav p {
-        margin: 0 8px 10px;
-        color: #697182;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .page-link {
-        display: flex;
-        width: 100%;
-        min-height: 44px;
-        align-items: center;
-        gap: 10px;
-        padding: 9px 10px;
-        color: #3f4654;
-        background: transparent;
-        border: 0;
-        border-radius: 10px;
-        text-align: left;
-        cursor: pointer;
-      }
-
-      .page-link span {
-        display: grid;
-        flex: 0 0 auto;
-        width: 24px;
-        height: 24px;
-        place-items: center;
-        color: #697182;
-        background: #e9ebef;
-        border-radius: 7px;
-        font-size: 11px;
-        font-weight: 700;
-      }
-
-      .page-link[aria-selected="true"] {
-        color: #ffffff;
-        background: var(--brand);
-      }
-
-      .page-link[aria-selected="true"] span {
-        color: #252b3a;
-        background: #ffffff;
-      }
-
-      .review-note {
-        margin: 22px 8px 0;
-        padding-top: 18px;
-        color: #697182;
-        border-top: 1px solid #dfe2e8;
-        font-size: 13px;
       }
 
       .prototype-stage {
         min-width: 0;
-        padding: 34px;
+        padding: 28px;
       }
 
       .prototype-frame {
@@ -236,43 +169,44 @@
         color: #7a2636;
         background: #fde8ec;
         font-size: 12px;
-        font-weight: 650;
+        font-weight: 500;
         text-align: center;
       }
 
       .site-header {
         display: flex;
-        min-height: 78px;
+        min-height: 66px;
         align-items: center;
         justify-content: space-between;
         gap: 28px;
         width: 100%;
         margin: 0;
         padding: 0 max(24px, calc((100% - 1200px) / 2));
-        color: #ffffff;
-        background: var(--ink);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+        color: var(--ink);
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
       }
 
       .wordmark {
         display: flex;
         align-items: center;
         gap: 11px;
-        color: #ffffff;
-        font-weight: 780;
-        letter-spacing: -0.03em;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
         text-decoration: none;
       }
 
       .wordmark-mark {
         display: grid;
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
         place-items: center;
         color: #ffffff;
         background: var(--brand);
-        border-radius: 10px 4px 10px 4px;
-        font-size: 12px;
+        border-radius: 9px 4px 9px 4px;
+        font-size: 11px;
         letter-spacing: 0;
       }
 
@@ -283,9 +217,9 @@
       }
 
       .site-nav a {
-        color: #f1f2f5;
-        font-size: 14px;
-        font-weight: 650;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 400;
         text-decoration: none;
       }
 
@@ -294,15 +228,16 @@
         color: #ffffff;
         background: var(--brand);
         border-radius: 11px;
+        font-weight: 500;
       }
 
       .menu-toggle {
         display: none;
         min-width: 44px;
         min-height: 44px;
-        color: #ffffff;
+        color: var(--ink);
         background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.35);
+        border: 1px solid var(--border);
         border-radius: 11px;
         cursor: pointer;
       }
@@ -323,7 +258,7 @@
         min-height: 44px;
         padding: 10px 0;
         color: var(--ink);
-        font-weight: 650;
+        font-weight: 400;
         text-decoration: none;
         border-bottom: 1px solid var(--border);
       }
@@ -341,11 +276,11 @@
       }
 
       .section {
-        padding: 88px 0;
+        padding: 72px 0;
       }
 
       .section.compact {
-        padding: 54px 0;
+        padding: 46px 0;
       }
 
       .surface-band {
@@ -362,11 +297,11 @@
       }
 
       .eyebrow {
-        margin: 0 0 16px;
+        margin: 0 0 12px;
         color: var(--terra);
-        font-size: 12px;
-        font-weight: 750;
-        letter-spacing: 0.12em;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
 
@@ -381,34 +316,38 @@
       h2,
       h3 {
         font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        letter-spacing: -0.035em;
+        font-weight: 500;
+        letter-spacing: -0.025em;
       }
 
       h1 {
         max-width: 790px;
-        margin-bottom: 24px;
-        font-size: clamp(42px, 6vw, 70px);
-        line-height: 1.02;
-      }
-
-      h2 {
         margin-bottom: 20px;
-        font-size: clamp(30px, 4vw, 46px);
+        font-size: clamp(36px, 5vw, 54px);
         line-height: 1.08;
       }
 
+      h2 {
+        margin-bottom: 16px;
+        font-size: clamp(25px, 3vw, 36px);
+        line-height: 1.12;
+      }
+
       h3 {
-        margin-bottom: 10px;
-        font-size: 22px;
-        line-height: 1.2;
+        margin-bottom: 8px;
+        font-size: 18px;
+        line-height: 1.25;
       }
 
       .lead {
         max-width: 680px;
-        margin-bottom: 30px;
+        margin-bottom: 26px;
         color: var(--muted);
-        font-size: 18px;
+        font-size: 16px;
+      }
+
+      .page-preview strong {
+        font-weight: 500;
       }
 
       .dark-band .lead,
@@ -424,15 +363,16 @@
 
       .button {
         display: inline-flex;
-        min-height: 48px;
+        min-height: 44px;
         align-items: center;
         justify-content: center;
-        padding: 12px 20px;
+        padding: 10px 18px;
         color: #ffffff;
         background: var(--brand);
         border: 1px solid var(--brand);
         border-radius: var(--radius-sm);
-        font-weight: 700;
+        font-size: 13px;
+        font-weight: 500;
         text-decoration: none;
         cursor: pointer;
       }
@@ -470,7 +410,7 @@
 
       .page-preview[data-preview="home"] .hero h1 {
         max-width: 680px;
-        font-size: clamp(42px, 5vw, 60px);
+        font-size: clamp(36px, 4.5vw, 50px);
       }
 
       .hero-points {
@@ -479,8 +419,8 @@
         gap: 10px 18px;
         margin-top: 24px;
         color: var(--muted);
-        font-size: 13px;
-        font-weight: 600;
+        font-size: 12px;
+        font-weight: 400;
       }
 
       .hero-points span {
@@ -548,8 +488,8 @@
         color: var(--ink);
         background: rgba(255, 255, 255, 0.9);
         border-radius: 10px;
-        font-size: 13px;
-        font-weight: 650;
+        font-size: 12px;
+        font-weight: 400;
       }
 
       .service-paths {
@@ -589,24 +529,24 @@
         color: #ffffff;
         background: var(--brand);
         border-radius: 12px;
-        font-weight: 750;
+        font-weight: 500;
       }
 
       .service-path strong {
         display: block;
         margin-bottom: 3px;
-        font-size: 17px;
+        font-size: 15px;
       }
 
       .service-path small {
         color: var(--muted);
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .path-action {
         color: var(--brand);
-        font-size: 13px;
-        font-weight: 700;
+        font-size: 12px;
+        font-weight: 500;
       }
 
       .split {
@@ -692,7 +632,7 @@
         background: var(--mint);
         border-radius: 50%;
         font-size: 12px;
-        font-weight: 800;
+        font-weight: 500;
       }
 
       .section-heading {
@@ -742,8 +682,8 @@
         top: 24px;
         left: 26px;
         color: var(--terra);
-        font-size: 13px;
-        font-weight: 800;
+        font-size: 12px;
+        font-weight: 500;
       }
 
       .service-catalog-grid {
@@ -785,8 +725,8 @@
 
       .catalog-index {
         color: var(--terra);
-        font-size: 13px;
-        font-weight: 700;
+        font-size: 12px;
+        font-weight: 500;
         letter-spacing: 0.08em;
       }
 
@@ -804,7 +744,8 @@
 
       .catalog-copy strong {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: clamp(20px, 2vw, 25px);
+        font-size: clamp(18px, 1.6vw, 22px);
+        font-weight: 500;
         line-height: 1.1;
       }
 
@@ -813,8 +754,8 @@
         align-items: center;
         justify-content: space-between;
         color: var(--brand);
-        font-size: 14px;
-        font-weight: 700;
+        font-size: 13px;
+        font-weight: 500;
       }
 
       .catalog-action::after {
@@ -909,8 +850,8 @@
 
       .form-field label,
       legend {
-        font-size: 13px;
-        font-weight: 700;
+        font-size: 12px;
+        font-weight: 500;
       }
 
       .form-field input,
@@ -983,8 +924,8 @@
         background: transparent;
         border: 0;
         text-align: left;
-        font-size: 17px;
-        font-weight: 700;
+        font-size: 15px;
+        font-weight: 500;
         cursor: pointer;
       }
 
@@ -1107,8 +1048,8 @@
         color: var(--ink);
         background: var(--mint);
         border-radius: 999px;
-        font-size: 13px;
-        font-weight: 650;
+        font-size: 12px;
+        font-weight: 400;
       }
 
       .scope-grid {
@@ -1230,7 +1171,7 @@
 
       .article-body p {
         color: #3f514c;
-        font-size: 17px;
+        font-size: 15px;
       }
 
       .article-body .draft-lines {
@@ -1357,7 +1298,7 @@
         margin: 0 0 12px;
         color: #667085;
         font-size: 12px;
-        font-weight: 750;
+        font-weight: 500;
         letter-spacing: 0.1em;
         text-align: center;
         text-transform: uppercase;
@@ -1404,7 +1345,7 @@
       }
 
       .phone-content h1 {
-        font-size: 40px;
+        font-size: 32px;
       }
 
       .phone-content .lead {
@@ -1451,7 +1392,7 @@
       .phone-menu-sheet p {
         color: var(--terra);
         font-size: 11px;
-        font-weight: 800;
+        font-weight: 500;
         letter-spacing: 0.1em;
         text-transform: uppercase;
       }
@@ -1463,7 +1404,7 @@
         justify-content: space-between;
         color: var(--ink);
         border-bottom: 1px solid var(--border);
-        font-weight: 700;
+        font-weight: 400;
         text-decoration: none;
       }
 
@@ -1599,11 +1540,11 @@
       }
 
       .prototype-frame.is-mobile h1 {
-        font-size: 39px;
+        font-size: 32px;
       }
 
       .prototype-frame.is-mobile h2 {
-        font-size: 30px;
+        font-size: 25px;
       }
 
       .prototype-frame.is-mobile .button-row {
@@ -1629,7 +1570,7 @@
 
       @media (max-width: 1060px) {
         .review-layout {
-          grid-template-columns: 220px minmax(0, 1fr);
+          display: block;
         }
 
         .prototype-stage {
@@ -1673,28 +1614,6 @@
 
         .review-layout {
           display: block;
-        }
-
-        .review-nav {
-          position: static;
-          display: flex;
-          height: auto;
-          gap: 6px;
-          padding: 12px;
-          overflow-x: auto;
-          border-right: 0;
-          border-bottom: 1px solid #d2d7d2;
-        }
-
-        .review-nav p,
-        .review-note {
-          display: none;
-        }
-
-        .page-link {
-          flex: 0 0 auto;
-          width: auto;
-          white-space: nowrap;
         }
 
         .prototype-stage {
@@ -1846,11 +1765,11 @@
         }
 
         h1 {
-          font-size: 39px;
+          font-size: 32px;
         }
 
         h2 {
-          font-size: 30px;
+          font-size: 25px;
         }
 
         .button-row {
@@ -1928,44 +1847,6 @@
     </header>
 
     <div class="review-layout">
-      <nav class="review-nav" aria-label="Design pages">
-        <p>Page layouts</p>
-        <button class="page-link" type="button" data-page="home" aria-selected="true">
-          <span>01</span> Home
-        </button>
-        <button class="page-link" type="button" data-page="cleaning" aria-selected="false">
-          <span>02</span> Cleaning
-        </button>
-        <button class="page-link" type="button" data-page="pest" aria-selected="false">
-          <span>03</span> Pest control
-        </button>
-        <button class="page-link" type="button" data-page="treatment" aria-selected="false">
-          <span>04</span> Treatment template
-        </button>
-        <button class="page-link" type="button" data-page="area" aria-selected="false">
-          <span>05</span> Area template
-        </button>
-        <button class="page-link" type="button" data-page="prices" aria-selected="false">
-          <span>06</span> Prices
-        </button>
-        <button class="page-link" type="button" data-page="guide" aria-selected="false">
-          <span>07</span> Guide article
-        </button>
-        <button class="page-link" type="button" data-page="quote" aria-selected="false">
-          <span>08</span> Get a quote
-        </button>
-        <button class="page-link" type="button" data-page="about" aria-selected="false">
-          <span>09</span> About
-        </button>
-        <button class="page-link" type="button" data-page="mobile" aria-selected="false">
-          <span>10</span> Mobile patterns
-        </button>
-        <div class="review-note">
-          All contact details, prices, coverage, claims, imagery, and treatment availability
-          remain intentionally unfilled until verified.
-        </div>
-      </nav>
-
       <main class="prototype-stage">
         <div class="prototype-frame" id="prototype-frame">
           <section class="page-preview is-active" data-preview="home" aria-label="Home page design">
@@ -2029,7 +1910,12 @@
               </div>
 
               <div class="page-shell service-paths">
-                <a class="service-path" href="#" data-prototype-link>
+                <a
+                  class="service-path"
+                  href="#"
+                  data-prototype-link
+                  data-target-page="cleaning"
+                >
                   <span class="path-number">01</span>
                   <span>
                     <strong>End of Tenancy Cleaning</strong>
@@ -2037,7 +1923,12 @@
                   </span>
                   <span class="path-action" aria-hidden="true">Explore →</span>
                 </a>
-                <a class="service-path" href="#" data-prototype-link>
+                <a
+                  class="service-path"
+                  href="#"
+                  data-prototype-link
+                  data-target-page="pest"
+                >
                   <span class="path-number">02</span>
                   <span>
                     <strong>Pest Control</strong>
@@ -3510,7 +3401,7 @@
         const activatePage = (target, treatmentName) => {
           const selectedButton = pageButtons.find((button) => button.dataset.page === target);
           const selectedPreview = previews.find((preview) => preview.dataset.preview === target);
-          if (!selectedButton || !selectedPreview) return;
+          if (!selectedPreview) return;
 
           if (target === "treatment" && treatmentName) {
             const heading = selectedPreview.querySelector("[data-treatment-heading]");
@@ -3575,7 +3466,10 @@
         });
 
         const linkTargets = new Map([
+          ["home", "home"],
           ["best one services", "home"],
+          ["b1 best one services", "home"],
+          ["services", "home"],
           ["end of tenancy cleaning", "cleaning"],
           ["explore cleaning", "cleaning"],
           ["get a cleaning quote", "quote"],
