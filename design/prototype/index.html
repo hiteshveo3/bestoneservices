@@ -19,7 +19,6 @@
         --error: #b42318;
         --review-bg: #eceef2;
         --review-ink: #24272e;
-        --shadow: 0 22px 64px rgba(27, 31, 43, 0.14);
         --radius-sm: 12px;
         --radius-md: 18px;
         --radius-lg: 28px;
@@ -206,10 +205,10 @@
         width: 100%;
         max-width: 1440px;
         margin: 0 auto;
-        overflow: hidden;
+        overflow: clip;
         background: var(--canvas);
         border-radius: 18px;
-        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
         transition: max-width 200ms ease;
       }
 
@@ -242,6 +241,9 @@
       }
 
       .site-header {
+        position: sticky;
+        top: var(--review-bar-offset, 64px);
+        z-index: 90;
         display: flex;
         min-height: 78px;
         align-items: center;
@@ -252,6 +254,7 @@
         padding: 0 max(24px, calc((100% - 1200px) / 2));
         color: #ffffff;
         background: var(--ink);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
       }
 
       .wordmark {
@@ -560,14 +563,12 @@
         text-decoration: none;
         transition:
           transform 180ms ease,
-          border-color 180ms ease,
-          box-shadow 180ms ease;
+          border-color 180ms ease;
       }
 
       .service-path:hover {
         border-color: var(--brand);
         transform: translateY(-2px);
-        box-shadow: 0 12px 28px rgba(37, 43, 58, 0.1);
       }
 
       .path-number {
@@ -590,6 +591,12 @@
       .service-path small {
         color: var(--muted);
         font-size: 13px;
+      }
+
+      .path-action {
+        color: var(--brand);
+        font-size: 13px;
+        font-weight: 700;
       }
 
       .split {
@@ -1167,7 +1174,6 @@
         background: var(--canvas);
         border: 9px solid #252b3a;
         border-radius: 34px;
-        box-shadow: 0 18px 44px rgba(20, 42, 36, 0.18);
       }
 
       .phone-label {
@@ -1300,13 +1306,27 @@
         padding: 16px 18px;
         color: #ffffff;
         background: #252b3a;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 12px;
-        box-shadow: 0 14px 42px rgba(13, 35, 30, 0.24);
         font-size: 14px;
       }
 
       .prototype-toast.is-visible {
         display: block;
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(44px);
+        transition:
+          opacity 620ms ease,
+          transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+
+      .scroll-reveal.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .prototype-frame.is-mobile .page-shell {
@@ -1650,7 +1670,6 @@
 
         .prototype-frame {
           border-radius: 0;
-          box-shadow: none;
         }
 
         .page-shell {
@@ -1707,6 +1726,12 @@
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
+        }
+
+        .scroll-reveal,
+        .scroll-reveal.is-revealed {
+          opacity: 1;
+          transform: none;
         }
 
         *,
@@ -1839,7 +1864,7 @@
                     <strong>End of Tenancy Cleaning</strong>
                     <small>For rental-property handovers</small>
                   </span>
-                  <span aria-hidden="true">→</span>
+                  <span class="path-action" aria-hidden="true">Explore →</span>
                 </a>
                 <a class="service-path" href="#" data-prototype-link>
                   <span class="path-number">02</span>
@@ -1847,7 +1872,7 @@
                     <strong>Pest Control</strong>
                     <small>Support for common pest problems</small>
                   </span>
-                  <span aria-hidden="true">→</span>
+                  <span class="path-action" aria-hidden="true">Explore →</span>
                 </a>
               </div>
 
@@ -3158,7 +3183,59 @@
         const pageButtons = [...document.querySelectorAll("[data-page]")];
         const previews = [...document.querySelectorAll("[data-preview]")];
         const viewButtons = [...document.querySelectorAll("[data-view]")];
+        const reviewBar = document.querySelector(".review-bar");
+        const revealTargets = [
+          ...document.querySelectorAll(
+            [
+              ".page-preview .hero",
+              ".page-preview .service-hero",
+              ".page-preview .section",
+              ".page-preview .service-paths",
+              ".page-preview .template-banner",
+              ".page-preview .breadcrumb",
+              ".page-preview .mobile-showcase",
+              ".page-preview .site-footer",
+            ].join(","),
+          ),
+        ];
         let toastTimer;
+
+        const syncStickyOffset = () => {
+          const offset = reviewBar ? reviewBar.getBoundingClientRect().height : 0;
+          document.documentElement.style.setProperty("--review-bar-offset", `${offset}px`);
+        };
+
+        const revealObserver =
+          "IntersectionObserver" in window
+            ? new IntersectionObserver(
+                (entries, observer) => {
+                  entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add("is-revealed");
+                    observer.unobserve(entry.target);
+                  });
+                },
+                {
+                  rootMargin: "0px 0px -10% 0px",
+                  threshold: 0.06,
+                },
+              )
+            : null;
+
+        revealTargets.forEach((target) => {
+          target.classList.add("scroll-reveal");
+          if (revealObserver) {
+            revealObserver.observe(target);
+          } else {
+            target.classList.add("is-revealed");
+          }
+        });
+
+        syncStickyOffset();
+        window.addEventListener("resize", syncStickyOffset);
+        if ("ResizeObserver" in window && reviewBar) {
+          new ResizeObserver(syncStickyOffset).observe(reviewBar);
+        }
 
         const showToast = () => {
           toast.classList.add("is-visible");
