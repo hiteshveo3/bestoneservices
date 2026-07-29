@@ -241,9 +241,6 @@
       }
 
       .site-header {
-        position: sticky;
-        top: var(--review-bar-offset, 64px);
-        z-index: 90;
         display: flex;
         min-height: 78px;
         align-items: center;
@@ -528,6 +525,19 @@
         opacity: 0.84;
       }
 
+      .photo-art::before,
+      .photo-art::after {
+        display: none;
+      }
+
+      .photo-art > img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
       .image-label {
         position: absolute;
         z-index: 2;
@@ -650,6 +660,11 @@
         transform: rotate(-38deg);
         transform-origin: top center;
         opacity: 0.72;
+      }
+
+      .placeholder-art.photo-art::before,
+      .placeholder-art.photo-art::after {
+        display: none;
       }
 
       .check-list {
@@ -834,6 +849,18 @@
         border-top: 1px solid var(--border);
       }
 
+      .faq-section .section {
+        padding-top: 62px;
+      }
+
+      .faq-section .section-heading {
+        margin-bottom: 18px;
+      }
+
+      .faq-section .section-heading h2 {
+        margin-bottom: 0;
+      }
+
       .faq-item {
         border-bottom: 1px solid var(--border);
       }
@@ -841,28 +868,72 @@
       .faq-question {
         display: flex;
         width: 100%;
-        min-height: 64px;
+        min-height: 76px;
         align-items: center;
         justify-content: space-between;
         gap: 20px;
-        padding: 16px 0;
+        padding: 14px 0;
         color: var(--ink);
         background: transparent;
         border: 0;
         text-align: left;
+        font-size: 17px;
         font-weight: 700;
         cursor: pointer;
       }
 
+      .faq-question:hover {
+        color: var(--brand);
+      }
+
+      .faq-question > span {
+        display: grid;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        color: var(--brand);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1;
+        transition:
+          color 220ms ease,
+          background-color 220ms ease,
+          border-color 220ms ease,
+          transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
       .faq-answer {
-        display: none;
+        display: block;
+        max-height: 0;
         max-width: 740px;
-        padding: 0 0 20px;
+        overflow: hidden;
+        padding: 0 64px 0 0;
         color: var(--muted);
+        opacity: 0;
+        transform: translateY(-8px);
+        transition:
+          max-height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 260ms ease,
+          padding-bottom 420ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       .faq-item.is-open .faq-answer {
-        display: block;
+        max-height: 220px;
+        padding-bottom: 22px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .faq-item.is-open .faq-question > span {
+        color: #ffffff;
+        background: var(--brand);
+        border-color: var(--brand);
+        transform: rotate(180deg) scale(1.06);
       }
 
       .site-footer {
@@ -1296,37 +1367,18 @@
         border-bottom: 0;
       }
 
-      .prototype-toast {
-        position: fixed;
-        z-index: 200;
-        right: 22px;
-        bottom: 22px;
-        display: none;
-        max-width: 360px;
-        padding: 16px 18px;
-        color: #ffffff;
-        background: #252b3a;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        font-size: 14px;
-      }
-
-      .prototype-toast.is-visible {
-        display: block;
-      }
-
       .scroll-reveal {
         opacity: 0;
-        transform: translateY(44px);
+        transform: translate3d(0, 76px, 0) scale(0.985);
         transition:
-          opacity 620ms ease,
-          transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+          opacity 680ms ease,
+          transform 880ms cubic-bezier(0.22, 1, 0.36, 1);
         will-change: opacity, transform;
       }
 
       .scroll-reveal.is-revealed {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0) scale(1);
       }
 
       .prototype-frame.is-mobile .page-shell {
@@ -1849,9 +1901,14 @@
                       <span>Cleaning or pest control</span>
                     </div>
                   </div>
-                  <div class="hero-art" aria-label="Replaceable service photography">
+                  <div class="hero-art photo-art">
+                    <img
+                      src="assets/cleaning-service-v1.png"
+                      alt="Bright empty rental apartment prepared for a move-out clean"
+                      decoding="async"
+                    />
                     <div class="image-label">
-                      Approved property-service photography will replace this neutral frame
+                      Prototype service image — replace with approved business photography
                     </div>
                   </div>
                 </div>
@@ -1878,8 +1935,14 @@
 
               <section class="surface-band">
                 <div class="page-shell section split">
-                  <div class="placeholder-art cleaning">
-                    <div class="image-label">Replace with approved cleaning image</div>
+                  <div class="placeholder-art cleaning photo-art">
+                    <img
+                      src="assets/cleaning-service-v1.png"
+                      alt="Empty rental apartment with unbranded cleaning materials"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div class="image-label">Prototype image — replace before launch</div>
                   </div>
                   <div>
                     <p class="eyebrow">End of tenancy cleaning</p>
@@ -1919,8 +1982,14 @@
                     </ul>
                     <a class="button" href="#" data-prototype-link>Explore Pest Control</a>
                   </div>
-                  <div class="placeholder-art pest">
-                    <div class="image-label">Replace with approved inspection image</div>
+                  <div class="placeholder-art pest photo-art">
+                    <img
+                      src="assets/pest-inspection-v1.png"
+                      alt="Gloved property inspection using a flashlight near a skirting board"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div class="image-label">Prototype image — replace before launch</div>
                   </div>
                 </div>
               </section>
@@ -1975,42 +2044,74 @@
                         <small>Confirmation required</small>
                         <h3>Rat control</h3>
                       </div>
-                      <a href="#" data-prototype-link>Preview template →</a>
+                      <a
+                        href="#"
+                        data-prototype-link
+                        data-target-page="treatment"
+                        data-treatment="Rat Control"
+                        >View service →</a
+                      >
                     </article>
                     <article class="card planned-card">
                       <div>
                         <small>Confirmation required</small>
                         <h3>Mice control</h3>
                       </div>
-                      <a href="#" data-prototype-link>Preview template →</a>
+                      <a
+                        href="#"
+                        data-prototype-link
+                        data-target-page="treatment"
+                        data-treatment="Mice Control"
+                        >View service →</a
+                      >
                     </article>
                     <article class="card planned-card">
                       <div>
                         <small>Confirmation required</small>
                         <h3>Bed bug treatment</h3>
                       </div>
-                      <a href="#" data-prototype-link>Preview template →</a>
+                      <a
+                        href="#"
+                        data-prototype-link
+                        data-target-page="treatment"
+                        data-treatment="Bed Bug Treatment"
+                        >View service →</a
+                      >
                     </article>
                     <article class="card planned-card">
                       <div>
                         <small>Confirmation required</small>
                         <h3>Cockroach control</h3>
                       </div>
-                      <a href="#" data-prototype-link>Preview template →</a>
+                      <a
+                        href="#"
+                        data-prototype-link
+                        data-target-page="treatment"
+                        data-treatment="Cockroach Control"
+                        >View service →</a
+                      >
                     </article>
                     <article class="card planned-card">
                       <div>
                         <small>Confirmation required</small>
                         <h3>Wasp control</h3>
                       </div>
-                      <a href="#" data-prototype-link>Preview template →</a>
+                      <a
+                        href="#"
+                        data-prototype-link
+                        data-target-page="treatment"
+                        data-treatment="Wasp Control"
+                        >View service →</a
+                      >
                     </article>
                     <article class="card planned-card">
                       <div>
                         <small>Confirmation required</small>
                         <h3>All planned treatments</h3>
                       </div>
-                      <a href="#" data-prototype-link>Review configuration →</a>
+                      <a href="#" data-prototype-link data-target-page="pest"
+                        >Review service list →</a
+                      >
                     </article>
                   </div>
                 </div>
@@ -2059,14 +2160,12 @@
                 </div>
               </section>
 
-              <section class="surface-band">
+              <section class="surface-band faq-section">
                 <div class="page-shell section">
                   <div class="section-heading">
                     <div>
-                      <p class="eyebrow">Questions</p>
-                      <h2>Helpful answers before you enquire.</h2>
+                      <h2>FAQs</h2>
                     </div>
-                    <p>Final FAQs will be published only after factual business review.</p>
                   </div>
                   <div class="faq-list">
                     <div class="faq-item">
@@ -2178,8 +2277,14 @@
                       >
                     </div>
                   </div>
-                  <div class="placeholder-art cleaning">
-                    <div class="image-label">Approved cleaning photography required</div>
+                  <div class="placeholder-art cleaning photo-art">
+                    <img
+                      src="assets/cleaning-service-v1.png"
+                      alt="Bright empty rental apartment prepared for cleaning"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div class="image-label">Prototype image — replace before launch</div>
                   </div>
                 </div>
               </section>
@@ -2327,8 +2432,14 @@
                       >
                     </div>
                   </div>
-                  <div class="placeholder-art pest">
-                    <div class="image-label">Approved inspection photography required</div>
+                  <div class="placeholder-art pest photo-art">
+                    <img
+                      src="assets/pest-inspection-v1.png"
+                      alt="Professional property inspection near a skirting board"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div class="image-label">Prototype image — replace before launch</div>
                   </div>
                 </div>
               </section>
@@ -2466,21 +2577,28 @@
               </div>
               <div class="page-shell breadcrumb">
                 <a href="#" data-prototype-link>Home</a> /
-                <a href="#" data-prototype-link>Pest Control</a> / [Treatment]
+                <a href="#" data-prototype-link>Pest Control</a> /
+                <span data-treatment-crumb>[Treatment]</span>
               </div>
               <section class="page-shell service-hero">
                 <div class="hero-grid">
                   <div>
                     <p class="eyebrow">Treatment template</p>
-                    <h1>[Treatment name] support for properties.</h1>
+                    <h1 data-treatment-heading>[Treatment name] support for properties.</h1>
                     <p class="lead">
                       Neutral draft summary explaining what the service is for. Treatment,
                       safety, outcome, and timing claims require factual approval.
                     </p>
                     <a class="button" href="#" data-prototype-link>Request a Quote</a>
                   </div>
-                  <div class="placeholder-art pest">
-                    <div class="image-label">Treatment-specific approved image</div>
+                  <div class="placeholder-art pest photo-art">
+                    <img
+                      src="assets/pest-inspection-v1.png"
+                      alt="Close property inspection with a flashlight and mirror"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div class="image-label">Prototype image — replace before launch</div>
                   </div>
                 </div>
               </section>
@@ -3127,8 +3245,17 @@
                         <span>→</span>
                       </div>
                     </div>
-                    <div class="placeholder-art cleaning" style="min-height: 220px; margin-top: 32px">
-                      <div class="image-label">Replaceable image</div>
+                    <div
+                      class="placeholder-art cleaning photo-art"
+                      style="min-height: 220px; margin-top: 32px"
+                    >
+                      <img
+                        src="assets/cleaning-service-v1.png"
+                        alt="Bright empty rental apartment"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div class="image-label">Prototype image</div>
                     </div>
                     <div style="padding-top: 38px">
                       <p class="eyebrow">How it works</p>
@@ -3172,18 +3299,12 @@
       </main>
     </div>
 
-    <div class="prototype-toast" id="prototype-toast" role="status" aria-live="polite">
-      Design prototype only — this interaction is not connected and no data was submitted.
-    </div>
-
     <script>
       (() => {
         const frame = document.getElementById("prototype-frame");
-        const toast = document.getElementById("prototype-toast");
         const pageButtons = [...document.querySelectorAll("[data-page]")];
         const previews = [...document.querySelectorAll("[data-preview]")];
         const viewButtons = [...document.querySelectorAll("[data-view]")];
-        const reviewBar = document.querySelector(".review-bar");
         const revealTargets = [
           ...document.querySelectorAll(
             [
@@ -3198,26 +3319,17 @@
             ].join(","),
           ),
         ];
-        let toastTimer;
-
-        const syncStickyOffset = () => {
-          const offset = reviewBar ? reviewBar.getBoundingClientRect().height : 0;
-          document.documentElement.style.setProperty("--review-bar-offset", `${offset}px`);
-        };
-
         const revealObserver =
           "IntersectionObserver" in window
             ? new IntersectionObserver(
-                (entries, observer) => {
+                (entries) => {
                   entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add("is-revealed");
-                    observer.unobserve(entry.target);
+                    entry.target.classList.toggle("is-revealed", entry.isIntersecting);
                   });
                 },
                 {
-                  rootMargin: "0px 0px -10% 0px",
-                  threshold: 0.06,
+                  rootMargin: "0px 0px -12% 0px",
+                  threshold: 0.1,
                 },
               )
             : null;
@@ -3231,29 +3343,44 @@
           }
         });
 
-        syncStickyOffset();
-        window.addEventListener("resize", syncStickyOffset);
-        if ("ResizeObserver" in window && reviewBar) {
-          new ResizeObserver(syncStickyOffset).observe(reviewBar);
-        }
+        const replayReveals = (preview) => {
+          if (!preview || !revealObserver) return;
+          const targets = [...preview.querySelectorAll(".scroll-reveal")];
+          targets.forEach((target) => {
+            revealObserver.unobserve(target);
+            target.classList.remove("is-revealed");
+          });
+          window.requestAnimationFrame(() => {
+            targets.forEach((target) => revealObserver.observe(target));
+          });
+        };
 
-        const showToast = () => {
-          toast.classList.add("is-visible");
-          window.clearTimeout(toastTimer);
-          toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 3200);
+        const activatePage = (target, treatmentName) => {
+          const selectedButton = pageButtons.find((button) => button.dataset.page === target);
+          const selectedPreview = previews.find((preview) => preview.dataset.preview === target);
+          if (!selectedButton || !selectedPreview) return;
+
+          if (target === "treatment" && treatmentName) {
+            const heading = selectedPreview.querySelector("[data-treatment-heading]");
+            const crumb = selectedPreview.querySelector("[data-treatment-crumb]");
+            const selectedTreatment = selectedPreview.querySelector("#treatment-selected");
+            if (heading) heading.textContent = `${treatmentName} support for properties.`;
+            if (crumb) crumb.textContent = treatmentName;
+            if (selectedTreatment) selectedTreatment.value = treatmentName;
+          }
+
+          pageButtons.forEach((item) =>
+            item.setAttribute("aria-selected", String(item === selectedButton)),
+          );
+          previews.forEach((preview) => {
+            preview.classList.toggle("is-active", preview === selectedPreview);
+          });
+          replayReveals(selectedPreview);
+          document.querySelector(".prototype-stage").scrollIntoView({ behavior: "smooth" });
         };
 
         pageButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const target = button.dataset.page;
-            pageButtons.forEach((item) =>
-              item.setAttribute("aria-selected", String(item === button)),
-            );
-            previews.forEach((preview) => {
-              preview.classList.toggle("is-active", preview.dataset.preview === target);
-            });
-            document.querySelector(".prototype-stage").scrollIntoView({ behavior: "smooth" });
-          });
+          button.addEventListener("click", () => activatePage(button.dataset.page));
         });
 
         viewButtons.forEach((button) => {
@@ -3278,10 +3405,7 @@
         document.querySelectorAll(".menu-toggle").forEach((button) => {
           button.addEventListener("click", () => {
             const menu = button.closest(".page-preview").querySelector(".mobile-menu");
-            if (!menu) {
-              showToast();
-              return;
-            }
+            if (!menu) return;
             const open = menu.classList.toggle("is-open");
             button.setAttribute("aria-expanded", String(open));
             button.textContent = open ? "Close" : "Menu";
@@ -3291,14 +3415,35 @@
         document.querySelectorAll(".prototype-form").forEach((form) => {
           form.addEventListener("submit", (event) => {
             event.preventDefault();
-            showToast();
           });
         });
+
+        const linkTargets = new Map([
+          ["best one services", "home"],
+          ["end of tenancy cleaning", "cleaning"],
+          ["explore cleaning", "cleaning"],
+          ["get a cleaning quote", "quote"],
+          ["pest control", "pest"],
+          ["explore pest control", "pest"],
+          ["guides", "guide"],
+          ["read helpful guides", "guide"],
+          ["about", "about"],
+          ["get a free quote", "quote"],
+          ["get a quote", "quote"],
+          ["request a quote", "quote"],
+          ["request a local quote", "quote"],
+          ["request a tailored quote", "quote"],
+          ["send an enquiry", "quote"],
+          ["service areas", "area"],
+        ]);
 
         document.querySelectorAll("[data-prototype-link]").forEach((link) => {
           link.addEventListener("click", (event) => {
             event.preventDefault();
-            showToast();
+            const explicitTarget = link.dataset.targetPage;
+            const textTarget = linkTargets.get(link.textContent.trim().toLowerCase());
+            const target = explicitTarget || textTarget;
+            if (target) activatePage(target, link.dataset.treatment);
           });
         });
       })();
