@@ -18,6 +18,10 @@
         --canvas: #f6f5f3;
         --surface: #ffffff;
         --surface-alt: #eeebe7;
+        --sage: #667b5b;
+        --sage-soft: #e9eee5;
+        --sand: #d8b981;
+        --sand-soft: #f2e8d7;
         --text: #2d2c2a;
         --muted: #716e69;
         --border: #e1ddd7;
@@ -28,6 +32,17 @@
         --radius-control: 10px;
         --radius-card: 24px 8px 24px 8px;
         --radius-image: 34px 10px 34px 10px;
+      }
+
+      body[data-palette="sage"] {
+        --coral: #667b5b;
+        --action: #5d7353;
+        --action-hover: #4e6246;
+        --coral-soft: #e9eee5;
+        --canvas: #f8f3ea;
+        --surface-alt: #efe4d2;
+        --border: #ded3c2;
+        --success: #5d7353;
       }
 
       * {
@@ -153,6 +168,65 @@
         background: var(--surface);
       }
 
+      .palette-preview {
+        display: flex;
+        width: min(100% - 48px, var(--content));
+        margin: 18px auto 0;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 12px 14px;
+        background: var(--surface);
+        border-radius: 18px 6px 18px 6px;
+      }
+
+      .palette-preview-copy {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .palette-swatches {
+        display: flex;
+        gap: 5px;
+      }
+
+      .palette-swatch {
+        width: 18px;
+        height: 18px;
+        border: 1px solid rgba(45, 44, 42, 0.12);
+        border-radius: 50%;
+      }
+
+      .palette-swatch.cream { background: #f8f3ea; }
+      .palette-swatch.sage { background: #667b5b; }
+      .palette-swatch.sand { background: #d8b981; }
+      .palette-swatch.charcoal { background: #2d2c2a; }
+
+      .palette-options {
+        display: flex;
+        gap: 6px;
+      }
+
+      .palette-option {
+        min-height: 34px;
+        padding: 7px 11px;
+        color: var(--muted);
+        background: transparent;
+        border: 0;
+        border-radius: 10px 4px 10px 4px;
+        font: inherit;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .palette-option[aria-pressed="true"] {
+        color: var(--text);
+        background: var(--coral-soft);
+      }
+
       .brand {
         display: inline-flex;
         align-items: center;
@@ -214,16 +288,12 @@
       }
 
       .button {
-        --bloom-colour: rgba(255, 255, 255, 0.28);
-        position: relative;
         display: inline-flex;
         min-height: 44px;
-        overflow: hidden;
         align-items: center;
         justify-content: center;
         gap: 9px;
         padding: 10px 17px;
-        isolation: isolate;
         color: #ffffff;
         background: var(--action);
         border: 1px solid var(--action);
@@ -232,79 +302,46 @@
         font-weight: 500;
         text-decoration: none;
         cursor: pointer;
+        transition:
+          background-color 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease;
       }
 
-      .button > * {
-        position: relative;
-        z-index: 2;
-      }
-
-      .button::after {
-        position: absolute;
-        z-index: 1;
-        top: -58px;
-        right: -58px;
-        width: 116px;
-        height: 116px;
-        background: radial-gradient(circle, var(--bloom-colour) 0 28%, transparent 68%);
-        border-radius: 50%;
-        content: "";
-        opacity: 0;
-        pointer-events: none;
-        transform: translate(0, 0) scale(0.65);
-      }
-
-      .button:hover::after,
-      .button:focus-visible::after {
-        animation: corner-bloom 1.65s linear infinite;
+      .button:hover {
+        background: var(--action-hover);
+        border-color: var(--action-hover);
       }
 
       .button.secondary {
-        --bloom-colour: rgba(233, 67, 93, 0.16);
         color: var(--text);
         background: var(--surface);
         border-color: var(--border);
+      }
+
+      .button.secondary:hover {
+        color: var(--action);
+        background: var(--coral-soft);
+        border-color: var(--coral-soft);
       }
 
       .button i {
         font-size: 19px;
       }
 
-      @keyframes corner-bloom {
-        0% {
-          opacity: 0;
-          transform: translate(0, 0) scale(0.65);
-        }
-        12% {
-          opacity: 1;
-        }
-        52% {
-          opacity: 1;
-          transform: translate(-150px, 48px) scale(1.25);
-        }
-        88% {
-          opacity: 0.72;
-        }
-        100% {
-          opacity: 0;
-          transform: translate(-340px, 110px) scale(0.75);
-        }
-      }
-
       .section {
         padding: 56px 0;
-        border-top: 1px solid var(--border);
       }
 
       .section.white {
         background: var(--surface);
       }
 
+      .hero + .section {
+        padding-top: 0;
+      }
+
       .section-head {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 36px;
         margin-bottom: 26px;
       }
 
@@ -320,10 +357,10 @@
 
       .hero {
         display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
-        gap: 46px;
+        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+        gap: 54px;
         align-items: center;
-        padding: 62px 0 58px;
+        padding: 54px 0 52px;
       }
 
       .hero-copy {
@@ -346,36 +383,36 @@
 
       .hero-media {
         position: relative;
+        width: min(100%, 500px);
+        justify-self: end;
       }
 
       .hero-media img {
         width: 100%;
-        min-height: 480px;
+        height: 390px;
         object-fit: cover;
         object-position: 58% center;
-        border: 1px solid var(--border);
         border-radius: var(--radius-image);
       }
 
-      .hero-badge {
-        position: absolute;
-        right: 18px;
-        bottom: 18px;
-        display: flex;
-        max-width: 250px;
-        gap: 10px;
-        align-items: center;
-        padding: 13px 15px;
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.94);
-        border: 1px solid var(--border);
-        border-radius: 18px 6px 18px 6px;
+      .starting-price {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        align-items: baseline;
+        margin: 2px 0 18px;
+        padding: 9px 13px;
+        color: var(--muted);
+        background: var(--surface);
+        border: 1px dashed color-mix(in srgb, var(--coral) 48%, var(--border));
+        border-radius: 14px 5px 14px 5px;
         font-size: 14px;
       }
 
-      .hero-badge i {
-        color: var(--coral);
-        font-size: 23px;
+      .starting-price strong {
+        color: var(--action);
+        font-size: 20px;
+        font-weight: 500;
       }
 
       .trust-grid,
@@ -394,25 +431,41 @@
       }
 
       .trust-item {
-        display: flex;
-        gap: 11px;
-        align-items: flex-start;
+        display: grid;
+        gap: 10px;
+        align-content: start;
         padding: 18px;
         background: var(--surface);
-        border: 1px solid var(--border);
+        border: 0;
         border-radius: var(--radius-card);
       }
 
-      .trust-item i,
+      .trust-item > i,
+      .audience-card > i,
+      .included-card > i,
+      .room-card > i,
+      .extra-card > i,
+      .standard-card > i,
+      .guide-card > i,
       .mini-icon {
+        display: grid;
         flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        place-items: center;
         color: var(--coral);
-        font-size: 23px;
+        background: var(--coral-soft);
+        border-radius: 14px 5px 14px 5px;
+        font-size: 22px;
+      }
+
+      .trust-item > div {
+        display: grid;
+        gap: 4px;
       }
 
       .trust-item strong {
         display: block;
-        margin-bottom: 2px;
         font-size: 16px;
         font-weight: 500;
       }
@@ -436,8 +489,8 @@
       .story-panel,
       .coverage-panel {
         padding: 24px;
-        background: var(--surface);
-        border: 1px solid var(--border);
+        background: var(--surface-alt);
+        border: 0;
         border-radius: var(--radius-card);
       }
 
@@ -477,22 +530,22 @@
       .extra-card,
       .standard-card,
       .guide-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         padding: 20px;
         background: var(--surface);
-        border: 1px solid var(--border);
+        border: 0;
         border-radius: var(--radius-card);
       }
 
-      .audience-card i,
-      .included-card i,
-      .room-card i,
-      .extra-card i,
-      .standard-card i,
-      .guide-card i {
-        display: inline-block;
-        margin-bottom: 24px;
-        color: var(--coral);
-        font-size: 26px;
+      .audience-card h3,
+      .included-card h3,
+      .room-card h3,
+      .extra-card h3,
+      .standard-card strong,
+      .guide-card h3 {
+        margin: 0;
       }
 
       .audience-card p,
@@ -517,7 +570,13 @@
       .included-card.featured,
       .standard-card.featured {
         background: var(--coral-soft);
-        border-color: color-mix(in srgb, var(--coral) 30%, var(--border));
+      }
+
+      .section.white .included-card,
+      .section.white .detail-item,
+      .section.white .standard-card,
+      .section.white .guide-card {
+        background: var(--canvas);
       }
 
       .room-card {
@@ -533,7 +592,7 @@
       .detail-item {
         padding: 16px;
         background: var(--surface);
-        border: 1px solid var(--border);
+        border: 0;
         border-radius: 16px 6px 16px 6px;
       }
 
@@ -562,7 +621,7 @@
         min-height: 230px;
         padding: 22px;
         background: var(--surface);
-        border: 1px solid var(--border);
+        border: 0;
         border-radius: var(--radius-card);
         counter-increment: process;
       }
@@ -588,38 +647,36 @@
       }
 
       .story-panel {
-        background: var(--text);
-        border-color: var(--text);
+        background: var(--sage-soft);
       }
 
       .story-panel,
       .story-panel h3,
       .story-panel p {
-        color: #ffffff;
+        color: var(--text);
       }
 
       .story-panel i {
         display: block;
         margin-bottom: 28px;
-        color: var(--coral);
+        color: var(--sage);
         font-size: 34px;
       }
 
       .story-panel p {
         margin-bottom: 0;
-        opacity: 0.8;
+        color: var(--muted);
       }
 
       .standard-card strong {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 0;
         font-size: 18px;
         font-weight: 500;
       }
 
       .coverage-panel {
-        background: var(--coral-soft);
-        border-color: color-mix(in srgb, var(--coral) 30%, var(--border));
+        background: var(--sand-soft);
       }
 
       .coverage-panel .button {
@@ -627,9 +684,102 @@
       }
 
       .guide-card {
-        display: flex;
         min-height: 230px;
+      }
+
+      .pricing-section {
+        background: var(--surface-alt);
+      }
+
+      .pricing-head {
+        max-width: 720px;
+        margin: 0 auto 28px;
+        text-align: center;
+      }
+
+      .pricing-head .eyebrow {
+        justify-content: center;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .pricing-card {
+        display: flex;
+        min-height: 340px;
         flex-direction: column;
+        padding: 24px;
+        background: var(--surface);
+        border: 0;
+        border-radius: var(--radius-card);
+      }
+
+      .pricing-card.featured {
+        outline: 2px solid var(--action);
+        outline-offset: -2px;
+      }
+
+      .pricing-label {
+        display: inline-flex;
+        width: max-content;
+        margin-bottom: 16px;
+        padding: 6px 9px;
+        color: var(--action);
+        background: var(--coral-soft);
+        border-radius: 10px 4px 10px 4px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .price {
+        margin: 2px 0 16px;
+        color: var(--text);
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .price small {
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .pricing-list {
+        display: grid;
+        gap: 9px;
+        margin: 0 0 22px;
+        padding: 0;
+        color: var(--muted);
+        font-size: 15px;
+        list-style: none;
+      }
+
+      .pricing-list li {
+        display: flex;
+        gap: 8px;
+      }
+
+      .pricing-list i {
+        margin-top: 3px;
+        color: var(--coral);
+        font-size: 17px;
+      }
+
+      .pricing-card .button {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .price-note {
+        max-width: 760px;
+        margin: 18px auto 0;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
       }
 
       .guide-link {
@@ -656,6 +806,25 @@
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 24px 8px 24px 8px;
+      }
+
+      .faq-section {
+        background: var(--surface-alt);
+      }
+
+      .faq-heading {
+        max-width: 720px;
+        margin: 0 auto 24px;
+        text-align: center;
+      }
+
+      .faq-heading .eyebrow {
+        width: max-content;
+        margin: 0 auto 12px;
+        padding: 7px 12px;
+        color: var(--action);
+        background: var(--coral-soft);
+        border-radius: 12px 4px 12px 4px;
       }
 
       .faq-item + .faq-item {
@@ -739,27 +908,46 @@
         gap: 30px;
         align-items: center;
         padding: 36px;
-        background: var(--surface);
-        border: 1px solid var(--border);
+        color: #ffffff;
+        background: var(--action);
+        border: 0;
         border-radius: 34px 10px 34px 10px;
+      }
+
+      .final-cta h2,
+      .final-cta .eyebrow,
+      .final-cta p {
+        color: #ffffff;
       }
 
       .final-cta p {
         max-width: 700px;
         margin-bottom: 0;
-        color: var(--muted);
+        opacity: 0.82;
+      }
+
+      .final-cta .button {
+        color: var(--text);
+        background: var(--surface);
+        border-color: var(--surface);
+      }
+
+      .final-cta .button:hover {
+        color: var(--action);
+        background: var(--canvas);
+        border-color: var(--canvas);
       }
 
       .footer {
         padding: 44px 0 28px;
-        color: #ffffff;
-        background: var(--text);
+        color: var(--text);
+        background: var(--surface-alt);
       }
 
       .footer .brand,
       .footer a,
       .footer h3 {
-        color: #ffffff;
+        color: var(--text);
       }
 
       .footer-grid {
@@ -770,7 +958,7 @@
 
       .footer-intro {
         max-width: 390px;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--muted);
         font-size: 15px;
       }
 
@@ -786,7 +974,7 @@
       }
 
       .footer-links a {
-        color: rgba(255, 255, 255, 0.72);
+        color: var(--muted);
         font-size: 14px;
         text-decoration: none;
       }
@@ -797,8 +985,8 @@
         gap: 24px;
         margin-top: 36px;
         padding-top: 22px;
-        color: rgba(255, 255, 255, 0.55);
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        color: var(--muted);
+        border-top: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
         font-size: 14px;
       }
 
@@ -824,7 +1012,12 @@
         }
 
         .hero-media img {
-          min-height: 440px;
+          height: 380px;
+        }
+
+        .hero-media {
+          width: min(100%, 680px);
+          justify-self: start;
         }
 
         .trust-grid,
@@ -847,8 +1040,14 @@
 
       @media (max-width: 760px) {
         .shell,
-        .topbar {
+        .topbar,
+        .palette-preview {
           width: min(100% - 32px, var(--content));
+        }
+
+        .palette-preview {
+          align-items: flex-start;
+          flex-direction: column;
         }
 
         .topbar {
@@ -905,14 +1104,15 @@
         }
 
         .hero-media img {
-          min-height: 360px;
+          height: 330px;
         }
 
         .included-grid,
         .room-grid,
         .extras-grid,
         .standards-grid,
-        .guide-grid {
+        .guide-grid,
+        .pricing-grid {
           grid-template-columns: 1fr;
         }
 
@@ -941,13 +1141,15 @@
         }
 
         .hero-media img {
-          min-height: 300px;
+          height: 270px;
         }
 
-        .hero-badge {
-          position: static;
-          max-width: none;
-          margin-top: 10px;
+        .palette-options {
+          width: 100%;
+        }
+
+        .palette-option {
+          flex: 1;
         }
 
         .footer-bottom {
@@ -975,7 +1177,7 @@
       }
     </style>
   </head>
-  <body>
+  <body data-palette="coral">
     <header class="header-wrap">
       <div class="topbar">
         <a class="brand" href="/"><span class="brand-mark">B1</span>Best One Services</a>
@@ -985,11 +1187,28 @@
         <nav class="main-nav" aria-label="Primary navigation">
           <a href="#included">What’s Included</a>
           <a href="#process">How It Works</a>
+          <a href="#pricing">Pricing</a>
           <a href="#faq">FAQs</a>
           <a class="button" href="#quote"><span>Get a Free Quote</span><i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a>
         </nav>
       </div>
     </header>
+
+    <aside class="palette-preview" aria-label="Local colour direction preview">
+      <div class="palette-preview-copy">
+        <div class="palette-swatches" aria-hidden="true">
+          <span class="palette-swatch cream"></span>
+          <span class="palette-swatch sage"></span>
+          <span class="palette-swatch sand"></span>
+          <span class="palette-swatch charcoal"></span>
+        </div>
+        <span>Colour preview from your reference image</span>
+      </div>
+      <div class="palette-options" aria-label="Preview a colour direction">
+        <button class="palette-option" type="button" data-palette-choice="coral" aria-pressed="true">Clean Coral</button>
+        <button class="palette-option" type="button" data-palette-choice="sage" aria-pressed="false">Sage + Sand</button>
+      </div>
+    </aside>
 
     <main>
       <section class="shell hero" data-section="01">
@@ -997,6 +1216,7 @@
           <p class="eyebrow"><i class="hgi-stroke hgi-clean" aria-hidden="true"></i>End of tenancy cleaning</p>
           <h1>Leave the property ready for a smoother handover.</h1>
           <p class="lead">A clear, property-led cleaning service for tenants, landlords and letting agents. Tell us about the home, your preferred date and anything that needs extra attention.</p>
+          <div class="starting-price"><span>Cleaning starts</span><strong>from £120</strong><span>· final quote depends on the property</span></div>
           <div class="button-row">
             <a class="button" href="#quote"><span>Get a Cleaning Quote</span><i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a>
             <a class="button secondary" href="#included"><span>See What’s Included</span></a>
@@ -1005,7 +1225,6 @@
         </div>
         <div class="hero-media reveal is-visible">
           <img src="/assets/end-of-tenancy-hero-v1.png" alt="A professional cleaner finishing a bright rental flat before handover" fetchpriority="high" />
-          <div class="hero-badge"><i class="hgi-stroke hgi-key-01" aria-hidden="true"></i><span>Designed around inspection dates, key handovers and real property requirements.</span></div>
         </div>
       </section>
 
@@ -1021,7 +1240,7 @@
       <section class="section white" data-section="03">
         <div class="shell editorial-split reveal">
           <div class="reading">
-            <p class="eyebrow">03 — Service overview</p>
+            <p class="eyebrow">Service overview</p>
             <h2>Prepare the property for its next stage.</h2>
             <p>Moving out involves deadlines, keys, inspections and a long list of practical jobs. A focused end of tenancy clean helps bring the property back to a clear, presentable condition before handover.</p>
             <p>Every property is different. A studio flat, family home, furnished rental and shared accommodation will not need exactly the same approach. That is why the enquiry starts with the property rather than a fixed one-size-fits-all package.</p>
@@ -1038,9 +1257,9 @@
         </div>
       </section>
 
-      <section class="section" data-section="04">
+      <section class="section" id="who-we-help" data-section="04">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">04 — Who we help</p><h2>One service, different property situations.</h2></div><p>Each audience gets the same clear starting point, with property details shaping the response.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">Who we help</p><h2>One service, different property situations.</h2></div></div>
           <div class="audience-grid reveal">
             <article class="audience-card"><i class="hgi-stroke hgi-user" aria-hidden="true"></i><h3>Tenants</h3><p>Prepare for checkout, inspection and key handover.</p></article>
             <article class="audience-card"><i class="hgi-stroke hgi-key-01" aria-hidden="true"></i><h3>Landlords</h3><p>Reset a property before new occupants arrive.</p></article>
@@ -1053,7 +1272,7 @@
 
       <section class="section white" id="included" data-section="05">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">05 — Core scope</p><h2>What can be included in your enquiry.</h2></div><p>The final scope is confirmed for the specific property. These are the common areas customers ask us to review.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">Core cleaning scope</p><h2>What can be included in your enquiry.</h2></div></div>
           <div class="included-grid reveal">
             <article class="included-card featured"><i class="hgi-stroke hgi-clean" aria-hidden="true"></i><h3>Kitchen attention</h3><p>Worktops, cupboards, sinks, splashbacks, accessible surfaces and the areas around appliances.</p></article>
             <article class="included-card"><i class="hgi-stroke hgi-waterfall-down-01" aria-hidden="true"></i><h3>Bathrooms</h3><p>Sanitary fittings, tiles, mirrors, accessible surfaces and presentation before handover.</p></article>
@@ -1067,7 +1286,7 @@
 
       <section class="section" data-section="06">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">06 — Room by room</p><h2>A clear rhythm across the whole property.</h2></div><p>White cards keep each room easy to scan without making the page feel like a heavy checklist.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">Room by room</p><h2>A clear rhythm across the whole property.</h2></div></div>
           <div class="room-grid reveal">
             <article class="room-card"><i class="hgi-stroke hgi-chef-hat" aria-hidden="true"></i><h3>Kitchen</h3><p>Usually the most detailed room, so condition and appliance requirements should be mentioned clearly.</p></article>
             <article class="room-card"><i class="hgi-stroke hgi-bathtub-01" aria-hidden="true"></i><h3>Bathroom</h3><p>Share any condition concerns, scale build-up or areas that may require extra time.</p></article>
@@ -1079,9 +1298,9 @@
         </div>
       </section>
 
-      <section class="section white" data-section="07">
+      <section class="section white" id="quote-details" data-section="07">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">07 — Quote accuracy</p><h2>Six details make the first response clearer.</h2></div><p>You do not need a long message. A few useful facts can prevent unnecessary back-and-forth.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">Quote accuracy</p><h2>Six details make the first response clearer.</h2></div></div>
           <div class="detail-grid reveal">
             <div class="detail-item"><i class="hgi-stroke hgi-home-03" aria-hidden="true"></i><strong>Property type</strong></div>
             <div class="detail-item"><i class="hgi-stroke hgi-bed" aria-hidden="true"></i><strong>Bedroom count</strong></div>
@@ -1095,7 +1314,7 @@
 
       <section class="section" id="process" data-section="08">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">08 — How it works</p><h2>A straightforward four-step process.</h2></div><p>The page explains the route before asking the customer to take action.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">How it works</p><h2>A straightforward four-step process.</h2></div></div>
           <div class="process-grid reveal">
             <article class="process-step"><h3>Choose the service</h3><p>Confirm that end of tenancy cleaning matches your property situation.</p></article>
             <article class="process-step"><h3>Share the details</h3><p>Provide the property, location, date and the useful notes you already know.</p></article>
@@ -1105,21 +1324,63 @@
         </div>
       </section>
 
+      <section class="section pricing-section" id="pricing" data-section="pricing">
+        <div class="shell">
+          <div class="pricing-head reveal"><p class="eyebrow">Pricing comparison</p><h2>Starting points for different property sizes.</h2></div>
+          <div class="pricing-grid reveal">
+            <article class="pricing-card">
+              <span class="pricing-label">Compact property</span>
+              <h3>Studio or 1 bedroom</h3>
+              <div class="price">£120 <small>starting from</small></div>
+              <ul class="pricing-list">
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Core rooms and accessible surfaces</span></li>
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Property details reviewed first</span></li>
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Final scope confirmed before booking</span></li>
+              </ul>
+              <a class="button secondary" href="#quote"><span>Request This Quote</span></a>
+            </article>
+            <article class="pricing-card featured">
+              <span class="pricing-label">Most requested</span>
+              <h3>2 bedroom property</h3>
+              <div class="price">£155 <small>starting from</small></div>
+              <ul class="pricing-list">
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Kitchen, bathroom and living spaces</span></li>
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Furniture status considered</span></li>
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Handover timing included in review</span></li>
+              </ul>
+              <a class="button" href="#quote"><span>Request This Quote</span></a>
+            </article>
+            <article class="pricing-card">
+              <span class="pricing-label">Larger property</span>
+              <h3>3+ bedroom property</h3>
+              <div class="price">£195 <small>starting from</small></div>
+              <ul class="pricing-list">
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>More rooms and shared spaces</span></li>
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Condition and access notes reviewed</span></li>
+                <li><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><span>Tailored scope before arrangement</span></li>
+              </ul>
+              <a class="button secondary" href="#quote"><span>Request This Quote</span></a>
+            </article>
+          </div>
+          <p class="price-note reveal">These figures are design-preview starting prices for local review. Confirm the final business prices, inclusions and any extras before launch.</p>
+        </div>
+      </section>
+
       <section class="section white" data-section="09">
         <div class="shell story-layout reveal">
           <div class="reading">
-            <p class="eyebrow">09 — Handover thinking</p>
+            <p class="eyebrow">Handover thinking</p>
             <h2>A calmer handover starts with clear expectations.</h2>
             <p>The clean should be planned around the condition of the property, its contents, access arrangements and the deadline that matters. That is more useful than presenting every customer with the same fixed list.</p>
             <p>Clear scope protects both sides. It helps the customer understand what is being discussed and gives the service team the information needed to respond properly.</p>
           </div>
-          <aside class="story-panel"><i class="hgi-stroke hgi-quote-down" aria-hidden="true"></i><h3>Property first, package second.</h3><p>The design keeps the service explanation central and moves the customer towards one clear quote action.</p></aside>
+          <aside class="story-panel"><i class="hgi-stroke hgi-quote-down" aria-hidden="true"></i><h3>Property first, package second.</h3><p>Scope, access and timing are confirmed before the most suitable next step is arranged.</p></aside>
         </div>
       </section>
 
       <section class="section" data-section="10">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">10 — Additional requirements</p><h2>Tell us what may affect the service.</h2></div><p>These details are not complications; they are useful planning information.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">Additional requirements</p><h2>Tell us what may affect the service.</h2></div></div>
           <div class="extras-grid reveal">
             <article class="extra-card"><i class="hgi-stroke hgi-key-01" aria-hidden="true"></i><h3>Keys and access</h3><p>Mention collection arrangements, entry instructions or access time limits.</p></article>
             <article class="extra-card"><i class="hgi-stroke hgi-car-parking-02" aria-hidden="true"></i><h3>Parking</h3><p>Let us know if parking, permits or building access may need planning.</p></article>
@@ -1133,7 +1394,7 @@
 
       <section class="section white" data-section="11">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">11 — Service standards</p><h2>Built around clarity, not visual noise.</h2></div><p>The service experience should feel as organised as the page: direct, readable and easy to understand.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">Service standards</p><h2>Built around clarity, not visual noise.</h2></div></div>
           <div class="standards-grid reveal">
             <article class="standard-card featured"><i class="hgi-stroke hgi-information-circle" aria-hidden="true"></i><strong>Clear requirements</strong><p>The property details shape the scope and the response.</p></article>
             <article class="standard-card"><i class="hgi-stroke hgi-checkmark-circle-02" aria-hidden="true"></i><strong>Confirmed scope</strong><p>Understand what is being discussed before work is arranged.</p></article>
@@ -1145,7 +1406,7 @@
       <section class="section" data-section="12">
         <div class="shell coverage-layout reveal">
           <div class="reading">
-            <p class="eyebrow">12 — Area and timing</p>
+            <p class="eyebrow">Area and timing</p>
             <h2>Share where the property is and when help is needed.</h2>
             <p>Postcode or service area information helps place the enquiry correctly. Your preferred date helps the team understand the time available before inspection or handover.</p>
             <ul class="coverage-list">
@@ -1158,20 +1419,20 @@
         </div>
       </section>
 
-      <section class="section white" data-section="13">
+      <section class="section white" id="guides" data-section="13">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">13 — Helpful guidance</p><h2>Read the situation before requesting a quote.</h2></div><p>Editorial cards support the service page without interrupting the main enquiry path.</p></div>
+          <div class="section-head reveal"><div><p class="eyebrow">Helpful cleaning guides</p><h2>Read the situation before requesting a quote.</h2></div></div>
           <div class="guide-grid reveal">
-            <article class="guide-card"><i class="hgi-stroke hgi-task-done-01" aria-hidden="true"></i><h3>Cleaning checklist</h3><p>A practical way to organise the property before the handover date.</p><a class="guide-link" href="#quote">Read guide <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a></article>
-            <article class="guide-card"><i class="hgi-stroke hgi-key-01" aria-hidden="true"></i><h3>Preparing for handover</h3><p>Useful reminders about access, keys, deadlines and property details.</p><a class="guide-link" href="#quote">Read guide <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a></article>
-            <article class="guide-card"><i class="hgi-stroke hgi-home-03" aria-hidden="true"></i><h3>Furnished or empty?</h3><p>Why the status of the property can affect the scope of an enquiry.</p><a class="guide-link" href="#quote">Read guide <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a></article>
+            <article class="guide-card"><i class="hgi-stroke hgi-task-done-01" aria-hidden="true"></i><h3>End of tenancy cleaning checklist</h3><p>A practical way to organise the property before the handover date.</p><a class="guide-link" href="#included">Explore the checklist <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a></article>
+            <article class="guide-card"><i class="hgi-stroke hgi-key-01" aria-hidden="true"></i><h3>Preparing a property for handover</h3><p>Useful reminders about access, keys, deadlines and property details.</p><a class="guide-link" href="#process">See the handover process <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a></article>
+            <article class="guide-card"><i class="hgi-stroke hgi-home-03" aria-hidden="true"></i><h3>Furnished or unfurnished cleaning</h3><p>Why the status of the property can affect the scope of an enquiry.</p><a class="guide-link" href="#quote-details">Review quote details <i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a></article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="faq" data-section="14">
+      <section class="section faq-section" id="faq" data-section="14">
         <div class="shell">
-          <div class="section-head reveal"><div><p class="eyebrow">14 — FAQs</p><h2>Simple answers in one clean container.</h2></div><p>One FAQ style only: a plain bordered container, slow motion and chevrons.</p></div>
+          <div class="faq-heading reveal"><p class="eyebrow"><i class="hgi-stroke hgi-information-circle" aria-hidden="true"></i>Frequently asked questions</p><h2>Answers before you request a quote.</h2></div>
           <div class="faq-container reveal">
             <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">What is end of tenancy cleaning?<span class="faq-chevron"><i class="hgi-stroke hgi-arrow-down-01" aria-hidden="true"></i></span></button><div class="faq-answer"><div>It is a detailed property-cleaning service commonly requested before a tenant leaves, a landlord prepares for new occupants or an agent arranges a handover. The exact scope depends on the property and confirmed requirements.</div></div></div>
             <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">What information should I provide?<span class="faq-chevron"><i class="hgi-stroke hgi-arrow-down-01" aria-hidden="true"></i></span></button><div class="faq-answer"><div>Share the property type, bedroom count, postcode or area, preferred date, furniture status and any access or condition details that may affect the service.</div></div></div>
@@ -1184,7 +1445,7 @@
 
       <section class="section white" id="quote" data-section="15">
         <div class="shell final-cta reveal">
-          <div><p class="eyebrow">15 — Start your enquiry</p><h2>Need the property ready for handover?</h2><p>Start with the property type, bedroom count, postcode or area, preferred date and a few useful notes. Best One Services can then review the request and explain the next step.</p></div>
+          <div><p class="eyebrow">Start your enquiry</p><h2>Need the property ready for handover?</h2><p>Start with the property type, bedroom count, postcode or area, preferred date and a few useful notes. Best One Services can then review the request and explain the next step.</p></div>
           <div class="button-row"><a class="button" href="mailto:hello@bestoneservices.co.uk?subject=End%20of%20Tenancy%20Cleaning%20Quote"><span>Request Your Quote</span><i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a></div>
         </div>
       </section>
@@ -1194,17 +1455,25 @@
       <div class="shell">
         <div class="footer-grid">
           <div><a class="brand" href="/"><span class="brand-mark">B1</span>Best One Services</a><p class="footer-intro">End of tenancy cleaning and pest-control enquiry support for homes, rental properties and businesses.</p></div>
-          <div><h3>Cleaning</h3><div class="footer-links"><a href="#included">What’s included</a><a href="#process">How it works</a><a href="#quote">Request a quote</a></div></div>
-          <div><h3>Company</h3><div class="footer-links"><a href="/">Home</a><a href="#faq">FAQs</a><a href="#quote">Contact</a></div></div>
-          <div><h3>Legal</h3><div class="footer-links"><a href="#">Privacy policy</a><a href="#">Terms and conditions</a></div></div>
+          <div><h3>Cleaning</h3><div class="footer-links"><a href="#included">What’s included</a><a href="#pricing">Starting prices</a><a href="#quote">Request a quote</a></div></div>
+          <div><h3>Guides</h3><div class="footer-links"><a href="#guides">Cleaning checklist</a><a href="#process">Handover process</a><a href="#faq">Cleaning FAQs</a></div></div>
+          <div><h3>Explore</h3><div class="footer-links"><a href="/">Home</a><a href="#who-we-help">Who we help</a><a href="#quote">Contact</a></div></div>
         </div>
-        <div class="footer-bottom"><span>© 2026 Best One Services</span><span>Local service-page design prototype</span></div>
+        <div class="footer-bottom"><span>© 2026 Best One Services</span><span>End of tenancy cleaning · homes and rental properties</span></div>
       </div>
     </footer>
 
     <script>
       const menuButton = document.querySelector(".menu-button");
       const mainNav = document.querySelector(".main-nav");
+      const paletteButtons = document.querySelectorAll("[data-palette-choice]");
+
+      paletteButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          document.body.dataset.palette = button.dataset.paletteChoice;
+          paletteButtons.forEach((option) => option.setAttribute("aria-pressed", String(option === button)));
+        });
+      });
 
       menuButton.addEventListener("click", () => {
         const open = mainNav.classList.toggle("is-open");

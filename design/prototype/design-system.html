@@ -683,7 +683,6 @@
       }
 
       .button {
-        --button-bloom: rgba(255, 255, 255, 0.22);
         display: inline-flex;
         min-height: 42px;
         align-items: center;
@@ -691,39 +690,51 @@
         padding: 9px 16px;
         color: #ffffff;
         background-color: var(--primary-action);
-        background-image: radial-gradient(circle, var(--button-bloom) 0 28%, transparent 68%);
-        background-position: 130% -50%;
-        background-repeat: no-repeat;
-        background-size: 0 0;
         border: 1px solid var(--primary-action);
         border-radius: 14px 5px 14px 5px;
         font-size: 16px;
         font-weight: 500;
         text-decoration: none;
         cursor: pointer;
+        transition:
+          color 180ms ease,
+          background-color 180ms ease,
+          border-color 180ms ease;
       }
 
       .button:hover,
       .button:focus-visible {
-        animation: button-corner-bloom 1.65s linear infinite;
+        background-color: var(--primary-hover);
+        border-color: var(--primary-hover);
       }
 
       .button.secondary {
-        --button-bloom: color-mix(in srgb, var(--primary) 10%, transparent);
         color: var(--text);
         background-color: var(--surface);
         border-color: var(--border);
       }
 
+      .button.secondary:hover,
+      .button.secondary:focus-visible {
+        color: var(--primary);
+        background-color: var(--primary-soft);
+        border-color: var(--primary-soft);
+      }
+
       .button.quiet {
-        --button-bloom: color-mix(in srgb, var(--primary) 14%, transparent);
         color: var(--primary);
         background-color: var(--primary-soft);
         border-color: transparent;
       }
 
+      .button.quiet:hover,
+      .button.quiet:focus-visible {
+        color: var(--primary-hover);
+        background-color: color-mix(in srgb, var(--primary) 15%, var(--surface));
+        border-color: transparent;
+      }
+
       .button.outline {
-        --button-bloom: color-mix(in srgb, var(--primary) 12%, transparent);
         color: var(--primary);
         background-color: transparent;
         border-color: var(--primary);
@@ -732,27 +743,6 @@
       .button.outline:hover {
         color: #ffffff;
         background-color: var(--primary-hover);
-      }
-
-      @keyframes button-corner-bloom {
-        0% {
-          background-position: 130% -50%;
-          background-size: 0 0;
-        }
-        12% {
-          background-size: 116px 116px;
-        }
-        52% {
-          background-position: 35% 45%;
-          background-size: 150px 150px;
-        }
-        88% {
-          background-size: 116px 116px;
-        }
-        100% {
-          background-position: -130% 160%;
-          background-size: 0 0;
-        }
       }
 
       .button:disabled {
@@ -1355,7 +1345,7 @@
           <h1>Warm Pearl, action-led navigation and layouts built for real pages.</h1>
           <p class="lead">
             Clean Coral remains the brand colour. This round locks the warm neutral direction,
-            adds hover-only corner-bloom buttons, calmer FAQ motion, the Hugeicons library and a 25-layout
+            adds simple colour-change button hovers, calmer FAQ motion, the Hugeicons library and a 25-layout
             library for service, editorial, image-led and conversion pages.
           </p>
           <div class="button-row">
@@ -1439,7 +1429,7 @@
 
       <section class="section surface">
         <div class="shell">
-          <div class="section-head"><div><p class="eyebrow">05 — Buttons and cards</p><h2>Corner-bloom buttons and white cards</h2></div><p>Solid coral always uses white text. Buttons carry a soft corner bloom with no shadow, while white cards stay clean on the Warm Pearl canvas.</p></div>
+          <div class="section-head"><div><p class="eyebrow">05 — Buttons and cards</p><h2>Simple-hover buttons and white cards</h2></div><p>Solid coral always uses white text. Buttons use one calm colour change on hover, while white cards stay clean on the Warm Pearl canvas.</p></div>
           <div class="component-stack">
             <div class="component-panel"><div class="component-label">Button hierarchy</div><div class="button-row"><button class="button" type="button">01 · Solid coral</button><button class="button secondary" type="button">02 · White secondary</button><button class="button outline" type="button">03 · Coral outline</button><button class="button quiet" type="button">04 · Soft coral</button><a class="text-link" href="#">05 · Text link →</a></div></div>
             <div class="component-panel"><div class="component-label">Card directions</div><div class="card-grid">
@@ -1488,7 +1478,7 @@
       <section class="section">
         <div class="shell">
           <div class="section-head"><div><p class="eyebrow">09 — Usage rules</p><h2>Rules that keep every page consistent</h2></div><p>These rules are fixed across the Warm Pearl, Action-led and layout directions selected in this round.</p></div>
-          <div class="usage-grid"><article class="usage-card"><strong>Coral</strong><p>Clean Coral carries the brand; solid CTAs use Action Coral with white text.</p></article><article class="usage-card"><strong>White surfaces</strong><p>White cards sit on Warm Pearl or grey canvases to create contrast.</p></article><article class="usage-card"><strong>Text</strong><p>Dark charcoal is used on white or light grey only, never on coral.</p></article><article class="usage-card"><strong>Depth</strong><p>Use borders, spacing and alternating surfaces. Never use shadows.</p></article><article class="usage-card"><strong>Mobile</strong><p>Multi-column patterns collapse to one column with 16px gutters.</p></article><article class="usage-card"><strong>Motion</strong><p>Buttons start plain; the corner bloom sweeps across only while hovered. FAQs use 560ms motion.</p></article><article class="usage-card"><strong>Icons</strong><p>Use the Hugeicons stroke-rounded library at consistent 18–24px UI sizes.</p></article><article class="usage-card"><strong>Content</strong><p>Headings stay short; long SEO copy uses a 760px reading column.</p></article></div>
+          <div class="usage-grid"><article class="usage-card"><strong>Coral</strong><p>Clean Coral carries the brand; solid CTAs use Action Coral with white text.</p></article><article class="usage-card"><strong>White surfaces</strong><p>White cards sit on Warm Pearl or grey canvases to create contrast.</p></article><article class="usage-card"><strong>Text</strong><p>Dark charcoal is used on white or light grey only, never on coral.</p></article><article class="usage-card"><strong>Depth</strong><p>Use borders, spacing and alternating surfaces. Never use shadows.</p></article><article class="usage-card"><strong>Mobile</strong><p>Multi-column patterns collapse to one column with 16px gutters.</p></article><article class="usage-card"><strong>Motion</strong><p>Buttons use a simple 180ms colour change. FAQs keep the slower 560ms open and close motion.</p></article><article class="usage-card"><strong>Icons</strong><p>Use the Hugeicons stroke-rounded library at consistent 18–24px UI sizes.</p></article><article class="usage-card"><strong>Content</strong><p>Headings stay short; long SEO copy uses a 760px reading column.</p></article></div>
         </div>
       </section>
     </main>
