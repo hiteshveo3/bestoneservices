@@ -157,9 +157,9 @@ p { margin-bottom: 18px; }
   border-radius: var(--radius-card);
 }
 .trust-card { padding: 18px; }
-.trust-card strong, .trust-card span { display: block; }
-.trust-card strong { margin-top: 12px; font-size: 16px; font-weight: 500; }
-.trust-card span { margin-top: 4px; color: var(--muted); font-size: 14px; }
+.trust-card > strong, .trust-card > span:not(.icon-box) { display: block; }
+.trust-card > strong { margin-top: 12px; font-size: 16px; font-weight: 500; }
+.trust-card > span:not(.icon-box) { margin-top: 4px; color: var(--muted); font-size: 14px; }
 .icon-box { display: grid; width: 42px; height: 42px; place-items: center; color: var(--action); background: var(--action-soft); border-radius: 14px 5px 14px 5px; }
 
 .split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: 38px; align-items: start; }
