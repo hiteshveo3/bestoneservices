@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Best One Services — Design System V3 Layout Review</title>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
     <style>
       :root {
         --primary: #e9435d;
@@ -589,10 +590,15 @@
         border-radius: var(--radius-md);
       }
 
-      .header-variants,
-      .faq-variants {
+      .header-variants {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .faq-variants {
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 14px;
       }
 
@@ -685,31 +691,21 @@
         padding: 9px 16px;
         color: #ffffff;
         background-color: var(--primary-action);
-        background-image: radial-gradient(
-          circle at 100% 0%,
-          var(--button-bloom) 0,
-          var(--button-bloom) 18%,
-          transparent 19%
-        );
-        background-position: right top;
+        background-image: radial-gradient(circle, var(--button-bloom) 0 28%, transparent 68%);
+        background-position: 130% -50%;
         background-repeat: no-repeat;
-        background-size: 92% 180%;
+        background-size: 0 0;
         border: 1px solid var(--primary-action);
-        border-radius: var(--radius-md);
+        border-radius: 14px 5px 14px 5px;
         font-size: 16px;
         font-weight: 500;
         text-decoration: none;
         cursor: pointer;
-        transition:
-          background-color 260ms ease,
-          background-size 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
-          border-color 260ms ease;
       }
 
-      .button:hover {
-        background-color: var(--primary-hover);
-        background-size: 170% 280%;
-        border-color: var(--primary-hover);
+      .button:hover,
+      .button:focus-visible {
+        animation: button-corner-bloom 1.65s linear infinite;
       }
 
       .button.secondary {
@@ -736,6 +732,27 @@
       .button.outline:hover {
         color: #ffffff;
         background-color: var(--primary-hover);
+      }
+
+      @keyframes button-corner-bloom {
+        0% {
+          background-position: 130% -50%;
+          background-size: 0 0;
+        }
+        12% {
+          background-size: 116px 116px;
+        }
+        52% {
+          background-position: 35% 45%;
+          background-size: 150px 150px;
+        }
+        88% {
+          background-size: 116px 116px;
+        }
+        100% {
+          background-position: -130% 160%;
+          background-size: 0 0;
+        }
       }
 
       .button:disabled {
@@ -848,14 +865,8 @@
           transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
-      .faq-icon svg {
-        width: 18px;
-        height: 18px;
-        fill: none;
-        stroke: currentColor;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2;
+      .faq-icon i {
+        font-size: 18px;
       }
 
       .faq-answer {
@@ -993,24 +1004,18 @@
 
       .huge-icon {
         display: grid;
-        width: 86px;
-        height: 86px;
-        margin-bottom: 24px;
+        width: 46px;
+        height: 46px;
+        margin-bottom: 22px;
         place-items: center;
         color: var(--primary);
         background: var(--primary-soft);
         border: 1px solid color-mix(in srgb, var(--primary) 20%, var(--border));
-        border-radius: 24px 8px 24px 8px;
+        border-radius: 16px 5px 16px 5px;
       }
 
-      .huge-icon svg {
-        width: 48px;
-        height: 48px;
-        fill: none;
-        stroke: currentColor;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 1.6;
+      .huge-icon i {
+        font-size: 24px;
       }
 
       .icon-card p {
@@ -1350,7 +1355,7 @@
           <h1>Warm Pearl, action-led navigation and layouts built for real pages.</h1>
           <p class="lead">
             Clean Coral remains the brand colour. This round locks the warm neutral direction,
-            adds corner-bloom buttons, calmer FAQ motion, large service icons and a 25-layout
+            adds hover-only corner-bloom buttons, calmer FAQ motion, the Hugeicons library and a 25-layout
             library for service, editorial, image-led and conversion pages.
           </p>
           <div class="button-row">
@@ -1450,27 +1455,23 @@
 
       <section class="section" id="icon-system">
         <div class="shell">
-          <div class="section-head"><div><p class="eyebrow">06 — Large icon system</p><h2>Huge service icons with a light line style</h2></div><p>Use 72–96px icons at hero and section level. They create recognition without photographs everywhere; smaller controls still use 18–22px icons.</p></div>
+          <div class="section-head"><div><p class="eyebrow">06 — Hugeicons library</p><h2>Hugeicons at normal, consistent UI sizes</h2></div><p>Hugeicons is the selected icon library. Use 18–24px stroke-rounded icons in controls and cards; the library name does not mean the icons themselves should be huge.</p></div>
           <div class="icon-grid">
-            <article class="icon-card"><div class="huge-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7v8M24 33v8M7 24h8M33 24h8M12 12l6 6M30 30l6 6M36 12l-6 6M18 30l-6 6"/><circle cx="24" cy="24" r="5"/></svg></div><h3>Cleaning</h3><p>Use for end-of-tenancy hero introductions, cleaning checklists and finished-property sections.</p></article>
-            <article class="icon-card"><div class="huge-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l15 6v11c0 10-6 17-15 21C15 39 9 32 9 22V11l15-6Z"/><path d="m17 24 5 5 10-11"/></svg></div><h3>Pest protection</h3><p>Use for pest-control category headers, prevention guidance and property-protection messages.</p></article>
-            <article class="icon-card"><div class="huge-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m6 22 18-15 18 15"/><path d="M10 20v21h28V20M19 41V28h10v13"/></svg></div><h3>Property</h3><p>Use where the customer chooses a home, flat, rental property or commercial premises.</p></article>
-            <article class="icon-card"><div class="huge-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="22" r="9"/><path d="m24 28 17 13M31 33l4-4M36 37l4-4"/></svg></div><h3>Handover</h3><p>Use for moving-out, key handover, inspection deadlines and landlord-ready property content.</p></article>
-            <article class="icon-card"><div class="huge-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 42V10h22v32M30 20h10v22M14 17h4M22 17h3M14 25h4M22 25h3M14 33h4M22 33h3M5 42h38"/></svg></div><h3>Business</h3><p>Use for letting agents, property managers, accommodation providers and commercial enquiries.</p></article>
-            <article class="icon-card"><div class="huge-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="31" rx="4"/><path d="M15 6v8M33 6v8M7 19h34m-25 9 5 5 11-11"/></svg></div><h3>Booking step</h3><p>Use around preferred dates, the four-step process and confirmed next-action guidance.</p></article>
+            <article class="icon-card"><div class="huge-icon"><i class="hgi-stroke hgi-clean" aria-hidden="true"></i></div><h3>Cleaning</h3><p>Use for end-of-tenancy hero introductions, cleaning checklists and finished-property sections.</p></article>
+            <article class="icon-card"><div class="huge-icon"><i class="hgi-stroke hgi-shield-01" aria-hidden="true"></i></div><h3>Protection</h3><p>Use for pest-control categories, prevention guidance and property-protection messages.</p></article>
+            <article class="icon-card"><div class="huge-icon"><i class="hgi-stroke hgi-home-03" aria-hidden="true"></i></div><h3>Property</h3><p>Use where the customer chooses a home, flat, rental property or commercial premises.</p></article>
+            <article class="icon-card"><div class="huge-icon"><i class="hgi-stroke hgi-key-01" aria-hidden="true"></i></div><h3>Handover</h3><p>Use for moving-out, key handover, inspection deadlines and landlord-ready property content.</p></article>
+            <article class="icon-card"><div class="huge-icon"><i class="hgi-stroke hgi-building-03" aria-hidden="true"></i></div><h3>Business</h3><p>Use for letting agents, property managers, accommodation providers and commercial enquiries.</p></article>
+            <article class="icon-card"><div class="huge-icon"><i class="hgi-stroke hgi-calendar-03" aria-hidden="true"></i></div><h3>Booking step</h3><p>Use around preferred dates, the four-step process and confirmed next-action guidance.</p></article>
           </div>
         </div>
       </section>
 
       <section class="section" id="faq-variations">
         <div class="shell">
-          <div class="section-head"><div><p class="eyebrow">07 — FAQ variations</p><h2>Slow, calm FAQ motion with chevrons</h2></div><p>Every variation uses 17px questions, a 560ms open/close transition and a rotating chevron instead of plus and minus symbols.</p></div>
+          <div class="section-head"><div><p class="eyebrow">07 — Final FAQ direction</p><h2>One simple bordered FAQ container</h2></div><p>The variations are removed. The final direction uses 17px questions, a 560ms open/close transition and one rotating chevron from Hugeicons.</p></div>
           <div class="faq-variants">
-            <article class="variant-card"><div class="variant-title"><strong>A · Minimal dividers</strong><small>Most editorial</small></div><div class="faq-demo"><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">What is end of tenancy cleaning?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-answer"><div>A detailed property-cleaning service arranged around the property and handover requirements.</div></div></div></div></article>
-            <article class="variant-card"><div class="variant-title"><strong>B · Soft grey rows</strong><small>Strong white contrast</small></div><div class="faq-demo soft"><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Can I enquire without a phone number?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-answer"><div>Yes. The enquiry can use a name and email address while the phone number remains optional.</div></div></div></div></article>
-            <article class="variant-card"><div class="variant-title"><strong>C · Bordered container</strong><small>Clean and controlled</small></div><div class="faq-demo boxed"><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">How do I request pest-control support?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-answer"><div>Choose the service and share the property, area and pest details you have noticed.</div></div></div></div></article>
-            <article class="variant-card"><div class="variant-title"><strong>D · Coral left accent</strong><small>More branded</small></div><div class="faq-demo accent"><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">What if I am unsure which pest I have?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-answer"><div>Describe what you have noticed and where it is occurring so the enquiry can be reviewed.</div></div></div></div></article>
-            <article class="variant-card" style="grid-column:1 / -1"><div class="variant-title"><strong>E · Compact two-column</strong><small>Desktop only; one column on mobile</small></div><div class="faq-demo compact"><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Are prices shown?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-answer"><div>Only confirmed pricing should be displayed.</div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Do I need an account?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="faq-answer"><div>No. Quote requests can be submitted as a guest.</div></div></div></div></article>
+            <article class="variant-card is-selected"><div class="variant-title"><strong>Simple container</strong><small>Selected</small></div><div class="faq-demo boxed"><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">What is end of tenancy cleaning?<span class="faq-icon" aria-hidden="true"><i class="hgi-stroke hgi-arrow-down-01"></i></span></button><div class="faq-answer"><div>A detailed property-cleaning service arranged around the property and handover requirements.</div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">What details should I provide?<span class="faq-icon" aria-hidden="true"><i class="hgi-stroke hgi-arrow-down-01"></i></span></button><div class="faq-answer"><div>Share the property type, bedroom count, postcode or area, preferred date and any useful access notes.</div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Do I need an account?<span class="faq-icon" aria-hidden="true"><i class="hgi-stroke hgi-arrow-down-01"></i></span></button><div class="faq-answer"><div>No. Quote requests can be submitted as a guest.</div></div></div></div></article>
           </div>
         </div>
       </section>
@@ -1487,7 +1488,7 @@
       <section class="section">
         <div class="shell">
           <div class="section-head"><div><p class="eyebrow">09 — Usage rules</p><h2>Rules that keep every page consistent</h2></div><p>These rules are fixed across the Warm Pearl, Action-led and layout directions selected in this round.</p></div>
-          <div class="usage-grid"><article class="usage-card"><strong>Coral</strong><p>Clean Coral carries the brand; solid CTAs use Action Coral with white text.</p></article><article class="usage-card"><strong>White surfaces</strong><p>White cards sit on Warm Pearl or grey canvases to create contrast.</p></article><article class="usage-card"><strong>Text</strong><p>Dark charcoal is used on white or light grey only, never on coral.</p></article><article class="usage-card"><strong>Depth</strong><p>Use borders, spacing and alternating surfaces. Never use shadows.</p></article><article class="usage-card"><strong>Mobile</strong><p>Multi-column patterns collapse to one column with 16px gutters.</p></article><article class="usage-card"><strong>Motion</strong><p>Buttons use a 360ms corner bloom; FAQ panels use a calmer 560ms transition.</p></article><article class="usage-card"><strong>Icons</strong><p>Use 72–96px line icons for sections and 18–22px icons inside controls.</p></article><article class="usage-card"><strong>Content</strong><p>Headings stay short; long SEO copy uses a 760px reading column.</p></article></div>
+          <div class="usage-grid"><article class="usage-card"><strong>Coral</strong><p>Clean Coral carries the brand; solid CTAs use Action Coral with white text.</p></article><article class="usage-card"><strong>White surfaces</strong><p>White cards sit on Warm Pearl or grey canvases to create contrast.</p></article><article class="usage-card"><strong>Text</strong><p>Dark charcoal is used on white or light grey only, never on coral.</p></article><article class="usage-card"><strong>Depth</strong><p>Use borders, spacing and alternating surfaces. Never use shadows.</p></article><article class="usage-card"><strong>Mobile</strong><p>Multi-column patterns collapse to one column with 16px gutters.</p></article><article class="usage-card"><strong>Motion</strong><p>Buttons start plain; the corner bloom sweeps across only while hovered. FAQs use 560ms motion.</p></article><article class="usage-card"><strong>Icons</strong><p>Use the Hugeicons stroke-rounded library at consistent 18–24px UI sizes.</p></article><article class="usage-card"><strong>Content</strong><p>Headings stay short; long SEO copy uses a 760px reading column.</p></article></div>
         </div>
       </section>
     </main>

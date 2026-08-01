@@ -8,10 +8,18 @@ const mimeTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
+  ".png": "image/png",
+};
+
+const routes = {
+  "/": "index.html",
+  "/end-of-tenancy-cleaning": "end-of-tenancy-cleaning.html",
+  "/end-of-tenancy-cleaning/": "end-of-tenancy-cleaning.html",
 };
 
 createServer((request, response) => {
-  const requestPath = request.url === "/" ? "index.html" : request.url.replace(/^\/+/, "");
+  const pathname = new URL(request.url, "http://127.0.0.1").pathname;
+  const requestPath = routes[pathname] ?? pathname.replace(/^\/+/, "");
   const filePath = join(root, requestPath);
 
   response.setHeader("Content-Type", mimeTypes[extname(filePath)] ?? "application/octet-stream");
