@@ -29,7 +29,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer-bottom">
         <span>© {new Date().getFullYear()} {siteConfig.name}</span>
-        <span>Property details reviewed before any arrangement</span>
+        <span>Property details reviewed before booking</span>
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 import { absoluteUrl, siteConfig } from "@/config/site";
-import type { ServiceFaq } from "@/content/end-of-tenancy";
+import type { ServiceFaq } from "@/content/service-types";
 
 export function organisationSchema() {
   return {

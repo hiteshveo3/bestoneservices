@@ -3,7 +3,7 @@ export const siteConfig = {
   url: "https://www.bestoneservices.co.uk",
   email: "info@bestoneservices.co.uk",
   description:
-    "End of tenancy cleaning and pest-control enquiry support for homes, rental properties and businesses.",
+    "End of tenancy cleaning and pest-control services for homes, rental properties and businesses.",
   locale: "en_GB",
 } as const;
 

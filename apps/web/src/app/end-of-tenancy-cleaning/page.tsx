@@ -53,9 +53,9 @@ export const metadata: Metadata = {
 };
 
 const trustItems = [
-  [Home03Icon, "Property-led enquiry", "The home and its requirements shape the response."],
+  [Home03Icon, "Property details", "The home and its cleaning requirements shape the quote."],
   [Calendar03Icon, "Preferred date", "Share the inspection or handover timing."],
-  [InformationCircleIcon, "Clear scope", "Confirm the work before it is arranged."],
+  [InformationCircleIcon, "Defined scope", "Confirm the requested work before booking."],
   [UserMultiple02Icon, "For property people", "Tenants, landlords, agents and managers."],
 ] as const;
 
@@ -82,11 +82,11 @@ export default function EndOfTenancyCleaningPage() {
           <p className="lead">{content.hero.summary}</p>
           <div className="button-row">
             <ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">
-              Get a Free Quote
+              Get Cleaning Quote
             </ButtonLink>
             <ButtonLink href="#included" secondary arrow={false}>See What&apos;s Included</ButtonLink>
           </div>
-          <p className="hero-note"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>No account required. Share the useful property details and receive a response about the next step.</span></p>
+          <p className="hero-note"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>No account required. Share the property details and preferred date to request a quote.</span></p>
         </div>
         <div className="hero-media">
           <Image
@@ -119,7 +119,7 @@ export default function EndOfTenancyCleaningPage() {
           <dl className="fact-grid">
             <div className="fact-card"><dt>Commonly requested by</dt><dd>Tenants, landlords, letting agents and property managers</dd></div>
             <div className="fact-card"><dt>Quote normally considers</dt><dd>Property size, condition, contents, access and timing</dd></div>
-            <div className="fact-card"><dt>Best next step</dt><dd>Share the property details and confirm the final scope</dd></div>
+            <div className="fact-card"><dt>What to share</dt><dd>Property details, handover timing and cleaning priorities</dd></div>
           </dl>
         </div>
       </section>
@@ -205,7 +205,7 @@ export default function EndOfTenancyCleaningPage() {
 
       <section className="section section-white" id="process" aria-labelledby="process-title">
         <div className="shell">
-          <div className="section-head"><div><p className="eyebrow">How it works</p><h2 id="process-title">A straightforward four-step process.</h2></div></div>
+          <div className="section-head"><div><p className="eyebrow">How it works</p><h2 id="process-title">From property details to booking in three steps.</h2></div></div>
           <div className="process-grid">
             {content.process.map(([title, text]) => <article className="process-card" key={title}><h3>{title}</h3><p>{text}</p></article>)}
           </div>
@@ -215,16 +215,16 @@ export default function EndOfTenancyCleaningPage() {
       <section className="section" aria-labelledby="quote-title">
         <div className="shell quote-band">
           <div><p className="eyebrow">Property-specific quote</p><h2 id="quote-title">A clearer quote starts with accurate details.</h2><p>Share the property type, bedroom count, furniture status, condition and requested work so the response can reflect the actual property.</p></div>
-          <ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">Get a Free Quote</ButtonLink>
+          <ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">Get Cleaning Quote</ButtonLink>
         </div>
       </section>
 
       <section className="section section-white" aria-labelledby="trust-clarity-title">
         <div className="shell">
-          <div className="section-head"><div><p className="eyebrow">Trust through clarity</p><h2 id="trust-clarity-title">Clear information before any arrangement.</h2></div><p>The property details, requested work and final scope are reviewed before the next step is agreed.</p></div>
+          <div className="section-head"><div><p className="eyebrow">Before you book</p><h2 id="trust-clarity-title">Know what is being quoted.</h2></div><p>The property details, requested work and final scope are reviewed before you book.</p></div>
           <div className="card-grid clarity-grid">
             <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={InformationCircleIcon} size={22} /></span><h3>Useful details first</h3><p>Property size, contents, condition, access and timing give the enquiry a clear starting point.</p></article>
-            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={22} /></span><h3>Scope before commitment</h3><p>The rooms, priorities, access and any separately requested work are discussed before an arrangement is made.</p></article>
+            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={22} /></span><h3>Scope before booking</h3><p>The rooms, priorities, access and any separately requested work are discussed before you book.</p></article>
             <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={UserMultiple02Icon} size={22} /></span><h3>Property-specific response</h3><p>The response starts with your property situation instead of forcing every enquiry into a fixed package.</p></article>
           </div>
         </div>
@@ -242,8 +242,9 @@ export default function EndOfTenancyCleaningPage() {
           eyebrow="Start your enquiry"
           title="Need the property ready for handover?"
           titleId="final-cta-title"
-          description="Share the property type, bedroom count, furniture status, postcode or area, preferred date and useful notes. We can then review the request and explain the next step."
+          description="Share the property type, bedroom count, furniture status, postcode or area, preferred date and useful notes so the job and quote can be discussed."
           href="/get-a-quote/?service=end-of-tenancy-cleaning"
+          buttonLabel="Get Cleaning Quote"
         />
       </section>
     </main>

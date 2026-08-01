@@ -6,12 +6,14 @@ export function FinalCta({
   description,
   href = "/get-a-quote/",
   titleId,
+  buttonLabel = "Get a Free Quote",
 }: {
   eyebrow: string;
   title: string;
   description: string;
   href?: string;
   titleId?: string;
+  buttonLabel?: string;
 }) {
   return (
     <div className="shell final-cta">
@@ -20,7 +22,7 @@ export function FinalCta({
         <h2 id={titleId}>{title}</h2>
         <p>{description}</p>
       </div>
-      <ButtonLink href={href}>Get a Free Quote</ButtonLink>
+      <ButtonLink href={href}>{buttonLabel}</ButtonLink>
     </div>
   );
 }

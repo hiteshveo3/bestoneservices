@@ -18,7 +18,7 @@ import { organisationSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Get a Free Quote",
   description:
-    "Request an end of tenancy cleaning or pest-control quote from Best One Services. Share the property details and receive a clear response about the next step.",
+    "Request an end of tenancy cleaning or pest-control quote from Best One Services. Choose the service and share the relevant property details.",
   alternates: { canonical: "/get-a-quote/" },
   openGraph: {
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     title: "Get a Free Quote | Best One Services",
     description:
-      "Choose a service, share the property details and request a clear response from Best One Services.",
+      "Choose cleaning or pest control and request a property-specific quote from Best One Services.",
     url: "/get-a-quote/",
   },
 };
@@ -40,7 +40,7 @@ const quoteFaqs = [
   {
     question: "Does my preferred date confirm availability?",
     answer:
-      "No. The date helps explain your timing, but availability and any final arrangement are confirmed separately.",
+      "No. The date helps explain your timing, but availability and any booking are confirmed separately.",
   },
   {
     question: "What if I am unsure which pest I have?",
@@ -50,15 +50,15 @@ const quoteFaqs = [
   {
     question: "How is my service area checked?",
     answer:
-      "Enter the property postcode or area in the form. Whether the request can be supported in that location can then be confirmed in the response.",
+      "Enter the property postcode or area in the form. Whether that location is covered can then be confirmed.",
   },
 ] as const;
 
 const quoteTrustItems = [
-  [Home03Icon, "Property-led", "The property and service details shape the request."],
-  [Location01Icon, "Area included", "A postcode or area helps check the location."],
+  [Home03Icon, "Property details", "The property and service details shape the quote request."],
+  [Location01Icon, "Postcode supplied", "A postcode or area helps check the location."],
   [Calendar03Icon, "Timing shared", "A preferred date explains the required timing."],
-  [Mail01Icon, "Direct response", "The reply uses the contact details you provide."],
+  [Mail01Icon, "Reply by email", "The reply uses the contact details you provide."],
 ] as const;
 
 export default async function GetAQuotePage({

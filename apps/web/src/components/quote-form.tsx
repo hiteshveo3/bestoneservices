@@ -96,11 +96,10 @@ export function QuoteForm({
 
   return (
     <form className="quote-form" action="/api/enquiries/" method="post" onSubmit={handleSubmit} noValidate>
-      <div className="form-steps" aria-label="Quote request steps">
-        <span><b>1</b> Service</span>
-        <span><b>2</b> Property</span>
-        <span><b>3</b> Contact</span>
-        <span><b>4</b> Review</span>
+      <div className="form-context" aria-live="polite">
+        <p>{service === "end-of-tenancy-cleaning" ? "Cleaning quote" : "Pest-control enquiry"}</p>
+        <h3>{service === "end-of-tenancy-cleaning" ? "Tell us about the rental property." : "Tell us what you have noticed."}</h3>
+        <span>{service === "end-of-tenancy-cleaning" ? "Property size, furniture and timing help shape the quote." : "Pest signs, affected areas and timing help explain the problem."}</span>
       </div>
 
       {state.status === "error" ? (
@@ -268,7 +267,11 @@ export function QuoteForm({
         <FieldError field="privacyConsent" errors={errors} />
         <p className="privacy-note">Your details are collected only for this enquiry workflow. Do not include payment information or sensitive personal data.</p>
         <button className="button form-submit" type="submit" disabled={state.status === "submitting"}>
-          {state.status === "submitting" ? "Sending your enquiry…" : "Get a Free Quote"}
+          {state.status === "submitting"
+            ? "Sending your enquiry…"
+            : service === "end-of-tenancy-cleaning"
+              ? "Get Cleaning Quote"
+              : "Report a Pest Problem"}
         </button>
       </div>
     </form>

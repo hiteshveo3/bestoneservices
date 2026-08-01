@@ -50,6 +50,22 @@ export const pageRegistry = z.array(pageTargetSchema).parse([
     priority: 0.9,
   },
   {
+    path: "/pest-control/",
+    pageType: "pest",
+    primaryKeyword: "pest control services",
+    secondaryKeywords: [
+      "home pest control",
+      "commercial pest control",
+      "rat mice and bed bug control",
+    ],
+    searchIntent: "commercial",
+    status: "published",
+    indexable: true,
+    image: "/images/pest-inspection.jpg",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  {
     path: "/get-a-quote/",
     pageType: "contact",
     primaryKeyword: "cleaning and pest control quote",

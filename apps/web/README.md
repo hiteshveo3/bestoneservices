@@ -6,6 +6,7 @@ Production Next.js App Router foundation for the Best One Services website.
 
 - `/` — home page
 - `/end-of-tenancy-cleaning/` — approved cleaning-service direction
+- `/pest-control/` — production pest-control service page
 - `/get-a-quote/` — accessible conditional quote form
 - `/api/enquiries` — validated, server-only Firestore submission endpoint
 - `/sitemap.xml` — published routes only
