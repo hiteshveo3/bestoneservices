@@ -1,5 +1,5 @@
-import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
+import { DecorativeIcon } from "@/components/decorative-icon";
 
 export function FaqList({
   faqs,
@@ -13,7 +13,7 @@ export function FaqList({
           <summary>
             <span>{faq.question}</span>
             <span className="faq-chevron" aria-hidden="true">
-              <HugeiconsIcon icon={ArrowDown01Icon} size={18} />
+              <DecorativeIcon icon={ArrowDown01Icon} size={18} />
             </span>
           </summary>
           <div className="faq-answer"><p>{faq.answer}</p></div>

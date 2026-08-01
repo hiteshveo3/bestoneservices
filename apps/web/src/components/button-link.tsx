@@ -1,6 +1,6 @@
-import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
+import { DecorativeIcon } from "@/components/decorative-icon";
 
 export function ButtonLink({
   href,
@@ -19,7 +19,7 @@ export function ButtonLink({
     return (
       <a className={className} href={href}>
         <span>{children}</span>
-        {arrow ? <HugeiconsIcon icon={ArrowRight02Icon} size={19} /> : null}
+        {arrow ? <DecorativeIcon icon={ArrowRight02Icon} size={19} /> : null}
       </a>
     );
   }
@@ -27,7 +27,7 @@ export function ButtonLink({
   return (
     <Link className={className} href={href}>
       <span>{children}</span>
-      {arrow ? <HugeiconsIcon icon={ArrowRight02Icon} size={19} /> : null}
+      {arrow ? <DecorativeIcon icon={ArrowRight02Icon} size={19} /> : null}
     </Link>
   );
 }

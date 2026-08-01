@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const pageTargetSchema = z.object({
   path: z.string().startsWith("/"),
-  pageType: z.enum(["home", "service", "pest", "location", "guide", "comparison"]),
+  pageType: z.enum(["home", "service", "pest", "location", "guide", "comparison", "contact"]),
   primaryKeyword: z.string().min(3),
   secondaryKeywords: z.array(z.string()).default([]),
   searchIntent: z.enum(["commercial", "informational", "local"]),
@@ -48,6 +48,17 @@ export const pageRegistry = z.array(pageTargetSchema).parse([
     image: "/images/end-of-tenancy-hero.jpg",
     changeFrequency: "monthly",
     priority: 0.9,
+  },
+  {
+    path: "/get-a-quote/",
+    pageType: "contact",
+    primaryKeyword: "cleaning and pest control quote",
+    secondaryKeywords: ["end of tenancy cleaning quote", "pest control quote"],
+    searchIntent: "commercial",
+    status: "published",
+    indexable: true,
+    changeFrequency: "yearly",
+    priority: 0.8,
   },
 ]);
 

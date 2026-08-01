@@ -24,6 +24,7 @@ export function SiteFooter() {
         </div>
         <div>
           <h2>Contact</h2>
+          <Link href="/get-a-quote/">Get a Free Quote</Link>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </div>
       </div>

@@ -14,7 +14,7 @@ export function SiteHeader() {
           <Link href="/#services">Services</Link>
           <Link href="/#how-it-works">How it works</Link>
           <Link href="/#faqs">FAQs</Link>
-          <ButtonLink href="mailto:info@bestoneservices.co.uk?subject=Free%20Quote%20Request">
+          <ButtonLink href="/get-a-quote/">
             Get a Free Quote
           </ButtonLink>
         </nav>
@@ -25,7 +25,7 @@ export function SiteHeader() {
             <Link href="/end-of-tenancy-cleaning/">End of tenancy cleaning</Link>
             <Link href="/#services">Services</Link>
             <Link href="/#faqs">FAQs</Link>
-            <a href="mailto:info@bestoneservices.co.uk?subject=Free%20Quote%20Request">Get a Free Quote</a>
+            <Link href="/get-a-quote/">Get a Free Quote</Link>
           </nav>
         </details>
       </div>

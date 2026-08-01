@@ -15,7 +15,7 @@ import {
   SparklesIcon,
   UserMultiple02Icon,
 } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { DecorativeIcon as HugeiconsIcon } from "@/components/decorative-icon";
 import { ButtonLink } from "@/components/button-link";
 import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
@@ -80,8 +80,8 @@ export default function EndOfTenancyCleaningPage() {
           <h1 id="service-title">{content.hero.heading}</h1>
           <p className="lead">{content.hero.summary}</p>
           <div className="button-row">
-            <ButtonLink href={`mailto:${siteConfig.email}?subject=End%20of%20Tenancy%20Cleaning%20Quote`}>
-              Get a Cleaning Quote
+            <ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">
+              Get a Free Quote
             </ButtonLink>
             <ButtonLink href="#included" secondary arrow={false}>See What&apos;s Included</ButtonLink>
           </div>
@@ -93,7 +93,7 @@ export default function EndOfTenancyCleaningPage() {
             alt="A professional cleaner finishing a bright rental flat before handover"
             width={1693}
             height={929}
-            priority
+            preload
             sizes="(max-width: 1020px) 90vw, 500px"
           />
         </div>
@@ -180,11 +180,11 @@ export default function EndOfTenancyCleaningPage() {
               <caption>End of tenancy cleaning enquiry guide</caption>
               <thead><tr><th>Area or item</th><th>Core enquiry</th><th>Confirm separately</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Kitchen and bathrooms</th><td>Discuss as core areas</td><td>Condition can affect scope</td></tr>
-                <tr><th scope="row">Bedrooms and living spaces</th><td>Discuss as core areas</td><td>Furniture and access</td></tr>
-                <tr><th scope="row">Floors and internal surfaces</th><td>Discuss as core areas</td><td>Material-specific treatment</td></tr>
-                <tr><th scope="row">Oven, carpets and upholstery</th><td>Mention in the enquiry</td><td>Confirm price and availability</td></tr>
-                <tr><th scope="row">Specialist or external work</th><td>Mention in the enquiry</td><td>Confirm price and availability</td></tr>
+                <tr><th scope="row">Kitchen and bathrooms</th><td data-label="Core enquiry">Discuss as core areas</td><td data-label="Confirm separately">Condition can affect scope</td></tr>
+                <tr><th scope="row">Bedrooms and living spaces</th><td data-label="Core enquiry">Discuss as core areas</td><td data-label="Confirm separately">Furniture and access</td></tr>
+                <tr><th scope="row">Floors and internal surfaces</th><td data-label="Core enquiry">Discuss as core areas</td><td data-label="Confirm separately">Material-specific treatment</td></tr>
+                <tr><th scope="row">Oven, carpets and upholstery</th><td data-label="Core enquiry">Mention in the enquiry</td><td data-label="Confirm separately">Confirm price and availability</td></tr>
+                <tr><th scope="row">Specialist or external work</th><td data-label="Core enquiry">Mention in the enquiry</td><td data-label="Confirm separately">Confirm price and availability</td></tr>
               </tbody>
             </table>
           </div>
@@ -214,7 +214,18 @@ export default function EndOfTenancyCleaningPage() {
       <section className="section" aria-labelledby="quote-title">
         <div className="shell quote-band">
           <div><p className="eyebrow">Property-specific quote</p><h2 id="quote-title">Clear pricing starts with accurate details.</h2><p>Final prices will only be published when confirmed by the business. Until then, the property type, bedroom count, condition and requested work are used to discuss a tailored quote.</p></div>
-          <ButtonLink href={`mailto:${siteConfig.email}?subject=End%20of%20Tenancy%20Cleaning%20Quote`}>Request a Quote</ButtonLink>
+          <ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">Get a Free Quote</ButtonLink>
+        </div>
+      </section>
+
+      <section className="section section-white" aria-labelledby="trust-clarity-title">
+        <div className="shell">
+          <div className="section-head"><div><p className="eyebrow">Trust through clarity</p><h2 id="trust-clarity-title">Clear information before any arrangement.</h2></div><p>We do not publish invented prices, ratings or guarantees. The property details and final scope should be reviewed first.</p></div>
+          <div className="card-grid clarity-grid">
+            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={InformationCircleIcon} size={22} /></span><h3>Verified facts only</h3><p>Prices, coverage and service claims are shown only after they are confirmed by the business.</p></article>
+            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={22} /></span><h3>Scope before commitment</h3><p>The rooms, priorities, access and any separately requested work are discussed before an arrangement is made.</p></article>
+            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={UserMultiple02Icon} size={22} /></span><h3>Your property leads</h3><p>The response starts with the real property situation instead of forcing every enquiry into a fixed package.</p></article>
+          </div>
         </div>
       </section>
 
@@ -228,7 +239,7 @@ export default function EndOfTenancyCleaningPage() {
       <section className="section section-white" id="quote" aria-labelledby="final-cta-title">
         <div className="shell final-cta">
           <div><p className="eyebrow">Start your enquiry</p><h2 id="final-cta-title">Need the property ready for handover?</h2><p>Share the property type, bedroom count, postcode or area, preferred date and useful notes. We can then review the request and explain the next step.</p></div>
-          <div className="contact-actions"><ButtonLink href={`mailto:${siteConfig.email}?subject=End%20of%20Tenancy%20Cleaning%20Quote`}>Request Your Quote</ButtonLink><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div>
+          <div className="contact-actions"><ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">Get a Free Quote</ButtonLink><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div>
         </div>
       </section>
     </main>

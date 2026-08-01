@@ -6,6 +6,8 @@ Production Next.js App Router foundation for the Best One Services website.
 
 - `/` — home page
 - `/end-of-tenancy-cleaning/` — approved cleaning-service direction
+- `/get-a-quote/` — accessible conditional quote form
+- `/api/enquiries` — validated, server-only Firestore submission endpoint
 - `/sitemap.xml` — published routes only
 - `/robots.txt` — crawler controls
 - `/llms.txt` — concise, optional AI discovery summary
@@ -18,6 +20,10 @@ npm run dev
 ```
 
 Open `http://localhost:3000`.
+
+Copy `.env.example` to `.env.local` only when Firebase credentials are available. Never commit a service-account key.
+
+The form uses the Firebase Admin SDK on the server and writes validated records to the `enquiries` collection. In Firebase App Hosting or another Google environment, Application Default Credentials are preferred. For local development, use `GOOGLE_APPLICATION_CREDENTIALS` or the three explicit `FIREBASE_*` values shown in `.env.example`.
 
 ## Verification
 
@@ -40,7 +46,7 @@ npm audit --omit=dev
 
 ## SEO and AI-search rules
 
-- Only routes in `publishedRoutes` appear in the sitemap.
+- Only published, indexable records in `src/content/page-registry.ts` appear in the sitemap.
 - Unverified area/service combinations must not be generated or indexed.
 - Structured data must match visible page text.
 - OAI-SearchBot is allowed for ChatGPT Search discovery.
