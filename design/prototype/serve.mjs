@@ -8,6 +8,8 @@ const mimeTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
   ".png": "image/png",
 };
 
@@ -15,6 +17,8 @@ const routes = {
   "/": "index.html",
   "/end-of-tenancy-cleaning": "end-of-tenancy-cleaning.html",
   "/end-of-tenancy-cleaning/": "end-of-tenancy-cleaning.html",
+  "/guides": "guides.html",
+  "/guides/": "guides.html",
 };
 
 createServer((request, response) => {
