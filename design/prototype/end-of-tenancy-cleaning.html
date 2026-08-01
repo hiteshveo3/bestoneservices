@@ -14,14 +14,15 @@
         --coral: #667b5b;
         --action: #5d7353;
         --action-hover: #4e6246;
-        --coral-soft: #e9eee5;
+        --coral-soft: #f1ece4;
         --canvas: #f8f3ea;
         --surface: #ffffff;
         --surface-alt: #efe4d2;
         --sage: #667b5b;
-        --sage-soft: #e9eee5;
+        --sage-soft: #f1ece4;
         --sand: #d8b981;
         --sand-soft: #f2e8d7;
+        --label-bg: #ead7b5;
         --text: #2d2c2a;
         --muted: #716e69;
         --border: #ded3c2;
@@ -121,10 +122,14 @@
 
       .eyebrow {
         display: flex;
+        width: max-content;
         align-items: center;
         gap: 8px;
-        margin-bottom: 12px;
-        color: var(--coral);
+        margin-bottom: 14px;
+        padding: 7px 11px;
+        color: var(--action-hover);
+        background: var(--label-bg);
+        border-radius: 12px 4px 12px 4px;
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.08em;
@@ -286,11 +291,36 @@
       }
 
       .hero {
+        position: relative;
         display: grid;
         grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
         gap: 54px;
         align-items: center;
         padding: 54px 0 52px;
+        isolation: isolate;
+      }
+
+      .hero::before {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background:
+          linear-gradient(90deg, var(--canvas) 0%, transparent 13%, transparent 87%, var(--canvas) 100%),
+          linear-gradient(180deg, var(--canvas) 0%, transparent 14%, transparent 86%, var(--canvas) 100%),
+          radial-gradient(circle at 74% 32%, rgba(216, 185, 129, 0.23), transparent 28%),
+          radial-gradient(circle at 18% 72%, rgba(93, 115, 83, 0.1), transparent 23%),
+          radial-gradient(circle, rgba(93, 115, 83, 0.14) 1px, transparent 1.35px);
+        background-size: auto, auto, auto, auto, 24px 24px;
+        content: "";
+        pointer-events: none;
+      }
+
+      .hero > * {
+        position: relative;
+        z-index: 1;
       }
 
       .hero-copy {
@@ -629,6 +659,7 @@
 
       .pricing-head .eyebrow {
         justify-content: center;
+        margin-inline: auto;
       }
 
       .pricing-grid {
@@ -752,8 +783,8 @@
         width: max-content;
         margin: 0 auto 12px;
         padding: 7px 12px;
-        color: var(--action);
-        background: var(--coral-soft);
+        color: var(--action-hover);
+        background: var(--label-bg);
         border-radius: 12px 4px 12px 4px;
       }
 
@@ -845,9 +876,13 @@
       }
 
       .final-cta h2,
-      .final-cta .eyebrow,
       .final-cta p {
         color: #ffffff;
+      }
+
+      .final-cta .eyebrow {
+        color: var(--action-hover);
+        background: var(--label-bg);
       }
 
       .final-cta p {
