@@ -146,11 +146,16 @@
         font-size: 18px;
       }
 
-      .hero .eyebrow,
       .faq-heading .eyebrow {
         color: #ffffff;
         background: var(--action);
         border-color: var(--action);
+      }
+
+      .hero .eyebrow {
+        color: var(--action-hover);
+        background: var(--surface);
+        border-color: color-mix(in srgb, var(--action) 28%, var(--border));
       }
 
       .lead {
@@ -269,8 +274,8 @@
 
       .button.secondary:hover {
         color: var(--action);
-        background: var(--coral-soft);
-        border-color: var(--coral-soft);
+        background: var(--surface);
+        border-color: var(--action);
       }
 
       .button i {
@@ -1393,7 +1398,7 @@
             "@id": "https://www.bestoneservices.co.uk/#organization",
             "name": "Best One Services",
             "url": "https://www.bestoneservices.co.uk/",
-            "email": "hello@bestoneservices.co.uk"
+            "email": "info@bestoneservices.co.uk"
           },
           {
             "@type": "WebPage",
@@ -1750,7 +1755,7 @@
       <section class="section white" id="quote" data-section="15">
         <div class="shell final-cta reveal">
           <div><p class="eyebrow">Start your enquiry</p><h2>Need the property ready for handover?</h2><p>Start with the property type, bedroom count, postcode or area, preferred date and a few useful notes. Best One Services can then review the request and explain the next step.</p></div>
-          <div class="final-cta-actions"><a class="button" href="mailto:hello@bestoneservices.co.uk?subject=End%20of%20Tenancy%20Cleaning%20Quote"><span>Request Your Quote</span><i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a><a class="final-cta-email" href="mailto:hello@bestoneservices.co.uk">hello@bestoneservices.co.uk</a></div>
+          <div class="final-cta-actions"><a class="button" href="mailto:info@bestoneservices.co.uk?subject=End%20of%20Tenancy%20Cleaning%20Quote"><span>Request Your Quote</span><i class="hgi-stroke hgi-arrow-right-02" aria-hidden="true"></i></a><a class="final-cta-email" href="mailto:info@bestoneservices.co.uk">info@bestoneservices.co.uk</a></div>
         </div>
       </section>
     </main>
