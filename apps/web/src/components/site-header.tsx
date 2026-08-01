@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
+import { siteConfig } from "@/config/site";
 import { primaryNavigation } from "@/config/site-navigation";
 
 export function SiteHeader() {
@@ -14,6 +15,7 @@ export function SiteHeader() {
           {primaryNavigation.map((item) => (
             <Link href={item.href} key={item.href}>{item.label}</Link>
           ))}
+          <a className="header-phone" href={siteConfig.phoneHref}>Call 24/7</a>
           <ButtonLink href="/get-a-quote/">
             Get a Free Quote
           </ButtonLink>
@@ -25,6 +27,7 @@ export function SiteHeader() {
             {primaryNavigation.map((item) => (
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
+            <a href={siteConfig.phoneHref}>Call 24/7: {siteConfig.phone}</a>
             <Link href="/get-a-quote/">Get a Free Quote</Link>
           </nav>
         </details>

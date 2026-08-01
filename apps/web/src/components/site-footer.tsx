@@ -24,7 +24,10 @@ export function SiteFooter() {
         <div>
           <h2>Contact</h2>
           <Link href="/get-a-quote/">Get a Free Quote</Link>
+          <a href={siteConfig.phoneHref}>{siteConfig.phone}</a>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          <span>{siteConfig.openingHours}</span>
+          <span>{siteConfig.address.streetAddress}, {siteConfig.address.addressLocality} {siteConfig.address.postalCode}</span>
         </div>
       </div>
       <div className="shell footer-bottom">

@@ -3,11 +3,23 @@ import type { ServiceFaq } from "@/content/service-types";
 
 export function organisationSchema() {
   return {
-    "@type": "Organization",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
     email: siteConfig.email,
+    telephone: siteConfig.phone,
+    address: {
+      "@type": "PostalAddress",
+      ...siteConfig.address,
+    },
+    openingHours: "Mo-Su 00:00-23:59",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: siteConfig.googleRating,
+      reviewCount: siteConfig.googleReviewCount,
+      bestRating: "5",
+    },
   };
 }
 

@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   Bug01Icon,
+  Certificate01Icon,
   CheckmarkCircle02Icon,
   CleanIcon,
-  Home03Icon,
+  Clock01Icon,
   InformationCircleIcon,
-  Shield01Icon,
+  Location01Icon,
+  StarIcon,
 } from "@hugeicons/core-free-icons";
 import { ButtonLink } from "@/components/button-link";
 import { DecorativeIcon as HugeiconsIcon } from "@/components/decorative-icon";
@@ -79,10 +81,28 @@ const homeFaqs = [
 ] as const;
 
 const trustItems = [
-  [CleanIcon, "Move-out cleaning", "Property cleaning planned around handover details."],
-  [Bug01Icon, "Pest enquiries", "Report common pest signs even when the type is unknown."],
-  [Home03Icon, "Different properties", "Homes, rentals and business premises can be described."],
-  [Shield01Icon, "No account required", "Request a quote as a guest without creating a profile."],
+  [StarIcon, `${siteConfig.googleRating} on Google`, `${siteConfig.googleReviewCount} customer reviews`],
+  [Clock01Icon, "Open 24 hours", "Call when you need help"],
+  [Certificate01Icon, "Licensed & insured", "Professional service standards"],
+  [Location01Icon, "Based in Ilford", "Serving London properties"],
+] as const;
+
+const reviews = [
+  {
+    name: "ar shanto -1427",
+    text: "The team was professional, punctual, and paid great attention to detail.",
+    label: "Cleaning review on Google",
+  },
+  {
+    name: "Sanjogita Prahladi",
+    text: "The appointment was arranged quickly and the technician was efficient, friendly and professional.",
+    label: "Pest control review on Google",
+  },
+  {
+    name: "Akhtar Ayub",
+    text: "The service was extremely good and the price was very reasonable.",
+    label: "Mouse control review on Google",
+  },
 ] as const;
 
 const jsonLd = {
@@ -124,7 +144,7 @@ export default function HomePage() {
             <ButtonLink href="/get-a-quote/">Get My Free Quote</ButtonLink>
             <ButtonLink href="/end-of-tenancy-cleaning/" secondary arrow={false}>View Cleaning Service</ButtonLink>
           </div>
-          <p className="hero-note"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>One form for cleaning or pest control. No account required.</span></p>
+          <p className="hero-note"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>Open 24 hours. Call <a href={siteConfig.phoneHref}>{siteConfig.phone}</a> or request a quote online.</span></p>
         </div>
         <div className="hero-media hero-media-dual" aria-label="Cleaning and pest-control services">
           <figure>
@@ -188,6 +208,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section section-alt" aria-labelledby="cleaning-detail-title">
+        <div className="shell feature-split">
+          <div className="feature-media">
+            <Image src="/images/cleaning-service.jpg" alt="A clean, bright kitchen prepared for a property handover" width={1536} height={1024} sizes="(max-width: 1020px) 100vw, 48vw" />
+          </div>
+          <div className="feature-copy">
+            <p className="eyebrow"><HugeiconsIcon icon={CleanIcon} size={18} />Cleaning for handover</p>
+            <h2 id="cleaning-detail-title">A detailed clean around your move-out.</h2>
+            <p>Tell us the property type, bedroom count, furnishing status and the date keys need to be handed over. We use those details to understand what needs attention before the next stage of the tenancy.</p>
+            <ul className="clean-list feature-list">
+              <li><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>Kitchens, bathrooms, bedrooms and living spaces</span></li>
+              <li><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>Optional oven, carpet or upholstery requirements</span></li>
+              <li><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>Useful notes for access, parking or inspection deadlines</span></li>
+            </ul>
+            <ButtonLink href="/end-of-tenancy-cleaning/">Explore Cleaning Service</ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-white" aria-labelledby="pest-detail-title">
+        <div className="shell feature-split feature-reverse">
+          <div className="feature-copy">
+            <p className="eyebrow"><HugeiconsIcon icon={Bug01Icon} size={18} />Pest-control support</p>
+            <h2 id="pest-detail-title">Tell us what you have noticed.</h2>
+            <p>You do not need to diagnose the issue first. Describe the signs, affected rooms, property type and when the problem started, and our team can discuss the right next step.</p>
+            <ul className="clean-list feature-list">
+              <li><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>Rat, mice, bed bug, cockroach, ant, flea, wasp and squirrel enquiries</span></li>
+              <li><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>Homes, rental properties and business premises</span></li>
+              <li><HugeiconsIcon icon={CheckmarkCircle02Icon} size={18} /><span>Advice designed around the reported issue and property details</span></li>
+            </ul>
+            <ButtonLink href="/pest-control/">Explore Pest Control</ButtonLink>
+          </div>
+          <div className="feature-media">
+            <Image src="/images/pest-inspection.jpg" alt="A pest-control professional inspecting a property" width={1723} height={913} sizes="(max-width: 1020px) 100vw, 48vw" />
+          </div>
+        </div>
+      </section>
+
       <section className="section" id="how-it-works" aria-labelledby="home-process-title">
         <div className="shell">
           <div className="section-head"><div><p className="eyebrow">How it works</p><h2 id="home-process-title">From property details to a quote in three steps.</h2></div></div>
@@ -207,6 +265,55 @@ export default function HomePage() {
             <p>Add the postcode or area to the quote form. Coverage and availability can then be confirmed for that request.</p>
           </div>
           <ButtonLink href="/get-a-quote/#postcode">Check Availability</ButtonLink>
+        </div>
+      </section>
+
+      <section className="section section-alt" aria-labelledby="reviews-title">
+        <div className="shell">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow"><HugeiconsIcon icon={StarIcon} size={18} />Customer reviews</p>
+              <h2 id="reviews-title">Rated {siteConfig.googleRating} from {siteConfig.googleReviewCount} Google reviews.</h2>
+            </div>
+            <p>Feedback from customers who used Bestone Pest Control Services London and Best One Clean Services Ltd.</p>
+          </div>
+          <div className="review-grid">
+            {reviews.map((review) => (
+              <article className="review-card" key={review.name}>
+                <div className="review-stars" aria-label="5 out of 5 stars"><HugeiconsIcon icon={StarIcon} size={17} /><HugeiconsIcon icon={StarIcon} size={17} /><HugeiconsIcon icon={StarIcon} size={17} /><HugeiconsIcon icon={StarIcon} size={17} /><HugeiconsIcon icon={StarIcon} size={17} /></div>
+                <blockquote>“{review.text}”</blockquote>
+                <p><strong>{review.name}</strong><span>{review.label}</span></p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-white" id="location" aria-labelledby="location-title">
+        <div className="shell location-layout">
+          <div className="location-copy">
+            <p className="eyebrow"><HugeiconsIcon icon={Location01Icon} size={18} />Visit or call us</p>
+            <h2 id="location-title">Based in Ilford, serving London properties.</h2>
+            <p>Call our team any time, request a quote online, or use the map to find our Clements Road address.</p>
+            <address>
+              <strong>Bestone Pest Control Services London</strong>
+              <span>{siteConfig.address.streetAddress}, {siteConfig.address.addressLocality} {siteConfig.address.postalCode}, United Kingdom</span>
+              <a href={siteConfig.phoneHref}>{siteConfig.phone}</a>
+              <span>{siteConfig.openingHours}</span>
+            </address>
+            <div className="button-row">
+              <ButtonLink href={siteConfig.phoneHref} arrow={false}>Call 24/7</ButtonLink>
+              <ButtonLink href="/get-a-quote/" secondary arrow={false}>Request a Quote</ButtonLink>
+            </div>
+          </div>
+          <iframe
+            className="location-map"
+            title="Bestone Pest Control Services London location map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.6065126688!2d-0.431249722975234!3d51.528607004464966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a7d80d5b802f%3A0x81c2f6f8cfbc3a12!2sBestone%20Pest%20Control%20Services%20London!5e0!3m2!1sen!2s!4v1785604253745!5m2!1sen!2s"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         </div>
       </section>
 
