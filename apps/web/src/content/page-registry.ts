@@ -1,0 +1,56 @@
+import { z } from "zod";
+
+const pageTargetSchema = z.object({
+  path: z.string().startsWith("/"),
+  pageType: z.enum(["home", "service", "pest", "location", "guide", "comparison"]),
+  primaryKeyword: z.string().min(3),
+  secondaryKeywords: z.array(z.string()).default([]),
+  searchIntent: z.enum(["commercial", "informational", "local"]),
+  status: z.enum(["seed", "researched", "approved", "published"]),
+  indexable: z.boolean(),
+  image: z.string().startsWith("/").optional(),
+  changeFrequency: z.enum(["daily", "weekly", "monthly", "yearly"]),
+  priority: z.number().min(0).max(1),
+});
+
+export type PageTarget = z.infer<typeof pageTargetSchema>;
+
+/*
+ * This registry is the source of truth for indexable pages. Seed terms are
+ * directional only until keyword research and the matching business facts
+ * have been approved. Draft or unverified pages must not enter the sitemap.
+ */
+export const pageRegistry = z.array(pageTargetSchema).parse([
+  {
+    path: "/",
+    pageType: "home",
+    primaryKeyword: "end of tenancy cleaning and pest control",
+    secondaryKeywords: ["property cleaning and pest control services"],
+    searchIntent: "commercial",
+    status: "published",
+    indexable: true,
+    image: "/images/end-of-tenancy-hero.jpg",
+    changeFrequency: "weekly",
+    priority: 1,
+  },
+  {
+    path: "/end-of-tenancy-cleaning/",
+    pageType: "service",
+    primaryKeyword: "end of tenancy cleaning",
+    secondaryKeywords: [
+      "move out cleaning",
+      "end of tenancy cleaners",
+      "rental property cleaning",
+    ],
+    searchIntent: "commercial",
+    status: "published",
+    indexable: true,
+    image: "/images/end-of-tenancy-hero.jpg",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+]);
+
+export const publishedPageTargets = pageRegistry.filter(
+  (page) => page.status === "published" && page.indexable,
+);
