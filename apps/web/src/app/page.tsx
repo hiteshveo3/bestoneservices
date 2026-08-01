@@ -17,6 +17,7 @@ import {
 import { ButtonLink } from "@/components/button-link";
 import { DecorativeIcon as HugeiconsIcon } from "@/components/decorative-icon";
 import { FaqList } from "@/components/faq-list";
+import { FinalCta } from "@/components/final-cta";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/config/site";
 import { organisationSchema, websiteSchema } from "@/lib/structured-data";
@@ -77,16 +78,16 @@ const homeFaqs = [
       "No. A preferred date provides useful timing information, but availability and the final arrangement must be confirmed separately.",
   },
   {
-    question: "Are fixed prices or guarantees shown on the website?",
+    question: "How is the quote reviewed?",
     answer:
-      "Only confirmed business information should be published. Until prices, coverage or service commitments are verified, the website guides customers towards a property-specific enquiry.",
+      "The response is based on the service selected and the property, area, timing and condition details you provide. The scope and suitable next step can then be discussed clearly.",
   },
 ] as const;
 
 const trustItems = [
   [Home03Icon, "Property-led", "The real property situation shapes the enquiry."],
   [InformationCircleIcon, "Clear details", "Only the useful information is requested."],
-  [Shield01Icon, "Verified claims", "Unconfirmed prices and promises stay unpublished."],
+  [Shield01Icon, "Clear scope", "Requirements are discussed before any arrangement."],
   [Mail01Icon, "Direct response", "The contact details provided are used for the reply."],
 ] as const;
 
@@ -128,7 +129,7 @@ export default function HomePage() {
     <main id="main-content">
       <JsonLd data={jsonLd} />
 
-      <section className="shell hero home-hero" aria-labelledby="home-title">
+      <section className="shell hero" aria-labelledby="home-title">
         <div className="hero-copy">
           <p className="eyebrow">Cleaning and pest-control support</p>
           <h1 id="home-title">End of tenancy cleaning and pest control, made simple.</h1>
@@ -221,20 +222,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-alt" aria-labelledby="clarity-title">
+      <section className="section section-white" aria-labelledby="clarity-title">
         <div className="shell">
           <div className="section-head"><div><p className="eyebrow">Why this process</p><h2 id="clarity-title">Better decisions start with clearer information.</h2></div></div>
           <div className="card-grid clarity-grid">
             <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={InformationCircleIcon} size={22} /></span><h3>Clear service categories</h3><p>Cleaning and pest-control enquiries stay separate, so visitors can provide more relevant details.</p></article>
             <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={Home03Icon} size={22} /></span><h3>Property-specific context</h3><p>The property type, contents, access and timing help explain the request before any arrangement.</p></article>
-            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={Shield01Icon} size={22} /></span><h3>Verified information only</h3><p>Unconfirmed prices, reviews, coverage and credentials are not presented as established facts.</p></article>
+            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={Shield01Icon} size={22} /></span><h3>Scope before arrangement</h3><p>The requested work and any items needing separate confirmation are discussed before you proceed.</p></article>
           </div>
         </div>
       </section>
 
-      <section className="section section-white" aria-labelledby="quote-details-title">
+      <section className="section" aria-labelledby="quote-details-title">
         <div className="shell split">
-          <div className="reading"><p className="eyebrow">Quote accuracy</p><h2 id="quote-details-title">A few useful details make the response clearer.</h2><p>The quote form adapts to the selected service. Cleaning asks for bedroom information; pest control lets you describe the pest type only when known.</p><ButtonLink href="/get-a-quote/">Get a Free Quote</ButtonLink></div>
+          <div className="reading"><p className="eyebrow">Quote accuracy</p><h2 id="quote-details-title">A few useful details make the response clearer.</h2><p>The quote form adapts to the selected service. Cleaning asks for bedroom and furniture information; pest control lets you describe the pest type only when known.</p><ButtonLink href="/get-a-quote/">Get a Free Quote</ButtonLink></div>
           <aside className="panel"><span className="icon-box"><HugeiconsIcon icon={UserMultiple02Icon} size={22} /></span><h3>Useful information</h3><ul className="clean-list"><li><HugeiconsIcon icon={Home03Icon} size={18} /><span>Property type and relevant rooms</span></li><li><HugeiconsIcon icon={Location01Icon} size={18} /><span>Postcode or service area</span></li><li><HugeiconsIcon icon={Calendar03Icon} size={18} /><span>Preferred date or fixed deadline</span></li><li><HugeiconsIcon icon={Mail01Icon} size={18} /><span>A working email address for the response</span></li></ul></aside>
         </div>
       </section>
@@ -247,10 +248,12 @@ export default function HomePage() {
       </section>
 
       <section className="section section-white" aria-labelledby="home-cta-title">
-        <div className="shell final-cta">
-          <div><p className="eyebrow">Start here</p><h2 id="home-cta-title">Need cleaning or pest-control support?</h2><p>Select the relevant service, share the property or pest details and request a clear response about the next step.</p></div>
-          <div className="contact-actions"><ButtonLink href="/get-a-quote/">Get a Free Quote</ButtonLink><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div>
-        </div>
+        <FinalCta
+          eyebrow="Start here"
+          title="Need cleaning or pest-control support?"
+          titleId="home-cta-title"
+          description="Select the relevant service, share the property or pest details and request a clear response about the next step."
+        />
       </section>
     </main>
   );

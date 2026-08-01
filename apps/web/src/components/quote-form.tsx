@@ -194,11 +194,42 @@ export function QuoteForm({
             <small className="field-help" id="preferredDate-help">A preferred date does not confirm availability.</small>
             <FieldError field="preferredDate" errors={errors} />
           </label>
+
+          {service === "end-of-tenancy-cleaning" ? (
+            <div className="field field-wide">
+              <span>Furniture status <em>Required</em></span>
+              <div
+                className="choice-grid choice-grid-furniture"
+                role="radiogroup"
+                aria-label="Furniture status"
+                aria-invalid={Boolean(errors?.furnitureStatus)}
+                aria-describedby={errors?.furnitureStatus ? "furnitureStatus-error" : undefined}
+              >
+                {[
+                  ["furnished", "Furnished"],
+                  ["unfurnished", "Unfurnished"],
+                  ["partly-furnished", "Partly furnished"],
+                  ["unknown", "Not sure"],
+                ].map(([value, label]) => (
+                  <label className="choice-card choice-card-compact" key={value}>
+                    <input
+                      type="radio"
+                      name="furnitureStatus"
+                      value={value}
+                      required
+                    />
+                    <span><strong>{label}</strong></span>
+                  </label>
+                ))}
+              </div>
+              <FieldError field="furnitureStatus" errors={errors} />
+            </div>
+          ) : null}
         </div>
 
         <label className="field" htmlFor="message">
-          <span>Useful details <small>Optional</small></span>
-          <textarea id="message" name="message" rows={5} maxLength={1500} placeholder="Mention the property condition, access, deadline or what you have noticed." aria-invalid={Boolean(errors?.message)} aria-describedby={errors?.message ? "message-error" : undefined} />
+          <span>Access, condition or problem notes <small>Optional</small></span>
+          <textarea id="message" name="message" rows={5} maxLength={1500} placeholder="Mention access instructions, property condition, a fixed deadline or what you have noticed." aria-invalid={Boolean(errors?.message)} aria-describedby={errors?.message ? "message-error" : undefined} />
           <FieldError field="message" errors={errors} />
         </label>
       </fieldset>

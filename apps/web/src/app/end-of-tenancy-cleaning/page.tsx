@@ -18,6 +18,7 @@ import {
 import { DecorativeIcon as HugeiconsIcon } from "@/components/decorative-icon";
 import { ButtonLink } from "@/components/button-link";
 import { FaqList } from "@/components/faq-list";
+import { FinalCta } from "@/components/final-cta";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/config/site";
 import { endOfTenancyContent as content } from "@/content/end-of-tenancy";
@@ -213,18 +214,18 @@ export default function EndOfTenancyCleaningPage() {
 
       <section className="section" aria-labelledby="quote-title">
         <div className="shell quote-band">
-          <div><p className="eyebrow">Property-specific quote</p><h2 id="quote-title">Clear pricing starts with accurate details.</h2><p>Final prices will only be published when confirmed by the business. Until then, the property type, bedroom count, condition and requested work are used to discuss a tailored quote.</p></div>
+          <div><p className="eyebrow">Property-specific quote</p><h2 id="quote-title">A clearer quote starts with accurate details.</h2><p>Share the property type, bedroom count, furniture status, condition and requested work so the response can reflect the actual property.</p></div>
           <ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">Get a Free Quote</ButtonLink>
         </div>
       </section>
 
       <section className="section section-white" aria-labelledby="trust-clarity-title">
         <div className="shell">
-          <div className="section-head"><div><p className="eyebrow">Trust through clarity</p><h2 id="trust-clarity-title">Clear information before any arrangement.</h2></div><p>We do not publish invented prices, ratings or guarantees. The property details and final scope should be reviewed first.</p></div>
+          <div className="section-head"><div><p className="eyebrow">Trust through clarity</p><h2 id="trust-clarity-title">Clear information before any arrangement.</h2></div><p>The property details, requested work and final scope are reviewed before the next step is agreed.</p></div>
           <div className="card-grid clarity-grid">
-            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={InformationCircleIcon} size={22} /></span><h3>Verified facts only</h3><p>Prices, coverage and service claims are shown only after they are confirmed by the business.</p></article>
+            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={InformationCircleIcon} size={22} /></span><h3>Useful details first</h3><p>Property size, contents, condition, access and timing give the enquiry a clear starting point.</p></article>
             <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={CheckmarkCircle02Icon} size={22} /></span><h3>Scope before commitment</h3><p>The rooms, priorities, access and any separately requested work are discussed before an arrangement is made.</p></article>
-            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={UserMultiple02Icon} size={22} /></span><h3>Your property leads</h3><p>The response starts with the real property situation instead of forcing every enquiry into a fixed package.</p></article>
+            <article className="content-card"><span className="icon-box"><HugeiconsIcon icon={UserMultiple02Icon} size={22} /></span><h3>Property-specific response</h3><p>The response starts with your property situation instead of forcing every enquiry into a fixed package.</p></article>
           </div>
         </div>
       </section>
@@ -237,10 +238,13 @@ export default function EndOfTenancyCleaningPage() {
       </section>
 
       <section className="section section-white" id="quote" aria-labelledby="final-cta-title">
-        <div className="shell final-cta">
-          <div><p className="eyebrow">Start your enquiry</p><h2 id="final-cta-title">Need the property ready for handover?</h2><p>Share the property type, bedroom count, postcode or area, preferred date and useful notes. We can then review the request and explain the next step.</p></div>
-          <div className="contact-actions"><ButtonLink href="/get-a-quote/?service=end-of-tenancy-cleaning">Get a Free Quote</ButtonLink><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div>
-        </div>
+        <FinalCta
+          eyebrow="Start your enquiry"
+          title="Need the property ready for handover?"
+          titleId="final-cta-title"
+          description="Share the property type, bedroom count, furniture status, postcode or area, preferred date and useful notes. We can then review the request and explain the next step."
+          href="/get-a-quote/?service=end-of-tenancy-cleaning"
+        />
       </section>
     </main>
   );

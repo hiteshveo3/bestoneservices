@@ -21,6 +21,9 @@ export const enquirySchema = z
       { error: "Choose the property type." },
     ),
     bedrooms: optionalText(20),
+    furnitureStatus: z
+      .enum(["furnished", "unfurnished", "partly-furnished", "unknown"])
+      .optional(),
     pestType: optionalText(80),
     postcode: z.string().trim().min(2, "Enter the postcode or area.").max(20),
     preferredDate: optionalText(10).refine(
@@ -40,6 +43,13 @@ export const enquirySchema = z
         code: "custom",
         path: ["bedrooms"],
         message: "Choose the bedroom count for a cleaning enquiry.",
+      });
+    }
+    if (data.service === "end-of-tenancy-cleaning" && !data.furnitureStatus) {
+      context.addIssue({
+        code: "custom",
+        path: ["furnitureStatus"],
+        message: "Choose the furniture status for a cleaning enquiry.",
       });
     }
   });

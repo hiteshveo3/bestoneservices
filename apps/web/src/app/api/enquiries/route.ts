@@ -65,6 +65,10 @@ export async function POST(request: Request) {
       propertyType: enquiry.propertyType,
       bedrooms:
         enquiry.service === "end-of-tenancy-cleaning" ? enquiry.bedrooms : null,
+      furnitureStatus:
+        enquiry.service === "end-of-tenancy-cleaning"
+          ? enquiry.furnitureStatus
+          : null,
       pestType: enquiry.service === "pest-control" ? enquiry.pestType ?? null : null,
       postcode: enquiry.postcode.toUpperCase(),
       preferredDate: enquiry.preferredDate ?? null,

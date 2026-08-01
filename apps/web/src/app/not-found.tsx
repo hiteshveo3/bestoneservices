@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="shell reading">
         <p className="eyebrow">Page not found</p>
         <h1>We could not find that page.</h1>
-        <p className="lead">The link may be outdated or the requested service page may not have been published yet.</p>
+        <p className="lead">The address may be incorrect, or the page may have moved.</p>
         <ButtonLink href="/">Return to Home</ButtonLink>
       </div>
     </main>

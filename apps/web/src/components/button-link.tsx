@@ -15,15 +15,6 @@ export function ButtonLink({
 }) {
   const className = secondary ? "button button-secondary" : "button";
 
-  if (href.startsWith("mailto:")) {
-    return (
-      <a className={className} href={href}>
-        <span>{children}</span>
-        {arrow ? <DecorativeIcon icon={ArrowRight02Icon} size={19} /> : null}
-      </a>
-    );
-  }
-
   return (
     <Link className={className} href={href}>
       <span>{children}</span>

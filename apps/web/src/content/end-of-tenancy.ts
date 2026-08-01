@@ -69,9 +69,9 @@ export const endOfTenancyContent = {
         "Yes. Tenants, landlords, letting agents, property managers and homeowners can submit relevant property details and request a response.",
     },
     {
-      question: "Are fixed prices shown on the website?",
+      question: "How is the cleaning price discussed?",
       answer:
-        "Pricing will only be published once it has been confirmed by the business. Until then, request a property-specific quote using the details of the home and the required work.",
+        "The property type, bedroom count, condition, furniture status and requested work help shape the quote. Share these details so the scope and price can be discussed for the actual home.",
     },
     {
       question: "Is oven cleaning included?",

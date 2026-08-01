@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
+import { primaryNavigation } from "@/config/site-navigation";
 
 export function SiteHeader() {
   return (
@@ -10,10 +11,9 @@ export function SiteHeader() {
           <span>Best One Services</span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <Link href="/end-of-tenancy-cleaning/">Cleaning</Link>
-          <Link href="/#services">Services</Link>
-          <Link href="/#how-it-works">How it works</Link>
-          <Link href="/#faqs">FAQs</Link>
+          {primaryNavigation.map((item) => (
+            <Link href={item.href} key={item.href}>{item.label}</Link>
+          ))}
           <ButtonLink href="/get-a-quote/">
             Get a Free Quote
           </ButtonLink>
@@ -22,9 +22,9 @@ export function SiteHeader() {
           <summary aria-label="Open navigation">Menu</summary>
           <nav aria-label="Mobile navigation">
             <Link href="/">Home</Link>
-            <Link href="/end-of-tenancy-cleaning/">End of tenancy cleaning</Link>
-            <Link href="/#services">Services</Link>
-            <Link href="/#faqs">FAQs</Link>
+            {primaryNavigation.map((item) => (
+              <Link href={item.href} key={item.href}>{item.label}</Link>
+            ))}
             <Link href="/get-a-quote/">Get a Free Quote</Link>
           </nav>
         </details>
