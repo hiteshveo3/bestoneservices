@@ -11,38 +11,27 @@
     <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
     <style>
       :root {
-        --coral: #e9435d;
-        --action: #d93650;
-        --action-hover: #c92c45;
-        --coral-soft: #fff0f3;
-        --canvas: #f6f5f3;
+        --coral: #667b5b;
+        --action: #5d7353;
+        --action-hover: #4e6246;
+        --coral-soft: #e9eee5;
+        --canvas: #f8f3ea;
         --surface: #ffffff;
-        --surface-alt: #eeebe7;
+        --surface-alt: #efe4d2;
         --sage: #667b5b;
         --sage-soft: #e9eee5;
         --sand: #d8b981;
         --sand-soft: #f2e8d7;
         --text: #2d2c2a;
         --muted: #716e69;
-        --border: #e1ddd7;
-        --success: #287759;
+        --border: #ded3c2;
+        --success: #5d7353;
         --content: 1180px;
         --reading: 760px;
         --radius-small: 8px;
         --radius-control: 10px;
         --radius-card: 24px 8px 24px 8px;
         --radius-image: 34px 10px 34px 10px;
-      }
-
-      body[data-palette="sage"] {
-        --coral: #667b5b;
-        --action: #5d7353;
-        --action-hover: #4e6246;
-        --coral-soft: #e9eee5;
-        --canvas: #f8f3ea;
-        --surface-alt: #efe4d2;
-        --border: #ded3c2;
-        --success: #5d7353;
       }
 
       * {
@@ -166,65 +155,6 @@
 
       .header-wrap {
         background: var(--surface);
-      }
-
-      .palette-preview {
-        display: flex;
-        width: min(100% - 48px, var(--content));
-        margin: 18px auto 0;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        padding: 12px 14px;
-        background: var(--surface);
-        border-radius: 18px 6px 18px 6px;
-      }
-
-      .palette-preview-copy {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .palette-swatches {
-        display: flex;
-        gap: 5px;
-      }
-
-      .palette-swatch {
-        width: 18px;
-        height: 18px;
-        border: 1px solid rgba(45, 44, 42, 0.12);
-        border-radius: 50%;
-      }
-
-      .palette-swatch.cream { background: #f8f3ea; }
-      .palette-swatch.sage { background: #667b5b; }
-      .palette-swatch.sand { background: #d8b981; }
-      .palette-swatch.charcoal { background: #2d2c2a; }
-
-      .palette-options {
-        display: flex;
-        gap: 6px;
-      }
-
-      .palette-option {
-        min-height: 34px;
-        padding: 7px 11px;
-        color: var(--muted);
-        background: transparent;
-        border: 0;
-        border-radius: 10px 4px 10px 4px;
-        font: inherit;
-        font-size: 13px;
-        cursor: pointer;
-      }
-
-      .palette-option[aria-pressed="true"] {
-        color: var(--text);
-        background: var(--coral-soft);
       }
 
       .brand {
@@ -403,7 +333,7 @@
         margin: 2px 0 18px;
         padding: 9px 13px;
         color: var(--muted);
-        background: var(--surface);
+        background: var(--sand-soft);
         border: 1px dashed color-mix(in srgb, var(--coral) 48%, var(--border));
         border-radius: 14px 5px 14px 5px;
         font-size: 14px;
@@ -728,7 +658,7 @@
         margin-bottom: 16px;
         padding: 6px 9px;
         color: var(--action);
-        background: var(--coral-soft);
+        background: var(--sand-soft);
         border-radius: 10px 4px 10px 4px;
         font-size: 13px;
         font-weight: 500;
@@ -941,7 +871,7 @@
       .footer {
         padding: 44px 0 28px;
         color: var(--text);
-        background: var(--surface-alt);
+        background: var(--sage-soft);
       }
 
       .footer .brand,
@@ -1040,14 +970,8 @@
 
       @media (max-width: 760px) {
         .shell,
-        .topbar,
-        .palette-preview {
+        .topbar {
           width: min(100% - 32px, var(--content));
-        }
-
-        .palette-preview {
-          align-items: flex-start;
-          flex-direction: column;
         }
 
         .topbar {
@@ -1144,14 +1068,6 @@
           height: 270px;
         }
 
-        .palette-options {
-          width: 100%;
-        }
-
-        .palette-option {
-          flex: 1;
-        }
-
         .footer-bottom {
           flex-direction: column;
         }
@@ -1177,7 +1093,7 @@
       }
     </style>
   </head>
-  <body data-palette="coral">
+  <body>
     <header class="header-wrap">
       <div class="topbar">
         <a class="brand" href="/"><span class="brand-mark">B1</span>Best One Services</a>
@@ -1193,22 +1109,6 @@
         </nav>
       </div>
     </header>
-
-    <aside class="palette-preview" aria-label="Local colour direction preview">
-      <div class="palette-preview-copy">
-        <div class="palette-swatches" aria-hidden="true">
-          <span class="palette-swatch cream"></span>
-          <span class="palette-swatch sage"></span>
-          <span class="palette-swatch sand"></span>
-          <span class="palette-swatch charcoal"></span>
-        </div>
-        <span>Colour preview from your reference image</span>
-      </div>
-      <div class="palette-options" aria-label="Preview a colour direction">
-        <button class="palette-option" type="button" data-palette-choice="coral" aria-pressed="true">Clean Coral</button>
-        <button class="palette-option" type="button" data-palette-choice="sage" aria-pressed="false">Sage + Sand</button>
-      </div>
-    </aside>
 
     <main>
       <section class="shell hero" data-section="01">
@@ -1466,14 +1366,6 @@
     <script>
       const menuButton = document.querySelector(".menu-button");
       const mainNav = document.querySelector(".main-nav");
-      const paletteButtons = document.querySelectorAll("[data-palette-choice]");
-
-      paletteButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          document.body.dataset.palette = button.dataset.paletteChoice;
-          paletteButtons.forEach((option) => option.setAttribute("aria-pressed", String(option === button)));
-        });
-      });
 
       menuButton.addEventListener("click", () => {
         const open = mainNav.classList.toggle("is-open");
