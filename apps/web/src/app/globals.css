@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+.auth-panel .field input{background:#f1f3f0;border-color:transparent}.auth-panel .field input:focus{background:#f7f8f5;border-color:var(--action);outline:0;box-shadow:0 0 0 2px rgba(88,113,84,.12)}.auth-visual{justify-content:flex-start;gap:64px}.auth-visual-note{margin-top:28px}.password-field button{display:grid;width:28px;height:28px;place-items:center;padding:0}.password-field button svg,.auth-google svg{width:19px;height:19px}
+
 :root {
   --action: #587154;
   --action-hover: #344b38;
