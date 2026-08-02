@@ -1,1 +1,2 @@
-export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><h1>Log in</h1><p>Firebase email/password login is ready to connect once public Firebase configuration is provided. No account is required to make a booking.</p><a href="/account/register/">Create an account</a> · <a href="/account/forgot-password/">Forgot password?</a></div></section></main>; }
+import { LoginForm } from "@/components/login-form";
+export default async function Page({ searchParams }: { searchParams: Promise<{ next?: string }> }) { const { next } = await searchParams; return <main id="main-content" className="auth-page"><LoginForm next={next?.startsWith("/") ? next : "/account/dashboard/"} /></main>; }
