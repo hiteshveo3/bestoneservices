@@ -19,8 +19,9 @@ export const footerNavigation = [
     title: "Information",
     links: [
       { href: "/#how-it-works", label: "How it works" },
-      { href: "/#area-title", label: "Check your area" },
-      { href: "/#faqs", label: "FAQs" },
+      { href: "/areas/", label: "Areas we cover" },
+      { href: "/prices/", label: "Starting prices" },
+      { href: "/guides/", label: "Guides" },
       { href: "/about/", label: "About us" },
     ],
   },

@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { ButtonLink } from "@/components/button-link";
+export const metadata: Metadata = { title: "Areas We Cover", description: "Bestone Services provides end of tenancy cleaning and pest control across London, subject to operational availability.", alternates: { canonical: "/areas/" } };
+export default function AreasPage() { return <main id="main-content"><section className="section"><div className="shell quote-band"><div><p className="eyebrow">Service coverage</p><h1>London coverage, checked for each request.</h1><p>Bestone Services supports end of tenancy cleaning and pest control across London, subject to operational availability. Contact us with your postcode, service required and preferred timing.</p></div><ButtonLink href="/contact/">Contact Us</ButtonLink></div></section></main>; }
