@@ -1,0 +1,1 @@
+export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><h1>Create an account</h1><p>After a guest booking, an account can be linked to the same verified email address. Authentication UI will activate only with Firebase public configuration.</p></div></section></main>; }

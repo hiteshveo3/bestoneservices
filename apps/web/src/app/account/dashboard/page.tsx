@@ -1,0 +1,1 @@
+export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><h1>My bookings</h1><p>Signed-in customers will see only bookings linked to their verified Firebase account. Guest booking references remain available after submission.</p></div></section></main>; }

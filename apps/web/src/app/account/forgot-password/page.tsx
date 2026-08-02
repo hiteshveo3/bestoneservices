@@ -1,0 +1,1 @@
+export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><h1>Reset password</h1><p>Password-reset email handling is provided by Firebase Auth when it is configured for the deployment.</p></div></section></main>; }

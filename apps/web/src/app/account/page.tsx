@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function Account() { return <main id="main-content"><section className="section"><div className="shell reading"><p className="eyebrow">Customer account</p><h1>Track your bookings.</h1><p>Accounts are optional. The Firebase authentication connection is configuration-gated until public Firebase credentials are supplied.</p><p><Link href="/account/login/">Log in</Link> · <Link href="/account/register/">Create account</Link> · <Link href="/account/dashboard/">My bookings</Link></p></div></section></main>; }
