@@ -2,6 +2,7 @@ import "server-only";
 
 import { applicationDefault, cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { getAuth } from "firebase-admin/auth";
 
 export function isFirebaseConfigured() {
   const hasServiceAccount = Boolean(
@@ -18,7 +19,7 @@ export function isFirebaseConfigured() {
   );
 }
 
-function getFirebaseApp() {
+export function getFirebaseApp() {
   const currentApp = getApps()[0];
   if (currentApp) return currentApp;
 
@@ -46,4 +47,9 @@ export function getFirebaseDb() {
   }
 
   return getFirestore(getFirebaseApp());
+}
+
+export function getFirebaseAdminAuth() {
+  if (!isFirebaseConfigured()) throw new Error("FIREBASE_NOT_CONFIGURED");
+  return getAuth(getFirebaseApp());
 }
