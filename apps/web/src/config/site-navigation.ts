@@ -1,7 +1,7 @@
 export const primaryNavigation = [
   { href: "/cleaning-services/end-of-tenancy-cleaning/", label: "Cleaning" },
   { href: "/pest-control-services/", label: "Pest Control" },
-  { href: "/#area-title", label: "Check Area" },
+  { href: "/areas/", label: "Check Area" },
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#faqs", label: "FAQs" },
   { href: "/about/", label: "About" },

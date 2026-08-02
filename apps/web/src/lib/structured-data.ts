@@ -33,12 +33,14 @@ export function servicePageSchema({
   path,
   faqs,
   areaServed,
+  breadcrumbParent,
 }: {
   name: string;
   description: string;
   path: string;
   faqs: readonly ServiceFaq[];
   areaServed?: string;
+  breadcrumbParent?: { name: string; path: string };
 }) {
   const url = absoluteUrl(path);
 
@@ -76,9 +78,15 @@ export function servicePageSchema({
             name: "Home",
             item: siteConfig.url,
           },
-          {
+          ...(breadcrumbParent ? [{
             "@type": "ListItem",
             position: 2,
+            name: breadcrumbParent.name,
+            item: absoluteUrl(breadcrumbParent.path),
+          }] : []),
+          {
+            "@type": "ListItem",
+            position: breadcrumbParent ? 3 : 2,
             name,
             item: url,
           },

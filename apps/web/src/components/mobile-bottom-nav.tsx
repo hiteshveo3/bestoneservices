@@ -5,7 +5,7 @@ import { DecorativeIcon as HugeiconsIcon } from "@/components/decorative-icon";
 const links = [
   ["/", "Home", Home03Icon],
   ["/pest-control-services/", "Pest", Bug01Icon],
-  ["/#area-title", "Area", Location01Icon],
+  ["/areas/", "Area", Location01Icon],
   ["/contact/", "Contact", Calendar03Icon],
 ] as const;
 

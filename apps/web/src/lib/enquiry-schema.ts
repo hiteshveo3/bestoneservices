@@ -34,7 +34,7 @@ export const enquirySchema = z
     privacyConsent: z.literal(true, {
       error: "Confirm that we may use these details to respond to your enquiry.",
     }),
-    sourcePath: z.string().trim().startsWith("/").max(300).default("/get-a-quote/"),
+    sourcePath: z.string().trim().startsWith("/").max(300).default("/booking/"),
     website: z.string().max(0, "Unable to submit this enquiry.").default(""),
   })
   .superRefine((data, context) => {
