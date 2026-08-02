@@ -4,6 +4,7 @@ export const primaryNavigation = [
   { href: "/get-a-quote/#postcode", label: "Check Area" },
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#faqs", label: "FAQs" },
+  { href: "/about/", label: "About" },
 ] as const;
 
 export const footerNavigation = [
@@ -20,6 +21,7 @@ export const footerNavigation = [
       { href: "/#how-it-works", label: "How it works" },
       { href: "/get-a-quote/#postcode", label: "Check your area" },
       { href: "/#faqs", label: "FAQs" },
+      { href: "/about/", label: "About us" },
     ],
   },
 ] as const;

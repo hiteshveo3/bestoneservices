@@ -92,6 +92,17 @@ export const pageRegistry = z.array(pageTargetSchema).parse([
     changeFrequency: "yearly",
     priority: 0.8,
   },
+  {
+    path: "/about/",
+    pageType: "contact",
+    primaryKeyword: "Bestone Services Ltd London",
+    secondaryKeywords: ["London cleaning and pest control company", "BPCA pest control London"],
+    searchIntent: "informational",
+    status: "published",
+    indexable: true,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  },
 ]);
 
 export const publishedPageTargets = pageRegistry.filter(

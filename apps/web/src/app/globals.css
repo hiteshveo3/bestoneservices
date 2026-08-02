@@ -229,6 +229,7 @@ p { margin-bottom: 18px; }
 
 .final-cta { display: grid; grid-template-columns: minmax(0, 1.2fr) auto; gap: 30px; align-items: center; padding: 36px; background: var(--action); border-radius: 34px 10px 34px 10px; }
 .final-cta h2, .final-cta p { color: #fff; }
+.final-cta .eyebrow { margin-bottom: 13px; }
 .final-cta p { max-width: 700px; margin-bottom: 0; opacity: .82; }
 .final-cta .button { color: var(--text); background: var(--surface); border-color: var(--surface); }
 .final-cta .button:hover { color: var(--action); background: var(--surface); border-color: var(--surface); }
@@ -336,11 +337,15 @@ p { margin-bottom: 18px; }
 .site-footer { padding: 46px 0 28px; background: var(--action-soft); border-top: 1px solid var(--border); }
 .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, .7fr); gap: 38px; }
 .footer-grid > div:first-child p { max-width: 390px; margin-top: 18px; color: var(--muted); font-size: 15px; }
-.footer-grid h2 { margin-bottom: 13px; font-size: 16px; }
-.footer-grid > div:not(:first-child) { display: flex; flex-direction: column; gap: 8px; }
-.footer-grid > div:not(:first-child) a, .footer-grid > div:not(:first-child) span { color: var(--muted); font-size: 14px; text-decoration: none; }
+.footer-grid h2 { margin: 0; font-size: 16px; }
+.footer-group { min-width: 0; }
+.footer-group summary { cursor: default; list-style: none; }
+.footer-group summary::-webkit-details-marker { display: none; }
+.footer-group > div { display: flex; flex-direction: column; gap: 8px; margin-top: 13px; }
+.footer-group a, .footer-group span { color: var(--muted); font-size: 14px; text-decoration: none; }
 .footer-grid a:hover { color: var(--action); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 24px; margin-top: 36px; padding-top: 22px; color: var(--muted); border-top: 1px solid color-mix(in srgb, var(--text) 10%, transparent); font-size: 14px; }
+.mobile-bottom-nav { display: none; }
 
 @media (max-width: 1020px) {
   .desktop-nav { display: none; }
@@ -373,6 +378,11 @@ p { margin-bottom: 18px; }
   .card-grid, .fact-grid, .review-grid, .pricing-grid { grid-template-columns: 1fr; }
   .audience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .quote-band, .area-band, .final-cta { grid-template-columns: 1fr; padding: 26px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .process-card { display: grid; min-height: 0; grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; padding: 18px; }
+  .process-card::before { grid-row: span 2; margin: 0; }
+  .process-card h3 { align-self: end; margin: 0; }
+  .process-card p { grid-column: 2; margin-top: 5px; }
   .service-card { grid-template-columns: 1fr; }
   .service-card img { height: 260px; min-height: 0; }
   .feature-split { gap: 30px; }
@@ -406,6 +416,18 @@ p { margin-bottom: 18px; }
   .form-submit { width: 100%; }
   .privacy-note { margin-left: 0; }
   .footer-bottom { align-items: flex-start; flex-direction: column; }
+  body { padding-bottom: 70px; }
+  .site-footer { padding-bottom: 26px; }
+  .footer-grid { gap: 0; }
+  .footer-grid > div:first-child { margin-bottom: 22px; }
+  .footer-group { border-top: 1px solid var(--border); }
+  .footer-group summary { display: flex; min-height: 55px; align-items: center; justify-content: space-between; }
+  .footer-group summary::after { color: var(--action); content: "+"; font-size: 24px; font-weight: 400; }
+  .footer-group[open] summary::after { content: "−"; }
+  .footer-group > div { margin: -4px 0 18px; }
+  .mobile-bottom-nav { position: fixed; z-index: 40; right: 0; bottom: 0; left: 0; display: grid; grid-template-columns: repeat(4, 1fr); min-height: 68px; padding: 6px 12px calc(6px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--surface) 96%, transparent); border-top: 1px solid var(--border); backdrop-filter: blur(14px); }
+  .mobile-bottom-nav a { display: grid; gap: 3px; place-items: center; color: var(--muted); font-size: 11px; text-decoration: none; }
+  .mobile-bottom-nav svg { color: var(--action); }
 }
 
 @media (prefers-reduced-motion: reduce) {

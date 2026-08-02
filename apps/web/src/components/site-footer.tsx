@@ -14,21 +14,15 @@ export function SiteFooter() {
           <p>{siteConfig.description}</p>
         </div>
         {footerNavigation.map((group) => (
-          <div key={group.title}>
-            <h2>{group.title}</h2>
-            {group.links.map((item) => (
-              <Link href={item.href} key={item.href}>{item.label}</Link>
-            ))}
-          </div>
+          <details className="footer-group" key={group.title}>
+            <summary><h2>{group.title}</h2></summary>
+            <div>{group.links.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}</div>
+          </details>
         ))}
-        <div>
-          <h2>Contact</h2>
-          <Link href="/get-a-quote/">Get a Free Quote</Link>
-          <a href={siteConfig.phoneHref}>{siteConfig.phone}</a>
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-          <span>{siteConfig.openingHours}</span>
-          <span>{siteConfig.address.streetAddress}, {siteConfig.address.addressLocality} {siteConfig.address.postalCode}</span>
-        </div>
+        <details className="footer-group">
+          <summary><h2>Contact</h2></summary>
+          <div><Link href="/get-a-quote/">Get a Free Quote</Link><a href={siteConfig.phoneHref}>{siteConfig.phone}</a><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><span>{siteConfig.openingHours}</span><span>{siteConfig.address.streetAddress}, {siteConfig.address.addressLocality} {siteConfig.address.postalCode}</span></div>
+        </details>
       </div>
       <div className="shell footer-bottom">
         <span>© {new Date().getFullYear()} {siteConfig.name}</span>
