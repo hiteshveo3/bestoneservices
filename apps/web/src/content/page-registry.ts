@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { approvedCleaningServicePages } from "@/content/approved-service-pages";
 
 const pageTargetSchema = z.object({ path: z.string().startsWith("/"), pageType: z.enum(["home", "service", "pest", "location", "guide", "comparison", "contact"]), primaryKeyword: z.string().min(3), secondaryKeywords: z.array(z.string()).default([]), searchIntent: z.enum(["commercial", "informational", "local"]), status: z.enum(["seed", "researched", "approved", "published"]), indexable: z.boolean(), image: z.string().startsWith("/").optional(), changeFrequency: z.enum(["daily", "weekly", "monthly", "yearly"]), priority: z.number().min(0).max(1) });
 export type PageTarget = z.infer<typeof pageTargetSchema>;
@@ -32,5 +33,6 @@ export const pageRegistry = pageTargetSchema.array().parse([
   { path: "/pest-control-services/dead-pest-removal/", pageType: "pest", primaryKeyword: "dead pest removal", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.6 },
   { path: "/pest-control-services/pest-inspection/", pageType: "pest", primaryKeyword: "pest inspection", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.8 },
   { path: "/pest-control-services/commercial-pest-control/", pageType: "pest", primaryKeyword: "commercial pest control", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.8 },
+  ...Object.entries(approvedCleaningServicePages).map(([key, page]) => ({ path: `/${key}/`, pageType: "service" as const, primaryKeyword: page.title.toLowerCase(), secondaryKeywords: [], searchIntent: "commercial" as const, status: "published" as const, indexable: true, changeFrequency: "monthly" as const, priority: 0.7 })),
 ]);
 export const publishedPageTargets = pageRegistry.filter((page) => page.status === "published" && page.indexable);
