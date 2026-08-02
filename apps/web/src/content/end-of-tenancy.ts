@@ -28,6 +28,13 @@ export const endOfTenancyContent = {
     ["Hallways and access", "Entrances, stairs and landings can be considered as part of the property."],
     ["Specific priorities", "Mention any room, surface or handover concern that may need extra attention."],
   ],
+  startingPrices: [
+    ["Studio flat", "From £79"],
+    ["1 bedroom", "From £99"],
+    ["2 bedrooms", "From £119"],
+    ["3 bedrooms", "From £139"],
+    ["4 bedrooms", "From £159"],
+  ],
   quoteDetails: [
     "Property type",
     "Bedroom count",

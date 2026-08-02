@@ -30,6 +30,17 @@ export const pestControlContent = {
     ["General fogging", "Describe the property, the pest concern and the areas that need attention."],
     ["Moth treatment", "Tell us where moths, larvae or fabric damage have been found."],
   ],
+  startingPrices: [
+    ["Wasp nest removal", "From £59"],
+    ["Ant treatment", "From £69"],
+    ["Flea treatment", "From £89"],
+    ["Mice control", "From £99"],
+    ["Rat control", "From £109"],
+    ["Cockroach treatment", "From £119"],
+    ["Bed bug treatment", "From £149"],
+    ["Squirrel control", "From £149"],
+    ["Commercial pest control", "From £49 per month"],
+  ],
   quoteDetails: [
     "Pest signs",
     "Affected rooms",
@@ -86,3 +97,15 @@ export const pestControlContent = {
     },
   ]),
 } as const;
+
+export const multiVisitPestServices = new Set([
+  "Rat control",
+  "Mice control",
+  "Bed bug treatment",
+  "Cockroach control",
+]);
+
+export const pricingNotice = [
+  "Prices shown are starting prices for standard cases. Your final quote may increase depending on the size and condition of the property, type and severity of infestation, number of rooms, access requirements, parking, treatment method and any additional visits needed.",
+  "We will confirm the full price before any work is booked.",
+] as const;

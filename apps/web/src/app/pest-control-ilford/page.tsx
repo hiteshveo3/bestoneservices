@@ -17,7 +17,7 @@ import { FaqList } from "@/components/faq-list";
 import { FinalCta } from "@/components/final-cta";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/config/site";
-import { pestControlContent } from "@/content/pest-control";
+import { multiVisitPestServices, pestControlContent, pricingNotice } from "@/content/pest-control";
 import { pestControlIlfordContent as content } from "@/content/pest-control-ilford";
 import { servicePageSchema } from "@/lib/structured-data";
 
@@ -120,10 +120,20 @@ export default function PestControlIlfordPage() {
             {pestControlContent.pests.map(([title, text], index) => (
               <article className="content-card pest-card" key={title}>
                 <span className="icon-box"><HugeiconsIcon icon={pestIcons[index % pestIcons.length]} size={22} /></span>
-                <h3>{title}</h3><p>{text}</p>
+                <h3>{title}</h3><p>{text}</p>{multiVisitPestServices.has(title) ? <p className="service-note">Treatment may require more than one visit depending on the infestation.</p> : null}
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-white" id="ilford-pest-prices" aria-labelledby="ilford-pest-prices-title">
+        <div className="shell">
+          <div className="section-head"><div><p className="eyebrow">Starting prices</p><h2 id="ilford-pest-prices-title">Pest-control starting prices in Ilford.</h2></div><p>Tell us about the property and pest signs so the right treatment and final price can be confirmed.</p></div>
+          <div className="pricing-grid">
+            {pestControlContent.startingPrices.map(([label, price]) => <article className="price-card" key={label}><h3>{label}</h3><strong>{price}</strong></article>)}
+          </div>
+          <div className="pricing-notice"><p>{pricingNotice[0]}</p><p>{pricingNotice[1]}</p></div>
         </div>
       </section>
 

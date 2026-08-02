@@ -22,6 +22,7 @@ import { FinalCta } from "@/components/final-cta";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/config/site";
 import { endOfTenancyContent as content } from "@/content/end-of-tenancy";
+import { pricingNotice } from "@/content/pest-control";
 import { servicePageSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -200,6 +201,16 @@ export default function EndOfTenancyCleaningPage() {
               <div className="detail-item" key={detail}><HugeiconsIcon icon={detailIcons[index]} size={22} /><strong>{detail}</strong></div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-white" id="cleaning-prices" aria-labelledby="cleaning-prices-title">
+        <div className="shell">
+          <div className="section-head"><div><p className="eyebrow">Starting prices</p><h2 id="cleaning-prices-title">Clear starting prices for end of tenancy cleaning.</h2></div><p>Choose the property size that is closest to yours, then tell us about the condition and any required extras.</p></div>
+          <div className="pricing-grid">
+            {content.startingPrices.map(([label, price]) => <article className="price-card" key={label}><h3>{label}</h3><strong>{price}</strong></article>)}
+          </div>
+          <div className="pricing-notice"><p>{pricingNotice[0]}</p><p>{pricingNotice[1]}</p></div>
         </div>
       </section>
 

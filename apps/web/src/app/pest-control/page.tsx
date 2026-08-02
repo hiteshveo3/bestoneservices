@@ -18,7 +18,7 @@ import { FaqList } from "@/components/faq-list";
 import { FinalCta } from "@/components/final-cta";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/config/site";
-import { pestControlContent as content } from "@/content/pest-control";
+import { multiVisitPestServices, pestControlContent as content, pricingNotice } from "@/content/pest-control";
 import { servicePageSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -145,10 +145,20 @@ export default function PestControlPage() {
             {content.pests.map(([title, text], index) => (
               <article className="content-card pest-card" key={title}>
                 <span className="icon-box"><HugeiconsIcon icon={pestIcons[index % pestIcons.length]} size={22} /></span>
-                <h3>{title}</h3><p>{text}</p>
+                <h3>{title}</h3><p>{text}</p>{multiVisitPestServices.has(title) ? <p className="service-note">Treatment may require more than one visit depending on the infestation.</p> : null}
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-white" id="pest-prices" aria-labelledby="pest-prices-title">
+        <div className="shell">
+          <div className="section-head"><div><p className="eyebrow">Starting prices</p><h2 id="pest-prices-title">Pest-control prices from the most common treatments.</h2></div><p>The final treatment and visit plan are confirmed after the pest, property and extent of the problem are understood.</p></div>
+          <div className="pricing-grid">
+            {content.startingPrices.map(([label, price]) => <article className="price-card" key={label}><h3>{label}</h3><strong>{price}</strong></article>)}
+          </div>
+          <div className="pricing-notice"><p>{pricingNotice[0]}</p><p>{pricingNotice[1]}</p></div>
         </div>
       </section>
 
