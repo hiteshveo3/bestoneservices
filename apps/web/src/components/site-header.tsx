@@ -16,7 +16,7 @@ export function SiteHeader() {
             <Link href={item.href} key={item.href}>{item.label}</Link>
           ))}
           <a className="header-phone" href={siteConfig.phoneHref}>Call 24/7</a>
-          <ButtonLink href="/get-a-quote/">
+          <ButtonLink href="/contact/">
             Get a Free Quote
           </ButtonLink>
         </nav>
@@ -28,7 +28,7 @@ export function SiteHeader() {
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
             <a href={siteConfig.phoneHref}>Call 24/7: {siteConfig.phone}</a>
-            <Link href="/get-a-quote/">Get a Free Quote</Link>
+            <Link href="/contact/">Get a Free Quote</Link>
           </nav>
         </details>
       </div>

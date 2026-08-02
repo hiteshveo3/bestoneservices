@@ -6,7 +6,7 @@ const links = [
   ["/", "Home", Home03Icon],
   ["/pest-control/", "Pest", Bug01Icon],
   ["/#area-title", "Area", Location01Icon],
-  ["/get-a-quote/", "Quote", Calendar03Icon],
+  ["/contact/", "Contact", Calendar03Icon],
 ] as const;
 
 export function MobileBottomNav() {
