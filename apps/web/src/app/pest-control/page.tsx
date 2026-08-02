@@ -144,7 +144,7 @@ export default function PestControlPage() {
           <div className="card-grid pest-grid">
             {content.pests.map(([title, text], index) => (
               <article className="content-card pest-card" key={title}>
-                <span className="icon-box"><HugeiconsIcon icon={pestIcons[index]} size={22} /></span>
+                <span className="icon-box"><HugeiconsIcon icon={pestIcons[index % pestIcons.length]} size={22} /></span>
                 <h3>{title}</h3><p>{text}</p>
               </article>
             ))}
@@ -174,6 +174,17 @@ export default function PestControlPage() {
               <article className="process-card" key={title}><h3>{title}</h3><p>{text}</p></article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-white" aria-labelledby="ilford-local-title">
+        <div className="shell quote-band">
+          <div>
+            <p className="eyebrow"><HugeiconsIcon icon={Location01Icon} size={18} />Local pest control</p>
+            <h2 id="ilford-local-title">Looking for pest control in Ilford?</h2>
+            <p>Visit our dedicated Ilford page for available treatments, local enquiry details and frequently asked questions.</p>
+          </div>
+          <ButtonLink href="/pest-control-ilford/">Pest Control Ilford</ButtonLink>
         </div>
       </section>
 

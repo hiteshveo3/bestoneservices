@@ -39,11 +39,13 @@ export function servicePageSchema({
   description,
   path,
   faqs,
+  areaServed,
 }: {
   name: string;
   description: string;
   path: string;
   faqs: readonly ServiceFaq[];
+  areaServed?: string;
 }) {
   const url = absoluteUrl(path);
 
@@ -69,6 +71,7 @@ export function servicePageSchema({
         description,
         provider: { "@id": `${siteConfig.url}/#organization` },
         url,
+        ...(areaServed ? { areaServed } : {}),
       },
       {
         "@type": "BreadcrumbList",

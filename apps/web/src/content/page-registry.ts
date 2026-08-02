@@ -66,6 +66,22 @@ export const pageRegistry = z.array(pageTargetSchema).parse([
     priority: 0.9,
   },
   {
+    path: "/pest-control-ilford/",
+    pageType: "location",
+    primaryKeyword: "pest control Ilford",
+    secondaryKeywords: [
+      "pest control in Ilford",
+      "Ilford pest control services",
+      "exterminator Ilford",
+    ],
+    searchIntent: "local",
+    status: "published",
+    indexable: true,
+    image: "/images/pest-inspection.jpg",
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
+  {
     path: "/get-a-quote/",
     pageType: "contact",
     primaryKeyword: "cleaning and pest control quote",
