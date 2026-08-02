@@ -4,7 +4,7 @@ export function FinalCta({
   eyebrow,
   title,
   description,
-  href = "/get-a-quote/",
+  href = "/contact/",
   titleId,
   buttonLabel = "Get a Free Quote",
 }: {
