@@ -16,6 +16,7 @@ dist/
 # Platform and deployment state
 .vercel/
 .firebase/
+google-services.json
 firebase-debug.log
 
 # Editor and operating-system files
