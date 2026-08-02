@@ -1,7 +1,7 @@
 export const primaryNavigation = [
   { href: "/end-of-tenancy-cleaning/", label: "Cleaning" },
   { href: "/pest-control/", label: "Pest Control" },
-  { href: "/get-a-quote/#postcode", label: "Check Area" },
+  { href: "/#area-title", label: "Check Area" },
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#faqs", label: "FAQs" },
   { href: "/about/", label: "About" },
@@ -19,7 +19,7 @@ export const footerNavigation = [
     title: "Information",
     links: [
       { href: "/#how-it-works", label: "How it works" },
-      { href: "/get-a-quote/#postcode", label: "Check your area" },
+      { href: "/#area-title", label: "Check your area" },
       { href: "/#faqs", label: "FAQs" },
       { href: "/about/", label: "About us" },
     ],

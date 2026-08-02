@@ -23,6 +23,10 @@ export function SiteFooter() {
           <summary><h2>Contact</h2></summary>
           <div><Link href="/get-a-quote/">Get a Free Quote</Link><a href={siteConfig.phoneHref}>{siteConfig.phone}</a><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><span>{siteConfig.openingHours}</span><span>{siteConfig.address.streetAddress}, {siteConfig.address.addressLocality} {siteConfig.address.postalCode}</span></div>
         </details>
+        <details className="footer-group">
+          <summary><h2>Legal</h2></summary>
+          <div><Link href="/privacy-policy/">Privacy Policy</Link><Link href="/cookie-policy/">Cookie Policy</Link><Link href="/terms-and-conditions/">Terms and Conditions</Link><Link href="/cancellation-and-refund-policy/">Cancellation &amp; Refund Policy</Link><Link href="/complaints-policy/">Complaints Policy</Link><Link href="/accessibility-statement/">Accessibility Statement</Link></div>
+        </details>
       </div>
       <div className="shell footer-bottom">
         <span>© {new Date().getFullYear()} {siteConfig.name}</span>
