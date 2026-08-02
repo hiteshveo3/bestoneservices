@@ -15,9 +15,9 @@ export function SiteHeader() {
           {primaryNavigation.map((item) => (
             <Link href={item.href} key={item.href}>{item.label}</Link>
           ))}
-          <a className="header-phone" href={siteConfig.phoneHref}>Call 24/7</a>
-          <ButtonLink href="/contact/">
-            Get a Free Quote
+          {siteConfig.phoneEnabled ? <a className="header-phone" href={siteConfig.phoneHref}>Call us</a> : null}
+          <ButtonLink href={siteConfig.bookingEnabled ? "/booking/" : "/contact/"}>
+            {siteConfig.bookingEnabled ? "Book as Guest" : "Contact Us"}
           </ButtonLink>
         </nav>
         <details className="mobile-nav">
@@ -27,8 +27,8 @@ export function SiteHeader() {
             {primaryNavigation.map((item) => (
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
-            <a href={siteConfig.phoneHref}>Call 24/7: {siteConfig.phone}</a>
-            <Link href="/contact/">Get a Free Quote</Link>
+            {siteConfig.phoneEnabled ? <a href={siteConfig.phoneHref}>Call us: {siteConfig.phone}</a> : null}
+            <Link href={siteConfig.bookingEnabled ? "/booking/" : "/contact/"}>{siteConfig.bookingEnabled ? "Book as Guest" : "Contact Us"}</Link>
           </nav>
         </details>
       </div>

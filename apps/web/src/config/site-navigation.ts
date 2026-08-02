@@ -1,6 +1,6 @@
 export const primaryNavigation = [
-  { href: "/end-of-tenancy-cleaning/", label: "Cleaning" },
-  { href: "/pest-control/", label: "Pest Control" },
+  { href: "/cleaning-services/end-of-tenancy-cleaning/", label: "Cleaning" },
+  { href: "/pest-control-services/", label: "Pest Control" },
   { href: "/#area-title", label: "Check Area" },
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#faqs", label: "FAQs" },
@@ -11,8 +11,8 @@ export const footerNavigation = [
   {
     title: "Services",
     links: [
-      { href: "/end-of-tenancy-cleaning/", label: "End of tenancy cleaning" },
-      { href: "/pest-control/", label: "Pest control" },
+      { href: "/cleaning-services/end-of-tenancy-cleaning/", label: "End of tenancy cleaning" },
+      { href: "/pest-control-services/", label: "Pest control" },
     ],
   },
   {

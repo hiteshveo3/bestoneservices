@@ -8,18 +8,11 @@ export function organisationSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     email: siteConfig.email,
-    telephone: siteConfig.phone,
     address: {
       "@type": "PostalAddress",
       ...siteConfig.address,
     },
-    openingHours: "Mo-Su 00:00-23:59",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: siteConfig.googleRating,
-      reviewCount: siteConfig.googleReviewCount,
-      bestRating: "5",
-    },
+    ...(siteConfig.phoneEnabled ? { telephone: siteConfig.phone } : {}),
   };
 }
 

@@ -21,7 +21,7 @@ export function SiteFooter() {
         ))}
         <details className="footer-group">
           <summary><h2>Contact</h2></summary>
-          <div><Link href="/contact/">Contact Us</Link><a href={siteConfig.phoneHref}>{siteConfig.phone}</a><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><span>{siteConfig.openingHours}</span><span>{siteConfig.address.streetAddress}, {siteConfig.address.addressLocality} {siteConfig.address.postalCode}</span></div>
+          <div><Link href="/contact/">Contact Us</Link>{siteConfig.phoneEnabled ? <a href={siteConfig.phoneHref}>{siteConfig.phone}</a> : null}<a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>{siteConfig.openingHours ? <span>{siteConfig.openingHours}</span> : null}<span>{siteConfig.address.streetAddress}, {siteConfig.address.addressLocality} {siteConfig.address.postalCode}</span></div>
         </details>
         <details className="footer-group">
           <summary><h2>Legal</h2></summary>
