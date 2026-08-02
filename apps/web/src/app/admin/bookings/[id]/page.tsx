@@ -1,0 +1,2 @@
+import { ConfigurationState } from "@/components/configuration-state";
+export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><p className="eyebrow">Booking detail</p><h1>Service request timeline</h1><p>Customer details, status timeline, staff assignment, internal notes and audit events are available only after an authenticated admin request.</p><ConfigurationState detail="No booking record is loaded without a verified admin role." /></div></section></main>; }

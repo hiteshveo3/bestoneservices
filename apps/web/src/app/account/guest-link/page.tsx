@@ -1,0 +1,2 @@
+import { ConfigurationState } from "@/components/configuration-state";
+export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><p className="eyebrow">Guest booking</p><h1>Link a booking to your account.</h1><p>After sign-in, use the booking reference and the same verified email used for the guest request.</p><ConfigurationState detail="Guest-to-account linking is safely disabled until Firebase Auth is configured." /></div></section></main>; }

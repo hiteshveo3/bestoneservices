@@ -1,0 +1,2 @@
+import { ConfigurationState } from "@/components/configuration-state";
+export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><h1>Profile and preferences</h1><p>Update account details and separate marketing preferences after secure sign-in is enabled.</p><ConfigurationState detail="No profile data is displayed until Firebase identity is configured." /></div></section></main>; }
