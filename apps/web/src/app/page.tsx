@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { JsonLd } from "@/components/json-ld";
-import { siteConfig } from "@/config/site";
 import { organisationSchema, websiteSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = { title: "Bestone Services Ltd | Cleaning & Pest Control", description: "End of tenancy cleaning and pest-control services across London. Explore active services, starting prices and coverage information.", alternates: { canonical: "/" } };

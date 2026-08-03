@@ -20,17 +20,7 @@ export function SiteHeader() {
             {siteConfig.bookingEnabled ? "Book as Guest" : "Contact Us"}
           </ButtonLink>
         </nav>
-        <details className="mobile-nav">
-          <summary aria-label="Open navigation">Menu</summary>
-          <nav aria-label="Mobile navigation">
-            <Link href="/">Home</Link>
-            {primaryNavigation.map((item) => (
-              <Link href={item.href} key={item.href}>{item.label}</Link>
-            ))}
-            {siteConfig.phoneEnabled ? <a href={siteConfig.phoneHref}>Call us: {siteConfig.phone}</a> : null}
-            <Link href={siteConfig.bookingEnabled ? "/booking/" : "/contact/"}>{siteConfig.bookingEnabled ? "Book as Guest" : "Contact Us"}</Link>
-          </nav>
-        </details>
+        <Link className="mobile-header-cta" href={siteConfig.bookingEnabled ? "/booking/" : "/contact/"}>{siteConfig.bookingEnabled ? "Book" : "Contact"}</Link>
       </div>
     </header>
   );

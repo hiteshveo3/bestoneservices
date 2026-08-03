@@ -1,2 +1,6 @@
-import { ConfigurationState } from "@/components/configuration-state";
-export default function Page() { return <main id="main-content"><section className="section"><div className="shell reading"><p className="eyebrow">Guest booking</p><h1>Link a booking to your account.</h1><p>After sign-in, use the booking reference and the same verified email used for the guest request.</p><ConfigurationState detail="Guest-to-account linking is safely disabled until Firebase Auth is configured." /></div></section></main>; }
+import { AccountNav } from "@/components/account-nav";
+import { GuestBookingLinker } from "@/components/guest-booking-linker";
+
+export default function Page() {
+  return <main id="main-content" className="app-shell"><AccountNav current="/account/guest-link/" /><section className="app-main app-reading"><p className="eyebrow">Customer account</p><h1>Add booking reference</h1><p className="lead">Made a request before creating your account? Add the reference from your email confirmation to keep it here.</p><div className="app-card"><GuestBookingLinker /></div></section></main>;
+}
