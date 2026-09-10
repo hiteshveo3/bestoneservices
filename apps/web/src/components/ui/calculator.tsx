@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
-  Calculator as CalcIcon,
   Sparkles,
   SprayCan,
   Trees,
@@ -13,7 +12,6 @@ import {
   Check,
   ArrowRight,
   ArrowLeft,
-  ShieldCheck,
   MessageCircle,
 } from "lucide-react";
 import { masterPricingData } from "@/config/pricing-data";
@@ -65,7 +63,7 @@ function useNarrowContainer(breakpoint = 860) {
     const el = ref.current;
     if (!el) return;
     const measure = (width: number) => setNarrow(width < breakpoint);
-    if ("ResizeObserver" in window) {
+    if (typeof ResizeObserver !== "undefined") {
       const ro = new ResizeObserver((entries) => {
         for (const entry of entries) measure(entry.contentRect.width);
       });
@@ -248,15 +246,33 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
 
   const handleContinueToBooking = () => {
     if (!cat) return;
-    saveBookingState({
+    const sizeKeyMap: Record<string, BookingStateData["propertySize"]> = {
+      "Studio flat": "studio",
+      "1 bedroom": "1bed",
+      "2 bedroom": "2bed",
+      "3 bedroom": "3bed",
+      "4 bedroom": "4bed",
+    };
+    const payload: Partial<BookingStateData> = {
       vertical: cat,
-      selections: Object.fromEntries(Object.entries(sel).map(([k, v]) => [k, v.label])),
-      addons: Object.keys(addons),
       estimatedPriceMin: total,
       estimatedPriceMax: total,
       priceLabel: cfg?.guarantee,
       currentStep: 2,
-    });
+    };
+    if (cat === "cleaning" && sel.size) {
+      payload.propertySize = sizeKeyMap[sel.size.label];
+      payload.carpetCleaning = Object.keys(addons).some((a) => a.toLowerCase().includes("carpet"));
+      payload.ovenCleaning = Object.keys(addons).some((a) => a.toLowerCase().includes("oven"));
+    } else if (cat === "pest") {
+      payload.nightEmergency = (sel.timing?.value ?? 0) > 0;
+    } else if (cat === "gardening" && sel.hours) {
+      payload.gardeningHours = Number(sel.hours.label.match(/\d+/)?.[0] ?? 2);
+    } else if (cat === "removals") {
+      payload.teamConfig = sel.crew?.label.startsWith("3") ? "3men" : "2men";
+      payload.removalHours = sel.hours?.value ?? 2;
+    }
+    saveBookingState(payload);
   };
 
   const whatsappQuoteMessage = cfg
@@ -278,6 +294,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
       <noscript>
         <div className="p-4 rounded-[16px] bg-[#DCFAB7] border border-[#99D055] text-sm text-[#1F3A00]">
           This calculator needs JavaScript enabled. You can see every rate directly on the{" "}
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- noscript fallback must use a plain anchor; next/link requires JS */}
           <a href="/prices/#rates" className="font-semibold underline underline-offset-2">price list</a> instead.
         </div>
       </noscript>

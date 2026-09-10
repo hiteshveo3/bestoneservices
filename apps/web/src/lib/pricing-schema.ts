@@ -1,5 +1,6 @@
 import { absoluteUrl, siteConfig } from "@/config/site";
 import { masterPricingData } from "@/config/pricing-data";
+import { PRICING_FAQS } from "@/config/pricing-faqs";
 
 export function generatePricingPageSchema() {
   const pageUrl = absoluteUrl("/prices/");
@@ -41,24 +42,7 @@ export function generatePricingPageSchema() {
     ),
   }));
 
-  const pricingFaqs = [
-    {
-      q: "How are End of Tenancy cleaning prices calculated?",
-      a: "End of Tenancy cleaning is calculated on a fixed flat-rate basis according to property size (e.g., Studio £130, 1 Bed £200, 2 Bed £230, 3 Bed £300, 4 Bed £350). All packages include our 48-Hour Re-Clean Guarantee.",
-    },
-    {
-      q: "What is included in Pest Control visit packages?",
-      a: "Pest control packages are calculated by property size and infestation level. Single visit treatments start at £90–£120; 2-visit packages (£160–£190) include a 1-month written guarantee; 3-visit packages (£210–£230) include a 3-month written guarantee.",
-    },
-    {
-      q: "How does Gardening team pricing work?",
-      a: "Gardening maintenance uses a 2-gardener team model charged at £70 for the first hour and £50 for each additional hour, with a £70 minimum charge. Waste removal is billed at £5 per standard bag or £50 per jumbo bag.",
-    },
-    {
-      q: "What are the rates for Man & Van Removals?",
-      a: "Removals start at £80–£120 per hour for 2 Men + 1 Luton Van (minimum £160/2 hours) or £120–£160 per hour for 3 Men + Large Van. Full packing is £30/hr standard or £25/hr for Best One Club members.",
-    },
-  ];
+  const pricingFaqs = PRICING_FAQS;
 
   return {
     "@context": "https://schema.org",
