@@ -37,7 +37,7 @@ export default function PricingPage() {
         </p>
         <div className="flex flex-col items-center gap-3 pt-1">
           <Link
-            href="#calculator"
+            href="#smart-calculator"
             className="inline-flex items-center h-[54px] px-8 rounded-md font-inter text-base font-bold bg-[#B7F56A] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200"
           >
             Calculate my price
@@ -69,7 +69,7 @@ export default function PricingPage() {
       </section>
 
       {/* 3. QUOTE CALCULATOR — centerpiece */}
-      <section id="calculator" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      <section id="smart-calculator" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="space-y-2 pb-7">
           <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1F3A00]/60 m-0">Quote calculator</p>
           <h2 className="font-heading font-semibold text-[clamp(1.75rem,3.4vw,2.6rem)] leading-tight tracking-tight text-[#1F3A00] max-w-[24ch] m-0">
@@ -153,7 +153,7 @@ export default function PricingPage() {
             Pick your service, add your property details, and see the itemised total before you commit to anything.
           </p>
           <Link
-            href="#calculator"
+            href="#smart-calculator"
             className="mt-2 inline-flex items-center h-[54px] px-8 rounded-md font-inter text-base font-bold bg-[#B7F56A] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200"
           >
             Calculate my price

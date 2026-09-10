@@ -112,7 +112,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
     if (!cat) return;
     const params = new URLSearchParams();
     params.set("category", cat === "pest" ? "pest-control" : cat);
-    router.replace(`${pathname}?${params.toString()}#calculator`, { scroll: false });
+    router.replace(`${pathname}?${params.toString()}#smart-calculator`, { scroll: false });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cat]);
 
@@ -288,7 +288,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
   return (
     <div
       ref={containerRef}
-      id="calculator"
+      id="smart-calculator"
       className="bg-white rounded-[24px] p-6 sm:p-8 border border-[#E5FBC9] shadow-2xs text-start scroll-mt-24"
     >
       <noscript>
