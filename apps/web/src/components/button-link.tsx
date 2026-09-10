@@ -45,8 +45,18 @@ export function ButtonLink({
   showArrow = true,
   className = "",
 }: ButtonLinkProps) {
+  const classes = `${BASE} ${sizeClasses(size)} ${variantClasses(variant)} ${className}`;
+  // External links (e.g. wa.me) need a real anchor in a new tab, not client-side <Link> routing.
+  if (/^https?:\/\//.test(href)) {
+    return (
+      <a className={classes} href={href} target="_blank" rel="noopener noreferrer">
+        <span>{children}</span>
+        {showArrow ? <ArrowRight className="w-4 h-4 text-current shrink-0" /> : null}
+      </a>
+    );
+  }
   return (
-    <Link className={`${BASE} ${sizeClasses(size)} ${variantClasses(variant)} ${className}`} href={href}>
+    <Link className={classes} href={href}>
       <span>{children}</span>
       {showArrow ? <ArrowRight className="w-4 h-4 text-current shrink-0" /> : null}
     </Link>

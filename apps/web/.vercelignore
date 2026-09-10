@@ -1,0 +1,8 @@
+﻿.next
+node_modules
+.git
+.turbo
+coverage
+.vercel
+npm-debug.log*
+yarn-debug.log*

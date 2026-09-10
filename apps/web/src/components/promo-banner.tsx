@@ -4,6 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Cancel01Icon } from "@hugeicons/core-free-icons";
+import { siteContact } from "@/config/site-contact";
 
 const DISMISS_KEY = "promo-banner-dismissed";
 
@@ -52,13 +53,15 @@ export function PromoBanner() {
             Direct Booking Offer
           </span>
           <span className="hidden sm:inline text-xs sm:text-sm font-normal text-white/95 tracking-tight">
-            Save 20% on all property services when booking directly online.
+            Save 20% on all property services when booking directly via WhatsApp.
           </span>
           <span className="sm:hidden text-xs font-medium text-white/95 tracking-tight truncate">
-            Save 20% — book directly online
+            Save 20% — book directly via WhatsApp
           </span>
           <Link
-            href="/booking/"
+            href={siteContact.getWhatsappUrl("Hi, I'd like to claim the 20% direct booking discount with Best One Services.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-2.5 py-1 sm:px-3 bg-[#B7F56A] text-[#1F3A00] rounded-md text-[11px] sm:text-xs font-inter font-medium hover:opacity-90 transition-opacity duration-150 text-decoration-none whitespace-nowrap cursor-pointer shrink-0"
           >
             <span className="sm:hidden">Claim →</span>

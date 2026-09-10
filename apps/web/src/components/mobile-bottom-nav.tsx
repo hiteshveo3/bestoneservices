@@ -18,7 +18,7 @@ const HIDDEN_PREFIXES = ["/booking", "/admin", "/account"];
 const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Home01Icon },
   { href: "/prices/", label: "Services", icon: GridIcon },
-  { href: "/booking/", label: "Book", icon: Calendar01Icon },
+  { href: siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services."), label: "Book", icon: Calendar01Icon, external: true },
   { href: "/blog/", label: "Guides", icon: BookOpen01Icon },
 ] as const;
 
@@ -44,16 +44,13 @@ export function MobileBottomNav() {
       aria-label="Mobile navigation"
     >
       {NAV_ITEMS.map((item) => {
-        const active = isActive(item.href);
-        return (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-current={active ? "page" : undefined}
-            className={`flex flex-col items-center justify-center gap-1 py-2.5 text-decoration-none transition-opacity duration-200 ${
-              active ? "text-[#1F3A00]" : "text-[#1F3A00]/60"
-            }`}
-          >
+        const isExternal = "external" in item && item.external;
+        const active = !isExternal && isActive(item.href);
+        const linkClassName = `flex flex-col items-center justify-center gap-1 py-2.5 text-decoration-none transition-opacity duration-200 ${
+          active ? "text-[#1F3A00]" : "text-[#1F3A00]/60"
+        }`;
+        const inner = (
+          <>
             <HugeiconsIcon
               icon={item.icon}
               size={22}
@@ -63,6 +60,15 @@ export function MobileBottomNav() {
             <span className={`text-[11px] leading-none ${active ? "font-semibold" : "font-medium"}`}>
               {item.label}
             </span>
+          </>
+        );
+        return isExternal ? (
+          <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={linkClassName}>
+            {inner}
+          </a>
+        ) : (
+          <Link key={item.href} href={item.href} aria-current={active ? "page" : undefined} className={linkClassName}>
+            {inner}
           </Link>
         );
       })}

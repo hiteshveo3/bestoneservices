@@ -5,6 +5,7 @@ import { Truck, Sparkles, Award } from "lucide-react";
 import { SmartPricingCTA } from "@/components/service/smart-pricing-cta";
 import { InstantEstimator } from "@/components/ui/calculator";
 import { ButtonLink } from "@/components/button-link";
+import { siteContact } from "@/config/site-contact";
 
 export const metadata: Metadata = {
   title: "Professional Home & Office Removals",
@@ -32,7 +33,7 @@ export default function RemovalsPage() {
           </p>
 
           <div className="pt-2 flex justify-center items-center gap-4">
-            <ButtonLink href="/booking/" variant="dark">
+            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like to book a move team with Best One Services.")} variant="dark">
               Book Move Team
             </ButtonLink>
           </div>
@@ -81,7 +82,7 @@ export default function RemovalsPage() {
             </p>
           </div>
 
-          <ButtonLink href="/booking/" variant="dark" className="shrink-0">
+          <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like to join the Best One Club.")} variant="dark" className="shrink-0">
             Join Best One Club
           </ButtonLink>
         </div>
@@ -104,7 +105,7 @@ export default function RemovalsPage() {
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink href="/booking/" variant="white" className="w-full sm:w-auto">
+            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")} variant="white" className="w-full sm:w-auto">
               Get Instant Quote Now
             </ButtonLink>
             <ButtonLink href="/contact/" variant="outline" className="w-full sm:w-auto" showArrow={false}>

@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { masterPricingData } from "@/config/pricing-data";
+import { siteContact } from "@/config/site-contact";
 
 export interface PriceBreakdown {
   basePrice: number;
@@ -155,7 +156,11 @@ export function BedBugPriceCalculator() {
             <div className="font-heading text-3xl font-medium text-ink-900">£{pricing.total}</div>
           </div>
           <Link
-            href={`/booking/?service=bed-bug-treatment&rooms=${rooms}&visits=${estimatedVisits}&price=${pricing.total}`}
+            href={siteContact.getWhatsappUrl(
+              `Hi, I'd like to book bed bug treatment with Best One Services. Rooms: ${rooms}, estimated visits: ${estimatedVisits}, estimated price: £${pricing.total}.`
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3.5 rounded-full bg-[#1F3A00] text-white font-medium text-base hover:bg-[#1F3A00] transition-colors duration-150 text-decoration-none border border-[#E5FBC9]"
           >
             Book This Estimate →

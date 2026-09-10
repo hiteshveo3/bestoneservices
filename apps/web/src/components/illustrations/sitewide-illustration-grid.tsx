@@ -59,8 +59,16 @@ export function SitewideIllustrationGrid({
               </>
             );
 
+            const isExternal = card.href ? /^https?:\/\//.test(card.href) : false;
+
             return card.href ? (
-              <Link key={card.slug} href={card.href} className="group block rounded-[24px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#99D055]">
+              <Link
+                key={card.slug}
+                href={card.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className="group block rounded-[24px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#99D055]"
+              >
                 {content}
               </Link>
             ) : (

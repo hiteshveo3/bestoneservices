@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback, Suspense } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
@@ -21,7 +20,6 @@ import {
   type CalcCategory,
   type ChoiceItem,
 } from "@/config/pricing-calculator-config";
-import { saveBookingState, type BookingStateData } from "@/lib/booking-state";
 import { CONTACT } from "@/config/contact";
 import { PricePromiseBadge } from "@/components/ui/price-promise-badge";
 
@@ -244,37 +242,6 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
   const totalLabel = total ? `£${total}` : "£—";
   const totalCaption = cfg ? (total ? `${cfg.label}, all in` : "Pick your options to see the total") : "Choose a service to start";
 
-  const handleContinueToBooking = () => {
-    if (!cat) return;
-    const sizeKeyMap: Record<string, BookingStateData["propertySize"]> = {
-      "Studio flat": "studio",
-      "1 bedroom": "1bed",
-      "2 bedroom": "2bed",
-      "3 bedroom": "3bed",
-      "4 bedroom": "4bed",
-    };
-    const payload: Partial<BookingStateData> = {
-      vertical: cat,
-      estimatedPriceMin: total,
-      estimatedPriceMax: total,
-      priceLabel: cfg?.guarantee,
-      currentStep: 2,
-    };
-    if (cat === "cleaning" && sel.size) {
-      payload.propertySize = sizeKeyMap[sel.size.label];
-      payload.carpetCleaning = Object.keys(addons).some((a) => a.toLowerCase().includes("carpet"));
-      payload.ovenCleaning = Object.keys(addons).some((a) => a.toLowerCase().includes("oven"));
-    } else if (cat === "pest") {
-      payload.nightEmergency = (sel.timing?.value ?? 0) > 0;
-    } else if (cat === "gardening" && sel.hours) {
-      payload.gardeningHours = Number(sel.hours.label.match(/\d+/)?.[0] ?? 2);
-    } else if (cat === "removals") {
-      payload.teamConfig = sel.crew?.label.startsWith("3") ? "3men" : "2men";
-      payload.removalHours = sel.hours?.value ?? 2;
-    }
-    saveBookingState(payload);
-  };
-
   const whatsappQuoteMessage = cfg
     ? [
         "Hi, I'd like this quote from bestoneservices.co.uk:",
@@ -453,14 +420,15 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/booking/"
-                  onClick={handleContinueToBooking}
+                <a
+                  href={whatsappQuoteHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 min-w-[160px] px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <span>Book This Now</span>
-                  <ArrowRight className="w-4 h-4 text-[#1F3A00]" />
-                </Link>
+                  <MessageCircle className="w-4 h-4 text-[#1F3A00] shrink-0" />
+                  <span>Book This Now via WhatsApp</span>
+                </a>
                 <a
                   href={whatsappQuoteHref}
                   target="_blank"
@@ -468,7 +436,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                   className="flex-1 min-w-[200px] px-6 py-3 rounded-md font-inter text-base font-medium bg-white border border-[#1F3A00] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 text-[#1F3A00] shrink-0" />
-                  <span>Email or WhatsApp me this quote</span>
+                  <span>Send Me This Quote on WhatsApp</span>
                 </a>
               </div>
 

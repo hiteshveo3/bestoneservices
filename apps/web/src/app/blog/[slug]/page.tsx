@@ -17,6 +17,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import { BLOG_POSTS } from "@/config/blog-data";
 import { siteConfig } from "@/config/site";
+import { siteContact } from "@/config/site-contact";
 import { organisationSchema } from "@/lib/structured-data";
 import { PrintChecklistButton } from "@/components/blog/print-checklist-button";
 import { SECONDARY_BUTTON_CLASS, SIDEBAR_CALL_BUTTON_CLASS } from "@/lib/ui-classes";
@@ -488,7 +489,9 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
               </p>
 
               <Link
-                href="/booking/"
+                href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
               >
                 Get Instant Quote

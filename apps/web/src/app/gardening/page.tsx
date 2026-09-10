@@ -4,6 +4,7 @@ import { Trees, ShieldCheck, Clock, Sparkles } from "lucide-react";
 import { SmartPricingCTA } from "@/components/service/smart-pricing-cta";
 import { InstantEstimator } from "@/components/ui/calculator";
 import { ButtonLink } from "@/components/button-link";
+import { siteContact } from "@/config/site-contact";
 
 export const metadata: Metadata = {
   title: "Professional Gardening & Garden Clearance Services",
@@ -31,7 +32,7 @@ export default function GardeningPage() {
           </p>
 
           <div className="pt-2 flex justify-center">
-            <ButtonLink href="/booking/" variant="dark">
+            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like to book a gardening team with Best One Services.")} variant="dark">
               Book Gardening Team
             </ButtonLink>
           </div>
@@ -106,7 +107,7 @@ export default function GardeningPage() {
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink href="/booking/" variant="white" className="w-full sm:w-auto">
+            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")} variant="white" className="w-full sm:w-auto">
               Get Instant Quote Now
             </ButtonLink>
             <ButtonLink href="/contact/" variant="outline" className="w-full sm:w-auto" showArrow={false}>

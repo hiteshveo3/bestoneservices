@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { AnimatedIllustration } from "@/components/illustrations/animated-illustration";
 import { serviceCatalog, type ServiceCategory } from "@/content/service-catalog";
 import { InstantEstimator } from "@/components/ui/calculator";
+import { siteContact } from "@/config/site-contact";
 
 export function generateStaticParams() {
   return Object.keys(serviceCatalog).map((category) => ({ category }));
@@ -93,7 +94,9 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
           </div>
           <div className="flex flex-wrap gap-3 shrink-0">
             <Link
-              href="/booking/"
+              href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none cursor-pointer"
             >
               Book a Service

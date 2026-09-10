@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useAuth } from "@/components/providers/auth-provider";
+import { siteContact } from "@/config/site-contact";
 import { 
   Sparkles, 
   Calendar, 
@@ -82,7 +83,9 @@ export default function CustomerAccountPage() {
             <div className="text-xs font-mono font-medium text-ink-500 uppercase">STATUS</div>
             <p className="text-xs text-ink-600 font-medium">No active bookings found for your account.</p>
             <Link
-              href="/booking"
+              href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1F3A00] text-[#B7F56A] text-xs font-semibold hover:bg-[#2d5004] text-decoration-none border border-[#E5FBC9]"
             >
               <span>Book a Service</span>

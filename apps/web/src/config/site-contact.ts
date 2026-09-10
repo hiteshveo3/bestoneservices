@@ -20,8 +20,9 @@ export const siteContact = {
     formatted: "28–42 Clements Rd, Ilford IG1 1BA, London, UK",
   },
   getWhatsappUrl: (contextMessage?: string) => {
-    if (!contextMessage) return "https://wa.me/447884510459";
-    return `https://wa.me/447884510459?text=${encodeURIComponent(contextMessage)}`;
+    const base = "https://wa.me/447490623616";
+    if (!contextMessage) return base;
+    return `${base}?text=${encodeURIComponent(contextMessage)}`;
   },
 };
 

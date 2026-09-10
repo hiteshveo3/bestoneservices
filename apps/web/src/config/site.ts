@@ -7,7 +7,10 @@ export const siteConfig = {
   phone: siteContact.phoneDisplay,
   phoneHref: siteContact.phoneHref,
   phoneEnabled: true,
-  bookingEnabled: true,
+  // Self-serve online booking is switched off site-wide — every "Book Now" /
+  // "Book a Service" CTA routes to WhatsApp instead. The /booking/ flow's
+  // pages and components are left in place (unlinked), not deleted.
+  bookingEnabled: false,
   address: {
     streetAddress: siteContact.address.street,
     addressLocality: siteContact.address.locality,

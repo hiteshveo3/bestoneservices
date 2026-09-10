@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Bug, Leaf, Sparkles, Truck } from "lucide-react";
 import { SECONDARY_BUTTON_CLASS } from "@/lib/ui-classes";
+import { siteContact } from "@/config/site-contact";
 
 const TRUST_POINTS = ["Clear prices before you book", "Named, insured local teams", "London-wide availability"] as const;
 
@@ -30,7 +31,7 @@ export function HeroHome() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/booking/" className="inline-flex items-center justify-center rounded-xl bg-[#B7F56A] px-6 py-3 text-base font-semibold text-[#1F3A00] shadow-2xs transition-transform hover:-translate-y-0.5 hover:bg-[#a8eb58]">Get an instant quote</Link>
+            <Link href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#B7F56A] px-6 py-3 text-base font-semibold text-[#1F3A00] shadow-2xs transition-transform hover:-translate-y-0.5 hover:bg-[#a8eb58]">Get an instant quote</Link>
             <Link href="/prices/" className={`inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-medium ${SECONDARY_BUTTON_CLASS}`}>View price guide</Link>
           </div>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">

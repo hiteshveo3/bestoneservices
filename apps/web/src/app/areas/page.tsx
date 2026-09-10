@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Sparkles, ArrowRight } from "lucide-react";
 import { SitewideIllustrationGrid } from "@/components/illustrations/sitewide-illustration-grid";
+import { siteContact } from "@/config/site-contact";
 
 export const metadata: Metadata = { 
   title: "Coverage Areas Across Greater London",
@@ -39,8 +40,10 @@ export default function AreasPage() {
           </p>
 
           <div className="pt-2 flex justify-center gap-4">
-            <Link 
-              href="/booking/"
+            <Link
+              href={siteContact.getWhatsappUrl("Hi, I'd like to check postcode availability with Best One Services.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 flex items-center gap-2 text-decoration-none"
             >
               <span>Check Postcode Availability</span>
@@ -54,7 +57,7 @@ export default function AreasPage() {
         eyebrow="London operations"
         title="Local coverage with a responsive service network"
         cards={[
-          { slug: "london-coverage", title: "Greater London Coverage", description: "Postcode availability is checked against the service, team and requested timing.", href: "/booking/", imageSrc: "/images/feature-london-coverage-blue-v1.png", imageAlt: "London service professional with coverage map and service van cards" },
+          { slug: "london-coverage", title: "Greater London Coverage", description: "Postcode availability is checked against the service, team and requested timing.", href: siteContact.getWhatsappUrl("Hi, I'd like to check service availability for my postcode with Best One Services."), imageSrc: "/images/feature-london-coverage-blue-v1.png", imageAlt: "London service professional with coverage map and service van cards" },
           { slug: "emergency-response", title: "Urgent Response Coordination", description: "Share the issue and property access details so the quickest suitable response can be reviewed.", href: "/contact/" },
         ]}
       />
@@ -81,8 +84,10 @@ export default function AreasPage() {
                 </p>
               </div>
 
-              <Link 
-                href="/booking/"
+              <Link
+                href={siteContact.getWhatsappUrl(`Hi, I'd like to book a service in ${area.name.split("&")[0].trim()} with Best One Services.`)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full px-4 py-2.5 rounded-md font-inter text-sm font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 text-center text-decoration-none block"
               >
                 Book In {area.name.split("&")[0]}
@@ -109,8 +114,10 @@ export default function AreasPage() {
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/booking/" 
+            <Link
+              href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none w-full sm:w-auto gap-2 cursor-pointer"
             >
               <span>Get Instant Quote</span>

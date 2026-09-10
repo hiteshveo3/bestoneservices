@@ -14,9 +14,9 @@ import {
   SparklesIcon,
   DeliveryTruck01Icon,
 } from "@hugeicons/core-free-icons";
-import { BeforeAfterSlider } from "@/components/ui/before-after-slider";
 import { GoogleReviewsSection } from "@/components/trust/google-reviews-section";
 import { HomeFaq } from "@/components/home/home-faq";
+import { siteContact } from "@/config/site-contact";
 import { HeroHome } from "@/components/hero";
 import { BLOG_POSTS } from "@/config/blog-data";
 import { CONTACT } from "@/config/contact";
@@ -376,17 +376,6 @@ export default function HomePage() {
               </div>
             </section>
 
-            {/* SECTION 5: BEFORE & AFTER */}
-            <section id="standards" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                The standard we hand properties back at
-              </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
-                Drag the slider to compare a kitchen before and after a full end of tenancy restoration — the condition inventory clerks assess against:
-              </p>
-              <BeforeAfterSlider />
-            </section>
-
             {/* SECTION 6: COVERAGE */}
             <section id="coverage" className="scroll-mt-24 flex flex-col gap-5">
               <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
@@ -523,7 +512,9 @@ export default function HomePage() {
             </p>
 
             <Link
-              href="/booking/"
+              href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
             >
               Get Instant Quote

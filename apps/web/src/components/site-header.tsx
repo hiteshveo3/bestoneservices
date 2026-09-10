@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight01Icon, Search01Icon, ChevronDownIcon, Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
 import { siteConfig } from "@/config/site";
+import { siteContact } from "@/config/site-contact";
 import { megaMenuData } from "@/config/site-navigation";
 import { DesktopMegaMenu } from "@/components/desktop-mega-menu";
 import { Logo } from "@/components/logo";
@@ -161,13 +162,25 @@ export function SiteHeader() {
             </Link>
 
             {/* Primary conversion CTA */}
-            <Link
-              href={siteConfig.bookingEnabled ? "/booking/" : "/contact/"}
-              className="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer text-decoration-none whitespace-nowrap gap-2"
-            >
-              <span>{siteConfig.bookingEnabled ? "Book a Service" : "Contact Us"}</span>
-              <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="stroke-[2.5] shrink-0 text-[#1F3A00]" />
-            </Link>
+            {siteConfig.bookingEnabled ? (
+              <Link
+                href="/booking/"
+                className="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer text-decoration-none whitespace-nowrap gap-2"
+              >
+                <span>Book a Service</span>
+                <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="stroke-[2.5] shrink-0 text-[#1F3A00]" />
+              </Link>
+            ) : (
+              <a
+                href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer text-decoration-none whitespace-nowrap gap-2"
+              >
+                <span>Book via WhatsApp</span>
+                <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="stroke-[2.5] shrink-0 text-[#1F3A00]" />
+              </a>
+            )}
             <button
               ref={mobileMenuButtonRef}
               type="button"
@@ -219,7 +232,13 @@ export function SiteHeader() {
               <span>Contact</span><HugeiconsIcon icon={ArrowRight01Icon} size={20} className="text-[#1F3A00]" />
             </Link>
           </nav>
-          <div className="p-4"><Link href={siteConfig.bookingEnabled ? "/booking/" : "/contact/"} onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#1F3A00] bg-[#1F3A00] px-6 py-2 text-base font-semibold text-[#B7F56A] no-underline">{siteConfig.bookingEnabled ? "Get a Quote" : "Contact Us"}<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#B7F56A]" /></Link></div>
+          <div className="p-4">
+            {siteConfig.bookingEnabled ? (
+              <Link href="/booking/" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#1F3A00] bg-[#1F3A00] px-6 py-2 text-base font-semibold text-[#B7F56A] no-underline">Get a Quote<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#B7F56A]" /></Link>
+            ) : (
+              <a href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#1F3A00] bg-[#1F3A00] px-6 py-2 text-base font-semibold text-[#B7F56A] no-underline">Book via WhatsApp<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#B7F56A]" /></a>
+            )}
+          </div>
         </div>
       ) : null}
 

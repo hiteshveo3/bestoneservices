@@ -8,6 +8,7 @@ import { subscribeCustomerBookings } from "@/lib/repositories/bookings";
 import { formatPenceToGBP } from "@/lib/booking-domain";
 import { type BookingItem, type BookingStatus } from "@/types/booking";
 import { Spinner } from "@/components/ui/spinner";
+import { siteContact } from "@/config/site-contact";
 import { 
   Calendar, 
   ArrowRight, 
@@ -137,7 +138,9 @@ export default function CustomerBookingsPage() {
           </div>
 
           <Link
-            href="/booking"
+            href={siteContact.getWhatsappUrl("Hi, I'd like to book a new service with Best One Services.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-sm hover:bg-[#2d5004] transition-colors duration-150 text-decoration-none border border-[#E5FBC9]"
           >
             <span>Book New Service</span>
@@ -245,7 +248,9 @@ export default function CustomerBookingsPage() {
             You don&apos;t have any bookings matching your selected status filter.
           </p>
           <Link
-            href="/booking"
+            href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-xs inline-block text-decoration-none border border-[#E5FBC9]"
           >
             Book a Service Now

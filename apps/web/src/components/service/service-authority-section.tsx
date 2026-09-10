@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
+import { siteContact } from "@/config/site-contact";
 
 export interface AuthorityFeature {
   title: string;
@@ -30,7 +31,7 @@ export function ServiceAuthoritySection({
   imageTagline,
   imageBadge,
   ctaText = "Book Move-Out Clean",
-  ctaHref = "/booking/",
+  ctaHref = siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services."),
 }: ServiceAuthoritySectionProps) {
   return (
     <section className="bg-[#F8F9FA] rounded-[16px] p-8 sm:p-12 border border-[#E5FBC9] space-y-8 text-start">

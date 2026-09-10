@@ -29,6 +29,7 @@ import type { ApprovedServicePage } from "@/content/approved-service-pages";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Call02Icon } from "@hugeicons/core-free-icons";
 import { SECONDARY_BUTTON_CLASS, SIDEBAR_CALL_BUTTON_CLASS } from "@/lib/ui-classes";
+import { siteContact } from "@/config/site-contact";
 import { Spinner } from "@/components/ui/spinner";
 import { FormSuccess, FormError } from "@/components/ui/form-status";
 
@@ -62,6 +63,7 @@ export function MintLimeServiceLayout({
   const [postcodeMessage, setPostcodeMessage] = useState<string>("");
 
   const isCleaning = category.includes("cleaning");
+  const whatsappBookingUrl = siteContact.getWhatsappUrl(`Hi, I'd like to book ${categoryLabel} with Best One Services.`);
   const isPest = category.includes("pest");
   const isRat = service === "rat-control";
   const isEndOfTenancy = service === "end-of-tenancy-cleaning";
@@ -685,8 +687,10 @@ export function MintLimeServiceLayout({
 
             {/* CTAs — both without icon badges for consistency */}
             <div className="flex flex-wrap gap-3 pt-1">
-              <Link 
-                href="/booking/" 
+              <Link
+                href={whatsappBookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
               >
                 {isCleaning ? "Get Instant Quote" : "Request Assessment"}
@@ -1189,7 +1193,9 @@ export function MintLimeServiceLayout({
             </p>
 
             <Link
-              href="/booking/"
+              href={whatsappBookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
             >
               {isCleaning ? "Book This Service" : "Request an assessment"}
@@ -1234,7 +1240,9 @@ export function MintLimeServiceLayout({
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/booking/"
+              href={whatsappBookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer"
             >
               {isCleaning ? "Book Now — Save 20%" : "Request Assessment"}

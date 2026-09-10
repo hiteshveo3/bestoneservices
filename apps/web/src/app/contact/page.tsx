@@ -80,7 +80,9 @@ export default function ContactPage() {
             {/* 1. Book a Service */}
             <StaggerItem>
               <Link
-                href="/booking/"
+                href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-full p-5 rounded-[20px] bg-white border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 flex flex-col justify-between space-y-4 text-decoration-none group"
               >
                 <div className="space-y-2">
@@ -88,10 +90,10 @@ export default function ContactPage() {
                     <Calendar className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="font-heading font-medium text-lg text-ink-900 group-hover:underline">Book a Service</h3>
-                  <p className="text-xs text-ink-500">Request a new cleaning, pest, or removal slot online</p>
+                  <p className="text-xs text-ink-500">Request a new cleaning, pest, or removal slot via WhatsApp</p>
                 </div>
                 <div className="text-xs font-mono font-medium text-ink-600 flex items-center gap-1 pt-2">
-                  <span>Go to Booking</span>
+                  <span>Book on WhatsApp</span>
                   <ArrowRight className="w-3.5 h-3.5 text-ink-600" />
                 </div>
               </Link>
