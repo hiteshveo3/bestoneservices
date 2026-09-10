@@ -29,11 +29,11 @@ export const endOfTenancyContent = {
     ["Specific priorities", "Mention any room, surface or handover concern that may need extra attention."],
   ],
   startingPrices: [
-    ["Studio flat", "From £79"],
-    ["1 bedroom", "From £99"],
-    ["2 bedrooms", "From £119"],
-    ["3 bedrooms", "From £139"],
-    ["4 bedrooms", "From £159"],
+    ["Studio flat", "From £130"],
+    ["1 bedroom", "From £200"],
+    ["2 bedrooms", "From £230"],
+    ["3 bedrooms", "From £300"],
+    ["4 bedrooms", "From £350"],
   ],
   quoteDetails: [
     "Property type",

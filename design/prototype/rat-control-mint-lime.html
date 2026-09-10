@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rat Control — Best One Services (Mint Lime Theme)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Mint Lime Theme */
+      --accent: #B7F56A;
+      --accent-strong: #99D055;
+      --accent-soft: #CFF89D;
+      --page: #F5FEEA;
+      --tint: #DCFAB7;
+      --line: #E5FBC9;
+      --line-soft: #F1FDE1;
+      --ink: #1F3A00;
+      --ink-deep: #192E00;
+      --ink-mid: #3A5C13;
+      --muted: #375811;
+      --faint: #4D7220;
+      --on-dark: #DFFBBC;
+
+      --font-head: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
+      --font-body: "Schibsted Grotesk", "Helvetica Neue", Helvetica, sans-serif;
+      --r-lg: 26px;
+      --r-md: 18px;
+      --r-sm: 12px;
+      --r-xs: 9px;
+      --card-bg: #FFFFFF;
+      --card-border: 1px solid var(--line);
+      --card-shadow: none;
+      --scale: 1;
+    }
+
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.5;
+    }
+    * { box-sizing: border-box; }
+    a { color: var(--ink); text-decoration: none; transition: color 0.15s ease, background-color 0.15s ease, opacity 0.15s ease; }
+    a:hover { color: var(--ink-deep); }
+    p { text-wrap: pretty; }
+
+    [data-lh="Underline"] a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    [data-fr="Accent ring"] :focus-visible { outline: 3px solid var(--accent-strong); outline-offset: 3px; border-radius: 4px; }
+
+    h1, h2, h3 { font-family: var(--font-head); }
+
+    /* Interactive hover helpers */
+    .hover-tint:hover { background: var(--tint) !important; }
+    .hover-ink-deep:hover { background: var(--ink-deep) !important; }
+    .hover-accent-soft:hover { background: var(--accent-soft) !important; }
+    .hover-accent-strong:hover { background: var(--accent-strong) !important; }
+    .hover-page:hover { background: var(--page) !important; }
+    .hover-border-ink:hover { border-color: var(--ink) !important; }
+    .hover-dark-mid:hover { background: var(--ink-mid) !important; }
+
+    /* Accordion transitions */
+    .faq-answer {
+      display: none;
+      padding: 0 22px 20px;
+      max-width: 70ch;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-chevron {
+      display: flex;
+      flex-shrink: 0;
+      transition: transform 180ms ease;
+    }
+  </style>
+</head>
+<body>
+<div data-lh="Underline" data-fr="Accent ring">
+
+  <!-- Header -->
+  <header style="position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--page) 92%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1200px; margin:0 auto; padding:0 28px; height:68px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="/" style="display:flex; align-items:center; gap:10px; font-size:17.5px; font-weight:700; letter-spacing:-0.015em;">
+        <span style="display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:var(--r-xs); background:var(--ink); color:var(--accent); font-size:12.5px; font-weight:700;">B1</span>
+        Best One Services
+      </a>
+      <nav aria-label="Primary" style="display:flex; align-items:center; gap:2px; font-size:14.5px; font-weight:500;">
+        <a href="/pest-control" class="hover-tint" style="padding:8px 12px; border-radius:var(--r-xs);">Services</a>
+        <a href="/areas" class="hover-tint" style="padding:8px 12px; border-radius:var(--r-xs);">Areas</a>
+        <a href="/commercial" class="hover-tint" style="padding:8px 12px; border-radius:var(--r-xs);">For business</a>
+        <a href="/about" class="hover-tint" style="padding:8px 12px; border-radius:var(--r-xs);">About</a>
+        <a href="/contact" class="hover-tint" style="padding:8px 12px; border-radius:var(--r-xs);">Contact</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <a href="/contact" style="display:none; font-size:14px; font-weight:600;">Call us</a>
+        <a href="/get-help" class="hover-ink-deep" style="display:inline-flex; align-items:center; height:40px; padding:0 20px; border-radius:999px; background:var(--ink); color:var(--accent); font-size:14px; font-weight:600;">Get help</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section style="background:var(--accent); border-bottom:1px solid var(--accent-strong);">
+    <div style="max-width:1200px; margin:0 auto; padding:20px 28px 0;">
+      <nav aria-label="Breadcrumb" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:12.5px; color:var(--muted);">
+        <a href="/">Home</a><span aria-hidden="true">/</span>
+        <a href="/pest-control">Pest control</a><span aria-hidden="true">/</span>
+        <span style="font-weight:600; color:var(--ink);">Rat control</span>
+      </nav>
+    </div>
+    <div style="max-width:1200px; margin:0 auto; padding:36px 28px 46px; display:grid; gap:44px; grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr); align-items:center;">
+      <div style="display:flex; flex-direction:column; gap:20px; min-width:0;">
+        <p style="margin:0; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.16em;">Pest control · Rats &amp; mice</p>
+        <h1 style="margin:0; font-weight:600; font-size:clamp(34px,4.6vw,56px); line-height:1.04; letter-spacing:-0.03em; max-width:22ch;">Rat control, diagnosed properly before anything is treated</h1>
+        <p style="margin:0; max-width:56ch; font-size:17.5px; line-height:1.6; color:var(--ink-mid);">Rats are one of the most commonly reported pests in UK homes and businesses, and also one of the most misunderstood. This page covers what to look for, why it's worth taking seriously, what a professional visit involves, and how to stop it happening again.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; padding-top:6px;">
+          <a href="/get-help?mode=assessment&amp;context=Rat%20control" class="hover-ink-deep" style="display:inline-flex; align-items:center; height:50px; padding:0 26px; border-radius:999px; background:var(--ink); color:var(--accent); font-size:15.5px; font-weight:600;">Request an assessment</a>
+          <a href="/contact" class="hover-accent-soft" style="display:inline-flex; align-items:center; gap:10px; height:50px; padding:0 24px; border-radius:999px; border:1.5px solid var(--ink); font-size:15.5px; font-weight:600;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 5.5C4 14 10 20 18.5 20a1.5 1.5 0 0 0 1.5-1.5v-2l-4-1.5-2 2c-2.5-1.2-4.3-3-5.5-5.5l2-2L9 5.5H7A3 3 0 0 0 4 5.5Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Call
+            <span data-business-data-required="true" style="padding:2px 8px; border:1px dashed var(--ink); border-radius:999px; font-size:10.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;">number required</span>
+          </a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:18px; padding-top:8px; font-size:13.5px; font-weight:500; color:var(--ink-mid);">
+          <span style="display:inline-flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" aria-hidden="true"><path d="M5 13l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Assessment before quoting</span>
+          <span style="display:inline-flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" aria-hidden="true"><path d="M5 13l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Follow-up visit included</span>
+          <span style="display:inline-flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" aria-hidden="true"><path d="M5 13l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Covered across London</span>
+        </div>
+      </div>
+
+      <div style="position:relative; min-width:0;">
+        <div style="aspect-ratio:4/3; border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--ink); background-color:var(--accent-soft); background-image:repeating-linear-gradient(135deg, color-mix(in srgb, var(--ink) 12%, transparent) 0 10px, transparent 10px 22px); display:flex; align-items:flex-end; padding:22px;">
+          <span style="font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; letter-spacing:0.02em; background:var(--page); border:1px solid var(--ink); border-radius:var(--r-xs); padding:7px 11px;">photo — technician inspecting a loft void / skirting line</span>
+        </div>
+        <div style="position:absolute; bottom:-26px; left:22px; right:22px; background:var(--page); border:1px solid var(--line); border-radius:var(--r-md); padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; box-shadow:0 22px 44px -30px color-mix(in srgb, var(--ink) 55%, transparent);">
+          <span style="font-size:13.5px; line-height:1.4; color:var(--muted);">Not sure if it's rats or mice?</span>
+          <a href="#signs" style="font-size:13.5px; font-weight:600; text-decoration:underline; text-underline-offset:3px;">Check the signs →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Stats Section -->
+  <section style="border-bottom:1px solid var(--line); background:var(--page);">
+    <div style="max-width:1200px; margin:0 auto; padding:44px 28px 30px; display:grid; gap:22px; grid-template-columns:repeat(auto-fit, minmax(210px,1fr));">
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <span style="font-family:var(--font-head); font-size:34px; font-weight:600; letter-spacing:-0.03em;">15–20mm</span>
+        <span style="font-size:13.5px; line-height:1.5; color:var(--muted);">Gap a rat can pass through — about a thumb's width</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <span style="font-family:var(--font-head); font-size:34px; font-weight:600; letter-spacing:-0.03em;">5 weeks</span>
+        <span style="font-size:13.5px; line-height:1.5; color:var(--muted);">Age at which rats reach maturity and begin breeding</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <span style="font-family:var(--font-head); font-size:34px; font-weight:600; letter-spacing:-0.03em;">6–12</span>
+        <span style="font-size:13.5px; line-height:1.5; color:var(--muted);">Pups per litter, with several litters a year</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <span style="font-family:var(--font-head); font-size:34px; font-weight:600; letter-spacing:-0.03em;">Autumn</span>
+        <span style="font-size:13.5px; line-height:1.5; color:var(--muted);">When indoor activity is most commonly first noticed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content & Sidebar Grid -->
+  <main id="main" style="max-width:1200px; margin:0 auto; padding:0 28px;">
+    <div style="display:grid; gap:64px; grid-template-columns:minmax(0,1fr) minmax(0,330px); align-items:start; padding:64px 0 0;">
+      <div style="display:flex; flex-direction:column; gap:72px; min-width:0; width:100%;">
+
+        <!-- Section: Overview -->
+        <section id="overview" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:22px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">What professional rat control involves</h2>
+          <div style="display:flex; flex-direction:column; gap:18px; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">
+            <p style="margin:0;">Professional rat control isn't a single action — it's a short sequence of decisions, each of which depends on what's actually found at the property. That starts with confirming there's genuine rat activity (as opposed to mice, or an old sign that's no longer current), understanding how widespread it is, and identifying how rats are most likely getting in. Only once that picture is clear does treatment get chosen, because the right approach for a single rat spotted in a garden shed is different from the right approach for an established population in a loft void.</p>
+            <p style="margin:0;">This is also why response-time and price shouldn't really be quoted before any of that is known — anyone offering a fixed price for “rat control” without asking a single question about the property is guessing. A proper assessment takes that guesswork out, which is both more accurate and, in most cases, faster to resolve overall because the right method gets used from the start.</p>
+          </div>
+          <p style="margin:0; max-width:60ch; padding:22px 26px; background:var(--accent); border-radius:var(--r-md); font-family:var(--font-head); font-weight:500; font-size:20px; line-height:1.45; letter-spacing:-0.01em;">Rats are resilient, adaptable animals that have lived alongside humans for thousands of years. Treating an infestation isn't a single clever trick — it's an accurate diagnosis plus consistent follow-through.</p>
+        </section>
+
+        <!-- Section: Signs -->
+        <section id="signs" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:24px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">Signs of a rat infestation</h2>
+          <p style="margin:0; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">Rats are largely nocturnal and naturally cautious, so direct sightings during the day are actually one of the less common ways an infestation is first noticed. These are the signs worth paying attention to:</p>
+          <div style="display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(250px,1fr));">
+            <div style="background:var(--card-bg); border:var(--card-border); border-radius:var(--r-md); padding:22px; display:flex; flex-direction:column; gap:10px;">
+              <span style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:var(--r-xs); background:var(--accent);">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" aria-hidden="true"><circle cx="8" cy="9" r="2"></circle><circle cx="15" cy="13" r="2"></circle><circle cx="10" cy="17" r="1.6"></circle></svg>
+              </span>
+              <strong style="font-size:16.5px; font-weight:600;">Droppings</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">Dark, roughly rice-grain-sized, often clustered near food sources, along skirting boards, or inside cupboards. Fresh droppings are soft and moist; older ones are dry and crumble easily.</span>
+            </div>
+            <div style="background:var(--card-bg); border:var(--card-border); border-radius:var(--r-md); padding:22px; display:flex; flex-direction:column; gap:10px;">
+              <span style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:var(--r-xs); background:var(--accent);">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" aria-hidden="true"><path d="M4 8h16M6 8v4a2 2 0 0 0 4 0V8M14 8v4a2 2 0 0 0 4 0V8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </span>
+              <strong style="font-size:16.5px; font-weight:600;">Gnaw marks</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">On skirting, door frames, stored food packaging, and — significantly — electrical cabling, since a rat's teeth grow continuously and gnawing is instinctive rather than optional for them.</span>
+            </div>
+            <div style="background:var(--card-bg); border:var(--card-border); border-radius:var(--r-md); padding:22px; display:flex; flex-direction:column; gap:10px;">
+              <span style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:var(--r-xs); background:var(--accent);">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" aria-hidden="true"><path d="M9 6v12M13 9v6M5 9v6M17 4v16" stroke-linecap="round"></path></svg>
+              </span>
+              <strong style="font-size:16.5px; font-weight:600;">Scratching or movement sounds</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">Most commonly heard at night, in wall cavities, under floors, or in lofts, as rats are most active after dark and tend to travel along the same routes repeatedly.</span>
+            </div>
+            <div style="background:var(--card-bg); border:var(--card-border); border-radius:var(--r-md); padding:22px; display:flex; flex-direction:column; gap:10px;">
+              <span style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:var(--r-xs); background:var(--accent);">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" aria-hidden="true"><path d="M4 17h16M4 12c4 0 4-3 8-3s4 3 8 3" stroke-linecap="round"></path></svg>
+              </span>
+              <strong style="font-size:16.5px; font-weight:600;">Grease marks and smudges</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">Dark, greasy marks along skirting boards or beams, left by a rat's fur brushing against the same surface repeatedly on a regular travel route.</span>
+            </div>
+            <div style="background:var(--card-bg); border:var(--card-border); border-radius:var(--r-md); padding:22px; display:flex; flex-direction:column; gap:10px;">
+              <span style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:var(--r-xs); background:var(--accent);">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" aria-hidden="true"><path d="M3 18h18" stroke-linecap="round"></path><path d="M8 18a4 4 0 0 1 8 0" stroke-linecap="round"></path></svg>
+              </span>
+              <strong style="font-size:16.5px; font-weight:600;">Burrows outdoors</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">Smooth-sided holes roughly 6–9cm across, often near decking, compost heaps, garden sheds, or the base of fences, usually with a well-worn path leading to and from the entrance.</span>
+            </div>
+            <div style="background:var(--card-bg); border:var(--card-border); border-radius:var(--r-md); padding:22px; display:flex; flex-direction:column; gap:10px;">
+              <span style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:var(--r-xs); background:var(--accent);">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 5.5v1.6M12 16.9v1.6M5.5 12h1.6M16.9 12h1.6" stroke-linecap="round"></path></svg>
+              </span>
+              <strong style="font-size:16.5px; font-weight:600;">An unusual smell</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">A persistent, slightly musky or ammonia-like odour in an enclosed space — often the first thing noticed in a loft or under-stairs cupboard before any visual sign is found.</span>
+            </div>
+          </div>
+          <div style="display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); align-items:center; padding:20px; background:var(--tint); border-radius:var(--r-lg);">
+            <p style="margin:0; font-size:16px; line-height:1.65;">One sign on its own — a single dropping, one distant sound at night — isn't necessarily cause for alarm. What generally does warrant a closer look is two or more of these signs appearing in the same area within a short period, since that's more consistent with ongoing activity than a one-off.</p>
+            <div style="aspect-ratio:16/10; border-radius:var(--r-sm); border:1px solid var(--ink); background-color:var(--accent-soft); background-image:repeating-linear-gradient(135deg, color-mix(in srgb, var(--ink) 12%, transparent) 0 8px, transparent 8px 18px); display:flex; align-items:flex-end; padding:14px;">
+              <span style="font-family:ui-monospace, Menlo, monospace; font-size:11px; background:var(--page); border:1px solid var(--ink); border-radius:var(--r-xs); padding:5px 9px;">photo — grease marks along skirting</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Risks -->
+        <section id="risks" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:24px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">Why rat activity is a serious problem</h2>
+          <p style="margin:0; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">It's tempting to think of rats as simply unpleasant rather than genuinely risky, but there are three concrete reasons professional advice consistently treats rat activity as worth addressing promptly rather than monitoring.</p>
+          <div style="display:grid; gap:1px; background:var(--accent-strong); border-radius:var(--r-lg); overflow:hidden; grid-template-columns:repeat(auto-fit, minmax(230px,1fr));">
+            <div style="background:var(--card-bg); color:var(--ink-mid); padding:26px 26px 28px; border-top:4px solid var(--accent); display:flex; flex-direction:column; gap:10px;">
+              <span style="font-size:11px; font-weight:700; letter-spacing:0.14em; color:var(--muted);">RISK 01</span>
+              <strong style="font-family:var(--font-head); font-size:23px; font-weight:600; letter-spacing:-0.02em; color:var(--ink);">Health</strong>
+              <span style="font-size:15.5px; line-height:1.72;">Rats can carry a number of pathogens transmissible to humans, including Weil's disease (leptospirosis), salmonella, and hantavirus, most commonly through contact with urine, droppings, or contaminated surfaces rather than through a bite. This is part of why food-preparation areas and stored food are a particular concern when rats have been active nearby.</span>
+            </div>
+            <div style="background:var(--card-bg); color:var(--ink-mid); padding:26px 26px 28px; border-top:4px solid var(--accent); display:flex; flex-direction:column; gap:10px;">
+              <span style="font-size:11px; font-weight:700; letter-spacing:0.14em; color:var(--muted);">RISK 02</span>
+              <strong style="font-family:var(--font-head); font-size:23px; font-weight:600; letter-spacing:-0.02em; color:var(--ink);">Property damage</strong>
+              <span style="font-size:15.5px; line-height:1.72;">As covered above, a rat's need to gnaw continuously means wiring, pipework, insulation, and structural timber are all at risk. Damaged electrical cabling specifically has been documented as a contributing factor in property fires, which elevates this from a maintenance issue to a genuine safety consideration.</span>
+            </div>
+            <div style="background:var(--card-bg); color:var(--ink-mid); padding:26px 26px 28px; border-top:4px solid var(--accent); display:flex; flex-direction:column; gap:10px;">
+              <span style="font-size:11px; font-weight:700; letter-spacing:0.14em; color:var(--muted);">RISK 03</span>
+              <strong style="font-family:var(--font-head); font-size:23px; font-weight:600; letter-spacing:-0.02em; color:var(--ink);">Rate of increase</strong>
+              <span style="font-size:15.5px; line-height:1.72;">Because rats breed quickly and reach maturity within weeks, a small, easily resolved issue can become a substantially larger one in a matter of months if left unaddressed — which is the single biggest argument for acting on early signs rather than a “wait and see” approach.</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Causes -->
+        <section id="causes" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:22px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">Why rats enter a property</h2>
+          <p style="margin:0; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">Rats don't target a property at random — they respond to three things: access, food, and shelter. Understanding which of these is present is usually more useful than simply knowing “there are rats nearby”, because it points directly at what needs to change.</p>
+          <div style="display:flex; flex-direction:column;">
+            <div style="display:grid; gap:6px 28px; grid-template-columns:minmax(0,210px) minmax(0,1fr); padding:20px 0; border-top:1px solid var(--line);">
+              <strong style="font-size:16px; font-weight:600;">Gaps and access points</strong>
+              <span style="font-size:16.5px; line-height:1.75; color:var(--muted);">Rats can fit through gaps as small as 15–20mm (roughly the width of a thumb), so unsealed pipework entries, damaged airbricks, gaps under doors, and worn mortar joints are all realistic entry routes, not just obvious holes.</span>
+            </div>
+            <div style="display:grid; gap:6px 28px; grid-template-columns:minmax(0,210px) minmax(0,1fr); padding:20px 0; border-top:1px solid var(--line);">
+              <strong style="font-size:16px; font-weight:600;">Accessible food</strong>
+              <span style="font-size:16.5px; line-height:1.75; color:var(--muted);">This includes the obvious (open bins, pet food left out overnight, bird feeders with heavy spillage) and the less obvious, like compost heaps with food waste, or fruit fallen from garden trees left uncollected.</span>
+            </div>
+            <div style="display:grid; gap:6px 28px; grid-template-columns:minmax(0,210px) minmax(0,1fr); padding:20px 0; border-top:1px solid var(--line);">
+              <strong style="font-size:16px; font-weight:600;">Shelter and warmth</strong>
+              <span style="font-size:16.5px; line-height:1.75; color:var(--muted);">Cluttered sheds, dense ivy or overgrown garden boundaries, cavity walls, and insulated lofts all provide the kind of undisturbed, sheltered space rats look for, particularly as outdoor temperatures fall.</span>
+            </div>
+            <div style="display:grid; gap:6px 28px; grid-template-columns:minmax(0,210px) minmax(0,1fr); padding:20px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+              <strong style="font-size:16px; font-weight:600;">Nearby infrastructure</strong>
+              <span style="font-size:16.5px; line-height:1.75; color:var(--muted);">Proximity to drains, sewers, or waterways can bring rats into a wider area regardless of what an individual property does, which is one reason neighbouring properties sometimes experience activity around the same time.</span>
+            </div>
+          </div>
+          <p style="margin:0; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">This is also why a visit focused only on removing the rats currently present, without addressing why they arrived, tends to see the problem recur — often within the same property, sometimes within weeks.</p>
+        </section>
+
+        <!-- Section: Process -->
+        <section id="process" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:26px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">What our process typically involves</h2>
+          <div style="display:flex; flex-direction:column; gap:0;">
+            <div style="display:grid; gap:8px 26px; grid-template-columns:minmax(0,64px) minmax(0,1fr); padding:22px 0; border-top:1px solid var(--line);">
+              <span style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; background:var(--accent); font-size:14px; font-weight:700;">01</span>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <h3 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.015em;">Assessment</h3>
+                <p style="margin:0; max-width:64ch; font-size:16.5px; line-height:1.75; color:var(--muted);">A walk-through of the affected areas to confirm activity, identify likely entry points, and understand the extent of the problem — inside the property, outside, or both.</p>
+              </div>
+            </div>
+            <div style="display:grid; gap:8px 26px; grid-template-columns:minmax(0,64px) minmax(0,1fr); padding:22px 0; border-top:1px solid var(--line);">
+              <span style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; background:var(--accent); font-size:14px; font-weight:700;">02</span>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <h3 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.015em;">Treatment planning</h3>
+                <span data-business-data-required="true" style="align-self:flex-start; padding:3px 10px; border:1px dashed var(--ink); border-radius:999px; font-size:10.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;">treatment methodology required — no specific method stated without business confirmation</span>
+                <p style="margin:0; max-width:64ch; font-size:16.5px; line-height:1.75; color:var(--muted);">The approach is matched to what's actually found, rather than applied as a single default method regardless of circumstances.</p>
+              </div>
+            </div>
+            <div style="display:grid; gap:8px 26px; grid-template-columns:minmax(0,64px) minmax(0,1fr); padding:22px 0; border-top:1px solid var(--line);">
+              <span style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; background:var(--accent); font-size:14px; font-weight:700;">03</span>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <h3 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.015em;">Implementation</h3>
+                <p style="margin:0; max-width:64ch; font-size:16.5px; line-height:1.75; color:var(--muted);">Treatment is carried out, with any access, safety, or timing considerations (pets, children, food storage areas) accounted for beforehand rather than discovered during the visit.</p>
+              </div>
+            </div>
+            <div style="display:grid; gap:8px 26px; grid-template-columns:minmax(0,64px) minmax(0,1fr); padding:22px 0; border-top:1px solid var(--line);">
+              <span style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; background:var(--accent); font-size:14px; font-weight:700;">04</span>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <h3 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.015em;">Follow-up</h3>
+                <p style="margin:0; max-width:64ch; font-size:16.5px; line-height:1.75; color:var(--muted);">A further visit confirms whether activity has genuinely stopped. This step matters because early quiet periods don't always mean full resolution, particularly with an established population.</p>
+              </div>
+            </div>
+            <div style="display:grid; gap:8px 26px; grid-template-columns:minmax(0,64px) minmax(0,1fr); padding:22px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+              <span style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; background:var(--accent); font-size:14px; font-weight:700;">05</span>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <h3 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.015em;">Proofing recommendations</h3>
+                <p style="margin:0; max-width:64ch; font-size:16.5px; line-height:1.75; color:var(--muted);">Once activity is resolved, the entry points identified during the assessment are the natural next thing to address — see <a href="/pest-control/pest-proofing" style="font-weight:600; text-decoration:underline; text-underline-offset:3px;">Pest Proofing</a> — since this is what prevents recurrence.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: DIY vs Pro Table -->
+        <section id="diy-vs-pro" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:22px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">DIY traps vs. professional treatment</h2>
+          <p style="margin:0; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">Shop-bought traps and bait stations aren't ineffective, and for a single, freshly noticed rat in a garden, they're often a reasonable first step. Where they tend to fall short is with an established or growing population — this is where the practical differences matter:</p>
+          <div style="overflow-x:auto; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--card-bg);">
+            <table style="width:100%; min-width:520px; border-collapse:collapse; text-align:left; font-size:14.5px;">
+              <thead>
+                <tr style="background:var(--tint);">
+                  <th style="padding:14px 18px; font-weight:600;">Consideration</th>
+                  <th style="padding:14px 18px; font-weight:600;">DIY traps/bait</th>
+                  <th style="padding:14px 18px; font-weight:600;">Professional treatment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:14px 18px; font-weight:600; border-top:1px solid var(--line-soft);">Identifying entry points</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Not typically included</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Assessed and reported on</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 18px; font-weight:600; border-top:1px solid var(--line-soft);">Scaling to established populations</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Often limited</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Approach adjusted to extent found</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 18px; font-weight:600; border-top:1px solid var(--line-soft);">Access to lofts, voids, drains</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Frequently impractical</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Part of a full assessment</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 18px; font-weight:600; border-top:1px solid var(--line-soft);">Confirmation of resolution</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Self-assessed</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Follow-up visit</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 18px; font-weight:600; border-top:1px solid var(--line-soft);">Prevention advice</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Not usually included</td>
+                  <td style="padding:14px 18px; color:var(--muted); border-top:1px solid var(--line-soft);">Proofing recommendations provided</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin:0; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">A reasonable rule of thumb: if a single trap resolves the sighting within a few days and nothing recurs, that may be all that was needed. If activity continues, spreads to a new area, or comes back after a quiet spell, that's usually the point where a proper assessment saves more time than it costs.</p>
+        </section>
+
+        <!-- Section: Factors -->
+        <section id="factors" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:22px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">What affects the scope of the job</h2>
+          <p style="margin:0; max-width:66ch; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">Every rat control visit is shaped by the same handful of variables. Knowing them in advance helps set realistic expectations before an assessment even happens:</p>
+          <div style="display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(240px,1fr));">
+            <div style="padding:20px; background:var(--tint); border-radius:var(--r-md); display:flex; flex-direction:column; gap:7px;">
+              <strong style="font-size:16px; font-weight:600;">Property type</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">A terraced house sharing party walls with neighbouring properties raises different considerations than a detached house or a commercial unit — shared structures mean activity can move between properties.</span>
+            </div>
+            <div style="padding:20px; background:var(--tint); border-radius:var(--r-md); display:flex; flex-direction:column; gap:7px;">
+              <strong style="font-size:16px; font-weight:600;">Extent of activity</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">An isolated sighting is a different job to signs across multiple rooms or an established nest — this is precisely what the assessment is for.</span>
+            </div>
+            <div style="padding:20px; background:var(--tint); border-radius:var(--r-md); display:flex; flex-direction:column; gap:7px;">
+              <strong style="font-size:16px; font-weight:600;">Access</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">Loft hatches, external access to voids, and whether affected areas are in communal or private space all affect how straightforward treatment is.</span>
+            </div>
+            <div style="padding:20px; background:var(--tint); border-radius:var(--r-md); display:flex; flex-direction:column; gap:7px;">
+              <strong style="font-size:16px; font-weight:600;">Construction</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">Older buildings with suspended timber floors or cavity walls often have more potential rat routes than modern solid-floor construction.</span>
+            </div>
+            <div style="padding:20px; background:var(--tint); border-radius:var(--r-md); display:flex; flex-direction:column; gap:7px;">
+              <strong style="font-size:16px; font-weight:600;">Time of year</strong>
+              <span style="font-size:15.5px; line-height:1.7; color:var(--muted);">Autumn and winter tend to see higher indoor activity as rats seek shelter from the cold, which can mean slightly longer resolution timelines during peak season purely due to the volume of enquiries.</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Prevention -->
+        <section id="prevention" style="scroll-margin-top:96px; display:grid; gap:30px; grid-template-columns:minmax(0,1fr) minmax(0,300px); align-items:start;">
+          <div style="display:flex; flex-direction:column; gap:20px; min-width:0;">
+            <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">Prevention and long-term protection</h2>
+            <div style="display:flex; flex-direction:column; gap:16px; font-size:17.5px; line-height:1.78; color:var(--ink-mid);">
+              <p style="margin:0;">Prevention is genuinely more effective — and cheaper — than repeated treatment, and most of it comes down to removing the three things covered earlier: access, food, and shelter.</p>
+              <p style="margin:0;"><strong style="color:var(--ink);">Sealing access points</strong> is the single highest-impact step. This includes fitting wire mesh over airbrick openings, sealing gaps where pipework enters the building, repairing damaged mortar, and fitting a door sweep where there's a visible gap under external doors.</p>
+              <p style="margin:0;"><strong style="color:var(--ink);">Managing food sources</strong> means storing pet food in sealed containers rather than bags, using a bin with a well-fitting lid, clearing fallen fruit promptly, and being mindful of bird feeder spillage, which is a more common attractant than most people expect.</p>
+              <p style="margin:0;"><strong style="color:var(--ink);">Reducing shelter</strong> means keeping garden vegetation, log piles, and stored materials away from the base of walls and fences, and periodically checking loft and shed spaces for early signs rather than only after activity is already suspected.</p>
+              <p style="margin:0;">None of this guarantees rats will never approach a property again — they're widespread and highly adaptable animals — but it substantially reduces both the likelihood and the speed at which any new activity could establish itself.</p>
+            </div>
+          </div>
+          <div style="aspect-ratio:3/4; border-radius:var(--r-lg); border:1px solid var(--ink); background-color:var(--accent-soft); background-image:repeating-linear-gradient(135deg, color-mix(in srgb, var(--ink) 12%, transparent) 0 10px, transparent 10px 22px); display:flex; align-items:flex-end; padding:18px;">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:11.5px; background:var(--page); border:1px solid var(--ink); border-radius:var(--r-xs); padding:6px 10px;">photo — mesh fitted over an airbrick</span>
+          </div>
+        </section>
+
+        <!-- Section: Interactive FAQs -->
+        <section id="faqs" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:22px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">Common questions</h2>
+          <div style="border:1px solid var(--line); border-radius:var(--r-lg); background:var(--card-bg); overflow:hidden;">
+            
+            <!-- FAQ 1 -->
+            <div class="faq-item active" style="border-top:none;">
+              <button type="button" aria-expanded="true" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                How quickly can a rat problem get out of control?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">Rats reach sexual maturity at around five weeks old, and a single female can produce several litters a year, each with six to twelve pups. In practical terms, a couple of rats spotted in a garden in spring can become an established indoor population by autumn if entry points and food access aren't addressed. This is the main reason professional advice is to act on the first sighting rather than waiting to see if the activity continues.</p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item" style="border-top:1px solid var(--line-soft);">
+              <button type="button" aria-expanded="false" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                Do I need to leave the property during treatment?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">This depends on the treatment method used for your specific situation, which is confirmed during the assessment rather than assumed in advance. Some interventions — proofing work, trap placement, bait station positioning — don't require anyone to leave. Where a different approach is more appropriate, that will be explained clearly before anything is agreed.</p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item" style="border-top:1px solid var(--line-soft);">
+              <button type="button" aria-expanded="false" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                Will rat control harm my pets?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">Any method used around a property with pets is chosen and positioned with that in mind, and this is exactly the kind of detail worth raising during the initial conversation so it can be planned for properly rather than worked around after the fact.</p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item" style="border-top:1px solid var(--line-soft);">
+              <button type="button" aria-expanded="false" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                How can I tell the difference between rats and mice?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">Size is the most obvious indicator — adult rats are considerably larger than mice, with adult rat droppings roughly the size of a grain of rice compared to a mouse's, which are closer to a grain of black pepper. Rats also tend to be more cautious around new objects in their environment, which is one reason freshly placed traps sometimes go untouched for a few days even where activity is confirmed.</p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item" style="border-top:1px solid var(--line-soft);">
+              <button type="button" aria-expanded="false" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                Can rats really cause structural damage?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">Yes. A rat's incisors grow continuously, so gnawing is a physical necessity for them, not just a foraging behaviour. Skirting boards, timber joists, plastic piping, and electrical cabling are all common targets. Damaged wiring in particular is a recognised cause of electrical faults and has been linked to property fires in documented cases, which is part of why early intervention matters beyond simple nuisance.</p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item" style="border-top:1px solid var(--line-soft);">
+              <button type="button" aria-expanded="false" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                Is it normal to still see one rat after treatment has started?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">In the days immediately following treatment, seeing continued activity doesn't necessarily mean the approach isn't working — it can take time for a population to be fully addressed, particularly where there's an established nest. This is exactly what a follow-up visit is for: confirming activity has genuinely stopped, not just assuming it based on a quiet day or two.</p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item" style="border-top:1px solid var(--line-soft);">
+              <button type="button" aria-expanded="false" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                What time of year are rats most active around homes?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">Rat sightings around homes typically increase in autumn as outdoor temperatures drop and rats seek warmer, more sheltered places to nest — which is often indoors. That制定, an active infestation can be identified and treated at any time of year; autumn is simply when new activity is most commonly first noticed.</p>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="faq-item" style="border-top:1px solid var(--line-soft);">
+              <button type="button" aria-expanded="false" class="hover-page" style="display:flex; width:100%; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; background:none; border:none; text-align:left; font-family:inherit; font-size:16px; font-weight:600; color:var(--ink); cursor:pointer;">
+                Should I clean up droppings and nesting material myself?
+                <span class="faq-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </button>
+              <p class="faq-answer">Rat droppings and nesting material can carry pathogens, so if you do need to clear any before a visit, wearing gloves, avoiding disturbing dust (which can be inhaled), and disposing of everything in a sealed bag is the generally recommended approach. Where there's a lot of material, or it's in a hard-to-access space like a loft, it's often simpler and safer to leave it for the visit.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Section: Related Services -->
+        <section id="related" style="scroll-margin-top:96px; display:flex; flex-direction:column; gap:20px;">
+          <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,36px); line-height:1.1; letter-spacing:-0.025em;">Related services and coverage</h2>
+          <div style="display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(240px,1fr));">
+            <a href="/pest-control/pest-proofing" class="hover-border-ink" style="display:flex; flex-direction:column; gap:6px; padding:20px; border:1px solid var(--line); border-radius:var(--r-md); background:var(--card-bg);">
+              <strong style="font-size:16.5px; font-weight:600;">Pest proofing</strong>
+              <span style="font-size:14px; color:var(--muted);">Blocks the entry points found during assessment</span>
+            </a>
+            <a href="/pest-control/mice-control" class="hover-border-ink" style="display:flex; flex-direction:column; gap:6px; padding:20px; border:1px solid var(--line); border-radius:var(--r-md); background:var(--card-bg);">
+              <strong style="font-size:16.5px; font-weight:600;">Mice control</strong>
+              <span style="font-size:14px; color:var(--muted);">Similar signs, different species</span>
+            </a>
+          </div>
+          <p style="margin:0; display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:14.5px; color:var(--muted);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" aria-hidden="true"><path d="M5 13l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Available across London —
+            <a href="/pest-control/rat-control/ilford" style="font-weight:600; text-decoration:underline; text-underline-offset:3px;">Ilford</a>
+            <a href="/areas" style="font-weight:600; text-decoration:underline; text-underline-offset:3px;">see all covered areas →</a>
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Sticky Sidebar -->
+      <aside style="position:sticky; top:96px; display:flex; flex-direction:column; gap:16px; background:var(--card-bg); border:var(--card-border); border-radius:var(--r-lg); padding:26px; box-shadow:0 22px 46px -34px color-mix(in srgb, var(--ink) 50%, transparent);">
+        <p style="margin:0; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--muted);">Request an assessment</p>
+        <h3 style="margin:0; font-size:24px; font-weight:600; letter-spacing:-0.025em; line-height:1.15;">Get this looked at properly</h3>
+        <p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--muted);">Tell us what you've seen and where. We confirm the activity on site before recommending anything.</p>
+        <a href="/get-help?mode=assessment&amp;context=Rat%20control" class="hover-ink-deep" style="display:flex; align-items:center; justify-content:center; height:48px; border-radius:var(--r-sm); background:var(--ink); color:var(--accent); font-size:15px; font-weight:600;">Request an assessment</a>
+        <a href="/contact" class="hover-page" style="display:flex; align-items:center; justify-content:center; gap:8px; height:48px; border-radius:var(--r-sm); border:1.5px solid var(--ink); font-size:15px; font-weight:600;">Call
+          <span data-business-data-required="true" style="padding:2px 8px; border:1px dashed var(--ink); border-radius:999px; font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;">number required</span>
+        </a>
+        <div style="height:1px; background:var(--line); margin:4px 0;"></div>
+        <p style="margin:0; font-size:14px; font-weight:600;">Covered in your area?</p>
+        <form onsubmit="event.preventDefault(); alert('Checked postcode: ' + (document.getElementById('postcode').value || 'None entered') + '. Coverage is active across Greater London.');" style="display:flex; gap:8px;">
+          <label for="postcode" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Check your area</label>
+          <input id="postcode" type="text" inputmode="text" autocomplete="postal-code" placeholder="Enter your postcode" style="flex:1; min-width:0; height:44px; padding:0 14px; border:1px solid var(--line); border-radius:var(--r-sm); background:var(--page); font-family:inherit; font-size:14px; color:var(--ink); outline:none;"/>
+          <button type="submit" class="hover-accent-strong" style="height:44px; padding:0 18px; border:none; border-radius:var(--r-sm); background:var(--accent); color:var(--ink); font-family:inherit; font-size:14px; font-weight:700; cursor:pointer;">Check</button>
+        </form>
+        <div style="display:flex; flex-direction:column; gap:6px; font-size:12.5px; line-height:1.5; color:var(--faint);">
+          <span style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">Last reviewed:
+            <span data-business-data-required="true" style="display:inline-flex; white-space:nowrap; padding:1px 8px; border:1px dashed var(--faint); border-radius:999px; font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;">publish date required</span>
+          </span>
+          <span style="white-space:nowrap;">12 min read</span>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Bottom CTA banner -->
+    <section style="margin:72px 0; padding:44px; border-radius:var(--r-lg); background:var(--ink); color:var(--on-dark); display:grid; gap:28px; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); align-items:center;">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <h2 style="margin:0; font-weight:600; font-size:clamp(26px,3vw,34px); line-height:1.12; letter-spacing:-0.025em; color:#FFFFFF;">Seen one of the signs above?</h2>
+        <p style="margin:0; max-width:48ch; font-size:16px; line-height:1.65;">Early activity is quicker and cheaper to resolve than an established population. Book an assessment and get a straight answer on what's actually happening.</p>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:flex-end;">
+        <a href="/get-help?mode=assessment&amp;context=Rat%20control" class="hover-accent-soft" style="display:inline-flex; align-items:center; height:50px; padding:0 26px; border-radius:999px; background:var(--accent); color:var(--ink); font-size:15.5px; font-weight:700;">Request an assessment</a>
+        <a href="/commercial" class="hover-dark-mid" style="display:inline-flex; align-items:center; height:50px; padding:0 24px; border-radius:999px; border:1.5px solid var(--accent); color:#FFFFFF; font-size:15.5px; font-weight:600;">For business</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:var(--ink-deep); color:var(--on-dark);">
+    <div style="max-width:1200px; margin:0 auto; padding:52px 28px 30px; display:grid; gap:28px; grid-template-columns:repeat(auto-fit, minmax(160px,1fr));">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <p style="margin:0 0 4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--faint);">Services</p>
+        <a href="/pest-control" style="font-size:14px; color:var(--on-dark);">Pest control</a>
+        <a href="/cleaning" style="font-size:14px; color:var(--on-dark);">Cleaning</a>
+        <a href="/removals" style="font-size:14px; color:var(--on-dark);">Removals</a>
+        <a href="/gardening" style="font-size:14px; color:var(--on-dark);">Gardening</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <p style="margin:0 0 4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--faint);">Areas</p>
+        <a href="/areas/ilford" style="font-size:14px; color:var(--on-dark);">Ilford</a>
+        <a href="/areas/barking" style="font-size:14px; color:var(--on-dark);">Barking</a>
+        <a href="/areas/romford" style="font-size:14px; color:var(--on-dark);">Romford</a>
+        <a href="/areas/woodford-green" style="font-size:14px; color:var(--on-dark);">Woodford Green</a>
+        <a href="/areas/dagenham" style="font-size:14px; color:var(--on-dark);">Dagenham</a>
+        <a href="/areas" style="font-size:14px; font-weight:600; color:var(--accent);">All areas →</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <p style="margin:0 0 4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--faint);">For business</p>
+        <a href="/commercial" style="font-size:14px; color:var(--on-dark);">Commercial services</a>
+        <a href="/landlords" style="font-size:14px; color:var(--on-dark);">Landlords</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <p style="margin:0 0 4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--faint);">Company</p>
+        <a href="/about" style="font-size:14px; color:var(--on-dark);">About</a>
+        <a href="/contact" style="font-size:14px; color:var(--on-dark);">Contact</a>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:0 auto; padding:16px 28px 90px;">
+      <p style="margin:0; padding-top:16px; border-top:1px solid color-mix(in srgb, var(--accent) 26%, transparent); font-size:12.5px; color:var(--faint);">© 2026 Best One Services. Representative prototype content — Mint Lime theme applied.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // FAQ accordion interaction
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const btn = item.querySelector('button');
+    btn.addEventListener('click', () => {
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('button').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasActive) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>

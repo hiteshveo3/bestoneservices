@@ -1,0 +1,2410 @@
+[
+    {
+        "keyword":  "after tenancy cleaning",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "apartment move out cleaning",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "25"
+    },
+    {
+        "keyword":  "best end of tenancy cleaning london",
+        "volume":  "320",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "cleaner end of tenancy",
+        "volume":  "320",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "29"
+    },
+    {
+        "keyword":  "cleaners end of tenancy",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "cleaning end of tenancy",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "32"
+    },
+    {
+        "keyword":  "cleaning end of tenancy prices",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "cleaning services end of tenancy",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "40"
+    },
+    {
+        "keyword":  "cleaning services london end of tenancy",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "cost of end of tenancy clean",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "deep cleaning end of tenancy",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "32"
+    },
+    {
+        "keyword":  "end of lease cleaning",
+        "volume":  "720",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end of lease cleaning london",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "38"
+    },
+    {
+        "keyword":  "end of tenancy carpet cleaning",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "29"
+    },
+    {
+        "keyword":  "end of tenancy clean",
+        "volume":  "1,600",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end of tenancy clean cost",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "end of tenancy clean london",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "33"
+    },
+    {
+        "keyword":  "end of tenancy clean near me",
+        "volume":  "140",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "27"
+    },
+    {
+        "keyword":  "end of tenancy clean price",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "end of tenancy clean prices",
+        "volume":  "480",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "17"
+    },
+    {
+        "keyword":  "end of tenancy cleaner",
+        "volume":  "320",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "33"
+    },
+    {
+        "keyword":  "end of tenancy cleaner near me",
+        "volume":  "110",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "35"
+    },
+    {
+        "keyword":  "end of tenancy cleaners",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "33"
+    },
+    {
+        "keyword":  "end of tenancy cleaners london",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end of tenancy cleaners near me",
+        "volume":  "320",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "36"
+    },
+    {
+        "keyword":  "end of tenancy cleaning",
+        "volume":  "12,100",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "35"
+    },
+    {
+        "keyword":  "end of tenancy cleaning borehamwood",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "4"
+    },
+    {
+        "keyword":  "end of tenancy cleaning charges",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "end of tenancy cleaning company london",
+        "volume":  "1,300",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "39"
+    },
+    {
+        "keyword":  "end of tenancy cleaning cost",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "17"
+    },
+    {
+        "keyword":  "end of tenancy cleaning cost london",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "18"
+    },
+    {
+        "keyword":  "end of tenancy cleaning in london",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "end of tenancy cleaning london",
+        "volume":  "4,400",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "28"
+    },
+    {
+        "keyword":  "end of tenancy cleaning london prices",
+        "volume":  "320",
+        "intent":  "N",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "19"
+    },
+    {
+        "keyword":  "end of tenancy cleaning near me",
+        "volume":  "1,900",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "38"
+    },
+    {
+        "keyword":  "end of tenancy cleaning price",
+        "volume":  "210",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "end of tenancy cleaning price list",
+        "volume":  "210",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning prices",
+        "volume":  "2,900",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "end of tenancy cleaning prices london",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning prices near me",
+        "volume":  "90",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning quote",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "end of tenancy cleaning service",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "32"
+    },
+    {
+        "keyword":  "end of tenancy cleaning service london",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "end of tenancy cleaning services",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end of tenancy cleaning services london",
+        "volume":  "720",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "38"
+    },
+    {
+        "keyword":  "end of tenancy cleaning services near me",
+        "volume":  "90",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end of tenancy cleans",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "32"
+    },
+    {
+        "keyword":  "end of tenancy cleans near me",
+        "volume":  "90",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "-1"
+    },
+    {
+        "keyword":  "end of tenancy deep clean",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "33"
+    },
+    {
+        "keyword":  "end of tenancy london",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end of tenancy professional cleaning",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end of tenancy professional cleaning london",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "33"
+    },
+    {
+        "keyword":  "end of the tenancy cleaning",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "32"
+    },
+    {
+        "keyword":  "end tenancy clean",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "end tenancy cleaning",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "end tenancy cleaning prices",
+        "volume":  "320",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "end-of-tenancy cleaning",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "33"
+    },
+    {
+        "keyword":  "flat cleaning end of tenancy",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "41"
+    },
+    {
+        "keyword":  "how much does an end of tenancy clean cost",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "how much does it cost for end of tenancy cleaning",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "how much for an end of tenancy clean",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "how much is an end of tenancy clean",
+        "volume":  "320",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "how much is end of tenancy cleaning",
+        "volume":  "260",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "26"
+    },
+    {
+        "keyword":  "london end of tenancy clean",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "london end of tenancy cleaners",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "36"
+    },
+    {
+        "keyword":  "london end of tenancy cleaning",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "25"
+    },
+    {
+        "keyword":  "london move out cleaning",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "36"
+    },
+    {
+        "keyword":  "london tenancy cleaning",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "26"
+    },
+    {
+        "keyword":  "move in and move out cleaning",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "28"
+    },
+    {
+        "keyword":  "move in move out cleaning",
+        "volume":  "720",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "29"
+    },
+    {
+        "keyword":  "move in move out cleaning services near me",
+        "volume":  "110",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "22"
+    },
+    {
+        "keyword":  "move out clean",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "move out cleaners",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "27"
+    },
+    {
+        "keyword":  "move out cleaners london",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "24"
+    },
+    {
+        "keyword":  "move out cleaning",
+        "volume":  "1,600",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "28"
+    },
+    {
+        "keyword":  "move out cleaning company",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "22"
+    },
+    {
+        "keyword":  "move out cleaning london",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "move out cleaning service",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "20"
+    },
+    {
+        "keyword":  "move out cleaning services",
+        "volume":  "720",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "28"
+    },
+    {
+        "keyword":  "move out cleaning services london",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "35"
+    },
+    {
+        "keyword":  "move out cleaning services near me",
+        "volume":  "170",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "move out home cleaning",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "23"
+    },
+    {
+        "keyword":  "move out house cleaning",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "21"
+    },
+    {
+        "keyword":  "move out house cleaning services near me",
+        "volume":  "110",
+        "intent":  "T",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "25"
+    },
+    {
+        "keyword":  "post tenancy cleaning",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "32"
+    },
+    {
+        "keyword":  "pre tenancy cleaning",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "prices for end of tenancy cleaning",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "pro end of tenancy cleaning",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "professional clean end of tenancy",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "professional cleaners end of tenancy",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "professional cleaners london end of tenancy",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "28"
+    },
+    {
+        "keyword":  "professional cleaning end of tenancy",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "33"
+    },
+    {
+        "keyword":  "professional end of tenancy cleaning",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "35"
+    },
+    {
+        "keyword":  "professional end of tenancy cleaning london",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "same day end of tenancy cleaning",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "tenancy cleaning",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "tenancy cleaning services",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "22"
+    },
+    {
+        "keyword":  "what does end of tenancy cleaning include",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Cleaning — core / pricing",
+        "recommended":  "Use on core, price or supporting page",
+        "kd":  "22"
+    },
+    {
+        "keyword":  "end of tenancy cleaning acton",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning angel",
+        "volume":  "260",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning balham",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning barking",
+        "volume":  "320",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning battersea",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning beckenham",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning bethnal green",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning blackheath",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "15"
+    },
+    {
+        "keyword":  "end of tenancy cleaning brentford",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning brixton",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning brockley",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning bromley",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning camberwell",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning camden",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning canary wharf",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning catford",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning charlton",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "5"
+    },
+    {
+        "keyword":  "end of tenancy cleaning chelsea",
+        "volume":  "320",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning chiswick",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning clapham",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning colindale",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning covent garden",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning croydon",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "end of tenancy cleaning deptford",
+        "volume":  "210",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning dulwich",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning e14",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning ealing",
+        "volume":  "720",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "5"
+    },
+    {
+        "keyword":  "end of tenancy cleaning earlsfield",
+        "volume":  "90",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning east london",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "end of tenancy cleaning edgware",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "end of tenancy cleaning edmonton",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning enfield",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning finchley",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning friern barnet",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning fulham",
+        "volume":  "720",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning greenwich",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning hackney",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "end of tenancy cleaning hampstead",
+        "volume":  "210",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning harrow",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning holloway",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "-1"
+    },
+    {
+        "keyword":  "end of tenancy cleaning hounslow",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning ilford",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning islington",
+        "volume":  "720",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning kensington",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning kidbrooke",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning knightsbridge",
+        "volume":  "260",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning lewisham",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning maida vale",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "4"
+    },
+    {
+        "keyword":  "end of tenancy cleaning mayfair",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning mitcham",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning morden",
+        "volume":  "320",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning new cross",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning newham",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning north london",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "15"
+    },
+    {
+        "keyword":  "end of tenancy cleaning notting hill",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning paddington",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning peckham",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning pimlico",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning putney",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "end of tenancy cleaning raynes park",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning richmond",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning romford",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning ruislip",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning shadwell",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning shoreditch",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning south east london",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "18"
+    },
+    {
+        "keyword":  "end of tenancy cleaning south kensington",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning south london",
+        "volume":  "260",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning south west london",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "end of tenancy cleaning southwark",
+        "volume":  "210",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning stockwell",
+        "volume":  "110",
+        "intent":  "T",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning streatham",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning tooting",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning uxbridge",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "end of tenancy cleaning vauxhall",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "end of tenancy cleaning walthamstow",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "end of tenancy cleaning wanstead",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning wapping",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "end of tenancy cleaning wembley",
+        "volume":  "480",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning west london",
+        "volume":  "320",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "21"
+    },
+    {
+        "keyword":  "end of tenancy cleaning wimbledon",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "end of tenancy cleaning woolwich",
+        "volume":  "210",
+        "intent":  "I",
+        "cluster":  "Cleaning — local area",
+        "recommended":  "Create only after service-area confirmation",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "ant and pest control",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "ant control",
+        "volume":  "880",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "23"
+    },
+    {
+        "keyword":  "ant control near me",
+        "volume":  "140",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "ant pest control",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "ant pest control near me",
+        "volume":  "260",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "are cockroaches dangerous",
+        "volume":  "880",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "41"
+    },
+    {
+        "keyword":  "are there cockroaches in the uk",
+        "volume":  "880",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "18"
+    },
+    {
+        "keyword":  "bed bug control cost",
+        "volume":  "140",
+        "intent":  "IC",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "bed bug control near me",
+        "volume":  "140",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "5"
+    },
+    {
+        "keyword":  "bed bug control price",
+        "volume":  "140",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "bed bug pest control",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "bed bug pest control near me",
+        "volume":  "480",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "bed bug removal",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "50"
+    },
+    {
+        "keyword":  "bed bug removal cost",
+        "volume":  "390",
+        "intent":  "IC",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "bed bug removal near me",
+        "volume":  "260",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "bed bug treatment",
+        "volume":  "3,600",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "bed bug treatment cost",
+        "volume":  "320",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "bed bug treatment price",
+        "volume":  "210",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "best cockroach killer",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "best cockroach killer uk",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "british cockroach",
+        "volume":  "1,300",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "23"
+    },
+    {
+        "keyword":  "can cockroaches bite",
+        "volume":  "720",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "30"
+    },
+    {
+        "keyword":  "can cockroaches fly",
+        "volume":  "2,400",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "22"
+    },
+    {
+        "keyword":  "cockroach cockroach",
+        "volume":  "1,000",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "42"
+    },
+    {
+        "keyword":  "cockroach cockroaches",
+        "volume":  "3,600",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "48"
+    },
+    {
+        "keyword":  "cockroach eggs",
+        "volume":  "1,300",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "24"
+    },
+    {
+        "keyword":  "cockroach flight",
+        "volume":  "880",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "cockroach pest control cost",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "cockroach pest killer",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "5"
+    },
+    {
+        "keyword":  "cockroach removal",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "cockroach repellent",
+        "volume":  "320",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "cockroach trap",
+        "volume":  "260",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "cockroach traps",
+        "volume":  "480",
+        "intent":  "IT",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "cockroach treatment",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "cockroach uk",
+        "volume":  "4,400",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "24"
+    },
+    {
+        "keyword":  "cockroaches can bite",
+        "volume":  "1,000",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "cockroaches in england",
+        "volume":  "1,300",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "17"
+    },
+    {
+        "keyword":  "cockroaches in home",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "cockroaches in scotland",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "3"
+    },
+    {
+        "keyword":  "cockroaches in uk",
+        "volume":  "880",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "18"
+    },
+    {
+        "keyword":  "cockroaches pest control",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "cockroaches uk",
+        "volume":  "1,600",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "20"
+    },
+    {
+        "keyword":  "commercial ant control",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "commercial pest control",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "23"
+    },
+    {
+        "keyword":  "commercial pest control services",
+        "volume":  "590",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "6"
+    },
+    {
+        "keyword":  "cost for bed bug treatment",
+        "volume":  "210",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "cost of bed bug treatment",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "do cockroaches bite",
+        "volume":  "1,300",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "30"
+    },
+    {
+        "keyword":  "do cockroaches fly",
+        "volume":  "2,400",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "26"
+    },
+    {
+        "keyword":  "exterminators pest control services",
+        "volume":  "2,400",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "29"
+    },
+    {
+        "keyword":  "flea and pest control",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "18"
+    },
+    {
+        "keyword":  "flea exterminator",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "23"
+    },
+    {
+        "keyword":  "flea exterminator near me",
+        "volume":  "320",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "flea exterminator price",
+        "volume":  "90",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "flea pest control cost",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "flea pest control near me",
+        "volume":  "140",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "fly pest control",
+        "volume":  "390",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "flying cockroach",
+        "volume":  "1,300",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "30"
+    },
+    {
+        "keyword":  "german cockroach",
+        "volume":  "3,600",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "house cockroach uk",
+        "volume":  "390",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "how much does bed bug treatment cost",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "how much is pest control",
+        "volume":  "480",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "how much is pest control for fleas",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "how much is pest control for rats",
+        "volume":  "260",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "how to get rid of cockroaches",
+        "volume":  "1,600",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "30"
+    },
+    {
+        "keyword":  "how to get rid of cockroaches uk",
+        "volume":  "320",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "mice control",
+        "volume":  "720",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "29"
+    },
+    {
+        "keyword":  "mice pest control",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "25"
+    },
+    {
+        "keyword":  "mouse pest control",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "42"
+    },
+    {
+        "keyword":  "pest control agreement",
+        "volume":  "90",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "pest control bed bugs price",
+        "volume":  "140",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "pest control bed bugs price uk",
+        "volume":  "210",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "pest control cockroaches",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "pest control companies",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "47"
+    },
+    {
+        "keyword":  "pest control company",
+        "volume":  "720",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "64"
+    },
+    {
+        "keyword":  "pest control contracts",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "7"
+    },
+    {
+        "keyword":  "pest control cost",
+        "volume":  "720",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "18"
+    },
+    {
+        "keyword":  "pest control cost rats",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "pest control fees",
+        "volume":  "320",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "pest control flea",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "pest control flies",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "pest control for cockroaches",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "12"
+    },
+    {
+        "keyword":  "pest control for flies",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "pest control for rats",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "32"
+    },
+    {
+        "keyword":  "pest control for squirrels near me",
+        "volume":  "170",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "3"
+    },
+    {
+        "keyword":  "pest control in north london",
+        "volume":  "140",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "pest control london",
+        "volume":  "5,400",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "53"
+    },
+    {
+        "keyword":  "pest control mice",
+        "volume":  "720",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "22"
+    },
+    {
+        "keyword":  "pest control mice london",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "pest control moths",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "pest control near me",
+        "volume":  "18,100",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "pest control near me ants",
+        "volume":  "110",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "8"
+    },
+    {
+        "keyword":  "pest control prices",
+        "volume":  "720",
+        "intent":  "N",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "pest control prices london",
+        "volume":  "110",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "pest control roaches",
+        "volume":  "170",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "13"
+    },
+    {
+        "keyword":  "pest control service",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "56"
+    },
+    {
+        "keyword":  "pest control services",
+        "volume":  "2,900",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "55"
+    },
+    {
+        "keyword":  "pest control services near me",
+        "volume":  "1,000",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "44"
+    },
+    {
+        "keyword":  "pest control.",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "34"
+    },
+    {
+        "keyword":  "pest controllers near me",
+        "volume":  "720",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "22"
+    },
+    {
+        "keyword":  "professional flea treatment",
+        "volume":  "140",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "11"
+    },
+    {
+        "keyword":  "rat control",
+        "volume":  "1,600",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "41"
+    },
+    {
+        "keyword":  "rat control near me",
+        "volume":  "880",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "45"
+    },
+    {
+        "keyword":  "rat exterminator",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "31"
+    },
+    {
+        "keyword":  "rat exterminator near me",
+        "volume":  "880",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "19"
+    },
+    {
+        "keyword":  "rat exterminator price",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "rat pest control",
+        "volume":  "1,300",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "37"
+    },
+    {
+        "keyword":  "rat pest control near me",
+        "volume":  "880",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "15"
+    },
+    {
+        "keyword":  "rat pest control prices",
+        "volume":  "170",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "10"
+    },
+    {
+        "keyword":  "spider pest control near me",
+        "volume":  "90",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "9"
+    },
+    {
+        "keyword":  "squirrel pest control",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "20"
+    },
+    {
+        "keyword":  "types of cockroaches uk",
+        "volume":  "110",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "14"
+    },
+    {
+        "keyword":  "uk cockroach",
+        "volume":  "1,300",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "21"
+    },
+    {
+        "keyword":  "wasp control",
+        "volume":  "880",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "wasp control near me",
+        "volume":  "1,300",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "40"
+    },
+    {
+        "keyword":  "wasp exterminator",
+        "volume":  "1,000",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "21"
+    },
+    {
+        "keyword":  "wasp exterminator near me",
+        "volume":  "880",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "wasp nest removal",
+        "volume":  "8,100",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "23"
+    },
+    {
+        "keyword":  "wasp nest removal near me",
+        "volume":  "2,400",
+        "intent":  "T",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "26"
+    },
+    {
+        "keyword":  "wasp pest control",
+        "volume":  "720",
+        "intent":  "C",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "16"
+    },
+    {
+        "keyword":  "will cockroaches bite",
+        "volume":  "1,000",
+        "intent":  "I",
+        "cluster":  "Pest control",
+        "recommended":  "Use only if this treatment is confirmed",
+        "kd":  "26"
+    }
+]

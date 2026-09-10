@@ -1,3 +1,11 @@
 import type { Metadata } from "next";
-export const metadata: Metadata = { robots: { index: false, follow: false } };
-export default function Layout({ children }: { children: React.ReactNode }) { return children; }
+import { CustomerShell } from "@/components/customer/customer-shell";
+
+export const metadata: Metadata = {
+  title: "My Account",
+  robots: { index: false, follow: false },
+};
+
+export default function CustomerLayout({ children }: { children: React.ReactNode }) {
+  return <CustomerShell>{children}</CustomerShell>;
+}

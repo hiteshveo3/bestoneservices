@@ -28,6 +28,6 @@ export const bookingSchema = z.object({
 export type BookingInput = z.infer<typeof bookingSchema>;
 
 export const startingPrice = (input: Pick<BookingInput, "serviceCategory" | "serviceSlug" | "bedrooms">) => {
-  if (input.serviceCategory === "end-of-tenancy-cleaning") return ({ studio: 79, "1": 99, "2": 119, "3": 139, "4": 159 } as Record<string, number>)[input.bedrooms ?? ""] ?? null;
+  if (input.serviceCategory === "end-of-tenancy-cleaning") return ({ studio: 130, "1": 200, "2": 230, "3": 300, "4": 350 } as Record<string, number>)[input.bedrooms ?? ""] ?? null;
   return ({ "wasp-treatment": 59, "ant-treatment": 69, "flea-treatment": 89, "mice-control": 99, "rat-control": 109, "cockroach-control": 119, "bed-bug-treatment": 149 } as Record<string, number>)[input.serviceSlug] ?? null;
 };

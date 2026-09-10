@@ -1,0 +1,63 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function hasRole(role) {
+      return signedIn() && (
+        request.auth.token.role == role ||
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == role
+      );
+    }
+    function isAdmin() { return hasRole('admin'); }
+    function isOwner(ownerId) { return signedIn() && ownerId == request.auth.uid; }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId) && request.resource.data.role == 'customer' && request.resource.data.status == 'active';
+      allow update: if isAdmin() || (isOwner(userId) && request.resource.data.role == resource.data.role && request.resource.data.status == resource.data.status);
+      allow delete: if isAdmin();
+    }
+
+    match /bookings/{bookingId} {
+      allow read: if isAdmin() || isOwner(resource.data.customerId);
+      allow write: if false;
+      match /events/{eventId} {
+        allow read: if isAdmin() || (isOwner(get(/databases/$(database)/documents/bookings/$(bookingId)).data.customerId) && resource.data.visibility == 'customer');
+        allow write: if false;
+      }
+      match /internalNotes/{noteId} { allow read: if isAdmin(); allow write: if false; }
+    }
+
+    match /invoices/{invoiceId} { allow read: if isAdmin() || isOwner(resource.data.customerId); allow write: if false; }
+    match /estimates/{estimateId} { allow read: if isAdmin() || isOwner(resource.data.customerId); allow write: if false; }
+    match /disputes/{disputeId} { allow read: if isAdmin() || isOwner(resource.data.customerId); allow write: if false; }
+    match /conversations/{conversationId} {
+      allow read: if isAdmin() || isOwner(resource.data.customerId);
+      allow write: if false;
+      match /messages/{messageId} {
+        allow read: if isAdmin() || isOwner(get(/databases/$(database)/documents/conversations/$(conversationId)).data.customerId);
+        allow write: if false;
+      }
+    }
+    match /services/{serviceId} { allow read: if isAdmin() || resource.data.status == 'published'; allow write: if false; }
+    match /reviews/{reviewId} { allow read: if isAdmin() || resource.data.status == 'published'; allow write: if false; }
+    match /reviewSubmissions/{bookingId} { allow read, write: if false; }
+
+    match /notifications/{notificationId} {
+      allow read: if signedIn() && (resource.data.recipientId == request.auth.uid || (resource.data.recipientId == 'admin' && isAdmin()) || (resource.data.recipientRole == 'admin' && isAdmin()));
+      allow update: if signedIn() && (resource.data.recipientId == request.auth.uid || isAdmin()) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read', 'readAt']);
+      allow create, delete: if false;
+    }
+
+    match /staff/{staffId} { allow read: if isAdmin(); allow write: if false; }
+    match /config/{configId} { allow read: if isAdmin(); allow write: if false; }
+    match /communication_logs/{logId} { allow read: if isAdmin(); allow write: if false; }
+    match /activityLogs/{logId} { allow read: if isAdmin(); allow write: if false; }
+    match /auditLogs/{logId} { allow read: if isAdmin(); allow write: if false; }
+    match /enquiries/{enquiryId} { allow read: if isAdmin(); allow write: if false; }
+    match /rateLimits/{limitId} { allow read, write: if false; }
+    match /paymentAttempts/{attemptId} { allow read, write: if false; }
+    match /stripeEvents/{eventId} { allow read, write: if false; }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

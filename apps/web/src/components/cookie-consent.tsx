@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Button } from "@/components/button-link";
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
@@ -10,5 +11,5 @@ export function CookieConsent() {
   }, []);
   if (!visible) return null;
   const choose = (value: "accepted" | "rejected") => { localStorage.setItem("bos-cookie-choice", value); setVisible(false); };
-  return <aside className="cookie-consent" aria-label="Cookie choices"><strong>Cookie choices</strong><p>Essential cookies keep this site working. Analytics and marketing cookies stay off unless you accept them.</p><div><button className="button button-secondary" onClick={() => choose("rejected")}>Reject optional</button><button className="button" onClick={() => choose("accepted")}>Accept optional</button></div></aside>;
+  return <aside className="cookie-consent" aria-label="Cookie choices"><strong>Cookie choices</strong><p>Essential cookies keep this site working. Analytics and marketing cookies stay off unless you accept them.</p><div><Button variant="secondary" size="sm" onClick={() => choose("rejected")}>Reject optional</Button><Button variant="dark" size="sm" onClick={() => choose("accepted")}>Accept optional</Button></div></aside>;
 }

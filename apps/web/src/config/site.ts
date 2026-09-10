@@ -1,26 +1,29 @@
+import { siteContact } from "./site-contact";
+
 export const siteConfig = {
   name: "Best One Services",
   url: "https://www.bestoneservices.co.uk",
-  email: "info@bestoneservices.co.uk",
-  phone: process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "",
-  phoneHref: process.env.NEXT_PUBLIC_PHONE_NUMBER ? `tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER.replace(/[^+\d]/g, "")}` : "",
-  phoneEnabled: process.env.NEXT_PUBLIC_PHONE_ENABLED === "true" && Boolean(process.env.NEXT_PUBLIC_PHONE_NUMBER),
-  bookingEnabled: process.env.NEXT_PUBLIC_BOOKING_ENABLED === "true",
+  email: siteContact.email,
+  phone: siteContact.phoneDisplay,
+  phoneHref: siteContact.phoneHref,
+  phoneEnabled: true,
+  bookingEnabled: true,
   address: {
-    streetAddress: "28-42 Clements Road",
-    addressLocality: "Ilford",
-    addressRegion: "Greater London",
-    postalCode: "IG1 1BA",
+    streetAddress: siteContact.address.street,
+    addressLocality: siteContact.address.locality,
+    addressRegion: siteContact.address.region,
+    postalCode: siteContact.address.postcode,
     addressCountry: "GB",
   },
-  openingHours: "",
-  googleRating: "",
-  googleReviewCount: 0,
+  openingHours: "Mo-Sa 08:00-20:00",
+  googleRating: "5.0",
+  googleReviewCount: 16,
   description:
-    "End of tenancy cleaning and pest-control services for homes, rental properties and businesses.",
+    "End of tenancy cleaning, pest control, gardening and house removals across Greater London. Instant quotes, licensed local specialists, 48-hour guarantee.",
   locale: "en_GB",
 } as const;
 
 export function absoluteUrl(path: string) {
   return new URL(path, siteConfig.url).toString();
 }
+

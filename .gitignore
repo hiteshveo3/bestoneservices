@@ -28,3 +28,9 @@ Thumbs.db
 coverage/
 test-results/
 playwright-report/
+
+# Backups and editor metadata
+.claude/
+apps/web-src-backup*/
+*.backup*
+

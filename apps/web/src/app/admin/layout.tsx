@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
-import { requireSession } from "@/lib/session";
-export const metadata: Metadata = { robots: { index: false, follow: false } };
-export default async function Layout({ children }: { children: React.ReactNode }) { await requireSession("/admin/", "admin"); return children; }
+import { AdminShell } from "@/components/admin/admin-shell";
+
+export const metadata: Metadata = {
+  title: "Admin Console",
+  robots: { index: false, follow: false },
+};
+
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  return <AdminShell>{children}</AdminShell>;
+}

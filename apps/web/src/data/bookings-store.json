@@ -1,0 +1,58 @@
+[
+  {
+    "id": "BOS-1789034450416-i7r25",
+    "reference": "BOS-450416",
+    "version": 1,
+    "customerId": null,
+    "customerSnapshot": {
+      "fullName": "Abdullah Amjad Basra",
+      "email": "abdullah@example.com",
+      "phone": "07700900123",
+      "serviceAddress": {
+        "addressLine1": "28-42 Clements Rd, Flat 12",
+        "city": "London",
+        "postcode": "IG1 1BA",
+        "normalizedPostcode": "IG11BA",
+        "instructions": "Please call 15 minutes before arrival"
+      }
+    },
+    "emailLower": "abdullah@example.com",
+    "phoneNormalized": "07700900123",
+    "postcodeNormalized": "IG11BA",
+    "categoryId": "cleaning",
+    "serviceId": "cleaning",
+    "serviceNameSnapshot": "End of Tenancy Cleaning",
+    "status": "new",
+    "serviceDetails": {
+      "bedrooms": "2",
+      "timeRange": "morning"
+    },
+    "address": {
+      "addressLine1": "28-42 Clements Rd, Flat 12",
+      "city": "London",
+      "postcode": "IG1 1BA",
+      "normalizedPostcode": "IG11BA",
+      "instructions": "Please call 15 minutes before arrival"
+    },
+    "scheduling": {
+      "requestedDate": "2026-09-18",
+      "requestedTimeSlot": "morning",
+      "timezone": "Europe/London"
+    },
+    "pricing": {
+      "estimateMinPence": 13000,
+      "estimateMaxPence": 18000,
+      "minimumChargeRule": "Standard London service baseline"
+    },
+    "notes": "Please call 15 minutes before arrival",
+    "source": "website",
+    "createdAt": {
+      "seconds": 1789034450,
+      "nanoseconds": 0
+    },
+    "updatedAt": {
+      "seconds": 1789034450,
+      "nanoseconds": 0
+    }
+  }
+]

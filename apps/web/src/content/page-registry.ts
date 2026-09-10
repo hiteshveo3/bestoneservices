@@ -1,17 +1,23 @@
 import { z } from "zod";
-import { approvedCleaningServicePages } from "@/content/approved-service-pages";
+import { approvedCleaningServicePages, approvedPestExtensionPages } from "@/content/approved-service-pages";
+import { serviceCatalog } from "@/content/service-catalog";
+import { locations } from "@/content/locations";
 
 const pageTargetSchema = z.object({ path: z.string().startsWith("/"), pageType: z.enum(["home", "service", "pest", "location", "guide", "comparison", "contact"]), primaryKeyword: z.string().min(3), secondaryKeywords: z.array(z.string()).default([]), searchIntent: z.enum(["commercial", "informational", "local"]), status: z.enum(["seed", "researched", "approved", "published"]), indexable: z.boolean(), image: z.string().startsWith("/").optional(), changeFrequency: z.enum(["daily", "weekly", "monthly", "yearly"]), priority: z.number().min(0).max(1) });
 export type PageTarget = z.infer<typeof pageTargetSchema>;
 
-// Only complete, active M1 pages belong in the XML sitemap. Future removal,
-// gardening, account and booking routes remain reserved but unpublished.
+// Only complete, active M1 pages belong in the XML sitemap.
 export const pageRegistry = pageTargetSchema.array().parse([
   { path: "/", pageType: "home", primaryKeyword: "end of tenancy cleaning and pest control", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "weekly", priority: 1 },
   { path: "/about/", pageType: "contact", primaryKeyword: "Bestone Services Ltd", secondaryKeywords: [], searchIntent: "informational", status: "published", indexable: true, changeFrequency: "yearly", priority: 0.6 },
   { path: "/contact/", pageType: "contact", primaryKeyword: "cleaning and pest control contact", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "yearly", priority: 0.7 },
-  { path: "/prices/", pageType: "service", primaryKeyword: "cleaning and pest control prices", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.8 },
+  { path: "/prices/", pageType: "service", primaryKeyword: "cleaning and pest control prices", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "weekly", priority: 0.95 },
+  { path: "/about/our-pricing/", pageType: "contact", primaryKeyword: "how we set our prices", secondaryKeywords: [], searchIntent: "informational", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.6 },
   { path: "/areas/", pageType: "location", primaryKeyword: "London cleaning and pest control", secondaryKeywords: [], searchIntent: "local", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/", pageType: "guide", primaryKeyword: "london property guides and blog", secondaryKeywords: [], searchIntent: "informational", status: "published", indexable: true, changeFrequency: "weekly", priority: 0.8 },
+  { path: "/blog/end-of-tenancy-cleaning-checklist/", pageType: "guide", primaryKeyword: "end of tenancy cleaning checklist london", secondaryKeywords: [], searchIntent: "informational", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.9 },
+  { path: "/blog/pest-control-early-signs-guide/", pageType: "guide", primaryKeyword: "pest control warning signs london", secondaryKeywords: [], searchIntent: "informational", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/london-house-removals-guide/", pageType: "guide", primaryKeyword: "london house removals guide", secondaryKeywords: [], searchIntent: "informational", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.8 },
   { path: "/guides/", pageType: "guide", primaryKeyword: "cleaning and pest control guides", secondaryKeywords: [], searchIntent: "informational", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.6 },
   { path: "/pest-control-services/", pageType: "pest", primaryKeyword: "pest control services", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.9 },
   { path: "/cleaning-services/", pageType: "service", primaryKeyword: "cleaning services", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.9 },
@@ -34,5 +40,19 @@ export const pageRegistry = pageTargetSchema.array().parse([
   { path: "/pest-control-services/pest-inspection/", pageType: "pest", primaryKeyword: "pest inspection", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.8 },
   { path: "/pest-control-services/commercial-pest-control/", pageType: "pest", primaryKeyword: "commercial pest control", secondaryKeywords: [], searchIntent: "commercial", status: "published", indexable: true, changeFrequency: "monthly", priority: 0.8 },
   ...Object.entries(approvedCleaningServicePages).map(([key, page]) => ({ path: `/${key}/`, pageType: "service" as const, primaryKeyword: page.title.toLowerCase(), secondaryKeywords: [], searchIntent: "commercial" as const, status: "published" as const, indexable: true, changeFrequency: "monthly" as const, priority: 0.7 })),
+  ...Object.entries(approvedPestExtensionPages).map(([key, page]) => ({ path: `/${key}/`, pageType: "pest" as const, primaryKeyword: page.title.toLowerCase(), secondaryKeywords: [], searchIntent: "commercial" as const, status: "published" as const, indexable: true, changeFrequency: "monthly" as const, priority: 0.7 })),
+  ...serviceCatalog["pest-control-services"].services.flatMap(([serviceSlug, serviceTitle]) =>
+    locations.map((location) => ({
+      path: `/pest-control-services/${serviceSlug}/${location.slug}/`,
+      pageType: "location" as const,
+      primaryKeyword: `${serviceTitle.toLowerCase()} ${location.name.toLowerCase()}`,
+      secondaryKeywords: location.existingKeyword ? [location.existingKeyword] : [],
+      searchIntent: "local" as const,
+      status: "published" as const,
+      indexable: true,
+      changeFrequency: "monthly" as const,
+      priority: location.volume && location.volume >= 300 ? 0.6 : 0.4,
+    }))
+  ),
 ]);
 export const publishedPageTargets = pageRegistry.filter((page) => page.status === "published" && page.indexable);

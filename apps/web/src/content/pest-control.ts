@@ -39,7 +39,6 @@ export const pestControlContent = {
     ["Cockroach treatment", "From £119"],
     ["Bed bug treatment", "From £149"],
     ["Squirrel control", "From £149"],
-    ["Commercial pest control", "From £49 per month"],
   ],
   quoteDetails: [
     "Pest signs",

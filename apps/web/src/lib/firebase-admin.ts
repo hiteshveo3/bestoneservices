@@ -15,7 +15,7 @@ export function isFirebaseConfigured() {
     hasServiceAccount ||
       process.env.GOOGLE_APPLICATION_CREDENTIALS ||
       process.env.FIREBASE_CONFIG ||
-      process.env.GOOGLE_CLOUD_PROJECT,
+      process.env.GOOGLE_CLOUD_PROJECT
   );
 }
 
@@ -24,7 +24,10 @@ export function getFirebaseApp() {
   if (currentApp) return currentApp;
 
   const projectId =
-    process.env.FIREBASE_PROJECT_ID ?? process.env.GOOGLE_CLOUD_PROJECT;
+    process.env.FIREBASE_PROJECT_ID ??
+    process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ??
+    process.env.GOOGLE_CLOUD_PROJECT ??
+    "best-one-services";
   const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
   const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
 
