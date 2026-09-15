@@ -34,3 +34,6 @@ playwright-report/
 apps/web-src-backup*/
 *.backup*
 
+
+.vercel
+.env*
