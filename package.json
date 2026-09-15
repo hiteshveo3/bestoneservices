@@ -1,0 +1,12 @@
+{
+  "name": "bestoneservices-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=apps/web",
+    "dev": "npm run dev --workspace=apps/web"
+  }
+}
