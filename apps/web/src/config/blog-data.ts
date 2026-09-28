@@ -63,7 +63,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ogImage: "/images/service/stock-hero-cleaning.jpg",
     category: "Tenancy Cleaning",
     title: "End of Tenancy Cleaning Checklist London: 100% Deposit Refund Guide",
-    metaTitle: "End of Tenancy Cleaning Checklist London | Best One",
+    metaTitle: "End of Tenancy Cleaning Checklist London | Bestone",
     description: "Complete end of tenancy cleaning checklist for London tenants & landlords. Includes deposit refund charts, price tables & 48-hr guarantee.",
     readTime: "6 min read",
     publishedAt: "21 Aug 2026",
@@ -91,7 +91,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       definition: "An official photographic and narrative document prepared by an independent clerk at the end of a lease. It compares the current cleanliness and condition of all fixtures against the original check-in report to determine security deposit deductions."
     },
     testimonialSnippet: {
-      quote: "Best One's tenancy cleaning team saved my £1,800 deposit! The estate agent checked every appliance with white gloves and passed us immediately.",
+      quote: "Bestone's tenancy cleaning team saved my £1,800 deposit! The estate agent checked every appliance with white gloves and passed us immediately.",
       author: "Sarah Jenkins",
       location: "Canary Wharf, London (E14)",
       rating: 5
@@ -103,7 +103,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       },
       {
         question: "Is oven steam cleaning included in end of tenancy cleaning prices?",
-        answer: "Yes! Professional end of tenancy cleaning with Best One includes deep oven cavity degreasing, wire racks, glass doors, and extractor hood filter cleaning as standard with zero extra charges."
+        answer: "Yes! Professional end of tenancy cleaning with Bestone includes deep oven cavity degreasing, wire racks, glass doors, and extractor hood filter cleaning as standard with zero extra charges."
       },
       {
         question: "What happens if my landlord flags a cleaning issue on the inventory report?",
@@ -115,7 +115,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       items: [
         { label: "DIY Cleaning (No Guarantee)", percentage: 56, color: "bg-[#B04A1E]", status: "High Risk (56% Deposit Deducted)" },
         { label: "Standard Cleaner (No Inventory Spec)", percentage: 28, color: "bg-[#D9A441]", status: "Moderate Risk (28% Re-clean Requests)" },
-        { label: "Best One Professional Clean (48-Hr Backing)", percentage: 0, color: "bg-[#1F3A00]", status: "0% Risk (100% Deposit Guarantee)" }
+        { label: "Bestone Professional Clean (48-Hr Backing)", percentage: 0, color: "bg-[#B7F56A]", status: "0% Risk (100% Deposit Guarantee)" }
       ]
     },
     tables: [
@@ -131,7 +131,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       },
       {
         title: "Agency Inventory Inspection Checklist Breakdown",
-        headers: ["Inspection Area", "Letting Agent Standard", "Common Failure Point", "Best One Treatment"],
+        headers: ["Inspection Area", "Letting Agent Standard", "Common Failure Point", "Bestone Treatment"],
         rows: [
           ["Oven & Extractor", "Zero burnt carbon residue", "Grease behind wire racks & fan hood filter", "Commercial dip-tank style degreasing"],
           ["Bathroom Glass & Taps", "Zero limescale or watermarks", "Limescale around tap base & screen seals", "Industrial acid descaling & polish"],
@@ -191,7 +191,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
 
       On move-out day, take high-resolution date-stamped photos of every room after cleaning. Ensure electricity and hot water remain connected so inventory clerks can test appliances.
 
-      **Best One Property Services** assigns certified 2-cleaner teams equipped with commercial steam extractors, professional descalers, and official agency checklists. Every booking includes our **written 48-Hour Re-Clean Guarantee** for 100% peace of mind.
+      **Bestone Property Services** assigns certified 2-cleaner teams equipped with commercial steam extractors, professional descalers, and official agency checklists. Every booking includes our **written 48-Hour Re-Clean Guarantee** for 100% peace of mind.
     `
   },
 
@@ -200,7 +200,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ogImage: "/images/hero-property-services-green-v1.png",
     category: "Pest Control",
     title: "Early Signs of Rodent & Bed Bug Infestations in London Properties: Prevention Guide",
-    metaTitle: "Pest Control Warning Signs London | Best One",
+    metaTitle: "Pest Control Warning Signs London | Bestone",
     description: "Identify early warning signs of mice, rats, bed bugs, and cockroaches in London flats. Includes treatment cost tables and 3-month guarantee details.",
     readTime: "5 min read",
     publishedAt: "21 Aug 2026",
@@ -221,7 +221,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     keyTakeaways: [
       "Mice droppings under kitchen units signal active rodent nesting within cavity walls.",
       "Small blood specks along mattress seams indicate early-stage bed bug infestations.",
-      "Best One provides 2-visit and 3-visit professional eradication with written guarantees."
+      "Bestone provides 2-visit and 3-visit professional eradication with written guarantees."
     ],
     glossaryBox: {
       term: "BPCA Certification",
@@ -236,7 +236,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     faqs: [
       {
         question: "How quickly can a pest exterminator arrive at my London property?",
-        answer: "Best One offers 2-hour emergency dispatch across all 32 London boroughs, 7 days a week from 07:00 to 21:00."
+        answer: "Bestone offers 2-hour emergency dispatch across all 32 London boroughs, 7 days a week from 07:00 to 21:00."
       },
       {
         question: "Are your pest control treatments safe for pets and children?",
@@ -248,7 +248,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
       items: [
         { label: "DIY Traps & Sprays", percentage: 22, color: "bg-danger-500", status: "22% Success (Pests Reappear in 14 Days)" },
         { label: "Single Spray Visit", percentage: 65, color: "bg-warning-500", status: "65% Success (Misses Eggs & Larvae)" },
-        { label: "Best One 2-Visit Eradication", percentage: 100, color: "bg-[#1F3A00]", status: "100% Guaranteed Eradication" }
+        { label: "Bestone 2-Visit Eradication", percentage: 100, color: "bg-[#B7F56A]", status: "100% Guaranteed Eradication" }
       ]
     },
     tables: [
@@ -282,7 +282,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
 
       ## 4. Professional Pest Control London Services
 
-      Over-the-counter sprays only kill visible surface insects, leaving hidden breeding cycles intact. **Best One Pest Control** deploys BPCA-certified exterminators using systematic 2-visit and 3-visit treatment protocols backed by official written guarantees.
+      Over-the-counter sprays only kill visible surface insects, leaving hidden breeding cycles intact. **Bestone Pest Control** deploys BPCA-certified exterminators using systematic 2-visit and 3-visit treatment protocols backed by official written guarantees.
     `
   },
 
@@ -291,7 +291,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
     ogImage: "/images/feature-property-handover-green-v1.png",
     category: "House Removals",
     title: "Stress-Free House Removals Across Greater London: Planning & Cost Guide",
-    metaTitle: "House Removals & Man Van London | Best One",
+    metaTitle: "House Removals & Man Van London | Bestone",
     description: "Complete guide to London house removals, Man & Van services, van size selection, and coordinating move-out dates with end of tenancy cleaning.",
     readTime: "6 min read",
     publishedAt: "21 Aug 2026",
@@ -352,7 +352,7 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
 
       ## 3. Coordinating Removals & Tenancy Handover
 
-      Schedule your removal team for early morning (08:00 AM) so the property is empty by midday. This permits your **Best One End of Tenancy Cleaning Team** to enter immediately afterwards and complete deep steam cleaning for inventory sign-off.
+      Schedule your removal team for early morning (08:00 AM) so the property is empty by midday. This permits your **Bestone End of Tenancy Cleaning Team** to enter immediately afterwards and complete deep steam cleaning for inventory sign-off.
     `
   }
 };

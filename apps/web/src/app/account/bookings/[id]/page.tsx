@@ -213,7 +213,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
 
   if (authLoading || loading) {
     return (
-      <div className="bg-[#F9FCF5] rounded-[18px] p-12 text-center space-y-3 border border-[#B7F56A]">
+      <div className="bg-[#F6F5F1] rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
         <Spinner size={32} className="mx-auto" />
         <p className="text-sm font-medium text-ink-600">Loading your appointment workspace & timeline...</p>
       </div>
@@ -222,11 +222,11 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
 
   if (!booking) {
     return (
-      <div className="bg-[#F9FCF5] rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#B7F56A]">
+      <div className="bg-[#F6F5F1] rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
         <AlertCircle className="w-10 h-10 text-danger-500 mx-auto" />
         <h3 className="font-heading text-lg font-medium text-ink-900">Booking Not Found</h3>
         <p className="text-xs text-ink-500">The requested booking record does not exist or you do not have permission to view it.</p>
-        <Link href="/account/bookings" className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-xs inline-block text-decoration-none border border-[#E5FBC9]">
+        <Link href="/account/bookings" className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none border border-[#ECEAE3]">
           Return to My Bookings
         </Link>
       </div>
@@ -255,7 +255,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       <div className="flex items-center justify-between">
         <Link
           href="/account/bookings"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#B7F56A] text-xs font-medium text-ink-600 hover:bg-[#DCFAB7] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to My Bookings</span>
@@ -282,14 +282,14 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       )}
 
       {/* WORKSPACE HEADER */}
-      <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#B7F56A]">
+      <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-2">
               <span className="font-heading font-medium text-2xl sm:text-3xl text-ink-900">
                 {booking.reference}
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">
+              <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
                 {booking.status.replace("_", " ")}
               </span>
             </div>
@@ -301,7 +301,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
             </p>
           </div>
 
-          <div className="p-4 rounded-[18px] bg-[#F9FCF5] text-end space-y-1 shrink-0">
+          <div className="p-4 rounded-[18px] bg-[#F6F5F1] text-end space-y-1 shrink-0">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase block">SERVICE PRICE</span>
             <div className="font-heading font-medium text-2xl text-ink-900">
               {confirmedPriceDisplay}
@@ -319,16 +319,16 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
             </div>
           </div>
         ) : (
-          <div className="pt-4 border-t border-[#E5FBC9] grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="pt-4 border-t border-[#ECEAE3] grid grid-cols-2 sm:grid-cols-4 gap-3">
             {progressSteps.map((st, idx) => (
               <div key={st.key} className="space-y-1 text-center sm:text-start">
                 <div className="flex items-center gap-2">
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
-                    st.active ? "bg-[#1F3A00] text-white" : "bg-[#F9FCF5] text-ink-500"
+                    st.active ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#F6F5F1] text-ink-500"
                   }`}>
                     {idx + 1}
                   </div>
-                  <div className={`h-1 flex-1 rounded-full ${st.active ? "bg-[#1F3A00]" : "bg-[#F9FCF5]"}`} />
+                  <div className={`h-1 flex-1 rounded-full ${st.active ? "bg-[#B7F56A]" : "bg-[#F6F5F1]"}`} />
                 </div>
                 <span className={`text-xs font-medium block ${st.active ? "text-ink-600 font-medium" : "text-ink-500"}`}>
                   {st.label}
@@ -341,7 +341,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
 
       {/* CUSTOMER ACTION CONTROL BAR */}
       {booking.status !== "cancelled" && (
-        <div className="bg-[#F9FCF5] rounded-[18px] p-4 flex flex-wrap items-center justify-between gap-3 border border-[#B7F56A]">
+        <div className="bg-[#F6F5F1] rounded-[18px] p-4 flex flex-wrap items-center justify-between gap-3 border border-[#ECEAE3]">
           <span className="text-xs font-mono font-medium text-ink-500 uppercase px-2">Manage Appointment</span>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -349,7 +349,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <button
                 type="button"
                 onClick={() => setRescheduleModalOpen(true)}
-                className="px-4 py-2 rounded-full bg-[#F9FCF5] text-ink-600 hover:bg-[#DCFAB7] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
+                className="px-4 py-2 rounded-full bg-[#F6F5F1] text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
               >
                 <RotateCcw className="w-3.5 h-3.5 text-ink-600" />
                 <span>Request Reschedule</span>
@@ -359,7 +359,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
             <button
               type="button"
               onClick={() => setChangeModalOpen(true)}
-              className="px-4 py-2 rounded-full bg-[#F9FCF5] text-ink-600 hover:bg-[#DCFAB7] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
+              className="px-4 py-2 rounded-full bg-[#F6F5F1] text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
             >
               <Edit3 className="w-3.5 h-3.5 text-ink-600" />
               <span>Request Scope Changes</span>
@@ -385,8 +385,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
         {/* LEFT COLUMN: SERVICE SPECIFICATIONS & ADDRESS */}
         <div className="lg:col-span-7 space-y-6">
           
-          <div className="bg-[#F9FCF5] rounded-[18px] p-6 space-y-4 border border-[#B7F56A]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2">
+          <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
               Appointment Specifications
             </h3>
 
@@ -418,12 +418,12 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               })}
             </div>
 
-            <div className="pt-3 border-t border-[#E5FBC9] space-y-2">
+            <div className="pt-3 border-t border-[#ECEAE3] space-y-2">
               <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-ink-500 uppercase">
                 <MapPin className="w-3.5 h-3.5 text-ink-600 shrink-0" />
                 <span>Service Address</span>
               </div>
-              <p className="text-xs text-ink-600 font-medium leading-relaxed bg-[#F9FCF5] p-3 rounded-[18px]">
+              <p className="text-xs text-ink-600 font-medium leading-relaxed bg-[#F6F5F1] p-3 rounded-[18px]">
                 {booking.address?.addressLine1}{booking.address?.addressLine2 ? `, ${booking.address.addressLine2}` : ""}<br />
                 {booking.address?.city}, <strong className="text-ink-600 font-medium">{booking.address?.postcode}</strong>
               </p>
@@ -431,21 +431,21 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
           </div>
 
           {/* PRICING DETAILS */}
-          <div className="bg-[#F9FCF5] rounded-[18px] p-6 space-y-4 border border-[#B7F56A]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2 flex items-center gap-1.5">
+          <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2 flex items-center gap-1.5">
               <PoundSterling className="w-4 h-4 text-ink-600" />
               <span>Pricing Breakdown & Guarantee</span>
             </h3>
 
             <div className="grid sm:grid-cols-2 gap-4 font-mono text-xs">
-              <div className="p-3.5 rounded-[18px] bg-[#F9FCF5] space-y-1">
+              <div className="p-3.5 rounded-[18px] bg-[#F6F5F1] space-y-1">
                 <span className="text-ink-500 uppercase block">Estimated Minimum</span>
                 <span className="font-heading font-medium text-lg text-ink-900">
                   {formatPenceToGBP(booking.pricing?.estimateMinPence || 0)}
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-[18px] bg-[#DCFAB7] border border-[#99D055] space-y-1">
+              <div className="p-3.5 rounded-[18px] bg-[#EAF8D6] border border-[#ECEAE3] space-y-1">
                 <span className="text-ink-600 font-medium uppercase block">Confirmed Final Price</span>
                 <span className="font-heading font-medium text-xl text-ink-900">
                   {confirmedPriceDisplay}
@@ -453,9 +453,9 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               </div>
             </div>
 
-            <div className="p-3.5 rounded-[18px] bg-white border border-[#B7F56A] text-xs font-medium flex items-center gap-2 text-ink-500">
-              <ShieldCheck className="w-4 h-4 text-[#1F3A00] shrink-0" />
-              <span>Includes Best One 48-Hour Service Guarantee & Fixed Transparent Pricing</span>
+            <div className="p-3.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium flex items-center gap-2 text-ink-500">
+              <ShieldCheck className="w-4 h-4 text-[#1D201E] shrink-0" />
+              <span>Includes Bestone 48-Hour Service Guarantee & Fixed Transparent Pricing</span>
             </div>
           </div>
 
@@ -464,22 +464,22 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
         {/* RIGHT COLUMN: LIVE VISUAL TIMELINE */}
         <div className="lg:col-span-5 space-y-6">
           
-          <div className="bg-[#F9FCF5] rounded-[18px] p-6 space-y-4 border border-[#B7F56A]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2 flex items-center gap-2">
+          <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2 flex items-center gap-2">
               <Calendar className="w-4 h-4 text-ink-600" />
               <span>Live Appointment Timeline</span>
             </h3>
 
             {events.length > 0 ? (
-              <div className="relative pl-6 space-y-4 border-l-2 border-[#E5FBC9]">
+              <div className="relative pl-6 space-y-4 border-l-2 border-[#ECEAE3]">
                 {events.map((evt) => (
                   <div key={evt.id} className="relative space-y-1 text-start">
-                    <div className="absolute -left-[31px] top-0.5 w-3.5 h-3.5 rounded-full bg-[#1F3A00] border-2 border-white shrink-0" />
+                    <div className="absolute -left-[31px] top-0.5 w-3.5 h-3.5 rounded-full bg-[#B7F56A] border-2 border-white shrink-0" />
                     <div className="flex items-center justify-between">
                       <span className="font-medium text-sm text-ink-600">{evt.summary}</span>
                     </div>
                     <div className="text-[10px] font-mono text-ink-500">
-                      {evt.createdAt ? formatUKDate(typeof evt.createdAt === "string" ? new Date(evt.createdAt) : (evt.createdAt as unknown as Date)) : "Recent"} • {evt.actorRole === "customer" ? "You" : "Best One Team"}
+                      {evt.createdAt ? formatUKDate(typeof evt.createdAt === "string" ? new Date(evt.createdAt) : (evt.createdAt as unknown as Date)) : "Recent"} • {evt.actorRole === "customer" ? "You" : "Bestone Team"}
                     </div>
                   </div>
                 ))}
@@ -496,8 +496,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       {/* MODAL: RESCHEDULE */}
       {rescheduleModalOpen && (
         <div className="fixed inset-0 bg-ink-900/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#F9FCF5] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#B7F56A]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="bg-[#F6F5F1] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <h3 className="font-heading font-medium text-lg text-ink-900">Request Appointment Reschedule</h3>
               <button
                 type="button"
@@ -516,7 +516,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                   value={newDate}
                   min={new Date().toISOString().split("T")[0]}
                   onChange={(e) => setNewDate(e.target.value)}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none focus:ring-2 focus:ring-[#99D055]"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none focus:ring-2 focus:ring-[#1D201E]"
                   required
                 />
               </div>
@@ -526,7 +526,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                 <select
                   value={newSlot}
                   onChange={(e) => setNewSlot(e.target.value as "morning" | "afternoon" | "evening")}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none focus:ring-2 focus:ring-[#99D055]"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none focus:ring-2 focus:ring-[#1D201E]"
                 >
                   <option value="morning">Morning Slot (8am - 12pm)</option>
                   <option value="afternoon">Afternoon Slot (12pm - 4pm)</option>
@@ -541,14 +541,14 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                   onChange={(e) => setRescheduleReason(e.target.value)}
                   placeholder="Explain why you need to reschedule..."
                   rows={3}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs text-ink-600 border-none focus:ring-2 focus:ring-[#99D055] resize-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs text-ink-600 border-none focus:ring-2 focus:ring-[#1D201E] resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={submittingReschedule || !newDate}
-                className="w-full py-3 rounded-full bg-[#1F3A00] text-[#B7F56A] text-xs font-semibold hover:bg-[#2d5004] cursor-pointer disabled:opacity-50 border border-[#E5FBC9]"
+                className="w-full py-3 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 border border-[#ECEAE3]"
               >
                 {submittingReschedule ? "Submitting Request..." : "Submit Reschedule Request"}
               </button>
@@ -560,8 +560,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       {/* MODAL: CANCEL BOOKING */}
       {cancelModalOpen && (
         <div className="fixed inset-0 bg-ink-900/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#F9FCF5] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#B7F56A]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="bg-[#F6F5F1] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <h3 className="font-heading font-medium text-lg text-danger-900 flex items-center gap-1.5">
                 <AlertCircle className="w-4 h-4 text-danger-500" />
                 <span>Cancel Booking Confirmation</span>
@@ -581,7 +581,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                 <select
                   value={cancelReason}
                   onChange={(e) => setCancelReason(e.target.value as "schedule_conflict" | "found_alternative" | "pricing_concern" | "scope_changed" | "other")}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none focus:ring-2 focus:ring-[#99D055]"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none focus:ring-2 focus:ring-[#1D201E]"
                 >
                   <option value="schedule_conflict">Schedule Conflict / Travel</option>
                   <option value="found_alternative">Found Alternative Service</option>
@@ -598,14 +598,14 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                   onChange={(e) => setCancelDetails(e.target.value)}
                   placeholder="Additional context for cancellation..."
                   rows={3}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs text-ink-600 border-none focus:ring-2 focus:ring-[#99D055] resize-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs text-ink-600 border-none focus:ring-2 focus:ring-[#1D201E] resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={submittingCancel}
-                className="w-full py-3 rounded-full bg-danger-500 text-white text-xs font-medium hover:bg-danger-500 cursor-pointer disabled:opacity-50 border border-[#E5FBC9]"
+                className="w-full py-3 rounded-full bg-danger-500 text-white text-xs font-medium hover:bg-danger-500 cursor-pointer disabled:opacity-50 border border-[#ECEAE3]"
               >
                 {submittingCancel ? "Cancelling..." : "Confirm Booking Cancellation"}
               </button>
@@ -617,8 +617,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       {/* MODAL: SCOPE CHANGE REQUEST */}
       {changeModalOpen && (
         <div className="fixed inset-0 bg-ink-900/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#F9FCF5] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#B7F56A]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="bg-[#F6F5F1] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <h3 className="font-heading font-medium text-lg text-ink-900">Request Scope Change or Add-ons</h3>
               <button
                 type="button"
@@ -637,7 +637,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                   onChange={(e) => setChangeNotes(e.target.value)}
                   placeholder="Describe add-on services or scope changes (e.g. Add internal oven cleaning, extra waste clearance bags)..."
                   rows={4}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs text-ink-600 border-none focus:ring-2 focus:ring-[#99D055] resize-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs text-ink-600 border-none focus:ring-2 focus:ring-[#1D201E] resize-none"
                   required
                 />
               </div>
@@ -645,7 +645,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <button
                 type="submit"
                 disabled={submittingChange || !changeNotes.trim()}
-                className="w-full py-3 rounded-full bg-[#1F3A00] text-[#B7F56A] text-xs font-semibold hover:bg-[#2d5004] cursor-pointer disabled:opacity-50 border border-[#E5FBC9]"
+                className="w-full py-3 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 border border-[#ECEAE3]"
               >
                 {submittingChange ? "Logging Request..." : "Submit Scope Change Request"}
               </button>

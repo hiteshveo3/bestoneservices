@@ -10,11 +10,11 @@ export interface ServiceBadgeProps {
 
 export function ServiceBadge({ children, variant = "primary", className = "" }: ServiceBadgeProps) {
   const variantStyles = {
-    primary: "bg-[#DCFAB7] text-[#1F3A00] border-[#99D055]",
-    neutral: "bg-white text-[#1F3A00] border-[#E5FBC9]",
-    dark: "bg-[#1F3A00] text-[#B7F56A] border-[#1F3A00]",
-    outline: "bg-transparent text-[#1F3A00] border-[#E5FBC9]",
-    status: "bg-[#DCFAB7] text-[#1F3A00] border-[#99D055]",
+    primary: "bg-[#EAF8D6] text-[#1D201E] border-[#ECEAE3]",
+    neutral: "bg-white text-[#1D201E] border-[#ECEAE3]",
+    dark: "bg-[#B7F56A] text-[#1D201E] border-[#1D201E]",
+    outline: "bg-transparent text-[#1D201E] border-[#ECEAE3]",
+    status: "bg-[#EAF8D6] text-[#1D201E] border-[#ECEAE3]",
   };
 
   // The "status" variant reads as plain-language status text (e.g. a booking

@@ -59,7 +59,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
     categoryLabel: "Pest Control Guide",
     tags: ["Rodents", "Mice", "Inspection", "Pest Prevention"],
     author: {
-      name: "Best One Pest Control Team",
+      name: "Bestone Pest Control Team",
       role: "Certified Pest Technicians",
     },
     publishedAt: "2026-02-01",
@@ -148,7 +148,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
       {
         type: "serviceCTA",
         title: "Suspect Mice in Your Property?",
-        text: "Best One offers 2-visit targeted rodent treatments with professional ingress sealing and written guarantees.",
+        text: "Bestone offers 2-visit targeted rodent treatments with professional ingress sealing and written guarantees.",
         buttonText: "View Mouse Control Services",
         href: "/pest-control-services/mice-control/",
       },
@@ -220,7 +220,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
     categoryLabel: "Checklist",
     tags: ["Cleaning", "Move-Out", "Deposit", "Inventory"],
     author: {
-      name: "Best One Cleaning Services",
+      name: "Bestone Cleaning Services",
       role: "Tenancy Operations Team",
     },
     publishedAt: "2026-01-15",
@@ -291,7 +291,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
     categoryLabel: "Cost Guide",
     tags: ["Pricing", "Pest Control", "Rates"],
     author: {
-      name: "Best One Commercial Team",
+      name: "Bestone Commercial Team",
       role: "Pricing Specialist",
     },
     publishedAt: "2026-01-28",

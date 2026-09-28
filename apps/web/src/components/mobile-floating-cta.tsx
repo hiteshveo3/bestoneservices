@@ -39,14 +39,20 @@ export function MobileFloatingCta() {
       }`}
       style={{ bottom: "calc(env(safe-area-inset-bottom) + 72px)" }}
     >
-      <Link
-        href="/prices/#smart-calculator"
-        tabIndex={visible ? undefined : -1}
-        className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border border-[#99D055] shadow-sm hover:opacity-90 transition-opacity duration-200 text-decoration-none"
-      >
-        <span>Get Instant Quote</span>
-        <HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2.2} className="text-[#1F3A00] shrink-0" />
-      </Link>
+      <div className="flex items-center justify-between gap-2 rounded-[18px] bg-white py-2 pl-4 pr-2">
+        <span className="grid leading-tight">
+          <span className="text-xs text-[#5A605C]">Fixed prices from</span>
+          <span className="ts-fig text-2xl">£45</span>
+        </span>
+        <Link
+          href="/prices/"
+          tabIndex={visible ? undefined : -1}
+          className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#B7F56A] px-5 text-base font-semibold text-[#1D201E] no-underline transition-colors duration-150 hover:bg-[#A2EA4E]"
+        >
+          <span>Get your price</span>
+          <HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2.2} className="text-[#1D201E] shrink-0" />
+        </Link>
+      </div>
     </div>
   );
 }

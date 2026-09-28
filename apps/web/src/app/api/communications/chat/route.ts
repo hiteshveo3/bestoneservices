@@ -92,7 +92,7 @@ export async function POST(req: Request) {
 
     const senderRole = actor.role === "admin" ? "admin" : "customer";
     const senderName = senderRole === "admin"
-      ? "Best One Support"
+      ? "Bestone Support"
       : (bookingData?.customerSnapshot?.fullName || parsed.senderName || "Customer");
     const serverNow = FieldValue.serverTimestamp();
     const convId = parsed.bookingId;

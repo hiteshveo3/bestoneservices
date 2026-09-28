@@ -2,9 +2,9 @@ import { serviceFaqSchema } from "@/content/service-types";
 
 export const pestControlContent = {
   title: "Pest Control",
-  seoTitle: "Pest Control Services | Best One Services",
+  seoTitle: "Pest Control Services | Bestone Services",
   description:
-    "Request pest-control help for a home, rental property or business. Report the signs you have noticed and ask Best One Services for a property-specific quote.",
+    "Request pest-control help for a home, rental property or business. Report the signs you have noticed and ask Bestone Services for a property-specific quote.",
   hero: {
     eyebrow: "Pest control",
     heading: "Pest control for homes, rentals and businesses.",

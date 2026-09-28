@@ -7,7 +7,7 @@ export const ICON_SIZES = {
 } as const;
 
 export const ICON_TILES = {
-  sm: "w-9 h-9 rounded-[18px] bg-[#1F3A00] text-white flex items-center justify-center font-medium shrink-0 border border-[#E5FBC9]",
-  md: "w-11 h-11 rounded-[18px] bg-[#1F3A00] text-white flex items-center justify-center font-medium shrink-0 border border-[#E5FBC9]",
-  lg: "w-14 h-14 rounded-[18px] bg-[#1F3A00] text-white flex items-center justify-center font-medium shrink-0 border border-[#E5FBC9]",
+  sm: "w-9 h-9 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium shrink-0 border border-[#ECEAE3]",
+  md: "w-11 h-11 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium shrink-0 border border-[#ECEAE3]",
+  lg: "w-14 h-14 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium shrink-0 border border-[#ECEAE3]",
 } as const;

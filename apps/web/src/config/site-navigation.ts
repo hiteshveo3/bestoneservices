@@ -181,7 +181,7 @@ export const footerNavigation = [
       { href: "/areas/", label: "Areas We Cover" },
       { href: "/prices/", label: "Starting Prices" },
       { href: "/guides/", label: "Service Guides" },
-      { href: "/about/", label: "About Best One" },
+      { href: "/about/", label: "About Bestone" },
     ],
   },
 ] as const;

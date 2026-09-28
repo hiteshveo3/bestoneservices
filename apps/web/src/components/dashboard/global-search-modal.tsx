@@ -125,10 +125,10 @@ export function GlobalSearchModal({ isOpen, onClose }: { isOpen: boolean; onClos
       <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-xs" onClick={onClose} />
 
       {/* Command Palette Card */}
-      <div className="relative w-full max-w-2xl bg-white rounded-[16px] overflow-hidden border-none text-start z-50 flex flex-col max-h-[80vh] border border-[#E5FBC9]">
+      <div className="relative w-full max-w-2xl bg-white rounded-[16px] overflow-hidden border-none text-start z-50 flex flex-col max-h-[80vh] border border-[#ECEAE3]">
         
         {/* Search Header Bar */}
-        <div className="p-4 border-b border-[#E5FBC9] flex items-center gap-3">
+        <div className="p-4 border-b border-[#ECEAE3] flex items-center gap-3">
           <Search className="w-5 h-5 text-ink-500 shrink-0" />
           <input
             type="text"
@@ -141,7 +141,7 @@ export function GlobalSearchModal({ isOpen, onClose }: { isOpen: boolean; onClos
           <button
             type="button"
             onClick={onClose}
-            className="p-1 rounded-[16px] text-ink-500 hover:text-ink-600 hover:bg-[#DCFAB7] border-none cursor-pointer"
+            className="p-1 rounded-[16px] text-ink-500 hover:text-ink-600 hover:bg-[#EAF8D6] border-none cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -161,10 +161,10 @@ export function GlobalSearchModal({ isOpen, onClose }: { isOpen: boolean; onClos
                   <div
                     key={u.uid}
                     onClick={() => handleSelectRoute(`/admin/customers?uid=${u.uid}`)}
-                    className="p-3 rounded-[16px] bg-[#F9FCF5] hover:bg-[#DCFAB7] cursor-pointer flex items-center justify-between transition-colors duration-150"
+                    className="p-3 rounded-[16px] bg-[#F6F5F1] hover:bg-[#EAF8D6] cursor-pointer flex items-center justify-between transition-colors duration-150"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#1F3A00] text-white flex items-center justify-center font-medium text-xs">
+                      <div className="w-8 h-8 rounded-full bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium text-xs">
                         {u.displayName.charAt(0).toUpperCase()}
                       </div>
                       <div>
@@ -197,10 +197,10 @@ export function GlobalSearchModal({ isOpen, onClose }: { isOpen: boolean; onClos
                   <div
                     key={cmd.href}
                     onClick={() => handleSelectRoute(cmd.href)}
-                    className="p-3 rounded-[16px] hover:bg-[#DCFAB7] cursor-pointer flex items-center justify-between transition-colors duration-150 group"
+                    className="p-3 rounded-[16px] hover:bg-[#EAF8D6] cursor-pointer flex items-center justify-between transition-colors duration-150 group"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-[16px] bg-[#F9FCF5] group-hover:bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center transition-colors duration-150">
+                      <div className="w-8 h-8 rounded-[16px] bg-[#F6F5F1] group-hover:bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center transition-colors duration-150">
                         <Icon className="w-4 h-4 text-ink-600" />
                       </div>
                       <div>
@@ -220,7 +220,7 @@ export function GlobalSearchModal({ isOpen, onClose }: { isOpen: boolean; onClos
         </div>
 
         {/* Footer Shortcut Tip */}
-        <div className="p-3 bg-[#F9FCF5] border-t border-[#E5FBC9] flex items-center justify-between text-xs font-mono text-ink-500">
+        <div className="p-3 bg-[#F6F5F1] border-t border-[#ECEAE3] flex items-center justify-between text-xs font-mono text-ink-500">
           <span>Navigate: Click or Press Enter</span>
           <span>Close: ESC</span>
         </div>

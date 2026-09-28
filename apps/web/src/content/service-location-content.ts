@@ -29,7 +29,7 @@ function localDemandNoteFor(
   if (!isCleaning && location.existingKeyword && location.volume) {
     const rankNote =
       location.existingPosition && location.existingPosition <= 3
-        ? `Best One already ranks in the top ${location.existingPosition === 1 ? "position" : `${location.existingPosition} results`} for "${location.existingKeyword}" locally.`
+        ? `Bestone already ranks in the top ${location.existingPosition === 1 ? "position" : `${location.existingPosition} results`} for "${location.existingKeyword}" locally.`
         : `"${location.existingKeyword}" is searched roughly ${location.volume} times a month in this area.`;
     return `${rankNote} It's one of the more active postcodes we cover for ${serviceTitle.toLowerCase()}.`;
   }
@@ -86,7 +86,7 @@ export function getServiceLocationContent(
       ...approved.faqs,
       {
         question: `Do you provide ${approved.title.toLowerCase()} in ${location.name}?`,
-        answer: `Yes. Best One Services provides ${approved.title.toLowerCase()} for homes, rental properties and businesses in ${location.name}. Tell us the property postcode, signs and affected areas when you enquire.`,
+        answer: `Yes. Bestone Services provides ${approved.title.toLowerCase()} for homes, rental properties and businesses in ${location.name}. Tell us the property postcode, signs and affected areas when you enquire.`,
       },
     ],
   };

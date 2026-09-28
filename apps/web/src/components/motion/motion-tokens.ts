@@ -1,7 +1,7 @@
 /* ==========================================================================
    MOTION TOKENS — SINGLE SOURCE OF TRUTH FOR SITE ANIMATION
    ==========================================================================
-   Best One Services is a local London trade-services business. Motion is
+   Bestone Services is a local London trade-services business. Motion is
    quality-of-life polish only: it must never read as flourish, and it must
    never make the site feel slower than the "instant quote / 2hr dispatch"
    promises in the copy.

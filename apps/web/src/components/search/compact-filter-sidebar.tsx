@@ -65,15 +65,15 @@ export function CompactFilterSidebar({
   const isCovered = postcodeCoverage?.status === "AVAILABLE";
 
   return (
-    <div className="bg-[#DCFAB7]/50 border-2 border-[#B7F56A] rounded-[22px] p-5 sm:p-6 shadow-2xs space-y-5 text-start">
+    <div className="bg-[#EAF8D6]/50 border-2 border-[#ECEAE3] rounded-[22px] p-5 sm:p-6  space-y-5 text-start">
       {/* 1. Header with Active Counter & Reset */}
-      <div className="flex items-center justify-between border-b border-[#B7F56A]/40 pb-3">
+      <div className="flex items-center justify-between border-b border-[#ECEAE3]/40 pb-3">
         <div className="flex items-center gap-2">
-          <h2 className="font-heading text-base font-bold text-[#1F3A00]">
+          <h2 className="font-heading text-base font-bold text-[#1D201E]">
             Filter Services
           </h2>
           {activeCount > 0 && (
-            <span className="inline-flex items-center justify-center h-5 px-1.5 rounded-full bg-[#1F3A00] text-white text-[11px] font-bold font-mono">
+            <span className="inline-flex items-center justify-center h-5 px-1.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-[11px] font-bold font-mono">
               {activeCount}
             </span>
           )}
@@ -83,7 +83,7 @@ export function CompactFilterSidebar({
           <button
             type="button"
             onClick={onClearAll}
-            className="text-xs font-semibold text-[#1F3A00]/70 hover:text-[#1F3A00] flex items-center gap-1 cursor-pointer"
+            className="text-xs font-semibold text-[#1D201E]/70 hover:text-[#1D201E] flex items-center gap-1 cursor-pointer"
           >
             <HugeiconsIcon icon={RotateLeft01Icon} size={13} strokeWidth={2} />
             <span>Reset</span>
@@ -93,7 +93,7 @@ export function CompactFilterSidebar({
 
       {/* 2. Verticals (Category) */}
       <div className="space-y-2">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F3A00]/70">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
           Service Category
         </span>
         <div className="grid grid-cols-2 gap-1.5">
@@ -107,15 +107,15 @@ export function CompactFilterSidebar({
                 onClick={() => onToggleCategory(key)}
                 className={`px-3 py-2 rounded-[10px] text-xs font-semibold flex items-center justify-between border transition-colors cursor-pointer ${
                   isSelected
-                    ? "bg-white border-2 border-[#B7F56A] text-[#1F3A00] font-bold shadow-2xs"
-                    : "bg-white/80 border border-[#B7F56A]/40 text-[#1F3A00]/80 hover:bg-white hover:border-[#B7F56A]"
+                    ? "bg-white border-2 border-[#ECEAE3] text-[#1D201E] font-bold "
+                    : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white hover:border-[#ECEAE3]"
                 }`}
               >
                 <span className="truncate flex items-center gap-1.5">
                   <span>{icon}</span>
                   <span>{CATEGORY_DEFINITIONS[key].label}</span>
                 </span>
-                <span className="text-[10px] font-mono text-[#1F3A00]/60 ml-1">
+                <span className="text-[10px] font-mono text-[#1D201E]/60 ml-1">
                   {count}
                 </span>
               </button>
@@ -125,8 +125,8 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 3. Job Type */}
-      <div className="space-y-2 pt-1 border-t border-[#B7F56A]/40">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F3A00]/70">
+      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
           Job Type
         </span>
         <div className="flex flex-wrap gap-1.5">
@@ -140,8 +140,8 @@ export function CompactFilterSidebar({
                 onClick={() => onToggleJobType(jt)}
                 className={`px-2.5 py-1.5 rounded-[8px] text-xs font-medium border transition-colors cursor-pointer ${
                   isSelected
-                    ? "bg-[#1F3A00] border-[#1F3A00] text-white font-semibold shadow-2xs"
-                    : "bg-white/80 border border-[#B7F56A]/40 text-[#1F3A00]/80 hover:bg-white"
+                    ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] font-semibold "
+                    : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
                 }`}
               >
                 <span>{JOB_TYPE_DEFINITIONS[jt].label}</span>
@@ -153,13 +153,13 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 4. Property Size (relevant for Cleaning & Removals) */}
-      <div className="space-y-2 pt-1 border-t border-[#B7F56A]/40">
+      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F3A00]/70">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
             Property Size
           </span>
           {!isPropertySizeRelevant && (
-            <span className="text-[10px] text-[#1F3A00]/50 italic">Cleaning & Removals</span>
+            <span className="text-[10px] text-[#1D201E]/50 italic">Cleaning & Removals</span>
           )}
         </div>
         <div className="flex flex-wrap gap-1.5">
@@ -173,8 +173,8 @@ export function CompactFilterSidebar({
                 onClick={() => onTogglePropertySize(sz)}
                 className={`px-2.5 py-1.5 rounded-[8px] text-xs font-medium border transition-colors cursor-pointer ${
                   isSelected
-                    ? "bg-[#1F3A00] border-[#1F3A00] text-white font-semibold shadow-2xs"
-                    : "bg-white/80 border border-[#B7F56A]/40 text-[#1F3A00]/80 hover:bg-white"
+                    ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] font-semibold "
+                    : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
                 }`}
               >
                 <span>{PROPERTY_SIZE_DEFINITIONS[sz].label}</span>
@@ -186,8 +186,8 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 5. Urgency / Dispatch */}
-      <div className="space-y-2 pt-1 border-t border-[#B7F56A]/40">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F3A00]/70">
+      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
           Urgency & Timeline
         </span>
         <div className="grid grid-cols-2 gap-1.5">
@@ -196,11 +196,11 @@ export function CompactFilterSidebar({
             onClick={() => onSetUrgency(filters.urgency === "emergency" ? "all" : "emergency")}
             className={`px-2.5 py-2 rounded-[8px] text-xs font-semibold flex items-center justify-center gap-1.5 border transition-colors cursor-pointer ${
               filters.urgency === "emergency"
-                ? "bg-[#B7F56A] border-2 border-[#99D055] text-[#1F3A00] font-bold shadow-2xs"
-                : "bg-white/80 border border-[#B7F56A]/40 text-[#1F3A00]/80 hover:bg-white"
+                ? "bg-[#B7F56A] border-2 border-[#ECEAE3] text-[#1D201E] font-bold "
+                : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
             }`}
           >
-            <HugeiconsIcon icon={FlashIcon} size={14} strokeWidth={2} className="text-[#1F3A00]" />
+            <HugeiconsIcon icon={FlashIcon} size={14} strokeWidth={2} className="text-[#1D201E]" />
             <span>⚡ Same-Day</span>
           </button>
 
@@ -209,8 +209,8 @@ export function CompactFilterSidebar({
             onClick={() => onSetUrgency(filters.urgency === "flexible" ? "all" : "flexible")}
             className={`px-2.5 py-2 rounded-[8px] text-xs font-semibold flex items-center justify-center gap-1 border transition-colors cursor-pointer ${
               filters.urgency === "flexible"
-                ? "bg-white border-2 border-[#B7F56A] text-[#1F3A00] font-bold shadow-2xs"
-                : "bg-white/80 border border-[#B7F56A]/40 text-[#1F3A00]/80 hover:bg-white"
+                ? "bg-white border-2 border-[#ECEAE3] text-[#1D201E] font-bold "
+                : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
             }`}
           >
             <span>🗓️ Flexible</span>
@@ -219,8 +219,8 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 6. London Postcode Coverage Checker */}
-      <div className="space-y-2 pt-1 border-t border-[#B7F56A]/40">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F3A00]/70">
+      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
           London Postcode
         </span>
         <div className="relative">
@@ -228,14 +228,14 @@ export function CompactFilterSidebar({
             icon={Location01Icon}
             size={15}
             strokeWidth={1.8}
-            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#1F3A00]/50"
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#1D201E]/50"
           />
           <input
             type="text"
             value={filters.postcode}
             onChange={(e) => onSetPostcode(e.target.value)}
             placeholder="e.g. SW1, NW3, E14, RM8"
-            className="w-full h-9 pl-8 pr-3 rounded-[8px] border-2 border-[#B7F56A] bg-white text-xs text-[#1F3A00] placeholder:text-[#1F3A00]/40 uppercase focus:border-[#99D055] focus:ring-2 focus:ring-[#B7F56A]/30 focus:outline-none transition-colors"
+            className="w-full h-9 pl-8 pr-3 rounded-[8px] border-2 border-[#ECEAE3] bg-white text-xs text-[#1D201E] placeholder:text-[#1D201E]/40 uppercase focus:border-[#ECEAE3] focus:ring-2 focus:ring-[#1D201E]/30 focus:outline-none transition-colors"
           />
         </div>
 
@@ -243,7 +243,7 @@ export function CompactFilterSidebar({
           <div
             className={`p-2.5 rounded-[10px] text-xs space-y-0.5 border ${
               isCovered
-                ? "bg-white border-2 border-[#B7F56A] text-[#1F3A00]"
+                ? "bg-white border-2 border-[#ECEAE3] text-[#1D201E]"
                 : "bg-amber-50 border border-amber-200 text-amber-900"
             }`}
           >
@@ -257,7 +257,7 @@ export function CompactFilterSidebar({
                 <span>Outer / Confirmation Required</span>
               )}
             </div>
-            <p className="text-[11px] text-[#1F3A00]/70 leading-tight">
+            <p className="text-[11px] text-[#1D201E]/70 leading-tight">
               {postcodeCoverage.message}
             </p>
           </div>

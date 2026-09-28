@@ -10,7 +10,7 @@
 export function LiveDot({ className = "", label }: { className?: string; label?: string }) {
   return (
     <span
-      className={`live-dot inline-block w-2 h-2 rounded-full bg-[#99D055] shrink-0 ${className}`}
+      className={`live-dot inline-block w-2 h-2 rounded-full bg-[#A2EA4E] shrink-0 ${className}`}
       role={label ? "img" : undefined}
       aria-label={label}
       aria-hidden={label ? undefined : true}

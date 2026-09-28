@@ -83,7 +83,7 @@ export default function AdminInvoicesQueuePage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER & METRICS */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-mono font-medium uppercase text-ink-500">FINANCIAL & INVOICING WORKSPACE</span>
@@ -93,22 +93,22 @@ export default function AdminInvoicesQueuePage() {
         </div>
 
         {/* METRICS STAT CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-[#E5FBC9] pt-4">
-          <div className="p-4 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-[#ECEAE3] pt-4">
+          <div className="p-4 rounded-[18px] bg-white space-y-1 border border-[#ECEAE3]">
             <span className="text-[10px] font-mono font-medium uppercase text-ink-500">Total Invoiced Revenue</span>
             <p className="font-heading font-medium text-xl text-ink-900">
               {formatPenceToGBP(totalInvoicedPence)}
             </p>
           </div>
 
-          <div className="p-4 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+          <div className="p-4 rounded-[18px] bg-white space-y-1 border border-[#ECEAE3]">
             <span className="text-[10px] font-mono font-medium uppercase text-ink-500">Total Cash/Card Collected</span>
-            <p className="font-heading font-medium text-xl text-[#1F3A00]">
+            <p className="font-heading font-medium text-xl text-[#1D201E]">
               {formatPenceToGBP(totalPaidPence)}
             </p>
           </div>
 
-          <div className="p-4 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+          <div className="p-4 rounded-[18px] bg-white space-y-1 border border-[#ECEAE3]">
             <span className="text-[10px] font-mono font-medium uppercase text-ink-500">Outstanding Receivables</span>
             <p className="font-heading font-medium text-xl text-danger-500">
               {formatPenceToGBP(totalOutstandingPence)}
@@ -117,7 +117,7 @@ export default function AdminInvoicesQueuePage() {
         </div>
 
         {/* STATUS FILTER TABS */}
-        <div className="flex flex-wrap items-center gap-2 border-t border-[#E5FBC9] pt-4">
+        <div className="flex flex-wrap items-center gap-2 border-t border-[#ECEAE3] pt-4">
           {[
             { id: "all", label: "All Invoices", count: invoices.length },
             { id: "paid", label: "Paid in Full", count: invoices.filter((i) => i.paymentStatus === "paid").length },
@@ -128,7 +128,7 @@ export default function AdminInvoicesQueuePage() {
               key={tab.id}
               type="button"
               onClick={() => setStatusFilter(tab.id as InvoicePaymentStatus | "all")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#1F3A00] text-white font-medium " : "bg-[#F9FCF5] text-ink-500 hover:text-[#1F3A00]" } border border-[#E5FBC9]`}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-[#F6F5F1] text-ink-500 hover:text-[#1D201E]" } border border-[#ECEAE3]`}
             >
               {tab.label} ({tab.count})
             </button>
@@ -146,12 +146,12 @@ export default function AdminInvoicesQueuePage() {
 
       {/* INVOICES QUEUE LIST */}
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Loading Firestore tax invoices...</p>
         </div>
       ) : invoices.length > 0 ? (
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
           <div className="divide-y divide-bone-300">
             {invoices.map((inv) => (
               <div key={inv.id} className="py-4 first:pt-0 last:pb-0 flex flex-wrap items-center justify-between gap-4">
@@ -159,7 +159,7 @@ export default function AdminInvoicesQueuePage() {
                   <div className="flex items-center gap-2">
                     <span className="font-mono font-medium text-xs text-ink-600">{inv.reference}</span>
                     <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium uppercase ${
-                      inv.paymentStatus === "paid" ? "bg-[#1F3A00] text-white" : "bg-danger-50 text-danger-900"
+                      inv.paymentStatus === "paid" ? "bg-[#B7F56A] text-[#1D201E]" : "bg-danger-50 text-danger-900"
                     }`}>
                       {inv.paymentStatus.replace("_", " ")}
                     </span>
@@ -186,7 +186,7 @@ export default function AdminInvoicesQueuePage() {
                         setSelectedInvoice(inv);
                         setPaymentAmountPounds((inv.balanceDuePence || inv.totalPence) / 100);
                       }}
-                      className="px-3.5 py-2 rounded-full bg-[#F9FCF5] text-ink-600 hover:bg-[#DCFAB7] text-xs font-medium border-none cursor-pointer"
+                      className="px-3.5 py-2 rounded-full bg-[#F6F5F1] text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium border-none cursor-pointer"
                     >
                       Record Payment
                     </button>
@@ -194,10 +194,10 @@ export default function AdminInvoicesQueuePage() {
 
                   <Link
                     href={`/invoice/${inv.reference}`}
-                    className="px-4 py-2 rounded-full bg-[#1F3A00] text-[#B7F56A] hover:bg-[#2d5004] text-xs font-medium text-decoration-none transition-colors duration-150 inline-flex items-center gap-1 border border-[#E5FBC9]"
+                    className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium text-decoration-none transition-colors duration-150 inline-flex items-center gap-1 border border-[#ECEAE3]"
                   >
                     <span>View Invoice</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-white" />
+                    <ChevronRight className="w-3.5 h-3.5 text-[#1D201E]" />
                   </Link>
                 </div>
               </div>
@@ -205,8 +205,8 @@ export default function AdminInvoicesQueuePage() {
           </div>
         </div>
       ) : (
-        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#E5FBC9]">
-          <FileText className="w-10 h-10 text-[#1F3A00] mx-auto" />
+        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+          <FileText className="w-10 h-10 text-[#1D201E] mx-auto" />
           <h3 className="font-heading text-lg font-medium text-ink-900">No Invoices Found</h3>
           <p className="text-xs text-ink-500 leading-relaxed">
             There are currently no tax invoices matching your selected status filter.
@@ -217,8 +217,8 @@ export default function AdminInvoicesQueuePage() {
       {/* MODAL: RECORD OFFLINE PAYMENT */}
       {selectedInvoice && (
         <div className="fixed inset-0 bg-ink-900/60 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-[18px] max-w-md w-full p-6 sm:p-8 space-y-6 text-start border border-[#E5FBC9]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="bg-white rounded-[18px] max-w-md w-full p-6 sm:p-8 space-y-6 text-start border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <div>
                 <span className="text-xs font-mono font-medium text-ink-500">LOG PAYMENT</span>
                 <h3 className="font-heading font-medium text-lg text-ink-900">Record Offline Payment</h3>
@@ -239,7 +239,7 @@ export default function AdminInvoicesQueuePage() {
               </div>
             )}
 
-            <div className="p-4 rounded-[18px] bg-white space-y-1 text-xs font-mono border border-[#E5FBC9]">
+            <div className="p-4 rounded-[18px] bg-white space-y-1 text-xs font-mono border border-[#ECEAE3]">
               <span className="text-ink-500">Invoice Reference:</span>
               <p className="font-medium text-ink-600">{selectedInvoice.reference}</p>
               <span className="text-ink-500 block pt-1">Current Balance Due: {formatPenceToGBP(selectedInvoice.balanceDuePence || 0)}</span>
@@ -253,7 +253,7 @@ export default function AdminInvoicesQueuePage() {
                   step="0.01"
                   value={paymentAmountPounds}
                   onChange={(e) => setPaymentAmountPounds(parseFloat(e.target.value) || 0)}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-sm font-medium text-ink-600 border-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-sm font-medium text-ink-600 border-none"
                   required
                 />
               </div>
@@ -263,7 +263,7 @@ export default function AdminInvoicesQueuePage() {
                 <select
                   value={paymentMethod}
                   onChange={(e) => setPaymentMethod(e.target.value as PaymentMethod)}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 >
                   <option value="cash_on_completion">Cash on Completion</option>
                   <option value="bank_transfer">Direct BACS Bank Transfer</option>
@@ -274,7 +274,7 @@ export default function AdminInvoicesQueuePage() {
               <button
                 type="submit"
                 disabled={submitting || paymentAmountPounds <= 0}
-                className="w-full py-3.5 rounded-full bg-[#1F3A00] text-[#B7F56A] text-xs font-semibold hover:bg-[#2d5004] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#E5FBC9]"
+                className="w-full py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#ECEAE3]"
               >
                 {submitting ? "Logging Payment..." : "Record Payment & Update Invoice →"}
               </button>

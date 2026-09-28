@@ -63,7 +63,7 @@ export function MintLimeServiceLayout({
   const [postcodeMessage, setPostcodeMessage] = useState<string>("");
 
   const isCleaning = category.includes("cleaning");
-  const whatsappBookingUrl = siteContact.getWhatsappUrl(`Hi, I'd like to book ${categoryLabel} with Best One Services.`);
+  const whatsappBookingUrl = siteContact.getWhatsappUrl(`Hi, I'd like to book ${categoryLabel} with Bestone Services.`);
   const isPest = category.includes("pest");
   const isRat = service === "rat-control";
   const isEndOfTenancy = service === "end-of-tenancy-cleaning";
@@ -641,23 +641,23 @@ export function MintLimeServiceLayout({
   };
 
   return (
-    <div className="theme-mint-lime min-h-screen bg-[#F9FCF5] text-[#1F3A00]">
+    <div className="theme-mint-lime min-h-screen bg-[#F6F5F1] text-[#1D201E]">
       
       {/* ===================================================================
           1. CLEAN EDITORIAL HERO SECTION
           =================================================================== */}
-      <section className="bg-[#F9FCF5] border-b border-[#E5FBC9]">
+      <section className="bg-[#F6F5F1] border-b border-[#ECEAE3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-0">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#1F3A00]/80 font-medium">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#1D201E]/80 font-medium">
             <Link href="/" className="hover:underline">Home</Link>
-            <span aria-hidden="true" className="text-[#1F3A00]/40">/</span>
+            <span aria-hidden="true" className="text-[#1D201E]/40">/</span>
             <Link href={`/${category}/`} className="hover:underline">{categoryLabel}</Link>
-            <span aria-hidden="true" className="text-[#1F3A00]/40">/</span>
+            <span aria-hidden="true" className="text-[#1D201E]/40">/</span>
             <Link href={`/${category}/${service}/`} className="hover:underline font-medium">{approved.title}</Link>
             {locationName && (
               <>
-                <span aria-hidden="true" className="text-[#1F3A00]/40">/</span>
-                <span className="font-semibold text-[#1F3A00]">{locationName}</span>
+                <span aria-hidden="true" className="text-[#1D201E]/40">/</span>
+                <span className="font-semibold text-[#1D201E]">{locationName}</span>
               </>
             )}
           </nav>
@@ -668,19 +668,19 @@ export function MintLimeServiceLayout({
 
             {/* Single eyebrow badge */}
             <div>
-              <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#DCFAB7]/80 border border-[#B7F56A] text-xs font-bold uppercase tracking-wider text-[#1F3A00] w-fit shadow-2xs">
+              <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#EAF8D6]/80 border border-[#ECEAE3] text-xs font-bold uppercase tracking-wider text-[#1D201E] w-fit ">
                 {categoryLabel} · {locationName ? `${locationName}, London` : (isRat ? "Rats & mice" : approved.title)}
               </span>
             </div>
 
-            <h1 className="m-0 font-heading text-4xl sm:text-5xl lg:text-[52px] font-semibold leading-[1.06] tracking-tight text-[#1F3A00] max-w-2xl">
+            <h1 className="m-0 font-heading text-4xl sm:text-5xl lg:text-[52px] font-semibold leading-[1.06] tracking-tight text-[#1D201E] max-w-2xl">
               {heroTitle}
             </h1>
-            <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]/90 max-w-xl font-normal">
+            <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1D201E]/90 max-w-xl font-normal">
               {heroSubtext}
             </p>
             {localDemandNote && (
-              <p className="m-0 text-sm leading-relaxed text-[#1F3A00]/70 max-w-xl font-normal">
+              <p className="m-0 text-sm leading-relaxed text-[#1D201E]/70 max-w-xl font-normal">
                 {localDemandNote}
               </p>
             )}
@@ -691,7 +691,7 @@ export function MintLimeServiceLayout({
                 href={whatsappBookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer "
               >
                 {isCleaning ? "Get Instant Quote" : "Request Assessment"}
               </Link>
@@ -704,17 +704,17 @@ export function MintLimeServiceLayout({
             </div>
 
             {/* Trust checkmarks */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2.5 pt-1 text-sm font-medium text-[#1F3A00]">
+            <div className="flex flex-wrap gap-x-6 gap-y-2.5 pt-1 text-sm font-medium text-[#1D201E]">
               <span className="inline-flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-[#DCFAB7] flex items-center justify-center shrink-0 font-bold text-xs">✓</span>
+                <span className="w-5 h-5 rounded-full bg-[#EAF8D6] flex items-center justify-center shrink-0 font-bold text-xs">✓</span>
                 {isCleaning ? "48-Hour re-clean guarantee" : "Assessment before quoting"}
               </span>
               <span className="inline-flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-[#DCFAB7] flex items-center justify-center shrink-0 font-bold text-xs">✓</span>
+                <span className="w-5 h-5 rounded-full bg-[#EAF8D6] flex items-center justify-center shrink-0 font-bold text-xs">✓</span>
                 {isCleaning ? "Full agency inventory checklist" : "Follow-up visit included"}
               </span>
               <span className="inline-flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-[#DCFAB7] flex items-center justify-center shrink-0 font-bold text-xs">✓</span>
+                <span className="w-5 h-5 rounded-full bg-[#EAF8D6] flex items-center justify-center shrink-0 font-bold text-xs">✓</span>
                 {locationName ? `Covered across ${locationName}` : "Covered across London"}
               </span>
             </div>
@@ -722,7 +722,7 @@ export function MintLimeServiceLayout({
 
           {/* Hero image — plain neutral border, no overlay card */}
           <div>
-            <div className="relative aspect-[4/3] rounded-[22px] overflow-hidden border border-[#D1E8B8] bg-[#EBF4DD]">
+            <div className="relative aspect-[4/3] rounded-[22px] overflow-hidden border border-[#ECEAE3] bg-[#EAF8D6]">
               <Image
                 src={
                   isCleaning
@@ -733,9 +733,9 @@ export function MintLimeServiceLayout({
                 }
                 alt={
                   isCleaning
-                    ? "Best One Services cleaner ready for an end of tenancy clean"
+                    ? "Bestone Services cleaner ready for an end of tenancy clean"
                     : isPest
-                      ? "Best One Services pest-control technician ready to inspect a property"
+                      ? "Bestone Services pest-control technician ready to inspect a property"
                       : "Technician inspecting property"
                 }
                 fill
@@ -751,14 +751,14 @@ export function MintLimeServiceLayout({
       {/* ===================================================================
           2. KEY STATS SECTION
           =================================================================== */}
-      <section className="border-b border-[#E5FBC9] bg-[#F9FCF5]">
+      <section className="border-b border-[#ECEAE3] bg-[#F6F5F1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid gap-6 grid-cols-2 md:grid-cols-4">
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col gap-1.5">
-              <span className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <span className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 {stat.value}
               </span>
-              <span className="text-sm leading-snug text-[#1F3A00]">
+              <span className="text-sm leading-snug text-[#1D201E]">
                 {stat.label}
               </span>
             </div>
@@ -777,10 +777,10 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 1: OVERVIEW */}
             <section id="overview" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 What professional {approved.title.toLowerCase()} involves
               </h2>
-              <div className="flex flex-col gap-4 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
+              <div className="flex flex-col gap-4 text-base sm:text-lg leading-relaxed text-[#1D201E]">
                 {isCleaning ? (
                   <>
                     <p className="m-0">
@@ -801,7 +801,7 @@ export function MintLimeServiceLayout({
                   </>
                 )}
               </div>
-              <div className="p-6 bg-[#B7F56A] rounded-[18px] font-heading font-medium text-lg sm:text-xl leading-snug text-[#1F3A00] border border-[#99D055]">
+              <div className="p-6 bg-[#B7F56A] rounded-[18px] font-heading font-medium text-lg sm:text-xl leading-snug text-[#1D201E] border border-[#ECEAE3]">
                 {isCleaning
                   ? "Deposit protection schemes require properties to be returned in professional condition. Our agency-approved cleaning standards ensure zero handover disputes."
                   : "Rats and pests are resilient, adaptable creatures. Treating an infestation isn't a single clever trick — it's an accurate diagnosis plus consistent follow-through."}
@@ -810,10 +810,10 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 2: SIGNS / INCLUSIONS */}
             <section id="signs" className="scroll-mt-24 flex flex-col gap-6">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 {isCleaning ? "Complete room scope and cleaning inclusions" : `Signs of a ${approved.title.toLowerCase()} issue`}
               </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
+              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1D201E]">
                 {isCleaning
                   ? "Every appointment follows an exhaustive 50-point checklist covering kitchens, bathrooms, bedrooms, and common areas:"
                   : "Prompt diagnosis prevents small issues from escalating. These are the primary indicators worth paying attention to:"}
@@ -823,12 +823,12 @@ export function MintLimeServiceLayout({
                 {scopeItems.map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <div key={idx} className="bg-white border border-[#E5FBC9] rounded-[18px] p-5 flex flex-col gap-2.5 shadow-2xs">
-                      <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] text-[#1F3A00]">
-                        <Icon className="w-5 h-5 text-[#1F3A00]" />
+                    <div key={idx} className="bg-white border border-[#ECEAE3] rounded-[18px] p-5 flex flex-col gap-2.5 ">
+                      <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] text-[#1D201E]">
+                        <Icon className="w-5 h-5 text-[#1D201E]" />
                       </span>
-                      <strong className="text-base font-semibold text-[#1F3A00]">{item.title}</strong>
-                      <span className="text-sm leading-relaxed text-[#1F3A00]">
+                      <strong className="text-base font-semibold text-[#1D201E]">{item.title}</strong>
+                      <span className="text-sm leading-relaxed text-[#1D201E]">
                         {item.desc}
                       </span>
                     </div>
@@ -836,20 +836,20 @@ export function MintLimeServiceLayout({
                 })}
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-5 items-center p-5 bg-[#DCFAB7] rounded-[20px] border border-[#E5FBC9]">
+              <div className="grid sm:grid-cols-2 gap-5 items-center p-5 bg-[#EAF8D6] rounded-[20px] border border-[#ECEAE3]">
                 <div>
-                  <p className="m-0 text-base leading-relaxed text-[#1F3A00]">
+                  <p className="m-0 text-base leading-relaxed text-[#1D201E]">
                     {isCleaning
                       ? "Our end of tenancy cleaning checklists are engineered to align with standard inventory checkout criteria commonly required across London by major letting agents (such as Foxtons, Savills, and Dexters) and independent ARLA Propertymark inventory clerks."
                       : "One sign on its own isn't necessarily cause for alarm. What generally warrants a closer look is two or more of these signs appearing in the same area within a short period."}
                   </p>
                   {isCleaning && (
-                    <p className="m-0 pt-2 text-[11px] text-[#1F3A00]/70 italic leading-normal">
+                    <p className="m-0 pt-2 text-[11px] text-[#1D201E]/70 italic leading-normal">
                       *Independent professional service. Agent references denote alignment with standard UK inventory benchmarks and do not imply formal endorsement or partnership.
                     </p>
                   )}
                 </div>
-                <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-[#D1E8B8] bg-[#EBF4DD] shadow-2xs">
+                <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-[#ECEAE3] bg-[#EAF8D6] ">
                   {/* TEMP STOCK PHOTO - replace with real branded photography when available */}
                   <Image
                     src={isCleaning ? "/images/service/stock-oven-kitchen.jpg" : "/images/service/stock-oven-kitchen.jpg"}
@@ -865,21 +865,21 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 3: RISKS / IMPORTANCE */}
             <section id="risks" className="scroll-mt-24 flex flex-col gap-6">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 {isCleaning ? "Why professional move-out cleaning matters" : "Why early action is essential"}
               </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
+              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1D201E]">
                 {isCleaning
                   ? "Attempting to clean a rental property with domestic sprays carries substantial financial and logistical risks:"
                   : "Prompt intervention provides three concrete benefits over delaying treatment:"}
               </p>
 
-              <div className="grid sm:grid-cols-3 gap-px bg-[#99D055] rounded-[20px] overflow-hidden border border-[#99D055]">
+              <div className="grid sm:grid-cols-3 gap-px bg-[#A2EA4E] rounded-[20px] overflow-hidden border border-[#ECEAE3]">
                 {riskItems.map((risk, idx) => (
-                  <div key={idx} className="bg-white p-6 border-t-4 border-[#B7F56A] flex flex-col gap-2.5">
-                    <span className="text-xs font-bold tracking-wider text-[#1F3A00]">POINT {risk.num}</span>
-                    <strong className="font-heading text-2xl font-semibold text-[#1F3A00]">{risk.title}</strong>
-                    <span className="text-sm leading-relaxed text-[#1F3A00]">
+                  <div key={idx} className="bg-white p-6 border-t-4 border-[#ECEAE3] flex flex-col gap-2.5">
+                    <span className="text-xs font-bold tracking-wider text-[#1D201E]">POINT {risk.num}</span>
+                    <strong className="font-heading text-2xl font-semibold text-[#1D201E]">{risk.title}</strong>
+                    <span className="text-sm leading-relaxed text-[#1D201E]">
                       {risk.desc}
                     </span>
                   </div>
@@ -889,20 +889,20 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 4: CAUSES / HOTSPOTS */}
             <section id="causes" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 {isCleaning ? "Key deposit deduction hotspots" : "Why issues develop in a property"}
               </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
+              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1D201E]">
                 {isCleaning
                   ? "Based on over 5,000 completed London inventory inspections, these are the four areas most frequently flagged for deductions:"
                   : "Problems don't emerge at random — they respond to access, food, warmth, and moisture:"}
               </p>
 
-              <div className="divide-y divide-[#E5FBC9] border-y border-[#E5FBC9]">
+              <div className="divide-y divide-[#ECEAE3] border-y border-[#ECEAE3]">
                 {causesItems.map((cause, idx) => (
                   <div key={idx} className="grid sm:grid-cols-[220px_1fr] gap-2 sm:gap-6 py-5">
-                    <strong className="text-base font-semibold text-[#1F3A00]">{cause.title}</strong>
-                    <span className="text-base leading-relaxed text-[#1F3A00]">{cause.desc}</span>
+                    <strong className="text-base font-semibold text-[#1D201E]">{cause.title}</strong>
+                    <span className="text-base leading-relaxed text-[#1D201E]">{cause.desc}</span>
                   </div>
                 ))}
               </div>
@@ -910,19 +910,19 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 5: PROCESS */}
             <section id="process" className="scroll-mt-24 flex flex-col gap-6">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 Our step-by-step process
               </h2>
 
-              <div className="divide-y divide-[#E5FBC9] border-y border-[#E5FBC9]">
+              <div className="divide-y divide-[#ECEAE3] border-y border-[#ECEAE3]">
                 {processItems.map((step, idx) => (
                   <div key={idx} className="grid grid-cols-[48px_1fr] gap-5 py-5 items-start">
-                    <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#B7F56A] text-[#1F3A00] font-bold text-sm border border-[#99D055]">
+                    <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#B7F56A] text-[#1D201E] font-bold text-sm border border-[#ECEAE3]">
                       {step.step}
                     </span>
                     <div className="space-y-1">
-                      <h3 className="m-0 text-lg font-semibold text-[#1F3A00]">{step.title}</h3>
-                      <p className="m-0 text-base leading-relaxed text-[#1F3A00]">
+                      <h3 className="m-0 text-lg font-semibold text-[#1D201E]">{step.title}</h3>
+                      <p className="m-0 text-base leading-relaxed text-[#1D201E]">
                         {step.desc}
                       </p>
                     </div>
@@ -933,30 +933,30 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 6: DIY VS PRO TABLE */}
             <section id="diy-vs-pro" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 {isCleaning ? "DIY cleaning vs. professional guarantee" : "DIY measures vs. professional treatment"}
               </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
+              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1D201E]">
                 {isCleaning
                   ? "Comparing domestic supermarket cleaning with our fully equipped commercial service:"
                   : "Where over-the-counter measures fall short compared to professional methodology:"}
               </p>
 
-              <div className="overflow-x-auto border border-[#E5FBC9] rounded-[20px] bg-white shadow-2xs">
+              <div className="overflow-x-auto border border-[#ECEAE3] rounded-[20px] bg-white ">
                 <table className="w-full min-w-[500px] border-collapse text-left text-sm">
                   <thead>
-                    <tr className="bg-[#DCFAB7] text-[#1F3A00]">
+                    <tr className="bg-[#EAF8D6] text-[#1D201E]">
                       <th className="p-3.5 sm:p-4 font-semibold">Consideration</th>
                       <th className="p-3.5 sm:p-4 font-semibold">{isCleaning ? "DIY Domestic Cleaning" : "DIY Traps / Sprays"}</th>
-                      <th className="p-3.5 sm:p-4 font-semibold">Best One Professional Service</th>
+                      <th className="p-3.5 sm:p-4 font-semibold">Bestone Professional Service</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#E5FBC9] text-[#1F3A00]">
+                  <tbody className="divide-y divide-[#ECEAE3] text-[#1D201E]">
                     {comparisonRows.map((row, idx) => (
                       <tr key={idx}>
-                        <td className="p-3.5 sm:p-4 font-semibold text-[#1F3A00]">{row.item}</td>
+                        <td className="p-3.5 sm:p-4 font-semibold text-[#1D201E]">{row.item}</td>
                         <td className="p-3.5 sm:p-4">{row.diy}</td>
-                        <td className="p-3.5 sm:p-4 font-medium text-[#1F3A00]">{row.pro}</td>
+                        <td className="p-3.5 sm:p-4 font-medium text-[#1D201E]">{row.pro}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -966,14 +966,14 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 7: FACTORS AFFECTING PRICE */}
             <section id="factors" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 What affects the price and scope
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3.5">
                 {pricingFactors.map((factor, idx) => (
-                  <div key={idx} className="p-5 bg-[#DCFAB7] rounded-[16px] flex flex-col gap-1.5 border border-[#E5FBC9]">
-                    <strong className="text-base font-semibold text-[#1F3A00]">{factor.title}</strong>
-                    <span className="text-sm leading-relaxed text-[#1F3A00]">{factor.desc}</span>
+                  <div key={idx} className="p-5 bg-[#EAF8D6] rounded-[16px] flex flex-col gap-1.5 border border-[#ECEAE3]">
+                    <strong className="text-base font-semibold text-[#1D201E]">{factor.title}</strong>
+                    <span className="text-sm leading-relaxed text-[#1D201E]">{factor.desc}</span>
                   </div>
                 ))}
               </div>
@@ -982,20 +982,20 @@ export function MintLimeServiceLayout({
             {/* SECTION 8: PREVENTION & PREPARATION */}
             <section id="prevention" className="scroll-mt-24 grid md:grid-cols-[1fr_280px] gap-7 items-start">
               <div className="flex flex-col gap-4">
-                <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+                <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                   {isCleaning ? "Preparation advice for your booking" : "Prevention and long-term protection"}
                 </h2>
-                <div className="space-y-3 text-base leading-relaxed text-[#1F3A00]">
+                <div className="space-y-3 text-base leading-relaxed text-[#1D201E]">
                   {prepTips.map((tip, idx) => (
                     <p key={idx} className="m-0">
-                      <strong className="text-[#1F3A00]">{tip.label}: </strong>
+                      <strong className="text-[#1D201E]">{tip.label}: </strong>
                       {tip.desc}
                     </p>
                   ))}
                 </div>
               </div>
 
-              <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden border border-[#D1E8B8] bg-[#EBF4DD] shadow-2xs">
+              <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden border border-[#ECEAE3] bg-[#EAF8D6] ">
                 {/* TEMP STOCK PHOTO - replace with real branded photography when available */}
                 <Image
                   src={isCleaning ? "/images/service/stock-handover-checklist.jpg" : "/images/service/stock-handover-checklist.jpg"}
@@ -1010,11 +1010,11 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 9: COMMON QUESTIONS (FAQS ACCORDION) */}
             <section id="faqs" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 Frequently asked questions
               </h2>
 
-              <div className="border border-[#E5FBC9] rounded-[20px] bg-white overflow-hidden divide-y divide-[#E5FBC9] shadow-2xs">
+              <div className="border border-[#ECEAE3] rounded-[20px] bg-white overflow-hidden divide-y divide-[#ECEAE3] ">
                 {displayFaqs.map((faq, idx) => {
                   const isOpen = openFaq === idx;
                   const panelId = `faq-panel-${idx}`;
@@ -1027,13 +1027,13 @@ export function MintLimeServiceLayout({
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
                         aria-expanded={isOpen}
                         aria-controls={panelId}
-                        className="w-full flex items-center justify-between gap-4 p-5 text-left font-semibold text-base sm:text-lg text-[#1F3A00] transition-colors duration-150 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#1F3A00]"
+                        className="w-full flex items-center justify-between gap-4 p-5 text-left font-semibold text-base sm:text-lg text-[#1D201E] transition-colors duration-150 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#1D201E]"
                       >
                         <span>{faq.q}</span>
                         <span 
                           aria-hidden="true"
                           data-open={isOpen}
-                          className={`accordion-chevron w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[#1F3A00] transition-colors duration-200 ${
+                          className={`accordion-chevron w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[#1D201E] transition-colors duration-200 ${
                             isOpen ? "bg-[#B7F56A]" : ""
                           }`}
                         >
@@ -1048,7 +1048,7 @@ export function MintLimeServiceLayout({
                         data-open={isOpen}
                       >
                         <div>
-                          <p className="m-0 px-5 pb-5 text-sm sm:text-base leading-relaxed text-[#1F3A00]">
+                          <p className="m-0 px-5 pb-5 text-sm sm:text-base leading-relaxed text-[#1D201E]">
                             {faq.a}
                           </p>
                         </div>
@@ -1061,12 +1061,12 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 9b: POSTCODE COVERAGE CHECK */}
             <section id="coverage-check" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 Check coverage for your postcode
               </h2>
               <form
                 onSubmit={handlePostcodeCheck}
-                className="flex flex-col gap-3 p-5 rounded-[16px] border border-[#B7F56A] bg-white"
+                className="flex flex-col gap-3 p-5 rounded-[16px] border border-[#ECEAE3] bg-white"
               >
                 <div className="flex flex-col sm:flex-row gap-2.5">
                   <label htmlFor="coverage-postcode" className="sr-only">
@@ -1080,12 +1080,12 @@ export function MintLimeServiceLayout({
                     value={postcode}
                     onChange={(e) => setPostcode(e.target.value)}
                     placeholder="e.g. IG1, E14, SW1"
-                    className="flex-1 min-w-0 px-4 py-3 rounded-md bg-[#F9FCF5] border border-[#B7F56A] text-base text-[#1F3A00] placeholder:text-[#4D7220] focus:outline-none focus:ring-2 focus:ring-[#99D055] transition-colors duration-150"
+                    className="flex-1 min-w-0 px-4 py-3 rounded-md bg-[#F6F5F1] border border-[#ECEAE3] text-base text-[#1D201E] placeholder:text-[#5A605C] focus:outline-none focus:ring-2 focus:ring-[#1D201E] transition-colors duration-150"
                   />
                   <button
                     type="submit"
                     disabled={postcodeStatus === "loading"}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none cursor-pointer hover:opacity-90 transition-opacity duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none cursor-pointer hover:opacity-90 transition-opacity duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {postcodeStatus === "loading" ? (
                       <>
@@ -1109,7 +1109,7 @@ export function MintLimeServiceLayout({
 
             {/* SECTION 10: RELATED SERVICES & REGIONAL HUBS */}
             <section id="related" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
                 {locationName ? `Services in ${locationName} & Surrounding Hubs` : "Related services & London coverage"}
               </h2>
               <div className="grid sm:grid-cols-2 gap-3.5">
@@ -1117,48 +1117,48 @@ export function MintLimeServiceLayout({
                   <>
                     <Link 
                       href="/cleaning-services/carpet-cleaning/"
-                      className="flex flex-col gap-1.5 p-5 border border-[#E5FBC9] rounded-[16px] bg-white hover:border-[#1F3A00] transition-colors duration-150"
+                      className="flex flex-col gap-1.5 p-5 border border-[#ECEAE3] rounded-[16px] bg-white hover:border-[#1D201E] transition-colors duration-150"
                     >
-                      <strong className="text-base font-semibold text-[#1F3A00]">Carpet Cleaning</strong>
-                      <span className="text-sm text-[#1F3A00]">Hot water extraction steam cleaning for stains & allergens</span>
+                      <strong className="text-base font-semibold text-[#1D201E]">Carpet Cleaning</strong>
+                      <span className="text-sm text-[#1D201E]">Hot water extraction steam cleaning for stains & allergens</span>
                     </Link>
                     <Link 
                       href="/cleaning-services/oven-cleaning-service/"
-                      className="flex flex-col gap-1.5 p-5 border border-[#E5FBC9] rounded-[16px] bg-white hover:border-[#1F3A00] transition-colors duration-150"
+                      className="flex flex-col gap-1.5 p-5 border border-[#ECEAE3] rounded-[16px] bg-white hover:border-[#1D201E] transition-colors duration-150"
                     >
-                      <strong className="text-base font-semibold text-[#1F3A00]">Oven & Cooker Cleaning</strong>
-                      <span className="text-sm text-[#1F3A00]">Stand-alone deep dip-tank cleaning for ovens and AGAs</span>
+                      <strong className="text-base font-semibold text-[#1D201E]">Oven & Cooker Cleaning</strong>
+                      <span className="text-sm text-[#1D201E]">Stand-alone deep dip-tank cleaning for ovens and AGAs</span>
                     </Link>
                   </>
                 ) : (
                   <>
                     <Link 
                       href="/pest-control-services/rodent-proofing/"
-                      className="flex flex-col gap-1.5 p-5 border border-[#E5FBC9] rounded-[16px] bg-white hover:border-[#1F3A00] transition-colors duration-150"
+                      className="flex flex-col gap-1.5 p-5 border border-[#ECEAE3] rounded-[16px] bg-white hover:border-[#1D201E] transition-colors duration-150"
                     >
-                      <strong className="text-base font-semibold text-[#1F3A00]">Pest proofing</strong>
-                      <span className="text-sm text-[#1F3A00]">Blocks the entry points found during assessment</span>
+                      <strong className="text-base font-semibold text-[#1D201E]">Pest proofing</strong>
+                      <span className="text-sm text-[#1D201E]">Blocks the entry points found during assessment</span>
                     </Link>
                     <Link 
                       href="/pest-control-services/mice-control/"
-                      className="flex flex-col gap-1.5 p-5 border border-[#E5FBC9] rounded-[16px] bg-white hover:border-[#1F3A00] transition-colors duration-150"
+                      className="flex flex-col gap-1.5 p-5 border border-[#ECEAE3] rounded-[16px] bg-white hover:border-[#1D201E] transition-colors duration-150"
                     >
-                      <strong className="text-base font-semibold text-[#1F3A00]">Mice control</strong>
-                      <span className="text-sm text-[#1F3A00]">Similar signs, different species and habits</span>
+                      <strong className="text-base font-semibold text-[#1D201E]">Mice control</strong>
+                      <span className="text-sm text-[#1D201E]">Similar signs, different species and habits</span>
                     </Link>
                   </>
                 )}
               </div>
 
               {nearbyLocations.length > 0 ? (
-                <div className="pt-2 text-sm text-[#1F3A00] space-y-1">
-                  <p className="m-0 font-medium text-[#1F3A00]">Also serving neighboring London districts:</p>
+                <div className="pt-2 text-sm text-[#1D201E] space-y-1">
+                  <p className="m-0 font-medium text-[#1D201E]">Also serving neighboring London districts:</p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     {nearbyLocations.map((loc) => (
                       <Link
                         key={loc.slug}
                         href={`/${category}/${service}/${loc.slug}/`}
-                        className="px-3 py-1 rounded-full bg-white border border-[#E5FBC9] text-xs font-semibold text-[#1F3A00] hover:bg-[#B7F56A] transition-colors duration-150"
+                        className="px-3 py-1 rounded-full bg-white border border-[#ECEAE3] text-xs font-semibold text-[#1D201E] hover:bg-[#B7F56A] transition-colors duration-150"
                       >
                         {loc.name}
                       </Link>
@@ -1166,10 +1166,10 @@ export function MintLimeServiceLayout({
                   </div>
                 </div>
               ) : (
-                <p className="m-0 flex flex-wrap items-center gap-2 text-sm text-[#1F3A00]">
-                  <Check className="w-4 h-4 text-[#1F3A00] stroke-[2.5]" />
+                <p className="m-0 flex flex-wrap items-center gap-2 text-sm text-[#1D201E]">
+                  <Check className="w-4 h-4 text-[#1D201E] stroke-[2.5]" />
                   Available across London —
-                  <Link href="/areas/" className="font-semibold underline underline-offset-2 text-[#1F3A00]">see all covered areas →</Link>
+                  <Link href="/areas/" className="font-semibold underline underline-offset-2 text-[#1D201E]">see all covered areas →</Link>
                 </p>
               )}
             </section>
@@ -1179,14 +1179,14 @@ export function MintLimeServiceLayout({
           {/* ===================================================================
               RIGHT COLUMN: STICKY ASSESSMENT SIDEBAR
               =================================================================== */}
-          <aside className="lg:sticky lg:top-28 flex flex-col gap-4 bg-white border border-[#E5FBC9] rounded-[22px] p-6 shadow-2xs">
-            <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#1F3A00]">
+          <aside className="lg:sticky lg:top-28 flex flex-col gap-4 bg-white border border-[#ECEAE3] rounded-[22px] p-6 ">
+            <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#1D201E]">
               {isCleaning ? "Book This Service" : "Request an assessment"}
             </p>
-            <h3 className="m-0 font-heading text-2xl font-semibold leading-tight text-[#1F3A00]">
+            <h3 className="m-0 font-heading text-2xl font-semibold leading-tight text-[#1D201E]">
               {locationName ? `Book in ${locationName}` : (isCleaning ? "Guaranteed Handover Clean" : "Get this looked at properly")}
             </h3>
-            <p className="m-0 text-sm leading-relaxed text-[#1F3A00]">
+            <p className="m-0 text-sm leading-relaxed text-[#1D201E]">
               {isCleaning
                 ? "Get a fixed quote in 60 seconds with our 48-hour re-clean guarantee included."
                 : "Tell us what you've seen and where. We confirm the activity on site before recommending anything."}
@@ -1196,7 +1196,7 @@ export function MintLimeServiceLayout({
               href={whatsappBookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
+              className="flex items-center justify-center w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer "
             >
               {isCleaning ? "Book This Service" : "Request an assessment"}
             </Link>
@@ -1205,14 +1205,14 @@ export function MintLimeServiceLayout({
               href="/contact/"
               className={`flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md font-inter text-base font-medium ${SIDEBAR_CALL_BUTTON_CLASS}`}
             >
-              <HugeiconsIcon icon={Call02Icon} size={18} strokeWidth={1.8} className="text-[#1F3A00]" />
+              <HugeiconsIcon icon={Call02Icon} size={18} strokeWidth={1.8} className="text-[#1D201E]" />
               <span>Call Us</span>
             </Link>
 
-            <div className="flex flex-col gap-1 pt-1 text-xs text-[#1F3A00]">
+            <div className="flex flex-col gap-1 pt-1 text-xs text-[#1D201E]">
               <span className="flex items-center gap-2">
                 Last reviewed:
-                <span className="px-2 py-0.5 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] font-bold uppercase text-[10px] text-[#1F3A00]">
+                <span className="px-2 py-0.5 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] font-bold uppercase text-[10px] text-[#1D201E]">
                   September 2026
                 </span>
               </span>
@@ -1225,14 +1225,14 @@ export function MintLimeServiceLayout({
         {/* ===================================================================
             4. BOTTOM CALLOUT BANNER — Light editorial (forest green as accent only)
             =================================================================== */}
-        <section className="mt-16 p-8 sm:p-11 rounded-[26px] bg-white border border-[#E5FBC9] grid md:grid-cols-[1fr_auto] gap-7 items-center relative overflow-hidden">
+        <section className="mt-16 p-8 sm:p-11 rounded-[26px] bg-white border border-[#ECEAE3] grid md:grid-cols-[1fr_auto] gap-7 items-center relative overflow-hidden">
           {/* Lime accent stripe */}
           <span className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#B7F56A] rounded-l-[26px]" aria-hidden="true" />
           <div className="space-y-3">
-            <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
+            <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
               {isCleaning ? "Ready to secure your full deposit return?" : "Seen one of the signs above?"}
             </h2>
-            <p className="m-0 text-base leading-relaxed text-[#1F3A00]/80 max-w-xl font-normal">
+            <p className="m-0 text-base leading-relaxed text-[#1D201E]/80 max-w-xl font-normal">
               {isCleaning
                 ? "Book your end of tenancy clean in under 2 minutes with our 48-hour re-clean guarantee and agency-approved checklist."
                 : "Early activity is quicker and costs less to resolve than an established population. Book an assessment and get a straight answer on what's actually happening."}
@@ -1243,7 +1243,7 @@ export function MintLimeServiceLayout({
               href={whatsappBookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer"
             >
               {isCleaning ? "Book Now — Save 20%" : "Request Assessment"}
             </Link>

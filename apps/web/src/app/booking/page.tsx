@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function BookingPage() {
   return (
     <main id="main-content" className="text-start min-h-screen">
-      <Suspense fallback={<div className="p-12 text-center bg-[#F9FCF5] rounded-[18px] border border-[#B7F56A]">Loading booking form...</div>}>
+      <Suspense fallback={<div className="p-12 text-center bg-[#F6F5F1] rounded-[18px] border border-[#ECEAE3]">Loading booking form...</div>}>
         <ModernBookingWizard />
       </Suspense>
     </main>

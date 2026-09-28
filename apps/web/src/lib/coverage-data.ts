@@ -51,7 +51,7 @@ export function getOutcode(postcode: string): string {
 /**
  * Check service availability against centralized coverage data
  */
-export function checkPostcodeAvailability(rawPostcode: string, serviceName = "Best One Services"): CoverageCheckResult {
+export function checkPostcodeAvailability(rawPostcode: string, serviceName = "Bestone Services"): CoverageCheckResult {
   const normalized = normalizePostcode(rawPostcode);
   const outcode = getOutcode(normalized);
 

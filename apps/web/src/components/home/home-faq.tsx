@@ -20,7 +20,7 @@ export function HomeFaq({ items }: { items: readonly HomeFaqItem[] }) {
   return (
     <div
       id="faqs"
-      className="border border-[#E5FBC9] rounded-[20px] bg-white overflow-hidden divide-y divide-[#E5FBC9] shadow-2xs"
+      className="border border-[#ECEAE3] rounded-[20px] bg-white overflow-hidden divide-y divide-[#ECEAE3] "
     >
       {items.map((faq, idx) => {
         const isOpen = openFaq === idx;
@@ -35,17 +35,17 @@ export function HomeFaq({ items }: { items: readonly HomeFaqItem[] }) {
               onClick={() => setOpenFaq(isOpen ? null : idx)}
               aria-expanded={isOpen}
               aria-controls={panelId}
-              className="w-full flex items-center justify-between gap-4 p-5 text-left font-semibold text-base sm:text-lg text-[#1F3A00] transition-colors duration-150 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#1F3A00]"
+              className="w-full flex items-center justify-between gap-4 p-5 text-left font-semibold text-base sm:text-lg text-[#1D201E] transition-colors duration-150 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#1D201E]"
             >
               <span>{faq.q}</span>
               <span
                 aria-hidden="true"
                 data-open={isOpen}
-                className={`accordion-chevron w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[#1F3A00] transition-colors duration-200 ${
+                className={`accordion-chevron w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[#1D201E] transition-colors duration-200 ${
                   isOpen ? "bg-[#B7F56A]" : ""
                 }`}
               >
-                <HugeiconsIcon icon={ArrowDown01Icon} size={16} strokeWidth={2} className="text-[#1F3A00]" />
+                <HugeiconsIcon icon={ArrowDown01Icon} size={16} strokeWidth={2} className="text-[#1D201E]" />
               </span>
             </button>
             <div
@@ -56,7 +56,7 @@ export function HomeFaq({ items }: { items: readonly HomeFaqItem[] }) {
               data-open={isOpen}
             >
               <div>
-                <p className="m-0 px-5 pb-5 text-sm sm:text-base leading-relaxed text-[#1F3A00]">
+                <p className="m-0 px-5 pb-5 text-sm sm:text-base leading-relaxed text-[#1D201E]">
                   {faq.a}
                 </p>
               </div>

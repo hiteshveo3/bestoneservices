@@ -1,10 +1,10 @@
 /**
- * Best One Services - Master Centralized Contact Configuration
+ * Bestone Services - Master Centralized Contact Configuration
  * Single Source of Truth for Company Phone, WhatsApp, and Email across UI & Structured Data
  */
 
 export const siteContact = {
-  companyName: "Best One Services Ltd",
+  companyName: "Bestone Services Ltd",
   phoneDisplay: "020 8079 7336",
   phoneHref: "tel:+442080797336",
   whatsappDisplay: "07490 623616",

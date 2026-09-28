@@ -34,7 +34,7 @@ export default function AdminServicesPage() {
   const getStatusBadge = (status: ServiceStatus) => {
     switch (status) {
       case "published":
-        return <span className="px-2.5 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">Published</span>;
+        return <span className="px-2.5 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">Published</span>;
       case "draft":
         return <span className="px-2.5 py-1 rounded-full bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">Draft</span>;
       case "archived":
@@ -48,7 +48,7 @@ export default function AdminServicesPage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER & QUICK ACTIONS */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-mono font-medium uppercase text-ink-500">CATALOG & PRICING ENGINE</span>
@@ -58,15 +58,15 @@ export default function AdminServicesPage() {
 
           <Link
             href="/admin/services/new"
-            className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-sm hover:bg-[#2d5004] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer text-decoration-none border border-[#E5FBC9]"
+            className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer text-decoration-none border border-[#ECEAE3]"
           >
-            <Plus className="w-4 h-4 text-white" />
+            <Plus className="w-4 h-4 text-[#1D201E]" />
             <span>Create New Package</span>
           </Link>
         </div>
 
         {/* STATUS FILTER TABS */}
-        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#E5FBC9]">
+        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#ECEAE3]">
           {[
             { id: "all", label: "All Packages", count: services.length },
             { id: "published", label: "Published (Live)", count: services.filter((s) => s.status === "published").length },
@@ -77,7 +77,7 @@ export default function AdminServicesPage() {
               key={tab.id}
               type="button"
               onClick={() => setStatusFilter(tab.id as ServiceStatus | "all")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#1F3A00] text-white font-medium " : "bg-[#F9FCF5] text-ink-500 hover:text-[#1F3A00]" } border border-[#E5FBC9]`}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-[#F6F5F1] text-ink-500 hover:text-[#1D201E]" } border border-[#ECEAE3]`}
             >
               {tab.label} ({tab.count})
             </button>
@@ -87,7 +87,7 @@ export default function AdminServicesPage() {
 
       {/* CATALOG GRID */}
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Fetching Firestore service catalog packages...</p>
         </div>
@@ -96,11 +96,11 @@ export default function AdminServicesPage() {
           {services.map((srv) => (
             <div 
               key={srv.id}
-              className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col justify-between border-t-4 border-t-blue-500 border border-[#E5FBC9]"
+              className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col justify-between border-t-4 border-t-blue-500 border border-[#ECEAE3]"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#F9FCF5] text-[10px] font-mono font-medium uppercase text-ink-500">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#F6F5F1] text-[10px] font-mono font-medium uppercase text-ink-500">
                     {srv.categoryId}
                   </span>
                   {getStatusBadge(srv.status)}
@@ -118,7 +118,7 @@ export default function AdminServicesPage() {
                     <span>PRICING ENGINE</span>
                     <span className="font-medium text-ink-600 uppercase">{srv.pricingType.replace("_", " ")}</span>
                   </div>
-                  <div className="flex justify-between items-center pt-1 border-t border-[#E5FBC9]">
+                  <div className="flex justify-between items-center pt-1 border-t border-[#ECEAE3]">
                     <span className="text-ink-500">Base Rate</span>
                     <span className="font-heading font-medium text-base text-ink-900">
                       {formatPenceToGBP(srv.basePricePence || 0)}
@@ -127,17 +127,17 @@ export default function AdminServicesPage() {
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-[#E5FBC9] flex items-center justify-between">
+              <div className="pt-3 border-t border-[#ECEAE3] flex items-center justify-between">
                 <span className="text-[10px] font-mono text-ink-500 font-medium">
                   VERSION: v{srv.version || 1}
                 </span>
 
                 <Link
                   href={`/admin/services/${srv.id}`}
-                  className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#1F3A00] text-[#B7F56A] hover:bg-[#2d5004] text-xs font-medium text-decoration-none transition-colors duration-150 border border-[#E5FBC9]"
+                  className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium text-decoration-none transition-colors duration-150 border border-[#ECEAE3]"
                 >
                   <span>Configure</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-white" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#1D201E]" />
                 </Link>
               </div>
             </div>
@@ -145,15 +145,15 @@ export default function AdminServicesPage() {
         </div>
       ) : (
         /* CLEAN EMPTY STATE */
-        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#E5FBC9]">
-          <Package className="w-10 h-10 text-[#1F3A00] mx-auto" />
+        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+          <Package className="w-10 h-10 text-[#1D201E] mx-auto" />
           <h3 className="font-heading text-lg font-medium text-ink-900">No Service Packages Found</h3>
           <p className="text-xs text-ink-500 leading-relaxed">
             There are currently no services matching your selected status tab. Create a new service package to begin drafting.
           </p>
           <Link
             href="/admin/services/new"
-            className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-xs inline-block text-decoration-none border border-[#E5FBC9]"
+            className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none border border-[#ECEAE3]"
           >
             Create First Package
           </Link>

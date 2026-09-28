@@ -126,10 +126,10 @@ export function SelectiveComparisonMatrix({
   if (!tiers || tiers.length === 0) return null;
 
   return (
-    <SectionReveal className="bg-[#F9FCF5] rounded-[16px] p-6 sm:p-10 border border-[#B7F56A] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">
-          <ShieldCheck className="w-3.5 h-3.5 text-white shrink-0" />
+    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-10 border border-[#ECEAE3] space-y-6 text-start">
+      <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
           <span>Package Comparison</span>
         </div>
         <h3 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">{title}</h3>
@@ -140,10 +140,10 @@ export function SelectiveComparisonMatrix({
         {tiers.map((tier, idx) => (
           <StaggerItem
             key={idx}
-            className={`p-6 rounded-[16px] border flex flex-col justify-between space-y-4 text-start relative ${ tier.isRecommended ? "bg-[#F9FCF5] border-2 border-[#99D055] " : "bg-[#F9FCF5] border-[#E5FBC9]" }`}
+            className={`p-6 rounded-[16px] border flex flex-col justify-between space-y-4 text-start relative ${ tier.isRecommended ? "bg-[#F6F5F1] border-2 border-[#ECEAE3] " : "bg-[#F6F5F1] border-[#ECEAE3]" }`}
           >
             {tier.isRecommended && (
-              <div className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">
+              <div className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
                 Recommended
               </div>
             )}
@@ -154,7 +154,7 @@ export function SelectiveComparisonMatrix({
                 <div className="font-heading font-medium text-2xl text-ink-900 pt-1">{tier.priceDisplay}</div>
               </div>
 
-              <div className="p-2.5 rounded-[16px] bg-[#F9FCF5]/80 border border-[#B7F56A]/80 text-xs font-mono text-ink-500 flex items-center gap-1.5">
+              <div className="p-2.5 rounded-[16px] bg-[#F6F5F1]/80 border border-[#ECEAE3]/80 text-xs font-mono text-ink-500 flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-ink-600 shrink-0" />
                 <span>{tier.guaranteeText}</span>
               </div>
@@ -174,8 +174,8 @@ export function SelectiveComparisonMatrix({
                 href={tier.ctaHref}
                 className={`w-full py-3 rounded-full text-base font-medium transition-colors duration-150 flex items-center justify-center gap-2 text-decoration-none ${
                   tier.isRecommended
-                    ? "bg-[#1F3A00] text-[#B7F56A] hover:bg-[#2d5004]"
-                    : "bg-white border border-[#E5FBC9] text-ink-600 hover:bg-[#DCFAB7]"
+                    ? "bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E]"
+                    : "bg-white border border-[#ECEAE3] text-ink-600 hover:bg-[#EAF8D6]"
                 }`}
               >
                 <span>Calculate Package Price</span>

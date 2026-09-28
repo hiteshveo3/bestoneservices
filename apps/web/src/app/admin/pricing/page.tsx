@@ -77,7 +77,7 @@ export default function AdminPricingPage() {
 
   if (loading) {
     return (
-      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
         <Spinner size={32} className="mx-auto" />
         <p className="text-sm font-medium text-ink-600">Loading pricing engine configuration...</p>
       </div>
@@ -88,7 +88,7 @@ export default function AdminPricingPage() {
     <div className="max-w-3xl mx-auto space-y-6 text-start">
       
       {/* HEADER */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#ECEAE3]">
         <span className="text-xs font-mono font-medium uppercase text-ink-500">PRICING ENGINE CONFIGURATION</span>
         <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Global Surcharges & Rules</h1>
         <p className="text-sm text-ink-500">Configure weekend multipliers, emergency night surcharges, and minimum booking rules</p>
@@ -110,13 +110,13 @@ export default function AdminPricingPage() {
       )}
 
       {/* FORM CARD */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
         <form onSubmit={handleSaveRules} className="space-y-6">
           
           <div className="grid sm:grid-cols-2 gap-6">
             
             {/* Weekend Rate Multiplier */}
-            <div className="p-5 rounded-[18px] bg-white border border-[#E5FBC9] space-y-2">
+            <div className="p-5 rounded-[18px] bg-white border border-[#ECEAE3] space-y-2">
               <div className="flex items-center gap-2">
                 <Percent className="w-4 h-4 text-ink-600" />
                 <label className="text-xs font-mono font-medium text-ink-600 uppercase">Weekend Rate Multiplier</label>
@@ -128,7 +128,7 @@ export default function AdminPricingPage() {
                 max="2.0"
                 value={weekendMultiplier}
                 onChange={(e) => setWeekendMultiplier(parseFloat(e.target.value) || 1.0)}
-                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#ECEAE3]"
                 required
               />
               <p className="text-[11px] text-ink-500">
@@ -137,7 +137,7 @@ export default function AdminPricingPage() {
             </div>
 
             {/* Night Emergency Surcharge */}
-            <div className="p-5 rounded-[18px] bg-white border border-[#E5FBC9] space-y-2">
+            <div className="p-5 rounded-[18px] bg-white border border-[#ECEAE3] space-y-2">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-ink-600" />
                 <label className="text-xs font-mono font-medium text-ink-600 uppercase">Night Emergency Slot Surcharge (£)</label>
@@ -146,7 +146,7 @@ export default function AdminPricingPage() {
                 type="number"
                 value={nightSurchargePounds}
                 onChange={(e) => setNightSurchargePounds(parseFloat(e.target.value) || 0)}
-                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#ECEAE3]"
                 required
               />
               <p className="text-[11px] text-ink-500">
@@ -155,7 +155,7 @@ export default function AdminPricingPage() {
             </div>
 
             {/* Minimum Domestic Booking Charge */}
-            <div className="p-5 rounded-[18px] bg-white border border-[#E5FBC9] space-y-2">
+            <div className="p-5 rounded-[18px] bg-white border border-[#ECEAE3] space-y-2">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-ink-600" />
                 <label className="text-xs font-mono font-medium text-ink-600 uppercase">Minimum Booking Threshold (£)</label>
@@ -164,7 +164,7 @@ export default function AdminPricingPage() {
                 type="number"
                 value={minDomesticPounds}
                 onChange={(e) => setMinDomesticPounds(parseFloat(e.target.value) || 0)}
-                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#ECEAE3]"
                 required
               />
               <p className="text-[11px] text-ink-500">
@@ -173,7 +173,7 @@ export default function AdminPricingPage() {
             </div>
 
             {/* UK VAT Rate Percentage */}
-            <div className="p-5 rounded-[18px] bg-white border border-[#E5FBC9] space-y-2">
+            <div className="p-5 rounded-[18px] bg-white border border-[#ECEAE3] space-y-2">
               <div className="flex items-center gap-2">
                 <PoundSterling className="w-4 h-4 text-ink-600" />
                 <label className="text-xs font-mono font-medium text-ink-600 uppercase">UK VAT Percentage Rate (%)</label>
@@ -182,7 +182,7 @@ export default function AdminPricingPage() {
                 type="number"
                 value={vatRate}
                 onChange={(e) => setVatRate(parseFloat(e.target.value) || 0)}
-                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                className="w-full p-3 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#ECEAE3]"
                 required
               />
               <p className="text-[11px] text-ink-500">
@@ -195,9 +195,9 @@ export default function AdminPricingPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-4 rounded-full bg-[#1F3A00] text-white font-heading font-medium text-sm hover:bg-[#2d5004] cursor-pointer transition-colors duration-150 flex items-center justify-center gap-2 border border-[#E5FBC9]"
+            className="w-full py-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-heading font-medium text-sm hover:bg-[#A2EA4E] cursor-pointer transition-colors duration-150 flex items-center justify-center gap-2 border border-[#ECEAE3]"
           >
-            <Save className="w-4 h-4 text-white" />
+            <Save className="w-4 h-4 text-[#1D201E]" />
             <span>{submitting ? "Saving Rules..." : "Save Pricing Engine Surcharge Rules"}</span>
           </button>
         </form>

@@ -45,9 +45,9 @@ export function ServiceAddonsSelector({
   };
 
   return (
-    <SectionReveal className="bg-[#F8F9FA] rounded-[16px] p-6 sm:p-8 border border-[#E5FBC9] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#E5FBC9] text-ink-600 text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
+      <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
           <Sparkles className="w-3.5 h-3.5 text-ink-600 shrink-0" />
           <span>Optional Add-Ons</span>
         </div>
@@ -65,27 +65,27 @@ export function ServiceAddonsSelector({
               onClick={() => toggleAddOn(item.id)}
               className={`p-4 rounded-[16px] border text-start transition-colors duration-150 cursor-pointer flex items-center justify-between gap-3 ${
                 isSelected
-                  ? "bg-[#1F3A00] border-[#1F3A00] font-medium text-[#B7F56A]"
-                  : "bg-white border-[#E5FBC9] hover:bg-[#F9FCF5]"
+                  ? "bg-[#B7F56A] border-[#1D201E] font-medium text-[#1D201E]"
+                  : "bg-white border-[#ECEAE3] hover:bg-[#F6F5F1]"
               }`}
             >
               <div className="space-y-0.5">
-                <div className={`font-heading text-base font-medium ${isSelected ? "text-[#B7F56A]" : "text-ink-900"}`}>{item.name}</div>
+                <div className={`font-heading text-base font-medium ${isSelected ? "text-[#1D201E]" : "text-ink-900"}`}>{item.name}</div>
                 {item.description && (
-                  <div className={`text-xs font-normal ${isSelected ? "text-[#DFFBBC]" : "text-ink-500"}`}>{item.description}</div>
+                  <div className={`text-xs font-normal ${isSelected ? "text-[#1D201E]" : "text-ink-500"}`}>{item.description}</div>
                 )}
               </div>
 
               <div className="flex items-center gap-2 shrink-0">
                 <span className={`px-2.5 py-1 rounded-full text-xs font-mono font-medium border ${
-                  isSelected ? "bg-[#2d5004] text-[#B7F56A] border-[#3A5C13]" : "bg-[#F9FCF5] text-ink-600 border-[#E5FBC9]"
+                  isSelected ? "bg-[#A2EA4E] text-[#1D201E] border-[#ECEAE3]" : "bg-[#F6F5F1] text-ink-600 border-[#ECEAE3]"
                 }`}>
                   +{item.priceDisplay}
                 </span>
                 <div className={`w-6 h-6 rounded-full border flex items-center justify-center transition-colors duration-150 ${
-                  isSelected ? "bg-[#B7F56A] text-[#1F3A00] border-[#B7F56A]" : "bg-[#F9FCF5] text-ink-600 border-[#E5FBC9]"
+                  isSelected ? "bg-[#B7F56A] text-[#1D201E] border-[#ECEAE3]" : "bg-[#F6F5F1] text-ink-600 border-[#ECEAE3]"
                 }`}>
-                  {isSelected ? <Check className="w-3.5 h-3.5 text-[#1F3A00]" /> : <Plus className="w-3.5 h-3.5 text-ink-600" />}
+                  {isSelected ? <Check className="w-3.5 h-3.5 text-[#1D201E]" /> : <Plus className="w-3.5 h-3.5 text-ink-600" />}
                 </div>
               </div>
             </button>

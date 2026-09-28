@@ -66,7 +66,7 @@ export default function AdminReviewsPage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER & RATING STATS */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-mono font-medium uppercase text-ink-500">QUALITY CONTROL & REVIEWS</span>
@@ -74,7 +74,7 @@ export default function AdminReviewsPage() {
             <p className="text-sm text-ink-500">Monitor 5-star customer feedback, staff service ratings, and published testimonials</p>
           </div>
 
-          <div className="flex items-center gap-3 bg-white p-4 rounded-[18px] border border-[#E5FBC9]">
+          <div className="flex items-center gap-3 bg-white p-4 rounded-[18px] border border-[#ECEAE3]">
             <Star className="w-8 h-8 text-warning-500 fill-warning-500 shrink-0" />
             <div>
               <span className="font-heading font-medium text-2xl text-ink-900">{avgRating} / 5.0</span>
@@ -84,7 +84,7 @@ export default function AdminReviewsPage() {
         </div>
 
         {/* STATUS TABS */}
-        <div className="flex flex-wrap items-center gap-2 border-t border-[#E5FBC9] pt-4">
+        <div className="flex flex-wrap items-center gap-2 border-t border-[#ECEAE3] pt-4">
           {[
             { id: "all", label: "All Reviews", count: reviews.length },
             { id: "published", label: "Published Testimonials", count: reviews.filter((r) => r.status === "published").length },
@@ -94,7 +94,7 @@ export default function AdminReviewsPage() {
               key={tab.id}
               type="button"
               onClick={() => setStatusFilter(tab.id as ReviewStatus | "all")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#1F3A00] text-white font-medium " : "bg-[#F9FCF5] text-ink-500 hover:text-[#1F3A00]" } border border-[#E5FBC9]`}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-[#F6F5F1] text-ink-500 hover:text-[#1D201E]" } border border-[#ECEAE3]`}
             >
               {tab.label} ({tab.count})
             </button>
@@ -119,14 +119,14 @@ export default function AdminReviewsPage() {
 
       {/* REVIEWS GRID */}
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Loading customer reviews...</p>
         </div>
       ) : reviews.length > 0 ? (
         <div className="grid md:grid-cols-2 gap-6">
           {reviews.map((rev) => (
-            <div key={rev.id} className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col justify-between border border-[#E5FBC9]">
+            <div key={rev.id} className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col justify-between border border-[#ECEAE3]">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1">
@@ -149,7 +149,7 @@ export default function AdminReviewsPage() {
                   &ldquo;{rev.reviewText}&rdquo;
                 </p>
 
-                <div className="p-3 rounded-[18px] bg-white space-y-1 text-xs font-mono border border-[#E5FBC9]">
+                <div className="p-3 rounded-[18px] bg-white space-y-1 text-xs font-mono border border-[#ECEAE3]">
                   <div className="flex justify-between">
                     <span className="text-ink-500">Customer:</span>
                     <span className="font-medium text-ink-600">{rev.customerName}</span>
@@ -161,7 +161,7 @@ export default function AdminReviewsPage() {
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-[#E5FBC9] flex items-center justify-end gap-2">
+              <div className="pt-3 border-t border-[#ECEAE3] flex items-center justify-end gap-2">
                 {rev.status !== "published" && (
                   <button
                     type="button"
@@ -188,8 +188,8 @@ export default function AdminReviewsPage() {
           ))}
         </div>
       ) : (
-        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#E5FBC9]">
-          <MessageSquare className="w-10 h-10 text-[#1F3A00] mx-auto" />
+        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+          <MessageSquare className="w-10 h-10 text-[#1D201E] mx-auto" />
           <h3 className="font-heading text-lg font-medium text-ink-900">No Reviews Found</h3>
           <p className="text-xs text-ink-500 leading-relaxed">
             No customer reviews match your selected filter.

@@ -17,10 +17,10 @@ export function ReviewSection({
   if (reviews.length === 0) return null;
 
   return (
-    <SectionReveal className="bg-[#F8F9FA] rounded-[16px] p-6 sm:p-8 border border-[#E5FBC9] space-y-6 text-start">
-      <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-4">
+    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
+      <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-4">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#E5FBC9] text-ink-600 text-xs font-mono font-medium uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
             <ShieldCheck className="w-3.5 h-3.5 text-ink-600 shrink-0" />
             <span>Verified Feedback</span>
           </div>
@@ -39,13 +39,13 @@ export function ReviewSection({
 
       <StaggerGrid className="grid sm:grid-cols-2 gap-4" staggerDelay={0.06}>
         {reviews.map((rev) => (
-          <StaggerItem key={rev.id} className="p-5 rounded-[16px] bg-white border border-[#B7F56A] space-y-3">
+          <StaggerItem key={rev.id} className="p-5 rounded-[16px] bg-white border border-[#ECEAE3] space-y-3">
             <div className="flex justify-between items-start">
               <div>
                 <div className="font-heading font-medium text-base text-ink-900">{rev.author}</div>
                 <div className="text-xs text-ink-500 font-mono">{rev.location} • {rev.date}</div>
               </div>
-              <span className="px-2.5 py-0.5 rounded bg-[#F9FCF5] text-ink-600 text-xs font-mono font-medium border border-[#B7F56A]">
+              <span className="px-2.5 py-0.5 rounded bg-[#F6F5F1] text-ink-600 text-xs font-mono font-medium border border-[#ECEAE3]">
                 {rev.verifiedBooking}
               </span>
             </div>

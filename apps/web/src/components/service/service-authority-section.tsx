@@ -31,15 +31,15 @@ export function ServiceAuthoritySection({
   imageTagline,
   imageBadge,
   ctaText = "Book Move-Out Clean",
-  ctaHref = siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services."),
+  ctaHref = siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services."),
 }: ServiceAuthoritySectionProps) {
   return (
-    <section className="bg-[#F8F9FA] rounded-[16px] p-8 sm:p-12 border border-[#E5FBC9] space-y-8 text-start">
+    <section className="bg-[#F6F5F1] rounded-[16px] p-8 sm:p-12 border border-[#ECEAE3] space-y-8 text-start">
       <div className="grid lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Column: Authority Narrative */}
         <div className="lg:col-span-6 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-base font-medium bg-ink-100 border border-[#E5FBC9] text-ink-600">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-base font-medium bg-ink-100 border border-[#ECEAE3] text-ink-600">
             <ShieldCheck className="w-5 h-5 text-ink-600 shrink-0" />
             <span>{badge}</span>
           </div>
@@ -54,7 +54,7 @@ export function ServiceAuthoritySection({
 
           <div className="grid sm:grid-cols-2 gap-4 text-base font-medium">
             {features.map((feat, idx) => (
-              <div key={idx} className="p-5 rounded-[16px] bg-white border border-[#B7F56A] space-y-1">
+              <div key={idx} className="p-5 rounded-[16px] bg-white border border-[#ECEAE3] space-y-1">
                 <div className="text-ink-900 font-heading font-medium text-xl">{feat.title}</div>
                 <div className="text-base text-ink-500">{feat.desc}</div>
               </div>
@@ -70,7 +70,7 @@ export function ServiceAuthoritySection({
 
         {/* Right Column: Authority Image & Badge */}
         <div className="lg:col-span-6">
-          <div className="rounded-[16px] overflow-hidden border border-[#E5FBC9] relative h-[380px]">
+          <div className="rounded-[16px] overflow-hidden border border-[#ECEAE3] relative h-[380px]">
             <Image
               src={image}
               alt={imageAlt}
@@ -78,9 +78,9 @@ export function ServiceAuthoritySection({
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
-            <div className="absolute bottom-4 left-4 right-4 bg-[#F9FCF5]/95 backdrop-blur-md p-4 rounded-[16px] border border-[#B7F56A] flex items-center justify-between">
+            <div className="absolute bottom-4 left-4 right-4 bg-[#F6F5F1]/95 backdrop-blur-md p-4 rounded-[16px] border border-[#ECEAE3] flex items-center justify-between">
               <div className="text-base font-medium text-ink-600">{imageTagline}</div>
-              <span className="px-3.5 py-1 rounded-full bg-[#F9FCF5] text-ink-600 text-base font-mono font-medium border border-[#B7F56A]">
+              <span className="px-3.5 py-1 rounded-full bg-[#F6F5F1] text-ink-600 text-base font-mono font-medium border border-[#ECEAE3]">
                 {imageBadge}
               </span>
             </div>

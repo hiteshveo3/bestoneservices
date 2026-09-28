@@ -54,10 +54,10 @@ export function QuickFilterShortcuts({
   return (
     <div className="w-full space-y-2">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1F3A00]/70">
+        <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1D201E]/70">
           Popular Intent Shortcuts
         </span>
-        <span className="text-xs text-[#1F3A00]/60 hidden sm:inline">
+        <span className="text-xs text-[#1D201E]/60 hidden sm:inline">
           One tap to apply relevant filters
         </span>
       </div>
@@ -71,20 +71,20 @@ export function QuickFilterShortcuts({
               key={item.key}
               type="button"
               onClick={() => onSelect(item.key)}
-              className={`shrink-0 inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-[14px] border-2 text-start transition-colors duration-150 cursor-pointer shadow-2xs ${
+              className={`shrink-0 inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-[14px] border-2 text-start transition-colors duration-150 cursor-pointer  ${
                 isActive
-                  ? "bg-[#B7F56A] border-[#82C337] text-[#1F3A00] font-bold shadow-xs"
-                  : "bg-[#DCFAB7]/50 hover:bg-[#DCFAB7] border-[#B7F56A] text-[#1F3A00]"
+                  ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E] font-bold "
+                  : "bg-[#EAF8D6]/50 hover:bg-[#EAF8D6] border-[#ECEAE3] text-[#1D201E]"
               }`}
             >
               <span className="text-lg leading-none" role="img" aria-hidden="true">
                 {item.icon}
               </span>
               <div className="flex flex-col">
-                <span className="text-sm font-semibold text-[#1F3A00] whitespace-nowrap leading-tight">
+                <span className="text-sm font-semibold text-[#1D201E] whitespace-nowrap leading-tight">
                   {item.title}
                 </span>
-                <span className="text-[11px] text-[#1F3A00]/75 whitespace-nowrap leading-tight">
+                <span className="text-[11px] text-[#1D201E]/75 whitespace-nowrap leading-tight">
                   {item.subtitle}
                 </span>
               </div>

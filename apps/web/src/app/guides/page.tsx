@@ -35,9 +35,9 @@ export default function GuidesHubPage() {
     <main id="main-content" className="py-12 text-start space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* EDITORIAL HERO */}
       <div className="space-y-4 max-w-3xl">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-semibold uppercase bg-[#DCFAB7] text-[#1F3A00]">
-          <BookOpen className="w-3.5 h-3.5 text-[#1F3A00] shrink-0" />
-          <span>BEST ONE GUIDES & ADVICE</span>
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-semibold uppercase bg-[#EAF8D6] text-[#1D201E]">
+          <BookOpen className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
+          <span>BESTONE GUIDES & ADVICE</span>
         </div>
         <h1 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight text-ink-900">
           Practical Advice for Your Property
@@ -54,7 +54,7 @@ export default function GuidesHubPage() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search guides, checklists, costs..."
-            className="w-full pl-11 pr-4 py-3 rounded-full bg-white border border-[#B7F56A] text-ink-600 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+            className="w-full pl-11 pr-4 py-3 rounded-full bg-white border border-[#ECEAE3] text-ink-600 font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
           />
         </div>
       </div>
@@ -69,9 +69,9 @@ export default function GuidesHubPage() {
 
       {/* FEATURED ARTICLE BLOCK */}
       {featuredPost && activeCategory === "all" && !searchQuery && (
-        <div className="p-6 sm:p-10 rounded-[24px] bg-white border border-[#B7F56A] shadow-2xs space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-10 items-center">
+        <div className="p-6 sm:p-10 rounded-[24px] bg-white border border-[#ECEAE3]  space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-10 items-center">
           <div className="space-y-4">
-            <span className="px-3 py-1 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] text-xs font-mono font-semibold text-ink-700">
+            <span className="px-3 py-1 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-xs font-mono font-semibold text-ink-700">
               FEATURED GUIDE
             </span>
             <h2 className="font-heading text-2xl sm:text-4xl font-medium text-ink-900 tracking-tight leading-tight">
@@ -93,15 +93,15 @@ export default function GuidesHubPage() {
             <div className="pt-2">
               <Link
                 href={`/guides/${featuredPost.category}/${featuredPost.slug}/`}
-                className="px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 inline-flex items-center gap-2 text-decoration-none"
+                className="px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 inline-flex items-center gap-2 text-decoration-none"
               >
                 <span>Read Full Guide</span>
-                <ChevronRight className="w-4 h-4 text-[#1F3A00]" />
+                <ChevronRight className="w-4 h-4 text-[#1D201E]" />
               </Link>
             </div>
           </div>
 
-          <div className="relative rounded-[20px] overflow-hidden aspect-16/10 border border-[#E5FBC9] bg-[#F9FCF5]">
+          <div className="relative rounded-[20px] overflow-hidden aspect-16/10 border border-[#ECEAE3] bg-[#F6F5F1]">
             <Image
               src={featuredPost.heroImage}
               alt={featuredPost.title}
@@ -135,15 +135,15 @@ export default function GuidesHubPage() {
           {filteredPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-[#F9FCF5] rounded-[24px] p-6 border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] space-y-4 flex flex-col justify-between transition-colors duration-200 group"
+              className="bg-[#F6F5F1] rounded-[24px] p-6 border border-[#ECEAE3]  hover:border-[#1D201E] space-y-4 flex flex-col justify-between transition-colors duration-200 group"
             >
               <div className="space-y-3">
-                <div className="relative rounded-[16px] overflow-hidden aspect-16/9 bg-[#F9FCF5] border border-[#E5FBC9]">
+                <div className="relative rounded-[16px] overflow-hidden aspect-16/9 bg-[#F6F5F1] border border-[#ECEAE3]">
                   <Image src={post.heroImage} alt={post.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] text-xs font-mono font-semibold text-ink-700">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-xs font-mono font-semibold text-ink-700">
                     {post.categoryLabel}
                   </span>
                   <span className="text-xs font-mono text-ink-500 flex items-center gap-1">
@@ -161,7 +161,7 @@ export default function GuidesHubPage() {
                 <p className="text-sm text-ink-500 leading-relaxed line-clamp-3">{post.excerpt}</p>
               </div>
 
-              <div className="pt-3 border-t border-[#E5FBC9] flex items-center justify-between text-xs font-mono text-ink-500">
+              <div className="pt-3 border-t border-[#ECEAE3] flex items-center justify-between text-xs font-mono text-ink-500">
                 <span className="font-medium text-ink-600">{post.author.name}</span>
                 <ArrowRight className="w-4 h-4 text-ink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-150 shrink-0" />
               </div>
@@ -170,7 +170,7 @@ export default function GuidesHubPage() {
         </div>
       ) : (
         /* EMPTY SEARCH STATE */
-        <div className="p-8 rounded-[18px] bg-white border border-[#B7F56A] space-y-4 text-center">
+        <div className="p-8 rounded-[18px] bg-white border border-[#ECEAE3] space-y-4 text-center">
           <p className="text-lg font-heading font-medium text-ink-900">No articles found matching &quot;{searchQuery}&quot;</p>
           <button
             type="button"
@@ -178,7 +178,7 @@ export default function GuidesHubPage() {
               setSearchQuery("");
               setActiveCategory("all");
             }}
-            className="px-6 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-sm cursor-pointer"
+            className="px-6 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-sm cursor-pointer"
           >
             Clear Filters & View All Guides
           </button>
@@ -186,7 +186,7 @@ export default function GuidesHubPage() {
       )}
 
       {/* DEMO NEWSLETTER SIGNUP BLOCK */}
-      <div className="p-8 sm:p-10 rounded-[28px] bg-white border border-[#B7F56A] shadow-2xs space-y-4 max-w-2xl mx-auto text-center">
+      <div className="p-8 sm:p-10 rounded-[28px] bg-white border border-[#ECEAE3]  space-y-4 max-w-2xl mx-auto text-center">
         <div className="space-y-1">
           <span className="text-xs font-mono font-medium text-ink-500 uppercase">STAY INFORMED</span>
           <h3 className="font-heading text-2xl font-medium text-ink-900">Get Useful Property Advice</h3>
@@ -194,8 +194,8 @@ export default function GuidesHubPage() {
         </div>
 
         {emailSubmitted ? (
-          <div className="p-3 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-sm flex items-center justify-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-white" />
+          <div className="p-3 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-sm flex items-center justify-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-[#1D201E]" />
             <span>Thank you for subscribing! Demo state confirmed.</span>
           </div>
         ) : (
@@ -210,11 +210,11 @@ export default function GuidesHubPage() {
               type="email"
               required
               placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] text-ink-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+              className="flex-1 px-4 py-3 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-ink-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
             />
             <button
               type="submit"
-              className="px-6 py-3 rounded-md font-inter text-sm font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shrink-0"
+              className="px-6 py-3 rounded-md font-inter text-sm font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shrink-0"
             >
               Subscribe
             </button>

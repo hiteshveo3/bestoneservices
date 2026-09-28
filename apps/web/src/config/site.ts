@@ -1,7 +1,7 @@
 import { siteContact } from "./site-contact";
 
 export const siteConfig = {
-  name: "Best One Services",
+  name: "Bestone Services",
   url: "https://www.bestoneservices.co.uk",
   email: siteContact.email,
   phone: siteContact.phoneDisplay,

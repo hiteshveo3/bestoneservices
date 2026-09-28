@@ -161,7 +161,7 @@ export const SERVICE_REGISTRY: Record<string, ServiceEntity> = {
     ],
     addOns: [
       { name: "Full Packing Service", priceDisplay: "£30/hr", amount: 30 },
-      { name: "Best One Club Discounted Packing", priceDisplay: "£25/hr", amount: 25 },
+      { name: "Bestone Club Discounted Packing", priceDisplay: "£25/hr", amount: 25 },
     ],
     pricingFactors: [
       "Team size (2 men vs 3 men team)",

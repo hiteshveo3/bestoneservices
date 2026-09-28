@@ -64,10 +64,10 @@ export function Dropdown({
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((o) => !o)}
-        className={`flex h-9 items-center justify-between gap-2 rounded-[9px] border px-3 text-xs font-semibold transition-all duration-150 cursor-pointer shadow-2xs shrink-0 ${
+        className={`flex h-9 items-center justify-between gap-2 rounded-[9px] border px-3 text-xs font-semibold transition-all duration-150 cursor-pointer  shrink-0 ${
           active
-            ? "border-[#1F3A00] bg-[#1F3A00] text-white"
-            : "border-[#E5FBC9] bg-white text-[#1F3A00]/80 hover:border-[#B7F56A] hover:bg-[#F9FCF5]"
+            ? "border-[#1D201E] bg-[#B7F56A] text-[#1D201E]"
+            : "border-[#ECEAE3] bg-white text-[#1D201E]/80 hover:border-[#ECEAE3] hover:bg-[#F6F5F1]"
         }`}
       >
         <span className="truncate">{summary}</span>
@@ -76,7 +76,7 @@ export function Dropdown({
           size={14}
           strokeWidth={2}
           className={`shrink-0 transition-transform duration-200 ${
-            active ? "text-[#B7F56A]" : "text-[#1F3A00]/60"
+            active ? "text-[#1D201E]" : "text-[#1D201E]/60"
           } ${open ? "rotate-180" : ""}`}
         />
       </button>
@@ -86,7 +86,7 @@ export function Dropdown({
           id={id}
           role="region"
           aria-label={label}
-          className={`absolute left-0 top-[calc(100%+6px)] z-40 max-h-96 overflow-y-auto overflow-x-hidden rounded-[12px] border border-[#E5FBC9] bg-white p-3.5 shadow-xl animate-in fade-in-50 duration-150 ${widthClass}`}
+          className={`absolute left-0 top-[calc(100%+6px)] z-40 max-h-96 overflow-y-auto overflow-x-hidden rounded-[12px] border border-[#ECEAE3] bg-white p-3.5  animate-in fade-in-50 duration-150 ${widthClass}`}
         >
           {children}
         </div>
@@ -119,8 +119,8 @@ export function ModernCheckbox({
         aria-hidden="true"
         className={`w-4 h-4 rounded-[5px] border flex items-center justify-center transition-all duration-150 cursor-pointer ${
           checked
-            ? "bg-[#1F3A00] border-[#1F3A00] text-[#B7F56A] shadow-xs"
-            : "border-[#1F3A00]/25 bg-white group-hover:border-[#1F3A00]/50"
+            ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] "
+            : "border-[#1D201E]/25 bg-white group-hover:border-[#1D201E]/50"
         }`}
       >
         {checked && (
@@ -128,7 +128,7 @@ export function ModernCheckbox({
             icon={Tick01Icon}
             size={11}
             strokeWidth={3.5}
-            className="text-[#B7F56A] animate-in zoom-in-50 duration-100"
+            className="text-[#1D201E] animate-in zoom-in-50 duration-100"
           />
         )}
       </span>
@@ -161,8 +161,8 @@ export function ModernRadio({
         aria-hidden="true"
         className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all duration-150 cursor-pointer ${
           checked
-            ? "bg-[#1F3A00] border-[#1F3A00] text-[#B7F56A] shadow-xs"
-            : "border-[#1F3A00]/25 bg-white group-hover:border-[#1F3A00]/50"
+            ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] "
+            : "border-[#1D201E]/25 bg-white group-hover:border-[#1D201E]/50"
         }`}
       >
         {checked && (
@@ -170,7 +170,7 @@ export function ModernRadio({
             icon={Tick01Icon}
             size={10}
             strokeWidth={3.5}
-            className="text-[#B7F56A] animate-in zoom-in-50 duration-100"
+            className="text-[#1D201E] animate-in zoom-in-50 duration-100"
           />
         )}
       </span>
@@ -202,8 +202,8 @@ export function CategoryFacetList({
             key={cat}
             className={`group flex cursor-pointer items-center justify-between gap-2.5 rounded-[8px] px-2.5 py-2 text-sm transition-colors ${
               checked
-                ? "bg-[#DCFAB7]/50 text-[#1F3A00] font-semibold"
-                : "text-[#1F3A00]/80 hover:bg-[#F9FCF5]"
+                ? "bg-[#EAF8D6]/50 text-[#1D201E] font-semibold"
+                : "text-[#1D201E]/80 hover:bg-[#F6F5F1]"
             }`}
           >
             <div className="flex items-center gap-2.5 min-w-0">
@@ -217,7 +217,7 @@ export function CategoryFacetList({
             {count !== undefined && (
               <span
                 className={`text-xs px-2 py-0.5 rounded-full font-mono shrink-0 ${
-                  checked ? "bg-[#B7F56A] text-[#1F3A00]" : "bg-[#DCFAB7]/40 text-[#1F3A00]/60"
+                  checked ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#EAF8D6]/40 text-[#1D201E]/60"
                 }`}
               >
                 {count}
@@ -259,8 +259,8 @@ export function JobTypeFacetList({
             key={jt}
             className={`group flex cursor-pointer items-center justify-between gap-2.5 rounded-[8px] px-2.5 py-2 text-sm transition-colors ${
               checked
-                ? "bg-[#DCFAB7]/50 text-[#1F3A00] font-semibold"
-                : "text-[#1F3A00]/80 hover:bg-[#F9FCF5]"
+                ? "bg-[#EAF8D6]/50 text-[#1D201E] font-semibold"
+                : "text-[#1D201E]/80 hover:bg-[#F6F5F1]"
             }`}
           >
             <div className="flex items-center gap-2.5 min-w-0">
@@ -274,7 +274,7 @@ export function JobTypeFacetList({
             {count !== undefined && (
               <span
                 className={`text-xs px-2 py-0.5 rounded-full font-mono shrink-0 ${
-                  checked ? "bg-[#B7F56A] text-[#1F3A00]" : "bg-[#DCFAB7]/40 text-[#1F3A00]/60"
+                  checked ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#EAF8D6]/40 text-[#1D201E]/60"
                 }`}
               >
                 {count}
@@ -303,7 +303,7 @@ export function PropertySizeFacetList({
   return (
     <div>
       {!isRelevant && (
-        <p className="mb-2.5 text-xs text-[#1F3A00]/60 italic">
+        <p className="mb-2.5 text-xs text-[#1D201E]/60 italic">
           Property size filters apply primarily to cleaning & removals jobs.
         </p>
       )}
@@ -317,8 +317,8 @@ export function PropertySizeFacetList({
               key={sz}
               className={`group flex cursor-pointer items-center justify-between gap-2.5 rounded-[8px] px-2.5 py-2 text-sm transition-colors ${
                 checked
-                  ? "bg-[#DCFAB7]/50 text-[#1F3A00] font-semibold"
-                : "text-[#1F3A00]/80 hover:bg-[#F9FCF5]"
+                  ? "bg-[#EAF8D6]/50 text-[#1D201E] font-semibold"
+                : "text-[#1D201E]/80 hover:bg-[#F6F5F1]"
               }`}
             >
               <div className="flex items-center gap-2.5 min-w-0">
@@ -332,7 +332,7 @@ export function PropertySizeFacetList({
               {count !== undefined && (
                 <span
                   className={`text-xs px-2 py-0.5 rounded-full font-mono shrink-0 ${
-                    checked ? "bg-[#B7F56A] text-[#1F3A00]" : "bg-[#DCFAB7]/40 text-[#1F3A00]/60"
+                    checked ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#EAF8D6]/40 text-[#1D201E]/60"
                   }`}
                 >
                   {count}
@@ -372,8 +372,8 @@ export function UrgencyFacetList({
             key={opt.value}
             className={`group flex cursor-pointer items-center justify-between gap-2.5 rounded-[8px] px-2.5 py-2 text-sm transition-colors ${
               checked
-                ? "bg-[#DCFAB7]/60 text-[#1F3A00] font-semibold"
-                : "text-[#1F3A00]/80 hover:bg-[#F9FCF5]"
+                ? "bg-[#EAF8D6]/60 text-[#1D201E] font-semibold"
+                : "text-[#1D201E]/80 hover:bg-[#F6F5F1]"
             }`}
           >
             <div className="flex items-center gap-2.5 min-w-0">
@@ -386,7 +386,7 @@ export function UrgencyFacetList({
               <span className="truncate">{opt.label}</span>
             </div>
             {opt.badge && (
-              <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#B7F56A] text-[#1F3A00] whitespace-nowrap shrink-0">
+              <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] whitespace-nowrap shrink-0">
                 {opt.badge}
               </span>
             )}
@@ -417,14 +417,14 @@ export function PostcodeFacetField({
           icon={Location01Icon}
           size={16}
           strokeWidth={1.8}
-          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#1F3A00]/60"
+          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#1D201E]/60"
         />
         <input
           type="text"
           value={postcode}
           onChange={(e) => onChange(e.target.value)}
           placeholder="e.g. SW1, NW3, E14"
-          className="w-full h-10 pl-9 pr-3 rounded-[8px] border border-[#E5FBC9] bg-[#F9FCF5] text-sm text-[#1F3A00] placeholder:text-[#1F3A00]/40 uppercase focus:bg-white focus:border-[#B7F56A] focus:ring-1 focus:ring-[#B7F56A] focus:outline-none transition-colors"
+          className="w-full h-10 pl-9 pr-3 rounded-[8px] border border-[#ECEAE3] bg-[#F6F5F1] text-sm text-[#1D201E] placeholder:text-[#1D201E]/40 uppercase focus:bg-white focus:border-[#1D201E] focus:ring-1 focus:ring-[#1D201E] focus:outline-none transition-colors"
         />
       </div>
 
@@ -432,21 +432,21 @@ export function PostcodeFacetField({
         <div
           className={`p-2.5 rounded-[8px] text-xs space-y-1 ${
             isAvailable
-              ? "bg-[#DCFAB7]/50 text-[#1F3A00] border border-[#B7F56A]/60"
+              ? "bg-[#EAF8D6]/50 text-[#1D201E] border border-[#ECEAE3]/60"
               : "bg-amber-50 text-amber-900 border border-amber-200"
           }`}
         >
           <div className="flex items-center gap-1.5 font-semibold">
             {isAvailable ? (
               <>
-                <HugeiconsIcon icon={Tick01Icon} size={14} strokeWidth={2.4} className="text-[#1F3A00] shrink-0" />
+                <HugeiconsIcon icon={Tick01Icon} size={14} strokeWidth={2.4} className="text-[#1D201E] shrink-0" />
                 <span>Coverage Confirmed ({coverage.outcode || coverage.postcode})</span>
               </>
             ) : (
               <span>Outside Primary Zone ({coverage.outcode || coverage.postcode})</span>
             )}
           </div>
-          <p className="text-[#1F3A00]/80 leading-relaxed">{coverage.message}</p>
+          <p className="text-[#1D201E]/80 leading-relaxed">{coverage.message}</p>
         </div>
       )}
     </div>
@@ -596,12 +596,12 @@ export function FilterBar({
       <button
         type="button"
         onClick={onOpenDrawer}
-        className="h-9 px-3 rounded-[9px] border border-[#E5FBC9] bg-white hover:border-[#B7F56A] hover:bg-[#F9FCF5] text-[#1F3A00] font-semibold text-xs transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs shrink-0"
+        className="h-9 px-3 rounded-[9px] border border-[#ECEAE3] bg-white hover:border-[#ECEAE3] hover:bg-[#F6F5F1] text-[#1D201E] font-semibold text-xs transition-colors cursor-pointer flex items-center gap-1.5  shrink-0"
       >
         <HugeiconsIcon icon={FilterIcon} size={13} strokeWidth={2} />
         <span>All Filters</span>
         {activeCount > 0 && (
-          <span className="inline-flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-[#1F3A00] text-[#B7F56A] text-[10px] font-bold font-mono">
+          <span className="inline-flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-[#B7F56A] text-[#1D201E] text-[10px] font-bold font-mono">
             {activeCount}
           </span>
         )}
@@ -684,23 +684,23 @@ export function ActiveFilters({
       role="region"
       aria-label="Active filters"
     >
-      <span className="text-xs font-semibold text-[#1F3A00]/60 shrink-0">Filtering by:</span>
+      <span className="text-xs font-semibold text-[#1D201E]/60 shrink-0">Filtering by:</span>
       {chips.map((chip) => (
         <button
           key={chip.id}
           type="button"
           onClick={chip.onRemove}
-          className="inline-flex h-7 items-center gap-1.5 rounded-full bg-[#DCFAB7]/70 hover:bg-[#B7F56A] pl-3 pr-2 text-xs font-semibold text-[#1F3A00] transition-colors cursor-pointer shrink-0 border border-[#B7F56A]/60 shadow-2xs"
+          className="inline-flex h-7 items-center gap-1.5 rounded-full bg-[#EAF8D6]/70 hover:bg-[#B7F56A] pl-3 pr-2 text-xs font-semibold text-[#1D201E] transition-colors cursor-pointer shrink-0 border border-[#ECEAE3]/60 "
         >
           <span>{chip.label}</span>
-          <HugeiconsIcon icon={Cancel01Icon} size={13} strokeWidth={2.4} className="text-[#1F3A00]/70 hover:text-[#1F3A00]" />
+          <HugeiconsIcon icon={Cancel01Icon} size={13} strokeWidth={2.4} className="text-[#1D201E]/70 hover:text-[#1D201E]" />
         </button>
       ))}
 
       <button
         type="button"
         onClick={onClearAll}
-        className="text-xs font-bold text-[#1F3A00] underline underline-offset-4 hover:text-[#1F3A00]/70 cursor-pointer shrink-0 px-2"
+        className="text-xs font-bold text-[#1D201E] underline underline-offset-4 hover:text-[#1D201E]/70 cursor-pointer shrink-0 px-2"
       >
         Clear all
       </button>
@@ -747,7 +747,7 @@ export function SortControl({
 
   return (
     <div ref={dropdownRef} className="relative flex items-center gap-2">
-      <span className="text-xs font-medium text-[#1F3A00]/70 shrink-0">
+      <span className="text-xs font-medium text-[#1D201E]/70 shrink-0">
         Sort:
       </span>
       <button
@@ -755,14 +755,14 @@ export function SortControl({
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
-        className="h-10 px-3.5 rounded-[10px] border-2 border-[#B7F56A] bg-white text-xs font-semibold text-[#1F3A00] flex items-center gap-2 shadow-2xs hover:bg-[#F9FCF5] focus:outline-none focus:ring-2 focus:ring-[#B7F56A]/40 cursor-pointer transition-colors"
+        className="h-10 px-3.5 rounded-[10px] border-2 border-[#ECEAE3] bg-white text-xs font-semibold text-[#1D201E] flex items-center gap-2  hover:bg-[#F6F5F1] focus:outline-none focus:ring-2 focus:ring-[#1D201E]/40 cursor-pointer transition-colors"
       >
         <span>{currentLabel}</span>
         <HugeiconsIcon
           icon={ChevronDownIcon}
           size={14}
           strokeWidth={2}
-          className={`text-[#1F3A00]/70 transition-transform duration-200 ${
+          className={`text-[#1D201E]/70 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -771,7 +771,7 @@ export function SortControl({
       {open && (
         <div
           role="listbox"
-          className="absolute right-0 top-[calc(100%+6px)] z-50 min-w-[170px] bg-white rounded-[12px] border-2 border-[#B7F56A] shadow-xl p-1 animate-in fade-in-50 duration-150"
+          className="absolute right-0 top-[calc(100%+6px)] z-50 min-w-[170px] bg-white rounded-[12px] border-2 border-[#ECEAE3]  p-1 animate-in fade-in-50 duration-150"
         >
           {options.map((opt) => {
             const isSelected = opt.value === value;
@@ -787,8 +787,8 @@ export function SortControl({
                 }}
                 className={`w-full px-3 py-2 text-xs font-semibold rounded-[8px] flex items-center justify-between text-start cursor-pointer transition-colors ${
                   isSelected
-                    ? "bg-[#DCFAB7] text-[#1F3A00] font-bold"
-                    : "text-[#1F3A00]/80 hover:bg-[#F9FCF5] hover:text-[#1F3A00]"
+                    ? "bg-[#EAF8D6] text-[#1D201E] font-bold"
+                    : "text-[#1D201E]/80 hover:bg-[#F6F5F1] hover:text-[#1D201E]"
                 }`}
               >
                 <span>{opt.label}</span>
@@ -797,7 +797,7 @@ export function SortControl({
                     icon={Tick01Icon}
                     size={14}
                     strokeWidth={2.4}
-                    className="text-[#1F3A00] ml-2 shrink-0"
+                    className="text-[#1D201E] ml-2 shrink-0"
                   />
                 )}
               </button>
@@ -827,12 +827,12 @@ export function MobileFilterBar({
       <button
         type="button"
         onClick={onOpen}
-        className="flex-1 h-11 rounded-[10px] bg-white border-2 border-[#B7F56A] hover:bg-[#F9FCF5] text-[#1F3A00] font-semibold text-sm flex items-center justify-center gap-2 shadow-2xs cursor-pointer"
+        className="flex-1 h-11 rounded-[10px] bg-white border-2 border-[#ECEAE3] hover:bg-[#F6F5F1] text-[#1D201E] font-semibold text-sm flex items-center justify-center gap-2  cursor-pointer"
       >
         <HugeiconsIcon icon={FilterIcon} size={15} strokeWidth={2} />
         <span>Filters</span>
         {activeCount > 0 && (
-          <span className="w-5 h-5 rounded-full bg-[#1F3A00] text-white text-xs font-bold inline-flex items-center justify-center">
+          <span className="w-5 h-5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-bold inline-flex items-center justify-center">
             {activeCount}
           </span>
         )}
@@ -907,7 +907,7 @@ export function FilterDrawer({
       {/* Dark Backdrop */}
       <div
         onClick={onClose}
-        className="absolute inset-0 bg-[#1F3A00]/40 backdrop-blur-xs cursor-pointer"
+        className="absolute inset-0 bg-[#1D201E]/40 backdrop-blur-xs cursor-pointer"
       />
 
       {/* Slide-over Drawer Panel */}
@@ -916,20 +916,20 @@ export function FilterDrawer({
         role="dialog"
         aria-modal="true"
         aria-label="Service Filters"
-        className={`absolute inset-y-0 right-0 w-full max-w-md bg-[#F9FCF5] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out text-start ${
+        className={`absolute inset-y-0 right-0 w-full max-w-md bg-[#F6F5F1]  flex flex-col transition-transform duration-300 ease-in-out text-start ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Drawer Header */}
-        <div className="px-6 py-4 border-b border-[#E5FBC9] bg-white flex items-center justify-between shrink-0">
+        <div className="px-6 py-4 border-b border-[#ECEAE3] bg-white flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2.5">
-            <HugeiconsIcon icon={FilterIcon} size={18} strokeWidth={2} className="text-[#1F3A00]" />
-            <h2 className="font-heading text-lg font-bold text-[#1F3A00]">Filter Services</h2>
+            <HugeiconsIcon icon={FilterIcon} size={18} strokeWidth={2} className="text-[#1D201E]" />
+            <h2 className="font-heading text-lg font-bold text-[#1D201E]">Filter Services</h2>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#1F3A00]/60 hover:text-[#1F3A00] hover:bg-[#F9FCF5] transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-[#1D201E]/60 hover:text-[#1D201E] hover:bg-[#F6F5F1] transition-colors cursor-pointer"
             aria-label="Close filters drawer"
           >
             <HugeiconsIcon icon={Cancel01Icon} size={18} strokeWidth={2} />
@@ -939,8 +939,8 @@ export function FilterDrawer({
         {/* Scrollable Facets Body */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
           {/* Section 1: Verticals */}
-          <div className="space-y-3 pb-5 border-b border-[#E5FBC9]">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1F3A00]">
+          <div className="space-y-3 pb-5 border-b border-[#ECEAE3]">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1D201E]">
               Service Vertical
             </h3>
             <CategoryFacetList
@@ -951,8 +951,8 @@ export function FilterDrawer({
           </div>
 
           {/* Section 2: Job Types */}
-          <div className="space-y-3 pb-5 border-b border-[#E5FBC9]">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1F3A00]">
+          <div className="space-y-3 pb-5 border-b border-[#ECEAE3]">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1D201E]">
               Job Type
             </h3>
             <JobTypeFacetList
@@ -963,8 +963,8 @@ export function FilterDrawer({
           </div>
 
           {/* Section 3: Property Sizes */}
-          <div className="space-y-3 pb-5 border-b border-[#E5FBC9]">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1F3A00]">
+          <div className="space-y-3 pb-5 border-b border-[#ECEAE3]">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1D201E]">
               Property Size
             </h3>
             <PropertySizeFacetList
@@ -976,8 +976,8 @@ export function FilterDrawer({
           </div>
 
           {/* Section 4: Urgency */}
-          <div className="space-y-3 pb-5 border-b border-[#E5FBC9]">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1F3A00]">
+          <div className="space-y-3 pb-5 border-b border-[#ECEAE3]">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1D201E]">
               Urgency & Timeline
             </h3>
             <UrgencyFacetList selected={filters.urgency} onChange={onSetUrgency} />
@@ -985,7 +985,7 @@ export function FilterDrawer({
 
           {/* Section 5: London Postcode Coverage */}
           <div className="space-y-3">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1F3A00]">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1D201E]">
               London Postcode Coverage
             </h3>
             <PostcodeFacetField
@@ -997,18 +997,18 @@ export function FilterDrawer({
         </div>
 
         {/* Sticky Drawer Footer */}
-        <div className="p-4 border-t border-[#E5FBC9] bg-white flex items-center gap-3 shrink-0">
+        <div className="p-4 border-t border-[#ECEAE3] bg-white flex items-center gap-3 shrink-0">
           <button
             type="button"
             onClick={onClearAll}
-            className="px-4 py-3 rounded-[10px] border border-[#E5FBC9] text-xs font-bold text-[#1F3A00] hover:bg-[#F9FCF5] transition-colors"
+            className="px-4 py-3 rounded-[10px] border border-[#ECEAE3] text-xs font-bold text-[#1D201E] hover:bg-[#F6F5F1] transition-colors"
           >
             Reset All
           </button>
           <button
             type="button"
             onClick={onClose}
-            className="flex-1 py-3 px-4 rounded-[10px] bg-[#B7F56A] hover:bg-[#a8eb58] text-[#1F3A00] font-bold text-sm shadow-2xs transition-colors flex items-center justify-center gap-2"
+            className="flex-1 py-3 px-4 rounded-[10px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] font-bold text-sm  transition-colors flex items-center justify-center gap-2"
           >
             <span>Show {resultCount} {resultCount === 1 ? "Service" : "Services"}</span>
           </button>

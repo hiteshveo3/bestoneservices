@@ -41,14 +41,14 @@ export function ServiceBentoVariants({
             return (
               <StaggerItem
                 key={idx}
-                className={`bg-[#F9FCF5] rounded-[16px] p-6 border border-[#B7F56A] space-y-3 ${ isLarge ? "lg:col-span-2" : "lg:col-span-1" }`}
+                className={`bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-3 ${ isLarge ? "lg:col-span-2" : "lg:col-span-1" }`}
               >
                 {card.badge && (
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium">
                     {card.badge}
                   </span>
                 )}
-                {card.icon && <div className="w-10 h-10 rounded-[16px] bg-[#1F3A00] text-white flex items-center justify-center font-medium">{card.icon}</div>}
+                {card.icon && <div className="w-10 h-10 rounded-[16px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium">{card.icon}</div>}
                 <h3 className="font-heading text-xl font-medium text-ink-900">{card.title}</h3>
                 <p className="text-base text-ink-500 leading-relaxed">{card.description}</p>
               </StaggerItem>
@@ -61,10 +61,10 @@ export function ServiceBentoVariants({
       {variant === "B" && (
         <StaggerGrid className="grid lg:grid-cols-3 gap-4">
           {cards[0] && (
-            <StaggerItem className="lg:col-span-1 bg-[#F9FCF5] rounded-[16px] p-8 border border-[#B7F56A] space-y-4 flex flex-col justify-between">
+            <StaggerItem className="lg:col-span-1 bg-[#F6F5F1] rounded-[16px] p-8 border border-[#ECEAE3] space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
                 {cards[0].badge && (
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium">
                     {cards[0].badge}
                   </span>
                 )}
@@ -76,7 +76,7 @@ export function ServiceBentoVariants({
 
           <div className="lg:col-span-2 grid sm:grid-cols-1 gap-4">
             {cards.slice(1, 4).map((card, idx) => (
-              <StaggerItem key={idx} className="bg-[#F9FCF5] rounded-[16px] p-6 border border-[#B7F56A] space-y-2">
+              <StaggerItem key={idx} className="bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-2">
                 <h4 className="font-heading text-lg font-medium text-ink-900">{card.title}</h4>
                 <p className="text-base text-ink-500">{card.description}</p>
               </StaggerItem>
@@ -89,13 +89,13 @@ export function ServiceBentoVariants({
       {variant === "C" && (
         <StaggerGrid className="grid md:grid-cols-3 gap-4">
           {cards.slice(0, 3).map((card, idx) => (
-            <StaggerItem key={idx} className="bg-[#F9FCF5] rounded-[16px] p-6 border border-[#B7F56A] space-y-3">
+            <StaggerItem key={idx} className="bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-3">
               <h3 className="font-heading text-xl font-medium text-ink-900">{card.title}</h3>
               <p className="text-base text-ink-500">{card.description}</p>
             </StaggerItem>
           ))}
           {cards[3] && (
-            <StaggerItem className="md:col-span-3 bg-[#F9FCF5] rounded-[16px] p-8 border border-[#B7F56A] space-y-3">
+            <StaggerItem className="md:col-span-3 bg-[#F6F5F1] rounded-[16px] p-8 border border-[#ECEAE3] space-y-3">
               <h3 className="font-heading text-2xl font-medium text-ink-900">{cards[3].title}</h3>
               <p className="text-base text-ink-500">{cards[3].description}</p>
             </StaggerItem>
@@ -107,7 +107,7 @@ export function ServiceBentoVariants({
       {(variant === "D" || variant === "E") && (
         <StaggerGrid className="grid sm:grid-cols-3 gap-4">
           {cards.map((card, idx) => (
-            <StaggerItem key={idx} className="bg-[#F9FCF5] rounded-[16px] p-6 border border-[#B7F56A] space-y-3">
+            <StaggerItem key={idx} className="bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-3">
               <h3 className="font-heading text-xl font-medium text-ink-900">{card.title}</h3>
               <p className="text-base text-ink-500">{card.description}</p>
             </StaggerItem>

@@ -27,17 +27,17 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
   if (!item) notFound();
 
   return (
-    <main id="main-content" className="min-h-screen bg-[#F9FCF5] text-start">
+    <main id="main-content" className="min-h-screen bg-[#F6F5F1] text-start">
       {/* Category Hero */}
-      <section className="py-14 sm:py-20 border-b border-[#E5FBC9]">
+      <section className="py-14 sm:py-20 border-b border-[#ECEAE3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="px-3.5 py-1 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-xs font-mono font-bold uppercase tracking-wider">
-            Best One Services
+          <span className="px-3.5 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E] text-xs font-mono font-bold uppercase tracking-wider">
+            Bestone Services
           </span>
-          <h1 className="mt-4 font-heading text-4xl sm:text-5xl font-semibold tracking-tight text-[#1F3A00]">
+          <h1 className="mt-4 font-heading text-4xl sm:text-5xl font-semibold tracking-tight text-[#1D201E]">
             {item.label}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg sm:text-xl text-[#1F3A00] leading-relaxed">
+          <p className="mt-4 max-w-2xl text-lg sm:text-xl text-[#1D201E] leading-relaxed">
             {item.intro}
           </p>
 
@@ -46,9 +46,9 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
               <Link
                 href={`/${category}/${slug}/`}
                 key={slug}
-                className="group block rounded-[24px] border border-[#B7F56A] bg-[#F9FCF5] p-4 shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 text-decoration-none focus:outline-none"
+                className="group block rounded-[24px] border border-[#ECEAE3] bg-[#F6F5F1] p-4  hover:border-[#1D201E] transition-colors duration-200 text-decoration-none focus:outline-none"
               >
-                <div className="relative aspect-[3/2] overflow-hidden rounded-[18px] bg-[#F9FCF5] border border-[#E5FBC9]">
+                <div className="relative aspect-[3/2] overflow-hidden rounded-[18px] bg-[#F6F5F1] border border-[#ECEAE3]">
                   <AnimatedIllustration
                     slug={slug}
                     alt={`${label} service illustration`}
@@ -56,15 +56,15 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                   />
                 </div>
                 <div className="space-y-2 px-2 pb-2 pt-5">
-                  <h2 className="font-heading text-xl font-bold text-[#1F3A00] group-hover:text-[#2d5004] transition-colors duration-150">
+                  <h2 className="font-heading text-xl font-bold text-[#1D201E] group-hover:text-[#1D201E] transition-colors duration-150">
                     {label}
                   </h2>
-                  <p className="text-sm leading-relaxed text-[#1F3A00]">
+                  <p className="text-sm leading-relaxed text-[#1D201E]">
                     Detailed service scope, pricing breakdown, preparation guidance and instant online booking.
                   </p>
-                  <span className="inline-flex items-center gap-1.5 pt-2 text-sm font-bold text-[#1F3A00]">
+                  <span className="inline-flex items-center gap-1.5 pt-2 text-sm font-bold text-[#1D201E]">
                     <span>Explore service</span>
-                    <ArrowRight className="w-4 h-4 text-[#1F3A00]" />
+                    <ArrowRight className="w-4 h-4 text-[#1D201E]" />
                   </span>
                 </div>
               </Link>
@@ -83,27 +83,27 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
 
       {/* Brand Assistance Banner */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-[26px] bg-[#1F3A00] text-[#DFFBBC] flex flex-col md:flex-row items-center justify-between gap-6 border border-[#3A5C13]">
+        <div className="p-8 sm:p-12 rounded-[26px] bg-[#B7F56A] text-[#1D201E] flex flex-col md:flex-row items-center justify-between gap-6 border border-[#ECEAE3]">
           <div className="space-y-2 max-w-xl">
-            <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-[#F9FCF5]">
+            <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-[#1D201E]">
               Need help choosing the right service?
             </h2>
-            <p className="text-base text-[#DFFBBC]">
+            <p className="text-base text-[#1D201E]">
               Speak directly with our London operations team. We confirm the scope, availability and a fixed transparent quote before any commitment.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 shrink-0">
             <Link
-              href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
+              href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none cursor-pointer"
             >
               Book a Service
             </Link>
             <Link
               href="/contact/"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-transparent text-[#F9FCF5] border border-[#3A5C13] hover:opacity-90 transition-opacity duration-200 text-decoration-none cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-transparent text-[#1D201E] border border-[#ECEAE3] hover:opacity-90 transition-opacity duration-200 text-decoration-none cursor-pointer"
             >
               Contact Support
             </Link>

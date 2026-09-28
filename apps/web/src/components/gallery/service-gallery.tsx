@@ -29,10 +29,10 @@ export function ServiceGallery({
 
   return (
     <>
-      <SectionReveal className="bg-[#F9FCF5] rounded-[16px] p-6 sm:p-10 border border-[#B7F56A] space-y-6 text-start">
-        <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">
-            <Camera className="w-3.5 h-3.5 text-white shrink-0" />
+      <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-10 border border-[#ECEAE3] space-y-6 text-start">
+        <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+            <Camera className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
             <span>AUTHENTIC PHOTOGRAPHY</span>
           </div>
           <h3 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">{title}</h3>
@@ -45,7 +45,7 @@ export function ServiceGallery({
             <div
               key={idx}
               onClick={() => openLightboxAt(idx)}
-              className={`group relative rounded-[16px] overflow-hidden cursor-pointer border border-[#E5FBC9] hover:border-[#1F3A00] transition-colors duration-200 bg-[#F9FCF5] ${
+              className={`group relative rounded-[16px] overflow-hidden cursor-pointer border border-[#ECEAE3] hover:border-[#1D201E] transition-colors duration-200 bg-[#F6F5F1] ${
                 idx === 0 ? "sm:col-span-2 sm:row-span-2 aspect-4/3" : "aspect-4/3"
               }`}
             >
@@ -56,7 +56,7 @@ export function ServiceGallery({
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-ink-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-150 flex items-center justify-center">
-                <div className="p-3 rounded-full bg-[#F9FCF5] text-ink-600 border border-[#B7F56A]">
+                <div className="p-3 rounded-full bg-[#F6F5F1] text-ink-600 border border-[#ECEAE3]">
                   <ZoomIn className="w-5 h-5 text-ink-600" />
                 </div>
               </div>

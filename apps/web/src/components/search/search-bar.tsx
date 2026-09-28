@@ -57,7 +57,7 @@ export function SearchBar({
       </label>
       <div className="relative flex items-center">
         <Search
-          className="absolute left-4 w-5 h-5 text-[#1F3A00]/60 pointer-events-none"
+          className="absolute left-4 w-5 h-5 text-[#1D201E]/60 pointer-events-none"
           aria-hidden="true"
         />
         <input
@@ -66,13 +66,13 @@ export function SearchBar({
           value={localValue}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full h-12 sm:h-14 pl-12 pr-11 bg-white border-2 border-[#E5FBC9] rounded-[18px] text-[#1F3A00] placeholder:text-[#1F3A00]/50 text-base font-normal shadow-2xs transition-colors duration-200 hover:border-[#B7F56A] focus:border-[#1F3A00] focus:outline-none"
+          className="w-full h-12 sm:h-14 pl-12 pr-11 bg-white border-2 border-[#ECEAE3] rounded-[18px] text-[#1D201E] placeholder:text-[#1D201E]/50 text-base font-normal  transition-colors duration-200 hover:border-[#ECEAE3] focus:border-[#1D201E] focus:outline-none"
         />
         {localValue.trim() && (
           <button
             type="button"
             onClick={handleClear}
-            className="absolute right-3.5 w-7 h-7 flex items-center justify-center rounded-full bg-[#DCFAB7]/60 text-[#1F3A00] hover:bg-[#B7F56A] transition-colors duration-150 cursor-pointer"
+            className="absolute right-3.5 w-7 h-7 flex items-center justify-center rounded-full bg-[#EAF8D6]/60 text-[#1D201E] hover:bg-[#B7F56A] transition-colors duration-150 cursor-pointer"
             aria-label="Clear search input"
           >
             <X className="w-4 h-4" />

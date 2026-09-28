@@ -98,7 +98,7 @@ export function generateCostFaqSchema(serviceSlug: string, serviceTitle: string)
   return [
     {
       question: `How much does ${serviceTitle.toLowerCase()} cost in London?`,
-      answer: `${serviceTitle} starts from ${priceText} with Best One Services, covering Greater London and the M25. The exact price depends on property size and scope, and is confirmed in writing before any work begins.`,
+      answer: `${serviceTitle} starts from ${priceText} with Bestone Services, covering Greater London and the M25. The exact price depends on property size and scope, and is confirmed in writing before any work begins.`,
     },
   ];
 }

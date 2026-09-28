@@ -24,7 +24,7 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
           <div 
             key={idx}
             id={slugId} 
-            className="bg-[#F9FCF5] rounded-[16px] border border-[#B7F56A] overflow-hidden transition-colors duration-200 scroll-mt-24 shadow-2xs"
+            className="bg-[#F6F5F1] rounded-[16px] border border-[#ECEAE3] overflow-hidden transition-colors duration-200 scroll-mt-24 "
           >
             <button 
               type="button"
@@ -35,14 +35,14 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
               aria-controls={contentId}
             >
               <div className="flex items-center gap-3">
-                <span className="font-heading font-bold text-lg sm:text-xl text-[#1F3A00]">
+                <span className="font-heading font-bold text-lg sm:text-xl text-[#1D201E]">
                   {item.q}
                 </span>
               </div>
               <div 
                 data-open={isOpen}
-                className={`accordion-chevron w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-[#99D055] text-[#1F3A00] transition-colors duration-200 ease-in-out ${
-                  isOpen ? "bg-[#B7F56A]" : "bg-[#DCFAB7]"
+                className={`accordion-chevron w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-[#ECEAE3] text-[#1D201E] transition-colors duration-200 ease-in-out ${
+                  isOpen ? "bg-[#B7F56A]" : "bg-[#EAF8D6]"
                 }`}
                 aria-hidden="true"
               >
@@ -59,8 +59,8 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
             >
               <div>
                 <div className="px-6 pb-6 pt-2">
-                  <div className="pt-4 border-t border-[#E5FBC9] text-[#1F3A00] text-base leading-relaxed">
-                    <p className="text-base text-[#1F3A00]/75 leading-relaxed font-normal">
+                  <div className="pt-4 border-t border-[#ECEAE3] text-[#1D201E] text-base leading-relaxed">
+                    <p className="text-base text-[#1D201E]/75 leading-relaxed font-normal">
                       {item.a}
                     </p>
                   </div>

@@ -1,5 +1,5 @@
 /**
- * Best One Services - Centralized Timezone Utility
+ * Bestone Services - Centralized Timezone Utility
  * Canonical business timezone: Europe/London (GMT/BST)
  */
 

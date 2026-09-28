@@ -65,7 +65,7 @@ export default function AdminAnalyticsDashboardPage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER BAR */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-mono font-medium uppercase text-ink-500">EXECUTIVE BI & ANALYTICS WORKSPACE</span>
@@ -75,16 +75,16 @@ export default function AdminAnalyticsDashboardPage() {
 
           <Link
             href="/admin/reports"
-            className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-xs hover:bg-[#2d5004] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer text-decoration-none border border-[#E5FBC9]"
+            className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs hover:bg-[#A2EA4E] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer text-decoration-none border border-[#ECEAE3]"
           >
-            <FileSpreadsheet className="w-4 h-4 text-white" />
+            <FileSpreadsheet className="w-4 h-4 text-[#1D201E]" />
             <span>Export CSV Reports</span>
           </Link>
         </div>
       </div>
 
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Calculating executive BI analytics...</p>
         </div>
@@ -93,7 +93,7 @@ export default function AdminAnalyticsDashboardPage() {
           
           {/* TOP REVENUE KPI CARDS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#E5FBC9]">
+            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#ECEAE3]">
               <span className="text-[10px] font-mono font-medium uppercase text-ink-500">Gross Invoiced Revenue</span>
               <p className="font-heading font-medium text-2xl text-ink-900">
                 {formatPenceToGBP(summary.grossInvoicedPence)}
@@ -101,15 +101,15 @@ export default function AdminAnalyticsDashboardPage() {
               <span className="text-[11px] font-mono text-ink-500">Total Billed to Clients</span>
             </div>
 
-            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#E5FBC9]">
+            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#ECEAE3]">
               <span className="text-[10px] font-mono font-medium uppercase text-ink-500">Net Revenue Collected</span>
-              <p className="font-heading font-medium text-2xl text-[#1F3A00]">
+              <p className="font-heading font-medium text-2xl text-[#1D201E]">
                 {formatPenceToGBP(summary.netCollectedPence)}
               </p>
               <span className="text-[11px] font-mono text-success-900">Cash & Card Received</span>
             </div>
 
-            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#E5FBC9]">
+            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#ECEAE3]">
               <span className="text-[10px] font-mono font-medium uppercase text-ink-500">Outstanding Receivables</span>
               <p className="font-heading font-medium text-2xl text-danger-500">
                 {formatPenceToGBP(summary.outstandingReceivablesPence)}
@@ -117,7 +117,7 @@ export default function AdminAnalyticsDashboardPage() {
               <span className="text-[11px] font-mono text-danger-500">Pending Invoices Due</span>
             </div>
 
-            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#E5FBC9]">
+            <div className="bg-white rounded-[18px] p-6 space-y-1 border border-[#ECEAE3]">
               <span className="text-[10px] font-mono font-medium uppercase text-ink-500">Average Booking Value</span>
               <p className="font-heading font-medium text-2xl text-ink-900">
                 {formatPenceToGBP(summary.averageBookingValuePence)}
@@ -130,8 +130,8 @@ export default function AdminAnalyticsDashboardPage() {
           <div className="grid lg:grid-cols-12 gap-6">
             
             {/* Category Revenue Share (6 Cols) */}
-            <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-              <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+            <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+              <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
                 <span className="text-xs font-mono font-medium uppercase text-ink-500">CATEGORY REVENUE DISTRIBUTION</span>
                 <PieChart className="w-4 h-4 text-ink-600" />
               </div>
@@ -144,9 +144,9 @@ export default function AdminAnalyticsDashboardPage() {
                       <span className="text-ink-600 font-medium">{formatPenceToGBP(cat.totalRevenuePence)} ({cat.percentage}%)</span>
                     </div>
 
-                    <div className="w-full bg-[#F9FCF5] rounded-full h-2.5 overflow-hidden">
+                    <div className="w-full bg-[#F6F5F1] rounded-full h-2.5 overflow-hidden">
                       <div
-                        className="bg-[#1F3A00] h-2.5 rounded-full"
+                        className="bg-[#B7F56A] h-2.5 rounded-full"
                         style={{ width: `${Math.max(cat.percentage, 5)}%` }}
                       />
                     </div>
@@ -156,15 +156,15 @@ export default function AdminAnalyticsDashboardPage() {
             </div>
 
             {/* 30-Day Revenue Forecast (6 Cols) */}
-            <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-              <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+            <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+              <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
                 <span className="text-xs font-mono font-medium uppercase text-ink-500">30-DAY REVENUE PROJECTION & FORECAST</span>
-                <TrendingUp className="w-4 h-4 text-[#1F3A00]" />
+                <TrendingUp className="w-4 h-4 text-[#1D201E]" />
               </div>
 
               <div className="space-y-3">
                 {summary.monthlyForecast.map((fc, idx) => (
-                  <div key={idx} className="p-4 rounded-[18px] bg-white border border-[#E5FBC9] flex items-center justify-between">
+                  <div key={idx} className="p-4 rounded-[18px] bg-white border border-[#ECEAE3] flex items-center justify-between">
                     <div>
                       <span className="font-heading font-medium text-base text-ink-900">{fc.monthLabel}</span>
                       <span className="text-xs font-mono text-ink-500 block">{fc.bookingCount} Projected Bookings</span>
@@ -181,8 +181,8 @@ export default function AdminAnalyticsDashboardPage() {
           </div>
 
           {/* STAFF PERFORMANCE RATING TABLE */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <span className="text-xs font-mono font-medium uppercase text-ink-500">FIELD TECHNICIAN & STAFF PERFORMANCE SCORECARD</span>
               <Award className="w-4 h-4 text-ink-600" />
             </div>
@@ -191,7 +191,7 @@ export default function AdminAnalyticsDashboardPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-xs text-start border-collapse font-mono">
                   <thead>
-                    <tr className="border-b border-[#E5FBC9] text-left text-[11px] text-ink-500 uppercase">
+                    <tr className="border-b border-[#ECEAE3] text-left text-[11px] text-ink-500 uppercase">
                       <th className="py-2 font-medium">Technician Name</th>
                       <th className="py-2 font-medium">Role</th>
                       <th className="py-2 text-center font-medium">Completed Jobs</th>

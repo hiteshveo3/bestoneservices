@@ -96,31 +96,31 @@ export default function AdminOverviewPage() {
     <div className="space-y-6 text-start">
       
       {/* 1. Dynamic Greeting & Command Header */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-medium">
-              <Sparkles className="w-3.5 h-3.5 text-white shrink-0" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
+              <Sparkles className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
               <span>Phase 3 — Operational Operations Command</span>
             </div>
             <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">
               {timeGreeting}, {adminFirstName}
             </h1>
             <p className="text-sm text-ink-500">
-              Best One Services Live Real-Time Operations Platform
+              Bestone Services Live Real-Time Operations Platform
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <Link
               href="/admin/bookings/new"
-              className="px-4 py-2.5 rounded-full bg-[#1F3A00] text-[#B7F56A] text-xs font-semibold hover:bg-[#2d5004] text-decoration-none inline-flex items-center gap-1.5 border border-[#E5FBC9]"
+              className="px-4 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] text-decoration-none inline-flex items-center gap-1.5 border border-[#ECEAE3]"
             >
-              <Plus className="w-3.5 h-3.5 text-white" />
+              <Plus className="w-3.5 h-3.5 text-[#1D201E]" />
               <span>New Enquiry</span>
             </Link>
 
-            <div className="p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-mono hidden sm:block">
+            <div className="p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-mono hidden sm:block">
               <div className="flex items-center gap-1.5 text-ink-600 font-medium">
                 <Key className="w-3.5 h-3.5 text-ink-600" />
                 <span>Admin Custom Claim Active</span>
@@ -134,7 +134,7 @@ export default function AdminOverviewPage() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
         {/* Real Customer Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 border border-[#ECEAE3]">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">REGISTERED CUSTOMERS</span>
             <Users className="w-4 h-4 text-ink-600" />
@@ -146,7 +146,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real New Bookings Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-info-500 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-info-500 border border-[#ECEAE3]">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">NEW / AWAITING CONF.</span>
             <Calendar className="w-4 h-4 text-info-500" />
@@ -158,10 +158,10 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real Confirmed & Scheduled Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-blue-500 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-blue-500 border border-[#ECEAE3]">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">ACTIVE SCHEDULED</span>
-            <Calendar className="w-4 h-4 text-[#1F3A00]" />
+            <Calendar className="w-4 h-4 text-[#1D201E]" />
           </div>
           <div className="font-heading text-2xl font-medium text-ink-900">
             {loadingMetrics ? "..." : (bookingCounts.confirmed || 0) + (bookingCounts.scheduled || 0)}
@@ -170,7 +170,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real Audit Activity Events */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 border border-[#ECEAE3]">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">AUDIT LOG EVENTS</span>
             <Activity className="w-4 h-4 text-ink-600" />
@@ -187,7 +187,7 @@ export default function AdminOverviewPage() {
       <div className="grid lg:grid-cols-12 gap-6">
         
         {/* Real Attention Required Queue */}
-        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
+        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
           <div className="flex items-center justify-between">
             <h3 className="font-heading text-lg font-medium text-ink-900">Attention Required</h3>
             <span className="px-2.5 py-0.5 rounded-full bg-info-50 text-info-900 text-xs font-mono font-medium">
@@ -201,12 +201,12 @@ export default function AdminOverviewPage() {
                 <Link
                   key={b.id}
                   href={`/admin/bookings/${b.id}`}
-                  className="p-4 rounded-[18px] bg-[#F9FCF5] hover:bg-[#DCFAB7] flex items-center justify-between text-decoration-none text-ink-600 transition-colors duration-150 block"
+                  className="p-4 rounded-[18px] bg-[#F6F5F1] hover:bg-[#EAF8D6] flex items-center justify-between text-decoration-none text-ink-600 transition-colors duration-150 block"
                 >
                   <div className="space-y-0.5 text-start">
                     <div className="flex items-center gap-2">
                       <span className="font-mono font-medium text-sm text-ink-600">{b.reference}</span>
-                      <span className="px-2 py-0.5 rounded-full bg-info-500 text-white text-[10px] font-mono uppercase font-medium">
+                      <span className="px-2 py-0.5 rounded-full bg-info-500 text-[#1D201E] text-[10px] font-mono uppercase font-medium">
                         New
                       </span>
                     </div>
@@ -218,8 +218,8 @@ export default function AdminOverviewPage() {
               ))}
             </div>
           ) : (
-            <div className="p-6 rounded-[18px] bg-[#F9FCF5] text-center space-y-2">
-              <CheckCircle2 className="w-8 h-8 text-[#1F3A00] mx-auto" />
+            <div className="p-6 rounded-[18px] bg-[#F6F5F1] text-center space-y-2">
+              <CheckCircle2 className="w-8 h-8 text-[#1D201E] mx-auto" />
               <h4 className="font-heading font-medium text-base text-ink-900">Nothing needs your attention right now</h4>
               <p className="text-xs text-ink-500">
                 New website submissions and unconfirmed bookings will populate here.
@@ -229,7 +229,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Recent Operational Activity Feed */}
-        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
+        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
           <div className="flex items-center justify-between">
             <h3 className="font-heading text-lg font-medium text-ink-900">Recent Activity</h3>
             <span className="text-xs font-mono text-ink-500">Operational Audit</span>
@@ -238,7 +238,7 @@ export default function AdminOverviewPage() {
           {activityLogs.length > 0 ? (
             <div className="space-y-3">
               {activityLogs.map((log) => (
-                <div key={log.id} className="p-3 rounded-[18px] bg-[#F9FCF5] flex items-center justify-between text-xs text-start">
+                <div key={log.id} className="p-3 rounded-[18px] bg-[#F6F5F1] flex items-center justify-between text-xs text-start">
                   <div className="space-y-0.5">
                     <span className="font-medium text-ink-600 block">{log.summary}</span>
                     <span className="text-[11px] text-ink-500">Actor: {log.actorName} ({log.actorRole})</span>
@@ -250,7 +250,7 @@ export default function AdminOverviewPage() {
               ))}
             </div>
           ) : (
-            <div className="p-6 rounded-[18px] bg-[#F9FCF5] text-center space-y-1">
+            <div className="p-6 rounded-[18px] bg-[#F6F5F1] text-center space-y-1">
               <p className="font-medium text-xs text-ink-600">System Ready</p>
               <p className="text-xs text-ink-500">Operational audit events will log here automatically.</p>
             </div>
@@ -260,13 +260,13 @@ export default function AdminOverviewPage() {
       </div>
 
       {/* 4. Functional Admin Quick Actions */}
-      <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
         <h3 className="font-heading text-lg font-medium text-ink-900">Admin Quick Actions</h3>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <Link
             href="/admin/bookings"
-            className="p-4 rounded-[18px] bg-[#F9FCF5] hover:bg-[#DCFAB7] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
+            className="p-4 rounded-[18px] bg-[#F6F5F1] hover:bg-[#EAF8D6] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
           >
             <Calendar className="w-5 h-5 text-ink-600" />
             <div className="font-medium text-sm">View Booking Queue</div>
@@ -275,7 +275,7 @@ export default function AdminOverviewPage() {
 
           <Link
             href="/admin/bookings/new"
-            className="p-4 rounded-[18px] bg-[#F9FCF5] hover:bg-[#DCFAB7] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
+            className="p-4 rounded-[18px] bg-[#F6F5F1] hover:bg-[#EAF8D6] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
           >
             <Plus className="w-5 h-5 text-ink-600" />
             <div className="font-medium text-sm">Create Manual Booking</div>
@@ -284,7 +284,7 @@ export default function AdminOverviewPage() {
 
           <Link
             href="/admin/services"
-            className="p-4 rounded-[18px] bg-[#F9FCF5] hover:bg-[#DCFAB7] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
+            className="p-4 rounded-[18px] bg-[#F6F5F1] hover:bg-[#EAF8D6] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
           >
             <Package className="w-5 h-5 text-ink-600" />
             <div className="font-medium text-sm">Service Catalog</div>
@@ -293,7 +293,7 @@ export default function AdminOverviewPage() {
 
           <Link
             href="/admin/notifications"
-            className="p-4 rounded-[18px] bg-[#F9FCF5] hover:bg-[#DCFAB7] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
+            className="p-4 rounded-[18px] bg-[#F6F5F1] hover:bg-[#EAF8D6] text-decoration-none text-ink-600 space-y-2 transition-colors duration-150 block"
           >
             <Bell className="w-5 h-5 text-ink-600" />
             <div className="font-medium text-sm">Notification Center</div>

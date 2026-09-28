@@ -57,7 +57,7 @@ export function BedBugPriceCalculator() {
         <div className="space-y-2">
           <div className="flex justify-between items-center text-sm font-medium text-ink-900">
             <span>Number of affected rooms:</span>
-            <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white font-medium text-base">
+            <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-base">
               {rooms} {rooms === 1 ? "room" : "rooms"}
             </span>
           </div>
@@ -68,7 +68,7 @@ export function BedBugPriceCalculator() {
             value={rooms}
             onChange={(e) => setRooms(Number(e.currentTarget.value))}
             aria-label="Number of affected rooms"
-            className="w-full h-2 bg-[#E5FBC9] rounded-[16px] appearance-none cursor-pointer accent-blue-600"
+            className="w-full h-2 bg-[#ECEAE3] rounded-[16px] appearance-none cursor-pointer accent-blue-600"
           />
           <div className="flex justify-between text-xs text-ink-500">
             <span>1 room (£{BASE_PRICE} base)</span>
@@ -87,8 +87,8 @@ export function BedBugPriceCalculator() {
                 onClick={() => setInfestationLevel(level)}
                 className={`p-3 rounded-[16px] border text-start transition-colors duration-150 cursor-pointer ${
                   infestationLevel === level
-                    ? "border-ink-900 bg-[#DCFAB7] ring-2 ring-blue-600"
-                    : "border-[#E5FBC9] bg-white hover:bg-[#DCFAB7]"
+                    ? "border-ink-900 bg-[#EAF8D6] ring-2 ring-blue-600"
+                    : "border-[#ECEAE3] bg-white hover:bg-[#EAF8D6]"
                 }`}
               >
                 <div className="font-medium text-sm capitalize text-ink-900">
@@ -117,8 +117,8 @@ export function BedBugPriceCalculator() {
                 onClick={() => setEstimatedVisits(visit)}
                 className={`flex-1 py-2.5 px-4 rounded-[16px] font-medium text-sm transition-colors duration-150 cursor-pointer border ${
                   estimatedVisits === visit
-                    ? "bg-[#1F3A00] text-white border-[#1F3A00]"
-                    : "bg-[#F9FCF5] text-ink-600 border-[#E5FBC9] hover:bg-[#DCFAB7]"
+                    ? "bg-[#B7F56A] text-[#1D201E] border-[#1D201E]"
+                    : "bg-[#F6F5F1] text-ink-600 border-[#ECEAE3] hover:bg-[#EAF8D6]"
                 }`}
               >
                 {visit} Visit{visit > 1 ? "s" : ""}
@@ -130,7 +130,7 @@ export function BedBugPriceCalculator() {
       </div>
 
       {/* Price Breakdown Summary Box */}
-      <div className="bg-white rounded-[16px] p-6 border-2 border-[#99D055] space-y-4">
+      <div className="bg-white rounded-[16px] p-6 border-2 border-[#ECEAE3] space-y-4">
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
             <span className="text-ink-500">Base Bed Bug Treatment (1 Room)</span>
@@ -150,18 +150,18 @@ export function BedBugPriceCalculator() {
           )}
         </div>
 
-        <div className="border-t border-[#E5FBC9] pt-4 flex items-center justify-between">
+        <div className="border-t border-[#ECEAE3] pt-4 flex items-center justify-between">
           <div>
             <div className="text-xs text-ink-500 uppercase tracking-wider font-mono">Estimated Total</div>
             <div className="font-heading text-3xl font-medium text-ink-900">£{pricing.total}</div>
           </div>
           <Link
             href={siteContact.getWhatsappUrl(
-              `Hi, I'd like to book bed bug treatment with Best One Services. Rooms: ${rooms}, estimated visits: ${estimatedVisits}, estimated price: £${pricing.total}.`
+              `Hi, I'd like to book bed bug treatment with Bestone Services. Rooms: ${rooms}, estimated visits: ${estimatedVisits}, estimated price: £${pricing.total}.`
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3.5 rounded-full bg-[#1F3A00] text-white font-medium text-base hover:bg-[#1F3A00] transition-colors duration-150 text-decoration-none border border-[#E5FBC9]"
+            className="px-6 py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-base hover:bg-[#B7F56A] transition-colors duration-150 text-decoration-none border border-[#ECEAE3]"
           >
             Book This Estimate →
           </Link>
@@ -169,10 +169,10 @@ export function BedBugPriceCalculator() {
       </div>
 
       {/* Service Guarantees Pill */}
-      <div className="p-4 rounded-[16px] bg-[#F9FCF5] border border-[#E5FBC9] text-xs text-ink-500 space-y-1.5">
+      <div className="p-4 rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] text-xs text-ink-500 space-y-1.5">
         <div className="font-medium text-ink-900 flex items-center gap-1.5">
           <ShieldCheck className="w-4 h-4 text-ink-600 shrink-0" />
-          <span>Includes Best One Written Guarantee & 48h Re-Clean Support</span>
+          <span>Includes Bestone Written Guarantee & 48h Re-Clean Support</span>
         </div>
         <p className="leading-relaxed">Final price is locked in after initial property check. All technicians are licensed, insured, and BPCA compliant.</p>
       </div>

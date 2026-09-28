@@ -22,12 +22,12 @@ function AuthFrame({ children, title, subtitle }: { children: React.ReactNode; t
     <main id="main-content" className="py-12 min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-4xl grid lg:grid-cols-12 gap-8 items-stretch">
         
-        {/* Left Column: Best One Value & Identity (Desktop) */}
-        <div className="hidden lg:flex lg:col-span-5 p-8 rounded-[16px] bg-white space-y-6 flex-col justify-between text-start border border-[#E5FBC9]">
+        {/* Left Column: Bestone Value & Identity (Desktop) */}
+        <div className="hidden lg:flex lg:col-span-5 p-8 rounded-[16px] bg-white space-y-6 flex-col justify-between text-start border border-[#ECEAE3]">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCFAB7] text-[#1F3A00] shadow-2xs text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-white shrink-0" />
-              <span>Best One Account</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E]  text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
+              <span>Bestone Account</span>
             </div>
             <h2 className="font-heading font-medium text-2xl text-ink-900 leading-tight">
               {title}
@@ -37,7 +37,7 @@ function AuthFrame({ children, title, subtitle }: { children: React.ReactNode; t
             </p>
           </div>
 
-          <div className="space-y-3 pt-6 border-t border-[#E5FBC9]">
+          <div className="space-y-3 pt-6 border-t border-[#ECEAE3]">
             <div className="flex items-center gap-2 text-xs font-medium text-ink-600">
               <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
               <span>Verified Customer & Admin Security</span>
@@ -49,7 +49,7 @@ function AuthFrame({ children, title, subtitle }: { children: React.ReactNode; t
         </div>
 
         {/* Right Column: Interactive Auth Form */}
-        <div className="lg:col-span-7 bg-white rounded-[16px] p-6 sm:p-10 space-y-6 text-start border border-[#E5FBC9]">
+        <div className="lg:col-span-7 bg-white rounded-[16px] p-6 sm:p-10 space-y-6 text-start border border-[#ECEAE3]">
           {children}
         </div>
 
@@ -136,7 +136,7 @@ export function LoginForm({ next }: { next?: string }) {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               required
-              className="w-full pl-10 pr-4 py-3 rounded-[16px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+              className="w-full pl-10 pr-4 py-3 rounded-[16px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
             />
           </div>
         </div>
@@ -156,7 +156,7 @@ export function LoginForm({ next }: { next?: string }) {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               required
-              className="w-full pl-10 pr-10 py-3 rounded-[16px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+              className="w-full pl-10 pr-10 py-3 rounded-[16px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
             />
             <button
               type="button"
@@ -171,15 +171,15 @@ export function LoginForm({ next }: { next?: string }) {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-3.5 px-6 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#E5FBC9]"
+          className="w-full py-3.5 px-6 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#ECEAE3]"
         >
           <span>{submitting ? "Signing in..." : "Sign In"}</span>
-          <ArrowRight className="w-4 h-4 text-white" />
+          <ArrowRight className="w-4 h-4 text-[#1D201E]" />
         </button>
       </form>
 
       <div className="relative py-2">
-        <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#E5FBC9]"></div></div>
+        <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#ECEAE3]"></div></div>
         <div className="relative flex justify-center text-xs font-mono text-ink-500 uppercase">
           <span className="bg-white px-3">or continue with</span>
         </div>
@@ -189,7 +189,7 @@ export function LoginForm({ next }: { next?: string }) {
         type="button"
         disabled={submitting}
         onClick={handleGoogleSubmit}
-        className="w-full py-3 px-6 rounded-full bg-[#F9FCF5] text-ink-600 font-medium text-base hover:bg-[#DCFAB7] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
+        className="w-full py-3 px-6 rounded-full bg-[#F6F5F1] text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
       >
         <GoogleMark />
         <span>Continue with Google</span>
@@ -264,7 +264,7 @@ export function RegisterForm() {
 
   return (
     <AuthFrame
-      title="Create your Best One Services account."
+      title="Create your Bestone Services account."
       subtitle="Join thousands of property owners and tenants across London managing cleaning, pest control, and removals online."
     >
       <div className="space-y-2">
@@ -287,7 +287,7 @@ export function RegisterForm() {
             onChange={(e) => setName(e.target.value)}
             placeholder="Jane Doe"
             required
-            className="w-full px-4 py-3 rounded-[16px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+            className="w-full px-4 py-3 rounded-[16px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
           />
         </div>
 
@@ -299,7 +299,7 @@ export function RegisterForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
             required
-            className="w-full px-4 py-3 rounded-[16px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+            className="w-full px-4 py-3 rounded-[16px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
           />
         </div>
 
@@ -313,7 +313,7 @@ export function RegisterForm() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Min 6 characters"
                 required
-                className="w-full pl-4 pr-10 py-3 rounded-[16px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+                className="w-full pl-4 pr-10 py-3 rounded-[16px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
               />
               <button
                 type="button"
@@ -333,7 +333,7 @@ export function RegisterForm() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Re-enter password"
               required
-              className="w-full px-4 py-3 rounded-[16px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+              className="w-full px-4 py-3 rounded-[16px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
             />
           </div>
         </div>
@@ -360,15 +360,15 @@ export function RegisterForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-3.5 px-6 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#E5FBC9]"
+          className="w-full py-3.5 px-6 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#ECEAE3]"
         >
           <span>{submitting ? "Creating account..." : "Create Account"}</span>
-          <ArrowRight className="w-4 h-4 text-white" />
+          <ArrowRight className="w-4 h-4 text-[#1D201E]" />
         </button>
       </form>
 
       <div className="relative py-2">
-        <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#E5FBC9]"></div></div>
+        <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#ECEAE3]"></div></div>
         <div className="relative flex justify-center text-xs font-mono text-ink-500 uppercase">
           <span className="bg-white px-3">or continue with</span>
         </div>
@@ -378,7 +378,7 @@ export function RegisterForm() {
         type="button"
         disabled={submitting}
         onClick={handleGoogleSubmit}
-        className="w-full py-3 px-6 rounded-full bg-[#F9FCF5] text-ink-600 font-medium text-base hover:bg-[#DCFAB7] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
+        className="w-full py-3 px-6 rounded-full bg-[#F6F5F1] text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
       >
         <GoogleMark />
         <span>Continue with Google</span>
@@ -424,7 +424,7 @@ export function ResetForm() {
 
   return (
     <AuthFrame
-      title="Reset your Best One password."
+      title="Reset your Bestone password."
       subtitle="Enter your verified email address and we'll send you an instant reset link."
     >
       <div className="space-y-2">
@@ -441,7 +441,7 @@ export function ResetForm() {
           </p>
           <Link
             href="/account/login"
-            className="inline-block px-6 py-2.5 rounded-full bg-[#1F3A00] text-[#B7F56A] text-sm font-semibold hover:bg-[#2d5004] text-decoration-none"
+            className="inline-block px-6 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] text-decoration-none"
           >
             Back to Sign In
           </Link>
@@ -462,17 +462,17 @@ export function ResetForm() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               required
-              className="w-full px-4 py-3 rounded-[16px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+              className="w-full px-4 py-3 rounded-[16px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
             />
           </div>
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-3.5 px-6 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#E5FBC9]"
+            className="w-full py-3.5 px-6 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#ECEAE3]"
           >
             <span>{submitting ? "Sending reset link..." : "Send Reset Link"}</span>
-            <ArrowRight className="w-4 h-4 text-white" />
+            <ArrowRight className="w-4 h-4 text-[#1D201E]" />
           </button>
 
           <div className="text-center text-sm text-ink-500 pt-2">

@@ -7,7 +7,7 @@ export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
 export function Skeleton({ className = "", ...props }: SkeletonProps) {
   return (
     <div
-      className={`bg-[#DCFAB7] animate-pulse rounded-[16px] ${className}`}
+      className={`bg-[#EAF8D6] animate-pulse rounded-[16px] ${className}`}
       {...props}
     />
   );
@@ -15,7 +15,7 @@ export function Skeleton({ className = "", ...props }: SkeletonProps) {
 
 export function SearchResultSkeleton() {
   return (
-    <div className="p-4 rounded-[16px] bg-white border border-[#B7F56A] space-y-2">
+    <div className="p-4 rounded-[16px] bg-white border border-[#ECEAE3] space-y-2">
       <Skeleton className="h-5 w-1/3" />
       <Skeleton className="h-4 w-3/4" />
     </div>

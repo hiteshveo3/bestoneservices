@@ -33,13 +33,13 @@ export function SwipeableServiceRail({ title, subtitle, items }: SwipeableServic
         {items.map((item, idx) => (
           <div
             key={idx}
-            className="snap-start shrink-0 w-[82vw] sm:w-auto bg-[#F9FCF5] rounded-[16px] p-6 border border-[#B7F56A] space-y-4 flex flex-col justify-between"
+            className="snap-start shrink-0 w-[82vw] sm:w-auto bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-4 flex flex-col justify-between"
           >
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase">{item.category}</span>
                 {item.badge && (
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium">
                     {item.badge}
                   </span>
                 )}
@@ -51,7 +51,7 @@ export function SwipeableServiceRail({ title, subtitle, items }: SwipeableServic
             <div className="pt-2">
               <Link
                 href={item.href}
-                className="w-full py-2.5 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] text-ink-600 font-medium text-sm hover:bg-[#DCFAB7] transition-colors duration-150 flex items-center justify-center gap-1.5 text-decoration-none"
+                className="w-full py-2.5 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-ink-600 font-medium text-sm hover:bg-[#EAF8D6] transition-colors duration-150 flex items-center justify-center gap-1.5 text-decoration-none"
               >
                 <span>View Service</span>
                 <ArrowRight className="w-4 h-4 text-ink-600 shrink-0" />

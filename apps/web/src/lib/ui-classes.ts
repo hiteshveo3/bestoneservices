@@ -6,11 +6,11 @@
  * buttons on this site are flat, and hover is an opacity shift only.
  */
 export const SECONDARY_BUTTON_CLASS =
-  "bg-white border border-[#B7F56A] text-[#1F3A00] hover:opacity-90 transition-opacity duration-150 cursor-pointer";
+  "bg-white border border-[#ECEAE3] text-[#1D201E] hover:opacity-90 transition-opacity duration-150 cursor-pointer";
 
 /**
  * Sidebar secondary Call Us button style across the entire site:
- * Soft mint-lime background (#DCFAB7) with lime border (#B7F56A) and dark green text (#1F3A00).
+ * Soft mint-lime background (#EAF8D6) with lime border (#B7F56A) and dark green text (#1D201E).
  */
 export const SIDEBAR_CALL_BUTTON_CLASS =
-  "bg-[#DCFAB7] border border-[#B7F56A] text-[#1F3A00] hover:bg-[#cbf79c] transition-colors duration-150 cursor-pointer";
+  "bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer";

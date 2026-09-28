@@ -1,5 +1,5 @@
 /**
- * Best One Services - Trusted Audit Logging Architecture
+ * Bestone Services - Trusted Audit Logging Architecture
  * Handles immutable, server-side security audit events (pricing changes, admin role grants, booking cancellations)
  */
 

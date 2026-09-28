@@ -43,10 +43,10 @@ export function BookingCalendar({
   };
 
   return (
-    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 border border-[#E5FBC9] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">
-          <CalendarIcon className="w-3.5 h-3.5 text-white shrink-0" />
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
+      <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+          <CalendarIcon className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
           <span>Preferred Schedule</span>
         </div>
         <h3 className="font-heading text-2xl font-medium text-ink-900">
@@ -64,14 +64,14 @@ export function BookingCalendar({
           <button
             type="button"
             onClick={() => handleDateChange(getTomorrowsDate())}
-            className={`px-4 py-2 rounded-full text-base font-medium border transition-colors duration-150 cursor-pointer ${ date === getTomorrowsDate() ? "bg-[#1F3A00] border-[#99D055] text-white font-medium" : "bg-[#F9FCF5] border-[#E5FBC9] text-[#1F3A00] hover:bg-[#DCFAB7]" }`}
+            className={`px-4 py-2 rounded-full text-base font-medium border transition-colors duration-150 cursor-pointer ${ date === getTomorrowsDate() ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E] font-medium" : "bg-[#F6F5F1] border-[#ECEAE3] text-[#1D201E] hover:bg-[#EAF8D6]" }`}
           >
             Tomorrow
           </button>
           <button
             type="button"
             onClick={() => handleDateChange(getWeekendSlot())}
-            className={`px-4 py-2 rounded-full text-base font-medium border transition-colors duration-150 cursor-pointer ${ date === getWeekendSlot() ? "bg-[#1F3A00] border-[#99D055] text-white font-medium" : "bg-[#F9FCF5] border-[#E5FBC9] text-[#1F3A00] hover:bg-[#DCFAB7]" }`}
+            className={`px-4 py-2 rounded-full text-base font-medium border transition-colors duration-150 cursor-pointer ${ date === getWeekendSlot() ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E] font-medium" : "bg-[#F6F5F1] border-[#ECEAE3] text-[#1D201E] hover:bg-[#EAF8D6]" }`}
           >
             This Weekend
           </button>
@@ -87,12 +87,12 @@ export function BookingCalendar({
           min={new Date().toISOString().split("T")[0]}
           value={date}
           onChange={(e) => handleDateChange(e.target.value)}
-          className="w-full sm:w-72 p-3.5 rounded-[16px] bg-[#F9FCF5] border border-[#E5FBC9] text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#99D055] cursor-pointer"
+          className="w-full sm:w-72 p-3.5 rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E] cursor-pointer"
         />
       </div>
 
       {/* Time Slot Selection */}
-      <div className="space-y-3 pt-2 border-t border-[#E5FBC9]">
+      <div className="space-y-3 pt-2 border-t border-[#ECEAE3]">
         <label className="text-sm font-mono text-ink-500 uppercase block">Arrival Time Window</label>
         <div className="grid sm:grid-cols-3 gap-3">
           {[
@@ -106,7 +106,7 @@ export function BookingCalendar({
                 key={slot.id}
                 type="button"
                 onClick={() => handleSlotChange(slot.id as "morning" | "afternoon" | "evening")}
-                className={`p-4 rounded-[16px] border transition-colors duration-150 text-start cursor-pointer space-y-1 ${ isSelected ? "bg-[#1F3A00] border-[#99D055] text-white " : "bg-[#F9FCF5] border-[#E5FBC9] text-[#1F3A00] hover:bg-[#DCFAB7]" }`}
+                className={`p-4 rounded-[16px] border transition-colors duration-150 text-start cursor-pointer space-y-1 ${ isSelected ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E] " : "bg-[#F6F5F1] border-[#ECEAE3] text-[#1D201E] hover:bg-[#EAF8D6]" }`}
               >
                 <div className="flex justify-between items-center font-heading font-medium text-base">
                   <span>{slot.label}</span>
@@ -123,7 +123,7 @@ export function BookingCalendar({
       </div>
 
       {/* Confirmation Disclosure Notice */}
-      <div className="p-4 rounded-[16px] bg-[#F9FCF5] border border-[#E5FBC9] flex items-start gap-2.5 text-sm text-ink-500">
+      <div className="p-4 rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] flex items-start gap-2.5 text-sm text-ink-500">
         <AlertCircle className="w-5 h-5 text-ink-600 shrink-0 mt-0.5" />
         <div>
           <span className="font-medium text-ink-600">Confirmation Process: </span>

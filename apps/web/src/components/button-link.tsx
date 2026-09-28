@@ -13,14 +13,14 @@ function variantClasses(variant: ButtonVariant): string {
   switch (variant) {
     case "primary":
     case "white":
-      return "bg-[#B7F56A] text-[#1F3A00] border-none";
+      return "bg-[#B7F56A] text-[#1D201E] border-none";
     case "dark":
-      return "bg-[#1F3A00] text-[#B7F56A] border-none";
+      return "bg-[#B7F56A] text-[#1D201E] border-none";
     case "glass":
-      return "bg-[#DCFAB7] text-[#1F3A00] border-none";
+      return "bg-[#EAF8D6] text-[#1D201E] border-none";
     case "secondary":
     case "outline":
-      return "bg-[#DCFAB7] text-[#1F3A00] border-none";
+      return "bg-[#EAF8D6] text-[#1D201E] border-none";
   }
 }
 

@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   description: "Professional End of Tenancy Cleaning across Greater London from £130. Flat-rate pricing based on property size, backed by our 48-Hour Re-Clean Guarantee.",
   alternates: { canonical: "/cleaning-services/end-of-tenancy-cleaning/" },
   openGraph: {
-    title: "End of Tenancy Cleaning London | From £130 | Best One Services",
+    title: "End of Tenancy Cleaning London | From £130 | Bestone Services",
     description: "Professional End of Tenancy Cleaning across Greater London from £130. Flat-rate pricing based on property size, backed by our 48-Hour Re-Clean Guarantee.",
     url: "https://www.bestoneservices.co.uk/cleaning-services/end-of-tenancy-cleaning/",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "End of Tenancy Cleaning London | From £130 | Best One Services",
+    title: "End of Tenancy Cleaning London | From £130 | Bestone Services",
     description: "Professional End of Tenancy Cleaning across Greater London from £130. Flat-rate pricing based on property size, backed by our 48-Hour Re-Clean Guarantee.",
   },
 };

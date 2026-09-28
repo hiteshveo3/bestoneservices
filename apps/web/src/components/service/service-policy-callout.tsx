@@ -16,27 +16,27 @@ const TYPE_CONFIG: Record<PolicyType, { badgeText: string; icon: typeof ShieldCh
   guarantee: {
     badgeText: "VERIFIED GUARANTEE",
     icon: ShieldCheck,
-    style: "bg-white border-[#99D055] border-2",
+    style: "bg-white border-[#ECEAE3] border-2",
   },
   minimumCharge: {
     badgeText: "MINIMUM CHARGE POLICY",
     icon: PoundSterling,
-    style: "bg-white border-[#E5FBC9]",
+    style: "bg-white border-[#ECEAE3]",
   },
   surcharge: {
     badgeText: "SURCHARGE INFORMATION",
     icon: Clock,
-    style: "bg-white border-[#E5FBC9]",
+    style: "bg-white border-[#ECEAE3]",
   },
   importantCondition: {
     badgeText: "SERVICE CONDITION",
     icon: AlertCircle,
-    style: "bg-white border-[#E5FBC9]",
+    style: "bg-white border-[#ECEAE3]",
   },
   customQuoteRule: {
     badgeText: "CUSTOM ASSESSOR POLICY",
     icon: Info,
-    style: "bg-white border-[#E5FBC9]",
+    style: "bg-white border-[#ECEAE3]",
   },
 };
 
@@ -45,9 +45,9 @@ export function ServicePolicyCallout({ type, title, description, ruleTag }: Serv
   const Icon = config.icon;
 
   return (
-    <SectionReveal className={`p-6 sm:p-8 rounded-[16px] space-y-3 text-start ${config.style} border border-[#E5FBC9]`}>
+    <SectionReveal className={`p-6 sm:p-8 rounded-[16px] space-y-3 text-start ${config.style} border border-[#ECEAE3]`}>
       <div className="flex items-center justify-between gap-2">
-        <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">
+        <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
           {ruleTag || config.badgeText}
         </span>
         <Icon className="w-5 h-5 text-ink-600 shrink-0" />

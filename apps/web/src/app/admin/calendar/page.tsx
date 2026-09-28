@@ -90,7 +90,7 @@ export default function AdminDispatchCalendarPage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER BAR */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-mono font-medium uppercase text-ink-500">DISPATCH & SCHEDULING WORKSPACE</span>
@@ -100,15 +100,15 @@ export default function AdminDispatchCalendarPage() {
 
           <Link
             href="/admin/staff"
-            className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-xs hover:bg-[#2d5004] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer text-decoration-none border border-[#E5FBC9]"
+            className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs hover:bg-[#A2EA4E] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer text-decoration-none border border-[#ECEAE3]"
           >
-            <Users className="w-4 h-4 text-white" />
+            <Users className="w-4 h-4 text-[#1D201E]" />
             <span>Manage Staff Roster</span>
           </Link>
         </div>
 
         {/* CATEGORY FILTER TABS */}
-        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#E5FBC9]">
+        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#ECEAE3]">
           {[
             { id: "all", label: "All Categories" },
             { id: "cleaning", label: "Cleaning Services" },
@@ -120,7 +120,7 @@ export default function AdminDispatchCalendarPage() {
               key={tab.id}
               type="button"
               onClick={() => setCategoryFilter(tab.id as "all" | "cleaning" | "pest" | "gardening" | "removals")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ categoryFilter === tab.id ? "bg-[#1F3A00] text-white font-medium " : "bg-[#F9FCF5] text-ink-500 hover:text-[#1F3A00]" } border border-[#E5FBC9]`}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ categoryFilter === tab.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-[#F6F5F1] text-ink-500 hover:text-[#1D201E]" } border border-[#ECEAE3]`}
             >
               {tab.label}
             </button>
@@ -138,7 +138,7 @@ export default function AdminDispatchCalendarPage() {
 
       {/* DISPATCH BOARD GRID */}
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Loading dispatch calendar & staff roster...</p>
         </div>
@@ -146,8 +146,8 @@ export default function AdminDispatchCalendarPage() {
         <div className="grid lg:grid-cols-12 gap-6">
           
           {/* UNASSIGNED JOBS QUEUE (4 Cols) */}
-          <div className="lg:col-span-4 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="lg:col-span-4 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <span className="text-xs font-mono font-medium uppercase text-ink-500">UNASSIGNED QUEUE</span>
               <span className="px-2.5 py-0.5 rounded-full bg-warning-50 text-warning-900 text-[10px] font-mono font-medium">
                 {unassignedBookings.length} PENDING
@@ -159,11 +159,11 @@ export default function AdminDispatchCalendarPage() {
                 {unassignedBookings.map((b) => (
                   <div
                     key={b.id}
-                    className="p-4 rounded-[18px] bg-white space-y-2 border border-[#E5FBC9] text-xs font-mono"
+                    className="p-4 rounded-[18px] bg-white space-y-2 border border-[#ECEAE3] text-xs font-mono"
                   >
                     <div className="flex justify-between items-center">
                       <span className="font-medium text-ink-600">{b.reference}</span>
-                      <span className="px-2 py-0.5 rounded-full bg-[#F9FCF5] text-[10px] text-ink-500 uppercase font-medium">
+                      <span className="px-2 py-0.5 rounded-full bg-[#F6F5F1] text-[10px] text-ink-500 uppercase font-medium">
                         {b.categoryId}
                       </span>
                     </div>
@@ -175,7 +175,7 @@ export default function AdminDispatchCalendarPage() {
                     <button
                       type="button"
                       onClick={() => setSelectedBooking(b)}
-                      className="w-full py-2 rounded-[18px] bg-[#1F3A00] text-[#B7F56A] text-xs font-semibold hover:bg-[#2d5004] cursor-pointer transition-colors duration-150 border-none"
+                      className="w-full py-2 rounded-[18px] bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer transition-colors duration-150 border-none"
                     >
                       Assign Staff Lead →
                     </button>
@@ -184,15 +184,15 @@ export default function AdminDispatchCalendarPage() {
               </div>
             ) : (
               <div className="p-8 text-center space-y-2">
-                <CheckCircle2 className="w-8 h-8 text-[#1F3A00] mx-auto" />
+                <CheckCircle2 className="w-8 h-8 text-[#1D201E] mx-auto" />
                 <p className="text-xs font-medium text-ink-600">All appointments assigned!</p>
               </div>
             )}
           </div>
 
           {/* STAFF ROSTER & CAPACITY SCHEDULE (8 Cols) */}
-          <div className="lg:col-span-8 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="lg:col-span-8 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <span className="text-xs font-mono font-medium uppercase text-ink-500">FIELD STAFF CAPACITY SCHEDULER</span>
               <span className="text-xs font-mono text-ink-500">{staff.length} Technicians Active</span>
             </div>
@@ -207,7 +207,7 @@ export default function AdminDispatchCalendarPage() {
                     <div
                       key={stf.id}
                       className={`p-5 rounded-[18px] border space-y-3 ${
-                        capacityReached ? "bg-warning-50/50 border-warning-500" : "bg-white border-[#E5FBC9]"
+                        capacityReached ? "bg-warning-50/50 border-warning-500" : "bg-white border-[#ECEAE3]"
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -224,11 +224,11 @@ export default function AdminDispatchCalendarPage() {
                       </div>
 
                       {/* Jobs assigned to this technician */}
-                      <div className="space-y-1.5 pt-2 border-t border-[#E5FBC9]">
+                      <div className="space-y-1.5 pt-2 border-t border-[#ECEAE3]">
                         <span className="text-[10px] font-mono font-medium text-ink-500 uppercase block">Assigned Jobs</span>
                         {assignedJobs.length > 0 ? (
                           assignedJobs.map((job) => (
-                            <div key={job.id} className="p-2 rounded-[18px] bg-white text-[11px] font-mono flex justify-between items-center border border-[#E5FBC9]">
+                            <div key={job.id} className="p-2 rounded-[18px] bg-white text-[11px] font-mono flex justify-between items-center border border-[#ECEAE3]">
                               <span className="font-medium text-ink-600">{job.reference}</span>
                               <span className="text-ink-500">{job.scheduling?.requestedDate || ""}</span>
                             </div>
@@ -243,9 +243,9 @@ export default function AdminDispatchCalendarPage() {
               </div>
             ) : (
               <div className="p-10 text-center space-y-3">
-                <Users className="w-8 h-8 text-[#1F3A00] mx-auto" />
+                <Users className="w-8 h-8 text-[#1D201E] mx-auto" />
                 <p className="text-xs font-medium text-ink-600">No staff members configured in roster.</p>
-                <Link href="/admin/staff" className="px-4 py-2 rounded-full bg-[#1F3A00] text-white text-xs font-medium inline-block text-decoration-none">
+                <Link href="/admin/staff" className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-medium inline-block text-decoration-none">
                   Add First Staff Member
                 </Link>
               </div>
@@ -258,8 +258,8 @@ export default function AdminDispatchCalendarPage() {
       {/* MODAL: ASSIGN STAFF TO BOOKING */}
       {selectedBooking && (
         <div className="fixed inset-0 bg-ink-900/60 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-[18px] max-w-md w-full p-6 sm:p-8 space-y-6 text-start border border-[#E5FBC9]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="bg-white rounded-[18px] max-w-md w-full p-6 sm:p-8 space-y-6 text-start border border-[#ECEAE3]">
+            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
               <div>
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase">DISPATCH ASSIGNMENT</span>
                 <h3 className="font-heading font-medium text-lg text-ink-900">Assign Staff Member</h3>
@@ -280,7 +280,7 @@ export default function AdminDispatchCalendarPage() {
               </div>
             )}
 
-            <div className="p-4 rounded-[18px] bg-white space-y-1 text-xs font-mono border border-[#E5FBC9]">
+            <div className="p-4 rounded-[18px] bg-white space-y-1 text-xs font-mono border border-[#ECEAE3]">
               <span className="text-ink-500">Booking Reference:</span>
               <p className="font-medium text-ink-600">{selectedBooking.reference} ({selectedBooking.serviceNameSnapshot})</p>
             </div>
@@ -291,7 +291,7 @@ export default function AdminDispatchCalendarPage() {
                 <select
                   value={selectedStaffId}
                   onChange={(e) => setSelectedStaffId(e.target.value)}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                   required
                 >
                   <option value="">-- Choose Field Lead --</option>
@@ -306,7 +306,7 @@ export default function AdminDispatchCalendarPage() {
               <button
                 type="submit"
                 disabled={assigning || !selectedStaffId}
-                className="w-full py-3.5 rounded-full bg-[#1F3A00] text-[#B7F56A] text-xs font-semibold hover:bg-[#2d5004] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#E5FBC9]"
+                className="w-full py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#ECEAE3]"
               >
                 {assigning ? "Assigning Staff Lead..." : "Confirm Staff Assignment →"}
               </button>

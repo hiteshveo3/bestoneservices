@@ -29,15 +29,15 @@ export default function CategoryLandingPage() {
       </nav>
 
       {/* CATEGORY HERO */}
-      <div className="space-y-3 max-w-3xl border-b border-[#E5FBC9] pb-6">
-        <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">
+      <div className="space-y-3 max-w-3xl border-b border-[#ECEAE3] pb-6">
+        <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
           CATEGORY HUB
         </span>
         <h1 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight text-ink-900">
           {categoryLabel}
         </h1>
         <p className="text-lg text-ink-500">
-          Expert practical advice and property guidance written by Best One technicians.
+          Expert practical advice and property guidance written by Bestone technicians.
         </p>
       </div>
 
@@ -46,15 +46,15 @@ export default function CategoryLandingPage() {
         {posts.map((post) => (
           <article
             key={post.id}
-            className="bg-[#F9FCF5] rounded-[18px] p-6 border border-[#B7F56A] space-y-4 flex flex-col justify-between hover:border-ink-900 transition-colors duration-200 group"
+            className="bg-[#F6F5F1] rounded-[18px] p-6 border border-[#ECEAE3] space-y-4 flex flex-col justify-between hover:border-ink-900 transition-colors duration-200 group"
           >
             <div className="space-y-3">
-              <div className="relative rounded-[18px] overflow-hidden aspect-16/9 bg-[#F9FCF5] border border-[#E5FBC9]">
+              <div className="relative rounded-[18px] overflow-hidden aspect-16/9 bg-[#F6F5F1] border border-[#ECEAE3]">
                 <Image src={post.heroImage} alt={post.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover" />
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] text-xs font-mono font-medium text-ink-500">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-xs font-mono font-medium text-ink-500">
                   {post.categoryLabel}
                 </span>
                 <span className="text-xs font-mono text-ink-500 flex items-center gap-1">
@@ -72,7 +72,7 @@ export default function CategoryLandingPage() {
               <p className="text-sm text-ink-500 leading-relaxed line-clamp-3">{post.excerpt}</p>
             </div>
 
-            <div className="pt-3 border-t border-[#E5FBC9] flex items-center justify-between text-xs font-mono text-ink-500">
+            <div className="pt-3 border-t border-[#ECEAE3] flex items-center justify-between text-xs font-mono text-ink-500">
               <span className="font-medium text-ink-600">{post.author.name}</span>
               <ArrowRight className="w-4 h-4 text-ink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-150 shrink-0" />
             </div>

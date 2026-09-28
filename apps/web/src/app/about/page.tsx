@@ -9,7 +9,7 @@ import { SitewideIllustrationGrid } from "@/components/illustrations/sitewide-il
 
 export const metadata: Metadata = { 
   title: "About Us | Professional Property Services",
-  description: "Learn about Best One Services Ltd - your trusted multi-service property engine across London for Cleaning, Pest Control, Gardening, and Removals.", 
+  description: "Learn about Bestone Services Ltd - your trusted multi-service property engine across London for Cleaning, Pest Control, Gardening, and Removals.", 
   alternates: { canonical: "/about/" } 
 };
 
@@ -23,9 +23,9 @@ export default function AboutPage() {
       {/* 2. TRUST & CREDENTIALS GRID (White Cards on Canvas) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <StaggerGrid className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.06}>
-          <StaggerItem className="bg-[#F9FCF5] rounded-[24px] p-6 sm:p-8 border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 space-y-4">
-            <div className="w-12 h-12 rounded-[16px] bg-[#DCFAB7] flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6 text-[#1F3A00]" />
+          <StaggerItem className="bg-[#F6F5F1] rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 space-y-4">
+            <div className="w-12 h-12 rounded-[16px] bg-[#EAF8D6] flex items-center justify-center">
+              <ShieldCheck className="w-6 h-6 text-[#1D201E]" />
             </div>
             <h3 className="font-heading text-xl font-medium text-ink-900">Fully Licensed & Insured</h3>
             <p className="text-base text-ink-500 leading-relaxed">
@@ -33,9 +33,9 @@ export default function AboutPage() {
             </p>
           </StaggerItem>
 
-          <StaggerItem className="bg-[#F9FCF5] rounded-[24px] p-6 sm:p-8 border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 space-y-4">
-            <div className="w-12 h-12 rounded-[16px] bg-[#DCFAB7] flex items-center justify-center">
-              <Award className="w-6 h-6 text-[#1F3A00]" />
+          <StaggerItem className="bg-[#F6F5F1] rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 space-y-4">
+            <div className="w-12 h-12 rounded-[16px] bg-[#EAF8D6] flex items-center justify-center">
+              <Award className="w-6 h-6 text-[#1D201E]" />
             </div>
             <h3 className="font-heading text-xl font-medium text-ink-900">48-Hour Re-Clean Guarantee</h3>
             <p className="text-base text-ink-500 leading-relaxed">
@@ -43,9 +43,9 @@ export default function AboutPage() {
             </p>
           </StaggerItem>
 
-          <StaggerItem className="bg-[#F9FCF5] rounded-[24px] p-6 sm:p-8 border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 space-y-4">
-            <div className="w-12 h-12 rounded-[16px] bg-[#DCFAB7] flex items-center justify-center">
-              <MapPin className="w-6 h-6 text-[#1F3A00]" />
+          <StaggerItem className="bg-[#F6F5F1] rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 space-y-4">
+            <div className="w-12 h-12 rounded-[16px] bg-[#EAF8D6] flex items-center justify-center">
+              <MapPin className="w-6 h-6 text-[#1D201E]" />
             </div>
             <h3 className="font-heading text-xl font-medium text-ink-900">Greater London Coverage</h3>
             <p className="text-base text-ink-500 leading-relaxed">
@@ -53,9 +53,9 @@ export default function AboutPage() {
             </p>
           </StaggerItem>
 
-          <StaggerItem className="bg-[#F9FCF5] rounded-[24px] p-6 sm:p-8 border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 space-y-4">
-            <div className="w-12 h-12 rounded-[16px] bg-[#DCFAB7] flex items-center justify-center">
-              <CheckCircle2 className="w-6 h-6 text-[#1F3A00]" />
+          <StaggerItem className="bg-[#F6F5F1] rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 space-y-4">
+            <div className="w-12 h-12 rounded-[16px] bg-[#EAF8D6] flex items-center justify-center">
+              <CheckCircle2 className="w-6 h-6 text-[#1D201E]" />
             </div>
             <h3 className="font-heading text-xl font-medium text-ink-900">Deterministic Pricing</h3>
             <p className="text-base text-ink-500 leading-relaxed">
@@ -77,8 +77,8 @@ export default function AboutPage() {
 
       {/* 3. REGISTERED OFFICE & COMPANY DETAILS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionReveal className="bg-[#F9FCF5] rounded-[24px] p-8 sm:p-12 border border-[#B7F56A] shadow-2xs space-y-4">
-          <span className="px-3.5 py-1 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-xs font-mono font-semibold uppercase tracking-wider">
+        <SectionReveal className="bg-[#F6F5F1] rounded-[24px] p-8 sm:p-12 border border-[#ECEAE3]  space-y-4">
+          <span className="px-3.5 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E] text-xs font-mono font-semibold uppercase tracking-wider">
             REGISTERED COMPANY INFORMATION
           </span>
           <h2 className="font-heading text-3xl font-medium text-ink-900">{siteConfig.name} Ltd</h2>
@@ -91,27 +91,27 @@ export default function AboutPage() {
 
       {/* 4. FINAL BRAND CTA SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <SectionReveal className="brand-cta-section p-8 sm:p-14 text-center space-y-6 relative overflow-hidden rounded-[28px] border border-[#3A5C13]">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-sm font-mono font-semibold uppercase tracking-wider">
-            <Sparkles className="w-4 h-4 text-[#1F3A00]" />
+        <SectionReveal className="brand-cta-section p-8 sm:p-14 text-center space-y-6 relative overflow-hidden rounded-[28px] border border-[#ECEAE3]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF8D6] text-[#1D201E] text-sm font-mono font-semibold uppercase tracking-wider">
+            <Sparkles className="w-4 h-4 text-[#1D201E]" />
             <span>LET&apos;S CARE FOR YOUR PROPERTY</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight max-w-3xl mx-auto text-[#F9FCF5]">
+          <h2 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight max-w-3xl mx-auto text-[#1D201E]">
             Have Questions or Need a Custom Quote?
           </h2>
 
-          <p className="text-lg text-[#DFFBBC] max-w-xl mx-auto font-normal">
+          <p className="text-lg text-[#1D201E] max-w-xl mx-auto font-normal">
             Our team is ready to discuss your property requirements and confirm your service details.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               href="/contact/" 
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none w-full sm:w-auto gap-2 cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none w-full sm:w-auto gap-2 cursor-pointer"
             >
               <span>Contact Support Team</span>
-              <ArrowRight className="w-5 h-5 text-[#1F3A00]" />
+              <ArrowRight className="w-5 h-5 text-[#1D201E]" />
             </Link>
           </div>
         </SectionReveal>

@@ -56,9 +56,9 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* HERO SECTION */}
-        <SectionReveal disabled className="bg-[#F9FCF5] rounded-[24px] p-8 sm:p-12 border border-[#B7F56A] shadow-2xs space-y-4">
-          <span className="px-3.5 py-1 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-xs font-mono font-semibold uppercase tracking-wider">
-            CONTACT BEST ONE SERVICES
+        <SectionReveal disabled className="bg-[#F6F5F1] rounded-[24px] p-8 sm:p-12 border border-[#ECEAE3]  space-y-4">
+          <span className="px-3.5 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E] text-xs font-mono font-semibold uppercase tracking-wider">
+            CONTACT BESTONE SERVICES
           </span>
           <h1 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight text-ink-900">
             How Can We Help?
@@ -80,14 +80,14 @@ export default function ContactPage() {
             {/* 1. Book a Service */}
             <StaggerItem>
               <Link
-                href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
+                href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-full p-5 rounded-[20px] bg-white border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 flex flex-col justify-between space-y-4 text-decoration-none group"
+                className="h-full p-5 rounded-[20px] bg-white border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 flex flex-col justify-between space-y-4 text-decoration-none group"
               >
                 <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-                    <Calendar className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+                    <Calendar className="w-5 h-5 text-[#1D201E]" />
                   </div>
                   <h3 className="font-heading font-medium text-lg text-ink-900 group-hover:underline">Book a Service</h3>
                   <p className="text-xs text-ink-500">Request a new cleaning, pest, or removal slot via WhatsApp</p>
@@ -103,11 +103,11 @@ export default function ContactPage() {
             <StaggerItem>
               <Link
                 href="/prices/"
-                className="h-full p-5 rounded-[20px] bg-white border border-[#B7F56A] shadow-2xs hover:border-[#1F3A00] transition-colors duration-200 flex flex-col justify-between space-y-4 text-decoration-none group"
+                className="h-full p-5 rounded-[20px] bg-white border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 flex flex-col justify-between space-y-4 text-decoration-none group"
               >
                 <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-                    <PoundSterling className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+                    <PoundSterling className="w-5 h-5 text-[#1D201E]" />
                   </div>
                   <h3 className="font-heading font-medium text-lg text-ink-900 group-hover:underline">Get Pricing Help</h3>
                   <p className="text-xs text-ink-500">Calculate upfront estimates or view starting rates</p>
@@ -124,11 +124,11 @@ export default function ContactPage() {
               <button
                 type="button"
                 onClick={() => { setSelectedIntent("existing"); setSubmittedRef(null); }}
-                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer shadow-2xs ${ selectedIntent === "existing" ? "bg-[#1F3A00] text-[#B7F56A] font-medium border-[#1F3A00]" : "bg-[#F9FCF5] text-ink-700 border-[#E5FBC9] hover:bg-[#F9FCF5]" } border border-[#B7F56A]`}
+                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer  ${ selectedIntent === "existing" ? "bg-[#B7F56A] text-[#1D201E] font-medium border-[#1D201E]" : "bg-[#F6F5F1] text-ink-700 border-[#ECEAE3] hover:bg-[#F6F5F1]" } border border-[#ECEAE3]`}
               >
                 <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-                    <Clock className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+                    <Clock className="w-5 h-5 text-[#1D201E]" />
                   </div>
                   <h3 className="font-heading font-medium text-lg">Existing Booking</h3>
                   <p className="text-xs opacity-80">Change date, update details or track status</p>
@@ -145,11 +145,11 @@ export default function ContactPage() {
               <button
                 type="button"
                 onClick={() => { setSelectedIntent("guarantee"); setSubmittedRef(null); }}
-                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer shadow-2xs ${ selectedIntent === "guarantee" ? "bg-[#1F3A00] text-[#B7F56A] font-medium border-[#1F3A00]" : "bg-[#F9FCF5] text-ink-700 border-[#E5FBC9] hover:bg-[#F9FCF5]" } border border-[#B7F56A]`}
+                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer  ${ selectedIntent === "guarantee" ? "bg-[#B7F56A] text-[#1D201E] font-medium border-[#1D201E]" : "bg-[#F6F5F1] text-ink-700 border-[#ECEAE3] hover:bg-[#F6F5F1]" } border border-[#ECEAE3]`}
               >
                 <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-                    <ShieldCheck className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+                    <ShieldCheck className="w-5 h-5 text-[#1D201E]" />
                   </div>
                   <h3 className="font-heading font-medium text-lg">Guarantee Support</h3>
                   <p className="text-xs opacity-80">48-Hour Re-Clean or Pest Warranty help</p>
@@ -166,11 +166,11 @@ export default function ContactPage() {
               <button
                 type="button"
                 onClick={() => { setSelectedIntent("general"); setSubmittedRef(null); }}
-                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer shadow-2xs ${ selectedIntent === "general" ? "bg-[#1F3A00] text-[#B7F56A] font-medium border-[#1F3A00]" : "bg-[#F9FCF5] text-ink-700 border-[#E5FBC9] hover:bg-[#F9FCF5]" } border border-[#B7F56A]`}
+                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer  ${ selectedIntent === "general" ? "bg-[#B7F56A] text-[#1D201E] font-medium border-[#1D201E]" : "bg-[#F6F5F1] text-ink-700 border-[#ECEAE3] hover:bg-[#F6F5F1]" } border border-[#ECEAE3]`}
               >
                 <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-                    <HelpCircle className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+                    <HelpCircle className="w-5 h-5 text-[#1D201E]" />
                   </div>
                   <h3 className="font-heading font-medium text-lg">General Enquiry</h3>
                   <p className="text-xs opacity-80">General support questions or commercial enquiries</p>
@@ -186,9 +186,9 @@ export default function ContactPage() {
         </SectionReveal>
 
         {/* INTENT-SPECIFIC DYNAMIC FORM */}
-        <SectionReveal className="bg-[#F9FCF5] rounded-[24px] p-8 sm:p-12 border border-[#B7F56A] shadow-2xs space-y-6">
+        <SectionReveal className="bg-[#F6F5F1] rounded-[24px] p-8 sm:p-12 border border-[#ECEAE3]  space-y-6">
           {submittedRef ? (
-            <div className="form-status-in p-8 rounded-[18px] bg-[#F9FCF5] border-none space-y-4 text-center" role="status">
+            <div className="form-status-in p-8 rounded-[18px] bg-[#F6F5F1] border-none space-y-4 text-center" role="status">
               <CheckCircle2 className="form-check-pop w-12 h-12 text-ink-600 mx-auto" />
               <h3 className="font-heading text-2xl font-medium text-ink-900">Support Request Received</h3>
               <p className="text-base text-ink-500">
@@ -197,7 +197,7 @@ export default function ContactPage() {
               <button
                 type="button"
                 onClick={() => setSubmittedRef(null)}
-                className="px-6 py-2.5 rounded-full bg-[#1F3A00] text-[#B7F56A] text-sm font-semibold hover:bg-[#2d5004] cursor-pointer border-none"
+                className="px-6 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] cursor-pointer border-none"
               >
                 Send Another Message
               </button>
@@ -227,7 +227,7 @@ export default function ContactPage() {
                       name="message"
                       required
                       placeholder="Please describe what you would like to update or check regarding your booking..."
-                      className="w-full p-3.5 rounded-[18px] bg-[#F9FCF5] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+                      className="w-full p-3.5 rounded-[18px] bg-[#F6F5F1] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                     />
                   </div>
                 </>
@@ -257,7 +257,7 @@ export default function ContactPage() {
                       name="message"
                       required
                       placeholder="Describe the area or issue requiring re-attendance or guarantee support..."
-                      className="w-full p-3.5 rounded-[18px] bg-[#F9FCF5] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+                      className="w-full p-3.5 rounded-[18px] bg-[#F6F5F1] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                     />
                   </div>
                 </>
@@ -274,7 +274,7 @@ export default function ContactPage() {
                       name="message"
                       required
                       placeholder="How can our support team assist you today?"
-                      className="w-full p-3.5 rounded-[18px] bg-[#F9FCF5] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1F3A00]"
+                      className="w-full p-3.5 rounded-[18px] bg-[#F6F5F1] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                     />
                   </div>
                 </>
@@ -288,7 +288,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="px-8 py-4 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="px-8 py-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {submitting ? (
                   <>
@@ -310,9 +310,9 @@ export default function ContactPage() {
         <SectionReveal className="grid sm:grid-cols-4 gap-6">
           
           {/* Telephone Action */}
-          <div className="bg-[#F9FCF5] rounded-[20px] p-6 border border-[#B7F56A] shadow-2xs space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-              <Phone className="w-5 h-5 text-white" />
+          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
+            <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+              <Phone className="w-5 h-5 text-[#1D201E]" />
             </div>
             <div>
               <h4 className="font-heading font-medium text-lg text-ink-900">Direct Phone</h4>
@@ -320,16 +320,16 @@ export default function ContactPage() {
             </div>
             <a
               href={siteContact.phoneHref}
-              className="w-full py-2.5 px-4 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-sm hover:bg-[#2d5004] text-decoration-none flex items-center justify-center gap-2"
+              className="w-full py-2.5 px-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] text-decoration-none flex items-center justify-center gap-2"
             >
               <span>Call {siteContact.phoneDisplay}</span>
             </a>
           </div>
 
           {/* WhatsApp Action */}
-          <div className="bg-[#F9FCF5] rounded-[20px] p-6 border border-[#B7F56A] shadow-2xs space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-              <MessageSquare className="w-5 h-5 text-white" />
+          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
+            <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+              <MessageSquare className="w-5 h-5 text-[#1D201E]" />
             </div>
             <div>
               <h4 className="font-heading font-medium text-lg text-ink-900">WhatsApp Chat</h4>
@@ -346,8 +346,8 @@ export default function ContactPage() {
           </div>
 
           {/* Email Dispatch */}
-          <div className="bg-[#F9FCF5] rounded-[20px] p-6 border border-[#B7F56A] shadow-2xs space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#F9FCF5] text-[#1F3A00] border border-[#E5FBC9] flex items-center justify-center font-medium">
+          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
+            <div className="w-12 h-12 rounded-[14px] bg-[#F6F5F1] text-[#1D201E] border border-[#ECEAE3] flex items-center justify-center font-medium">
               <Mail className="w-5 h-5 text-ink-600" />
             </div>
             <div>
@@ -356,15 +356,15 @@ export default function ContactPage() {
             </div>
             <a
               href={`mailto:${siteContact.email}`}
-              className="w-full py-2.5 px-4 rounded-full bg-[#F9FCF5] text-ink-600 font-medium text-sm hover:bg-[#DCFAB7] text-decoration-none flex items-center justify-center gap-2"
+              className="w-full py-2.5 px-4 rounded-full bg-[#F6F5F1] text-ink-600 font-medium text-sm hover:bg-[#EAF8D6] text-decoration-none flex items-center justify-center gap-2"
             >
               <span>{siteContact.email}</span>
             </a>
           </div>
 
           {/* Registered Office */}
-          <div className="bg-[#F9FCF5] rounded-[20px] p-6 border border-[#B7F56A] shadow-2xs space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#F9FCF5] text-[#1F3A00] border border-[#E5FBC9] flex items-center justify-center font-medium">
+          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
+            <div className="w-12 h-12 rounded-[14px] bg-[#F6F5F1] text-[#1D201E] border border-[#ECEAE3] flex items-center justify-center font-medium">
               <MapPin className="w-5 h-5 text-ink-600" />
             </div>
             <div>

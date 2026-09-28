@@ -25,7 +25,7 @@ export function ServiceGuidesSection({
   return (
     <section className="space-y-8 text-start">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-ink-100 border border-[#E5FBC9] text-ink-600 text-base font-medium">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-base font-medium">
           <BookOpen className="w-4 h-4 text-ink-600 shrink-0" />
           <span>{badge}</span>
         </div>
@@ -39,9 +39,9 @@ export function ServiceGuidesSection({
           <Link
             key={idx}
             href={guide.href}
-            className="group bg-[#F8F9FA] rounded-[16px] p-5 border border-[#E5FBC9] space-y-4 transition-colors duration-150 cursor-pointer block text-decoration-none"
+            className="group bg-[#F6F5F1] rounded-[16px] p-5 border border-[#ECEAE3] space-y-4 transition-colors duration-150 cursor-pointer block text-decoration-none"
           >
-            <div className="relative rounded-[16px] overflow-hidden h-48 border border-[#E5FBC9]">
+            <div className="relative rounded-[16px] overflow-hidden h-48 border border-[#ECEAE3]">
               <Image
                 src={guide.image}
                 alt={guide.title}
@@ -49,7 +49,7 @@ export function ServiceGuidesSection({
                 sizes="(max-width: 640px) 100vw, 33vw"
                 className="object-cover"
               />
-              <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#F9FCF5]/95 text-ink-600 text-base font-medium border border-[#B7F56A]">
+              <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#F6F5F1]/95 text-ink-600 text-base font-medium border border-[#ECEAE3]">
                 {guide.tag}
               </span>
             </div>
@@ -61,7 +61,7 @@ export function ServiceGuidesSection({
               <p className="text-base text-ink-500 leading-relaxed">
                 {guide.excerpt}
               </p>
-              <div className="pt-3 flex items-center justify-between border-t border-[#E5FBC9] text-base font-medium text-ink-600">
+              <div className="pt-3 flex items-center justify-between border-t border-[#ECEAE3] text-base font-medium text-ink-600">
                 <span className="flex items-center gap-1.5 text-ink-500">
                   <User className="w-4 h-4 text-ink-600 shrink-0" />
                   <span>{guide.author}</span>

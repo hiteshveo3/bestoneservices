@@ -36,7 +36,7 @@ export function HeroService({
   const [postcode, setPostcode] = useState("");
 
   return (
-    <section className="relative pt-6 sm:pt-8 pb-14 bg-[#F9FCF5] text-start overflow-hidden">
+    <section className="relative pt-6 sm:pt-8 pb-14 bg-[#F6F5F1] text-start overflow-hidden">
       
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(to_right,#1f3a000d_1px,transparent_1px),linear-gradient(to_bottom,#1f3a000d_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_65%_65%_at_50%_50%,transparent_40%,#000_100%)]" />
@@ -52,29 +52,29 @@ export function HeroService({
             
             {/* 1. Eyebrow */}
             <SectionReveal disabled>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFAB7] border border-[#99D055] text-[#1F3A00] text-xs sm:text-sm font-bold uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-[#1F3A00] shrink-0" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-[#1D201E] shrink-0" aria-hidden="true" />
                 <span>{eyebrow}</span>
               </div>
             </SectionReveal>
 
             {/* 2. H1 Masked Reveal */}
-            <MaskedText as="h1" disabled className="font-heading text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#1F3A00] tracking-tight leading-[1.12]">
+            <MaskedText as="h1" disabled className="font-heading text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#1D201E] tracking-tight leading-[1.12]">
               {title}
             </MaskedText>
 
             {/* 3. Supporting Paragraph */}
             <SectionReveal disabled>
-              <p className="text-lg text-[#1F3A00] leading-relaxed max-w-xl font-normal">
+              <p className="text-lg text-[#1D201E] leading-relaxed max-w-xl font-normal">
                 {description}
               </p>
             </SectionReveal>
 
             {/* 4. Postcode / Bedroom Input (WCAG 2.1 Compliant) */}
             <SectionReveal disabled className="space-y-3 max-w-xl">
-              <div className="p-1.5 sm:p-2 rounded-[16px] sm:rounded-full flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-white border border-[#B7F56A] focus-within:ring-2 focus-within:ring-[#99D055] shadow-2xs">
+              <div className="p-1.5 sm:p-2 rounded-[16px] sm:rounded-full flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-white border border-[#ECEAE3] focus-within:ring-2 focus-within:ring-[#1D201E] ">
                 <div className="flex items-center gap-2 pl-3 sm:pl-4 w-full">
-                  <MapPin className="w-4 h-4 text-[#1F3A00] shrink-0" aria-hidden="true" />
+                  <MapPin className="w-4 h-4 text-[#1D201E] shrink-0" aria-hidden="true" />
                   <label htmlFor="service-hero-postcode" className="sr-only">
                     Enter property postcode or bedrooms for instant estimate
                   </label>
@@ -85,7 +85,7 @@ export function HeroService({
                     onChange={(e) => setPostcode(e.target.value)}
                     placeholder="Enter property postcode or bedrooms" 
                     aria-label="Enter property postcode or bedrooms for instant estimate"
-                    className="w-full py-2.5 sm:py-3 bg-transparent text-sm sm:text-base text-[#1F3A00] placeholder:text-[#4D7220] focus:outline-none font-normal text-start"
+                    className="w-full py-2.5 sm:py-3 bg-transparent text-sm sm:text-base text-[#1D201E] placeholder:text-[#5A605C] focus:outline-none font-normal text-start"
                   />
                 </div>
                 <ButtonLink 
@@ -98,25 +98,25 @@ export function HeroService({
                 </ButtonLink>
               </div>
 
-              <div className="text-sm text-[#1F3A00] font-medium ps-2 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#99D055] inline-block shrink-0" aria-hidden="true"></span>
+              <div className="text-sm text-[#1D201E] font-medium ps-2 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#A2EA4E] inline-block shrink-0" aria-hidden="true"></span>
                 <span>{guaranteeText} • {coverageText}</span>
               </div>
             </SectionReveal>
 
             {/* 5. Metrics Cards Stagger */}
             <StaggerGrid disabled className="pt-4 grid grid-cols-3 gap-3" staggerDelay={0.07}>
-              <StaggerItem className="bg-[#F9FCF5] rounded-[16px] p-4 border border-[#B7F56A] text-start space-y-0.5 shadow-2xs">
-                <div className="font-heading text-xl sm:text-2xl font-bold text-[#1F3A00]">{startingPrice}</div>
-                <div className="text-sm text-[#1F3A00] font-medium">{startingPriceLabel}</div>
+              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5 ">
+                <div className="font-heading text-xl sm:text-2xl font-bold text-[#1D201E]">{startingPrice}</div>
+                <div className="text-sm text-[#1D201E] font-medium">{startingPriceLabel}</div>
               </StaggerItem>
-              <StaggerItem className="bg-[#F9FCF5] rounded-[16px] p-4 border border-[#B7F56A] text-start space-y-0.5 shadow-2xs">
-                <div className="font-heading text-xl sm:text-2xl font-bold text-[#1F3A00]">48 Hours</div>
-                <div className="text-sm text-[#1F3A00] font-medium">Re-Clean Support</div>
+              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5 ">
+                <div className="font-heading text-xl sm:text-2xl font-bold text-[#1D201E]">48 Hours</div>
+                <div className="text-sm text-[#1D201E] font-medium">Re-Clean Support</div>
               </StaggerItem>
-              <StaggerItem className="bg-[#F9FCF5] rounded-[16px] p-4 border border-[#B7F56A] text-start space-y-0.5 shadow-2xs">
-                <div className="font-heading text-xl sm:text-2xl font-bold text-[#1F3A00]">London</div>
-                <div className="text-sm text-[#1F3A00] font-medium">Service Coverage</div>
+              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5 ">
+                <div className="font-heading text-xl sm:text-2xl font-bold text-[#1D201E]">London</div>
+                <div className="text-sm text-[#1D201E] font-medium">Service Coverage</div>
               </StaggerItem>
             </StaggerGrid>
 
@@ -135,11 +135,11 @@ export function HeroService({
               />
 
               {/* Overlay Badge */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 bg-[#F9FCF5]/95 backdrop-blur-md px-4 py-2 rounded-[16px] border border-[#B7F56A] flex items-center gap-3 text-start whitespace-nowrap shadow-2xs">
-                <div className="font-heading text-xs sm:text-sm font-bold text-[#1F3A00]">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 bg-[#F6F5F1]/95 backdrop-blur-md px-4 py-2 rounded-[16px] border border-[#ECEAE3] flex items-center gap-3 text-start whitespace-nowrap ">
+                <div className="font-heading text-xs sm:text-sm font-bold text-[#1D201E]">
                   {overlayBadge}
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#DCFAB7] border border-[#99D055] text-[#1F3A00] text-[11px] font-mono font-bold">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-[11px] font-mono font-bold">
                   VERIFIED
                 </span>
               </div>

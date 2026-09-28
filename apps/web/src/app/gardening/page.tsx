@@ -18,8 +18,8 @@ export default function GardeningPage() {
       {/* Canvas Page Header Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
         <div className="space-y-6 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-xs font-mono font-semibold uppercase border border-[#E5FBC9]">
-            <Trees className="w-4 h-4 text-[#1F3A00]" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EAF8D6] text-[#1D201E] text-xs font-mono font-semibold uppercase border border-[#ECEAE3]">
+            <Trees className="w-4 h-4 text-[#1D201E]" />
             <span>GARDENING & CLEARANCE VERTICAL</span>
           </div>
 
@@ -32,7 +32,7 @@ export default function GardeningPage() {
           </p>
 
           <div className="pt-2 flex justify-center">
-            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like to book a gardening team with Best One Services.")} variant="dark">
+            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like to book a gardening team with Bestone Services.")} variant="dark">
               Book Gardening Team
             </ButtonLink>
           </div>
@@ -58,9 +58,9 @@ export default function GardeningPage() {
       {/* Feature Grid (White Cards on Canvas) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-[#F9FCF5] rounded-[24px] p-6 sm:p-8 border border-[#B7F56A] shadow-2xs space-y-4">
-            <div className="w-12 h-12 rounded-[16px] bg-[#DCFAB7] flex items-center justify-center font-medium">
-              <Trees className="w-6 h-6 text-[#1F3A00]" />
+          <div className="bg-[#F6F5F1] rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  space-y-4">
+            <div className="w-12 h-12 rounded-[16px] bg-[#EAF8D6] flex items-center justify-center font-medium">
+              <Trees className="w-6 h-6 text-[#1D201E]" />
             </div>
             <h3 className="font-heading text-xl font-medium text-ink-900">2-Gardener Team</h3>
             <p className="text-base text-ink-500 leading-relaxed">
@@ -68,9 +68,9 @@ export default function GardeningPage() {
             </p>
           </div>
 
-          <div className="bg-[#F9FCF5] rounded-[24px] p-6 sm:p-8 border border-[#B7F56A] shadow-2xs space-y-4">
-            <div className="w-12 h-12 rounded-[16px] bg-[#DCFAB7] flex items-center justify-center font-medium">
-              <Clock className="w-6 h-6 text-[#1F3A00]" />
+          <div className="bg-[#F6F5F1] rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  space-y-4">
+            <div className="w-12 h-12 rounded-[16px] bg-[#EAF8D6] flex items-center justify-center font-medium">
+              <Clock className="w-6 h-6 text-[#1D201E]" />
             </div>
             <h3 className="font-heading text-xl font-medium text-ink-900">Transparent Hourly Rates</h3>
             <p className="text-base text-ink-500 leading-relaxed">
@@ -78,9 +78,9 @@ export default function GardeningPage() {
             </p>
           </div>
 
-          <div className="bg-[#F9FCF5] rounded-[24px] p-6 sm:p-8 border border-[#B7F56A] shadow-2xs space-y-4">
-            <div className="w-12 h-12 rounded-[16px] bg-[#DCFAB7] flex items-center justify-center font-medium">
-              <ShieldCheck className="w-6 h-6 text-[#1F3A00]" />
+          <div className="bg-[#F6F5F1] rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  space-y-4">
+            <div className="w-12 h-12 rounded-[16px] bg-[#EAF8D6] flex items-center justify-center font-medium">
+              <ShieldCheck className="w-6 h-6 text-[#1D201E]" />
             </div>
             <h3 className="font-heading text-xl font-medium text-ink-900">Licensed Waste Removal</h3>
             <p className="text-base text-ink-500 leading-relaxed">
@@ -92,22 +92,22 @@ export default function GardeningPage() {
 
       {/* Final Brand CTA Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="brand-cta-section p-8 sm:p-14 text-center space-y-6 relative overflow-hidden rounded-[28px] border border-[#3A5C13]">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-base font-mono font-medium uppercase tracking-wider">
-            <Sparkles className="w-4 h-4 text-[#1F3A00]" />
+        <div className="brand-cta-section p-8 sm:p-14 text-center space-y-6 relative overflow-hidden rounded-[28px] border border-[#ECEAE3]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF8D6] text-[#1D201E] text-base font-mono font-medium uppercase tracking-wider">
+            <Sparkles className="w-4 h-4 text-[#1D201E]" />
             <span>EXPERT GARDENING & LANDSCAPING</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight max-w-3xl mx-auto text-[#F9FCF5]">
+          <h2 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight max-w-3xl mx-auto text-[#1D201E]">
             Ready to Refresh Your Garden Space?
           </h2>
 
-          <p className="text-lg text-[#DFFBBC] max-w-xl mx-auto font-normal">
+          <p className="text-lg text-[#1D201E] max-w-xl mx-auto font-normal">
             Book our 2-gardener team with transparent hourly rates and instant booking confirmation.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")} variant="white" className="w-full sm:w-auto">
+            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Bestone Services.")} variant="white" className="w-full sm:w-auto">
               Get Instant Quote Now
             </ButtonLink>
             <ButtonLink href="/contact/" variant="outline" className="w-full sm:w-auto" showArrow={false}>

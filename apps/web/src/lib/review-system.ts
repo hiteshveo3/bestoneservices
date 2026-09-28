@@ -27,7 +27,7 @@ export const REVIEWS_STORE: VerifiedReview[] = [
     category: "cleaning",
     rating: 5,
     date: "February 2026",
-    text: "Punctual, thorough, and professional. The 48-hour re-clean guarantee gave us great peace of mind. Highly recommend Best One for move-out cleaning.",
+    text: "Punctual, thorough, and professional. The 48-hour re-clean guarantee gave us great peace of mind. Highly recommend Bestone for move-out cleaning.",
     verifiedBooking: "End of Tenancy & Carpet Clean",
   },
   {

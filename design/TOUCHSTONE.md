@@ -4,10 +4,10 @@
 > In everyday English, the standard everything else is judged by.
 > Bestone → be·**stone**.
 
-This file is the source of truth for decisions. The live experiments are in
-`design/lab/`: `index.html` is the current lab (Lab 03, the library), with
-`01-name.html` and `02-directions.html` kept for the record. Tokens and
-components live in `design/lab/touchstone.css`.
+This file is the source of truth for decisions. The labs are in `design/lab/`
+(`01-name.html` to `03-library.html`, with the latest lab at `index.html`).
+In the app, tokens live at the top of `apps/web/src/app/globals.css` and the
+components in `apps/web/src/components/touchstone/`.
 When the system is settled, the components move into the app and are shown on a
 live `/touchstone` route, in the same way as Itqan's `/itqan`.
 
@@ -69,10 +69,17 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | 2026-09-28 | Booking combines lime wash (S50 B) with one question per screen (S50 C); S51–S54 kept | Lab 03 |
 | 2026-09-28 | FAQ as split with help (S55 B); page endings use the slim band (S58 A); footer, states S60–S61 and documents S62–S64 kept | Lab 03 |
 | 2026-09-28 | Data marks (meters, bars, counts) are charcoal; lime is only for selection and actions | Lab 04 |
+| 2026-09-28 | Date and time: the sundial — the day dial (R1 D) carrying the sun's position from the time-of-day cards (R1 C), with the morning/afternoon list as its accessible view | Lab 04 |
+| 2026-09-28 | Main button is solid lime (R2 A); selected states are solid lime too. Gradients stay for progress bars and background washes only | Lab 04 |
+| 2026-09-28 | Homepage headline uses two weights, no streak (R3 B) | Lab 04 |
+| 2026-09-28 | Prices on cards sit in the soft lime price tile (R4 C) | Lab 04 |
+| 2026-09-28 | Secondary buttons, text links and sizes kept as shown (R5) | Lab 04 |
+| 2026-09-28 | One icon set: Lucide, 1.75 stroke (Hugeicons to be phased out) | Build |
 
 ## Open
 
-- Lab 04 picks: date and time picker (R1), main button (R2), homepage headline (R3), card price style (R4), secondary buttons (R5).
+- A transparent logo file (SVG or PNG) for the header; until then the header shows the Bestone wordmark in type.
+- Footer trust badges ("100% Verified", "Licensed Professional Service") and FAQ claims ("2-hour dispatch", "32 boroughs") need the client's proof or removal.
 - Proofs from the client: CRRU-approved rodenticide certificate, waste carrier registration number, insurance (public liability, employer's liability, goods in transit), DBS checks.
 - Which phone number is official (020 8079 7336 on the site, 07729 861195 in directories).
 - Re-clean guarantee length: 48 hours today; competitors offer 72 hours or 7 days.
@@ -82,3 +89,18 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 
 - Labs are static pages in `design/lab/`, viewed through raw.githack from the `claude/sharp-hawking-iytf87` branch.
 - `vercel.json` and `apps/web/vercel.json` skip deployments for `claude/**` branches, so lab pushes cost no Vercel builds.
+
+## Build progress
+
+| Step | State |
+|---|---|
+| Tokens, fonts (Archivo + Albert Sans), shadows off, 12px controls | Done |
+| Site-wide colour migration: olive text → charcoal, dark fills → lime, mint lines → stone, lime text → charcoal (`design/touchstone-codemod.py`) | Done |
+| Brand name "Bestone" / "Bestone Services Ltd" in all copy and metadata | Done |
+| Components: Button, Price, PriceTile, PriceList, Facts, Plaque, Hallmarks, Stamp, Petals, FloorPlan, BigFacts, FaqSplit, SlimCta, Section | Done |
+| Header (info row, grouped phone menu), footer legal line, phone sticky bar | Done |
+| Homepage rebuilt from the library (S17, S24, S23, S35, S42, S40, S21, S38, S56, S57, S55, S58) | Done |
+| Service hub and service pages (S18, S19, S25–S27, S32, S37) | Next |
+| Booking with the sundial picker (S50 B+C, S51–S54) | Next |
+| Landlord page, documents (S62–S64), admin table (S33) | Later |
+| Live `/touchstone` component page | Later |

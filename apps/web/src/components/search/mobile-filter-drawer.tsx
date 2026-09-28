@@ -81,16 +81,16 @@ export function MobileFilterDrawer({
         role="dialog"
         aria-modal="true"
         aria-label="Filter services"
-        className="w-full max-w-md bg-white h-full flex flex-col shadow-sm drawer-in text-start"
+        className="w-full max-w-md bg-white h-full flex flex-col  drawer-in text-start"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-[#E5FBC9] bg-[#F9FCF5]">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-[#ECEAE3] bg-[#F6F5F1]">
           <div>
-            <h2 className="font-heading text-lg font-bold text-[#1F3A00]">
+            <h2 className="font-heading text-lg font-bold text-[#1D201E]">
               Filter Services
             </h2>
-            <p className="text-xs text-[#1F3A00]/60">
+            <p className="text-xs text-[#1D201E]/60">
               Refine by vertical, urgency, size and area
             </p>
           </div>
@@ -98,7 +98,7 @@ export function MobileFilterDrawer({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="w-9 h-9 rounded-full flex items-center justify-center bg-white border border-[#E5FBC9] text-[#1F3A00] hover:bg-[#B7F56A] transition-colors cursor-pointer"
+            className="w-9 h-9 rounded-full flex items-center justify-center bg-white border border-[#ECEAE3] text-[#1D201E] hover:bg-[#B7F56A] transition-colors cursor-pointer"
             aria-label="Close filter drawer"
           >
             <X className="w-5 h-5" />
@@ -123,11 +123,11 @@ export function MobileFilterDrawer({
         </div>
 
         {/* Sticky Apply Button Footer */}
-        <div className="p-4 border-t border-[#E5FBC9] bg-[#F9FCF5] shrink-0">
+        <div className="p-4 border-t border-[#ECEAE3] bg-[#F6F5F1] shrink-0">
           <button
             type="button"
             onClick={onClose}
-            className="w-full h-12 rounded-[14px] bg-[#B7F56A] hover:bg-[#a8eb58] text-[#1F3A00] font-semibold text-base shadow-2xs flex items-center justify-center gap-2 cursor-pointer transition-colors"
+            className="w-full h-12 rounded-[14px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] font-semibold text-base  flex items-center justify-center gap-2 cursor-pointer transition-colors"
           >
             <span>Show {resultCount} {resultCount === 1 ? "Result" : "Results"}</span>
           </button>

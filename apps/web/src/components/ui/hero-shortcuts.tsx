@@ -27,10 +27,10 @@ export function HeroShortcuts({ className = "" }: HeroShortcutsProps) {
             <Link
               key={sc.href}
               href={sc.href}
-              className="snap-start py-2.5 px-4 rounded-[16px] bg-white border border-[#B7F56A] hover:bg-[#DCFAB7]/20 hover:border-ink-900 transition-colors duration-200 flex items-center gap-2.5 text-[#1F3A00] text-decoration-none whitespace-nowrap font-medium text-base shrink-0 group"
+              className="snap-start py-2.5 px-4 rounded-[16px] bg-white border border-[#ECEAE3] hover:bg-[#EAF8D6]/20 hover:border-ink-900 transition-colors duration-200 flex items-center gap-2.5 text-[#1D201E] text-decoration-none whitespace-nowrap font-medium text-base shrink-0 group"
             >
-              <div className="w-6 h-6 rounded-[16px] bg-[#1F3A00] text-white flex items-center justify-center font-medium">
-                <Icon className="w-3.5 h-3.5 text-white" />
+              <div className="w-6 h-6 rounded-[16px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium">
+                <Icon className="w-3.5 h-3.5 text-[#1D201E]" />
               </div>
               <span>{sc.label}</span>
               <ArrowRight className="w-4 h-4 text-ink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-150 shrink-0" />
