@@ -82,7 +82,7 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 - A transparent logo file (SVG or PNG) for the header; until then the header shows the Bestone wordmark in type.
 - Footer trust badges ("100% Verified", "Licensed Professional Service") and FAQ claims ("2-hour dispatch", "32 boroughs") need the client's proof or removal.
 - Proofs from the client: CRRU-approved rodenticide certificate, waste carrier registration number, insurance (public liability, employer's liability, goods in transit), DBS checks.
-- Which phone number is official (020 8079 7336 on the site, 07729 861195 in directories).
+- ~~Which phone number is official~~ Answered by the client: calls on 020 8149 4328 (office) and 07884 510459 (mobile); WhatsApp on 07884 510459. Directory listings still show 07729 861195 and need updating outside the site.
 - Re-clean guarantee length: 48 hours today; competitors offer 72 hours or 7 days.
 - Before launch: redirect map for live URLs missing from the new build (carpet beetles, silverfish, moth, spider and others), and one host (www or bare) with the other redirected.
 

@@ -7,6 +7,7 @@ import { ServiceResultCard, ServiceResultCardSkeleton } from "./service-result-c
 import type { DirectoryService } from "@/content/service-directory";
 import type { ActiveChip } from "@/lib/use-service-filters";
 
+import { siteContact } from "@/config/site-contact";
 interface ResultsGridProps {
   services: DirectoryService[];
   isLoading?: boolean;
@@ -114,11 +115,11 @@ export function ResultsGrid({
             </div>
           </div>
           <a
-            href="tel:02080047788"
+            href={siteContact.phoneHref}
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[12px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] font-bold text-sm whitespace-nowrap transition-colors "
           >
             <Phone className="w-4 h-4" />
-            <span>Call 020 8004 7788</span>
+            <span>Call {siteContact.phoneDisplay}</span>
           </a>
         </div>
       )}

@@ -653,7 +653,7 @@ export function ServiceLayout({
         setPostcodeMessage(`Full coverage confirmed in ${clean}. Same-day and weekend slots available.`);
       } else {
         setPostcodeStatus("error");
-        setPostcodeMessage("We currently prioritize Greater London & M25 postcodes. Please call " + siteContact.phoneDisplay + " for custom dispatch.");
+        setPostcodeMessage("We currently prioritize Greater London & M25 postcodes. Please call " + siteContact.phoneDisplay + " or " + siteContact.mobileDisplay + " for custom dispatch.");
       }
     }, 450);
   };

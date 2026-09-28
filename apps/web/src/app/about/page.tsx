@@ -75,7 +75,7 @@ export default function AboutPage() {
                 ["Registered name", siteContact.companyName],
                 ["Company number", "15574809"],
                 ["Registered office", siteContact.address.formatted],
-                ["Phone", siteContact.phoneDisplay],
+                ["Phone", `${siteContact.phoneDisplay} · ${siteContact.mobileDisplay}`],
                 ["Email", siteContact.email],
               ].map(([k, v]) => (
                 <div key={k} className="grid gap-1 px-3.5 py-2.5 sm:grid-cols-[180px_1fr] sm:gap-4">
