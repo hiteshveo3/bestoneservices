@@ -7,202 +7,269 @@
 <title>Bestone Design Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Archivo:wdth,wght@75..125,400..800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Archivo:wdth,wght@62..125,400..800&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
 <style>
-  /* Single light world by choice: Bestone has no dark sections. */
+  /* Lab chrome. Single light world: Bestone has no dark sections. */
   :root {
     color-scheme: light;
-    --stone: #F1F0EA;
-    --stone-deep: #E5E3DB;
-    --paper: #FFFFFF;
-    --ink: #1D201E;
-    --ink-muted: #595F5B;
-    --lime: #B7F56A;
-    --lime-soft: #E7F8D0;
-    --tile: #DAD6CB;
-
-    --f-ui: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-    --f-a: "Archivo", "Arial Narrow", Arial, sans-serif;
-    --f-b: "Bricolage Grotesque", "Trebuchet MS", Arial, sans-serif;
-    --f-c: "Albert Sans", "Segoe UI", Arial, sans-serif;
-
-    --r-panel: 24px;
-    --r-inner: 16px;
-    --r-small: 10px;
+    --lab-page: #F1F0EA;
+    --lab-deep: #E5E3DB;
+    --lab-paper: #FFFFFF;
+    --lab-ink: #1D201E;
+    --lab-muted: #595F5B;
+    --lab-lime: #B7F56A;
+    --lab-lime-soft: #E7F8D0;
+    --f-lab: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
   }
   * { box-sizing: border-box; }
-  body { background: var(--stone); color: var(--ink); font: 400 16px/1.6 var(--f-ui); }
+  body { margin: 0; background: var(--lab-page); color: var(--lab-ink); font: 400 16px/1.6 var(--f-lab); }
   h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
   p { margin: 0; }
   ul, ol, dl, dd { margin: 0; padding: 0; }
   li { list-style: none; }
+  img { max-width: 100%; display: block; }
+  button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--lab-ink); outline-offset: 2px; border-radius: 6px; }
 
-  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 88px; display: grid; gap: 56px; }
-
-  /* Top bar */
+  .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 88px; display: grid; gap: 48px; }
   .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
-  .brand { font-weight: 700; letter-spacing: -0.01em; font-size: 17px; }
-  .brand span { color: var(--ink-muted); font-weight: 500; }
+  .brand { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+  .brand span { color: var(--lab-muted); font-weight: 500; }
   .steps { display: flex; flex-wrap: wrap; gap: 6px; }
-  .steps li { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--stone-deep); color: var(--ink-muted); font-variant-numeric: tabular-nums; }
-  .steps li.on { background: var(--lime); color: var(--ink); }
+  .steps li { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--lab-deep); color: var(--lab-muted); }
+  .steps li.done { background: var(--lab-lime-soft); color: var(--lab-ink); }
+  .steps li.on { background: var(--lab-lime); color: var(--lab-ink); }
+  .steps a { color: inherit; text-decoration: none; }
 
-  /* Intro */
-  .intro { display: grid; gap: 20px; max-width: 760px; }
-  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+  .intro { display: grid; gap: 18px; max-width: 780px; }
+  .eyebrow, .label { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lab-muted); }
   .intro h1 { font-size: clamp(34px, 5.2vw, 54px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 700; }
-  .lead { font-size: 18px; color: var(--ink-muted); max-width: 64ch; }
+  .lead { font-size: 18px; color: var(--lab-muted); max-width: 64ch; }
 
-  /* Brief tiles */
-  .brief { display: grid; gap: 16px; }
-  .brief h2, .block-title { font-size: 22px; letter-spacing: -0.015em; font-weight: 700; }
-  .tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-  .tile { background: var(--paper); border-radius: var(--r-inner); padding: 18px; display: grid; gap: 6px; align-content: start; }
-  .tile b { font-size: 16px; }
-  .tile p { font-size: 14px; color: var(--ink-muted); line-height: 1.5; }
+  .locked { display: grid; gap: 14px; }
+  .locked h2, .block-title { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; }
+  .lock-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .lock-list li { background: var(--lab-paper); border-radius: 14px; padding: 14px 16px; font-size: 15px; display: grid; gap: 2px; }
+  .lock-list b { font-size: 15px; }
+  .lock-list span { color: var(--lab-muted); font-size: 14px; }
+  .lock-list li.drop { background: var(--lab-deep); }
 
-  /* Concepts */
-  .concept { background: var(--paper); border-radius: var(--r-panel); padding: clamp(20px, 3.4vw, 40px); display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(24px, 3.6vw, 48px); align-items: start; }
-  .c-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 16px; }
-  .c-letter { font-size: 13px; font-weight: 700; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; background: var(--stone); flex: none; align-self: center; }
-  .c-name { font-size: clamp(38px, 5vw, 56px); line-height: 1; letter-spacing: -0.03em; }
-  .chip { font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: var(--lime); color: var(--ink); align-self: center; }
-  .c-body { display: grid; gap: 26px; margin-top: 22px; }
-  .c-meaning { font-size: 17px; }
-  .label { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
-  .fits { display: grid; gap: 8px; }
-  .fits li { padding-left: 20px; position: relative; }
-  .fits li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; border-radius: 2px; background: var(--lime); }
-  .philosophy { background: var(--stone); border-radius: var(--r-inner); padding: 20px 22px; display: grid; gap: 12px; }
-  .philosophy q { quotes: none; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
-  .philosophy ul { display: grid; gap: 6px; font-size: 15px; color: var(--ink-muted); }
-  .feel { display: flex; flex-wrap: wrap; gap: 6px; }
-  .feel li { font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--lime-soft); }
-  .looks { display: grid; gap: 4px; }
-  .looks div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 10px 12px; border-radius: var(--r-small); }
-  .looks div:nth-child(odd) { background: var(--stone); }
-  .looks dt { font-weight: 600; font-size: 14px; }
-  .looks dd { font-size: 15px; color: var(--ink-muted); }
-  .risk { font-size: 15px; color: var(--ink-muted); }
-  .risk b { color: var(--ink); }
+  /* Direction switcher */
+  .switch { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--lab-page); padding-block: 10px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .switch button { background: var(--lab-paper); border-radius: 14px; padding: 12px 14px; text-align: left; display: grid; gap: 2px; }
+  .switch button b { font-size: 16px; }
+  .switch button span { font-size: 13px; color: var(--lab-muted); line-height: 1.35; }
+  .switch button[aria-pressed="true"] { background: var(--lab-lime); }
+  .switch button[aria-pressed="true"] span { color: var(--lab-ink); }
 
-  .aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); display: grid; gap: 12px; }
-  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .sw { border-radius: var(--r-small); overflow: hidden; background: var(--stone); font-size: 12px; }
-  .sw i { display: block; height: 40px; }
+  /* ---------- Direction tokens ---------- */
+  .stage { --page: #F1F0EA; --surface: #FFFFFF; --surface-2: #E7E5DD; --ink: #1D201E; --muted: #5A605C; --lime: #B7F56A; --lime-soft: #E6F6CC; --plaque: var(--lime-soft);
+    --f-head: "Archivo", "Arial Narrow", Arial, sans-serif; --head-stretch: 82%; --head-weight: 650;
+    --f-body: "Albert Sans", "Segoe UI", Arial, sans-serif; --body-stretch: 100%;
+    --r-card: 16px; --r-ctl: 12px; --r-sm: 8px;
+    display: grid; gap: 20px; }
+  .stage[data-dir="2"] { --page: #FFFFFF; --surface: #F4F9EC; --surface-2: #E4F2D0; --ink: #1F3A00; --muted: #4A5E36; --lime-soft: #DDF5BD; --plaque: var(--lime);
+    --f-head: "Bricolage Grotesque", "Trebuchet MS", Arial, sans-serif; --head-stretch: 78%; --head-weight: 720;
+    --r-card: 22px; --r-ctl: 14px; --r-sm: 10px; }
+  .stage[data-dir="3"] { --page: #F6F5F1; --surface: #FFFFFF; --surface-2: #ECEAE3; --lime-soft: #EAF8D6; --plaque: var(--surface-2);
+    --head-stretch: 72%; --head-weight: 720;
+    --f-body: "Archivo", Arial, sans-serif; --body-stretch: 100%;
+    --r-card: 8px; --r-ctl: 8px; --r-sm: 6px; }
+  /* Hide what does not belong to the chosen direction; everything keeps its own display otherwise. */
+  .stage[data-dir="1"] :is(.only-2, .only-3),
+  .stage[data-dir="2"] :is(.only-1, .only-3),
+  .stage[data-dir="3"] :is(.only-1, .only-2, .not-3) { display: none; }
+
+  /* Direction info */
+  .dir-info { background: var(--lab-paper); border-radius: 24px; padding: clamp(20px, 3vw, 32px); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: start; }
+  .dir-info h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1; letter-spacing: -0.02em; font-family: var(--f-head); font-stretch: var(--head-stretch); font-weight: var(--head-weight); }
+  .dir-info .idea { font-size: 17px; margin-top: 12px; }
+  .traits { display: grid; gap: 4px; margin-top: 18px; }
+  .traits div { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 9px 12px; border-radius: 10px; font-size: 15px; }
+  .traits div:nth-child(odd) { background: var(--lab-page); }
+  .traits dt { font-weight: 600; font-size: 14px; }
+  .traits dd { color: var(--lab-muted); }
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .sw { border-radius: 10px; overflow: hidden; background: var(--lab-page); font-size: 12px; }
+  .sw i { display: block; height: 44px; }
   .sw span { display: block; padding: 6px 8px; line-height: 1.3; }
-  .sw span b { display: block; font-size: 12px; }
-  .sw span em { font-style: normal; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
-  .caption { font-size: 13px; color: var(--ink-muted); }
+  .sw b { display: block; }
+  .sw em { font-style: normal; color: var(--lab-muted); font-variant-numeric: tabular-nums; }
+  .type-sample { margin-top: 10px; background: var(--lab-page); border-radius: 12px; padding: 14px 16px; display: grid; gap: 4px; }
+  .type-sample .ts-head { font-family: var(--f-head); font-stretch: var(--head-stretch); font-weight: var(--head-weight); font-size: 30px; line-height: 1.05; letter-spacing: -0.02em; }
+  .type-sample .ts-body { font-family: var(--f-body); font-size: 15px; color: var(--lab-muted); }
 
-  /* ---------- Specimen A: Touchstone ---------- */
-  .spec { border-radius: var(--r-inner); padding: 24px; display: grid; gap: 18px; }
-  .spec-a { background: var(--stone); font-family: var(--f-a); }
-  .a-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); }
-  .a-head { font-size: clamp(26px, 3vw, 32px); line-height: 1.06; font-weight: 650; font-stretch: 88%; letter-spacing: -0.02em; }
-  .streak { background: linear-gradient(transparent 62%, var(--lime) 62%, var(--lime) 92%, transparent 92%); padding-inline: 2px; }
-  .a-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; background: var(--paper); border-radius: var(--r-small); padding: 14px 16px; }
-  .a-from { font-size: 14px; color: var(--ink-muted); }
-  .a-fig { font-size: 40px; font-weight: 700; font-stretch: 80%; line-height: 1; font-variant-numeric: tabular-nums lining-nums; }
-  .a-unit { font-size: 14px; color: var(--ink-muted); }
-  .marks { display: flex; gap: 8px; align-items: center; }
-  .mark { display: grid; place-items: center; height: 44px; font-weight: 700; font-size: 14px; font-stretch: 85%; background: var(--lime); color: var(--ink); }
+  /* Mock frame */
+  .mock { display: grid; gap: 10px; }
+  .mock-label { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+  .mock-label h3 { font-size: 18px; font-weight: 700; }
+  .mock-label p { font-size: 14px; color: var(--lab-muted); }
+  .canvas { background: var(--page); border-radius: 24px; padding: clamp(16px, 3vw, 36px); color: var(--ink); font-family: var(--f-body); font-stretch: var(--body-stretch); }
+
+  /* Shared mock atoms */
+  .h { font-family: var(--f-head); font-stretch: var(--head-stretch); font-weight: var(--head-weight); letter-spacing: -0.02em; line-height: 1.02; }
+  .m-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .muted { color: var(--muted); }
+  .fig { font-family: var(--f-head); font-stretch: 78%; font-weight: 700; font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.01em; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding-inline: 20px; border-radius: var(--r-ctl); font-weight: 600; font-size: 16px; white-space: nowrap; }
+  .btn-primary { background: var(--lime); color: var(--ink); }
+  .btn-quiet { background: var(--surface-2); color: var(--ink); }
+  .streak { background: linear-gradient(transparent 60%, var(--lime) 60%, var(--lime) 92%, transparent 92%); padding-inline: 2px; }
+  .stage[data-dir="2"] .streak { background: var(--lime); border-radius: 6px; padding-inline: 6px; }
+  .plq { width: 34px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 17px 17px 6px 6px; background: var(--plaque); color: var(--ink); font-family: var(--f-head); font-stretch: 85%; font-weight: 700; font-size: 18px; font-variant-numeric: lining-nums; }
+  .stage[data-dir="3"] .plq { border-radius: 6px; }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(20px, 3vw, 40px); }
+  .h-copy { display: grid; gap: 18px; align-content: start; }
+  .h-copy .h { font-size: clamp(36px, 5vw, 60px); }
+  .stage[data-dir="3"] .h-copy .h { font-size: clamp(40px, 5.6vw, 68px); }
+  .h-lead { font-size: 18px; color: var(--muted); max-width: 52ch; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 8px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; }
+  .facts li { display: flex; align-items: center; gap: 8px; }
+  .facts li::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--lime); flex: none; }
+  .facts b { font-variant-numeric: tabular-nums; }
+  .h-photo { position: relative; border-radius: var(--r-card); overflow: hidden; background: var(--surface-2); min-height: 280px; }
+  .h-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+  .hallmarks { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .mark { display: grid; place-items: center; height: 44px; font-family: var(--f-head); font-stretch: 82%; font-weight: 700; font-size: 14px; background: var(--lime); color: var(--ink); }
   .m-shield { width: 40px; clip-path: polygon(0 0, 100% 0, 100% 58%, 50% 100%, 0 58%); padding-bottom: 8px; }
   .m-oct { width: 44px; clip-path: polygon(22% 0, 78% 0, 100% 22%, 100% 78%, 78% 100%, 22% 100%, 0 78%, 0 22%); background: var(--lime-soft); }
   .m-oval { width: 56px; border-radius: 50%; }
   .m-sq { width: 44px; border-radius: 6px; background: var(--lime-soft); }
-  .record { display: grid; gap: 2px; font-size: 14px; }
-  .record div { display: grid; grid-template-columns: 78px 1fr; gap: 10px; padding: 8px 12px; border-radius: 8px; }
-  .record div:nth-child(odd) { background: var(--paper); }
-  .record dt { color: var(--ink-muted); }
-  .record dd { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .hallmarks small { font-size: 13px; color: var(--muted); }
 
-  /* ---------- Specimen B: Sorted ---------- */
-  .spec-b { background: var(--stone); font-family: var(--f-b); }
-  .spec-b .inner { background: var(--paper); border-radius: 20px; padding: 22px; display: grid; gap: 16px; }
-  .b-head { font-size: clamp(28px, 3.2vw, 34px); line-height: 1.02; font-weight: 750; letter-spacing: -0.03em; font-variation-settings: "opsz" 72; }
-  .b-sub { font-size: 16px; color: var(--ink-muted); }
+  .price-index { margin-top: clamp(16px, 2.4vw, 28px); display: grid; gap: 10px; }
+  .stage[data-dir="2"] .price-index { background: var(--lime-soft); border-radius: var(--r-card); padding: 18px; }
+  .pi-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .pi-list li { background: var(--surface); border-radius: var(--r-ctl); padding: 14px 16px; display: grid; gap: 4px; align-content: space-between; min-height: 112px; }
+  .stage[data-dir="2"] .pi-list li { background: var(--page); }
+  .pi-name { font-weight: 600; }
+  .pi-note { font-size: 13px; color: var(--muted); }
+  .pi-fig { font-size: 32px; line-height: 1; }
+  .pi-fig small { font-family: var(--f-body); font-stretch: 100%; font-size: 13px; font-weight: 500; color: var(--muted); margin-right: 4px; letter-spacing: 0; }
+  .stage[data-dir="3"] .pi-list { grid-template-columns: 1fr; gap: 2px; }
+  .stage[data-dir="3"] .pi-list li { grid-template-columns: 1fr auto; align-items: baseline; min-height: 0; padding: 10px 14px; background: transparent; }
+  .stage[data-dir="3"] .pi-list li:nth-child(odd) { background: var(--surface); }
+  .stage[data-dir="3"] .pi-name { grid-row: 1; }
+  .stage[data-dir="3"] .pi-note { grid-row: 2; }
+  .stage[data-dir="3"] .pi-fig { grid-column: 2; grid-row: 1 / 3; align-self: center; font-size: 28px; }
+
+  /* Service cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .svc { background: var(--surface); border-radius: var(--r-card); overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+  .svc-photo { aspect-ratio: 16 / 9; background: var(--surface-2); max-width: 100%; }
+  .svc-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  .svc-body { padding: 20px; display: grid; gap: 12px; align-content: start; }
+  .svc-body .h { font-size: 30px; }
+  .incl { display: flex; flex-wrap: wrap; gap: 6px; }
+  .incl li { font-size: 13px; font-weight: 600; padding: 5px 10px; border-radius: var(--r-sm); background: var(--lime-soft); }
+  .stage[data-dir="3"] .incl li { background: var(--surface-2); }
+  .svc-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-top: 4px; }
+  .svc-foot .fig { font-size: 34px; line-height: 1; }
+  .svc-foot .fig small { font-family: var(--f-body); font-stretch: 100%; font-size: 13px; font-weight: 500; color: var(--muted); margin-right: 4px; }
+
+  /* Price block */
+  .pb { background: var(--surface); border-radius: var(--r-card); padding: clamp(18px, 3vw, 32px); display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(18px, 3vw, 40px); }
+  .pb-left { display: grid; gap: 16px; align-content: start; }
+  .pb-left .h { font-size: clamp(28px, 3.4vw, 40px); }
+  .seg { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; background: var(--surface-2); border-radius: var(--r-ctl); padding: 4px; }
+  .seg button { min-height: 44px; border-radius: calc(var(--r-ctl) - 4px); font-weight: 600; font-size: 15px; color: var(--muted); }
+  .seg button[aria-checked="true"] { background: var(--lime); color: var(--ink); }
+  .pb-result { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .pb-fig { font-size: clamp(56px, 7vw, 80px); line-height: 0.95; }
+  .pb-note { font-size: 15px; color: var(--muted); }
+  .pb-right { display: grid; gap: 18px; align-content: start; }
+  .checks { display: grid; gap: 4px; }
+  .checks li { display: flex; gap: 10px; align-items: baseline; padding: 8px 12px; border-radius: var(--r-sm); font-size: 15px; }
+  .checks li:nth-child(odd) { background: var(--page); }
+  .checks li::before { content: "✓"; font-weight: 700; flex: none; width: 20px; height: 20px; display: grid; place-items: center; border-radius: 5px; background: var(--lime); font-size: 12px; transform: translateY(3px); }
+  .drivers { display: flex; flex-wrap: wrap; gap: 6px; }
+  .drivers li { font-size: 14px; padding: 6px 10px; border-radius: var(--r-sm); background: var(--surface-2); }
+
+  /* Phones */
+  .phones { display: grid; grid-template-columns: repeat(2, minmax(0, 360px)); gap: 20px; justify-content: center; }
+  .phone { background: var(--surface); border-radius: 32px; padding: 18px; display: grid; gap: 16px; align-content: start; }
+  .ph-top { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 15px; }
+  .ph-top span { color: var(--muted); font-weight: 500; font-size: 13px; }
+  .steps-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .steps-row li { display: grid; justify-items: center; gap: 4px; font-size: 12px; color: var(--muted); text-align: center; }
+  .steps-row li.done .plq { background: var(--lime); }
+  .steps-row li.now { color: var(--ink); font-weight: 600; }
+  .steps-row li.todo .plq { background: var(--surface-2); color: var(--muted); }
+  .phone .h { font-size: 30px; }
+  .dates { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .dates button, .slots button { border-radius: var(--r-ctl); background: var(--page); min-height: 56px; display: grid; place-items: center; line-height: 1.15; font-size: 13px; color: var(--muted); }
+  .dates button b { font-family: var(--f-head); font-stretch: 85%; font-size: 20px; color: var(--ink); display: block; }
+  .dates button[aria-pressed="true"], .slots button[aria-pressed="true"] { background: var(--lime); color: var(--ink); }
+  .slots { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .slots button { min-height: 48px; font-size: 15px; font-weight: 600; color: var(--ink); }
+  .slots button:disabled { background: var(--surface-2); color: var(--muted); font-weight: 500; cursor: not-allowed; }
+  .ph-note { font-size: 14px; color: var(--muted); }
+  .ph-bar { background: var(--page); border-radius: 20px; padding: 10px 10px 10px 16px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .ph-bar small { display: block; font-size: 12px; color: var(--muted); }
+  .ph-bar b { font-family: var(--f-head); font-stretch: 80%; font-size: 26px; line-height: 1; }
   .ticket { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
-  .ticket li { font-size: 13px; font-weight: 600; padding: 10px 8px; border-radius: 10px; background: var(--stone); color: var(--ink-muted); text-align: center; line-height: 1.2; display: grid; gap: 2px; place-items: center; }
+  .ticket li { font-size: 12px; font-weight: 600; padding: 9px 4px; border-radius: var(--r-sm); background: var(--page); color: var(--muted); text-align: center; line-height: 1.2; }
   .ticket li.done { background: var(--lime); color: var(--ink); }
   .ticket li.now { background: var(--lime-soft); color: var(--ink); }
-  .ticket li span { font-size: 16px; }
-  .eta { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; background: var(--stone); border-radius: 12px; padding: 12px 14px; font-size: 15px; }
-  .eta b { font-variant-numeric: tabular-nums; }
-  .b-btn { display: flex; justify-content: center; align-items: center; min-height: 56px; border-radius: 16px; background: var(--lime); color: var(--ink); font-weight: 700; font-size: 18px; }
+  .who { display: flex; gap: 12px; align-items: center; background: var(--page); border-radius: var(--r-ctl); padding: 12px; }
+  .avatar { width: 48px; height: 48px; border-radius: 12px; background: var(--lime-soft); display: grid; place-items: center; font-weight: 700; font-size: 20px; flex: none; }
+  .who small { display: block; font-size: 13px; color: var(--muted); }
+  .record { display: grid; gap: 2px; font-size: 14px; }
+  .record div { display: grid; grid-template-columns: 64px 1fr; gap: 10px; padding: 8px 12px; border-radius: var(--r-sm); }
+  .record div:nth-child(odd) { background: var(--page); }
+  .record dt { color: var(--muted); }
+  .record dd { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .voice { font-family: var(--f-head); font-stretch: var(--head-stretch); font-weight: var(--head-weight); font-size: 22px; line-height: 1.1; letter-spacing: -0.01em; }
+  .caption { font-size: 13px; color: var(--lab-muted); text-align: center; }
 
-  /* ---------- Specimen C: Threshold ---------- */
-  .spec-c { background: #F7F5F0; font-family: var(--f-c); padding: 0; overflow: hidden; gap: 0; }
-  .tiles-band { display: block; width: 100%; height: 96px; }
-  .c-inner { padding: 24px; display: grid; gap: 18px; }
-  .c-headline { font-size: clamp(26px, 3vw, 32px); line-height: 1.08; font-weight: 600; letter-spacing: -0.02em; }
-  .plaques { display: grid; gap: 8px; }
-  .plaques li { display: flex; align-items: center; gap: 14px; background: var(--paper); border-radius: 12px; padding: 10px 12px; font-weight: 500; }
-  .plaque { width: 40px; height: 48px; flex: none; display: grid; place-items: center; border-radius: 20px 20px 8px 8px; background: var(--lime-soft); font-weight: 700; font-size: 20px; font-variant-numeric: lining-nums; }
-  .plaques small { display: block; font-size: 13px; color: var(--ink-muted); font-weight: 400; }
-
-  /* Compare */
-  .compare { display: grid; gap: 16px; }
+  /* Compare + reply */
   .table-scroll { overflow-x: auto; }
-  table { width: 100%; min-width: 620px; border-collapse: separate; border-spacing: 0 4px; font-size: 15px; }
-  th, td { text-align: left; padding: 12px 14px; vertical-align: middle; }
-  thead th { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; padding-block: 4px; }
-  tbody tr { background: var(--paper); }
-  tbody td:first-child, tbody th:first-child { border-radius: 12px 0 0 12px; }
+  table { width: 100%; min-width: 680px; border-collapse: separate; border-spacing: 0 4px; font-size: 15px; }
+  th, td { text-align: left; padding: 11px 14px; vertical-align: top; }
+  thead th { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lab-muted); font-weight: 600; padding-block: 4px; }
+  tbody tr { background: var(--lab-paper); }
+  tbody th { font-weight: 600; border-radius: 12px 0 0 12px; }
   tbody td:last-child { border-radius: 0 12px 12px 0; }
-  tbody th { font-weight: 600; }
-  .rate { display: inline-flex; align-items: center; gap: 8px; }
-  .rate i { display: inline-flex; gap: 3px; }
-  .rate i::before, .rate i::after, .rate i b { content: ""; display: block; width: 14px; height: 8px; border-radius: 3px; background: var(--stone-deep); }
-  .rate.s2 i::before, .rate.s3 i::before, .rate.s1 i::before { background: var(--lime); }
-  .rate.s2 i b, .rate.s3 i b { background: var(--lime); }
-  .rate.s3 i::after { background: var(--lime); }
-
-  /* Recommendation */
-  .pick { background: var(--lime-soft); border-radius: var(--r-panel); padding: clamp(22px, 3.4vw, 40px); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(20px, 3.4vw, 44px); }
-  .pick h2 { font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.03em; line-height: 1.05; }
-  .pick .col { display: grid; gap: 16px; align-content: start; }
-  .pick p { font-size: 17px; }
-  .borrow { display: grid; gap: 8px; }
-  .borrow li { background: var(--paper); border-radius: 12px; padding: 12px 14px; font-size: 15px; }
-  .borrow b { display: block; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 2px; }
-  .reply { background: var(--paper); border-radius: var(--r-inner); padding: 18px; display: grid; gap: 8px; }
-  .reply p { font-size: 15px; }
-
-  /* Next + rules */
-  .foot { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .card { background: var(--paper); border-radius: var(--r-panel); padding: 26px; display: grid; gap: 14px; align-content: start; }
-  .card p { color: var(--ink-muted); }
-  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 14px; }
-  .rules li { background: var(--stone); border-radius: 10px; padding: 9px 12px; }
-  .rules li.new { background: var(--lime-soft); font-weight: 600; grid-column: 1 / -1; }
-  .note { font-size: 13px; color: var(--ink-muted); }
+  .reply { background: var(--lab-lime-soft); border-radius: 24px; padding: clamp(22px, 3.4vw, 36px); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; }
+  .reply h2 { font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -0.03em; line-height: 1.05; }
+  .reply .col { display: grid; gap: 12px; align-content: start; }
+  .reply .card { background: var(--lab-paper); border-radius: 16px; padding: 16px 18px; display: grid; gap: 6px; font-size: 15px; }
+  .reply .card p { color: var(--lab-muted); }
 
   @media (max-width: 960px) {
-    .tiles { grid-template-columns: repeat(2, 1fr); }
-    .tiles .tile:last-child { grid-column: 1 / -1; }
-    .concept, .pick, .foot { grid-template-columns: 1fr; }
-    .aside { position: static; }
+    .lock-list { grid-template-columns: 1fr 1fr; }
+    .lock-list li.drop { grid-column: 1 / -1; }
+    .dir-info, .hero, .pb, .reply { grid-template-columns: 1fr; }
+    .h-photo { min-height: 0; aspect-ratio: 4 / 3; }
+    .pi-list { grid-template-columns: 1fr 1fr; }
+    .phones { grid-template-columns: minmax(0, 380px); }
   }
-  @media (max-width: 560px) {
-    .wrap { padding-inline: 16px; gap: 44px; }
-    .tiles { grid-template-columns: 1fr; }
-    .swatches { grid-template-columns: repeat(2, 1fr); }
-    .looks div { grid-template-columns: 1fr; gap: 2px; }
-    .ticket { grid-template-columns: repeat(2, 1fr); }
-    .rules { grid-template-columns: 1fr; }
+  @media (max-width: 620px) {
+    .wrap { padding-inline: 16px; gap: 40px; }
+    .lock-list, .cards { grid-template-columns: 1fr; }
+    .switch { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .switch button span { display: none; }
+    .pi-list { grid-template-columns: 1fr; }
+    .seg { grid-template-columns: repeat(3, 1fr); }
+    .seg button:nth-child(4), .seg button:nth-child(5) { grid-column: span 1; }
+    .traits div { grid-template-columns: 1fr; gap: 2px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .switch button, .seg button, .dates button, .slots button { transition: background-color 160ms ease; }
   }
 </style>
 </head>
 <body>
-
 <div class="wrap">
 
   <header class="bar">
     <p class="brand">Bestone <span>Design Lab</span></p>
     <ol class="steps" aria-label="Lab stages">
-      <li class="on">01 Name</li>
-      <li>02 Directions</li>
+      <li class="done"><a href="01-name.html">01 Name ✓</a></li>
+      <li class="on">02 Directions</li>
       <li>03 Foundations</li>
       <li>04 Components</li>
       <li>05 Pages</li>
@@ -210,289 +277,276 @@
   </header>
 
   <section class="intro">
-    <p class="eyebrow">Lab 01 · Name and philosophy</p>
-    <h1>Three names for the Bestone system</h1>
-    <p class="lead">Sakina and Itqan took Arabic words because they serve UAE brands. Bestone is London-wide and English only, so its system is named from British trade and from London itself. Each concept below has a meaning, a reason, a philosophy and a first look at how it would appear on screen.</p>
+    <p class="eyebrow">Lab 02 · Directions</p>
+    <h1>Three ways Touchstone can look</h1>
+    <p class="lead">Same content, same components, three directions. Switch between them and compare the homepage hero, service cards, the price block and two booking screens. Pick one, or name the parts you want from each.</p>
   </section>
 
-  <section class="brief" aria-labelledby="brief-t">
-    <h2 id="brief-t">What I heard</h2>
-    <ul class="tiles">
-      <li class="tile"><b>Mr Reliable</b><p>A practical local foreman with a professional firm's paperwork.</p></li>
-      <li class="tile"><b>Landlords first</b><p>One property or many, plus the agents who manage them.</p></li>
-      <li class="tile"><b>Price before</b><p>No one else in London pest control shows a price upfront.</p></li>
-      <li class="tile"><b>On record</b><p>Invoice, before and after photos, treatment report for every job.</p></li>
-      <li class="tile"><b>Own staff</b><p>Uniformed team, branded vans, no franchise in between.</p></li>
+  <section class="locked" aria-labelledby="lock-t">
+    <h2 id="lock-t">Locked in Lab 01</h2>
+    <ul class="lock-list">
+      <li><b>Name: Touchstone</b><span>Bestone → stone. Price before, proof after.</span></li>
+      <li><b>Tall, condensed headings</b><span>From the Touchstone specimen you liked.</span></li>
+      <li><b>Numbered plaques</b><span>From Threshold, for every step and sequence.</span></li>
+      <li><b>Status ticket</b><span>From Sorted: booked, on the way, done, report sent.</span></li>
+      <li><b>Who's coming card</b><span>From Threshold: name and photo ID before the visit.</span></li>
+      <li class="drop"><b>Dropped: tile pattern</b><span>Too close to Itqan's khatam ornament.</span></li>
     </ul>
   </section>
 
-  <!-- A · Touchstone -->
-  <section class="concept" aria-labelledby="a-name">
-    <div>
-      <div class="c-head">
-        <span class="c-letter">A</span>
-        <h2 class="c-name" id="a-name" style="font-family: var(--f-a); font-stretch: 88%; font-weight: 700;">Touchstone</h2>
-        <span class="chip">Recommended</span>
-      </div>
-      <div class="c-body">
-        <p class="c-meaning">Goldsmiths tested gold by rubbing it on a dark stone and reading the streak it left. That stone was the touchstone. In everyday English it now means the standard everything else is judged by.</p>
-        <div>
-          <p class="label">Why it fits Bestone</p>
-          <ul class="fits">
-            <li>Bestone ends in <b>stone</b>. The one-word name the client chose becomes the root of the system instead of something to work around.</li>
-            <li>Landlords and agents buy proof. The price comes before the visit and the report comes after it.</li>
-            <li>Rentokil gives no price until a surveyor visits, and JG wins on review volume. Bestone wins on proof anyone can check.</li>
-          </ul>
-        </div>
-        <div class="philosophy">
-          <q>Say it plainly. Prove it on the page.</q>
-          <ul>
-            <li>Every claim carries its proof: a figure, a registration number or a report.</li>
-            <li>The price appears before anyone has to ask for it.</li>
-            <li>Every job leaves a record of who, what, where and when.</li>
-          </ul>
-        </div>
-        <div>
-          <p class="label">It should feel</p>
-          <ul class="feel"><li>Certain</li><li>Calm</li><li>Respected</li></ul>
-        </div>
-        <dl class="looks">
-          <div><dt>Colour</dt><dd>Portland stone page (the pale limestone St Paul's is built from), charcoal text from the uniform, lime as the streak that marks what passed.</dd></div>
-          <div><dt>Type</dt><dd>An engineered grotesk (Archivo) for headings, with tabular figures for every price, date and number.</dd></div>
-          <div><dt>Motif</dt><dd>Marks. A traditional British hallmark carries four punches: maker, standard, assay office and date. A Bestone job record carries four too: who did it, the standard agreed, where and when. Four marks, like the four petals in the logo.</dd></div>
-          <div><dt>Shape</dt><dd>Small punch shapes for marks only. Everything else is quiet, flat surface.</dd></div>
-        </dl>
-        <p class="risk"><b>Watch out:</b> used too often, marks turn into badges. They stay small, and each one carries a real fact.</p>
-      </div>
-    </div>
+  <div class="switch" role="group" aria-label="Choose a direction">
+    <button type="button" data-set="1" aria-pressed="true"><b>1 · Portland</b><span>Calm and exact. Stone page, lime used sparingly.</span></button>
+    <button type="button" data-set="2" aria-pressed="false"><b>2 · Lime-led</b><span>Closest to today's site and the uniform.</span></button>
+    <button type="button" data-set="3" aria-pressed="false"><b>3 · Record</b><span>Built like a job sheet. Figures and marks up front.</span></button>
+  </div>
 
-    <div class="aside">
-      <div class="spec spec-a" aria-label="Touchstone specimen">
-        <p class="a-eyebrow">Mice control · Ilford</p>
-        <h3 class="a-head">Priced before we arrive. Proven after we <span class="streak">leave</span>.</h3>
-        <div class="a-price"><span class="a-from">From</span><span class="a-fig">£99</span><span class="a-unit">per species, written guarantee</span></div>
-        <div class="marks" aria-label="Hallmark set">
-          <span class="mark m-shield">B1</span><span class="mark m-oct">£</span><span class="mark m-oval">IG1</span><span class="mark m-sq">26</span>
-        </div>
-        <dl class="record">
-          <div><dt>Who</dt><dd>Named technician, photo ID</dd></div>
-          <div><dt>Standard</dt><dd>Price agreed before the visit</dd></div>
-          <div><dt>Where</dt><dd>Ilford, IG1</dd></div>
-          <div><dt>When</dt><dd>Tue 14 Oct, 9–11am</dd></div>
+  <div class="stage" id="stage" data-dir="1">
+
+    <section class="dir-info" aria-live="polite">
+      <div>
+        <p class="eyebrow only-1">Direction 1</p><p class="eyebrow only-2">Direction 2</p><p class="eyebrow only-3">Direction 3</p>
+        <h2 class="only-1">Portland</h2><h2 class="only-2">Lime-led</h2><h2 class="only-3">Record</h2>
+        <p class="idea only-1">The quietest of the three. Pale stone page, charcoal text, and lime only where something passes or needs a tap. It reads premium and unhurried, which suits landlords and agents.</p>
+        <p class="idea only-2">The closest to today's site and to the uniform. White page, today's deep olive text, and lime used generously for bands, plaques and blocks. The most energetic, and the easiest move from the current build.</p>
+        <p class="idea only-3">Built like a job sheet. Warm paper, charcoal text, the tallest headings and big figures. The four hallmark marks sit in the hero and records replace cards. Dense and trustworthy, strongest for agents managing many properties.</p>
+        <dl class="traits">
+          <div><dt>Page</dt><dd class="only-1">Portland stone #F1F0EA, white surfaces</dd><dd class="only-2">White, with a mint tint for surfaces</dd><dd class="only-3">Warm paper #F6F5F1, white records</dd></div>
+          <div><dt>Text</dt><dd class="only-1">Charcoal from the uniform</dd><dd class="only-2">Deep olive #1F3A00, as today</dd><dd class="only-3">Charcoal from the uniform</dd></div>
+          <div><dt>Lime</dt><dd class="only-1">Actions, streaks and marks only</dd><dd class="only-2">Bands, plaques, blocks and actions</dd><dd class="only-3">Actions, figures' marks, done states</dd></div>
+          <div><dt>Corners</dt><dd class="only-1">16 cards, 12 controls</dd><dd class="only-2">22 cards, 14 controls</dd><dd class="only-3">8 everywhere</dd></div>
+          <div><dt>Motif</dt><dd class="only-1">One streak per page, small marks</dd><dd class="only-2">Lime band behind prices, bold plaques</dd><dd class="only-3">Hallmark set in the hero, record rows</dd></div>
         </dl>
       </div>
-      <p class="caption">The hallmark set: B1 (maker, from the logo's centre), £ (priced before), IG1 (Ilford), 26 (year). Example job, not a real booking.</p>
-      <div class="swatches">
-        <div class="sw"><i style="background:#F1F0EA"></i><span><b>Portland</b><em>#F1F0EA</em></span></div>
-        <div class="sw"><i style="background:#1D201E"></i><span><b>Charcoal</b><em>#1D201E</em></span></div>
-        <div class="sw"><i style="background:#B7F56A"></i><span><b>Lime</b><em>#B7F56A</em></span></div>
-        <div class="sw"><i style="background:#E7F8D0"></i><span><b>Lime soft</b><em>#E7F8D0</em></span></div>
+      <div>
+        <div class="swatches only-1">
+          <div class="sw"><i style="background:#F1F0EA"></i><span><b>Portland</b><em>#F1F0EA</em></span></div>
+          <div class="sw"><i style="background:#1D201E"></i><span><b>Charcoal</b><em>#1D201E</em></span></div>
+          <div class="sw"><i style="background:#B7F56A"></i><span><b>Lime</b><em>#B7F56A</em></span></div>
+        </div>
+        <div class="swatches only-2">
+          <div class="sw"><i style="background:#F4F9EC"></i><span><b>Mint tint</b><em>#F4F9EC</em></span></div>
+          <div class="sw"><i style="background:#1F3A00"></i><span><b>Deep olive</b><em>#1F3A00</em></span></div>
+          <div class="sw"><i style="background:#B7F56A"></i><span><b>Lime</b><em>#B7F56A</em></span></div>
+        </div>
+        <div class="swatches only-3">
+          <div class="sw"><i style="background:#F6F5F1"></i><span><b>Paper</b><em>#F6F5F1</em></span></div>
+          <div class="sw"><i style="background:#1D201E"></i><span><b>Charcoal</b><em>#1D201E</em></span></div>
+          <div class="sw"><i style="background:#B7F56A"></i><span><b>Lime</b><em>#B7F56A</em></span></div>
+        </div>
+        <div class="type-sample">
+          <p class="label only-1">Archivo condensed + Albert Sans</p>
+          <p class="label only-2">Bricolage condensed + Albert Sans</p>
+          <p class="label only-3">Archivo only, two widths</p>
+          <p class="ts-head">Mice control from £99</p>
+          <p class="ts-body">Inspection, targeted treatment and proofing advice, with a written guarantee.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- B · Sorted -->
-  <section class="concept" aria-labelledby="b-name">
-    <div>
-      <div class="c-head">
-        <span class="c-letter">B</span>
-        <h2 class="c-name" id="b-name" style="font-family: var(--f-b); font-weight: 750;">Sorted</h2>
-      </div>
-      <div class="c-body">
-        <p class="c-meaning">Everyday British for "dealt with, nothing left to worry about". It is the word a customer uses when telling a friend how the job went.</p>
-        <div>
-          <p class="label">Why it fits Bestone</p>
-          <ul class="fits">
-            <li>It is Mr Reliable's own voice: plain, local and calm.</li>
-            <li>It answers the tenant who finds mice at 11pm before any feature does.</li>
-            <li>Every service ends the same way, whatever the trade.</li>
-          </ul>
+    <!-- Hero -->
+    <section class="mock" aria-labelledby="mk1">
+      <div class="mock-label"><h3 id="mk1">Homepage hero</h3><p>The price index replaces the usual icon grid of services.</p></div>
+      <div class="canvas">
+        <div class="hero">
+          <div class="h-copy">
+            <p class="m-eyebrow">London property services</p>
+            <h2 class="h">Priced before we arrive. Proven after we <span class="streak">leave</span>.</h2>
+            <p class="h-lead">Pest control, end of tenancy cleaning, gardening and removals from our own uniformed team. A fixed price before you book, and a written record after every job.</p>
+            <div class="ctas"><span class="btn btn-primary">Get your price</span><span class="btn btn-quiet">WhatsApp us</span></div>
+            <ul class="facts not-3"><li><b>5,000+</b> jobs completed</li><li>Written guarantees</li><li>Own staff, no franchise</li></ul>
+            <div class="hallmarks only-3" aria-label="Hallmark set">
+              <span class="mark m-shield">B1</span><span class="mark m-oct">£</span><span class="mark m-oval">5K+</span><span class="mark m-sq">26</span>
+              <small>Own team · priced before · 5,000+ jobs · 2026</small>
+            </div>
+          </div>
+          <div class="h-photo"><img src="../../apps/web/public/images/service/best-one-team-hero-v1.webp" alt="Bestone cleaner and pest technician in charcoal uniforms with lime piping"></div>
         </div>
-        <div class="philosophy">
-          <q style="font-family: var(--f-b);">One clear next step, always.</q>
-          <ul>
-            <li>Every screen answers "what happens next?"</li>
-            <li>Every job shows where it stands, from booked to report sent.</li>
-            <li>Short words, big targets, no dead ends.</li>
-          </ul>
-        </div>
-        <div>
-          <p class="label">It should feel</p>
-          <ul class="feel"><li>Relieved</li><li>Looked after</li><li>Moving</li></ul>
-        </div>
-        <dl class="looks">
-          <div><dt>Colour</dt><dd>White page. Lime is kept for what is done and what is happening now.</dd></div>
-          <div><dt>Type</dt><dd>A warm, heavy grotesk (Bricolage Grotesque, already on the site) at generous sizes.</dd></div>
-          <div><dt>Motif</dt><dd>The job ticket. Status fills segment by segment: booked, on the way, done, report sent.</dd></div>
-          <div><dt>Shape</dt><dd>Generous corners and large touch targets.</dd></div>
-        </dl>
-        <p class="risk"><b>Watch out:</b> slang reads casual. It carries less of the paperwork story landlords and agents need, and it can drift toward a generic app look.</p>
-      </div>
-    </div>
-
-    <div class="aside">
-      <div class="spec spec-b" aria-label="Sorted specimen">
-        <div class="inner">
-          <h3 class="b-head">Mice at 11pm? Leave it with us.</h3>
-          <p class="b-sub">Book in two minutes. We confirm your slot on WhatsApp.</p>
-          <ol class="ticket" aria-label="Job status">
-            <li class="done"><span aria-hidden="true">✓</span>Booked</li>
-            <li class="now"><span aria-hidden="true">→</span>On the way</li>
-            <li><span aria-hidden="true">·</span>Done</li>
-            <li><span aria-hidden="true">·</span>Report sent</li>
-          </ol>
-          <p class="eta"><span>Technician arriving</span><b>Tue, 9–11am</b></p>
-          <span class="b-btn">Book a visit</span>
-        </div>
-      </div>
-      <p class="caption">Example status ticket. Lime marks what is done, soft lime what is happening now.</p>
-      <div class="swatches">
-        <div class="sw"><i style="background:#FFFFFF"></i><span><b>White</b><em>#FFFFFF</em></span></div>
-        <div class="sw"><i style="background:#1D201E"></i><span><b>Charcoal</b><em>#1D201E</em></span></div>
-        <div class="sw"><i style="background:#B7F56A"></i><span><b>Lime</b><em>#B7F56A</em></span></div>
-        <div class="sw"><i style="background:#F1F0EA"></i><span><b>Stone</b><em>#F1F0EA</em></span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- C · Threshold -->
-  <section class="concept" aria-labelledby="c-name">
-    <div>
-      <div class="c-head">
-        <span class="c-letter">C</span>
-        <h2 class="c-name" id="c-name" style="font-family: var(--f-c); font-weight: 600;">Threshold</h2>
-      </div>
-      <div class="c-body">
-        <p class="c-meaning">The doorstep, where every job starts and ends. Keys change hands, the technician introduces themselves and the work is signed off.</p>
-        <div>
-          <p class="label">Why it fits Bestone</p>
-          <ul class="fits">
-            <li>Bestone's staff walk into people's homes. Trust is decided at the door.</li>
-            <li>A tenancy check-out is a handover at the threshold.</li>
-            <li>London's Victorian terraces have tiled front paths, a local ornament no competitor uses.</li>
-          </ul>
-        </div>
-        <div class="philosophy">
-          <q style="font-family: var(--f-c); font-weight: 600;">Everything clear before the door opens.</q>
-          <ul>
-            <li>Show who is coming: name, photo and ID.</li>
-            <li>Show what it costs and what will happen.</li>
-            <li>Close with a clean handover: report, invoice, sign-off.</li>
-          </ul>
-        </div>
-        <div>
-          <p class="label">It should feel</p>
-          <ul class="feel"><li>Safe</li><li>Respected</li><li>Welcome</li></ul>
-        </div>
-        <dl class="looks">
-          <div><dt>Colour</dt><dd>Warm white page, lime with a soft tile grey.</dd></div>
-          <div><dt>Type</dt><dd>A friendly humanist sans (Albert Sans).</dd></div>
-          <div><dt>Motif</dt><dd>Front-path tiles: Victorian geometric patterns redrawn from the logo's four-petal mark, laid with gaps instead of lines. Door-number plaques for step numbers.</dd></div>
-          <div><dt>Shape</dt><dd>Tile geometry: squares, diamonds and four-lobed flowers.</dd></div>
-        </dl>
-        <p class="risk"><b>Watch out:</b> pattern fields sit close to Itqan's khatam ornament, and this is the most decorative of the three.</p>
-      </div>
-    </div>
-
-    <div class="aside">
-      <div class="spec spec-c" aria-label="Threshold specimen">
-        <svg class="tiles-band" viewBox="0 0 480 96" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Victorian front-path tile pattern">
-          <defs>
-            <pattern id="vt" width="48" height="48" patternUnits="userSpaceOnUse">
-              <rect width="48" height="48" fill="#E4E1D7"/>
-              <g fill="#B7F56A">
-                <circle cx="0" cy="-7" r="7"/><circle cx="0" cy="7" r="7"/><circle cx="-7" cy="0" r="7"/><circle cx="7" cy="0" r="7"/>
-                <circle cx="48" cy="-7" r="7"/><circle cx="48" cy="7" r="7"/><circle cx="41" cy="0" r="7"/><circle cx="55" cy="0" r="7"/>
-                <circle cx="0" cy="41" r="7"/><circle cx="0" cy="55" r="7"/><circle cx="-7" cy="48" r="7"/><circle cx="7" cy="48" r="7"/>
-                <circle cx="48" cy="41" r="7"/><circle cx="48" cy="55" r="7"/><circle cx="41" cy="48" r="7"/><circle cx="55" cy="48" r="7"/>
-              </g>
-              <polygon points="24,13 35,24 24,35 13,24" fill="#FFFFFF"/>
-              <polygon points="24,19 29,24 24,29 19,24" fill="#DAD6CB"/>
-            </pattern>
-          </defs>
-          <rect width="480" height="96" fill="url(#vt)"/>
-        </svg>
-        <div class="c-inner">
-          <h3 class="c-headline">Know who's at the door before you open it.</h3>
-          <ul class="plaques">
-            <li><span class="plaque">1</span><span>Who's coming<small>Name, photo and ID in your confirmation</small></span></li>
-            <li><span class="plaque">2</span><span>What it costs<small>Agreed before anyone arrives</small></span></li>
-            <li><span class="plaque">3</span><span>What you get after<small>Report, invoice and sign-off</small></span></li>
+        <div class="price-index">
+          <p class="m-eyebrow">Prices, before you ask</p>
+          <ul class="pi-list">
+            <li><span class="pi-name">Mice control</span><span class="pi-note">per species</span><span class="pi-fig fig"><small>from</small>£99</span></li>
+            <li><span class="pi-name">End of tenancy</span><span class="pi-note">studio flat</span><span class="pi-fig fig"><small>from</small>£130</span></li>
+            <li><span class="pi-name">Garden care</span><span class="pi-note">two gardeners, first hour</span><span class="pi-fig fig">£70</span></li>
+            <li><span class="pi-name">Removals</span><span class="pi-note">two movers and a van, per hour</span><span class="pi-fig fig"><small>from</small>£80</span></li>
           </ul>
         </div>
       </div>
-      <p class="caption">Tile band built from the logo's four-petal geometry. Plaques borrow the shape of an enamel door number.</p>
-      <div class="swatches">
-        <div class="sw"><i style="background:#F7F5F0"></i><span><b>Warm white</b><em>#F7F5F0</em></span></div>
-        <div class="sw"><i style="background:#1D201E"></i><span><b>Charcoal</b><em>#1D201E</em></span></div>
-        <div class="sw"><i style="background:#B7F56A"></i><span><b>Lime</b><em>#B7F56A</em></span></div>
-        <div class="sw"><i style="background:#DAD6CB"></i><span><b>Tile grey</b><em>#DAD6CB</em></span></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Compare -->
-  <section class="compare" aria-labelledby="cmp-t">
-    <h2 class="block-title" id="cmp-t">Side by side</h2>
+    <!-- Service cards -->
+    <section class="mock" aria-labelledby="mk2">
+      <div class="mock-label"><h3 id="mk2">Service cards</h3><p>Photo, two-word title, one sentence, what's included, the price.</p></div>
+      <div class="canvas">
+        <div class="cards">
+          <article class="svc">
+            <div class="svc-photo"><img src="../../apps/web/public/images/service/best-one-pest-technician-hero-v1.webp" alt="Bestone pest technician inside a London home"></div>
+            <div class="svc-body">
+              <h3 class="h">Mice control</h3>
+              <p class="muted">Inspection, targeted treatment and proofing advice.</p>
+              <ul class="incl"><li>Inspection</li><li>Treatment</li><li>Written guarantee</li></ul>
+              <div class="svc-foot"><span class="fig"><small>from</small>£99</span><span class="btn btn-quiet">See mice control</span></div>
+            </div>
+          </article>
+          <article class="svc">
+            <div class="svc-photo"><img src="../../apps/web/public/images/service/best-one-cleaner-kitchen-v1.webp" alt="Bestone cleaner cleaning a kitchen"></div>
+            <div class="svc-body">
+              <h3 class="h">End of tenancy</h3>
+              <p class="muted">An agency-checklist clean with a free re-clean if anything is flagged.</p>
+              <ul class="incl"><li>Full checklist</li><li>Oven and appliances</li><li>48-hour re-clean</li></ul>
+              <div class="svc-foot"><span class="fig"><small>from</small>£130</span><span class="btn btn-quiet">See prices</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price block -->
+    <section class="mock" aria-labelledby="mk3">
+      <div class="mock-label"><h3 id="mk3">Price block</h3><p>Pick a size and the price and button update. Prices from the current price list.</p></div>
+      <div class="canvas">
+        <div class="pb">
+          <div class="pb-left">
+            <p class="m-eyebrow">End of tenancy cleaning</p>
+            <h3 class="h">One fixed price for your property</h3>
+            <div class="seg" role="radiogroup" aria-label="Property size" id="seg">
+              <button type="button" role="radio" aria-checked="false" data-i="0">Studio</button>
+              <button type="button" role="radio" aria-checked="true" data-i="1">1 bed</button>
+              <button type="button" role="radio" aria-checked="false" data-i="2">2 bed</button>
+              <button type="button" role="radio" aria-checked="false" data-i="3">3 bed</button>
+              <button type="button" role="radio" aria-checked="false" data-i="4">4 bed</button>
+            </div>
+            <div class="pb-result"><span class="pb-fig fig" id="pbFig">£200</span><span class="pb-note" id="pbNote">1 bedroom, standard clean. Confirmed before you book.</span></div>
+            <div class="ctas"><span class="btn btn-primary" id="pbBtn">Book at £200</span><span class="btn btn-quiet">Ask on WhatsApp</span></div>
+          </div>
+          <div class="pb-right">
+            <div>
+              <p class="m-eyebrow" style="margin-bottom:8px">Included</p>
+              <ul class="checks"><li>Full agency inventory checklist</li><li>Kitchen appliances and oven</li><li>Bathrooms descaled and sanitised</li><li>Free re-clean if the agent flags anything within 48 hours</li></ul>
+            </div>
+            <div>
+              <p class="m-eyebrow" style="margin-bottom:8px">What changes the price</p>
+              <ul class="drivers"><li>Property size</li><li>Extra bathrooms</li><li>Carpet steam cleaning</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="mock" aria-labelledby="mk4">
+      <div class="mock-label"><h3 id="mk4">Mobile booking</h3><p>Step 3 of the booking flow, and the confirmation screen.</p></div>
+      <div class="canvas">
+        <div class="phones">
+          <div>
+            <div class="phone">
+              <div class="ph-top">Book end of tenancy <span>Step 3 of 4</span></div>
+              <ol class="steps-row">
+                <li class="done"><span class="plq">1</span>Service</li>
+                <li class="done"><span class="plq">2</span>Property</li>
+                <li class="now"><span class="plq">3</span>Time</li>
+                <li class="todo"><span class="plq">4</span>Details</li>
+              </ol>
+              <h4 class="h">Pick a time</h4>
+              <div class="dates" id="dates">
+                <button type="button" aria-pressed="false">Mon<b>12</b>Oct</button>
+                <button type="button" aria-pressed="true">Tue<b>13</b>Oct</button>
+                <button type="button" aria-pressed="false">Wed<b>14</b>Oct</button>
+                <button type="button" aria-pressed="false">Thu<b>15</b>Oct</button>
+              </div>
+              <div class="slots" id="slots">
+                <button type="button" aria-pressed="true">8–10am</button>
+                <button type="button" aria-pressed="false">10am–12pm</button>
+                <button type="button" disabled>12–2pm · full</button>
+                <button type="button" aria-pressed="false">2–4pm</button>
+              </div>
+              <p class="ph-note">Your cleaner's name and photo arrive the evening before.</p>
+              <div class="ph-bar"><div><small>1 bed · Tue 13 Oct</small><b>£200</b></div><span class="btn btn-primary">Continue</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="phone">
+              <div class="ph-top">Booking confirmed <span>BST-2610-0412</span></div>
+              <ol class="ticket" aria-label="Job status">
+                <li class="done">✓ Booked</li><li class="now">On the way</li><li>Done</li><li>Report sent</li>
+              </ol>
+              <div class="who"><span class="avatar">S</span><div><b>Sam is your cleaner</b><small>Shows photo ID at the door</small></div></div>
+              <dl class="record">
+                <div><dt>When</dt><dd>Tue 13 Oct, 8–10am</dd></div>
+                <div><dt>Where</dt><dd>Flat 2, Ilford IG1</dd></div>
+                <div><dt>Price</dt><dd>£200, fixed</dd></div>
+                <div><dt>After</dt><dd>Photo report and invoice</dd></div>
+              </dl>
+              <p class="voice">Leave it with us. We'll message you when Sam is on the way.</p>
+            </div>
+          </div>
+        </div>
+        <p class="caption" style="margin-top:12px; color: var(--muted)">Example booking. Name, reference and address are placeholders.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="compare" aria-labelledby="cmp-t" style="display:grid; gap:14px">
+    <h2 class="block-title" id="cmp-t">The differences in one table</h2>
     <div class="table-scroll">
       <table>
-        <thead><tr><th scope="col">Test</th><th scope="col">A · Touchstone</th><th scope="col">B · Sorted</th><th scope="col">C · Threshold</th></tr></thead>
+        <thead><tr><th scope="col"></th><th scope="col">1 · Portland</th><th scope="col">2 · Lime-led</th><th scope="col">3 · Record</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Landlords and agents (proof, paperwork)</th><td><span class="rate s3"><i><b></b></i>Strong</span></td><td><span class="rate s2"><i><b></b></i>Medium</span></td><td><span class="rate s2"><i><b></b></i>Medium</span></td></tr>
-          <tr><th scope="row">Tenant at 11pm (reassurance)</th><td><span class="rate s2"><i><b></b></i>Medium</span></td><td><span class="rate s3"><i><b></b></i>Strong</span></td><td><span class="rate s2"><i><b></b></i>Medium</span></td></tr>
-          <tr><th scope="row">Clearly different from Itqan</th><td><span class="rate s3"><i><b></b></i>Strong</span></td><td><span class="rate s2"><i><b></b></i>Medium</span></td><td><span class="rate s1"><i><b></b></i>Weak</span></td></tr>
-          <tr><th scope="row">Stretches to admin, invoices, reports, vans</th><td><span class="rate s3"><i><b></b></i>Strong</span></td><td><span class="rate s2"><i><b></b></i>Medium</span></td><td><span class="rate s2"><i><b></b></i>Medium</span></td></tr>
-          <tr><th scope="row">Grows out of the name "Bestone"</th><td><span class="rate s3"><i><b></b></i>Strong</span></td><td><span class="rate s1"><i><b></b></i>Weak</span></td><td><span class="rate s1"><i><b></b></i>Weak</span></td></tr>
+          <tr><th scope="row">Feels</th><td>Calm, premium</td><td>Energetic, familiar</td><td>Precise, businesslike</td></tr>
+          <tr><th scope="row">Headings</th><td>Archivo condensed</td><td>Bricolage condensed (today's family)</td><td>Archivo, tallest</td></tr>
+          <tr><th scope="row">Body</th><td>Albert Sans</td><td>Albert Sans</td><td>Archivo</td></tr>
+          <tr><th scope="row">Text colour</th><td>Charcoal</td><td>Deep olive, as today</td><td>Charcoal</td></tr>
+          <tr><th scope="row">Lime</th><td>Sparing</td><td>Generous</td><td>Functional</td></tr>
+          <tr><th scope="row">Best for</th><td>Landlords, first impressions</td><td>Tenants, urgent jobs, continuity</td><td>Agents, admin, invoices, reports</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- Recommendation -->
-  <section class="pick" aria-labelledby="pick-t">
+  <section class="reply" aria-labelledby="reply-t">
     <div class="col">
-      <p class="eyebrow">My recommendation</p>
-      <h2 id="pick-t">Touchstone</h2>
-      <p>It is the only name that grows out of "Bestone" itself. It matches what landlords and agents actually buy: the price before, the proof after. Its motif is precise rather than decorative, which keeps it clearly apart from Itqan, and it scales to the unglamorous parts: invoices, treatment reports, the admin queue and the vans.</p>
-      <div class="reply">
-        <b>How to reply</b>
-        <p>Pick A, B or C, or a mix such as "A with B's voice". If a word or idea in any of them feels wrong, say so. That is as useful as a pick.</p>
-      </div>
+      <p class="eyebrow">Your call</p>
+      <h2 id="reply-t">Pick one, or mix the parts</h2>
+      <p>Tell me 1, 2 or 3, or combine them, for example "1, with 3's price index" or "2, but with charcoal text". Point at anything you dislike: a font, a corner, a colour, a label.</p>
     </div>
     <div class="col">
-      <p class="label">The other two still contribute</p>
-      <ul class="borrow">
-        <li><b>From Sorted</b>"Leave it with us" becomes the voice line for urgent pest pages, and the status ticket becomes the booking tracker.</li>
-        <li><b>From Threshold</b>The "who's coming" card (name, photo, ID) becomes a core part of every confirmation.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Next + rules -->
-  <section class="foot">
-    <div class="card">
-      <h2 class="block-title">Next: Lab 02 · Directions</h2>
-      <p>For the chosen name I'll build three visual directions that differ in how much lime shows, the type pairing and how strongly the motif appears. Each is applied to the same four things: the homepage hero, a service card, a price block and a mobile booking step.</p>
-      <p class="note">Colours on this page are provisional. Lab 02 settles them.</p>
-    </div>
-    <div class="card">
-      <h2 class="block-title">House rules</h2>
-      <ul class="rules">
-        <li>No shadows</li>
-        <li>Space separates, not lines</li>
-        <li>No dark sections</li>
-        <li>Lime is never text</li>
-        <li>Photos as tall as their copy</li>
-        <li>No empty grid cells</li>
-        <li>Titles of two or three words</li>
-        <li>Nothing looks browser-drawn</li>
-        <li>Calm motion</li>
-        <li>Proof points are facts only</li>
-        <li class="new">New for Bestone: pests are never pictured. Show the fix.</li>
-      </ul>
+      <div class="card"><b>My lean: 1, with 3's price index</b><p>Portland gives the calm, premium first impression landlords judge on. The record-style price list from 3 makes "price before" impossible to miss.</p></div>
+      <div class="card"><b>Next: Lab 03 · Foundations</b><p>The full colour set with contrast checks, type scale, spacing, corners and motion, written into TOUCHSTONE.md in the repo.</p></div>
     </div>
   </section>
 
 </div>
+
+<script>
+  (function () {
+    var stage = document.getElementById('stage');
+    var buttons = document.querySelectorAll('.switch button');
+    function setDir(d) {
+      stage.setAttribute('data-dir', d);
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === d)); });
+      try { localStorage.setItem('touchstone-dir', d); } catch (e) {}
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { setDir(b.dataset.set); }); });
+    try { var saved = localStorage.getItem('touchstone-dir'); if (saved === '1' || saved === '2' || saved === '3') setDir(saved); } catch (e) {}
+
+    var prices = [[130, 'Studio flat, standard clean.'], [200, '1 bedroom, standard clean.'], [230, '2 bedrooms, standard clean.'], [300, '3 bedrooms, up to two bathrooms.'], [350, '4 bedrooms, multiple bathrooms.']];
+    var seg = document.getElementById('seg');
+    seg.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      seg.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-checked', String(x === b)); });
+      var p = prices[Number(b.dataset.i)];
+      document.getElementById('pbFig').textContent = '£' + p[0];
+      document.getElementById('pbNote').textContent = p[1] + ' Confirmed before you book.';
+      document.getElementById('pbBtn').textContent = 'Book at £' + p[0];
+    });
+
+    ['dates', 'slots'].forEach(function (id) {
+      var group = document.getElementById(id);
+      group.addEventListener('click', function (e) {
+        var b = e.target.closest('button'); if (!b || b.disabled) return;
+        group.querySelectorAll('button:not(:disabled)').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      });
+    });
+  })();
+</script>
 </body>
 </html>
