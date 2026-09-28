@@ -107,7 +107,7 @@ export function SiteHeader() {
           {/* Brand Logo & Primary Navigation Group */}
           <div className="flex items-center gap-3 lg:gap-6 shrink-0 min-w-0">
             <Logo href="/" className="cursor-pointer">
-              <span className="font-heading font-extrabold text-[22px] sm:text-2xl tracking-[-0.02em] text-[#1D201E] whitespace-nowrap">Bestone</span>
+              <span className="font-heading font-extrabold text-[22px] sm:text-2xl tracking-[-0.02em] text-[#1D201E] whitespace-nowrap">Bestone Services</span>
             </Logo>
 
             {/* Desktop Nav - 4 Distinct Categories with Mega Menu Triggers */}
@@ -132,7 +132,7 @@ export function SiteHeader() {
                       }}
                       aria-expanded={isOpen}
                       aria-controls={`mega-menu-${cat.id}`}
-                      className={`px-3.5 xl:px-4 py-2 rounded-[10px] font-medium flex items-center gap-1.5 transition-colors duration-150 text-decoration-none cursor-pointer whitespace-nowrap focus-visible:outline-none ${
+                      className={`px-2.5 xl:px-3 py-2 rounded-[10px] font-medium flex items-center gap-1.5 transition-colors duration-150 text-decoration-none cursor-pointer whitespace-nowrap focus-visible:outline-none ${
  isOpen || isRouteActive
  ? "bg-[#EAF8D6] text-[#1D201E] font-semibold "
  : "text-[#1D201E] hover:bg-[#EAF8D6]/40"
@@ -165,7 +165,7 @@ export function SiteHeader() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp us"
-              className="grid h-10 w-10 place-items-center rounded-[10px] bg-white text-[#1D201E] md:hidden"
+              className="grid h-10 w-10 place-items-center rounded-[10px] bg-white text-[#1D201E] xl:hidden"
             >
               <MessageCircle className="size-5" aria-hidden="true" />
             </a>
@@ -181,7 +181,7 @@ export function SiteHeader() {
               href={siteContact.getWhatsappUrl("Hi Bestone, I'd like a price for a job.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex min-h-10 items-center gap-2 rounded-[10px] bg-white px-3.5 text-[15px] font-semibold text-[#1D201E] no-underline transition-colors duration-150 hover:bg-[#EAF8D6]"
+              className="hidden xl:inline-flex min-h-10 items-center gap-2 rounded-[10px] bg-white px-3.5 text-[15px] font-semibold text-[#1D201E] no-underline transition-colors duration-150 hover:bg-[#EAF8D6]"
             >
               <MessageCircle className="size-4" aria-hidden="true" />
               <span>WhatsApp</span>
