@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ShieldCheck, ChevronUp, ArrowRight, X } from "lucide-react";
+import { ShieldCheck, ChevronUp, ArrowRight, X } from "@/components/icons";
 
 export interface SummaryItem {
   label: string;

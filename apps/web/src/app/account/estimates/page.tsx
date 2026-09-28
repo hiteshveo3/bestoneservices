@@ -11,7 +11,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { 
   FileText, 
   ChevronRight
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function CustomerEstimatesPage() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);

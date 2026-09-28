@@ -14,7 +14,7 @@ import {
   Send, 
   ChevronLeft, 
   AlertCircle
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function CustomerBookingChatPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);

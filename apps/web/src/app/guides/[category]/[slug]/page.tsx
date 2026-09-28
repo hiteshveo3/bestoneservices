@@ -22,7 +22,7 @@ import {
   ArrowRight,
   List,
   ExternalLink
-} from "lucide-react";
+} from "@/components/icons";
 import { getGuideBySlug, GUIDES_DATABASE, type ContentBlock } from "@/lib/guides-data";
 import { SectionReveal } from "@/components/motion";
 

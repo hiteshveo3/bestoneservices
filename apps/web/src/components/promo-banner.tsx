@@ -64,8 +64,8 @@ export function PromoBanner() {
             rel="noopener noreferrer"
             className="px-2.5 py-1 sm:px-3 bg-[#B7F56A] text-[#1D201E] rounded-md text-[11px] sm:text-xs font-inter font-medium hover:opacity-90 transition-opacity duration-150 text-decoration-none whitespace-nowrap cursor-pointer shrink-0"
           >
-            <span className="sm:hidden">Claim →</span>
-            <span className="hidden sm:inline">Claim 20% Discount →</span>
+            <span className="sm:hidden">Claim</span>
+            <span className="hidden sm:inline">Claim 20% Discount</span>
           </Link>
         </div>
 

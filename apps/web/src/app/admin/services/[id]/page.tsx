@@ -23,7 +23,7 @@ import {
   Trash2, 
   PoundSterling,
   ShieldCheck
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminServiceDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -630,7 +630,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 onClick={() => setPreviewModalOpen(false)}
                 className="text-xs font-medium text-ink-500 hover:text-ink-600 cursor-pointer border-none bg-transparent"
               >
-                ✕ Close
+                Close
               </button>
             </div>
 

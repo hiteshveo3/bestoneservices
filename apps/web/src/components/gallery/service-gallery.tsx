@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Camera, ZoomIn } from "lucide-react";
+import { Camera, ZoomIn } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 import { Lightbox, type LightboxImage } from "./lightbox";
 

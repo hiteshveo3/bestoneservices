@@ -30,7 +30,7 @@ import {
   X, 
   Search, 
   ChevronRight
-} from "lucide-react";
+} from "@/components/icons";
 
 interface NavGroup {
   title: string;

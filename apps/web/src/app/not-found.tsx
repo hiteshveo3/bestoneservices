@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/icons";
 import { Button, Eyebrow, Petals } from "@/components/touchstone";
 
 /** Lab 03 S61 C: the page has moved, and every service is one tap away. */

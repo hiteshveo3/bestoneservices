@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { ExternalLink, Edit3, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Edit3, ChevronLeft, ChevronRight, CheckCircle2 } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 import { getGoogleProfileForCategory, type GoogleBusinessProfile } from "@/config/google-business-profiles";
 import { GoogleRatingStars } from "@/components/trust/google-rating-stars";

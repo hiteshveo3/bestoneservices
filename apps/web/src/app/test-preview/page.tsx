@@ -13,7 +13,7 @@ import {
   CheckCircle2, 
   BadgeCheck, 
   ArrowLeft 
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function TestPreviewPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -91,7 +91,7 @@ export default function TestPreviewPage() {
             href="/booking/"
             className="px-3 py-1 bg-[#B7F56A] text-[#1D201E] rounded-md text-xs font-inter font-medium hover:opacity-90 transition-opacity duration-150 text-decoration-none whitespace-nowrap cursor-pointer"
           >
-            Claim 20% Discount →
+            Claim 20% Discount
           </Link>
         </div>
       </div>

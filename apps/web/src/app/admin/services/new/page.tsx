@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { 
   ArrowLeft, 
   AlertCircle 
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminNewServicePage() {
   const router = useRouter();
@@ -181,7 +181,7 @@ export default function AdminNewServicePage() {
                 onChange={(e) => setPricingType(e.target.value as "flat_rate" | "property_size_matrix" | "hourly" | "package_tiers")}
                 className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
               >
-                <option value="property_size_matrix">Property Size Matrix (Studio → 4+ Bed)</option>
+                <option value="property_size_matrix">Property Size Matrix (Studio to 4+ Bed)</option>
                 <option value="flat_rate">Flat Rate Fixed Price (£)</option>
                 <option value="hourly">Hourly Rate (£/hour)</option>
                 <option value="package_tiers">Multi-Visit Package Tiers</option>
@@ -293,7 +293,7 @@ export default function AdminNewServicePage() {
             disabled={submitting || !name.trim()}
             className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
           >
-            {submitting ? "Creating Service Package Draft..." : "Create Package & Configure Add-ons →"}
+            {submitting ? "Creating Service Package Draft..." : "Create Package & Configure Add-ons"}
           </button>
         </form>
       </div>

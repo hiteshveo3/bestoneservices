@@ -29,7 +29,7 @@ import {
   Send,
   Edit3,
   Lock
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminBookingDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -543,7 +543,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                       {booking.pricing.priceHistory.map((rec, idx) => (
                         <div key={idx} className="p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-mono space-y-1">
                           <div className="flex justify-between items-center font-medium text-ink-600">
-                            <span>{formatPenceToGBP(rec.oldPence)} → {formatPenceToGBP(rec.newPence)}</span>
+                            <span>{formatPenceToGBP(rec.oldPence)} to {formatPenceToGBP(rec.newPence)}</span>
                             <span className="text-[10px] text-ink-500">{rec.actorName} ({rec.reason.replaceAll("_", " ")})</span>
                           </div>
                           {rec.reasonDetails && <p className="text-ink-500 italic">{rec.reasonDetails}</p>}

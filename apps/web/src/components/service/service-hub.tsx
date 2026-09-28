@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle } from "@/components/icons";
 import { siteContact } from "@/config/site-contact";
 import { Button, Eyebrow, Facts, Petals, PriceList, type PriceRow } from "@/components/touchstone";
 

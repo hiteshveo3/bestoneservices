@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronRight, ChevronLeft, CheckCircle2, MapPin, Calendar, User, ClipboardList } from "lucide-react";
+import { ChevronRight, ChevronLeft, CheckCircle2, MapPin, Calendar, User, ClipboardList } from "@/components/icons";
 
 interface BookingStep {
   id: string;

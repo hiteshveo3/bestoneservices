@@ -12,7 +12,7 @@ import {
   AlertCircle, 
   CheckCircle2, 
   Users
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminDispatchCalendarPage() {
   const [bookings, setBookings] = useState<BookingItem[]>([]);
@@ -177,7 +177,7 @@ export default function AdminDispatchCalendarPage() {
                       onClick={() => setSelectedBooking(b)}
                       className="w-full py-2 rounded-[18px] bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer transition-colors duration-150 border-none"
                     >
-                      Assign Staff Lead →
+                      Assign Staff Lead
                     </button>
                   </div>
                 ))}
@@ -308,7 +308,7 @@ export default function AdminDispatchCalendarPage() {
                 disabled={assigning || !selectedStaffId}
                 className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
               >
-                {assigning ? "Assigning Staff Lead..." : "Confirm Staff Assignment →"}
+                {assigning ? "Assigning Staff Lead..." : "Confirm Staff Assignment"}
               </button>
             </form>
           </div>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sparkles, MapPin } from "lucide-react";
+import { Sparkles, MapPin } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { SectionReveal, MaskedText, StaggerGrid, StaggerItem } from "@/components/motion";
 

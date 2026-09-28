@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { StarIcon, Refresh01Icon, Building03Icon } from '@hugeicons/core-free-icons';
 
+import { Stars } from "@/components/icons";
 export function PricingCorelSection() {
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 font-sans text-start">
@@ -27,7 +28,7 @@ export function PricingCorelSection() {
         </Link>
         <div className="flex items-center gap-2">
           <div className="flex text-[#FFB900]">
-            {"★★★★★"}
+            <Stars label="5 out of 5 stars" />
           </div>
           <span className="text-[#1D201E] text-sm font-medium">(1020 reviews)</span>
         </div>

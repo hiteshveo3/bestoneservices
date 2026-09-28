@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, ShieldCheck, ArrowRight } from "lucide-react";
+import { Check, ShieldCheck, ArrowRight } from "@/components/icons";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 
 export interface ComparisonTier {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clock, ShieldCheck, Trees } from "lucide-react";
+import { Clock, ShieldCheck, Trees } from "@/components/icons";
 import { InstantEstimator } from "@/components/ui/calculator";
 import { siteContact } from "@/config/site-contact";
 import { ServiceHubHero, HubSection } from "@/components/service/service-hub";

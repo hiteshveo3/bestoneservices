@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ShieldCheck, MapPin, Mail, CheckCircle2, ChevronDown, Phone, MessageSquare } from "lucide-react";
+import { ShieldCheck, MapPin, Mail, CheckCircle2, ChevronDown, Phone, MessageSquare, Stars } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { CONTACT } from "@/config/contact";
 import { siteContact } from "@/config/site-contact";
@@ -50,7 +50,7 @@ export function SiteFooter() {
                   <span>Licensed Professional Service</span>
                 </span>
                 <span className="px-2.5 py-0.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-bold inline-flex items-center gap-1">
-                  <span>4.9 ★★★★★</span>
+                  <span aria-hidden="true">4.9</span><Stars label="Rated 4.9 out of 5" />
                 </span>
               </div>
               

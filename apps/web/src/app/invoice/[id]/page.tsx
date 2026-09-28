@@ -12,7 +12,7 @@ import {
   Printer, 
   CreditCard, 
   Building2
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function PublicInvoicePage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);

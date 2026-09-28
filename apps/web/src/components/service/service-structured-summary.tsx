@@ -1,6 +1,6 @@
 "use client";
 
-import { FileText, ShieldCheck, CheckCircle2, MapPin } from "lucide-react";
+import { FileText, ShieldCheck, CheckCircle2, MapPin } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 import type { ServiceEntity } from "@/lib/service-entity-registry";
 

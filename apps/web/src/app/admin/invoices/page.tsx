@@ -11,7 +11,7 @@ import {
   ChevronRight, 
   CheckCircle2, 
   AlertCircle
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminInvoicesQueuePage() {
   const [invoices, setInvoices] = useState<InvoiceItem[]>([]);
@@ -228,7 +228,7 @@ export default function AdminInvoicesQueuePage() {
                 onClick={() => setSelectedInvoice(null)}
                 className="text-xs font-medium text-ink-500 hover:text-ink-600 cursor-pointer border-none bg-transparent"
               >
-                ✕ Close
+                Close
               </button>
             </div>
 
@@ -276,7 +276,7 @@ export default function AdminInvoicesQueuePage() {
                 disabled={submitting || paymentAmountPounds <= 0}
                 className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
               >
-                {submitting ? "Logging Payment..." : "Record Payment & Update Invoice →"}
+                {submitting ? "Logging Payment..." : "Record Payment & Update Invoice"}
               </button>
             </form>
           </div>

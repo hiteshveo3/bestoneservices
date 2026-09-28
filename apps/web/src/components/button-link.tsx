@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/icons";
 
 export type ButtonVariant = "primary" | "secondary" | "dark" | "outline" | "white" | "glass";
 export type ButtonSize = "sm" | "md";

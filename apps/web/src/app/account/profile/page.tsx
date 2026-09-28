@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "@/components/providers/auth-provider";
 import { updateUserProfileDetails } from "@/lib/user-service";
-import { User as UserIcon, Phone, Mail, CheckCircle2 } from "lucide-react";
+import { User as UserIcon, Phone, Mail, CheckCircle2 } from "@/components/icons";
 
 export default function ProfilePage() {
   const { user, profile, refreshProfile } = useAuth();

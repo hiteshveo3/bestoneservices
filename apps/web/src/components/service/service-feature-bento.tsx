@@ -1,4 +1,4 @@
-import { Sparkles, CheckCircle2 } from "lucide-react";
+import { Sparkles, CheckCircle2 } from "@/components/icons";
 import { StaggerGrid, StaggerItem, SectionReveal } from "@/components/motion";
 
 export interface BentoItem {

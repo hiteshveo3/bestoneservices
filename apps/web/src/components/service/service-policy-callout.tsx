@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheck, AlertCircle, Info, Clock, PoundSterling } from "lucide-react";
+import { ShieldCheck, AlertCircle, Info, Clock, PoundSterling } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export type PolicyType = "guarantee" | "minimumCharge" | "surcharge" | "importantCondition" | "customQuoteRule";

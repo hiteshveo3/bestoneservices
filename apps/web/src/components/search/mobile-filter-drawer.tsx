@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { X } from "lucide-react";
+import { X } from "@/components/icons";
 import { FilterSidebar } from "./filter-sidebar";
 import type { FilterState } from "@/lib/use-service-filters";
 import type { CoverageCheckResult } from "@/lib/coverage-data";

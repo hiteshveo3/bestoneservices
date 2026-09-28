@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Check, Sparkles } from "lucide-react";
+import { Plus, Check, Sparkles } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export interface AddOnOption {

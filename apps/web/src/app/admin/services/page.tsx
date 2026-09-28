@@ -10,7 +10,7 @@ import {
   Package, 
   Plus, 
   ChevronRight
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminServicesPage() {
   const [services, setServices] = useState<ServicePackageItem[]>([]);

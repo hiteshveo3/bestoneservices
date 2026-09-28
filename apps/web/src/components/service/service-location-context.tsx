@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export interface LocationHub {

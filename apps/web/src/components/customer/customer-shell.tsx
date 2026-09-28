@@ -20,7 +20,7 @@ import {
   Menu, 
   X, 
   ChevronRight
-} from "lucide-react";
+} from "@/components/icons";
 
 const CUSTOMER_NAV = [
   { label: "Overview", href: "/account", icon: Home },

@@ -8,7 +8,7 @@ import {
   markAllNotificationsAsRead 
 } from "@/lib/repositories/notifications";
 import { type NotificationItem } from "@/types/dashboard";
-import { CheckCheck, Sparkles } from "lucide-react";
+import { CheckCheck, Sparkles } from "@/components/icons";
 
 export default function AdminNotificationsPage() {
   const { user } = useAuth();

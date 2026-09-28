@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useParams, notFound } from "next/navigation";
-import { BookOpen, Clock, ArrowRight, ChevronRight } from "lucide-react";
+import { BookOpen, Clock, ArrowRight, ChevronRight } from "@/components/icons";
 import { getGuidesByCategory, GUIDES_DATABASE, GUIDE_CATEGORY_LABELS } from "@/lib/guides-data";
 
 export default function CategoryLandingPage() {

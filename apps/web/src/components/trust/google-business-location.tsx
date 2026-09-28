@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, ExternalLink, Navigation } from "lucide-react";
+import { MapPin, Phone, ExternalLink, Navigation } from "@/components/icons";
 import { getGoogleProfileForCategory, type GoogleBusinessProfile } from "@/config/google-business-profiles";
 
 export interface GoogleBusinessLocationProps {

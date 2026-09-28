@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MapPin } from "lucide-react";
+import { MapPin } from "@/components/icons";
 
 export default function CustomerAddressesPage() {
   return (

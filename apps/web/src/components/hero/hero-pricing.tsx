@@ -1,6 +1,6 @@
 "use client";
 
-import { Tag } from "lucide-react";
+import { Tag } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { SectionReveal, MaskedText, StaggerGrid, StaggerItem } from "@/components/motion";
 

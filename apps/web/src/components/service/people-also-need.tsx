@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "@/components/icons";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 
 export interface RelevantServiceOption {

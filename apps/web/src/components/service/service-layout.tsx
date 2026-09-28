@@ -16,7 +16,7 @@ import {
   AlertTriangle,
   Flame,
   MapPin,
-} from "lucide-react";
+} from "@/components/icons";
 import type { ApprovedServicePage } from "@/content/approved-service-pages";
 import { siteContact } from "@/config/site-contact";
 import { Spinner } from "@/components/ui/spinner";

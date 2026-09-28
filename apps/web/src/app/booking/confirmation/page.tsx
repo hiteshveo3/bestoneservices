@@ -1,4 +1,4 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { MessageCircle, Phone } from "@/components/icons";
 import { siteContact } from "@/config/site-contact";
 import { Button, Eyebrow, Plaque, Stamp } from "@/components/touchstone";
 

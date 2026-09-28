@@ -1,6 +1,6 @@
 "use client";
 
-import { X, RotateCcw } from "lucide-react";
+import { X, RotateCcw } from "@/components/icons";
 import type { ActiveChip } from "@/lib/use-service-filters";
 
 interface ActiveFilterChipsProps {

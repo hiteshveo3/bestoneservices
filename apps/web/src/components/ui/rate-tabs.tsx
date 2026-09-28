@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Check } from "lucide-react";
+import { Check } from "@/components/icons";
 import { masterPricingData } from "@/config/pricing-data";
 import { getCalculatorConfig, CALC_TO_DATA_KEY, type CalcCategory } from "@/config/pricing-calculator-config";
 

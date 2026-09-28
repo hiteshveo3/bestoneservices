@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/icons";
 import { serviceCatalog, type ServiceCategory } from "@/content/service-catalog";
 import { allApprovedServicePages } from "@/content/approved-service-pages";
 import { InstantEstimator } from "@/components/ui/calculator";

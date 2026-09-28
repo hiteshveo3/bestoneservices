@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useId, forwardRef, type KeyboardEvent } from "react";
-import { ChevronDown, Check, Plus, Minus, Calendar } from "lucide-react";
+import { ChevronDown, Check, Plus, Minus, Calendar } from "@/components/icons";
 
 /* 1. CUSTOM TEXT INPUT */
 export interface CustomTextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {

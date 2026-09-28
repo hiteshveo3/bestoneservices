@@ -14,7 +14,7 @@ import {
   Clock, 
   CheckCircle2, 
   AlertCircle 
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminNewBookingPage() {
   const router = useRouter();

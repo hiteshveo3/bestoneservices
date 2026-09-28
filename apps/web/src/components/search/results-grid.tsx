@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, AlertCircle, ArrowUpDown, ChevronDown } from "lucide-react";
+import { Phone, AlertCircle, ArrowUpDown, ChevronDown } from "@/components/icons";
 import { ServiceResultCard, ServiceResultCardSkeleton } from "./service-result-card";
 import type { DirectoryService } from "@/content/service-directory";
 import type { ActiveChip } from "@/lib/use-service-filters";

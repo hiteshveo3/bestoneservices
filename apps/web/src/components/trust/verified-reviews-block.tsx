@@ -1,6 +1,6 @@
 "use client";
 
-import { Star, ShieldCheck } from "lucide-react";
+import { Star, ShieldCheck } from "@/components/icons";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 import { getVerifiedReviewsForService, type VerifiedReview } from "@/lib/verified-reviews-data";
 

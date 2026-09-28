@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Sparkles } from "lucide-react";
+import { Sparkles } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { SectionReveal, MaskedText, ImageReveal } from "@/components/motion";
 

@@ -12,7 +12,7 @@ import {
   Bug, 
   Trees, 
   Truck 
-} from "lucide-react";
+} from "@/components/icons";
 import {
   CATEGORY_DEFINITIONS,
   JOB_TYPE_DEFINITIONS,

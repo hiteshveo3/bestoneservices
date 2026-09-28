@@ -9,7 +9,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { 
   FileText, 
   ChevronRight
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminEstimatesQueuePage() {
   const [estimates, setEstimates] = useState<EstimateItem[]>([]);

@@ -1,6 +1,6 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { Star } from "@/components/icons";
 
 export interface GoogleRatingStarsProps {
   rating: number; // e.g. 5.0

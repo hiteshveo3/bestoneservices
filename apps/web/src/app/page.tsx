@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Camera, FileText, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, Camera, FileText, MessageCircle, Phone, ShieldCheck, Stars } from "@/components/icons";
 import { siteContact } from "@/config/site-contact";
 import { siteConfig } from "@/config/site";
 import { BLOG_POSTS } from "@/config/blog-data";
@@ -299,7 +299,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-4">
               <span className="ts-fig text-[64px]">{google.rating.toFixed(1)}</span>
               <div>
-                <p className="m-0 text-lg tracking-[3px]" aria-label={`${google.rating.toFixed(1)} out of 5 stars`}>★★★★★</p>
+                <p className="m-0 text-lg"><Stars label={`${google.rating.toFixed(1)} out of 5 stars`} /></p>
                 <p className="m-0 text-sm text-muted">{google.reviewCount} Google reviews</p>
               </div>
             </div>

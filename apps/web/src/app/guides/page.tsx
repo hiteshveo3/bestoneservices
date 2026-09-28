@@ -10,7 +10,7 @@ import {
   ChevronRight, 
   CheckCircle2, 
   ArrowRight
-} from "lucide-react";
+} from "@/components/icons";
 import { GUIDES_DATABASE } from "@/lib/guides-data";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import { SitewideIllustrationGrid } from "@/components/illustrations/sitewide-illustration-grid";

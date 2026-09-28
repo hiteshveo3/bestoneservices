@@ -1,6 +1,6 @@
 "use client";
 
-import { HelpCircle, CheckCircle2 } from "lucide-react";
+import { HelpCircle, CheckCircle2 } from "@/components/icons";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 
 export interface ServicePriceFactorsProps {
