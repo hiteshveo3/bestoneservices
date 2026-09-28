@@ -26,7 +26,7 @@ import {
   Edit3,
   PoundSterling,
   ShieldCheck
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function CustomerBookingDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -504,7 +504,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                 onClick={() => setRescheduleModalOpen(false)}
                 className="text-xs font-medium text-ink-500 hover:text-ink-600 cursor-pointer border-none bg-transparent"
               >
-                ✕ Close
+                Close
               </button>
             </div>
 
@@ -571,7 +571,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                 onClick={() => setCancelModalOpen(false)}
                 className="text-xs font-medium text-ink-500 hover:text-ink-600 cursor-pointer border-none bg-transparent"
               >
-                ✕ Close
+                Close
               </button>
             </div>
 
@@ -625,7 +625,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                 onClick={() => setChangeModalOpen(false)}
                 className="text-xs font-medium text-ink-500 hover:text-ink-600 cursor-pointer border-none bg-transparent"
               >
-                ✕ Close
+                Close
               </button>
             </div>
 

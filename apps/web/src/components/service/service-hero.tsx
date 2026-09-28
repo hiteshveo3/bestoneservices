@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Sparkles } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { SectionReveal, MaskedText, StaggerGrid, StaggerItem, ImageReveal } from "@/components/motion";
 import { AnimatedIllustration } from "@/components/illustrations/animated-illustration";

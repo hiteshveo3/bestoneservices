@@ -8,7 +8,7 @@ import {
   Users, 
   AlertCircle, 
   CheckCircle2
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminStaffRosterPage() {
   const [staff, setStaff] = useState<StaffMemberItem[]>([]);
@@ -197,7 +197,7 @@ export default function AdminStaffRosterPage() {
               disabled={submitting || !name.trim() || !email.trim()}
               className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
             >
-              {submitting ? "Registering Staff Member..." : "Register Staff Member →"}
+              {submitting ? "Registering Staff Member..." : "Register Staff Member"}
             </button>
           </form>
         </div>

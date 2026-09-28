@@ -13,7 +13,7 @@ import {
   AlertCircle, 
   Check, 
   Printer
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function PublicQuotePage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -234,7 +234,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
             <div className="p-4 rounded-[18px] bg-success-50 border border-success-500 text-success-900 text-xs font-medium text-center space-y-2">
               <p>This quote has been converted into Booking #{estimate.convertedBookingReference}.</p>
               <Link href={`/account/bookings/${estimate.convertedBookingId}`} className="underline font-mono">
-                View Active Appointment →
+                View Active Appointment
               </Link>
             </div>
           ) : expired ? (
@@ -269,7 +269,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
                 onClick={() => setBookModalOpen(false)}
                 className="text-xs font-medium text-ink-500 hover:text-ink-600 cursor-pointer border-none bg-transparent"
               >
-                ✕ Close
+                Close
               </button>
             </div>
 
@@ -336,7 +336,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
                 disabled={converting || !scheduledDate || !addressLine1 || !postcode}
                 className="w-full py-4 rounded-md bg-[#B7F56A] text-[#1D201E] font-heading font-semibold text-xs hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
               >
-                {converting ? "Converting Quote to Booking..." : "Confirm & Create Active Booking →"}
+                {converting ? "Converting Quote to Booking..." : "Confirm & Create Active Booking"}
               </button>
             </form>
           </div>

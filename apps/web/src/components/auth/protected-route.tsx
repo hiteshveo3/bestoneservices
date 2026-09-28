@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useAuth } from "@/components/providers/auth-provider";
-import { ShieldAlert, Loader2, ArrowLeft } from "lucide-react";
+import { ShieldAlert, Loader2, ArrowLeft } from "@/components/icons";
 import Link from "next/link";
 
 interface ProtectedRouteProps {

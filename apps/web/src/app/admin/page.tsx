@@ -25,7 +25,7 @@ import {
   AlertCircle,
   ChevronRight,
   Plus
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminOverviewPage() {
   const { user, profile } = useAuth();

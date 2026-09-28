@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Bug, Leaf, Sparkles, Truck } from "lucide-react";
+import { Bug, Leaf, Sparkles, Truck } from "@/components/icons";
 import { SECONDARY_BUTTON_CLASS } from "@/lib/ui-classes";
 import { siteContact } from "@/config/site-contact";
 
@@ -43,7 +43,7 @@ export function HeroHome() {
             ))}
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-2 pt-1 text-sm font-medium text-[#1D201E]">
-            {TRUST_POINTS.map((point) => <span key={point} className="inline-flex items-center gap-2"><span className="grid h-5 w-5 place-items-center rounded-full bg-[#EAF8D6] text-xs">✓</span>{point}</span>)}
+            {TRUST_POINTS.map((point) => <span key={point} className="inline-flex items-center gap-2"><span className="ts-tick" aria-hidden="true" />{point}</span>)}
           </div>
         </div>
         <div className="relative mx-auto w-full max-w-[590px]">

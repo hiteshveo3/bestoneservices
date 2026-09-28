@@ -22,7 +22,7 @@ import {
   ChevronRight, 
   ChevronLeft,
   Database
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminBookingsPage() {
   const [bookings, setBookings] = useState<BookingItem[]>([]);
@@ -342,7 +342,7 @@ export default function AdminBookingsPage() {
                         href={`/admin/bookings/${b.id}`}
                         className="text-xs font-medium text-ink-600 underline text-decoration-none"
                       >
-                        Open Workspace →
+                        Open Workspace
                       </Link>
                     </div>
                   </div>

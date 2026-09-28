@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { List, ChevronDown } from "lucide-react";
+import { List, ChevronDown } from "@/components/icons";
 
 export interface TocItem {
   id: string;

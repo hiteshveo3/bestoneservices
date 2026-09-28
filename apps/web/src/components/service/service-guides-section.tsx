@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, ArrowUpRight, User } from "lucide-react";
+import { BookOpen, ArrowUpRight, User } from "@/components/icons";
 
 export interface GuideCardProps {
   tag: string;

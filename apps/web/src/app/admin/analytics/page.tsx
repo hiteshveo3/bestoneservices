@@ -14,12 +14,7 @@ import { type InvoiceItem } from "@/types/invoice";
 import { type StaffMemberItem } from "@/types/staff";
 import { type ReviewItem } from "@/types/review";
 import { Spinner } from "@/components/ui/spinner";
-import { 
-  TrendingUp, 
-  PieChart, 
-  Award, 
-  FileSpreadsheet
-} from "lucide-react";
+import { TrendingUp, PieChart, Award, FileSpreadsheet, Star } from "@/components/icons";
 
 export default function AdminAnalyticsDashboardPage() {
   const [bookings, setBookings] = useState<BookingItem[]>([]);
@@ -204,7 +199,7 @@ export default function AdminAnalyticsDashboardPage() {
                         <td className="py-3 font-medium text-ink-600">{stf.staffName} ({stf.staffId})</td>
                         <td className="py-3 text-ink-500">{stf.role.replace("_", " ").toUpperCase()}</td>
                         <td className="py-3 text-center font-medium text-ink-600">{stf.jobsCompletedCount}</td>
-                        <td className="py-3 text-right font-medium text-warning-500">{stf.averageRating} ★</td>
+                        <td className="py-3 text-right font-medium text-warning-500"><span className="inline-flex items-center gap-1">{stf.averageRating} <Star className="size-3.5" fill="currentColor" /></span></td>
                       </tr>
                     ))}
                   </tbody>

@@ -16,7 +16,7 @@ import {
   Clock, 
   MapPin,
   AlertCircle
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function CustomerBookingsPage() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);

@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, MapPin, Calendar, Briefcase } from "lucide-react";
+import { CheckCircle2, MapPin, Calendar, Briefcase } from "@/components/icons";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 import { getCaseStudiesForService } from "@/lib/case-studies-data";
 

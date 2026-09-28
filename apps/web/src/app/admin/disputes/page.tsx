@@ -8,7 +8,7 @@ import {
   ShieldAlert, 
   CheckCircle2, 
   AlertCircle
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminDisputesPage() {
   const [disputes, setDisputes] = useState<DisputeItem[]>([]);
@@ -151,7 +151,7 @@ export default function AdminDisputesPage() {
                     }}
                     className="px-4 py-2 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer transition-colors duration-150 border-none "
                   >
-                    Resolve Claim →
+                    Resolve Claim
                   </button>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function AdminDisputesPage() {
                 onClick={() => setSelectedDispute(null)}
                 className="text-xs font-medium text-ink-500 hover:text-ink-600 cursor-pointer border-none bg-transparent"
               >
-                ✕ Close
+                Close
               </button>
             </div>
 
@@ -224,7 +224,7 @@ export default function AdminDisputesPage() {
                 disabled={submitting}
                 className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
               >
-                {submitting ? "Updating Resolution..." : "Confirm Resolution Decision →"}
+                {submitting ? "Updating Resolution..." : "Confirm Resolution Decision"}
               </button>
             </form>
           </div>

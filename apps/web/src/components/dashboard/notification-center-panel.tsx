@@ -10,7 +10,7 @@ import {
   markAllNotificationsAsRead 
 } from "@/lib/repositories/notifications";
 import { type NotificationItem } from "@/types/dashboard";
-import { Bell, Sparkles, X, ChevronRight } from "lucide-react";
+import { Bell, Sparkles, X, ChevronRight } from "@/components/icons";
 
 export function NotificationCenterPanel() {
   const { user, role } = useAuth();

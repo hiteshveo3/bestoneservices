@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, MessageCircle } from "lucide-react";
+import { MapPin, MessageCircle } from "@/components/icons";
 import { siteContact } from "@/config/site-contact";
 import { locations } from "@/content/locations";
 import { Button, Eyebrow, Facts, Section, SectionHead, SlimCta } from "@/components/touchstone";

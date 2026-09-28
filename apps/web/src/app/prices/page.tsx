@@ -2,7 +2,7 @@
 
 import { Suspense } from "react";
 import Link from "next/link";
-import { List, Layers, XCircle } from "lucide-react";
+import { List, Layers, XCircle } from "@/components/icons";
 import { generatePricingPageSchema } from "@/lib/pricing-schema";
 import { InstantEstimator } from "@/components/ui/calculator";
 import { FaqAccordion } from "@/components/ui/faq-accordion";

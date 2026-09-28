@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { Sparkles } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 

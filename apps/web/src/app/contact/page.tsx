@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "@/components/icons";
 import { siteContact } from "@/config/site-contact";
 import { Spinner } from "@/components/ui/spinner";
 import { FormError } from "@/components/ui/form-status";

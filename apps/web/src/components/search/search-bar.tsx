@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Search, X } from "lucide-react";
+import { Search, X } from "@/components/icons";
 
 interface SearchBarProps {
   value: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { Tag, ShieldCheck, MapPin, Clock, Users, PoundSterling } from "lucide-react";
+import { Tag, ShieldCheck, MapPin, Clock, Users, PoundSterling } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export interface AtAGlanceField {

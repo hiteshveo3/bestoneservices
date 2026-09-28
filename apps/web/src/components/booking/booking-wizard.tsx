@@ -14,7 +14,7 @@ import {
   AlertCircle, 
   CheckCircle2,
   Info
-} from "lucide-react";
+} from "@/components/icons";
 import { 
   loadBookingState, 
   saveBookingState, 
@@ -592,7 +592,7 @@ export function BookingWizard() {
                   href="/account/dashboard"
                   className="px-6 py-3 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] text-decoration-none inline-block "
                 >
-                  View My Dashboard →
+                  View My Dashboard
                 </Link>
                 <Link
                   href="/"

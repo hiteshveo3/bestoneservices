@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, SprayCan, Trees, Truck, ArrowRight } from "lucide-react";
+import { Sparkles, SprayCan, Trees, Truck, ArrowRight } from "@/components/icons";
 
 export interface HeroShortcutsProps {
   className?: string;

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/icons";
 import { motion, useReducedMotion } from "framer-motion";
 import { MOTION_DURATION, MOTION_EASE } from "@/components/motion";
 

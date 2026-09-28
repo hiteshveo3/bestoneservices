@@ -12,7 +12,7 @@ import {
   MapPin, 
   AlertCircle, 
   ArrowLeft
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function GuestBookingStatusPage() {
   const [reference, setReference] = useState("");
@@ -189,7 +189,7 @@ export default function GuestBookingStatusPage() {
                 href="/account/login"
                 className="text-xs font-medium text-ink-600 underline hover:text-ink-600"
               >
-                Log in to create an account & manage full appointment timeline →
+                Log in to create an account & manage full appointment timeline
               </Link>
             </div>
           </div>

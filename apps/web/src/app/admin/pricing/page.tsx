@@ -11,7 +11,7 @@ import {
   Percent,
   Clock,
   ShieldCheck
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminPricingPage() {
   const [loading, setLoading] = useState(true);

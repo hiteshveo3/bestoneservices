@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import { DayStrip, Sundial } from "@/components/touchstone/sundial";
-import { ChevronLeft, MapPin, User, Check, MessageCircle, Phone, AlertCircle } from "lucide-react";
+import { ChevronLeft, MapPin, User, Check, MessageCircle, Phone, AlertCircle } from "@/components/icons";
 import { CONTACT } from "@/config/contact";
 
 interface BookingData {

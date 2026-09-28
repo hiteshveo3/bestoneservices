@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { HelpCircle, ArrowRight } from "lucide-react";
+import { HelpCircle, ArrowRight } from "@/components/icons";
 
 export default function CustomerSupportPage() {
   return (

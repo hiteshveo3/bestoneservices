@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth, formatAuthError } from "@/components/providers/auth-provider";
-import { Eye, EyeOff, Sparkles, ArrowRight, ShieldCheck, Mail, Lock, CheckCircle2 } from "lucide-react";
+import { Eye, EyeOff, Sparkles, ArrowRight, ShieldCheck, Mail, Lock, CheckCircle2 } from "@/components/icons";
 
 function GoogleMark() {
   return (

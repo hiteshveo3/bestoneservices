@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight01Icon, Search01Icon, ChevronDownIcon, Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { siteContact } from "@/config/site-contact";
 import { megaMenuData } from "@/config/site-navigation";

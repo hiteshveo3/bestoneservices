@@ -1,6 +1,6 @@
 "use client";
 
-import { HelpCircle, Check } from "lucide-react";
+import { HelpCircle, Check } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export interface DecisionQuestion {

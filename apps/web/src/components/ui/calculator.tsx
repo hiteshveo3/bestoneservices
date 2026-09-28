@@ -12,7 +12,7 @@ import {
   ArrowRight,
   ArrowLeft,
   MessageCircle,
-} from "lucide-react";
+} from "@/components/icons";
 import { masterPricingData } from "@/config/pricing-data";
 import {
   getCalculatorConfig,

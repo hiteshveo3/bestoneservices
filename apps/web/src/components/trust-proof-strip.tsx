@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheck, Award, CheckCircle2, MapPin } from "lucide-react";
+import { ShieldCheck, Award, CheckCircle2, MapPin } from "@/components/icons";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 
 export function TrustProofStrip() {

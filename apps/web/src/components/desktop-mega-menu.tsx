@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Sparkles, Bug, Trees, Truck } from "lucide-react";
+import { ArrowRight, Sparkles, Bug, Trees, Truck } from "@/components/icons";
 import { megaMenuData, type MegaMenuFeaturePanel } from "@/config/site-navigation";
 
 export interface DesktopMegaMenuProps {

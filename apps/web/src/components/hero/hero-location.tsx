@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin } from "lucide-react";
+import { MapPin } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { SectionReveal, MaskedText, ImageReveal } from "@/components/motion";
 

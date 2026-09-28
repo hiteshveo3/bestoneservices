@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Info } from "lucide-react";
+import { Check, Info } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 
 export interface PropertyTier {

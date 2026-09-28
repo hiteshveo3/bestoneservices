@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar as CalendarIcon, Clock, AlertCircle, Check } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, AlertCircle, Check } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export interface BookingCalendarProps {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
+import { Sparkles } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { classifyPageIntent } from "@/lib/page-intent";
 

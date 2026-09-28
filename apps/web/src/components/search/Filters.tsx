@@ -357,7 +357,7 @@ export function UrgencyFacetList({
 }) {
   const options: { value: Urgency | "all"; label: string; badge?: string }[] = [
     { value: "all", label: "Any time" },
-    { value: "emergency", label: "Urgent", badge: "⚡ 90 min" },
+    { value: "emergency", label: "Urgent", badge: "90 min" },
     { value: "this-week", label: "This week" },
     { value: "flexible", label: "Flexible" },
   ];
@@ -513,7 +513,7 @@ export function FilterBar({
     filters.urgency === "all"
       ? "Urgency"
       : filters.urgency === "emergency"
-        ? "⚡ Emergency"
+        ? "Emergency"
         : filters.urgency === "this-week"
           ? "This Week"
           : "Flexible";
@@ -662,7 +662,7 @@ export function ActiveFilters({
   if (filters.urgency !== "all") {
     chips.push({
       id: "urgency",
-      label: filters.urgency === "emergency" ? "⚡ Emergency" : filters.urgency === "this-week" ? "This Week" : "Flexible",
+      label: filters.urgency === "emergency" ? "Emergency" : filters.urgency === "this-week" ? "This Week" : "Flexible",
       onRemove: onClearUrgency,
     });
   }

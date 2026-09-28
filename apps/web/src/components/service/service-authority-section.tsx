@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "@/components/icons";
 import { ButtonLink } from "@/components/button-link";
 import { siteContact } from "@/config/site-contact";
 

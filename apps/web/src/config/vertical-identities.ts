@@ -1,4 +1,4 @@
-import { Sparkles, Bug, Trees, Truck } from "lucide-react";
+import { Sparkles, Bug, Trees, Truck } from "@/components/icons";
 
 export interface VerticalIdentity {
   id: "cleaning" | "pest" | "gardening" | "removals";

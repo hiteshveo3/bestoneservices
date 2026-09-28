@@ -21,7 +21,7 @@ import { siteContact } from "@/config/site-contact";
 import { organisationSchema } from "@/lib/structured-data";
 import { PrintChecklistButton } from "@/components/blog/print-checklist-button";
 import { SECONDARY_BUTTON_CLASS, SIDEBAR_CALL_BUTTON_CLASS } from "@/lib/ui-classes";
-import { PhoneCall } from "lucide-react";
+import { PhoneCall } from "@/components/icons";
 
 function renderInlineBold(text: string) {
   return text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
@@ -347,7 +347,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
                     </tbody>
                   </table>
                 </div>
-                <span className="text-xs font-medium text-[#1D201E]/60 lg:hidden">Swipe the table sideways to see every column →</span>
+                <span className="text-xs font-medium text-[#1D201E]/60 lg:hidden">Swipe the table sideways to see every column</span>
               </section>
             ))}
 

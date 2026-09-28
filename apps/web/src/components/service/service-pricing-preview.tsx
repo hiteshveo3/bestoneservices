@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Tag, ArrowRight } from "lucide-react";
+import { Tag, ArrowRight } from "@/components/icons";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 
 export interface PricingTierPreview {

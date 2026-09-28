@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Bug, Leaf, Package, ShieldCheck, Sparkles, Truck } from "lucide-react";
+import { Bug, Leaf, Package, ShieldCheck, Sparkles, Truck } from "@/components/icons";
 import type { ServiceCategory } from "@/content/service-directory";
 
 type ServiceCardMotionProps = {

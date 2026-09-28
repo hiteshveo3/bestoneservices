@@ -74,7 +74,7 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | 2026-09-28 | Homepage headline uses two weights, no streak (R3 B) | Lab 04 |
 | 2026-09-28 | Prices on cards sit in the soft lime price tile (R4 C) | Lab 04 |
 | 2026-09-28 | Secondary buttons, text links and sizes kept as shown (R5) | Lab 04 |
-| 2026-09-28 | One icon set: Lucide, 1.75 stroke (Hugeicons to be phased out) | Build |
+| 2026-09-28 | One icon set: Hugeicons only. Named icons live in `components/icons.tsx`; lucide is removed; no glyph icons (★ ✕ ⚡ ✓ →) in the UI | Client |
 
 ## Open
 
@@ -116,5 +116,5 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | Account and admin shells: wordmark, plain eyebrows, 12px nav, internal phase badges removed | Done |
 | Guides, blog and search: swept, not rebuilt | Partial |
 | Photo report and pest treatment report documents (S62, S63): no app pages yet | Later |
-| Hugeicons phased out for lucide | Later |
+| Icons: every lucide icon and glyph moved to Hugeicons, lucide-react uninstalled, the tick marker drawn from Hugeicons Tick02 | Done |
 | Live `/touchstone` component page | Later |

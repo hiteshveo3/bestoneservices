@@ -10,7 +10,7 @@ import {
   CheckCircle2, 
   AlertCircle, 
   MessageSquare
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminReviewsPage() {
   const [reviews, setReviews] = useState<ReviewItem[]>([]);

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export interface EditorialStorytellingProps {

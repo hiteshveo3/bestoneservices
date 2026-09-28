@@ -17,7 +17,7 @@ import {
   Send, 
   Mail, 
   AlertCircle
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminCommunicationsPage() {
   const [conversations, setConversations] = useState<ConversationItem[]>([]);

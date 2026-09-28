@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { X } from "lucide-react";
+import { X } from "@/components/icons";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { MOTION_DURATION, MOTION_EASE } from "@/components/motion";
 

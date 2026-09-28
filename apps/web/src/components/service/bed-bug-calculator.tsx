@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "@/components/icons";
 import { masterPricingData } from "@/config/pricing-data";
 import { siteContact } from "@/config/site-contact";
 
@@ -163,7 +163,7 @@ export function BedBugPriceCalculator() {
             rel="noopener noreferrer"
             className="px-6 py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-medium text-base hover:bg-[#B7F56A] transition-colors duration-150 text-decoration-none "
           >
-            Book This Estimate →
+            Book This Estimate
           </Link>
         </div>
       </div>

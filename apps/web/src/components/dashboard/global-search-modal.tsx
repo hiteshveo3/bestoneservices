@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/providers/auth-provider";
-import { Search, X, ChevronRight, User, Calendar, FileText, Package, Settings, ShieldCheck, MapPin, PoundSterling } from "lucide-react";
+import { Search, X, ChevronRight, User, Calendar, FileText, Package, Settings, ShieldCheck, MapPin, PoundSterling } from "@/components/icons";
 import { collection, getDocs, query, limit } from "firebase/firestore";
 import { getFirebaseClientDb } from "@/lib/firebase-client";
 

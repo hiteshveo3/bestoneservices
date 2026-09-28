@@ -7,7 +7,7 @@ import {
   FileText, 
   Users, 
   MessageSquare
-} from "lucide-react";
+} from "@/components/icons";
 
 export default function AdminReportsPage() {
   const [downloadingEntity, setDownloadingEntity] = useState<string | null>(null);
@@ -52,7 +52,7 @@ export default function AdminReportsPage() {
             className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium transition-colors duration-150 border-none cursor-pointer flex items-center justify-center gap-2 "
           >
             <Download className="w-4 h-4 text-[#1D201E]" />
-            <span>{downloadingEntity === "bookings" ? "Exporting CSV..." : "Download Bookings CSV →"}</span>
+            <span>{downloadingEntity === "bookings" ? "Exporting CSV..." : "Download Bookings CSV"}</span>
           </button>
         </div>
 
@@ -75,7 +75,7 @@ export default function AdminReportsPage() {
             className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium transition-colors duration-150 border-none cursor-pointer flex items-center justify-center gap-2 "
           >
             <Download className="w-4 h-4 text-[#1D201E]" />
-            <span>{downloadingEntity === "invoices" ? "Exporting CSV..." : "Download Invoices CSV →"}</span>
+            <span>{downloadingEntity === "invoices" ? "Exporting CSV..." : "Download Invoices CSV"}</span>
           </button>
         </div>
 
@@ -98,7 +98,7 @@ export default function AdminReportsPage() {
             className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium transition-colors duration-150 border-none cursor-pointer flex items-center justify-center gap-2 "
           >
             <Download className="w-4 h-4 text-[#1D201E]" />
-            <span>{downloadingEntity === "staff" ? "Exporting CSV..." : "Download Staff Roster CSV →"}</span>
+            <span>{downloadingEntity === "staff" ? "Exporting CSV..." : "Download Staff Roster CSV"}</span>
           </button>
         </div>
 
@@ -121,7 +121,7 @@ export default function AdminReportsPage() {
             className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium transition-colors duration-150 border-none cursor-pointer flex items-center justify-center gap-2 "
           >
             <Download className="w-4 h-4 text-[#1D201E]" />
-            <span>{downloadingEntity === "reviews" ? "Exporting CSV..." : "Download Reviews CSV →"}</span>
+            <span>{downloadingEntity === "reviews" ? "Exporting CSV..." : "Download Reviews CSV"}</span>
           </button>
         </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Users } from "lucide-react";
+import { Users } from "@/components/icons";
 
 export default function AdminCustomersPage() {
   return (

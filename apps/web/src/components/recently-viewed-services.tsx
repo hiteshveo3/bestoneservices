@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight } from "@/components/icons";
 import { getRecentlyViewedServices, trackServiceVisit, type RecentServiceItem } from "@/lib/recently-viewed";
 import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 

@@ -201,7 +201,7 @@ export function CompactFilterSidebar({
  }`}
           >
             <HugeiconsIcon icon={FlashIcon} size={14} strokeWidth={2} className="text-[#1D201E]" />
-            <span>⚡ Same-Day</span>
+            <span>Same-Day</span>
           </button>
 
           <button

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Calculator, ArrowRight, Tag } from "lucide-react";
+import { Calculator, ArrowRight, Tag } from "@/components/icons";
 import { SectionReveal } from "@/components/motion";
 
 export interface SmartPricingCTAProps {

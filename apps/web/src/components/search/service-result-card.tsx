@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap } from "@/components/icons";
 import type { DirectoryService } from "@/content/service-directory";
 import { ServiceCardMotion } from "@/components/service/service-card-motion";
 
