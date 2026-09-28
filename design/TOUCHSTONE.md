@@ -107,7 +107,14 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | Menus show starting prices (S14); phone bottom tab bar replaced by the S12 B price bar | Done |
 | Broken image paths pointed at approved photos; missing illustrations replaced with the four-petal mark | Done |
 | Booking: day strip + sundial (R1 C+D), lime wash and gradient progress | Done |
-| Prices, guides, blog and search: swept, not rebuilt | Partial |
-| Booking confirmation and status, quote and invoice documents (S53, S54, S62–S64) | Next |
-| Account and admin surfaces (S33, S60, S61) | Next |
+| Prices page: two-weight hero with starting-price record list, slim CTA (S58 A) | Done |
+| Booking confirmation (S53): stamp, progress line, record, next steps; noindex; real phone and WhatsApp only | Done |
+| Invoice (S64) and quote documents: wordmark, company number, record table, figures, paid stamp | Done |
+| Invoice bank details: placeholder numbers removed; the block shows only once `siteContact.bankTransfer` is filled | Needs client |
+| Status chips (`.ts-chip`), record tables (`.ts-table`) in admin, account, rates and comparison | Done |
+| Side rails and accent borders removed everywhere | Done |
+| Account and admin shells: wordmark, plain eyebrows, 12px nav, internal phase badges removed | Done |
+| Guides, blog and search: swept, not rebuilt | Partial |
+| Photo report and pest treatment report documents (S62, S63): no app pages yet | Later |
+| Hugeicons phased out for lucide | Later |
 | Live `/touchstone` component page | Later |

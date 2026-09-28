@@ -94,13 +94,13 @@ export default function AdminNotificationsPage() {
           filteredNotifications.map((n) => (
             <div
               key={n.id}
-              className={`bg-white rounded-[18px] p-5 space-y-2 flex items-start justify-between gap-4 ${ !n.readAt ? "border-l-4 border-l-blue-500" : "opacity-80" } `}
+              className={`bg-white rounded-[18px] p-5 space-y-2 flex items-start justify-between gap-4 ${ !n.readAt ? " border-l-blue-500" : "opacity-80" } `}
             >
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <span className="font-heading font-medium text-base text-ink-900">{n.title}</span>
                   {!n.readAt && (
-                    <span className="ts-eyebrow">
+                    <span className="ts-chip">
                       New
                     </span>
                   )}

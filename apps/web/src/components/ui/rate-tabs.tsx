@@ -72,7 +72,7 @@ export function RateTabs() {
               <div className="flex items-start justify-between gap-3">
                 <span className="font-heading font-semibold text-base text-[#1D201E]">{card.name}</span>
                 {card.badge && (
-                  <span className="ts-eyebrow">
+                  <span className="ts-chip">
                     {card.badge}
                   </span>
                 )}
@@ -97,7 +97,7 @@ export function RateTabs() {
             <span className="font-semibold text-[#1D201E]">Complete {cat.title.replace(" Pricing", "")} list</span>
             <span className="font-mono text-xs text-[#1D201E]/60">{cat.variants.length} rates</span>
           </div>
-          <table className="w-full min-w-[540px] border-collapse text-left text-sm">
+          <table className="w-full min-w-[540px] ts-table text-left text-sm">
             <caption className="sr-only">{cat.title} full price list</caption>
             <thead>
               <tr className="bg-[#EAF8D6] text-[#1D201E]">

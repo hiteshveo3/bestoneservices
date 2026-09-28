@@ -637,11 +637,11 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
             {/* PREVIEW CARD */}
             <div className="bg-white rounded-[18px] p-6 space-y-4 ">
               <div className="flex items-center justify-between">
-                <span className="ts-eyebrow">
+                <span className="ts-chip">
                   {service.categoryId}
                 </span>
                 {badgeLabel && (
-                  <span className="ts-eyebrow">
+                  <span className="ts-chip">
                     {badgeLabel}
                   </span>
                 )}

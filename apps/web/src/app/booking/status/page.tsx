@@ -53,7 +53,7 @@ export default function GuestBookingStatusPage() {
       case "awaiting_confirmation":
         return <span className="px-2.5 py-1 rounded-md bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">Awaiting Confirmation</span>;
       case "confirmed":
-        return <span className="ts-eyebrow">Confirmed</span>;
+        return <span className="ts-chip">Confirmed</span>;
       case "scheduled":
         return <span className="px-2.5 py-1 rounded-md bg-success-50 text-success-900 text-xs font-mono font-medium uppercase">Scheduled</span>;
       case "in_progress":
@@ -138,7 +138,7 @@ export default function GuestBookingStatusPage() {
             <p className="text-sm font-medium text-ink-600">Querying guest booking records...</p>
           </div>
         ) : booking ? (
-          <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border-l-4 border-l-blue-500 ">
+          <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6  border-l-blue-500 ">
             <div className="flex flex-wrap items-center justify-between gap-3 border-[#ECEAE3] pb-4">
               <div className="space-y-0.5">
                 <span className="font-heading font-medium text-2xl text-ink-900">{booking.reference}</span>

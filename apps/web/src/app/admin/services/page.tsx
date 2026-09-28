@@ -34,7 +34,7 @@ export default function AdminServicesPage() {
   const getStatusBadge = (status: ServiceStatus) => {
     switch (status) {
       case "published":
-        return <span className="ts-eyebrow">Published</span>;
+        return <span className="ts-chip">Published</span>;
       case "draft":
         return <span className="px-2.5 py-1 rounded-md bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">Draft</span>;
       case "archived":

@@ -221,7 +221,7 @@ export default function AdminStaffRosterPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="font-medium text-ink-600 text-sm">{stf.name}</span>
-                      <span className="ts-eyebrow">
+                      <span className="ts-chip">
                         {stf.role.replace("_", " ")}
                       </span>
                     </div>

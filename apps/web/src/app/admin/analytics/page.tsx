@@ -189,7 +189,7 @@ export default function AdminAnalyticsDashboardPage() {
 
             {summary.staffPerformance.length > 0 ? (
               <div className="overflow-x-auto">
-                <table className="w-full text-xs text-start border-collapse font-mono">
+                <table className="w-full text-xs text-start ts-table font-mono">
                   <thead>
                     <tr className=" border-[#ECEAE3] text-left text-[11px] text-ink-500 uppercase">
                       <th className="py-2 font-medium">Technician Name</th>
@@ -198,7 +198,7 @@ export default function AdminAnalyticsDashboardPage() {
                       <th className="py-2 text-right font-medium">Average Customer Rating</th>
                     </tr>
                   </thead>
-                  <tbody className=" divide-bone-300">
+                  <tbody className="">
                     {summary.staffPerformance.map((stf) => (
                       <tr key={stf.staffId}>
                         <td className="py-3 font-medium text-ink-600">{stf.staffName} ({stf.staffId})</td>

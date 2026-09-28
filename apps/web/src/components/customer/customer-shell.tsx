@@ -24,12 +24,12 @@ import {
 
 const CUSTOMER_NAV = [
   { label: "Overview", href: "/account", icon: Home },
-  { label: "My Bookings", href: "/account/bookings", icon: Calendar, phase: 4 },
-  { label: "Estimates", href: "/account/estimates", icon: FileText, phase: 6 },
-  { label: "Invoices", href: "/account/invoices", icon: Receipt, phase: 8 },
+  { label: "My Bookings", href: "/account/bookings", icon: Calendar },
+  { label: "Estimates", href: "/account/estimates", icon: FileText },
+  { label: "Invoices", href: "/account/invoices", icon: Receipt },
   { label: "Notifications", href: "/account/notifications", icon: Bell },
-  { label: "Support", href: "/account/support", icon: HelpCircle, phase: 9 },
-  { label: "Addresses", href: "/account/addresses", icon: MapPin, phase: 9 },
+  { label: "Support", href: "/account/support", icon: HelpCircle },
+  { label: "Addresses", href: "/account/addresses", icon: MapPin },
   { label: "Profile", href: "/account/profile", icon: UserIcon },
 ];
 
@@ -59,7 +59,7 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-[16px] text-ink-600 hover:bg-[#EAF8D6] border-none cursor-pointer"
+                className="lg:hidden p-2 rounded-xl text-ink-600 hover:bg-[#EAF8D6] border-none cursor-pointer"
                 aria-label="Toggle Account Navigation"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -67,8 +67,8 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
 
               <Logo href="/account" className="text-ink-600 font-medium">
                 <div className="flex flex-col">
-                  <span className="font-heading font-medium text-base leading-none">Bestone</span>
-                  <span className="text-[11px] font-mono font-medium text-ink-500 uppercase tracking-wider">Customer Portal</span>
+                  <span className="ts-head text-[22px] leading-none">Bestone</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">Customer Portal</span>
                 </div>
               </Logo>
             </div>
@@ -79,19 +79,19 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
 
               <Link
                 href="/"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#F6F5F1] text-ink-600 text-xs font-medium hover:bg-[#EAF8D6] text-decoration-none"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#F6F5F1] text-ink-600 text-xs font-semibold hover:bg-[#EAF8D6] text-decoration-none"
               >
                 <span>Public Website</span>
                 <ChevronRight className="w-3 h-3 text-ink-600" />
               </Link>
 
-              <div className="flex items-center gap-2 pl-2 border-l border-[#ECEAE3]">
+              <div className="flex items-center gap-2 pl-2  border-[#ECEAE3]">
                 <div className="w-8 h-8 rounded-full bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium text-xs">
                   {customerName.charAt(0).toUpperCase()}
                 </div>
                 <div className="hidden sm:flex flex-col text-start">
                   <span className="font-medium text-xs text-ink-600 leading-tight">{customerName}</span>
-                  <span className="text-[10px] font-mono font-medium text-ink-500">{customerEmail}</span>
+                  <span className="text-[11px] text-muted">{customerEmail}</span>
                 </div>
               </div>
 
@@ -113,8 +113,8 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
           {/* DESKTOP CUSTOMER SIDEBAR */}
           <aside className="hidden lg:block w-56 shrink-0 space-y-4">
             <div className="bg-white rounded-[16px] p-4 space-y-2 sticky top-22 ">
-              <span className="text-[10px] font-mono font-medium uppercase text-ink-500 px-3 tracking-wider block mb-2">
-                MY ACCOUNT
+              <span className="ts-eyebrow block px-3 pb-1">
+                My account
               </span>
               {CUSTOMER_NAV.map((item) => {
                 const isActive = pathname === item.href;
@@ -124,17 +124,12 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]" } `}
+                    className={`flex items-center justify-between min-h-10 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]" } `}
                   >
                     <div className="flex items-center gap-2.5">
-                      <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-ink-600" : "text-ink-500"}`} />
+                      <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-ink" : "text-muted"}`} />
                       <span>{item.label}</span>
                     </div>
-                    {item.phase && !isActive && (
-                      <span className="text-[9px] font-mono text-ink-500 bg-[#F6F5F1] px-1.5 py-0.5 rounded">
-                        P{item.phase}
-                      </span>
-                    )}
                   </Link>
                 );
               })}
@@ -147,11 +142,11 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
               <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-xs" onClick={() => setMobileMenuOpen(false)} />
               <div className="relative w-64 max-w-[75vw] bg-white h-full p-4 space-y-6 overflow-y-auto z-50 text-start ">
                 <div className="flex items-center justify-between border-[#ECEAE3] pb-4">
-                  <span className="font-heading font-medium text-lg text-ink-900">Account Menu</span>
+                  <span className="ts-head text-xl">Account Menu</span>
                   <button
                     type="button"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="p-1 rounded-[16px] text-ink-600 border-none bg-transparent cursor-pointer"
+                    className="p-1 rounded-xl text-ink-600 border-none bg-transparent cursor-pointer"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -167,7 +162,7 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
                         key={item.href}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${
+                        className={`flex items-center justify-between min-h-10 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-150 text-decoration-none ${
  isActive
  ? "bg-[#B7F56A] text-[#1D201E] font-medium"
  : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]"

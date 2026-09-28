@@ -137,7 +137,7 @@ export function NotificationCenterPanel() {
                   <div
                     key={n.id}
                     onClick={() => handleMarkItemRead(n)}
-                    className={`p-3 rounded-[16px] cursor-pointer space-y-1 ${ n.readAt ? "bg-[#F6F5F1]/60 opacity-80" : "bg-white border-l-4 border-l-blue-500 " } `}
+                    className={`p-3 rounded-[16px] cursor-pointer space-y-1 ${ n.readAt ? "bg-[#F6F5F1]/60 opacity-80" : "bg-white  border-l-blue-500 " } `}
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-medium text-xs text-ink-600">{n.title}</span>

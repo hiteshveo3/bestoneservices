@@ -132,7 +132,7 @@ export default function AdminBookingsPage() {
       case "awaiting_confirmation":
         return <span className="px-2.5 py-1 rounded-md bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">Awaiting Conf.</span>;
       case "confirmed":
-        return <span className="ts-eyebrow">Confirmed</span>;
+        return <span className="ts-chip">Confirmed</span>;
       case "scheduled":
         return <span className="px-2.5 py-1 rounded-md bg-success-50 text-success-900 text-xs font-mono font-medium uppercase">Scheduled</span>;
       case "in_progress":
@@ -241,7 +241,7 @@ export default function AdminBookingsPage() {
         <>
           {/* DESKTOP OPERATIONAL TABLE */}
           <div className="hidden md:block bg-white rounded-[18px] overflow-hidden ">
-            <table className="w-full text-start border-collapse">
+            <table className="w-full text-start ts-table">
               <thead>
                 <tr className="bg-white border-[#ECEAE3] text-xs font-mono font-medium uppercase text-ink-500">
                   <th className="py-4 px-6 text-start">Reference</th>
@@ -255,7 +255,7 @@ export default function AdminBookingsPage() {
                   <th className="py-4 px-6 text-end">Action</th>
                 </tr>
               </thead>
-              <tbody className=" divide-bone-300 text-sm">
+              <tbody className=" text-sm">
                 {filteredBookings.map((b) => {
                   const displayPrice = b.pricing?.confirmedPence 
                     ? formatPenceToGBP(b.pricing.confirmedPence)
@@ -320,7 +320,7 @@ export default function AdminBookingsPage() {
                 : formatPenceToGBP(b.pricing?.estimateMinPence || 0);
 
               return (
-                <div key={b.id} className="bg-white rounded-[18px] p-5 space-y-3 text-start border-l-4 border-l-blue-500 ">
+                <div key={b.id} className="bg-white rounded-[18px] p-5 space-y-3 text-start  border-l-blue-500 ">
                   <div className="flex items-center justify-between">
                     <span className="font-mono font-medium text-sm text-ink-600">{b.reference} (v{b.version || 1})</span>
                     {getStatusBadge(b.status)}

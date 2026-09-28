@@ -19,6 +19,12 @@ export const siteContact = {
     country: "United Kingdom",
     formatted: "28–42 Clements Rd, Ilford IG1 1BA, London, UK",
   },
+  /**
+   * Bank details for invoices. Left empty until the client confirms the real
+   * account: the invoice page then asks customers to call for the details
+   * instead of showing placeholder numbers.
+   */
+  bankTransfer: undefined as undefined | { accountName: string; sortCode: string; accountNumber: string },
   getWhatsappUrl: (contextMessage?: string) => {
     const base = "https://wa.me/447490623616";
     if (!contextMessage) return base;

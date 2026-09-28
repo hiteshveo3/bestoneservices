@@ -30,10 +30,10 @@ export function ServiceComparisonMatrix({
       </div>
 
       <div className="overflow-x-auto rounded-[16px] border border-[#ECEAE3]">
-        <table className="w-full text-start border-collapse min-w-[640px]">
+        <table className="w-full text-start ts-table min-w-[640px]">
           <thead>
             <tr className=" border-[#ECEAE3] text-ink-900 font-heading text-lg">
-              <th className="py-4 px-4 text-start font-medium sticky left-0 bg-[#F6F5F1] z-20 border-r border-[#ECEAE3]">
+              <th className="py-4 px-4 text-start font-medium sticky left-0 bg-[#F6F5F1] z-20  border-[#ECEAE3]">
                 Service Scope & Inclusions
               </th>
               <th className="py-4 px-4 text-center font-medium">
@@ -44,10 +44,10 @@ export function ServiceComparisonMatrix({
               </th>
             </tr>
           </thead>
-          <tbody className=" divide-bone-300 text-base text-ink-500">
+          <tbody className=" text-base text-ink-500">
             {rows.map((row, idx) => (
               <tr key={idx}>
-                <td className="py-4 px-4 text-start font-medium text-ink-600 sticky left-0 bg-[#F6F5F1] z-10 border-r border-[#ECEAE3]">
+                <td className="py-4 px-4 text-start font-medium text-ink-600 sticky left-0 bg-[#F6F5F1] z-10  border-[#ECEAE3]">
                   {row.feature}
                 </td>
                 <td className="py-4 px-4 text-center">

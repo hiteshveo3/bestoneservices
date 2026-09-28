@@ -146,7 +146,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real New Bookings Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-info-500 ">
+        <div className="bg-white rounded-[18px] p-5 space-y-2  border-l-info-500 ">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">NEW / AWAITING CONF.</span>
             <Calendar className="w-4 h-4 text-info-500" />
@@ -158,7 +158,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real Confirmed & Scheduled Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-blue-500 ">
+        <div className="bg-white rounded-[18px] p-5 space-y-2  border-l-blue-500 ">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">ACTIVE SCHEDULED</span>
             <Calendar className="w-4 h-4 text-[#1D201E]" />

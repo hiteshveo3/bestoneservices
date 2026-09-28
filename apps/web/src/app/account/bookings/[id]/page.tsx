@@ -289,7 +289,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <span className="font-heading font-medium text-2xl sm:text-3xl text-ink-900">
                 {booking.reference}
               </span>
-              <span className="ts-eyebrow">
+              <span className="ts-chip">
                 {booking.status.replace("_", " ")}
               </span>
             </div>
@@ -471,7 +471,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
             </h3>
 
             {events.length > 0 ? (
-              <div className="relative pl-6 space-y-4 border-l-2 border-[#ECEAE3]">
+              <div className="relative pl-6 space-y-4  border-[#ECEAE3]">
                 {events.map((evt) => (
                   <div key={evt.id} className="relative space-y-1 text-start">
                     <div className="absolute -left-[31px] top-0.5 w-3.5 h-3.5 rounded-full bg-[#B7F56A] border-2 border-white shrink-0" />

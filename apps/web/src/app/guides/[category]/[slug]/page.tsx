@@ -324,7 +324,7 @@ export default function ArticleDetailPage() {
                   return (
                     <div
                       key={idx}
-                      className={`p-6 rounded-[18px] border-l-4 space-y-2 my-6 ${
+                      className={`p-6 rounded-[18px]  space-y-2 my-6 ${
  block.variant === "safety" || block.variant === "important"
  ? "bg-danger-50 border-danger-500 text-ink-600"
  : block.variant === "pricing"
@@ -480,7 +480,7 @@ export default function ArticleDetailPage() {
                           href={`#${h.id}`}
                           className={`flex items-center gap-2 py-1 text-decoration-none transition-colors duration-150 ${
  isActive
- ? "text-ink-600 font-medium border-l-2 border-[#ECEAE3] pl-2"
+ ? "text-ink-600 font-medium  border-[#ECEAE3] pl-2"
  : "text-ink-500 hover:text-ink-600 font-normal"
  }`}
                         >
