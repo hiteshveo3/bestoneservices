@@ -59,10 +59,20 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | 2026-09-28 | Gradients allowed in moderation: lime gradient for main actions and progress, lime wash behind heroes and booking | Lab 02 feedback |
 | 2026-09-28 | Tables use record rows: alternating tone, tabular figures, no rules | Lab 02 feedback |
 | 2026-09-28 | Review is done in one pass: the whole library on one page with a pick list | Lab 02 feedback |
+| 2026-09-28 | Ornaments kept: hallmarks (S01), rooms-done floor plan (S02 B), uniform piping (S03), four petals as corner mark and bullets (S04 A+B), report stamp (S06 A). Streak (S05) not picked | Lab 03 |
+| 2026-09-28 | Headings use two weights (S07 C) | Lab 03 |
+| 2026-09-28 | Contact tiles (S11 B), sticky bar with price (S12 B), header with info row (S13 B), services menu (S14), grouped phone menu (S15 B), breadcrumbs and tabs (S16) | Lab 03 |
+| 2026-09-28 | Heroes: S17 homepage, S18 service hubs, S19 service, S20 urgent, S21 landlords, S22 areas | Lab 03 |
+| 2026-09-28 | Service card with photo on top (S23 A); price list as record rows (S24 A); S25–S34 kept | Lab 03 |
+| 2026-09-28 | Proof: big-figure facts (S35 B), credentials, guarantees, rating, quote review card (S39 A), own team, who's coming | Lab 03 |
+| 2026-09-28 | Job status as a progress line (S44 B); forms S45–S49 kept | Lab 03 |
+| 2026-09-28 | Booking combines lime wash (S50 B) with one question per screen (S50 C); S51–S54 kept | Lab 03 |
+| 2026-09-28 | FAQ as split with help (S55 B); page endings use the slim band (S58 A); footer, states S60–S61 and documents S62–S64 kept | Lab 03 |
+| 2026-09-28 | Data marks (meters, bars, counts) are charcoal; lime is only for selection and actions | Lab 04 |
 
 ## Open
 
-- Lab 03 picks: ornaments (S01–S06), heroes, booking variant, and the rest of the library.
+- Lab 04 picks: date and time picker (R1), main button (R2), homepage headline (R3), card price style (R4), secondary buttons (R5).
 - Proofs from the client: CRRU-approved rodenticide certificate, waste carrier registration number, insurance (public liability, employer's liability, goods in transit), DBS checks.
 - Which phone number is official (020 8079 7336 on the site, 07729 861195 in directories).
 - Re-clean guarantee length: 48 hours today; competitors offer 72 hours or 7 days.
