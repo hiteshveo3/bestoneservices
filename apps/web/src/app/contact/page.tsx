@@ -61,7 +61,7 @@ export default function ContactPage() {
 
   const tiles = [
     { icon: MessageCircle, title: "WhatsApp", detail: "Replies Mon–Sat, 8am–8pm", href: siteContact.getWhatsappUrl("Hi Bestone, I have a question."), external: true },
-    { icon: Phone, title: "Call", detail: siteContact.phoneDisplay, href: siteContact.phoneHref, external: false },
+    { icon: Phone, title: "Call", detail: siteContact.phoneDisplay, href: siteContact.phoneHref, external: false, second: { label: siteContact.mobileDisplay, href: siteContact.mobileHref } },
     { icon: Mail, title: "Email", detail: siteContact.email, href: `mailto:${siteContact.email}`, external: false },
     { icon: MapPin, title: "Our base", detail: siteContact.address.formatted, href: "https://maps.google.com/?q=" + encodeURIComponent(siteContact.address.formatted), external: true },
   ];
@@ -79,8 +79,18 @@ export default function ContactPage() {
           </div>
           {/* S11 B · Contact tiles */}
           <ul className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2 lg:grid-cols-4">
-            {tiles.map(({ icon: Icon, title, detail, href, external }) => (
+            {tiles.map(({ icon: Icon, title, detail, href, external, second }) => (
               <li key={title}>
+                {second ? (
+                  <div className="flex h-full items-center gap-3 rounded-2xl bg-white p-4">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-lime-soft"><Icon className="size-5" aria-hidden="true" /></span>
+                    <span className="grid min-w-0">
+                      <b>{title}</b>
+                      <a href={href} className="text-sm tabular-nums text-muted no-underline hover:text-ink hover:underline">{detail} <span className="text-faint">office</span></a>
+                      <a href={second.href} className="text-sm tabular-nums text-muted no-underline hover:text-ink hover:underline">{second.label} <span className="text-faint">mobile</span></a>
+                    </span>
+                  </div>
+                ) : (
                 <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="flex h-full items-center gap-3 rounded-2xl bg-white p-4 no-underline transition-colors duration-150 hover:bg-lime-soft">
                   <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-lime-soft"><Icon className="size-5" aria-hidden="true" /></span>
                   <span className="grid min-w-0">
@@ -88,6 +98,7 @@ export default function ContactPage() {
                     <span className="break-words text-sm text-muted">{detail}</span>
                   </span>
                 </a>
+                )}
               </li>
             ))}
           </ul>

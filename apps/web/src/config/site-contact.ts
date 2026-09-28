@@ -3,13 +3,20 @@
  * Single Source of Truth for Company Phone, WhatsApp, and Email across UI & Structured Data
  */
 
+/** WhatsApp is on the mobile number (client, 2026-09-28). */
+const WHATSAPP_NUMBER = "447884510459";
+
 export const siteContact = {
   companyName: "Bestone Services Ltd",
-  phoneDisplay: "020 8079 7336",
-  phoneHref: "tel:+442080797336",
-  whatsappDisplay: "07490 623616",
-  whatsappNumber: "447490623616",
-  whatsappHref: "https://wa.me/447490623616",
+  /** Office landline, the main number for calls. */
+  phoneDisplay: "020 8149 4328",
+  phoneHref: "tel:+442081494328",
+  /** Mobile, also listed for calls; WhatsApp runs on this number. */
+  mobileDisplay: "07884 510459",
+  mobileHref: "tel:+447884510459",
+  whatsappDisplay: "07884 510459",
+  whatsappNumber: WHATSAPP_NUMBER,
+  whatsappHref: `https://wa.me/${WHATSAPP_NUMBER}`,
   email: "info@bestoneservices.co.uk",
   address: {
     street: "28–42 Clements Rd",
@@ -26,7 +33,7 @@ export const siteContact = {
    */
   bankTransfer: undefined as undefined | { accountName: string; sortCode: string; accountNumber: string },
   getWhatsappUrl: (contextMessage?: string) => {
-    const base = "https://wa.me/447490623616";
+    const base = `https://wa.me/${WHATSAPP_NUMBER}`;
     if (!contextMessage) return base;
     return `${base}?text=${encodeURIComponent(contextMessage)}`;
   },

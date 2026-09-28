@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ShieldCheck, MapPin, Mail, CheckCircle2, ChevronDown, Phone, MessageSquare, Stars } from "@/components/icons";
+import { ShieldCheck, MapPin, Mail, CheckCircle2, ChevronDown, Phone, Stars, MessageCircle } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { CONTACT } from "@/config/contact";
 import { siteContact } from "@/config/site-contact";
@@ -71,12 +71,16 @@ export function SiteFooter() {
               </div>
               <div className="flex items-center gap-2 font-medium">
                 <Phone className="w-5 h-5 text-[#1D201E] shrink-0" />
-                <a href={`tel:${CONTACT.landline.tel}`} className="text-[#1D201E] hover:underline text-decoration-none transition-colors duration-150">
+                <a href={`tel:${CONTACT.landline.tel}`} className="text-[#1D201E] hover:underline text-decoration-none transition-colors duration-150 tabular-nums">
                   {CONTACT.landline.display}
+                </a>
+                <span aria-hidden="true">·</span>
+                <a href={`tel:${CONTACT.mobile.tel}`} className="text-[#1D201E] hover:underline text-decoration-none transition-colors duration-150 tabular-nums">
+                  {CONTACT.mobile.display}
                 </a>
               </div>
               <div className="flex items-center gap-2 font-medium">
-                <MessageSquare className="w-5 h-5 text-[#1D201E] shrink-0" />
+                <MessageCircle className="w-5 h-5 text-[#1D201E] shrink-0" />
                 <a href={`https://wa.me/${CONTACT.whatsapp.wa}`} target="_blank" rel="noopener noreferrer" className="text-[#1D201E] hover:underline text-decoration-none transition-colors duration-150">
                   WhatsApp Us ({CONTACT.whatsapp.display})
                 </a>

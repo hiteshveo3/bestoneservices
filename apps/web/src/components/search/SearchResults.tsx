@@ -226,7 +226,7 @@ export function SearchResults() {
             </Link>
 
             <a
-              href="tel:02080047788"
+              href={siteContact.phoneHref}
               className={`flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md font-inter text-base font-medium ${SIDEBAR_CALL_BUTTON_CLASS}`}
             >
               <HugeiconsIcon icon={Call02Icon} size={18} strokeWidth={1.8} className="text-[#1D201E]" />
@@ -356,7 +356,7 @@ function ServiceCardItem({
 
           <div className="flex items-center gap-2">
             <a
-              href="tel:02080047788"
+              href={siteContact.phoneHref}
               className="h-10 px-3.5 rounded-[10px] bg-[#EAF8D6] hover:bg-[#A2EA4E] text-[#1D201E] text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <HugeiconsIcon icon={Call02Icon} size={15} strokeWidth={1.8} className="text-[#1D201E]" />
