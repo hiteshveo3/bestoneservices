@@ -5,7 +5,9 @@
 > Bestone → be·**stone**.
 
 This file is the source of truth for decisions. The live experiments are in
-`design/lab/` (open `index.html` for the current lab, `01-name.html` for Lab 01).
+`design/lab/`: `index.html` is the current lab (Lab 03, the library), with
+`01-name.html` and `02-directions.html` kept for the record. Tokens and
+components live in `design/lab/touchstone.css`.
 When the system is settled, the components move into the app and are shown on a
 live `/touchstone` route, in the same way as Itqan's `/itqan`.
 
@@ -49,10 +51,18 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | 2026-09-28 | Brand name in copy is "Bestone" (one word); legal name "Bestone Services Ltd" | Client |
 | 2026-09-28 | Website is English only, London-wide professional | Client |
 | 2026-09-28 | Photos: only approved site photos; illustrations are drawn, photos are never edited or generated | Client |
+| 2026-09-28 | Type: Portland — Archivo condensed (82%) headings and figures, Albert Sans text | Lab 02 |
+| 2026-09-28 | Colour: Record — paper #F6F5F1, white surfaces, stone #ECEAE3, charcoal #1D201E, lime #B7F56A | Lab 02 |
+| 2026-09-28 | Mobile booking follows Portland, with more modern variants explored in Lab 03 | Lab 02 |
+| 2026-09-28 | Secondary buttons are white on the paper page (stone only on white surfaces) | Lab 02 feedback |
+| 2026-09-28 | Markers are lime tiles with an ink tick; a bare lime dot on paper is never used | Lab 02 feedback |
+| 2026-09-28 | Gradients allowed in moderation: lime gradient for main actions and progress, lime wash behind heroes and booking | Lab 02 feedback |
+| 2026-09-28 | Tables use record rows: alternating tone, tabular figures, no rules | Lab 02 feedback |
+| 2026-09-28 | Review is done in one pass: the whole library on one page with a pick list | Lab 02 feedback |
 
 ## Open
 
-- Visual direction (Lab 02: Portland, Lime-led or Record).
+- Lab 03 picks: ornaments (S01–S06), heroes, booking variant, and the rest of the library.
 - Proofs from the client: CRRU-approved rodenticide certificate, waste carrier registration number, insurance (public liability, employer's liability, goods in transit), DBS checks.
 - Which phone number is official (020 8079 7336 on the site, 07729 861195 in directories).
 - Re-clean guarantee length: 48 hours today; competitors offer 72 hours or 7 days.
