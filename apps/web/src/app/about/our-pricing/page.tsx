@@ -32,7 +32,7 @@ const REASONS = [
 export default function OurPricingPage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#F6F5F1] text-[#1D201E] text-start">
-      <section className="bg-[#F6F5F1] border-b border-[#ECEAE3]">
+      <section className="bg-[#F6F5F1] border-[#ECEAE3]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-0">
           <nav
             aria-label="Breadcrumb"
@@ -51,11 +51,11 @@ export default function OurPricingPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-5">
-          <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#EAF8D6]/80 border border-[#ECEAE3] text-xs font-bold uppercase tracking-wider text-[#1D201E] w-fit">
+          <span className="inline-flex items-center gap-1.5 ts-eyebrow">
             Pricing, explained
           </span>
 
-          <h1 className="m-0 font-heading text-3xl sm:text-4xl lg:text-[48px] font-semibold leading-[1.08] tracking-tight text-[#1D201E]">
+          <h1 className="m-0 font-heading text-3xl sm:text-4xl lg:text-[48px] font-[650] leading-[1.08] tracking-tight text-[#1D201E]">
             How we set our prices
           </h1>
 
@@ -71,7 +71,7 @@ export default function OurPricingPage() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 flex flex-col gap-12">
         <section className="flex flex-col gap-5">
-          <h2 className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E]">
+          <h2 className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E]">
             Where the difference actually comes from
           </h2>
           <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1D201E]">
@@ -83,7 +83,7 @@ export default function OurPricingPage() {
             {REASONS.map((reason) => (
               <div
                 key={reason.title}
-                className="bg-white border border-[#ECEAE3] rounded-[18px] p-5 flex flex-col gap-2"
+                className="bg-white rounded-[18px] p-5 flex flex-col gap-2"
               >
                 <strong className="text-base font-semibold text-[#1D201E]">{reason.title}</strong>
                 <span className="text-sm leading-relaxed text-[#1D201E]">{reason.body}</span>
@@ -93,7 +93,7 @@ export default function OurPricingPage() {
         </section>
 
         <section className="flex flex-col gap-5">
-          <h2 className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E]">
+          <h2 className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E]">
             What we do not do
           </h2>
           <ul className="m-0 p-0 list-none flex flex-col gap-2.5">
@@ -119,10 +119,10 @@ export default function OurPricingPage() {
         </section>
 
         <section className="flex flex-col gap-5">
-          <h2 className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E]">
+          <h2 className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E]">
             What that looks like in numbers
           </h2>
-          <div className="overflow-x-auto border border-[#ECEAE3] rounded-[20px] bg-white">
+          <div className="overflow-x-auto rounded-[20px] bg-white">
             <table className="w-full min-w-[420px] border-collapse text-left text-sm">
               <caption className="sr-only">
                 Bestone Services starting rates compared with typical London market ranges
@@ -133,7 +133,7 @@ export default function OurPricingPage() {
                   <th scope="col" className="p-3.5 sm:p-4 font-semibold">Our starting rate</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#ECEAE3] text-[#1D201E]">
+              <tbody className=" text-[#1D201E]">
                 {Object.values(masterPricingData).map((cat) => (
                   <tr key={cat.id}>
                     <th scope="row" className="p-3.5 sm:p-4 font-semibold text-start">
@@ -157,8 +157,8 @@ export default function OurPricingPage() {
           </p>
         </section>
 
-        <section className="p-6 sm:p-8 rounded-[22px] bg-white border border-[#ECEAE3] flex flex-col gap-4">
-          <h2 className="m-0 font-heading text-2xl font-semibold tracking-tight text-[#1D201E]">
+        <section className="p-6 sm:p-8 rounded-[22px] bg-white flex flex-col gap-4">
+          <h2 className="m-0 font-heading text-2xl font-[650] tracking-tight text-[#1D201E]">
             Still want it checked before you commit?
           </h2>
           <p className="m-0 text-base leading-relaxed text-[#1D201E]">

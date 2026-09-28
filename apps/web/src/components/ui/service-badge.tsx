@@ -25,7 +25,7 @@ export function ServiceBadge({ children, variant = "primary", className = "" }: 
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border ${textStyle} ${variantStyles[variant]} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-xl border ${textStyle} ${variantStyles[variant]} ${className}`}
     >
       {children}
     </span>

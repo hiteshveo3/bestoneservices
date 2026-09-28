@@ -46,12 +46,12 @@ export function PageFinalCTA({
   return (
     <section className="pb-16">
       <div className="brand-cta-section p-8 sm:p-14 text-center space-y-6 relative overflow-hidden">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/12 text-[#1D201E] text-xs sm:text-sm font-medium tracking-wider backdrop-blur-xs border border-white/30">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-white/12 text-[#1D201E] text-xs sm:text-sm font-medium tracking-wider backdrop-blur-xs border border-white/30">
           <Sparkles className="w-4 h-4 text-[#1D201E] shrink-0" />
           <span>{intent.primaryCtaText.toUpperCase()}</span>
         </div>
 
-        <h2 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight max-w-3xl mx-auto text-[#1D201E]">
+        <h2 className="font-heading text-3xl sm:text-5xl font-[650] tracking-tight max-w-3xl mx-auto text-[#1D201E]">
           {heading}
         </h2>
 

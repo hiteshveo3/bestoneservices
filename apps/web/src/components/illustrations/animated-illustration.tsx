@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Petals } from "@/components/touchstone";
 
 type AnimatedIllustrationProps = {
   slug: string;
@@ -8,21 +8,15 @@ type AnimatedIllustrationProps = {
   sizes?: string;
 };
 
-export function AnimatedIllustration({
-  slug,
-  alt,
-  className = "object-cover",
-  priority = false,
-  sizes = "(max-width: 768px) 100vw, 33vw",
-}: AnimatedIllustrationProps) {
+/**
+ * Touchstone stand-in for the per-service illustrations, whose image files
+ * were never added to /public. Draws the logo's four petals on a soft lime
+ * field so cards keep their shape without a broken image. Decorative only.
+ */
+export function AnimatedIllustration({ slug }: AnimatedIllustrationProps) {
   return (
-    <Image
-      src={`/images/illustrations/${slug}-source.png`}
-      alt={alt}
-      fill
-      sizes={sizes}
-      priority={priority}
-      className={className}
-    />
+    <div data-illustration={slug} aria-hidden="true" className="absolute inset-0 grid place-items-center bg-[image:var(--grad-lime-soft)]">
+      <Petals size={96} />
+    </div>
   );
 }

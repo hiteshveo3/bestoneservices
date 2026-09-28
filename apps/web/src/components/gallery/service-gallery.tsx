@@ -29,9 +29,9 @@ export function ServiceGallery({
 
   return (
     <>
-      <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-10 border border-[#ECEAE3] space-y-6 text-start">
-        <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+      <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-10 space-y-6 text-start">
+        <div className="space-y-1 border-[#ECEAE3] pb-4">
+          <div className="inline-flex items-center gap-1.5 ts-eyebrow">
             <Camera className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
             <span>AUTHENTIC PHOTOGRAPHY</span>
           </div>
@@ -45,9 +45,9 @@ export function ServiceGallery({
             <div
               key={idx}
               onClick={() => openLightboxAt(idx)}
-              className={`group relative rounded-[16px] overflow-hidden cursor-pointer border border-[#ECEAE3] hover:border-[#1D201E] transition-colors duration-200 bg-[#F6F5F1] ${
-                idx === 0 ? "sm:col-span-2 sm:row-span-2 aspect-4/3" : "aspect-4/3"
-              }`}
+              className={`group relative rounded-[16px] overflow-hidden cursor-pointer hover:bg-[#EAF8D6] transition-colors duration-200 bg-white ${
+ idx === 0 ? "sm:col-span-2 sm:row-span-2 aspect-4/3" : "aspect-4/3"
+ }`}
             >
               <img
                 src={img.src}
@@ -56,7 +56,7 @@ export function ServiceGallery({
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-ink-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-150 flex items-center justify-center">
-                <div className="p-3 rounded-full bg-[#F6F5F1] text-ink-600 border border-[#ECEAE3]">
+                <div className="p-3 rounded-full bg-white text-ink-600 ">
                   <ZoomIn className="w-5 h-5 text-ink-600" />
                 </div>
               </div>

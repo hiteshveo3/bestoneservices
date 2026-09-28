@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MintLimeServiceLayout } from "@/components/service/mint-lime-service-layout";
+import { ServiceLayout } from "@/components/service/service-layout";
 import { InstantEstimator } from "@/components/ui/calculator";
 import { approvedServicePages } from "@/content/approved-service-pages";
 import { servicePageSchema } from "@/lib/structured-data";
@@ -41,7 +41,7 @@ export default function EndOfTenancyCleaningPage() {
   return (
     <main id="main-content" className="text-start">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <MintLimeServiceLayout
+      <ServiceLayout
         category="cleaning-services"
         service="end-of-tenancy-cleaning"
         categoryLabel="Cleaning Services"

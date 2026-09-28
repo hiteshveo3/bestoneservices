@@ -54,7 +54,7 @@ export function ProtectedRoute({
           <ShieldAlert className="w-8 h-8" />
         </div>
         <div className="space-y-2">
-          <h1 className="font-heading text-2xl font-medium text-ink-900">Admin Access Denied</h1>
+          <h1 className="font-heading text-2xl font-[650] text-ink-900">Admin Access Denied</h1>
           <p className="text-sm text-ink-500 leading-relaxed">
             Your account ({user?.email}) does not have administrative permissions for Bestone Services.
           </p>
@@ -63,14 +63,14 @@ export function ProtectedRoute({
         <div className="flex flex-col sm:flex-row gap-3 w-full">
           <Link
             href="/account"
-            className="flex-1 py-3 px-4 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-medium text-center hover:bg-[#A2EA4E] text-decoration-none"
+            className="flex-1 py-3 px-4 rounded-xl bg-[#B7F56A] text-[#1D201E] text-sm font-medium text-center hover:bg-[#A2EA4E] text-decoration-none"
           >
             Customer Account
           </Link>
           <button
             type="button"
             onClick={() => signOutUser()}
-            className="flex-1 py-3 px-4 rounded-full bg-[#F6F5F1] text-ink-600 text-sm font-medium hover:bg-[#EAF8D6] border-none cursor-pointer"
+            className="flex-1 py-3 px-4 rounded-xl bg-[#F6F5F1] text-ink-600 text-sm font-medium hover:bg-[#EAF8D6] border-none cursor-pointer"
           >
             Sign Out
           </button>

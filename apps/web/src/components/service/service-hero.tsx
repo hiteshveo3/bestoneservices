@@ -61,7 +61,7 @@ export function ServiceHero({
 
             {/* 1. Eyebrow Reveal */}
             <SectionReveal disabled>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm sm:text-base font-medium border border-[#ECEAE3]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#B7F56A] text-[#1D201E] text-sm sm:text-base font-medium ">
                 <Sparkles className="w-4 h-4 text-[#1D201E] shrink-0" />
                 <span>{badge}</span>
               </div>
@@ -81,11 +81,11 @@ export function ServiceHero({
 
             {/* 4. CTA / Estimate Input */}
             <SectionReveal disabled className="space-y-3 max-w-xl">
-              <div className="p-1.5 sm:p-2 rounded-[16px] sm:rounded-full flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-white border border-[#ECEAE3]">
+              <div className="p-1.5 sm:p-2 rounded-[16px] sm:rounded-full flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-white ">
                 <input 
                   type="text" 
                   placeholder="Enter property postcode or bedrooms" 
-                  className="w-full px-4 sm:px-5 py-2.5 sm:py-3 bg-transparent text-sm sm:text-base text-ink-900 placeholder:text-ink-400 focus:outline-none font-normal text-start"
+                  className="w-full px-4 sm:px-5 py-2.5 sm:py-3 bg-transparent text-sm sm:text-base text-ink-900 placeholder:text-ink-400 focus:outline-none font-normal text-start focus:bg-white focus:border-[#1D201E]"
                 />
                 <ButtonLink href="#calculator" variant="primary" className="w-full sm:w-auto text-center whitespace-nowrap shrink-0 font-medium">
                   Get Estimate
@@ -100,15 +100,15 @@ export function ServiceHero({
 
             {/* 5. Metrics Cards Stagger */}
             <StaggerGrid disabled className="pt-4 grid grid-cols-3 gap-3" staggerDelay={0.07}>
-              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5">
+              <StaggerItem className="bg-white rounded-[16px] p-4 text-start space-y-0.5">
                 <div className="font-heading text-xl sm:text-2xl font-medium text-ink-900">{startingPrice}</div>
                 <div className="text-base text-ink-500 font-medium">{startingPriceLabel}</div>
               </StaggerItem>
-              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5">
+              <StaggerItem className="bg-white rounded-[16px] p-4 text-start space-y-0.5">
                 <div className="font-heading text-xl sm:text-2xl font-medium text-ink-900">48 Hours</div>
                 <div className="text-base text-ink-500 font-medium">Re-Clean Support</div>
               </StaggerItem>
-              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5">
+              <StaggerItem className="bg-white rounded-[16px] p-4 text-start space-y-0.5">
                 <div className="font-heading text-xl sm:text-2xl font-medium text-ink-900">London</div>
                 <div className="text-base text-ink-500 font-medium">Service Coverage</div>
               </StaggerItem>

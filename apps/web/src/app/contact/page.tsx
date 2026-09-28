@@ -2,15 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Calendar, PoundSterling, Clock, ShieldCheck, HelpCircle, ArrowRight, CheckCircle2, MessageSquare } from "lucide-react";
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { siteContact } from "@/config/site-contact";
-import { SectionReveal, StaggerGrid, StaggerItem } from "@/components/motion";
 import { Spinner } from "@/components/ui/spinner";
 import { FormError } from "@/components/ui/form-status";
 import { CustomTextInput, CustomSelect } from "@/components/ui/form-controls";
-import { SitewideIllustrationGrid } from "@/components/illustrations/sitewide-illustration-grid";
+import { Eyebrow } from "@/components/touchstone";
 
 type ContactIntent = "book" | "pricing" | "existing" | "guarantee" | "general";
+
+const FORM_INTENTS: Array<{ id: ContactIntent; label: string }> = [
+  { id: "general", label: "A question" },
+  { id: "existing", label: "My booking" },
+  { id: "guarantee", label: "Guarantee" },
+];
+
+const TEXTAREA =
+  "w-full min-h-[120px] resize-none rounded-xl border-0 bg-[#ECEAE3] p-3.5 text-base text-[#1D201E] placeholder:text-[#5A605C] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1D201E]";
 
 export default function ContactPage() {
   const [selectedIntent, setSelectedIntent] = useState<ContactIntent>("general");
@@ -51,343 +59,143 @@ export default function ContactPage() {
     }
   };
 
-  return (
-    <main id="main-content" className="py-12 text-start space-y-12 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
-        {/* HERO SECTION */}
-        <SectionReveal disabled className="bg-[#F6F5F1] rounded-[24px] p-8 sm:p-12 border border-[#ECEAE3]  space-y-4">
-          <span className="px-3.5 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E] text-xs font-mono font-semibold uppercase tracking-wider">
-            CONTACT BESTONE SERVICES
-          </span>
-          <h1 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight text-ink-900">
-            How Can We Help?
-          </h1>
-          <p className="text-lg text-ink-500 max-w-2xl leading-relaxed">
-            Choose what you need below and we&apos;ll guide you to the right team or next step immediately.
-          </p>
-        </SectionReveal>
+  const tiles = [
+    { icon: MessageCircle, title: "WhatsApp", detail: "Replies Mon–Sat, 8am–8pm", href: siteContact.getWhatsappUrl("Hi Bestone, I have a question."), external: true },
+    { icon: Phone, title: "Call", detail: siteContact.phoneDisplay, href: siteContact.phoneHref, external: false },
+    { icon: Mail, title: "Email", detail: siteContact.email, href: `mailto:${siteContact.email}`, external: false },
+    { icon: MapPin, title: "Our base", detail: siteContact.address.formatted, href: "https://maps.google.com/?q=" + encodeURIComponent(siteContact.address.formatted), external: true },
+  ];
 
-        {/* INTENT ROUTING GRID */}
-        <SectionReveal className="space-y-6">
-          <div className="space-y-1">
-            <h2 className="font-heading text-2xl font-medium text-ink-900">Select Your Enquiry Topic</h2>
-            <p className="text-base text-ink-500">Pick an option to open the tailored support path</p>
+  return (
+    <main id="main-content" className="min-h-screen bg-paper text-ink">
+      <section className="bg-paper">
+        <div className="mx-auto grid max-w-[1240px] gap-8 px-4 pb-10 pt-8 sm:px-6 lg:px-8">
+          <div className="grid max-w-3xl gap-4">
+            <Eyebrow>Contact</Eyebrow>
+            <h1 className="ts-head m-0 text-[clamp(38px,5vw,60px)] leading-none">
+              Talk to us <span className="ts-soft">the way that suits you.</span>
+            </h1>
+            <p className="m-0 max-w-[56ch] text-lg text-muted">For a price, WhatsApp is quickest. For anything about an existing booking or a guarantee, use the form and we come back with a reference.</p>
+          </div>
+          {/* S11 B · Contact tiles */}
+          <ul className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2 lg:grid-cols-4">
+            {tiles.map(({ icon: Icon, title, detail, href, external }) => (
+              <li key={title}>
+                <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="flex h-full items-center gap-3 rounded-2xl bg-white p-4 no-underline transition-colors duration-150 hover:bg-lime-soft">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-lime-soft"><Icon className="size-5" aria-hidden="true" /></span>
+                  <span className="grid min-w-0">
+                    <b>{title}</b>
+                    <span className="break-words text-sm text-muted">{detail}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-[1240px] gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+          <div className="grid content-start gap-4">
+            <Eyebrow>Write to us</Eyebrow>
+            <h2 className="ts-head m-0 text-[clamp(28px,3.4vw,40px)]">Tell us what it&apos;s about.</h2>
+            <p className="m-0 text-muted">We reply within working hours, Mon–Sat, 8am–8pm, with a reference you can quote.</p>
+            <dl className="ts-rows m-0">
+              {[["Open", "Mon–Sat, 8am–8pm"], ["WhatsApp", siteContact.whatsappDisplay], ["Company", `${siteContact.companyName} · 15574809`]].map(([k, v]) => (
+                <div key={k} className="grid grid-cols-[110px_1fr] gap-3 px-3.5 py-2.5 text-[15px]">
+                  <dt className="text-muted">{k}</dt>
+                  <dd className="m-0 font-semibold tabular-nums">{v}</dd>
+                </div>
+              ))}
+            </dl>
+            <Link href="/prices/" className="inline-flex items-center gap-2 font-semibold no-underline">
+              Looking for a price? See every price <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
           </div>
 
-          <StaggerGrid className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" staggerDelay={0.05}>
-            
-            {/* 1. Book a Service */}
-            <StaggerItem>
-              <Link
-                href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-full p-5 rounded-[20px] bg-white border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 flex flex-col justify-between space-y-4 text-decoration-none group"
-              >
-                <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-                    <Calendar className="w-5 h-5 text-[#1D201E]" />
-                  </div>
-                  <h3 className="font-heading font-medium text-lg text-ink-900 group-hover:underline">Book a Service</h3>
-                  <p className="text-xs text-ink-500">Request a new cleaning, pest, or removal slot via WhatsApp</p>
-                </div>
-                <div className="text-xs font-mono font-medium text-ink-600 flex items-center gap-1 pt-2">
-                  <span>Book on WhatsApp</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-ink-600" />
-                </div>
-              </Link>
-            </StaggerItem>
-
-            {/* 2. Get Pricing Help */}
-            <StaggerItem>
-              <Link
-                href="/prices/"
-                className="h-full p-5 rounded-[20px] bg-white border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 flex flex-col justify-between space-y-4 text-decoration-none group"
-              >
-                <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-                    <PoundSterling className="w-5 h-5 text-[#1D201E]" />
-                  </div>
-                  <h3 className="font-heading font-medium text-lg text-ink-900 group-hover:underline">Get Pricing Help</h3>
-                  <p className="text-xs text-ink-500">Calculate upfront estimates or view starting rates</p>
-                </div>
-                <div className="text-xs font-mono font-medium text-ink-600 flex items-center gap-1 pt-2">
-                  <span>Open Pricing</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-ink-600" />
-                </div>
-              </Link>
-            </StaggerItem>
-
-            {/* 3. Existing Booking */}
-            <StaggerItem>
-              <button
-                type="button"
-                onClick={() => { setSelectedIntent("existing"); setSubmittedRef(null); }}
-                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer  ${ selectedIntent === "existing" ? "bg-[#B7F56A] text-[#1D201E] font-medium border-[#1D201E]" : "bg-[#F6F5F1] text-ink-700 border-[#ECEAE3] hover:bg-[#F6F5F1]" } border border-[#ECEAE3]`}
-              >
-                <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-                    <Clock className="w-5 h-5 text-[#1D201E]" />
-                  </div>
-                  <h3 className="font-heading font-medium text-lg">Existing Booking</h3>
-                  <p className="text-xs opacity-80">Change date, update details or track status</p>
-                </div>
-                <div className="text-xs font-mono font-medium flex items-center gap-1 pt-2">
-                  <span>Select Form</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
-              </button>
-            </StaggerItem>
-
-            {/* 4. Guarantee Support */}
-            <StaggerItem>
-              <button
-                type="button"
-                onClick={() => { setSelectedIntent("guarantee"); setSubmittedRef(null); }}
-                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer  ${ selectedIntent === "guarantee" ? "bg-[#B7F56A] text-[#1D201E] font-medium border-[#1D201E]" : "bg-[#F6F5F1] text-ink-700 border-[#ECEAE3] hover:bg-[#F6F5F1]" } border border-[#ECEAE3]`}
-              >
-                <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-                    <ShieldCheck className="w-5 h-5 text-[#1D201E]" />
-                  </div>
-                  <h3 className="font-heading font-medium text-lg">Guarantee Support</h3>
-                  <p className="text-xs opacity-80">48-Hour Re-Clean or Pest Warranty help</p>
-                </div>
-                <div className="text-xs font-mono font-medium flex items-center gap-1 pt-2">
-                  <span>Select Form</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
-              </button>
-            </StaggerItem>
-
-            {/* 5. General Enquiry */}
-            <StaggerItem>
-              <button
-                type="button"
-                onClick={() => { setSelectedIntent("general"); setSubmittedRef(null); }}
-                className={`w-full h-full p-5 rounded-[20px] text-start transition-colors duration-150 flex flex-col justify-between space-y-4 cursor-pointer  ${ selectedIntent === "general" ? "bg-[#B7F56A] text-[#1D201E] font-medium border-[#1D201E]" : "bg-[#F6F5F1] text-ink-700 border-[#ECEAE3] hover:bg-[#F6F5F1]" } border border-[#ECEAE3]`}
-              >
-                <div className="space-y-2">
-                  <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-                    <HelpCircle className="w-5 h-5 text-[#1D201E]" />
-                  </div>
-                  <h3 className="font-heading font-medium text-lg">General Enquiry</h3>
-                  <p className="text-xs opacity-80">General support questions or commercial enquiries</p>
-                </div>
-                <div className="text-xs font-mono font-medium flex items-center gap-1 pt-2">
-                  <span>Select Form</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
-              </button>
-            </StaggerItem>
-
-          </StaggerGrid>
-        </SectionReveal>
-
-        {/* INTENT-SPECIFIC DYNAMIC FORM */}
-        <SectionReveal className="bg-[#F6F5F1] rounded-[24px] p-8 sm:p-12 border border-[#ECEAE3]  space-y-6">
-          {submittedRef ? (
-            <div className="form-status-in p-8 rounded-[18px] bg-[#F6F5F1] border-none space-y-4 text-center" role="status">
-              <CheckCircle2 className="form-check-pop w-12 h-12 text-ink-600 mx-auto" />
-              <h3 className="font-heading text-2xl font-medium text-ink-900">Support Request Received</h3>
-              <p className="text-base text-ink-500">
-                Reference Number: <strong className="font-mono text-ink-600">{submittedRef}</strong>. Our team will review your message and get back to you within 2 hours.
-              </p>
-              <button
-                type="button"
-                onClick={() => setSubmittedRef(null)}
-                className="px-6 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] cursor-pointer border-none"
-              >
-                Send Another Message
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
-              <div className="space-y-1">
-                <span className="text-xs font-mono font-medium uppercase text-ink-500">TAILORED SUPPORT FORM</span>
-                <h3 className="font-heading text-2xl font-medium text-ink-900">
-                  {selectedIntent === "existing" && "Existing Booking Enquiry"}
-                  {selectedIntent === "guarantee" && "Service Guarantee Support Request"}
-                  {selectedIntent === "general" && "General Support Message"}
-                </h3>
+          <div className="rounded-3xl bg-paper p-5 sm:p-8">
+            {submittedRef ? (
+              <div className="grid justify-items-start gap-4" role="status">
+                <span className="ts-stamp">Received<b>{submittedRef}</b></span>
+                <h3 className="ts-head m-0 text-[28px]">Thanks, we have it.</h3>
+                <p className="m-0 text-muted">Quote reference <b className="tabular-nums text-ink">{submittedRef}</b> if you contact us about this. We reply within working hours.</p>
+                <button type="button" onClick={() => setSubmittedRef(null)} className="inline-flex min-h-12 items-center rounded-xl bg-white px-5 font-semibold text-ink transition-colors duration-150 hover:bg-lime-soft">
+                  Send another message
+                </button>
               </div>
-
-              {formError && <FormError>{formError}</FormError>}
-
-              {selectedIntent === "existing" && (
-                <>
-                  <CustomTextInput name="bookingReference" label="Booking Reference #" placeholder="e.g. BOS-20481" required />
-                  <CustomTextInput name="fullName" label="Full Name" placeholder="Your full name" required />
-                  <CustomTextInput name="contact" label="Contact Phone or Email" placeholder="07123 456789 or name@example.com" required />
-                  <div className="space-y-1.5">
-                    <label className="text-sm font-mono text-ink-500 uppercase block font-medium">Booking Request Details</label>
-                    <textarea
-                      rows={4}
-                      name="message"
-                      required
-                      placeholder="Please describe what you would like to update or check regarding your booking..."
-                      className="w-full p-3.5 rounded-[18px] bg-[#F6F5F1] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
-                    />
-                  </div>
-                </>
-              )}
-
-              {selectedIntent === "guarantee" && (
-                <>
-                  <CustomSelect
-                    label="Service Category"
-                    options={[
-                      { value: "cleaning", label: "End of Tenancy Cleaning (48-Hr Support)" },
-                      { value: "pest", label: "Pest Control Package Guarantee" },
-                      { value: "gardening", label: "Gardening & Clearance" },
-                      { value: "removals", label: "Removals & Moving" },
-                    ]}
-                    value={guaranteeCategory}
-                    onChange={setGuaranteeCategory}
-                  />
-                  <input type="hidden" name="serviceCategory" value={guaranteeCategory} />
-                  <CustomTextInput name="bookingReference" label="Booking Reference # (If Available)" placeholder="e.g. BOS-20481" />
-                  <CustomTextInput name="fullName" label="Full Name" placeholder="Your full name" required />
-                  <CustomTextInput name="phone" label="Contact Phone" placeholder="07123 456789" required />
-                  <div className="space-y-1.5">
-                    <label className="text-sm font-mono text-ink-500 uppercase block font-medium">Issue Description</label>
-                    <textarea
-                      rows={4}
-                      name="message"
-                      required
-                      placeholder="Describe the area or issue requiring re-attendance or guarantee support..."
-                      className="w-full p-3.5 rounded-[18px] bg-[#F6F5F1] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
-                    />
-                  </div>
-                </>
-              )}
-
-              {selectedIntent === "general" && (
-                <>
-                  <CustomTextInput name="fullName" label="Full Name" placeholder="Your full name" required />
-                  <CustomTextInput name="email" label="Email Address" type="email" placeholder="name@example.com" required />
-                  <div className="space-y-1.5">
-                    <label className="text-sm font-mono text-ink-500 uppercase block font-medium">Message</label>
-                    <textarea
-                      rows={4}
-                      name="message"
-                      required
-                      placeholder="How can our support team assist you today?"
-                      className="w-full p-3.5 rounded-[18px] bg-[#F6F5F1] border-none text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
-                    />
-                  </div>
-                </>
-              )}
-
-              <label className="flex items-start gap-3 text-sm text-ink-500">
-                <input type="checkbox" name="privacyAccepted" required className="mt-1" />
-                <span>I have read the <Link href="/privacy-policy/" className="underline text-ink-600">Privacy Policy</Link> and consent to this enquiry being processed.</span>
-              </label>
-
-              <button
-                type="submit"
-                disabled={submitting}
-                className="px-8 py-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {submitting ? (
+            ) : (
+              <form onSubmit={handleSubmit} className="grid gap-5">
+                <div role="radiogroup" aria-label="What is it about?" className="grid grid-cols-3 gap-1 rounded-xl bg-stone p-1">
+                  {FORM_INTENTS.map((it) => (
+                    <button
+                      key={it.id}
+                      type="button"
+                      role="radio"
+                      aria-checked={selectedIntent === it.id}
+                      onClick={() => setSelectedIntent(it.id)}
+                      className={`min-h-11 rounded-[9px] text-[15px] font-semibold transition-colors duration-150 ${selectedIntent === it.id ? "bg-lime text-ink" : "text-muted hover:bg-white"}`}
+                    >
+                      {it.label}
+                    </button>
+                  ))}
+                </div>
+                {formError && <FormError>{formError}</FormError>}
+                {selectedIntent === "existing" && (
                   <>
-                    <Spinner size={18} tone="on-dark" />
-                    <span>Sending…</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Submit Enquiry</span>
-                    <ArrowRight className="w-4 h-4 text-current" />
+                    <CustomTextInput name="bookingReference" label="Booking reference" placeholder="e.g. BOS-20481" required />
+                    <CustomTextInput name="fullName" label="Full name" placeholder="Your full name" required />
+                    <CustomTextInput name="contact" label="Phone or email" placeholder="07123 456789 or name@example.com" required />
+                    <div className="grid gap-1.5">
+                      <label htmlFor="msg-existing" className="text-sm font-semibold">What would you like to change or check?</label>
+                      <textarea id="msg-existing" rows={4} name="message" required placeholder="A new date, access details, a question about the visit…" className={TEXTAREA} />
+                    </div>
                   </>
                 )}
-              </button>
-            </form>
-          )}
-        </SectionReveal>
-
-        {/* VERIFIED DIRECT CONTACT CHANNELS */}
-        <SectionReveal className="grid sm:grid-cols-4 gap-6">
-          
-          {/* Telephone Action */}
-          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-              <Phone className="w-5 h-5 text-[#1D201E]" />
-            </div>
-            <div>
-              <h4 className="font-heading font-medium text-lg text-ink-900">Direct Phone</h4>
-              <p className="text-sm text-ink-500">Mon–Sat 08:00–18:00</p>
-            </div>
-            <a
-              href={siteContact.phoneHref}
-              className="w-full py-2.5 px-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] text-decoration-none flex items-center justify-center gap-2"
-            >
-              <span>Call {siteContact.phoneDisplay}</span>
-            </a>
+                {selectedIntent === "guarantee" && (
+                  <>
+                    <CustomSelect
+                      label="Service"
+                      options={[
+                        { value: "cleaning", label: "End of tenancy cleaning (48-hour re-clean)" },
+                        { value: "pest", label: "Pest control guarantee" },
+                        { value: "gardening", label: "Gardening and clearance" },
+                        { value: "removals", label: "Removals" },
+                      ]}
+                      value={guaranteeCategory}
+                      onChange={setGuaranteeCategory}
+                    />
+                    <input type="hidden" name="serviceCategory" value={guaranteeCategory} />
+                    <CustomTextInput name="bookingReference" label="Booking reference (if you have it)" placeholder="e.g. BOS-20481" />
+                    <CustomTextInput name="fullName" label="Full name" placeholder="Your full name" required />
+                    <CustomTextInput name="phone" label="Phone" placeholder="07123 456789" required />
+                    <div className="grid gap-1.5">
+                      <label htmlFor="msg-guarantee" className="text-sm font-semibold">What needs another look?</label>
+                      <textarea id="msg-guarantee" rows={4} name="message" required placeholder="The room or area, and what was flagged…" className={TEXTAREA} />
+                    </div>
+                  </>
+                )}
+                {(selectedIntent === "general" || selectedIntent === "book" || selectedIntent === "pricing") && (
+                  <>
+                    <CustomTextInput name="fullName" label="Full name" placeholder="Your full name" required />
+                    <CustomTextInput name="email" label="Email" type="email" placeholder="name@example.com" required />
+                    <div className="grid gap-1.5">
+                      <label htmlFor="msg-general" className="text-sm font-semibold">Your message</label>
+                      <textarea id="msg-general" rows={4} name="message" required placeholder="How can we help?" className={TEXTAREA} />
+                    </div>
+                  </>
+                )}
+                <label className="flex items-start gap-3 text-sm text-muted">
+                  <input type="checkbox" name="privacyAccepted" required className="mt-0.5 size-5 accent-[#1D201E]" />
+                  <span>I have read the <Link href="/privacy-policy/" className="text-ink underline">privacy policy</Link> and agree to this enquiry being processed.</span>
+                </label>
+                <button type="submit" disabled={submitting} className="inline-flex min-h-14 items-center justify-center gap-2 justify-self-start rounded-[14px] bg-lime px-6 text-[17px] font-semibold text-ink transition-colors duration-150 hover:bg-lime-2 disabled:bg-stone disabled:text-faint">
+                  {submitting ? (<><Spinner size={18} /><span>Sending…</span></>) : (<><span>Send message</span><ArrowRight className="size-4" aria-hidden="true" /></>)}
+                </button>
+              </form>
+            )}
           </div>
-
-          {/* WhatsApp Action */}
-          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-              <MessageSquare className="w-5 h-5 text-[#1D201E]" />
-            </div>
-            <div>
-              <h4 className="font-heading font-medium text-lg text-ink-900">WhatsApp Chat</h4>
-              <p className="text-sm text-ink-500">Instant messenger response</p>
-            </div>
-            <a
-              href={siteContact.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 px-4 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20b858] text-decoration-none flex items-center justify-center gap-2"
-            >
-              <span>Chat on WhatsApp</span>
-            </a>
-          </div>
-
-          {/* Email Dispatch */}
-          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#F6F5F1] text-[#1D201E] border border-[#ECEAE3] flex items-center justify-center font-medium">
-              <Mail className="w-5 h-5 text-ink-600" />
-            </div>
-            <div>
-              <h4 className="font-heading font-medium text-lg text-ink-900">Email Dispatch</h4>
-              <p className="text-sm text-ink-500">Response within 2 hours</p>
-            </div>
-            <a
-              href={`mailto:${siteContact.email}`}
-              className="w-full py-2.5 px-4 rounded-full bg-[#F6F5F1] text-ink-600 font-medium text-sm hover:bg-[#EAF8D6] text-decoration-none flex items-center justify-center gap-2"
-            >
-              <span>{siteContact.email}</span>
-            </a>
-          </div>
-
-          {/* Registered Office */}
-          <div className="bg-[#F6F5F1] rounded-[20px] p-6 border border-[#ECEAE3]  space-y-3 text-start">
-            <div className="w-12 h-12 rounded-[14px] bg-[#F6F5F1] text-[#1D201E] border border-[#ECEAE3] flex items-center justify-center font-medium">
-              <MapPin className="w-5 h-5 text-ink-600" />
-            </div>
-            <div>
-              <h4 className="font-heading font-medium text-lg text-ink-900">Registered Office</h4>
-              <p className="text-sm text-ink-500">Greater London Base</p>
-            </div>
-            <span className="text-sm font-medium text-ink-600 block">
-              {siteContact.address.formatted}
-            </span>
-          </div>
-
-        </SectionReveal>
-
-      </div>
-
-      <SitewideIllustrationGrid
-        eyebrow="Support when you need it"
-        title="Speak to the right property-service team"
-        cards={[
-          { slug: "contact-support", title: "Helpful Booking Support", description: "Share your service, property and timing details for clear next-step guidance.", imageSrc: "/images/feature-customer-support-blue-v1.png", imageAlt: "Customer-support specialist with phone and booking checklist cards" },
-        ]}
-      />
+        </div>
+      </section>
     </main>
   );
 }
-

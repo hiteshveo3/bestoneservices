@@ -50,12 +50,12 @@ export default function ProfilePage() {
 
   return (
     <div className="space-y-6 text-start">
-      <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#ECEAE3]">
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Profile & Security</h1>
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 ">
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Profile & Security</h1>
         <p className="text-sm text-ink-500">Manage your identity and contact details</p>
       </div>
 
-      <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-6 max-w-2xl border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 max-w-2xl ">
         {successMessage && (
           <div className="p-3.5 rounded-[18px] bg-[#F6F5F1] text-[#1D201E] text-sm font-medium flex items-center gap-2 border-none">
             <CheckCircle2 className="w-4 h-4 text-ink-600 shrink-0" />
@@ -93,7 +93,7 @@ export default function ProfilePage() {
                 type="email"
                 value={user?.email || ""}
                 readOnly
-                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F6F5F1] border-none text-base text-ink-500 font-medium cursor-not-allowed"
+                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F6F5F1] border-none text-base text-ink-500 font-medium cursor-not-allowed focus:bg-white focus:border-[#1D201E]"
               />
             </div>
             <p className="text-xs text-ink-500">Email address is managed through Firebase Authentication identity.</p>
@@ -117,14 +117,14 @@ export default function ProfilePage() {
             <button
               type="submit"
               disabled={submitting}
-              className="px-6 py-3 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none border border-[#ECEAE3]"
+              className="px-6 py-3 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none "
             >
               {submitting ? "Saving changes..." : "Save Profile Details"}
             </button>
           </div>
         </form>
 
-        <div className="pt-6 border-t border-[#ECEAE3] space-y-3">
+        <div className="pt-6 border-[#ECEAE3] space-y-3">
           <h3 className="font-heading font-medium text-base text-ink-900">Security Details</h3>
           <div className="p-4 rounded-[18px] bg-[#F6F5F1] space-y-2 text-xs font-mono text-ink-500">
             <div className="flex items-center justify-between text-ink-600 font-medium">

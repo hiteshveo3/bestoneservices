@@ -213,7 +213,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
 
   if (authLoading || loading) {
     return (
-      <div className="bg-[#F6F5F1] rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
         <Spinner size={32} className="mx-auto" />
         <p className="text-sm font-medium text-ink-600">Loading your appointment workspace & timeline...</p>
       </div>
@@ -222,11 +222,11 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
 
   if (!booking) {
     return (
-      <div className="bg-[#F6F5F1] rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto ">
         <AlertCircle className="w-10 h-10 text-danger-500 mx-auto" />
         <h3 className="font-heading text-lg font-medium text-ink-900">Booking Not Found</h3>
         <p className="text-xs text-ink-500">The requested booking record does not exist or you do not have permission to view it.</p>
-        <Link href="/account/bookings" className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none border border-[#ECEAE3]">
+        <Link href="/account/bookings" className="px-5 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none ">
           Return to My Bookings
         </Link>
       </div>
@@ -255,7 +255,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       <div className="flex items-center justify-between">
         <Link
           href="/account/bookings"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to My Bookings</span>
@@ -282,18 +282,18 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       )}
 
       {/* WORKSPACE HEADER */}
-      <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 ">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-2">
               <span className="font-heading font-medium text-2xl sm:text-3xl text-ink-900">
                 {booking.reference}
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+              <span className="ts-eyebrow">
                 {booking.status.replace("_", " ")}
               </span>
             </div>
-            <h1 className="font-heading text-lg font-medium text-ink-900">
+            <h1 className="font-heading text-lg font-[650] text-ink-900">
               {booking.serviceNameSnapshot}
             </h1>
             <p className="text-xs font-mono text-ink-500">
@@ -319,13 +319,13 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
             </div>
           </div>
         ) : (
-          <div className="pt-4 border-t border-[#ECEAE3] grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="pt-4 border-[#ECEAE3] grid grid-cols-2 sm:grid-cols-4 gap-3">
             {progressSteps.map((st, idx) => (
               <div key={st.key} className="space-y-1 text-center sm:text-start">
                 <div className="flex items-center gap-2">
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
-                    st.active ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#F6F5F1] text-ink-500"
-                  }`}>
+ st.active ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#F6F5F1] text-ink-500"
+ }`}>
                     {idx + 1}
                   </div>
                   <div className={`h-1 flex-1 rounded-full ${st.active ? "bg-[#B7F56A]" : "bg-[#F6F5F1]"}`} />
@@ -341,7 +341,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
 
       {/* CUSTOMER ACTION CONTROL BAR */}
       {booking.status !== "cancelled" && (
-        <div className="bg-[#F6F5F1] rounded-[18px] p-4 flex flex-wrap items-center justify-between gap-3 border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-4 flex flex-wrap items-center justify-between gap-3 ">
           <span className="text-xs font-mono font-medium text-ink-500 uppercase px-2">Manage Appointment</span>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -349,7 +349,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <button
                 type="button"
                 onClick={() => setRescheduleModalOpen(true)}
-                className="px-4 py-2 rounded-full bg-[#F6F5F1] text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
+                className="px-4 py-2 rounded-md bg-[#F6F5F1] text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
               >
                 <RotateCcw className="w-3.5 h-3.5 text-ink-600" />
                 <span>Request Reschedule</span>
@@ -359,7 +359,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
             <button
               type="button"
               onClick={() => setChangeModalOpen(true)}
-              className="px-4 py-2 rounded-full bg-[#F6F5F1] text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
+              className="px-4 py-2 rounded-md bg-[#F6F5F1] text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
             >
               <Edit3 className="w-3.5 h-3.5 text-ink-600" />
               <span>Request Scope Changes</span>
@@ -369,7 +369,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <button
                 type="button"
                 onClick={() => setCancelModalOpen(true)}
-                className="px-4 py-2 rounded-full bg-danger-50 text-danger-900 hover:bg-danger-50 text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
+                className="px-4 py-2 rounded-md bg-danger-50 text-danger-900 hover:bg-danger-50 text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
               >
                 <XCircle className="w-3.5 h-3.5 text-danger-500" />
                 <span>Cancel Booking</span>
@@ -385,8 +385,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
         {/* LEFT COLUMN: SERVICE SPECIFICATIONS & ADDRESS */}
         <div className="lg:col-span-7 space-y-6">
           
-          <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
               Appointment Specifications
             </h3>
 
@@ -418,7 +418,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               })}
             </div>
 
-            <div className="pt-3 border-t border-[#ECEAE3] space-y-2">
+            <div className="pt-3 border-[#ECEAE3] space-y-2">
               <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-ink-500 uppercase">
                 <MapPin className="w-3.5 h-3.5 text-ink-600 shrink-0" />
                 <span>Service Address</span>
@@ -431,8 +431,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
           </div>
 
           {/* PRICING DETAILS */}
-          <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2 flex items-center gap-1.5">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2 flex items-center gap-1.5">
               <PoundSterling className="w-4 h-4 text-ink-600" />
               <span>Pricing Breakdown & Guarantee</span>
             </h3>
@@ -445,7 +445,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-[18px] bg-[#EAF8D6] border border-[#ECEAE3] space-y-1">
+              <div className="p-3.5 rounded-[18px] bg-[#EAF8D6] space-y-1">
                 <span className="text-ink-600 font-medium uppercase block">Confirmed Final Price</span>
                 <span className="font-heading font-medium text-xl text-ink-900">
                   {confirmedPriceDisplay}
@@ -453,7 +453,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               </div>
             </div>
 
-            <div className="p-3.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium flex items-center gap-2 text-ink-500">
+            <div className="p-3.5 rounded-[18px] bg-white text-xs font-medium flex items-center gap-2 text-ink-500">
               <ShieldCheck className="w-4 h-4 text-[#1D201E] shrink-0" />
               <span>Includes Bestone 48-Hour Service Guarantee & Fixed Transparent Pricing</span>
             </div>
@@ -464,8 +464,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
         {/* RIGHT COLUMN: LIVE VISUAL TIMELINE */}
         <div className="lg:col-span-5 space-y-6">
           
-          <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2 flex items-center gap-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2 flex items-center gap-2">
               <Calendar className="w-4 h-4 text-ink-600" />
               <span>Live Appointment Timeline</span>
             </h3>
@@ -496,8 +496,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       {/* MODAL: RESCHEDULE */}
       {rescheduleModalOpen && (
         <div className="fixed inset-0 bg-ink-900/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#F6F5F1] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+          <div className="bg-white rounded-[18px] max-w-md w-full p-6 space-y-4 text-start ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <h3 className="font-heading font-medium text-lg text-ink-900">Request Appointment Reschedule</h3>
               <button
                 type="button"
@@ -548,7 +548,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <button
                 type="submit"
                 disabled={submittingReschedule || !newDate}
-                className="w-full py-3 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 border border-[#ECEAE3]"
+                className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 "
               >
                 {submittingReschedule ? "Submitting Request..." : "Submit Reschedule Request"}
               </button>
@@ -560,8 +560,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       {/* MODAL: CANCEL BOOKING */}
       {cancelModalOpen && (
         <div className="fixed inset-0 bg-ink-900/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#F6F5F1] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+          <div className="bg-white rounded-[18px] max-w-md w-full p-6 space-y-4 text-start ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <h3 className="font-heading font-medium text-lg text-danger-900 flex items-center gap-1.5">
                 <AlertCircle className="w-4 h-4 text-danger-500" />
                 <span>Cancel Booking Confirmation</span>
@@ -605,7 +605,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <button
                 type="submit"
                 disabled={submittingCancel}
-                className="w-full py-3 rounded-full bg-danger-500 text-white text-xs font-medium hover:bg-danger-500 cursor-pointer disabled:opacity-50 border border-[#ECEAE3]"
+                className="w-full py-3 rounded-md bg-danger-500 text-white text-xs font-medium hover:bg-danger-500 cursor-pointer disabled:opacity-50 border border-[#ECEAE3]"
               >
                 {submittingCancel ? "Cancelling..." : "Confirm Booking Cancellation"}
               </button>
@@ -617,8 +617,8 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
       {/* MODAL: SCOPE CHANGE REQUEST */}
       {changeModalOpen && (
         <div className="fixed inset-0 bg-ink-900/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#F6F5F1] rounded-[18px] max-w-md w-full p-6 space-y-4 text-start border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+          <div className="bg-white rounded-[18px] max-w-md w-full p-6 space-y-4 text-start ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <h3 className="font-heading font-medium text-lg text-ink-900">Request Scope Change or Add-ons</h3>
               <button
                 type="button"
@@ -645,7 +645,7 @@ export default function CustomerBookingDetailPage({ params }: { params: Promise<
               <button
                 type="submit"
                 disabled={submittingChange || !changeNotes.trim()}
-                className="w-full py-3 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 border border-[#ECEAE3]"
+                className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 "
               >
                 {submittingChange ? "Logging Request..." : "Submit Scope Change Request"}
               </button>

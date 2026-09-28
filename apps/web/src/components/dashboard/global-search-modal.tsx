@@ -125,10 +125,10 @@ export function GlobalSearchModal({ isOpen, onClose }: { isOpen: boolean; onClos
       <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-xs" onClick={onClose} />
 
       {/* Command Palette Card */}
-      <div className="relative w-full max-w-2xl bg-white rounded-[16px] overflow-hidden border-none text-start z-50 flex flex-col max-h-[80vh] border border-[#ECEAE3]">
+      <div className="relative w-full max-w-2xl bg-white rounded-[16px] overflow-hidden border-none text-start z-50 flex flex-col max-h-[80vh] ">
         
         {/* Search Header Bar */}
-        <div className="p-4 border-b border-[#ECEAE3] flex items-center gap-3">
+        <div className="p-4 border-[#ECEAE3] flex items-center gap-3">
           <Search className="w-5 h-5 text-ink-500 shrink-0" />
           <input
             type="text"
@@ -220,7 +220,7 @@ export function GlobalSearchModal({ isOpen, onClose }: { isOpen: boolean; onClos
         </div>
 
         {/* Footer Shortcut Tip */}
-        <div className="p-3 bg-[#F6F5F1] border-t border-[#ECEAE3] flex items-center justify-between text-xs font-mono text-ink-500">
+        <div className="p-3 bg-[#F6F5F1] border-[#ECEAE3] flex items-center justify-between text-xs font-mono text-ink-500">
           <span>Navigate: Click or Press Enter</span>
           <span>Close: ESC</span>
         </div>

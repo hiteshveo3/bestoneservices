@@ -20,7 +20,7 @@ export function HomeFaq({ items }: { items: readonly HomeFaqItem[] }) {
   return (
     <div
       id="faqs"
-      className="border border-[#ECEAE3] rounded-[20px] bg-white overflow-hidden divide-y divide-[#ECEAE3] "
+      className=" rounded-[20px] bg-white overflow-hidden "
     >
       {items.map((faq, idx) => {
         const isOpen = openFaq === idx;
@@ -42,8 +42,8 @@ export function HomeFaq({ items }: { items: readonly HomeFaqItem[] }) {
                 aria-hidden="true"
                 data-open={isOpen}
                 className={`accordion-chevron w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[#1D201E] transition-colors duration-200 ${
-                  isOpen ? "bg-[#B7F56A]" : ""
-                }`}
+ isOpen ? "bg-[#B7F56A]" : ""
+ }`}
               >
                 <HugeiconsIcon icon={ArrowDown01Icon} size={16} strokeWidth={2} className="text-[#1D201E]" />
               </span>

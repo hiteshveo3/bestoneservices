@@ -45,10 +45,10 @@ export function BottomSheet({ isOpen, onClose, title, children }: BottomSheetPro
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: MOTION_DURATION.fast, ease: MOTION_EASE }}
-            className="relative w-full bg-[#F6F5F1] rounded-t-3xl border-t border-[#ECEAE3] p-6 space-y-4 max-h-[80vh] overflow-y-auto text-start z-10 mb-16"
+            className="relative w-full bg-[#F6F5F1] rounded-t-3xl border-[#ECEAE3] p-6 space-y-4 max-h-[80vh] overflow-y-auto text-start z-10 mb-16"
           >
             {/* Sheet Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-[#ECEAE3]">
+            <div className="flex items-center justify-between pb-3 border-[#ECEAE3]">
               <div className="w-12 h-1.5 rounded-full bg-[#ECEAE3] mx-auto absolute top-2 left-1/2 -translate-x-1/2" />
               <h3 className="font-heading text-lg font-medium text-ink-900 pt-2">{title}</h3>
               <button

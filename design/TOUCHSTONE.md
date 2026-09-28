@@ -100,7 +100,14 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | Components: Button, Price, PriceTile, PriceList, Facts, Plaque, Hallmarks, Stamp, Petals, FloorPlan, BigFacts, FaqSplit, SlimCta, Section | Done |
 | Header (info row, grouped phone menu), footer legal line, phone sticky bar | Done |
 | Homepage rebuilt from the library (S17, S24, S23, S35, S42, S40, S21, S38, S56, S57, S55, S58) | Done |
-| Service hub and service pages (S18, S19, S25–S27, S32, S37) | Next |
-| Booking with the sundial picker (S50 B+C, S51–S54) | Next |
-| Landlord page, documents (S62–S64), admin table (S33) | Later |
+| Service page template for every service and location page (S16, S19, S25, S27, S35 B, S42, S37 piping, S55 B, S58 A) | Done |
+| Service hubs (S18 wash hero with price list, priced cards, every other service as a list), gardening, removals | Done |
+| About, contact (S11 B tiles, filled form), areas (S22), 404 (S61 C), legal reading pages | Done |
+| Sweep: pills to 12px, dividing lines removed, filled inputs, eyebrow badges to plain eyebrows, heading weight 650 (`design/touchstone-sweep.py`) | Done |
+| Menus show starting prices (S14); phone bottom tab bar replaced by the S12 B price bar | Done |
+| Broken image paths pointed at approved photos; missing illustrations replaced with the four-petal mark | Done |
+| Booking: day strip + sundial (R1 C+D), lime wash and gradient progress | Done |
+| Prices, guides, blog and search: swept, not rebuilt | Partial |
+| Booking confirmation and status, quote and invoice documents (S53, S54, S62–S64) | Next |
+| Account and admin surfaces (S33, S60, S61) | Next |
 | Live `/touchstone` component page | Later |

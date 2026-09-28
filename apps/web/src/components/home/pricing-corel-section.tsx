@@ -6,13 +6,13 @@ import { StarIcon, Refresh01Icon, Building03Icon } from '@hugeicons/core-free-ic
 export function PricingCorelSection() {
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 font-sans text-start">
-      <div className="relative overflow-hidden radius-panel bg-[#F6F5F1] border border-[#ECEAE3] p-6 sm:p-10 lg:p-14">
+      <div className="relative overflow-hidden radius-panel bg-[#F6F5F1] p-6 sm:p-10 lg:p-14">
         <div className="panel-dot-grid absolute inset-0" aria-hidden="true" />
         <div className="relative">
       {/* Header */}
       <div className="mb-6">
-        <h2 className="text-3xl sm:text-[38px] font-medium text-ink-900 tracking-tight flex items-center gap-3">
-          <span className="px-3 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-sm font-medium tracking-wide uppercase">New</span>
+        <h2 className="text-3xl sm:text-[38px] font-[650] text-ink-900 tracking-tight flex items-center gap-3">
+          <span className="px-3 py-1 rounded-xl bg-ink-100 border border-[#ECEAE3] text-ink-600 text-sm font-medium tracking-wide uppercase">New</span>
           Bestone Property Suite 2026
         </h2>
         <p className="text-[19px] text-ink-600 mt-2 font-medium">
@@ -21,8 +21,8 @@ export function PricingCorelSection() {
       </div>
 
       {/* Try Free Row */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8 pb-8 border-b border-[#ECEAE3]">
-        <Link href="/contact" className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-[#1D201E] text-[#1D201E] font-semibold text-[16px] hover:bg-[#B7F56A] hover:text-[#1D201E] transition-colors duration-150 text-decoration-none bg-transparent w-full sm:w-auto">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8 pb-8 border-[#ECEAE3]">
+        <Link href="/contact" className="inline-flex items-center justify-center px-6 py-2.5 rounded-xl border border-[#1D201E] text-[#1D201E] font-semibold text-[16px] hover:bg-[#B7F56A] hover:text-[#1D201E] transition-colors duration-150 text-decoration-none bg-transparent w-full sm:w-auto">
           Get a free quote
         </Link>
         <div className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export function PricingCorelSection() {
           {/* Annual Plan Card (Selected) */}
           <div className="border-[2px] border-[#1D201E] rounded-[16px] overflow-hidden flex flex-col cursor-pointer bg-[#F6F5F1]">
             <div className="p-6 text-center flex-1 flex flex-col justify-center gap-2">
-              <span className="mx-auto px-2.5 py-0.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-[11px] font-bold tracking-wide uppercase">
+              <span className="ts-eyebrow">
                 Priority Plan
               </span>
               <div className="font-bold text-[#1D201E] text-[17px]">Annual Property Cover</div>
@@ -56,7 +56,7 @@ export function PricingCorelSection() {
           </div>
 
           {/* One-Time Card (Unselected) */}
-          <div className="border border-[#ECEAE3] rounded-[16px] overflow-hidden flex flex-col bg-[#F6F5F1]">
+          <div className=" rounded-[16px] overflow-hidden flex flex-col bg-white">
             <div className="p-6 text-center flex-1 flex flex-col justify-center gap-2">
               <span className="mx-auto text-[#1D201E] text-[11px] font-semibold tracking-wide uppercase">
                 Direct Booking

@@ -71,11 +71,11 @@ export function QuickFilterShortcuts({
               key={item.key}
               type="button"
               onClick={() => onSelect(item.key)}
-              className={`shrink-0 inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-[14px] border-2 text-start transition-colors duration-150 cursor-pointer  ${
-                isActive
-                  ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E] font-bold "
-                  : "bg-[#EAF8D6]/50 hover:bg-[#EAF8D6] border-[#ECEAE3] text-[#1D201E]"
-              }`}
+              className={`shrink-0 inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-[14px] border-2 text-start transition-colors duration-150 cursor-pointer ${
+ isActive
+ ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E] font-bold "
+ : "bg-[#EAF8D6]/50 hover:bg-[#EAF8D6] border-[#ECEAE3] text-[#1D201E]"
+ }`}
             >
               <span className="text-lg leading-none" role="img" aria-hidden="true">
                 {item.icon}

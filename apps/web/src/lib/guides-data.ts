@@ -65,7 +65,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
     publishedAt: "2026-02-01",
     updatedAt: "2026-02-07",
     readingTime: 6,
-    heroImage: "/images/end-of-tenancy-hero.jpg",
+    heroImage: "/images/service/best-one-cleaner-hero-v2.webp",
     heroCaption: "A professional pest technician inspecting hidden kitchen kickboard gaps.",
     featured: true,
     keyTakeaways: [
@@ -108,7 +108,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
       },
       {
         type: "image",
-        url: "/images/end-of-tenancy-hero.jpg",
+        url: "/images/service/best-one-cleaner-hero-v2.webp",
         alt: "Inspecting entry points under kitchen sink units",
         caption: "Figure 1: Pipe penetrations behind kitchen kickboards are primary mouse entry points.",
         isWide: false,
@@ -225,7 +225,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
     },
     publishedAt: "2026-01-15",
     readingTime: 5,
-    heroImage: "/images/end-of-tenancy-hero.jpg",
+    heroImage: "/images/service/best-one-cleaner-hero-v2.webp",
     keyTakeaways: [
       "Property must be emptied of all personal belongings prior to deep cleaning.",
       "Appliance degreasing (oven, extractor fan, fridge) is the #1 item checked by clerks.",
@@ -296,7 +296,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
     },
     publishedAt: "2026-01-28",
     readingTime: 4,
-    heroImage: "/images/end-of-tenancy-hero.jpg",
+    heroImage: "/images/service/best-one-cleaner-hero-v2.webp",
     contentBlocks: [
       {
         type: "paragraph",

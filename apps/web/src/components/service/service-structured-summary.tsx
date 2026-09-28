@@ -12,9 +12,9 @@ export function ServiceStructuredSummary({ service }: ServiceStructuredSummaryPr
   if (!service) return null;
 
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
-      <div className="flex items-center gap-2 border-b border-[#ECEAE3] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 space-y-6 text-start">
+      <div className="flex items-center gap-2 border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
           <FileText className="w-3.5 h-3.5 text-ink-600 shrink-0" />
           <span>Structured Summary</span>
         </div>
@@ -24,12 +24,12 @@ export function ServiceStructuredSummary({ service }: ServiceStructuredSummaryPr
       </div>
 
       <dl className="grid sm:grid-cols-2 gap-4 text-base">
-        <div className="p-4 rounded-[16px] bg-white border border-[#ECEAE3] space-y-1">
+        <div className="p-4 rounded-[16px] bg-white space-y-1">
           <dt className="text-xs font-mono text-ink-500 uppercase">Service Provider</dt>
           <dd className="font-heading font-medium text-ink-900 text-lg">Bestone Services Ltd</dd>
         </div>
 
-        <div className="p-4 rounded-[16px] bg-white border border-[#ECEAE3] space-y-1">
+        <div className="p-4 rounded-[16px] bg-white space-y-1">
           <dt className="text-xs font-mono text-ink-500 uppercase">Service Coverage</dt>
           <dd className="font-heading font-medium text-ink-900 text-lg flex items-center gap-1.5">
             <MapPin className="w-4 h-4 text-ink-600 shrink-0" />
@@ -37,14 +37,14 @@ export function ServiceStructuredSummary({ service }: ServiceStructuredSummaryPr
           </dd>
         </div>
 
-        <div className="p-4 rounded-[16px] bg-white border border-[#ECEAE3] space-y-1">
+        <div className="p-4 rounded-[16px] bg-white space-y-1">
           <dt className="text-xs font-mono text-ink-500 uppercase">Starting Price & Pricing Model</dt>
           <dd className="font-heading font-medium text-ink-900 text-lg">
             {service.startingPrice} ({service.pricingType})
           </dd>
         </div>
 
-        <div className="p-4 rounded-[16px] bg-white border border-[#ECEAE3] space-y-1">
+        <div className="p-4 rounded-[16px] bg-white space-y-1">
           <dt className="text-xs font-mono text-ink-500 uppercase">Service Guarantee</dt>
           <dd className="font-heading font-medium text-ink-900 text-lg flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-ink-600 shrink-0" />
@@ -53,7 +53,7 @@ export function ServiceStructuredSummary({ service }: ServiceStructuredSummaryPr
         </div>
       </dl>
 
-      <div className="p-5 rounded-[16px] bg-white border border-[#ECEAE3] space-y-3">
+      <div className="p-5 rounded-[16px] bg-white space-y-3">
         <div className="text-xs font-mono text-ink-500 uppercase font-medium">Included Scope</div>
         <ul className="grid sm:grid-cols-2 gap-2 text-base text-ink-600 list-none p-0">
           {service.includes.map((inc, i) => (

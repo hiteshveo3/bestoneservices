@@ -40,7 +40,7 @@ export function DesktopMegaMenu({
       <button
         type="button"
         aria-label="Close navigation menu"
-        className="fixed inset-x-0 bottom-0 top-[127px] z-30 hidden cursor-default bg-black/45 lg:block"
+        className="absolute inset-x-0 top-full z-30 hidden h-screen cursor-default bg-[#1D201E]/40 lg:block"
         onClick={onClose}
       />
       <div
@@ -49,7 +49,7 @@ export function DesktopMegaMenu({
       aria-label={`${categoryData.label} navigation menu`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="hidden lg:block absolute top-full left-0 right-0 z-40 bg-[#F6F5F1] border-b border-[#ECEAE3] text-start transition-opacity duration-200 "
+      className="hidden lg:block absolute top-full left-0 right-0 z-40 bg-[#F6F5F1] border-[#ECEAE3] text-start transition-opacity duration-200 "
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 py-8">
         <div className="grid grid-cols-2 xl:grid-cols-3 gap-8 items-start">
@@ -57,7 +57,7 @@ export function DesktopMegaMenu({
           {/* Left & Center Columns: Primary Service & Useful Links */}
           {categoryData.columns.map((col, colIdx) => (
             <div key={colIdx} className="space-y-4 min-w-0">
-              <h3 className="font-heading text-base font-semibold text-[#1D201E] tracking-[-0.01em] border-b border-[#ECEAE3] pb-3 flex items-center gap-2">
+              <h3 className="font-heading text-base font-semibold text-[#1D201E] tracking-[-0.01em] border-[#ECEAE3] pb-3 flex items-center gap-2">
                 <span>{col.title}</span>
               </h3>
 
@@ -70,17 +70,19 @@ export function DesktopMegaMenu({
                       <Link
                         href={item.href}
                         onClick={onClose}
-                        className={`group flex items-center justify-between px-3 py-2 rounded-[16px] text-base transition-colors duration-150 text-decoration-none ${
-                          isCurrentPage
-                            ? "bg-[#EAF8D6] font-semibold text-[#1D201E]"
-                            : item.isFeatured
-                            ? "bg-white border border-[#ECEAE3] font-medium text-[#1D201E] hover:bg-[#EAF8D6]"
-                            : "text-[#1D201E] font-normal hover:underline hover:underline-offset-2"
-                        }`}
+                        className={`group flex items-center justify-between px-3 py-2 rounded-[10px] text-base transition-colors duration-150 text-decoration-none ${
+ isCurrentPage
+ ? "bg-[#EAF8D6] font-semibold text-[#1D201E]"
+ : item.isFeatured
+ ? "bg-white font-medium text-[#1D201E] hover:bg-[#EAF8D6]"
+ : "text-[#1D201E] font-normal hover:bg-white"
+ }`}
                       >
                         <span className="truncate">{item.label}</span>
-                        {item.badge && (
-                          <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] shrink-0">
+                        {item.price ? (
+                          <span className="ts-fig shrink-0 text-lg"><small>from</small>{item.price}</span>
+                        ) : item.badge && (
+                          <span className="px-2 py-0.5 rounded-md text-xs font-semibold bg-[#EAF8D6] text-[#1D201E] shrink-0">
                             {item.badge}
                           </span>
                         )}
@@ -93,13 +95,13 @@ export function DesktopMegaMenu({
           ))}
 
           {/* Right Column: Purposeful Contextual Action Panel (Solid Surface, Unclipped) */}
-          <div className="hidden xl:flex flex-col p-6 rounded-[16px] bg-white border border-[#ECEAE3] space-y-4 text-start ">
+          <div className="hidden xl:flex flex-col p-6 rounded-2xl bg-[image:var(--grad-lime-soft)] space-y-4 text-start">
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#EAF8D6] border border-[#ECEAE3] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#EAF8D6] flex items-center justify-center shrink-0">
                 <PanelIcon className="w-5 h-5 text-[#1D201E] shrink-0" />
               </div>
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1D201E]">
-                {categoryData.label} Context
+              <span className="ts-eyebrow">
+                {categoryData.label}
               </span>
             </div>
 
@@ -116,7 +118,7 @@ export function DesktopMegaMenu({
               <Link
                 href={panel.ctaHref}
                 onClick={onClose}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none"
+                className="inline-flex min-h-11 items-center gap-2 px-5 rounded-xl text-base font-semibold bg-[#B7F56A] text-[#1D201E] border-none hover:bg-[#A2EA4E] transition-colors duration-150 text-decoration-none"
               >
                 <span>{panel.ctaText}</span>
                 <ArrowRight className="w-4 h-4 text-[#1D201E] shrink-0" />

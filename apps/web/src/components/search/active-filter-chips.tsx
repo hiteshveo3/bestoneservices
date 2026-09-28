@@ -25,7 +25,7 @@ export function ActiveFilterChips({
       {chips.map((chip) => (
         <span
           key={chip.id}
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-[#EAF8D6]/70 border border-[#ECEAE3] text-[#1D201E]  animate-fadeIn"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs sm:text-sm font-medium bg-[#EAF8D6]/70 text-[#1D201E] animate-fadeIn"
         >
           <span>{chip.label}</span>
           <button

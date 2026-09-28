@@ -20,7 +20,7 @@ export function EditorialFact({
 }: EditorialFactProps) {
   return (
     <SectionReveal className={`py-8 text-start ${className}`}>
-      <div className="flex flex-col sm:flex-row sm:items-center gap-6 p-8 rounded-[16px] bg-white border border-[#ECEAE3]">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-6 p-8 rounded-[16px] bg-white ">
         <div className="space-y-1">
           <div className="flex items-center gap-3">
             {icon && (

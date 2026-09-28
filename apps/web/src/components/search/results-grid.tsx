@@ -55,7 +55,7 @@ export function ResultsGrid({
           ctaText: "Get Instant Quote" as const,
           badges: ["Guaranteed"],
           aliases: [],
-          imageSrc: "/images/end-of-tenancy-hero.jpg",
+          imageSrc: "/images/service/best-one-cleaner-hero-v2.webp",
           popular: true,
         },
         {
@@ -73,7 +73,7 @@ export function ResultsGrid({
           ctaText: "Get Instant Quote" as const,
           badges: ["Written Guarantee"],
           aliases: [],
-          imageSrc: "/images/pest-inspection.jpg",
+          imageSrc: "/images/service/best-one-pest-technician-hero-v1.webp",
           popular: true,
         },
         {
@@ -91,7 +91,7 @@ export function ResultsGrid({
           ctaText: "Get Instant Quote" as const,
           badges: ["Insured"],
           aliases: [],
-          imageSrc: "/images/service-card-removals-v1.png",
+          imageSrc: "/images/service/best-one-team-hero-v1.webp",
           popular: true,
         },
       ]
@@ -101,7 +101,7 @@ export function ResultsGrid({
     <div className="space-y-6 text-start">
       {/* Persistent Emergency Urgency Banner */}
       {urgency === "emergency" && (
-        <div className="p-4 sm:p-5 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4  border border-[#ECEAE3]">
+        <div className="p-4 sm:p-5 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ">
           <div className="flex items-center gap-3">
             <span className="w-3 h-3 rounded-full bg-[#B7F56A] animate-ping shrink-0" />
             <div>
@@ -124,7 +124,7 @@ export function ResultsGrid({
       )}
 
       {/* Header Controls: Live count & Sort Dropdown */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#ECEAE3] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-[#ECEAE3] pb-4">
         <div aria-live="polite" className="text-sm font-semibold text-[#1D201E]">
           {isLoading ? (
             <span className="text-[#1D201E]/60">Searching services...</span>
@@ -182,7 +182,7 @@ export function ResultsGrid({
               <button
                 type="button"
                 onClick={handleLoadMore}
-                className="px-6 py-3 rounded-[14px] bg-white border-2 border-[#1D201E] hover:bg-[#B7F56A] hover:text-[#1D201E] text-[#1D201E] font-semibold text-sm transition-colors duration-150  cursor-pointer"
+                className="px-6 py-3 rounded-[14px] bg-white border-2 border-[#1D201E] hover:bg-[#B7F56A] hover:text-[#1D201E] text-[#1D201E] font-semibold text-sm transition-colors duration-150 cursor-pointer"
               >
                 Load more ({services.length - visibleCount} remaining)
               </button>
@@ -194,7 +194,7 @@ export function ResultsGrid({
         </div>
       ) : (
         /* Empty State */
-        <div className="bg-white rounded-[20px] border border-[#ECEAE3] p-8 sm:p-12 text-center space-y-6 ">
+        <div className="bg-white rounded-[20px] p-8 sm:p-12 text-center space-y-6 ">
           <div className="w-14 h-14 mx-auto rounded-full bg-[#EAF8D6]/60 flex items-center justify-center text-[#1D201E]">
             <AlertCircle className="w-7 h-7" />
           </div>
@@ -216,7 +216,7 @@ export function ResultsGrid({
                   key={chip.id}
                   type="button"
                   onClick={chip.onRemove}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EAF8D6]/70 hover:bg-[#B7F56A] text-[#1D201E] border border-[#ECEAE3] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold bg-[#EAF8D6]/70 hover:bg-[#B7F56A] text-[#1D201E] transition-colors cursor-pointer"
                 >
                   <span>Remove {chip.label}</span>
                   <span>×</span>
@@ -233,7 +233,7 @@ export function ResultsGrid({
           )}
 
           {/* Fallback Popular Services */}
-          <div className="pt-6 border-t border-[#ECEAE3] space-y-4 text-start">
+          <div className="pt-6 border-[#ECEAE3] space-y-4 text-start">
             <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1D201E]/70 text-center">
               Or Choose One of Our Core Services
             </h4>

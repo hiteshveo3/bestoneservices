@@ -30,10 +30,10 @@ export function ServicePricingPreview({
   const calculatorUrl = `/prices/?category=${encodeURIComponent(category)}&service=${encodeURIComponent(serviceId)}#smart-calculator`;
 
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[20px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start ">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#ECEAE3] pb-4">
+    <SectionReveal className="bg-white rounded-[20px] p-6 sm:p-8 space-y-6 text-start ">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-[#ECEAE3] pb-4">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs font-bold uppercase">
+          <div className="inline-flex items-center gap-1.5 ts-eyebrow">
             <Tag className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
             <span>Transparent Rates</span>
           </div>
@@ -52,7 +52,7 @@ export function ServicePricingPreview({
 
       <StaggerGrid className="grid grid-cols-2 sm:grid-cols-5 gap-3" staggerDelay={0.05}>
         {tiers.map((tier, idx) => (
-          <StaggerItem key={idx} className="p-4 rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] space-y-1 text-start">
+          <StaggerItem key={idx} className="p-4 rounded-[16px] bg-white space-y-1 text-start">
             <div className="font-heading font-semibold text-base text-[#1D201E]">{tier.label}</div>
             <div className="font-heading font-bold text-2xl text-[#1D201E]">{tier.priceDisplay}</div>
             {tier.subtext && (

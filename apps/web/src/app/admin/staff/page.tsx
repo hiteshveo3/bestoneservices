@@ -82,9 +82,9 @@ export default function AdminStaffRosterPage() {
     <div className="space-y-6 text-start max-w-5xl mx-auto">
       
       {/* HEADER BAR */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 ">
         <span className="text-xs font-mono font-medium uppercase text-ink-500">STAFF & FIELD TEAMS</span>
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Field Technicians Roster</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Field Technicians Roster</h1>
         <p className="text-sm text-ink-500">Manage field staff profiles, daily job capacity limits, and team specializations</p>
       </div>
 
@@ -106,8 +106,8 @@ export default function AdminStaffRosterPage() {
       <div className="grid lg:grid-cols-12 gap-6">
         
         {/* CREATE STAFF FORM (5 Cols) */}
-        <div className="lg:col-span-5 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-          <div className="border-b border-[#ECEAE3] pb-3">
+        <div className="lg:col-span-5 bg-white rounded-[18px] p-6 space-y-4 ">
+          <div className=" border-[#ECEAE3] pb-3">
             <h3 className="font-heading font-medium text-lg text-ink-900">Add New Field Member</h3>
             <p className="text-xs text-ink-500">Register new technician or team lead</p>
           </div>
@@ -195,7 +195,7 @@ export default function AdminStaffRosterPage() {
             <button
               type="submit"
               disabled={submitting || !name.trim() || !email.trim()}
-              className="w-full py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#ECEAE3]"
+              className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
             >
               {submitting ? "Registering Staff Member..." : "Register Staff Member →"}
             </button>
@@ -203,8 +203,8 @@ export default function AdminStaffRosterPage() {
         </div>
 
         {/* STAFF ROSTER LIST (7 Cols) */}
-        <div className="lg:col-span-7 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-          <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+        <div className="lg:col-span-7 bg-white rounded-[18px] p-6 space-y-4 ">
+          <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
             <h3 className="font-heading font-medium text-lg text-ink-900">Active Roster ({staff.length})</h3>
             <span className="text-xs font-mono text-ink-500">Capacity Rules Active</span>
           </div>
@@ -217,16 +217,16 @@ export default function AdminStaffRosterPage() {
           ) : staff.length > 0 ? (
             <div className="space-y-3">
               {staff.map((stf) => (
-                <div key={stf.id} className="p-4 rounded-[18px] bg-white border border-[#ECEAE3] space-y-2 text-xs font-mono">
+                <div key={stf.id} className="p-4 rounded-[18px] bg-white space-y-2 text-xs font-mono">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="font-medium text-ink-600 text-sm">{stf.name}</span>
-                      <span className="px-2 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-[10px] uppercase font-medium">
+                      <span className="ts-eyebrow">
                         {stf.role.replace("_", " ")}
                       </span>
                     </div>
 
-                    <span className="px-2.5 py-1 rounded-full bg-white text-ink-600 font-medium border border-[#ECEAE3]">
+                    <span className="px-2.5 py-1 rounded-xl bg-white text-ink-600 font-medium ">
                       Max {stf.dailyCapacityCount || 3} Jobs/Day
                     </span>
                   </div>

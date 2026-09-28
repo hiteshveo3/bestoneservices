@@ -65,15 +65,15 @@ export function CompactFilterSidebar({
   const isCovered = postcodeCoverage?.status === "AVAILABLE";
 
   return (
-    <div className="bg-[#EAF8D6]/50 border-2 border-[#ECEAE3] rounded-[22px] p-5 sm:p-6  space-y-5 text-start">
+    <div className="bg-[#EAF8D6]/50 border-2 border-[#ECEAE3] rounded-[22px] p-5 sm:p-6 space-y-5 text-start">
       {/* 1. Header with Active Counter & Reset */}
-      <div className="flex items-center justify-between border-b border-[#ECEAE3]/40 pb-3">
+      <div className="flex items-center justify-between border-[#ECEAE3]/40 pb-3">
         <div className="flex items-center gap-2">
-          <h2 className="font-heading text-base font-bold text-[#1D201E]">
+          <h2 className="font-heading text-base font-[650] text-[#1D201E]">
             Filter Services
           </h2>
           {activeCount > 0 && (
-            <span className="inline-flex items-center justify-center h-5 px-1.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-[11px] font-bold font-mono">
+            <span className="inline-flex items-center justify-center h-5 px-1.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-[11px] font-bold font-mono">
               {activeCount}
             </span>
           )}
@@ -105,11 +105,11 @@ export function CompactFilterSidebar({
                 key={key}
                 type="button"
                 onClick={() => onToggleCategory(key)}
-                className={`px-3 py-2 rounded-[10px] text-xs font-semibold flex items-center justify-between border transition-colors cursor-pointer ${
-                  isSelected
-                    ? "bg-white border-2 border-[#ECEAE3] text-[#1D201E] font-bold "
-                    : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white hover:border-[#ECEAE3]"
-                }`}
+                className={`px-3 py-2 rounded-[10px] text-xs font-semibold flex items-center justify-between transition-colors cursor-pointer ${
+ isSelected
+ ? "bg-white border-2 text-[#1D201E] font-bold "
+ : "bg-white/80 text-[#1D201E]/80 hover:bg-white hover:border-[#ECEAE3]"
+ }`}
               >
                 <span className="truncate flex items-center gap-1.5">
                   <span>{icon}</span>
@@ -125,7 +125,7 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 3. Job Type */}
-      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
+      <div className="space-y-2 pt-1 border-[#ECEAE3]/40">
         <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
           Job Type
         </span>
@@ -138,11 +138,11 @@ export function CompactFilterSidebar({
                 key={jt}
                 type="button"
                 onClick={() => onToggleJobType(jt)}
-                className={`px-2.5 py-1.5 rounded-[8px] text-xs font-medium border transition-colors cursor-pointer ${
-                  isSelected
-                    ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] font-semibold "
-                    : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
-                }`}
+                className={`px-2.5 py-1.5 rounded-[8px] text-xs font-medium transition-colors cursor-pointer ${
+ isSelected
+ ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] font-semibold "
+ : "bg-white/80 text-[#1D201E]/80 hover:bg-white"
+ }`}
               >
                 <span>{JOB_TYPE_DEFINITIONS[jt].label}</span>
                 <span className="text-[10px] ml-1 opacity-70 font-mono">({count})</span>
@@ -153,7 +153,7 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 4. Property Size (relevant for Cleaning & Removals) */}
-      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
+      <div className="space-y-2 pt-1 border-[#ECEAE3]/40">
         <div className="flex items-center justify-between">
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
             Property Size
@@ -171,11 +171,11 @@ export function CompactFilterSidebar({
                 key={sz}
                 type="button"
                 onClick={() => onTogglePropertySize(sz)}
-                className={`px-2.5 py-1.5 rounded-[8px] text-xs font-medium border transition-colors cursor-pointer ${
-                  isSelected
-                    ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] font-semibold "
-                    : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
-                }`}
+                className={`px-2.5 py-1.5 rounded-[8px] text-xs font-medium transition-colors cursor-pointer ${
+ isSelected
+ ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] font-semibold "
+ : "bg-white/80 text-[#1D201E]/80 hover:bg-white"
+ }`}
               >
                 <span>{PROPERTY_SIZE_DEFINITIONS[sz].label}</span>
                 <span className="text-[10px] ml-1 opacity-70 font-mono">({count})</span>
@@ -186,7 +186,7 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 5. Urgency / Dispatch */}
-      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
+      <div className="space-y-2 pt-1 border-[#ECEAE3]/40">
         <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
           Urgency & Timeline
         </span>
@@ -194,11 +194,11 @@ export function CompactFilterSidebar({
           <button
             type="button"
             onClick={() => onSetUrgency(filters.urgency === "emergency" ? "all" : "emergency")}
-            className={`px-2.5 py-2 rounded-[8px] text-xs font-semibold flex items-center justify-center gap-1.5 border transition-colors cursor-pointer ${
-              filters.urgency === "emergency"
-                ? "bg-[#B7F56A] border-2 border-[#ECEAE3] text-[#1D201E] font-bold "
-                : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
-            }`}
+            className={`px-2.5 py-2 rounded-[8px] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
+ filters.urgency === "emergency"
+ ? "bg-[#B7F56A] border-2 text-[#1D201E] font-bold "
+ : "bg-white/80 text-[#1D201E]/80 hover:bg-white"
+ }`}
           >
             <HugeiconsIcon icon={FlashIcon} size={14} strokeWidth={2} className="text-[#1D201E]" />
             <span>⚡ Same-Day</span>
@@ -207,11 +207,11 @@ export function CompactFilterSidebar({
           <button
             type="button"
             onClick={() => onSetUrgency(filters.urgency === "flexible" ? "all" : "flexible")}
-            className={`px-2.5 py-2 rounded-[8px] text-xs font-semibold flex items-center justify-center gap-1 border transition-colors cursor-pointer ${
-              filters.urgency === "flexible"
-                ? "bg-white border-2 border-[#ECEAE3] text-[#1D201E] font-bold "
-                : "bg-white/80 border border-[#ECEAE3]/40 text-[#1D201E]/80 hover:bg-white"
-            }`}
+            className={`px-2.5 py-2 rounded-[8px] text-xs font-semibold flex items-center justify-center gap-1 transition-colors cursor-pointer ${
+ filters.urgency === "flexible"
+ ? "bg-white border-2 text-[#1D201E] font-bold "
+ : "bg-white/80 text-[#1D201E]/80 hover:bg-white"
+ }`}
           >
             <span>🗓️ Flexible</span>
           </button>
@@ -219,7 +219,7 @@ export function CompactFilterSidebar({
       </div>
 
       {/* 6. London Postcode Coverage Checker */}
-      <div className="space-y-2 pt-1 border-t border-[#ECEAE3]/40">
+      <div className="space-y-2 pt-1 border-[#ECEAE3]/40">
         <span className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/70">
           London Postcode
         </span>
@@ -241,11 +241,11 @@ export function CompactFilterSidebar({
 
         {filters.postcode.trim() && postcodeCoverage && (
           <div
-            className={`p-2.5 rounded-[10px] text-xs space-y-0.5 border ${
-              isCovered
-                ? "bg-white border-2 border-[#ECEAE3] text-[#1D201E]"
-                : "bg-amber-50 border border-amber-200 text-amber-900"
-            }`}
+            className={`p-2.5 rounded-[10px] text-xs space-y-0.5 ${
+ isCovered
+ ? "bg-white border-2 text-[#1D201E]"
+ : "bg-amber-50 border-amber-200 text-amber-900"
+ }`}
           >
             <div className="flex items-center gap-1.5 font-semibold text-[11px]">
               {isCovered ? (

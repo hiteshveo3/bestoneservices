@@ -128,7 +128,7 @@ export const SERVICES_DIRECTORY: DirectoryService[] = [
     ctaText: "Get Instant Quote",
     badges: ["Steam Extraction"],
     aliases: ["carpet", "rug", "steam clean", "stain removal", "hot water extraction", "upholstery refresh"],
-    imageSrc: "/images/stock-handover-checklist.jpg",
+    imageSrc: "/images/service/stock-handover-checklist.jpg",
     popular: true,
   },
   {
@@ -147,7 +147,7 @@ export const SERVICES_DIRECTORY: DirectoryService[] = [
     ctaText: "Book This Service",
     badges: ["Dip-Tank Degreasing"],
     aliases: ["oven clean", "cooker", "hob", "appliance", "range cooker", "extractor fan", "bbq"],
-    imageSrc: "/images/stock-oven-kitchen.jpg",
+    imageSrc: "/images/service/stock-oven-kitchen.jpg",
     popular: true,
   },
   {
@@ -330,7 +330,7 @@ export const SERVICES_DIRECTORY: DirectoryService[] = [
     ctaText: "Book This Service",
     badges: ["Full Coverage"],
     aliases: ["flea", "fleas", "pet fleas", "carpet bites", "cat fleas", "dog fleas", "itching"],
-    imageSrc: "/images/stock-handover-checklist.jpg",
+    imageSrc: "/images/service/stock-handover-checklist.jpg",
   },
   {
     id: "ant-treatment",
@@ -347,7 +347,7 @@ export const SERVICES_DIRECTORY: DirectoryService[] = [
     ctaText: "Book This Service",
     badges: [],
     aliases: ["ant", "ants", "ant nest", "ant trail"],
-    imageSrc: "/images/stock-handover-checklist.jpg",
+    imageSrc: "/images/service/stock-handover-checklist.jpg",
   },
   {
     id: "pest-inspection-survey",

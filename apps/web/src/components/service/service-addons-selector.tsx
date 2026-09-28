@@ -45,9 +45,9 @@ export function ServiceAddonsSelector({
   };
 
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 space-y-6 text-start">
+      <div className="space-y-1 border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
           <Sparkles className="w-3.5 h-3.5 text-ink-600 shrink-0" />
           <span>Optional Add-Ons</span>
         </div>
@@ -63,11 +63,11 @@ export function ServiceAddonsSelector({
               key={item.id}
               type="button"
               onClick={() => toggleAddOn(item.id)}
-              className={`p-4 rounded-[16px] border text-start transition-colors duration-150 cursor-pointer flex items-center justify-between gap-3 ${
-                isSelected
-                  ? "bg-[#B7F56A] border-[#1D201E] font-medium text-[#1D201E]"
-                  : "bg-white border-[#ECEAE3] hover:bg-[#F6F5F1]"
-              }`}
+              className={`p-4 rounded-[16px] text-start transition-colors duration-150 cursor-pointer flex items-center justify-between gap-3 ${
+ isSelected
+ ? "bg-[#B7F56A] border-[#1D201E] font-medium text-[#1D201E]"
+ : "bg-white hover:bg-[#F6F5F1]"
+ }`}
             >
               <div className="space-y-0.5">
                 <div className={`font-heading text-base font-medium ${isSelected ? "text-[#1D201E]" : "text-ink-900"}`}>{item.name}</div>
@@ -77,14 +77,14 @@ export function ServiceAddonsSelector({
               </div>
 
               <div className="flex items-center gap-2 shrink-0">
-                <span className={`px-2.5 py-1 rounded-full text-xs font-mono font-medium border ${
-                  isSelected ? "bg-[#A2EA4E] text-[#1D201E] border-[#ECEAE3]" : "bg-[#F6F5F1] text-ink-600 border-[#ECEAE3]"
-                }`}>
+                <span className={`px-2.5 py-1 rounded-md text-xs font-mono font-medium ${
+ isSelected ? "bg-[#A2EA4E] text-[#1D201E] " : "bg-white text-ink-600 "
+ }`}>
                   +{item.priceDisplay}
                 </span>
-                <div className={`w-6 h-6 rounded-full border flex items-center justify-center transition-colors duration-150 ${
-                  isSelected ? "bg-[#B7F56A] text-[#1D201E] border-[#ECEAE3]" : "bg-[#F6F5F1] text-ink-600 border-[#ECEAE3]"
-                }`}>
+                <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-150 ${
+ isSelected ? "bg-[#B7F56A] text-[#1D201E] " : "bg-white text-ink-600 "
+ }`}>
                   {isSelected ? <Check className="w-3.5 h-3.5 text-[#1D201E]" /> : <Plus className="w-3.5 h-3.5 text-ink-600" />}
                 </div>
               </div>

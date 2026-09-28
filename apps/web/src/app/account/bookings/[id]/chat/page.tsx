@@ -104,7 +104,7 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
 
   if (authLoading || loading) {
     return (
-      <div className="bg-[#F6F5F1] rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
         <Spinner size={32} className="mx-auto" />
         <p className="text-sm font-medium text-ink-600">Opening direct support chat...</p>
       </div>
@@ -115,7 +115,7 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
     <div className="space-y-6 text-start max-w-3xl mx-auto">
       
       {/* HEADER BAR */}
-      <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-3 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-3 ">
         <div className="flex items-center justify-between">
           <Link
             href={`/account/bookings/${bookingId}`}
@@ -125,21 +125,21 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
             <span>Back to Booking Details</span>
           </Link>
 
-          <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-[10px] font-mono font-medium uppercase">
+          <span className="ts-eyebrow">
             LIVE SUPPORT CHAT
           </span>
         </div>
 
         <div>
           <span className="text-xs font-mono text-ink-500">DIRECT COMMUNICATION</span>
-          <h1 className="font-heading text-2xl font-medium text-ink-900">
+          <h1 className="font-heading text-2xl font-[650] text-ink-900">
             Booking #{booking?.reference || bookingId} Support Chat
           </h1>
         </div>
       </div>
 
       {/* CHAT MESSAGES CARD */}
-      <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 flex flex-col h-[500px] border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col h-[500px] ">
         
         {/* MESSAGES DISPLAY AREA */}
         <div className="flex-1 overflow-y-auto space-y-3 pr-2">
@@ -152,7 +152,7 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
                   className={`flex flex-col ${isCustomer ? "items-end" : "items-start"}`}
                 >
                   <div
-                    className={`max-w-md p-3.5 rounded-[18px] text-xs font-medium space-y-1 ${ isCustomer ? "bg-[#B7F56A] text-[#1D201E] rounded-br-none" : "bg-[#F6F5F1] text-ink-600 rounded-bl-none border border-[#ECEAE3]" }`}
+                    className={`max-w-md p-3.5 rounded-[18px] text-xs font-medium space-y-1 ${ isCustomer ? "bg-[#B7F56A] text-[#1D201E] rounded-br-none" : "bg-white text-ink-600 rounded-bl-none " }`}
                   >
                     <span className={`text-[10px] font-mono font-medium uppercase block ${isCustomer ? "text-[#1D201E]" : "text-ink-500"}`}>
                       {msg.senderName} ({msg.senderRole})
@@ -180,7 +180,7 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
         )}
 
         {/* INPUT FORM */}
-        <form onSubmit={handleSendMessage} className="flex gap-2 pt-2 border-t border-[#ECEAE3]">
+        <form onSubmit={handleSendMessage} className="flex gap-2 pt-2 border-[#ECEAE3]">
           <input
             type="text"
             value={inputText}

@@ -215,7 +215,7 @@ export function SearchField({
             if (onSearch) onSearch(e.target.value);
           }}
           onKeyDown={handleKeyDown}
-          className="w-full h-11 pl-10 pr-24 rounded-[12px] border border-[#ECEAE3] bg-white text-sm text-[#1D201E] placeholder:text-[#1D201E]/45 focus:border-[#1D201E] focus:ring-2 focus:ring-[#1D201E]/30 focus:outline-none transition-all  hover:border-[#ECEAE3]"
+          className="w-full h-11 pl-10 pr-24 rounded-[12px] border border-[#ECEAE3] bg-white text-sm text-[#1D201E] placeholder:text-[#1D201E]/45 focus:border-[#1D201E] focus:ring-2 focus:ring-[#1D201E]/30 focus:outline-none transition-all hover:border-[#ECEAE3]"
         />
 
         <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
@@ -244,15 +244,15 @@ export function SearchField({
 
       {/* Auto-suggestions & Recents Dropdown */}
       {open && suggestions.length > 0 && (
-        <div className="absolute left-0 top-[calc(100%+6px)] z-50 w-full min-w-[300px] sm:min-w-[420px] max-w-[calc(100vw-32px)] bg-white rounded-[14px] border-2 border-[#ECEAE3]  overflow-hidden py-1.5 text-start animate-in fade-in-50 duration-150">
-          <div className="px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#1D201E]/70 flex items-center justify-between border-b border-[#ECEAE3] bg-[#F6F5F1]">
+        <div className="absolute left-0 top-[calc(100%+6px)] z-50 w-full min-w-[300px] sm:min-w-[420px] max-w-[calc(100vw-32px)] bg-white rounded-[14px] border-2 border-[#ECEAE3] overflow-hidden py-1.5 text-start animate-in fade-in-50 duration-150">
+          <div className="px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#1D201E]/70 flex items-center justify-between border-[#ECEAE3] bg-[#F6F5F1]">
             <span>{value.trim() ? "Suggested Services" : "Recent Searches"}</span>
             {value.trim() && (
               <HugeiconsIcon icon={SparklesIcon} size={13} strokeWidth={1.8} className="text-[#1D201E]/50" />
             )}
           </div>
 
-          <ul role="listbox" className="max-h-72 overflow-y-auto py-1 divide-y divide-[#ECEAE3]/40">
+          <ul role="listbox" className="max-h-72 overflow-y-auto py-1 ">
             {suggestions.map((item, idx) => {
               const active = idx === cursor;
               return (
@@ -263,14 +263,14 @@ export function SearchField({
                   onClick={() => handleSelect(item)}
                   onMouseEnter={() => setCursor(idx)}
                   className={`px-3.5 py-2.5 flex items-center justify-between gap-3 cursor-pointer transition-colors text-sm ${
-                    active ? "bg-[#EAF8D6]/60 text-[#1D201E]" : "text-[#1D201E]/90 hover:bg-[#F6F5F1]"
-                  }`}
+ active ? "bg-[#EAF8D6]/60 text-[#1D201E]" : "text-[#1D201E]/90 hover:bg-[#F6F5F1]"
+ }`}
                 >
                   <div className="flex items-center gap-2.5 min-w-0 flex-1">
                     {item.isRecent ? (
                       <HugeiconsIcon icon={Clock01Icon} size={16} strokeWidth={1.8} className="text-[#1D201E]/50 shrink-0" />
                     ) : (
-                      <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#EAF8D6] text-[#1D201E] font-semibold shrink-0 whitespace-nowrap">
+                      <span className="text-[11px] px-2 py-0.5 rounded-md bg-[#EAF8D6] text-[#1D201E] font-semibold shrink-0 whitespace-nowrap">
                         {item.category}
                       </span>
                     )}

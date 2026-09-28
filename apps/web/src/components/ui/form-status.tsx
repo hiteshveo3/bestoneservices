@@ -24,7 +24,7 @@ export function FormSuccess({
   return (
     <div
       role="status"
-      className={`form-status-in flex items-start gap-3 p-4 rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] text-start ${className}`}
+      className={`form-status-in flex items-start gap-3 p-4 rounded-[16px] bg-white text-start ${className}`}
     >
       <span className="form-check-pop grid place-items-center w-7 h-7 shrink-0 rounded-full bg-[#B7F56A] text-[#1D201E]">
         <Check className="w-4 h-4" strokeWidth={3} aria-hidden="true" />

@@ -77,12 +77,12 @@ export function FilterSidebar({
 
   return (
     <aside
-      className={`w-full bg-white border border-[#ECEAE3] rounded-[20px] p-5 lg:p-6  space-y-6 text-start ${className}`}
+      className={`w-full bg-white rounded-[20px] p-5 lg:p-6 space-y-6 text-start ${className}`}
       aria-label="Service filters"
     >
       {/* Sidebar Header */}
-      <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-4">
-        <h2 className="font-heading text-lg font-bold text-[#1D201E]">
+      <div className="flex items-center justify-between border-[#ECEAE3] pb-4">
+        <h2 className="font-heading text-lg font-[650] text-[#1D201E]">
           Filter Services
         </h2>
         {(state.categories.length > 0 ||
@@ -114,11 +114,11 @@ export function FilterSidebar({
             return (
               <label
                 key={cat}
-                className={`flex items-center justify-between px-3 py-2.5 rounded-[14px] border transition-colors duration-150 cursor-pointer select-none ${
-                  isChecked
-                    ? "bg-[#EAF8D6]/80 border-[#ECEAE3] font-semibold text-[#1D201E]"
-                    : "bg-[#F6F5F1] hover:bg-[#EAF8D6]/30 border-[#ECEAE3] text-[#1D201E]"
-                }`}
+                className={`flex items-center justify-between px-3 py-2.5 rounded-[14px] transition-colors duration-150 cursor-pointer select-none ${
+ isChecked
+ ? "bg-[#EAF8D6]/80 font-semibold text-[#1D201E]"
+ : "bg-white hover:bg-[#EAF8D6]/30 text-[#1D201E]"
+ }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
                   <input
@@ -131,11 +131,11 @@ export function FilterSidebar({
                   <span className="text-sm truncate">{CATEGORY_DEFINITIONS[cat].label}</span>
                 </div>
                 <span
-                  className={`text-xs px-2 py-0.5 rounded-full font-mono ${
-                    isChecked
-                      ? "bg-[#B7F56A] text-[#1D201E] font-semibold"
-                      : "bg-white border border-[#ECEAE3] text-[#1D201E]/70"
-                  }`}
+                  className={`text-xs px-2 py-0.5 rounded-md font-mono ${
+ isChecked
+ ? "bg-[#B7F56A] text-[#1D201E] font-semibold"
+ : "bg-white text-[#1D201E]/70"
+ }`}
                 >
                   {count}
                 </span>
@@ -146,7 +146,7 @@ export function FilterSidebar({
       </fieldset>
 
       {/* GROUP 2: Job Type */}
-      <fieldset className="space-y-3 border-t border-[#ECEAE3] pt-5 p-0 m-0">
+      <fieldset className="space-y-3 border-[#ECEAE3] pt-5 p-0 m-0">
         <legend className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1D201E]/80 mb-2 block">
           2. Job Type
         </legend>
@@ -158,11 +158,11 @@ export function FilterSidebar({
             return (
               <label
                 key={jt}
-                className={`flex items-center justify-between px-3 py-2 rounded-[12px] border transition-colors duration-150 cursor-pointer select-none ${
-                  isChecked
-                    ? "bg-[#EAF8D6]/60 border-[#ECEAE3] font-medium text-[#1D201E]"
-                    : "bg-[#F6F5F1] hover:bg-[#EAF8D6]/20 border-transparent text-[#1D201E]"
-                }`}
+                className={`flex items-center justify-between px-3 py-2 rounded-[12px] transition-colors duration-150 cursor-pointer select-none ${
+ isChecked
+ ? "bg-[#EAF8D6]/60 font-medium text-[#1D201E]"
+ : "bg-white hover:bg-[#EAF8D6]/20 border-transparent text-[#1D201E]"
+ }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
                   <input
@@ -181,7 +181,7 @@ export function FilterSidebar({
       </fieldset>
 
       {/* GROUP 3: Property Type & Size (Smart Conditional Visibility) */}
-      <fieldset className="border-t border-[#ECEAE3] pt-5 p-0 m-0 space-y-3">
+      <fieldset className=" border-[#ECEAE3] pt-5 p-0 m-0 space-y-3">
         <div className="flex items-center justify-between">
           <legend className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1D201E]/80 block">
             3. Property Size
@@ -201,7 +201,7 @@ export function FilterSidebar({
         </div>
 
         {!isPropertySizeRelevant && !propertySizeExpanded ? (
-          <p className="text-xs text-[#1D201E]/60 bg-[#F6F5F1] p-2.5 rounded-md border border-[#ECEAE3]">
+          <p className="text-xs text-[#1D201E]/60 bg-white p-2.5 rounded-md ">
             Property size tiers apply to Cleaning and Removals.
           </p>
         ) : (
@@ -213,11 +213,11 @@ export function FilterSidebar({
               return (
                 <label
                   key={ps}
-                  className={`flex items-center justify-between px-3 py-2 rounded-[12px] border transition-colors duration-150 cursor-pointer select-none ${
-                    isChecked
-                      ? "bg-[#EAF8D6]/60 border-[#ECEAE3] font-medium text-[#1D201E]"
-                      : "bg-[#F6F5F1] hover:bg-[#EAF8D6]/20 border-transparent text-[#1D201E]"
-                  }`}
+                  className={`flex items-center justify-between px-3 py-2 rounded-[12px] transition-colors duration-150 cursor-pointer select-none ${
+ isChecked
+ ? "bg-[#EAF8D6]/60 font-medium text-[#1D201E]"
+ : "bg-white hover:bg-[#EAF8D6]/20 border-transparent text-[#1D201E]"
+ }`}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
                     <input
@@ -237,7 +237,7 @@ export function FilterSidebar({
       </fieldset>
 
       {/* GROUP 4: Urgency / How Soon */}
-      <fieldset className="border-t border-[#ECEAE3] pt-5 p-0 m-0 space-y-3">
+      <fieldset className=" border-[#ECEAE3] pt-5 p-0 m-0 space-y-3">
         <legend className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1D201E]/80 mb-1 block">
           4. How Soon Do You Need It?
         </legend>
@@ -245,11 +245,11 @@ export function FilterSidebar({
           <button
             type="button"
             onClick={() => onSetUrgency(state.urgency === "emergency" ? "all" : "emergency")}
-            className={`flex items-center justify-between px-3 py-2 rounded-[12px] border text-sm font-semibold transition-colors duration-150 cursor-pointer ${
-              state.urgency === "emergency"
-                ? "bg-[#B7F56A] text-[#1D201E] border-[#1D201E] "
-                : "bg-[#F6F5F1] text-[#1D201E] border-[#ECEAE3] hover:bg-[#EAF8D6]/40"
-            }`}
+            className={`flex items-center justify-between px-3 py-2 rounded-[12px] text-sm font-semibold transition-colors duration-150 cursor-pointer ${
+ state.urgency === "emergency"
+ ? "bg-[#B7F56A] text-[#1D201E] border-[#1D201E] "
+ : "bg-white text-[#1D201E] hover:bg-[#EAF8D6]/40"
+ }`}
           >
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#B7F56A]" />
@@ -261,11 +261,11 @@ export function FilterSidebar({
           <button
             type="button"
             onClick={() => onSetUrgency(state.urgency === "this-week" ? "all" : "this-week")}
-            className={`flex items-center justify-between px-3 py-2 rounded-[12px] border text-sm transition-colors duration-150 cursor-pointer ${
-              state.urgency === "this-week"
-                ? "bg-[#EAF8D6] text-[#1D201E] font-semibold border-[#ECEAE3]"
-                : "bg-[#F6F5F1] text-[#1D201E] border-[#ECEAE3] hover:bg-[#EAF8D6]/40"
-            }`}
+            className={`flex items-center justify-between px-3 py-2 rounded-[12px] text-sm transition-colors duration-150 cursor-pointer ${
+ state.urgency === "this-week"
+ ? "bg-[#EAF8D6] text-[#1D201E] font-semibold "
+ : "bg-white text-[#1D201E] hover:bg-[#EAF8D6]/40"
+ }`}
           >
             <span>This Week</span>
           </button>
@@ -273,11 +273,11 @@ export function FilterSidebar({
           <button
             type="button"
             onClick={() => onSetUrgency(state.urgency === "flexible" ? "all" : "flexible")}
-            className={`flex items-center justify-between px-3 py-2 rounded-[12px] border text-sm transition-colors duration-150 cursor-pointer ${
-              state.urgency === "flexible"
-                ? "bg-[#EAF8D6] text-[#1D201E] font-semibold border-[#ECEAE3]"
-                : "bg-[#F6F5F1] text-[#1D201E] border-[#ECEAE3] hover:bg-[#EAF8D6]/40"
-            }`}
+            className={`flex items-center justify-between px-3 py-2 rounded-[12px] text-sm transition-colors duration-150 cursor-pointer ${
+ state.urgency === "flexible"
+ ? "bg-[#EAF8D6] text-[#1D201E] font-semibold "
+ : "bg-white text-[#1D201E] hover:bg-[#EAF8D6]/40"
+ }`}
           >
             <span>Flexible / Just Browsing</span>
           </button>
@@ -285,7 +285,7 @@ export function FilterSidebar({
       </fieldset>
 
       {/* GROUP 5: London Postcode Coverage Lookup */}
-      <fieldset className="border-t border-[#ECEAE3] pt-5 p-0 m-0 space-y-3">
+      <fieldset className=" border-[#ECEAE3] pt-5 p-0 m-0 space-y-3">
         <legend className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1D201E]/80 mb-1 block">
           5. London Area Coverage
         </legend>
@@ -309,11 +309,11 @@ export function FilterSidebar({
 
           {postcodeCoverage && (
             <div
-              className={`p-2.5 rounded-[10px] text-xs leading-relaxed flex items-start gap-2 border ${
-                postcodeCoverage.status === "AVAILABLE"
-                  ? "bg-[#EAF8D6]/60 text-[#1D201E] border-[#ECEAE3]"
-                  : "bg-amber-50 text-amber-900 border-amber-200"
-              }`}
+              className={`p-2.5 rounded-[10px] text-xs leading-relaxed flex items-start gap-2 ${
+ postcodeCoverage.status === "AVAILABLE"
+ ? "bg-[#EAF8D6]/60 text-[#1D201E] "
+ : "bg-amber-50 text-amber-900 border-amber-200"
+ }`}
             >
               {postcodeCoverage.status === "AVAILABLE" ? (
                 <CheckCircle2 className="w-4 h-4 text-[#1D201E] shrink-0 mt-0.5" />
@@ -330,8 +330,8 @@ export function FilterSidebar({
       </fieldset>
 
       {/* GROUP 6: Informational Price Note */}
-      <div className="border-t border-[#ECEAE3] pt-4">
-        <div className="p-3 bg-[#F6F5F1] rounded-[14px] border border-[#ECEAE3] space-y-1.5">
+      <div className=" border-[#ECEAE3] pt-4">
+        <div className="p-3 bg-white rounded-[14px] space-y-1.5">
           <div className="flex items-center gap-1.5 text-xs font-bold text-[#1D201E]">
             <ShieldCheck className="w-4 h-4 text-[#1D201E]" />
             <span>Honest Pricing Policy</span>

@@ -47,7 +47,7 @@ export function ServicePolicyCallout({ type, title, description, ruleTag }: Serv
   return (
     <SectionReveal className={`p-6 sm:p-8 rounded-[16px] space-y-3 text-start ${config.style} border border-[#ECEAE3]`}>
       <div className="flex items-center justify-between gap-2">
-        <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+        <span className="ts-eyebrow">
           {ruleTag || config.badgeText}
         </span>
         <Icon className="w-5 h-5 text-ink-600 shrink-0" />

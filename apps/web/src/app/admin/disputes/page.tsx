@@ -73,11 +73,11 @@ export default function AdminDisputesPage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER BAR */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#ECEAE3] pb-4">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 ">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-[#ECEAE3] pb-4">
           <div className="space-y-1">
             <span className="text-xs font-mono font-medium uppercase text-ink-500">48-HOUR RE-CLEAN GUARANTEE & DISPUTES</span>
-            <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Dispute Resolution Workspace</h1>
+            <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Dispute Resolution Workspace</h1>
             <p className="text-sm text-ink-500">Manage customer guarantee claims, review photo evidence, and dispatch free re-clean appointments</p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function AdminDisputesPage() {
               key={tab.id}
               type="button"
               onClick={() => setStatusFilter(tab.id as DisputeStatus | "all")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-[#F6F5F1] text-ink-500 hover:text-[#1D201E]" } border border-[#ECEAE3]`}
+              className={`px-3.5 py-1.5 rounded-md text-xs font-medium border-none cursor-pointer transition-colors duration-150 ${ statusFilter === tab.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-white text-ink-500 hover:text-[#1D201E]" } `}
             >
               {tab.label} ({tab.count})
             </button>
@@ -113,32 +113,32 @@ export default function AdminDisputesPage() {
 
       {/* DISPUTES LIST */}
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Loading guarantee claims & disputes...</p>
         </div>
       ) : disputes.length > 0 ? (
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-          <div className="divide-y divide-bone-300">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <div className=" divide-bone-300">
             {disputes.map((dsp) => (
               <div key={dsp.id} className="py-4 first:pt-0 last:pb-0 flex flex-wrap items-center justify-between gap-4">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="font-mono font-medium text-xs text-ink-600">{dsp.id}</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-danger-50 text-danger-900 text-[10px] font-mono font-medium uppercase">
+                    <span className="px-2.5 py-0.5 rounded-md bg-danger-50 text-danger-900 text-[10px] font-mono font-medium uppercase">
                       {dsp.disputeType.replace(/_/g, " ")}
                     </span>
                   </div>
 
                   <p className="font-heading font-medium text-sm text-ink-900">Booking #{dsp.bookingReference}</p>
                   <p className="text-xs text-ink-500">Customer: {dsp.customerName} ({dsp.customerEmail})</p>
-                  <p className="text-xs text-ink-600 italic bg-white p-2.5 rounded-[18px] border border-[#ECEAE3] mt-1 max-w-xl">
+                  <p className="text-xs text-ink-600 italic bg-white p-2.5 rounded-[18px] mt-1 max-w-xl">
                     &ldquo;{dsp.description}&rdquo;
                   </p>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 rounded-full bg-[#F6F5F1] text-ink-600 text-xs font-mono font-medium uppercase">
+                  <span className="px-3 py-1 rounded-md bg-[#F6F5F1] text-ink-600 text-xs font-mono font-medium uppercase">
                     {dsp.status.replace(/_/g, " ")}
                   </span>
 
@@ -149,7 +149,7 @@ export default function AdminDisputesPage() {
                       setNewStatus(dsp.status);
                       setResolutionNotes(dsp.resolutionNotes || "");
                     }}
-                    className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer transition-colors duration-150 border-none border border-[#ECEAE3]"
+                    className="px-4 py-2 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer transition-colors duration-150 border-none "
                   >
                     Resolve Claim →
                   </button>
@@ -159,7 +159,7 @@ export default function AdminDisputesPage() {
           </div>
         </div>
       ) : (
-        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto ">
           <ShieldAlert className="w-10 h-10 text-[#1D201E] mx-auto" />
           <h3 className="font-heading text-lg font-medium text-ink-900">No Active Guarantee Claims</h3>
           <p className="text-xs text-ink-500 leading-relaxed">
@@ -171,8 +171,8 @@ export default function AdminDisputesPage() {
       {/* MODAL: RESOLVE DISPUTE */}
       {selectedDispute && (
         <div className="fixed inset-0 bg-ink-900/60 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-[18px] max-w-md w-full p-6 sm:p-8 space-y-6 text-start border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+          <div className="bg-white rounded-[18px] max-w-md w-full p-6 sm:p-8 space-y-6 text-start ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <div>
                 <span className="text-xs font-mono font-medium text-ink-500">GUARANTEE RESOLUTION</span>
                 <h3 className="font-heading font-medium text-lg text-ink-900">Resolve Claim {selectedDispute.id}</h3>
@@ -222,7 +222,7 @@ export default function AdminDisputesPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#ECEAE3]"
+                className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
               >
                 {submitting ? "Updating Resolution..." : "Confirm Resolution Decision →"}
               </button>

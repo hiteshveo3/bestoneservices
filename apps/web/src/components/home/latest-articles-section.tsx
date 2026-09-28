@@ -34,7 +34,7 @@ const ARTICLES: BlogArticle[] = [
     date: "Aug 2026",
     href: "/cleaning-services/end-of-tenancy-cleaning/#checklist",
     hugeIcon: CleanIcon,
-    imageSrc: "/images/end-of-tenancy-hero.jpg",
+    imageSrc: "/images/service/best-one-cleaner-hero-v2.webp",
     badgeColor: "bg-ink-100 text-ink-600",
   },
   {
@@ -46,7 +46,7 @@ const ARTICLES: BlogArticle[] = [
     date: "Aug 2026",
     href: "/pest-control-services/",
     hugeIcon: Bug01Icon,
-    imageSrc: "/images/pest-inspection.jpg",
+    imageSrc: "/images/service/best-one-pest-technician-hero-v1.webp",
     badgeColor: "bg-ink-100 text-ink-600",
   },
   {
@@ -58,23 +58,23 @@ const ARTICLES: BlogArticle[] = [
     date: "Aug 2026",
     href: "/removals/",
     hugeIcon: DeliveryTruck01Icon,
-    imageSrc: "/images/hero-mover.png",
+    imageSrc: "/images/service/best-one-team-hero-v1.webp",
     badgeColor: "bg-ink-100 text-ink-600",
   },
 ];
 
 export function LatestArticlesSection() {
   return (
-    <section className="w-full bg-[#F6F5F1] py-16 border-t border-[#ECEAE3]">
+    <section className="w-full bg-[#F6F5F1] py-16 border-[#ECEAE3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-10 text-start">
         <div className="space-y-3 max-w-2xl">
-          <span className="px-4 py-1.5 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-sm sm:text-base font-medium inline-block">
+          <span className="px-4 py-1.5 rounded-xl bg-ink-100 border border-[#ECEAE3] text-ink-600 text-sm sm:text-base font-medium inline-block">
             Property Guides & Insights
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-medium text-ink-900">
+          <h2 className="font-heading text-3xl sm:text-4xl font-[650] text-ink-900">
             Expert Advice for Tenants & Landlords
           </h2>
           <p className="text-base text-ink-500">
@@ -84,7 +84,7 @@ export function LatestArticlesSection() {
 
         <Link
           href="/blog/"
-          className="px-5 py-2.5 rounded-full bg-transparent text-ink-900 font-medium text-sm border-2 border-ink-900 hover:bg-ink-900 hover:text-[#1D201E] transition-colors duration-200 shrink-0 inline-flex items-center gap-2 text-decoration-none cursor-pointer self-start sm:self-auto"
+          className="px-5 py-2.5 rounded-xl bg-transparent text-ink-900 font-medium text-sm border-2 border-ink-900 hover:bg-ink-900 hover:text-[#1D201E] transition-colors duration-200 shrink-0 inline-flex items-center gap-2 text-decoration-none cursor-pointer self-start sm:self-auto"
         >
           <span>View All Articles</span>
           <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="text-current stroke-[2] shrink-0" />
@@ -96,7 +96,7 @@ export function LatestArticlesSection() {
         {ARTICLES.map((article) => (
           <article 
             key={article.id}
-            className="bg-[#F6F5F1] rounded-2xl p-6 sm:p-8 border border-[#ECEAE3] text-start flex flex-col justify-between group cursor-pointer"
+            className="bg-white rounded-2xl p-6 sm:p-8 text-start flex flex-col justify-between group cursor-pointer"
           >
             <div className="space-y-5">
               <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-[#F6F5F1]">
@@ -105,7 +105,7 @@ export function LatestArticlesSection() {
               
               {/* Category & Read Time Header */}
               <div className="flex items-center justify-between gap-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 ${article.badgeColor} border border-[#ECEAE3]`}>
+                <span className={`px-3 py-1 rounded-md text-xs font-medium flex items-center gap-1.5 ${article.badgeColor} border border-[#ECEAE3]`}>
                   <HugeiconsIcon icon={article.hugeIcon} size={14} className="text-ink-600 stroke-[2] shrink-0" />
                   <span>{article.category}</span>
                 </span>
@@ -131,7 +131,7 @@ export function LatestArticlesSection() {
             </div>
 
             {/* Read Article Link Footer */}
-            <div className="pt-6 mt-6 border-t border-[#ECEAE3] flex items-center justify-between text-sm font-medium text-ink-600 group-hover:underline">
+            <div className="pt-6 mt-6 border-[#ECEAE3] flex items-center justify-between text-sm font-medium text-ink-600 group-hover:underline">
               <span>Read Full Guide</span>
               <div className="w-8 h-8 rounded-full bg-ink-100 border border-[#ECEAE3] flex items-center justify-center group-hover:bg-ink-900 group-hover:border-ink-900 transition-colors duration-200">
                 <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="text-ink-600 group-hover:text-[#1D201E] stroke-[2] shrink-0 transition-colors duration-200" />

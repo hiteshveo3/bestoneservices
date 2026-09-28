@@ -28,9 +28,9 @@ export function ServiceLocationContext({
   locations = DEFAULT_HUB_LOCATIONS,
 }: ServiceLocationContextProps) {
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 space-y-6 text-start">
+      <div className="space-y-1 border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
           <MapPin className="w-3.5 h-3.5 text-ink-600 shrink-0" />
           <span>Regional Coverage</span>
         </div>
@@ -47,7 +47,7 @@ export function ServiceLocationContext({
           <Link
             key={idx}
             href={loc.slug}
-            className="p-3.5 rounded-[16px] bg-white border border-[#ECEAE3] hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none flex items-center justify-between group"
+            className="p-3.5 rounded-[16px] bg-white hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none flex items-center justify-between group"
           >
             <div className="flex items-center gap-2 font-heading font-medium text-base text-ink-900">
               <MapPin className="w-4 h-4 text-ink-600 shrink-0" />
@@ -58,7 +58,7 @@ export function ServiceLocationContext({
         ))}
       </div>
 
-      <div className="pt-2 flex justify-between items-center border-t border-[#ECEAE3]">
+      <div className="pt-2 flex justify-between items-center border-[#ECEAE3]">
         <span className="text-sm font-mono text-ink-500">Serving all Greater London postcodes</span>
         <Link
           href="/areas/"

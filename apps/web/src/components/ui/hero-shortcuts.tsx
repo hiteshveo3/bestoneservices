@@ -27,7 +27,7 @@ export function HeroShortcuts({ className = "" }: HeroShortcutsProps) {
             <Link
               key={sc.href}
               href={sc.href}
-              className="snap-start py-2.5 px-4 rounded-[16px] bg-white border border-[#ECEAE3] hover:bg-[#EAF8D6]/20 hover:border-ink-900 transition-colors duration-200 flex items-center gap-2.5 text-[#1D201E] text-decoration-none whitespace-nowrap font-medium text-base shrink-0 group"
+              className="snap-start py-2.5 px-4 rounded-[16px] bg-white hover:bg-[#EAF8D6]/20 hover:border-ink-900 transition-colors duration-200 flex items-center gap-2.5 text-[#1D201E] text-decoration-none whitespace-nowrap font-medium text-base shrink-0 group"
             >
               <div className="w-6 h-6 rounded-[16px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium">
                 <Icon className="w-3.5 h-3.5 text-[#1D201E]" />

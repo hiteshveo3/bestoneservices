@@ -24,7 +24,7 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
           <div 
             key={idx}
             id={slugId} 
-            className="bg-[#F6F5F1] rounded-[16px] border border-[#ECEAE3] overflow-hidden transition-colors duration-200 scroll-mt-24 "
+            className="bg-white rounded-[16px] overflow-hidden transition-colors duration-200 scroll-mt-24 "
           >
             <button 
               type="button"
@@ -41,9 +41,9 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
               </div>
               <div 
                 data-open={isOpen}
-                className={`accordion-chevron w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-[#ECEAE3] text-[#1D201E] transition-colors duration-200 ease-in-out ${
-                  isOpen ? "bg-[#B7F56A]" : "bg-[#EAF8D6]"
-                }`}
+                className={`accordion-chevron w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-[#1D201E] transition-colors duration-200 ease-in-out ${
+ isOpen ? "bg-[#B7F56A]" : "bg-[#EAF8D6]"
+ }`}
                 aria-hidden="true"
               >
                 <ChevronDown className="w-5 h-5" />
@@ -59,7 +59,7 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
             >
               <div>
                 <div className="px-6 pb-6 pt-2">
-                  <div className="pt-4 border-t border-[#ECEAE3] text-[#1D201E] text-base leading-relaxed">
+                  <div className="pt-4 border-[#ECEAE3] text-[#1D201E] text-base leading-relaxed">
                     <p className="text-base text-[#1D201E]/75 leading-relaxed font-normal">
                       {item.a}
                     </p>

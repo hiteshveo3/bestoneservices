@@ -256,10 +256,10 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
     <div
       ref={containerRef}
       id="smart-calculator"
-      className="bg-white rounded-[24px] p-6 sm:p-8 border border-[#ECEAE3]  text-start scroll-mt-24"
+      className="bg-white rounded-[24px] p-6 sm:p-8 text-start scroll-mt-24"
     >
       <noscript>
-        <div className="p-4 rounded-[16px] bg-[#EAF8D6] border border-[#ECEAE3] text-sm text-[#1D201E]">
+        <div className="p-4 rounded-[16px] bg-[#EAF8D6] text-sm text-[#1D201E]">
           This calculator needs JavaScript enabled. You can see every rate directly on the{" "}
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- noscript fallback must use a plain anchor; next/link requires JS */}
           <a href="/prices/#rates" className="font-semibold underline underline-offset-2">price list</a> instead.
@@ -305,13 +305,13 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                       type="button"
                       aria-pressed={isOn}
                       onClick={() => pickCategory(key)}
-                      className={`p-4 rounded-[16px] border text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1.5 ${
-                        isOn ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E]" : "bg-white border-[#ECEAE3] text-[#1D201E] hover:bg-[#EAF8D6]/40"
-                      }`}
+                      className={`p-4 rounded-2xl text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1.5 ${
+ isOn ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                     >
                       <Icon className="w-5 h-5 text-[#1D201E]" />
                       <span className="font-heading font-semibold text-base">{config[key].label}</span>
-                      <span className="font-mono text-xs text-[#1D201E]/60">{config[key].fromNote}</span>
+                      <span className="text-xs text-[#5A605C]">{config[key].fromNote}</span>
                     </button>
                   );
                 })}
@@ -332,12 +332,12 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                       role="radio"
                       aria-checked={isOn}
                       onClick={() => choose(stepId, item)}
-                      className={`p-4 rounded-[16px] border text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1 ${
-                        isOn ? "bg-[#B7F56A] border-[#ECEAE3] text-[#1D201E]" : "bg-white border-[#ECEAE3] text-[#1D201E] hover:bg-[#EAF8D6]/40"
-                      }`}
+                      className={`p-4 rounded-2xl text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1 ${
+ isOn ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                     >
                       <span className="font-semibold text-sm">{item.label}</span>
-                      <span className="font-mono text-xs text-[#1D201E]/60">{item.note}</span>
+                      <span className="text-xs text-[#5A605C]">{item.note}</span>
                     </button>
                   );
                 })}
@@ -364,14 +364,14 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                         role="checkbox"
                         aria-checked={isOn}
                         onClick={() => toggleAddon(add.label, add.price)}
-                        className={`flex items-center gap-3.5 w-full p-3.5 rounded-[14px] border cursor-pointer transition-colors duration-150 ${
-                          isOn ? "bg-white border-[#1D201E]" : "bg-white border-[#ECEAE3] hover:bg-[#EAF8D6]/20"
-                        }`}
+                        className={`flex items-center gap-3.5 w-full p-3.5 rounded-xl cursor-pointer transition-colors duration-150 ${
+ isOn ? "bg-[#EAF8D6]" : "bg-[#F6F5F1] hover:bg-[#EAF8D6]"
+ }`}
                       >
                         <span
-                          className={`flex shrink-0 items-center justify-center w-5 h-5 rounded-[6px] border ${
-                            isOn ? "bg-[#B7F56A] border-[#ECEAE3]" : "bg-white border-[#ECEAE3]"
-                          }`}
+                          className={`flex shrink-0 items-center justify-center w-5 h-5 rounded-[6px] ${
+ isOn ? "bg-[#B7F56A] " : "bg-white "
+ }`}
                         >
                           {isOn && <Check className="w-3.5 h-3.5 text-[#1D201E]" />}
                         </span>
@@ -394,9 +394,9 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                 </h3>
               </div>
 
-              <div className="border-t border-[#ECEAE3]">
+              <div className=" border-[#ECEAE3]">
                 {lines.map((line, i) => (
-                  <div key={i} className="flex items-baseline justify-between gap-4 py-3 border-b border-[#ECEAE3]">
+                  <div key={i} className="flex items-baseline justify-between gap-4 py-3 border-[#ECEAE3]">
                     <span className="text-sm text-[#1D201E]/85">{line.label}</span>
                     <span className="font-mono text-sm font-medium text-[#1D201E]">{line.value}</span>
                   </div>
@@ -415,7 +415,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                 </div>
               </div>
 
-              <p className="text-sm leading-relaxed text-[#1D201E]/85 bg-[#F6F5F1] border border-[#ECEAE3] rounded-[16px] p-4">
+              <p className="text-sm leading-relaxed text-[#1D201E]/85 bg-white rounded-[16px] p-4">
                 <strong className="font-semibold">{cfg.guarantee}</strong> Fixed price, confirmed before we arrive, no hidden fees.
               </p>
 
@@ -447,7 +447,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
           )}
 
           {!isResult && cat && (
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-[#ECEAE3]">
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-[#ECEAE3]">
               <button
                 type="button"
                 onClick={back}
@@ -460,9 +460,9 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                 type="button"
                 disabled={nextDisabled}
                 onClick={() => !nextDisabled && setStep((s) => s + 1)}
-                className={`min-w-[170px] px-6 py-3 rounded-md font-inter text-base font-medium flex items-center justify-center gap-2 transition-opacity duration-200 ${
-                  nextDisabled ? "bg-[#EAF8D6] text-[#1D201E]/60 cursor-not-allowed" : "bg-[#B7F56A] text-[#1D201E] hover:opacity-90 cursor-pointer"
-                }`}
+                className={`min-w-[170px] min-h-12 px-5 rounded-xl text-base font-semibold flex items-center justify-center gap-2 transition-colors duration-150 ${
+ nextDisabled ? "bg-[#ECEAE3] text-[#8B908B] cursor-not-allowed" : "bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] cursor-pointer"
+ }`}
               >
                 <span>{nextLabel}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -475,7 +475,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
         {!narrow && (
           <aside
             aria-label="Running quote"
-            className="sticky top-20 bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-4 text-start"
+            className="sticky top-20 bg-white rounded-[16px] p-6 space-y-4 text-start"
           >
             <span className="text-xs font-mono font-medium text-[#1D201E]/60 uppercase tracking-wider">Your quote so far</span>
             <div aria-live="polite" className="flex flex-col gap-1">
@@ -508,7 +508,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
       {/* MOBILE STICKY TOTAL BAR — narrow container, mid-flow only */}
       {narrow && cat && !isResult && (
         <div
-          className="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 bg-white border-t border-[#ECEAE3] "
+          className="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 bg-white border-[#ECEAE3] "
           style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
         >
           <div className="max-w-md mx-auto flex items-center justify-between gap-4">
@@ -527,8 +527,8 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-3">
-      <span className="text-xs text-[#1D201E]/60">{label}</span>
-      <span className="text-sm font-semibold text-[#1D201E] text-end">{value}</span>
+      <span className="shrink-0 text-xs text-[#5A605C]">{label}</span>
+      <span className="min-w-0 break-words text-sm font-semibold text-[#1D201E] text-end">{value}</span>
     </div>
   );
 }

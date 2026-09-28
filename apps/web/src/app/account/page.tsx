@@ -26,14 +26,14 @@ export default function CustomerAccountPage() {
     <div className="space-y-6 text-start">
       
       {/* 1. Account Welcome Card */}
-      <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 ">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
               <Sparkles className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
               <span>Verified Customer Account</span>
             </div>
-            <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">
+            <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">
               Welcome back, {customerName}
             </h1>
             <p className="text-sm text-ink-500">
@@ -43,14 +43,14 @@ export default function CustomerAccountPage() {
 
           <Link
             href="/account/profile"
-            className="px-4 py-2 rounded-full bg-[#F6F5F1] text-ink-600 text-xs font-medium hover:bg-[#EAF8D6] text-decoration-none inline-flex items-center gap-1.5"
+            className="px-4 py-2 rounded-md bg-[#F6F5F1] text-ink-600 text-xs font-medium hover:bg-[#EAF8D6] text-decoration-none inline-flex items-center gap-1.5"
           >
             <UserIcon className="w-3.5 h-3.5 text-ink-600" />
             <span>Manage Profile</span>
           </Link>
         </div>
 
-        <div className="pt-2 border-t border-[#ECEAE3] flex flex-wrap items-center gap-6 text-xs text-ink-500">
+        <div className="pt-2 border-[#ECEAE3] flex flex-wrap items-center gap-6 text-xs text-ink-500">
           <div className="flex items-center gap-1.5 font-mono">
             <span className="font-medium text-ink-600">Account Identity:</span>
             <span>{customerEmail}</span>
@@ -66,7 +66,7 @@ export default function CustomerAccountPage() {
       <div className="grid md:grid-cols-2 gap-6">
         
         {/* Bookings Module Empty State */}
-        <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 flex flex-col justify-between border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col justify-between ">
           <div className="space-y-3">
             <div className="w-10 h-10 rounded-[18px] bg-[#F6F5F1] text-ink-600 flex items-center justify-center font-medium">
               <Calendar className="w-5 h-5 text-ink-600" />
@@ -86,7 +86,7 @@ export default function CustomerAccountPage() {
               href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] text-decoration-none border border-[#ECEAE3]"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] text-decoration-none "
             >
               <span>Book a Service</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#1D201E]" />
@@ -95,7 +95,7 @@ export default function CustomerAccountPage() {
         </div>
 
         {/* Pricing & Estimates Empty State */}
-        <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-4 flex flex-col justify-between border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col justify-between ">
           <div className="space-y-3">
             <div className="w-10 h-10 rounded-[18px] bg-[#F6F5F1] text-ink-600 flex items-center justify-center font-medium">
               <FileText className="w-5 h-5 text-ink-600" />
@@ -113,7 +113,7 @@ export default function CustomerAccountPage() {
             <p className="text-xs text-ink-600 font-medium">No saved pricing estimates found.</p>
             <Link
               href="/prices"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-medium hover:bg-[#B7F56A] text-decoration-none"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-medium hover:bg-[#B7F56A] text-decoration-none"
             >
               <span>Calculate Upfront Estimate</span>
               <ArrowRight className="w-3.5 h-3.5 text-ink-600" />
@@ -124,7 +124,7 @@ export default function CustomerAccountPage() {
       </div>
 
       {/* 3. Account Support & Reassurance */}
-      <div className="bg-[#F6F5F1] rounded-[18px] p-6 space-y-3 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 space-y-3 ">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium shrink-0">
             <ShieldCheck className="w-5 h-5 text-[#1D201E]" />

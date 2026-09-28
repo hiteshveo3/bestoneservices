@@ -57,7 +57,7 @@ export function BedBugPriceCalculator() {
         <div className="space-y-2">
           <div className="flex justify-between items-center text-sm font-medium text-ink-900">
             <span>Number of affected rooms:</span>
-            <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-base">
+            <span className="px-3 py-1 rounded-xl bg-[#B7F56A] text-[#1D201E] font-medium text-base">
               {rooms} {rooms === 1 ? "room" : "rooms"}
             </span>
           </div>
@@ -85,11 +85,11 @@ export function BedBugPriceCalculator() {
                 key={level}
                 type="button"
                 onClick={() => setInfestationLevel(level)}
-                className={`p-3 rounded-[16px] border text-start transition-colors duration-150 cursor-pointer ${
-                  infestationLevel === level
-                    ? "border-ink-900 bg-[#EAF8D6] ring-2 ring-blue-600"
-                    : "border-[#ECEAE3] bg-white hover:bg-[#EAF8D6]"
-                }`}
+                className={`p-3 rounded-[16px] text-start transition-colors duration-150 cursor-pointer ${
+ infestationLevel === level
+ ? "border-ink-900 bg-[#EAF8D6] ring-2 ring-blue-600"
+ : " bg-white hover:bg-[#EAF8D6]"
+ }`}
               >
                 <div className="font-medium text-sm capitalize text-ink-900">
                   {level === "low" && "🟢 Light"}
@@ -115,11 +115,11 @@ export function BedBugPriceCalculator() {
                 key={visit}
                 type="button"
                 onClick={() => setEstimatedVisits(visit)}
-                className={`flex-1 py-2.5 px-4 rounded-[16px] font-medium text-sm transition-colors duration-150 cursor-pointer border ${
-                  estimatedVisits === visit
-                    ? "bg-[#B7F56A] text-[#1D201E] border-[#1D201E]"
-                    : "bg-[#F6F5F1] text-ink-600 border-[#ECEAE3] hover:bg-[#EAF8D6]"
-                }`}
+                className={`flex-1 py-2.5 px-4 rounded-[16px] font-medium text-sm transition-colors duration-150 cursor-pointer ${
+ estimatedVisits === visit
+ ? "bg-[#B7F56A] text-[#1D201E] border-[#1D201E]"
+ : "bg-white text-ink-600 hover:bg-[#EAF8D6]"
+ }`}
               >
                 {visit} Visit{visit > 1 ? "s" : ""}
               </button>
@@ -150,7 +150,7 @@ export function BedBugPriceCalculator() {
           )}
         </div>
 
-        <div className="border-t border-[#ECEAE3] pt-4 flex items-center justify-between">
+        <div className=" border-[#ECEAE3] pt-4 flex items-center justify-between">
           <div>
             <div className="text-xs text-ink-500 uppercase tracking-wider font-mono">Estimated Total</div>
             <div className="font-heading text-3xl font-medium text-ink-900">£{pricing.total}</div>
@@ -161,7 +161,7 @@ export function BedBugPriceCalculator() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-base hover:bg-[#B7F56A] transition-colors duration-150 text-decoration-none border border-[#ECEAE3]"
+            className="px-6 py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-medium text-base hover:bg-[#B7F56A] transition-colors duration-150 text-decoration-none "
           >
             Book This Estimate →
           </Link>
@@ -169,7 +169,7 @@ export function BedBugPriceCalculator() {
       </div>
 
       {/* Service Guarantees Pill */}
-      <div className="p-4 rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] text-xs text-ink-500 space-y-1.5">
+      <div className="p-4 rounded-[16px] bg-white text-xs text-ink-500 space-y-1.5">
         <div className="font-medium text-ink-900 flex items-center gap-1.5">
           <ShieldCheck className="w-4 h-4 text-ink-600 shrink-0" />
           <span>Includes Bestone Written Guarantee & 48h Re-Clean Support</span>

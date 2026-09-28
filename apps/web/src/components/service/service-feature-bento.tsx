@@ -18,11 +18,11 @@ export function ServiceFeatureBento({ badge, title, items }: ServiceFeatureBento
   return (
     <SectionReveal className="space-y-6 text-start">
       <div className="space-y-1">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-base font-medium">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-ink-100 border border-[#ECEAE3] text-ink-600 text-base font-medium">
           <Sparkles className="w-4 h-4 text-ink-600 shrink-0" />
           <span>{badge}</span>
         </div>
-        <h2 className="font-heading text-3xl sm:text-4xl font-medium text-ink-900 pt-1">
+        <h2 className="font-heading text-3xl sm:text-4xl font-[650] text-ink-900 pt-1">
           {title}
         </h2>
       </div>
@@ -31,13 +31,13 @@ export function ServiceFeatureBento({ badge, title, items }: ServiceFeatureBento
         {items.map((item, idx) => (
           <StaggerItem
             key={idx}
-            className={`${ item.isLarge ? "md:col-span-2" : "md:col-span-1" } bg-[#F6F5F1] rounded-[16px] p-8 border border-[#ECEAE3] space-y-4 transition-colors duration-150`}
+            className={`${ item.isLarge ? "md:col-span-2" : "md:col-span-1" } bg-white rounded-[16px] p-8 space-y-4 transition-colors duration-150`}
           >
             <div className={`w-10 h-10 rounded-[16px] flex items-center justify-center font-medium text-base ${
-              item.highlightIcon 
-                ? "bg-ink-900" 
-                : "bg-white border border-[#ECEAE3]"
-            }`}>
+ item.highlightIcon 
+ ? "bg-ink-900" 
+ : "bg-white "
+ }`}>
               <CheckCircle2 className={`w-5 h-5 ${item.highlightIcon ? "text-[#1D201E]" : "text-ink-600"}`} />
             </div>
             <h3 className="font-heading text-2xl font-medium text-ink-900">{item.title}</h3>

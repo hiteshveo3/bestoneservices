@@ -23,7 +23,7 @@ export function VerifiedReviewsBlock({
   return (
     <SectionReveal className="space-y-6 text-start">
       <div className="space-y-1">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+        <div className="inline-flex items-center gap-1.5 ts-eyebrow">
           <ShieldCheck className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
           <span>VERIFIED FEEDBACK</span>
         </div>
@@ -36,7 +36,7 @@ export function VerifiedReviewsBlock({
         {reviews.map((rev) => (
           <StaggerItem
             key={rev.id}
-            className="bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-3 flex flex-col justify-between"
+            className="bg-white rounded-[16px] p-6 space-y-3 flex flex-col justify-between"
           >
             <div className="space-y-2">
               <div className="flex items-center justify-between">
@@ -46,7 +46,7 @@ export function VerifiedReviewsBlock({
                     <Star key={i} className="w-4 h-4 fill-warning-500 text-warning-500 shrink-0" />
                   ))}
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-xs font-mono font-medium text-ink-500">
+                <span className="px-2.5 py-0.5 rounded-md bg-white text-xs font-mono font-medium text-ink-500">
                   {rev.source}
                 </span>
               </div>
@@ -54,7 +54,7 @@ export function VerifiedReviewsBlock({
               <p className="text-base text-ink-600 leading-relaxed italic font-normal">&quot;{rev.text}&quot;</p>
             </div>
 
-            <div className="pt-2 border-t border-[#ECEAE3] flex items-center justify-between text-xs font-mono text-ink-500">
+            <div className="pt-2 border-[#ECEAE3] flex items-center justify-between text-xs font-mono text-ink-500">
               <span className="font-medium text-ink-600">{rev.author}</span>
               {rev.areaName && <span>{rev.areaName}, London</span>}
             </div>

@@ -271,11 +271,11 @@ export function PriceList({ rows, onPaper = false }: { rows: PriceRow[]; onPaper
 }
 
 /** Lab 03 S35 B: facts as big figures. */
-export function BigFacts({ items }: { items: Array<{ figure: string; label: string }> }) {
+export function BigFacts({ items, tone = "white" }: { items: Array<{ figure: string; label: string }>; tone?: "white" | "paper" }) {
   return (
     <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
       {items.map((item) => (
-        <div key={item.label} className="grid gap-1 rounded-2xl bg-white p-4 sm:p-5">
+        <div key={item.label} className={cx("grid gap-1 rounded-2xl p-4 sm:p-5", tone === "paper" ? "bg-paper" : "bg-white")}>
           <span className="ts-fig text-[clamp(34px,4vw,44px)]">{item.figure}</span>
           <span className="text-sm text-muted">{item.label}</span>
         </div>

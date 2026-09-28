@@ -34,8 +34,8 @@ export function StickyEstimateSummary({
     <>
       {/* DESKTOP STICKY SUMMARY SIDEBAR (lg:block sticky top-20) */}
       <aside className="hidden lg:block sticky top-20 space-y-4 text-start">
-        <div className="bg-white rounded-[16px] p-6 border border-[#ECEAE3] space-y-4">
-          <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+        <div className="bg-white rounded-[16px] p-6 space-y-4">
+          <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
             <div>
               <span className="text-xs font-mono font-medium text-ink-500 uppercase">{categoryTitle}</span>
               <h3 className="font-heading text-xl font-medium text-ink-900">{serviceTitle}</h3>
@@ -46,7 +46,7 @@ export function StickyEstimateSummary({
           {/* Itemized Selection Breakdown */}
           <div className="space-y-2.5 text-sm">
             {items.map((item, idx) => (
-              <div key={idx} className="flex items-center justify-between gap-2 border-b border-[#ECEAE3] pb-2">
+              <div key={idx} className="flex items-center justify-between gap-2 border-[#ECEAE3] pb-2">
                 <span className="text-ink-500 font-normal">{item.label}</span>
                 <span className="font-medium text-ink-600 text-end">{item.value}</span>
               </div>
@@ -56,7 +56,7 @@ export function StickyEstimateSummary({
           {/* Total Price & CTA */}
           <div className="pt-2 space-y-3">
             {totalPrice !== undefined && totalPrice > 0 && (
-              <div className="p-3 rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] flex items-center justify-between font-heading font-medium text-lg text-ink-900">
+              <div className="p-3 rounded-[16px] bg-white flex items-center justify-between font-heading font-medium text-lg text-ink-900">
                 <span>Estimated Price:</span>
                 <span className="text-2xl text-ink-900">£{totalPrice}</span>
               </div>
@@ -66,7 +66,7 @@ export function StickyEstimateSummary({
               <button
                 type="button"
                 onClick={onCtaClick}
-                className="w-full py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 flex items-center justify-center gap-2 cursor-pointer border border-[#ECEAE3]"
+                className="w-full py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 flex items-center justify-center gap-2 cursor-pointer "
               >
                 <span>{ctaText}</span>
                 <ArrowRight className="w-4 h-4 text-[#1D201E] shrink-0" />
@@ -74,7 +74,7 @@ export function StickyEstimateSummary({
             ) : (
               <Link
                 href={ctaHref}
-                className="w-full py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 flex items-center justify-center gap-2 text-decoration-none border border-[#ECEAE3]"
+                className="w-full py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 flex items-center justify-center gap-2 text-decoration-none "
               >
                 <span>{ctaText}</span>
                 <ArrowRight className="w-4 h-4 text-[#1D201E] shrink-0" />
@@ -85,7 +85,7 @@ export function StickyEstimateSummary({
       </aside>
 
       {/* MOBILE COMPACT BOTTOM BAR & EXPANDABLE SHEET (lg:hidden) */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-[#ECEAE3] p-4">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-[#ECEAE3] p-4">
         <div className="flex items-center justify-between gap-3">
           <div>
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">{serviceTitle}</span>
@@ -98,7 +98,7 @@ export function StickyEstimateSummary({
             <button
               type="button"
               onClick={() => setMobileSheetOpen(!mobileSheetOpen)}
-              className="px-3.5 py-2 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-sm font-medium text-ink-600 cursor-pointer flex items-center gap-1"
+              className="px-3.5 py-2 rounded-xl bg-white text-sm font-medium text-ink-600 cursor-pointer flex items-center gap-1"
             >
               <span>Breakdown</span>
               <ChevronUp className={`w-4 h-4 text-ink-600 transition-transform duration-200 ${mobileSheetOpen ? "rotate-180" : ""}`} />
@@ -108,14 +108,14 @@ export function StickyEstimateSummary({
               <button
                 type="button"
                 onClick={onCtaClick}
-                className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] cursor-pointer"
+                className="px-4 py-2 rounded-xl bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] cursor-pointer"
               >
                 {ctaText}
               </button>
             ) : (
               <Link
                 href={ctaHref}
-                className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] text-decoration-none"
+                className="px-4 py-2 rounded-xl bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] text-decoration-none"
               >
                 {ctaText}
               </Link>
@@ -128,8 +128,8 @@ export function StickyEstimateSummary({
       {mobileSheetOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex flex-col justify-end">
           <div onClick={() => setMobileSheetOpen(false)} className="fixed inset-0 bg-ink-900/50 backdrop-blur-xs" />
-          <div className="relative z-10 bg-white rounded-t-3xl border-t border-[#ECEAE3] p-6 pb-20 space-y-4 animate-in slide-in-from-bottom duration-200 text-start">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+          <div className="relative z-10 bg-white rounded-t-3xl border-[#ECEAE3] p-6 pb-20 space-y-4 animate-in slide-in-from-bottom duration-200 text-start">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <h4 className="font-heading text-lg font-medium text-ink-900">Estimate Breakdown</h4>
               <button type="button" onClick={() => setMobileSheetOpen(false)} className="p-1 rounded-full bg-[#F6F5F1]">
                 <X className="w-5 h-5 text-ink-600" />
@@ -138,7 +138,7 @@ export function StickyEstimateSummary({
 
             <div className="space-y-2 text-sm">
               {items.map((item, idx) => (
-                <div key={idx} className="flex justify-between border-b border-[#ECEAE3] pb-1.5">
+                <div key={idx} className="flex justify-between border-[#ECEAE3] pb-1.5">
                   <span className="text-ink-500">{item.label}</span>
                   <span className="font-medium text-ink-600">{item.value}</span>
                 </div>

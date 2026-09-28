@@ -66,7 +66,7 @@ export function SearchBar({
           value={localValue}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full h-12 sm:h-14 pl-12 pr-11 bg-white border-2 border-[#ECEAE3] rounded-[18px] text-[#1D201E] placeholder:text-[#1D201E]/50 text-base font-normal  transition-colors duration-200 hover:border-[#ECEAE3] focus:border-[#1D201E] focus:outline-none"
+          className="w-full h-12 sm:h-14 pl-12 pr-11 bg-[#ECEAE3] border-2 border-transparent rounded-[18px] text-[#1D201E] placeholder:text-[#1D201E]/50 text-base font-normal  transition-colors duration-200 hover:border-transparent focus:border-[#1D201E] focus:outline-none focus:bg-white focus:border-[#1D201E]"
         />
         {localValue.trim() && (
           <button

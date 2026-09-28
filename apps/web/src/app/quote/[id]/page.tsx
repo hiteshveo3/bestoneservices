@@ -102,13 +102,13 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
   if (!estimate) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center p-6">
-        <div className="bg-[#F6F5F1] rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto ">
           <AlertCircle className="w-10 h-10 text-danger-500 mx-auto" />
           <h3 className="font-heading text-lg font-medium text-ink-900">Quote Reference Not Found</h3>
           <p className="text-xs text-ink-500">
             The formal estimate reference <span className="font-mono font-medium text-ink-600">{quoteId}</span> was not found or has expired.
           </p>
-          <Link href="/prices" className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none border border-[#ECEAE3]">
+          <Link href="/prices" className="px-5 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none ">
             Calculate New Instant Estimate
           </Link>
         </div>
@@ -123,11 +123,11 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
       <div className="max-w-3xl mx-auto space-y-6">
         
         {/* HEADER BAR */}
-        <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#ECEAE3] pb-4">
+        <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 ">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-[#ECEAE3] pb-4">
             <div className="space-y-1">
               <span className="text-xs font-mono font-medium text-ink-500 uppercase">BESTONE SERVICES • OFFICIAL QUOTE</span>
-              <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">
+              <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">
                 {estimate.serviceName}
               </h1>
               <p className="text-xs font-mono text-ink-500">
@@ -136,13 +136,13 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
             </div>
 
             <div className="flex flex-col items-end gap-1.5">
-              <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium uppercase ${
-                estimate.status === "converted_to_booking"
-                  ? "bg-[#B7F56A] text-[#1D201E]"
-                  : expired
-                  ? "bg-danger-50 text-danger-900"
-                  : "bg-success-50 text-success-900"
-              }`}>
+              <span className={`px-3 py-1 rounded-md text-xs font-mono font-medium uppercase ${
+ estimate.status === "converted_to_booking"
+ ? "bg-[#B7F56A] text-[#1D201E]"
+ : expired
+ ? "bg-danger-50 text-danger-900"
+ : "bg-success-50 text-success-900"
+ }`}>
                 {estimate.status === "converted_to_booking" ? "CONVERTED TO BOOKING" : expired ? "EXPIRED" : estimate.status.toUpperCase()}
               </span>
 
@@ -158,13 +158,13 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono">
-            <div className="p-3.5 rounded-[18px] bg-[#F6F5F1] space-y-1 border border-[#ECEAE3]">
+            <div className="p-3.5 rounded-[18px] bg-white space-y-1 ">
               <span className="text-ink-500 uppercase block">PREPARED FOR</span>
               <p className="font-medium text-ink-600">{estimate.customerName}</p>
               <p className="text-ink-500">{estimate.customerEmail}</p>
             </div>
 
-            <div className="p-3.5 rounded-[18px] bg-[#F6F5F1] space-y-1 border border-[#ECEAE3]">
+            <div className="p-3.5 rounded-[18px] bg-white space-y-1 ">
               <span className="text-ink-500 uppercase block">VALIDITY WINDOW</span>
               <p className="font-medium text-ink-600">Valid for 14 Days</p>
               <p className="text-ink-500">Expires: {new Date(estimate.validUntil as string).toLocaleDateString("en-GB")}</p>
@@ -173,9 +173,9 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
         </div>
 
         {/* SPECIFICATIONS & ITEMIZED COST BREAKDOWN */}
-        <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
-          <div className="space-y-1 border-b border-[#ECEAE3] pb-3">
-            <h2 className="font-heading text-xl font-medium text-ink-900">Scope Specifications & Pricing</h2>
+        <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 ">
+          <div className="space-y-1 border-[#ECEAE3] pb-3">
+            <h2 className="font-heading text-xl font-[650] text-ink-900">Scope Specifications & Pricing</h2>
             <p className="text-xs text-ink-500">Guaranteed locked transparent pricing line items</p>
           </div>
 
@@ -204,7 +204,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
           {/* Itemized Lines */}
           <div className="space-y-2">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Itemized Cost Breakdown</span>
-            <div className="p-4 rounded-[18px] bg-[#F6F5F1] space-y-2 border border-[#ECEAE3]">
+            <div className="p-4 rounded-[18px] bg-white space-y-2 ">
               {estimate.breakdown.map((line, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-xs font-medium text-ink-600">
                   <Check className="w-4 h-4 text-[#1D201E] shrink-0" />
@@ -215,7 +215,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
           </div>
 
           {/* Total Price Card */}
-          <div className="p-6 rounded-[18px] bg-[#B7F56A] text-[#1D201E] space-y-3 border border-[#ECEAE3]">
+          <div className="p-6 rounded-[18px] bg-[#B7F56A] text-[#1D201E] space-y-3 ">
             <div className="flex justify-between items-center">
               <span className="text-xs font-mono font-medium uppercase text-ink-400">Total Guaranteed Quote</span>
               <span className="font-heading font-medium text-3xl sm:text-4xl text-[#1D201E]">
@@ -223,7 +223,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
               </span>
             </div>
 
-            <div className="flex items-center gap-2 pt-2 border-t border-ink-600 text-xs text-ink-300">
+            <div className="flex items-center gap-2 pt-2 border-ink-600 text-xs text-ink-300">
               <ShieldCheck className="w-4 h-4 text-[#1D201E] shrink-0" />
               <span>Includes 48-Hour Re-Clean Guarantee & All Taxes</span>
             </div>
@@ -245,7 +245,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
             <button
               type="button"
               onClick={() => setBookModalOpen(true)}
-              className="w-full py-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-heading font-medium text-sm hover:bg-[#B7F56A] cursor-pointer transition-colors duration-150 flex items-center justify-center gap-2 border border-[#ECEAE3]"
+              className="w-full py-4 rounded-xl bg-[#B7F56A] text-[#1D201E] font-heading font-medium text-sm hover:bg-[#B7F56A] cursor-pointer transition-colors duration-150 flex items-center justify-center gap-2 "
             >
               <span>Accept Quote & Book Appointment →</span>
             </button>
@@ -258,8 +258,8 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
       {/* MODAL: STATE HANDOFF TO ACTIVE BOOKING */}
       {bookModalOpen && (
         <div className="fixed inset-0 bg-ink-900/60 z-50 flex items-center justify-center p-4">
-          <div className="bg-[#F6F5F1] rounded-[18px] max-w-lg w-full p-6 sm:p-8 space-y-6 text-start border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+          <div className="bg-white rounded-[18px] max-w-lg w-full p-6 sm:p-8 space-y-6 text-start ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <div>
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase">FINAL STEP</span>
                 <h3 className="font-heading font-medium text-lg text-ink-900">Schedule Your Appointment</h3>
@@ -334,7 +334,7 @@ export default function PublicQuotePage({ params }: { params: Promise<{ id: stri
               <button
                 type="submit"
                 disabled={converting || !scheduledDate || !addressLine1 || !postcode}
-                className="w-full py-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-heading font-semibold text-xs hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#ECEAE3]"
+                className="w-full py-4 rounded-md bg-[#B7F56A] text-[#1D201E] font-heading font-semibold text-xs hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
               >
                 {converting ? "Converting Quote to Booking..." : "Confirm & Create Active Booking →"}
               </button>

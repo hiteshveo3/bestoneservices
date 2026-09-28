@@ -28,8 +28,8 @@ export function TrustProofStrip() {
   ];
 
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
-      <div className="flex items-center gap-2 border-b border-[#ECEAE3] pb-3">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 space-y-6 text-start">
+      <div className="flex items-center gap-2 border-[#ECEAE3] pb-3">
         <ShieldCheck className="w-5 h-5 text-ink-600 shrink-0" />
         <span className="font-heading font-medium text-lg text-ink-900">Verified Business Accreditations</span>
       </div>
@@ -38,7 +38,7 @@ export function TrustProofStrip() {
         {verifiedFacts.map((fact, idx) => {
           const Icon = fact.icon;
           return (
-            <StaggerItem key={idx} className="p-4 rounded-[16px] bg-white border border-[#ECEAE3] space-y-2">
+            <StaggerItem key={idx} className="p-4 rounded-[16px] bg-white space-y-2">
               <div className="flex items-center gap-2 font-heading font-medium text-base text-ink-900">
                 <Icon className="w-4 h-4 text-ink-600 shrink-0" />
                 <span>{fact.title}</span>

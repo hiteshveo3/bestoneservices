@@ -67,7 +67,7 @@ export function NotificationCenterPanel() {
       >
         <Bell className="w-5 h-5 text-ink-600" />
         {unreadCount > 0 && (
-          <span className="absolute top-1 right-1 px-1.5 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-[10px] leading-none border border-[#ECEAE3]">
+          <span className="absolute top-1 right-1 px-1.5 py-0.5 rounded-md bg-[#B7F56A] text-[#1D201E] font-medium text-[10px] leading-none ">
             {unreadCount > 99 ? "99+" : unreadCount}
           </span>
         )}
@@ -78,15 +78,15 @@ export function NotificationCenterPanel() {
         <>
           <div className="fixed inset-0 z-40" onClick={() => setPanelOpen(false)} />
 
-          <div className="absolute right-0 top-12 z-50 w-80 sm:w-96 bg-white rounded-[16px] overflow-hidden border-none text-start flex flex-col max-h-[80vh] border border-[#ECEAE3]">
+          <div className="absolute right-0 top-12 z-50 w-80 sm:w-96 bg-white rounded-[16px] overflow-hidden border-none text-start flex flex-col max-h-[80vh] ">
             
             {/* Panel Header */}
-            <div className="p-4 border-b border-[#ECEAE3] flex items-center justify-between">
+            <div className="p-4 border-[#ECEAE3] flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Bell className="w-4 h-4 text-ink-600" />
                 <h3 className="font-heading font-medium text-base text-ink-900">Notifications</h3>
                 {unreadCount > 0 && (
-                  <span className="px-2 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
+                  <span className="px-2 py-0.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
                     {unreadCount} new
                   </span>
                 )}
@@ -117,14 +117,14 @@ export function NotificationCenterPanel() {
               <button
                 type="button"
                 onClick={() => setFilter("all")}
-                className={`flex-1 py-1.5 rounded-[16px] font-medium border-none cursor-pointer transition-colors duration-150 ${ filter === "all" ? "bg-white text-ink-600 font-medium " : "text-ink-500 hover:text-ink-600" } border border-[#ECEAE3]`}
+                className={`flex-1 py-1.5 rounded-[16px] font-medium border-none cursor-pointer transition-colors duration-150 ${ filter === "all" ? "bg-white text-ink-600 font-medium " : "text-ink-500 hover:text-ink-600" } `}
               >
                 All ({notifications.length})
               </button>
               <button
                 type="button"
                 onClick={() => setFilter("unread")}
-                className={`flex-1 py-1.5 rounded-[16px] font-medium border-none cursor-pointer transition-colors duration-150 ${ filter === "unread" ? "bg-white text-ink-600 font-medium " : "text-ink-500 hover:text-ink-600" } border border-[#ECEAE3]`}
+                className={`flex-1 py-1.5 rounded-[16px] font-medium border-none cursor-pointer transition-colors duration-150 ${ filter === "unread" ? "bg-white text-ink-600 font-medium " : "text-ink-500 hover:text-ink-600" } `}
               >
                 Unread ({unreadCount})
               </button>
@@ -137,7 +137,7 @@ export function NotificationCenterPanel() {
                   <div
                     key={n.id}
                     onClick={() => handleMarkItemRead(n)}
-                    className={`p-3 rounded-[16px] cursor-pointer space-y-1 ${ n.readAt ? "bg-[#F6F5F1]/60 opacity-80" : "bg-white border-l-4 border-l-blue-500 " } border border-[#ECEAE3]`}
+                    className={`p-3 rounded-[16px] cursor-pointer space-y-1 ${ n.readAt ? "bg-[#F6F5F1]/60 opacity-80" : "bg-white border-l-4 border-l-blue-500 " } `}
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-medium text-xs text-ink-600">{n.title}</span>
@@ -163,7 +163,7 @@ export function NotificationCenterPanel() {
             </div>
 
             {/* Footer View All Link */}
-            <div className="p-3 border-t border-[#ECEAE3] text-center">
+            <div className="p-3 border-[#ECEAE3] text-center">
               <Link
                 href={role === "admin" ? "/admin/notifications" : "/account/notifications"}
                 onClick={() => setPanelOpen(false)}

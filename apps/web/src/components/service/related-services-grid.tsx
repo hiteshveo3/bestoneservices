@@ -23,11 +23,11 @@ export function RelatedServicesGrid({
   return (
     <SectionReveal className="space-y-8 text-start">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-base font-medium">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-ink-100 border border-[#ECEAE3] text-ink-600 text-base font-medium">
           <Sparkles className="w-4 h-4 text-ink-600 shrink-0" />
           <span>{badge}</span>
         </div>
-        <h2 className="font-heading text-3xl sm:text-4xl font-medium text-ink-900 tracking-tight">
+        <h2 className="font-heading text-3xl sm:text-4xl font-[650] text-ink-900 tracking-tight">
           {title}
         </h2>
       </div>
@@ -36,12 +36,12 @@ export function RelatedServicesGrid({
         {services.map((srv, idx) => (
           <StaggerItem 
             key={idx}
-            className="bg-[#F6F5F1] rounded-[16px] p-6 border border-[#ECEAE3] space-y-4 transition-colors duration-150 flex flex-col justify-between"
+            className="bg-white rounded-[16px] p-6 space-y-4 transition-colors duration-150 flex flex-col justify-between"
           >
             <div className="space-y-3">
               <div className="flex justify-between items-start">
                 <h3 className="font-heading text-xl font-medium text-ink-900">{srv.title}</h3>
-                <span className="px-3 py-1 rounded-full bg-[#F6F5F1] text-ink-600 text-base font-mono font-medium border border-[#ECEAE3]">
+                <span className="px-3 py-1 rounded-xl bg-white text-ink-600 text-base font-mono font-medium ">
                   {srv.price}
                 </span>
               </div>

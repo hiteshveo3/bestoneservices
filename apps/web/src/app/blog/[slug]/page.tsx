@@ -190,7 +190,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
       {/* ===================================================================
           1. CLEAN EDITORIAL HERO
           =================================================================== */}
-      <section className="bg-[#F6F5F1] border-b border-[#ECEAE3]">
+      <section className="bg-[#F6F5F1] border-[#ECEAE3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-0">
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#1D201E]/80 font-medium">
             <Link href="/" className="hover:underline">Home</Link>
@@ -205,7 +205,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
 
           {/* Eyebrow badge + back link */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#EAF8D6]/80 border border-[#ECEAE3] text-xs font-bold uppercase tracking-wider text-[#1D201E] w-fit ">
+            <span className="inline-flex items-center gap-1.5 ts-eyebrow">
               <HugeiconsIcon icon={IconComponent} size={14} strokeWidth={2} className="text-[#1D201E] shrink-0" />
               {post.category}
             </span>
@@ -218,7 +218,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
             </Link>
           </div>
 
-          <h1 className="m-0 font-heading text-3xl sm:text-4xl lg:text-[52px] font-semibold leading-[1.08] tracking-tight text-[#1D201E] max-w-4xl">
+          <h1 className="m-0 font-heading text-3xl sm:text-4xl lg:text-[52px] font-[650] leading-[1.08] tracking-tight text-[#1D201E] max-w-4xl">
             {post.title}
           </h1>
 
@@ -240,8 +240,8 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
           </div>
 
           {/* Author card */}
-          <div className="flex items-start gap-3 p-4 bg-white rounded-[18px] border border-[#ECEAE3]  max-w-xl">
-            <div className="w-10 h-10 rounded-full bg-[#B7F56A] border border-[#ECEAE3] text-[#1D201E] font-bold text-xs flex items-center justify-center shrink-0">
+          <div className="flex items-start gap-3 p-4 bg-white rounded-[18px] max-w-xl">
+            <div className="w-10 h-10 rounded-full bg-[#B7F56A] text-[#1D201E] font-bold text-xs flex items-center justify-center shrink-0">
               {post.author.avatar}
             </div>
             <div className="min-w-0 space-y-0.5">
@@ -264,7 +264,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
 
             {/* GLOSSARY DEFINITION (Featured Snippet Bait) */}
             {post.glossaryBox && (
-              <div className="p-5 bg-[#EAF8D6] rounded-[18px] border border-[#ECEAE3] flex flex-col gap-1.5">
+              <div className="p-5 bg-[#EAF8D6] rounded-[18px] flex flex-col gap-1.5">
                 <strong className="text-xs font-bold uppercase tracking-wider text-[#1D201E]">
                   Glossary definition: {post.glossaryBox.term}
                 </strong>
@@ -276,10 +276,10 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
 
             {/* KEY TAKEAWAYS */}
             <section className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E]">
+              <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E]">
                 Key takeaways
               </h2>
-              <div className="p-5 sm:p-6 bg-white rounded-[18px] border border-[#ECEAE3] ">
+              <div className="p-5 sm:p-6 bg-white rounded-[18px] ">
                 <ul className="m-0 p-0 list-none flex flex-col gap-3">
                   {post.keyTakeaways.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-base leading-relaxed text-[#1D201E]">
@@ -294,18 +294,18 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
             {/* RISK COMPARISON CHART */}
             {post.chart && (
               <section className="scroll-mt-24 flex flex-col gap-5">
-                <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E]">
+                <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E]">
                   {post.chart.title}
                 </h2>
 
-                <div className="p-5 sm:p-6 bg-white rounded-[18px] border border-[#ECEAE3]  flex flex-col gap-4">
+                <div className="p-5 sm:p-6 bg-white rounded-[18px] flex flex-col gap-4">
                   {post.chart.items.map((item, idx) => (
                     <div key={idx} className="flex flex-col gap-2">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                         <span className="text-sm font-semibold text-[#1D201E]">{item.label}</span>
                         <span className="text-xs font-medium text-[#1D201E]/70 sm:shrink-0">{item.status}</span>
                       </div>
-                      <div className="w-full h-3 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] overflow-hidden">
+                      <div className="w-full h-3 rounded-full bg-white overflow-hidden">
                         <div
                           style={{ width: `${Math.max(item.percentage, 6)}%` }}
                           className={`h-full rounded-full ${item.color}`}
@@ -321,11 +321,11 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
             {/* DATA TABLES */}
             {post.tables && post.tables.length > 0 && post.tables.map((table, tIdx) => (
               <section key={tIdx} className="scroll-mt-24 flex flex-col gap-5">
-                <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E]">
+                <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E]">
                   {table.title}
                 </h2>
 
-                <div className="overflow-x-auto border border-[#ECEAE3] rounded-[20px] bg-white ">
+                <div className="overflow-x-auto rounded-[20px] bg-white ">
                   <table className="w-full min-w-[500px] border-collapse text-left text-sm">
                     <thead>
                       <tr className="bg-[#EAF8D6] text-[#1D201E]">
@@ -334,7 +334,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
                         ))}
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#ECEAE3] text-[#1D201E]">
+                    <tbody className=" text-[#1D201E]">
                       {table.rows.map((row, rIdx) => (
                         <tr key={rIdx}>
                           {row.map((cell, cIdx) => (
@@ -368,7 +368,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
                       className="scroll-mt-24 flex flex-col gap-5"
                     >
                       {currentHeading && (
-                        <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E]">
+                        <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E]">
                           {currentHeading.text}
                         </h2>
                       )}
@@ -418,7 +418,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
 
             {/* CUSTOMER TESTIMONIAL */}
             {post.testimonialSnippet && (
-              <section className="scroll-mt-24 p-5 sm:p-6 bg-white rounded-[18px] border border-[#ECEAE3]  flex flex-col gap-3">
+              <section className="scroll-mt-24 p-5 sm:p-6 bg-white rounded-[18px] flex flex-col gap-3">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="flex items-center gap-0.5">
                     {[...Array(post.testimonialSnippet.rating)].map((_, i) => (
@@ -439,12 +439,12 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
             {/* IN-ARTICLE FAQS (static list — fully crawlable) */}
             {post.faqs && post.faqs.length > 0 && (
               <section id="faqs" className="scroll-mt-24 flex flex-col gap-5">
-                <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-[#1D201E] flex items-center gap-2.5">
+                <h2 data-reveal className="m-0 font-heading text-2xl sm:text-3xl font-[650] tracking-tight text-[#1D201E] flex items-center gap-2.5">
                   <HugeiconsIcon icon={HelpCircleIcon} size={24} strokeWidth={1.8} className="text-[#1D201E] shrink-0" />
                   Frequently asked questions
                 </h2>
 
-                <div className="border border-[#ECEAE3] rounded-[20px] bg-white overflow-hidden divide-y divide-[#ECEAE3] ">
+                <div className=" rounded-[20px] bg-white overflow-hidden ">
                   {post.faqs.map((faq, fIdx) => (
                     <div key={fIdx} className="p-5 flex flex-col gap-1.5">
                       <h3 className="m-0 text-base sm:text-lg font-semibold text-[#1D201E]">{faq.question}</h3>
@@ -456,9 +456,9 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
             )}
 
             {/* GUARANTEE + PRINT CHECKLIST */}
-            <div className="p-5 sm:p-6 bg-[#EAF8D6] rounded-[20px] border border-[#ECEAE3] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="p-5 sm:p-6 bg-[#EAF8D6] rounded-[20px] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-start gap-3">
-                <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] border border-[#ECEAE3] text-[#1D201E] shrink-0">
+                <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] text-[#1D201E] shrink-0">
                   <HugeiconsIcon icon={Shield01Icon} size={20} strokeWidth={1.8} className="text-[#1D201E]" />
                 </span>
                 <div className="min-w-0">
@@ -477,7 +477,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
           <aside className="lg:sticky lg:top-28 min-w-0 flex flex-col gap-4">
 
             {/* Booking CTA */}
-            <div className="flex flex-col gap-4 bg-white border border-[#ECEAE3] rounded-[22px] p-6 ">
+            <div className="flex flex-col gap-4 bg-white rounded-[22px] p-6 ">
               <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#1D201E]">
                 Book this service
               </p>
@@ -507,7 +507,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
 
             {/* Table of Contents */}
             {sectionHeadings.length > 0 && (
-              <nav className="bg-white border border-[#ECEAE3] rounded-[22px] p-6  flex flex-col gap-3" aria-label="On this page">
+              <nav className="bg-white rounded-[22px] p-6 flex flex-col gap-3" aria-label="On this page">
                 <p className="m-0 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D201E]">
                   <HugeiconsIcon icon={Bookmark01Icon} size={14} strokeWidth={2} className="text-[#1D201E] shrink-0" />
                   On this page
@@ -529,11 +529,11 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
 
             {/* Related Guides */}
             {relatedPosts.length > 0 && (
-              <div className="bg-white border border-[#ECEAE3] rounded-[22px] p-6  flex flex-col gap-3">
+              <div className="bg-white rounded-[22px] p-6 flex flex-col gap-3">
                 <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#1D201E]">
                   Related guides
                 </p>
-                <div className="flex flex-col gap-3 divide-y divide-[#ECEAE3]">
+                <div className="flex flex-col gap-3 ">
                   {relatedPosts.map((rPost) => (
                     <div key={rPost.slug} className="pt-3 first:pt-0 flex flex-col gap-1">
                       <span className="text-xs font-bold uppercase tracking-wider text-[#1D201E]/60">

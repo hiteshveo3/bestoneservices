@@ -23,9 +23,9 @@ export function ServiceGuideCluster({
   if (!guides || guides.length === 0) return null;
 
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-8 border border-[#ECEAE3] space-y-6 text-start">
-      <div className="flex items-center gap-2 border-b border-[#ECEAE3] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 space-y-6 text-start">
+      <div className="flex items-center gap-2 border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
           <BookOpen className="w-3.5 h-3.5 text-ink-600 shrink-0" />
           <span>Knowledge Base</span>
         </div>
@@ -37,10 +37,10 @@ export function ServiceGuideCluster({
           <StaggerItem key={idx}>
             <Link
               href={item.href}
-              className="group p-5 rounded-[16px] bg-white border border-[#ECEAE3] hover:bg-[#EAF8D6] hover:border-ink-900 transition-colors duration-200 text-decoration-none flex flex-col justify-between h-full space-y-3 block"
+              className="group p-5 rounded-[16px] bg-white hover:bg-[#EAF8D6] hover:border-ink-900 transition-colors duration-200 text-decoration-none flex flex-col justify-between h-full space-y-3 block"
             >
               <div className="space-y-2">
-                <span className="px-2 py-0.5 rounded bg-[#F6F5F1] text-ink-500 text-xs font-mono border border-[#ECEAE3]">
+                <span className="px-2 py-0.5 rounded bg-white text-ink-500 text-xs font-mono ">
                   {item.readTime}
                 </span>
                 <h4 className="font-heading text-lg font-medium text-ink-900 group-hover:text-ink-900 leading-snug">

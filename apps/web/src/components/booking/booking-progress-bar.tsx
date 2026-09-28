@@ -56,21 +56,21 @@ export function BookingProgressBar({
                   disabled={stepNum > currentStep}
                   onClick={() => onStepClick?.(stepNum)}
                   className={`flex items-center gap-2 text-start cursor-pointer border-none bg-transparent ${
-                    isCurrent
-                      ? "text-ink-600 font-medium"
-                      : isCompleted
-                      ? "text-ink-600 hover:underline cursor-pointer"
-                      : "text-ink-500 cursor-not-allowed opacity-50"
-                  }`}
+ isCurrent
+ ? "text-ink-600 font-medium"
+ : isCompleted
+ ? "text-ink-600 hover:underline cursor-pointer"
+ : "text-ink-500 cursor-not-allowed opacity-50"
+ }`}
                 >
                   <div
                     className={`w-7 h-7 rounded-full flex items-center justify-center font-mono font-medium text-xs ${
-                      isCurrent
-                        ? "bg-[#B7F56A] text-[#1D201E] ring-2 ring-blue-600/40"
-                        : isCompleted
-                        ? "bg-[#B7F56A] text-[#1D201E]"
-                        : "bg-[#EAF8D6] text-ink-500"
-                    }`}
+ isCurrent
+ ? "bg-[#B7F56A] text-[#1D201E] ring-2 ring-blue-600/40"
+ : isCompleted
+ ? "bg-[#B7F56A] text-[#1D201E]"
+ : "bg-[#EAF8D6] text-ink-500"
+ }`}
                   >
                     {isCompleted ? <Check className="w-3.5 h-3.5 text-[#1D201E]" /> : stepNum}
                   </div>
@@ -80,8 +80,8 @@ export function BookingProgressBar({
                 {idx < totalSteps - 1 && (
                   <div
                     className={`h-0.5 flex-1 ${
-                      isCompleted ? "bg-ink-900" : "bg-[#EAF8D6]"
-                    }`}
+ isCompleted ? "bg-ink-900" : "bg-[#EAF8D6]"
+ }`}
                   />
                 )}
               </li>

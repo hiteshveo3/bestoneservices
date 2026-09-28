@@ -43,7 +43,7 @@ export function ServiceCardMotion({ category, serviceName, serviceId }: ServiceC
 
       {category === "cleaning" && (
         <>
-          <motion.div animate={reduceMotion ? undefined : { rotate: [0, 7, 0], y: [0, -4, 0] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] border border-[#ECEAE3] bg-white ">
+          <motion.div animate={reduceMotion ? undefined : { rotate: [0, 7, 0], y: [0, -4, 0] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] bg-white ">
             <Sparkles className="h-11 w-11 text-[#1D201E]" strokeWidth={1.7} />
           </motion.div>
           <motion.span animate={animation} className="absolute left-[22%] top-[24%] h-3 w-3 rounded-full bg-[#B7F56A]" />
@@ -79,7 +79,7 @@ export function ServiceCardMotion({ category, serviceName, serviceId }: ServiceC
 
       {category === "gardening" && (
         <>
-          <motion.div animate={reduceMotion ? undefined : { rotate: [-5, 6, -5], y: [0, -4, 0] }} transition={floatTransition} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] border border-[#ECEAE3] bg-white ">
+          <motion.div animate={reduceMotion ? undefined : { rotate: [-5, 6, -5], y: [0, -4, 0] }} transition={floatTransition} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] bg-white ">
             <Leaf className="h-12 w-12 text-[#1D201E]" strokeWidth={1.6} />
           </motion.div>
           {["left-[22%] top-[28%]", "right-[20%] top-[26%]", "right-[25%] bottom-[22%]"].map((position, index) => (
@@ -91,7 +91,7 @@ export function ServiceCardMotion({ category, serviceName, serviceId }: ServiceC
       {category === "removals" && (
         <>
           <motion.div animate={reduceMotion ? undefined : { x: [-8, 8, -8] }} transition={floatTransition} className="relative z-10 flex items-end gap-2">
-            <div className="grid h-20 w-20 place-items-center rounded-[22px] border border-[#ECEAE3] bg-white "><Package className="h-10 w-10 text-[#1D201E]" strokeWidth={1.7} /></div>
+            <div className="grid h-20 w-20 place-items-center rounded-[22px] bg-white "><Package className="h-10 w-10 text-[#1D201E]" strokeWidth={1.7} /></div>
             <Truck className="mb-1 h-11 w-11 text-[#1D201E]" strokeWidth={1.7} />
           </motion.div>
           <motion.div animate={reduceMotion ? undefined : { x: [-42, 42, -42] }} transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[22%] h-1.5 w-24 rounded-full bg-[#B7F56A]" />

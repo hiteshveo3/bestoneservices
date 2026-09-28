@@ -16,7 +16,7 @@ export function HeroLocation({
   areaName,
   postcodesText = "Greater London & M25 Postcodes",
   description = `Professional cleaning, pest control, gardening, and removals services for homes and commercial properties across ${areaName} and nearby postcodes.`,
-  heroImage = "/images/location-london-property-v1.png",
+  heroImage = "/images/service/best-one-cleaner-handover-v1.webp",
 }: HeroLocationProps) {
   const [postcode, setPostcode] = useState("");
 
@@ -27,7 +27,7 @@ export function HeroLocation({
           
           <div className="lg:col-span-6 space-y-6 text-start">
             <SectionReveal disabled>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 ts-eyebrow">
                 <MapPin className="w-4 h-4 text-[#1D201E] shrink-0" />
                 <span>Bestone Services • {areaName} Hub</span>
               </div>
@@ -44,7 +44,7 @@ export function HeroLocation({
             </SectionReveal>
 
             <SectionReveal disabled className="space-y-3 max-w-xl">
-              <div className="p-1.5 rounded-full flex items-center justify-between gap-2 bg-white border border-[#ECEAE3] focus-within:ring-2 focus-within:ring-[#1D201E] ">
+              <div className="p-1.5 rounded-full flex items-center justify-between gap-2 bg-white focus-within:ring-2 focus-within:ring-[#1D201E] ">
                 <div className="flex items-center gap-2 pl-4 w-full">
                   <MapPin className="w-4 h-4 text-[#1D201E] shrink-0" />
                   <input 
@@ -68,17 +68,17 @@ export function HeroLocation({
           </div>
 
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-[20px] border border-[#ECEAE3] overflow-hidden bg-[#F6F5F1] aspect-[4/3] max-h-[460px] ">
+            <div className="relative rounded-[20px] overflow-hidden bg-white aspect-[4/3] max-h-[460px] ">
               <ImageReveal disabled 
                 src={heroImage} 
                 alt={`Bestone Services in ${areaName}`} 
                 className="w-full h-full"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-[#F6F5F1]/95 backdrop-blur-md p-3.5 rounded-[16px] border border-[#ECEAE3] flex items-center justify-between text-start ">
+              <div className="absolute bottom-4 left-4 right-4 bg-[#F6F5F1]/95 backdrop-blur-md p-3.5 rounded-[16px] flex items-center justify-between text-start ">
                 <div className="font-heading text-base font-bold text-[#1D201E]">
                   {areaName} Service Hub
                 </div>
-                <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] border border-[#ECEAE3] text-xs font-mono font-bold">
+                <span className="px-3 py-1 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-bold">
                   ACTIVE
                 </span>
               </div>

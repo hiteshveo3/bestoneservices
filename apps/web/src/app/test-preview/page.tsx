@@ -79,9 +79,9 @@ export default function TestPreviewPage() {
     <main id="main-content" className="text-start min-h-screen bg-[#F6F5F1]">
       
       {/* 1. SOFTENED TOP PROMO BAR (NO FAKE COUNTDOWN OR FAKE URGENCY) */}
-      <div className="bg-[#B7F56A] text-[#1D201E] py-2 px-4 w-full flex items-center justify-center gap-3 sm:gap-4 z-[60] relative min-h-[42px] font-sans border-b border-[#ECEAE3]/40">
+      <div className="bg-[#B7F56A] text-[#1D201E] py-2 px-4 w-full flex items-center justify-center gap-3 sm:gap-4 z-[60] relative min-h-[42px] font-sans border-[#ECEAE3]/40">
         <div className="flex items-center gap-2.5 sm:gap-4 flex-wrap justify-center text-center">
-          <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-[11px] font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 ts-eyebrow">
             Direct Booking Offer
           </span>
           <span className="text-xs sm:text-sm font-normal text-[#1D201E]/95 tracking-tight">
@@ -97,10 +97,10 @@ export default function TestPreviewPage() {
       </div>
 
       {/* A/B Test Sticky Header */}
-      <div className="bg-white/90 backdrop-blur-md text-[#1D201E] px-4 py-2.5 sticky top-0 z-50  border-b border-[#ECEAE3]">
+      <div className="bg-white/90 backdrop-blur-md text-[#1D201E] px-4 py-2.5 sticky top-0 z-50 border-[#ECEAE3]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
           <div className="flex items-center gap-2">
-            <span className="bg-[#B7F56A] text-[#1D201E] font-bold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="ts-eyebrow">
               Updated Preview
             </span>
             <span className="text-[#1D201E] font-medium">
@@ -120,7 +120,7 @@ export default function TestPreviewPage() {
       {/* ===================================================================
           2. CLEAN EDITORIAL HERO SECTION
           =================================================================== */}
-      <section className="bg-[#F6F5F1] border-b border-[#ECEAE3]">
+      <section className="bg-[#F6F5F1] border-[#ECEAE3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-0">
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#1D201E]/80 font-medium">
             <Link href="/" className="hover:underline">Home</Link>
@@ -136,13 +136,13 @@ export default function TestPreviewPage() {
             
             {/* ITEM 2: Single eyebrow badge only */}
             <div>
-              <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#EAF8D6]/80 border border-[#ECEAE3] text-xs font-bold uppercase tracking-wider text-[#1D201E] w-fit ">
+              <span className="inline-flex items-center gap-1.5 ts-eyebrow">
                 Cleaning Services · End of Tenancy
               </span>
             </div>
 
             {/* High-Contrast Editorial Headline */}
-            <h1 className="m-0 font-heading text-4xl sm:text-5xl lg:text-[54px] font-semibold leading-[1.08] tracking-tight text-[#1D201E] max-w-2xl">
+            <h1 className="m-0 font-heading text-4xl sm:text-5xl lg:text-[54px] font-[650] leading-[1.08] tracking-tight text-[#1D201E] max-w-2xl">
               End of tenancy cleaning, guaranteed for full deposit return
             </h1>
 
@@ -161,7 +161,7 @@ export default function TestPreviewPage() {
               </Link>
               <Link 
                 href="/contact/" 
-                className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white border border-[#ECEAE3] text-[#1D201E] hover:opacity-90 transition-opacity duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white text-[#1D201E] hover:opacity-90 transition-opacity duration-200 cursor-pointer"
               >
                 Call Us
               </Link>
@@ -189,9 +189,9 @@ export default function TestPreviewPage() {
             <div 
               role="img"
               aria-label="Professional end of tenancy cleaning team restoring kitchen and oven to move-in standard"
-              className="aspect-[4/3] rounded-[22px] overflow-hidden border border-[#ECEAE3] bg-[#EAF8D6] bg-[repeating-linear-gradient(135deg,rgba(31,58,0,0.06)_0_10px,transparent_10px_22px)] flex items-end p-5"
+              className="aspect-[4/3] rounded-[22px] overflow-hidden bg-[#EAF8D6] bg-[repeating-linear-gradient(135deg,rgba(31,58,0,0.06)_0_10px,transparent_10px_22px)] flex items-end p-5"
             >
-              <span className="font-mono text-xs tracking-wide bg-white/95 border border-[#ECEAE3] rounded-[8px] px-3 py-1.5 text-[#1D201E] ">
+              <span className="font-mono text-xs tracking-wide bg-white/95 rounded-[8px] px-3 py-1.5 text-[#1D201E] ">
                 photo — professional team completing tenancy oven and kitchen deep clean
               </span>
             </div>
@@ -202,7 +202,7 @@ export default function TestPreviewPage() {
       {/* ===================================================================
           3. STATS SECTION (Crisp White with Subtle Border)
           =================================================================== */}
-      <section className="border-b border-[#ECEAE3] bg-white">
+      <section className=" border-[#ECEAE3] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid gap-6 grid-cols-2 md:grid-cols-4">
           {[
             { value: "£130+", label: "Fixed studio flat starting rate with transparent quotes" },
@@ -231,7 +231,7 @@ export default function TestPreviewPage() {
           <div className="flex flex-col gap-16 min-w-0">
             {/* Overview */}
             <section id="overview" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
+              <h2 className="m-0 font-heading text-3xl sm:text-4xl font-[650] tracking-tight text-[#1D201E]">
                 What professional end of tenancy cleaning involves
               </h2>
               <div className="flex flex-col gap-4 text-base sm:text-lg leading-relaxed text-[#1D201E]">
@@ -246,14 +246,14 @@ export default function TestPreviewPage() {
 
             {/* Room Scope */}
             <section id="signs" className="scroll-mt-24 flex flex-col gap-6">
-              <h2 className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
+              <h2 className="m-0 font-heading text-3xl sm:text-4xl font-[650] tracking-tight text-[#1D201E]">
                 Complete room scope and cleaning inclusions
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {scopeItems.map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <div key={idx} className="bg-white border border-[#ECEAE3] rounded-[18px] p-5 flex flex-col gap-2.5 ">
+                    <div key={idx} className="bg-white rounded-[18px] p-5 flex flex-col gap-2.5 ">
                       <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] text-[#1D201E]">
                         <Icon className="w-5 h-5 text-[#1D201E]" />
                       </span>
@@ -267,7 +267,7 @@ export default function TestPreviewPage() {
               </div>
 
               {/* Agency criteria with disclaimer */}
-              <div className="grid sm:grid-cols-2 gap-5 items-center p-5 bg-[#EAF8D6]/60 rounded-[20px] border border-[#ECEAE3]">
+              <div className="grid sm:grid-cols-2 gap-5 items-center p-5 bg-[#EAF8D6]/60 rounded-[20px] ">
                 <div>
                   <p className="m-0 text-base leading-relaxed text-[#1D201E]">
                     Our end of tenancy cleaning checklists are engineered to align with standard inventory checkout criteria commonly required across London by major letting agents (such as Foxtons, Savills, and Dexters) and independent ARLA Propertymark inventory clerks.
@@ -290,10 +290,10 @@ export default function TestPreviewPage() {
 
             {/* FAQ Section */}
             <section id="faqs" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
+              <h2 className="m-0 font-heading text-3xl sm:text-4xl font-[650] tracking-tight text-[#1D201E]">
                 Frequently asked questions
               </h2>
-              <div className="border border-[#ECEAE3] rounded-[20px] bg-white overflow-hidden divide-y divide-[#ECEAE3] ">
+              <div className=" rounded-[20px] bg-white overflow-hidden ">
                 {tenancyFaqs.map((faq, idx) => {
                   const isOpen = openFaq === idx;
                   const panelId = `faq-panel-${idx}`;
@@ -312,8 +312,8 @@ export default function TestPreviewPage() {
                         <span 
                           aria-hidden="true"
                           className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                            isOpen ? "rotate-180 bg-[#B7F56A] text-[#1D201E]" : "text-[#1D201E]"
-                          }`}
+ isOpen ? "rotate-180 bg-[#B7F56A] text-[#1D201E]" : "text-[#1D201E]"
+ }`}
                         >
                           <ChevronDown className="w-4 h-4" />
                         </span>
@@ -336,7 +336,7 @@ export default function TestPreviewPage() {
           </div>
 
           {/* Right Column: Sticky Assessment Sidebar — ITEM 8: Title, desc, CTA, Call Us only (no postcode form) */}
-          <aside className="lg:sticky lg:top-28 flex flex-col gap-4 bg-white border border-[#ECEAE3] rounded-[22px] p-6 ">
+          <aside className="lg:sticky lg:top-28 flex flex-col gap-4 bg-white rounded-[22px] p-6 ">
             <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#1D201E]">
               Book This Service
             </p>
@@ -357,7 +357,7 @@ export default function TestPreviewPage() {
             {/* ITEM 9: Plain Call Us — visible border on light bg */}
             <Link
               href="/contact/"
-              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#ECEAE3] border border-[#ECEAE3] text-[#1D201E] hover:bg-[#ECEAE3] transition-colors duration-200 cursor-pointer"
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#ECEAE3] text-[#1D201E] hover:bg-[#ECEAE3] transition-colors duration-200 cursor-pointer"
             >
               <PhoneCall className="w-4 h-4 text-[#1D201E]" />
               <span>Call Us</span>
@@ -366,11 +366,11 @@ export default function TestPreviewPage() {
         </div>
 
         {/* ITEM 12: Bottom Callout — Light editorial style, forest green as accent only (not dominant bg) */}
-        <section className="mt-16 p-8 sm:p-11 rounded-[26px] bg-white border border-[#ECEAE3] grid md:grid-cols-[1fr_auto] gap-7 items-center relative overflow-hidden">
+        <section className="mt-16 p-8 sm:p-11 rounded-[26px] bg-white grid md:grid-cols-[1fr_auto] gap-7 items-center relative overflow-hidden">
           {/* Lime accent stripe on left edge */}
           <span className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#B7F56A] rounded-l-[26px]" aria-hidden="true" />
           <div className="space-y-3">
-            <h2 className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
+            <h2 className="m-0 font-heading text-3xl sm:text-4xl font-[650] tracking-tight text-[#1D201E]">
               Ready to secure your full deposit return?
             </h2>
             <p className="m-0 text-base leading-relaxed text-[#1D201E]/80 max-w-xl font-normal">
@@ -386,7 +386,7 @@ export default function TestPreviewPage() {
             </Link>
             <Link
               href="/contact/"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white border border-[#ECEAE3] text-[#1D201E] hover:opacity-90 transition-opacity duration-200 cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white text-[#1D201E] hover:opacity-90 transition-opacity duration-200 cursor-pointer"
             >
               Contact Support
             </Link>

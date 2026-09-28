@@ -96,14 +96,14 @@ export default function AdminOverviewPage() {
     <div className="space-y-6 text-start">
       
       {/* 1. Dynamic Greeting & Command Header */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 ">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
               <Sparkles className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
               <span>Phase 3 — Operational Operations Command</span>
             </div>
-            <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">
+            <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">
               {timeGreeting}, {adminFirstName}
             </h1>
             <p className="text-sm text-ink-500">
@@ -114,7 +114,7 @@ export default function AdminOverviewPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/admin/bookings/new"
-              className="px-4 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] text-decoration-none inline-flex items-center gap-1.5 border border-[#ECEAE3]"
+              className="px-4 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] text-decoration-none inline-flex items-center gap-1.5 "
             >
               <Plus className="w-3.5 h-3.5 text-[#1D201E]" />
               <span>New Enquiry</span>
@@ -134,7 +134,7 @@ export default function AdminOverviewPage() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
         {/* Real Customer Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 ">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">REGISTERED CUSTOMERS</span>
             <Users className="w-4 h-4 text-ink-600" />
@@ -146,7 +146,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real New Bookings Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-info-500 border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-info-500 ">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">NEW / AWAITING CONF.</span>
             <Calendar className="w-4 h-4 text-info-500" />
@@ -158,7 +158,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real Confirmed & Scheduled Count */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-blue-500 border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 border-l-4 border-l-blue-500 ">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">ACTIVE SCHEDULED</span>
             <Calendar className="w-4 h-4 text-[#1D201E]" />
@@ -170,7 +170,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Real Audit Activity Events */}
-        <div className="bg-white rounded-[18px] p-5 space-y-2 border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-5 space-y-2 ">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-medium text-ink-500 uppercase">AUDIT LOG EVENTS</span>
             <Activity className="w-4 h-4 text-ink-600" />
@@ -187,10 +187,10 @@ export default function AdminOverviewPage() {
       <div className="grid lg:grid-cols-12 gap-6">
         
         {/* Real Attention Required Queue */}
-        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 ">
           <div className="flex items-center justify-between">
             <h3 className="font-heading text-lg font-medium text-ink-900">Attention Required</h3>
-            <span className="px-2.5 py-0.5 rounded-full bg-info-50 text-info-900 text-xs font-mono font-medium">
+            <span className="px-2.5 py-0.5 rounded-md bg-info-50 text-info-900 text-xs font-mono font-medium">
               {attentionBookings.length} Pending Actions
             </span>
           </div>
@@ -206,7 +206,7 @@ export default function AdminOverviewPage() {
                   <div className="space-y-0.5 text-start">
                     <div className="flex items-center gap-2">
                       <span className="font-mono font-medium text-sm text-ink-600">{b.reference}</span>
-                      <span className="px-2 py-0.5 rounded-full bg-info-500 text-[#1D201E] text-[10px] font-mono uppercase font-medium">
+                      <span className="px-2 py-0.5 rounded-md bg-info-500 text-[#1D201E] text-[10px] font-mono uppercase font-medium">
                         New
                       </span>
                     </div>
@@ -229,7 +229,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Recent Operational Activity Feed */}
-        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+        <div className="lg:col-span-6 bg-white rounded-[18px] p-6 space-y-4 ">
           <div className="flex items-center justify-between">
             <h3 className="font-heading text-lg font-medium text-ink-900">Recent Activity</h3>
             <span className="text-xs font-mono text-ink-500">Operational Audit</span>
@@ -260,7 +260,7 @@ export default function AdminOverviewPage() {
       </div>
 
       {/* 4. Functional Admin Quick Actions */}
-      <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 space-y-4 ">
         <h3 className="font-heading text-lg font-medium text-ink-900">Admin Quick Actions</h3>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

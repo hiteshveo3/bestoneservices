@@ -43,18 +43,18 @@ export function SiteFooter() {
             </p>
 
             {/* Verification Card */}
-            <div className="p-4 rounded-[16px] bg-white space-y-2.5 text-base border border-[#ECEAE3] ">
+            <div className="p-4 rounded-[16px] bg-white space-y-2.5 text-base ">
               <div className="flex items-center justify-between font-medium text-[#1D201E] flex-wrap gap-2">
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck className="w-5 h-5 text-[#1D201E] shrink-0" />
                   <span>Licensed Professional Service</span>
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-bold inline-flex items-center gap-1">
+                <span className="px-2.5 py-0.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-bold inline-flex items-center gap-1">
                   <span>4.9 ★★★★★</span>
                 </span>
               </div>
               
-              <div className="space-y-1 text-sm text-[#1D201E]/70 border-t border-[#ECEAE3] pt-2">
+              <div className="space-y-1 text-sm text-[#1D201E]/70 border-[#ECEAE3] pt-2">
                 <div className="flex items-center justify-between">
                   <span>Google & Trustpilot Reviews</span>
                   <span className="font-semibold text-[#1D201E]">1,020+ Verified</span>
@@ -127,7 +127,7 @@ export function SiteFooter() {
           </div>
 
           {/* MOBILE ACCORDION NAVIGATION GROUPS */}
-          <div className="lg:hidden border-t border-[#ECEAE3] divide-y divide-[#ECEAE3]">
+          <div className="lg:hidden border-[#ECEAE3] ">
             {[
               ...footerNavigation.map((g) => ({ title: g.title, links: g.links })),
               { title: "Legal Policies", links: legalLinks },
@@ -149,8 +149,8 @@ export function SiteFooter() {
                     <div 
                       style={{ transitionDuration: "0.4s" }}
                       className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-200 ease-out ${
-                        isOpen ? "rotate-180 bg-[#B7F56A] text-[#1D201E]" : "bg-white border border-[#ECEAE3] text-[#1D201E] group-hover:border-[#1D201E]"
-                      }`}
+ isOpen ? "rotate-180 bg-[#B7F56A] text-[#1D201E]" : "bg-white text-[#1D201E] group-hover:border-[#1D201E]"
+ }`}
                     >
                       <ChevronDown className="w-5 h-5 text-current" />
                     </div>
@@ -190,7 +190,7 @@ export function SiteFooter() {
         </div>
 
         {/* SEO Verification Strip */}
-        <div className="pt-8 border-t border-[#ECEAE3] space-y-3">
+        <div className="pt-8 border-[#ECEAE3] space-y-3">
           <div className="text-base font-semibold text-[#1D201E] flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#1D201E] shrink-0" />
             <span>Official Licensed Service Provider: Bestone Services</span>
@@ -204,7 +204,7 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-6 border-t border-[#ECEAE3] flex flex-col sm:flex-row items-center justify-between gap-4 text-base text-[#1D201E]/60">
+        <div className="pt-6 border-[#ECEAE3] flex flex-col sm:flex-row items-center justify-between gap-4 text-base text-[#1D201E]/60">
           <div>© {new Date().getFullYear()} {siteContact.companyName} · Company no. 15574809 · {siteContact.address.formatted}</div>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link href="/privacy-policy/" className="hover:text-[#1D201E] hover:underline transition-colors duration-150 text-decoration-none text-[#1D201E]/60">Privacy Policy</Link>

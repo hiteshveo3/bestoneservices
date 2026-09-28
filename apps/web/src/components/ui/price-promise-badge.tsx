@@ -17,7 +17,7 @@ export function PricePromiseBadge({ variant = "fixed", className = "" }: PricePr
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs font-semibold ${className}`}
+      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#EAF8D6] text-[#1D201E] text-xs font-semibold ${className}`}
     >
       <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-[#B7F56A] shrink-0" />
       <span>{label}</span>

@@ -93,7 +93,7 @@ export default function AdminNewServicePage() {
       <div className="flex items-center justify-between">
         <Link
           href="/admin/services"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to Catalog Queue</span>
@@ -113,10 +113,10 @@ export default function AdminNewServicePage() {
       )}
 
       {/* CREATE FORM CARD */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
-        <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 ">
+        <div className="space-y-1 border-[#ECEAE3] pb-4">
           <span className="text-xs font-mono font-medium uppercase text-ink-500">STEP 1 OF 2</span>
-          <h1 className="font-heading text-2xl font-medium text-ink-900">Create New Service Package</h1>
+          <h1 className="font-heading text-2xl font-[650] text-ink-900">Create New Service Package</h1>
           <p className="text-sm text-ink-500">Draft new service definitions and baseline pricing matrix</p>
         </div>
 
@@ -191,7 +191,7 @@ export default function AdminNewServicePage() {
 
           {/* DYNAMIC PRICING MATRIX FIELDS */}
           {pricingType === "property_size_matrix" ? (
-            <div className="p-4 rounded-[18px] bg-white space-y-3 border border-[#ECEAE3]">
+            <div className="p-4 rounded-[18px] bg-white space-y-3 ">
               <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Property Size Matrix Rates (£ GBP)</span>
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                 <div className="space-y-1">
@@ -200,7 +200,7 @@ export default function AdminNewServicePage() {
                     type="number"
                     value={studioPounds}
                     onChange={(e) => setStudioPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 border border-[#ECEAE3]"
+                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 "
                   />
                 </div>
                 <div className="space-y-1">
@@ -209,7 +209,7 @@ export default function AdminNewServicePage() {
                     type="number"
                     value={oneBedPounds}
                     onChange={(e) => setOneBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 border border-[#ECEAE3]"
+                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 "
                   />
                 </div>
                 <div className="space-y-1">
@@ -218,7 +218,7 @@ export default function AdminNewServicePage() {
                     type="number"
                     value={twoBedPounds}
                     onChange={(e) => setTwoBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 border border-[#ECEAE3]"
+                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 "
                   />
                 </div>
                 <div className="space-y-1">
@@ -227,7 +227,7 @@ export default function AdminNewServicePage() {
                     type="number"
                     value={threeBedPounds}
                     onChange={(e) => setThreeBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 border border-[#ECEAE3]"
+                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 "
                   />
                 </div>
                 <div className="space-y-1">
@@ -236,13 +236,13 @@ export default function AdminNewServicePage() {
                     type="number"
                     value={fourBedPounds}
                     onChange={(e) => setFourBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 border border-[#ECEAE3]"
+                    className="w-full p-2 rounded-[18px] bg-white text-xs font-medium text-ink-600 "
                   />
                 </div>
               </div>
             </div>
           ) : pricingType === "hourly" ? (
-            <div className="p-4 rounded-[18px] bg-white space-y-3 border border-[#ECEAE3]">
+            <div className="p-4 rounded-[18px] bg-white space-y-3 ">
               <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Hourly Pricing Rules</span>
               <div className="grid sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
@@ -251,7 +251,7 @@ export default function AdminNewServicePage() {
                     type="number"
                     value={hourlyRatePounds}
                     onChange={(e) => setHourlyRatePounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600 border border-[#ECEAE3]"
+                    className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600 "
                   />
                 </div>
                 <div className="space-y-1">
@@ -260,7 +260,7 @@ export default function AdminNewServicePage() {
                     type="number"
                     value={minHours}
                     onChange={(e) => setMinHours(parseInt(e.target.value, 10) || 1)}
-                    className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600 border border-[#ECEAE3]"
+                    className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600 "
                   />
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function AdminNewServicePage() {
           <button
             type="submit"
             disabled={submitting || !name.trim()}
-            className="w-full py-3.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 border border-[#ECEAE3]"
+            className="w-full py-3.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 "
           >
             {submitting ? "Creating Service Package Draft..." : "Create Package & Configure Add-ons →"}
           </button>

@@ -89,13 +89,13 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
   if (!invoice) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center p-6">
-        <div className="bg-[#F6F5F1] rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto ">
           <AlertCircle className="w-10 h-10 text-danger-500 mx-auto" />
           <h3 className="font-heading text-lg font-medium text-ink-900">Invoice Reference Not Found</h3>
           <p className="text-xs text-ink-500">
             The invoice reference <span className="font-mono font-medium text-ink-600">{invoiceId}</span> was not found.
           </p>
-          <Link href="/account/invoices" className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none border border-[#ECEAE3]">
+          <Link href="/account/invoices" className="px-5 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none ">
             View Your Invoices
           </Link>
         </div>
@@ -106,11 +106,11 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "paid":
-        return <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">PAID IN FULL</span>;
+        return <span className="ts-eyebrow">PAID IN FULL</span>;
       case "partially_paid":
-        return <span className="px-3 py-1 rounded-full bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">DEPOSIT PAID</span>;
+        return <span className="px-3 py-1 rounded-md bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">DEPOSIT PAID</span>;
       default:
-        return <span className="px-3 py-1 rounded-full bg-danger-50 text-danger-900 text-xs font-mono font-medium uppercase">PAYMENT DUE</span>;
+        return <span className="px-3 py-1 rounded-md bg-danger-50 text-danger-900 text-xs font-mono font-medium uppercase">PAYMENT DUE</span>;
     }
   };
 
@@ -119,11 +119,11 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
       <div className="max-w-3xl mx-auto space-y-6">
         
         {/* HEADER BAR */}
-        <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#ECEAE3] pb-4">
+        <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 ">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-[#ECEAE3] pb-4">
             <div className="space-y-1">
               <span className="text-xs font-mono font-medium text-ink-500 uppercase">BESTONE SERVICES • VAT TAX INVOICE</span>
-              <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">
+              <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">
                 Invoice {invoice.reference}
               </h1>
               <p className="text-xs font-mono text-ink-500">
@@ -146,13 +146,13 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono">
-            <div className="p-3.5 rounded-[18px] bg-[#F6F5F1] space-y-1 border border-[#ECEAE3]">
+            <div className="p-3.5 rounded-[18px] bg-white space-y-1 ">
               <span className="text-ink-500 uppercase block">BILLED TO</span>
               <p className="font-medium text-ink-600">{invoice.customerName}</p>
               <p className="text-ink-500">{invoice.customerEmail}</p>
             </div>
 
-            <div className="p-3.5 rounded-[18px] bg-[#F6F5F1] space-y-1 border border-[#ECEAE3]">
+            <div className="p-3.5 rounded-[18px] bg-white space-y-1 ">
               <span className="text-ink-500 uppercase block">PAYMENT TERMS</span>
               <p className="font-medium text-ink-600">Due on Receipt / Completion</p>
               <p className="text-ink-500">Due Date: {new Date(invoice.dueDate as string).toLocaleDateString("en-GB")}</p>
@@ -161,22 +161,22 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
         </div>
 
         {/* ITEMIZED BILL TABLE */}
-        <div className="bg-[#F6F5F1] rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#ECEAE3]">
-          <h2 className="font-heading text-xl font-medium text-ink-900 border-b border-[#ECEAE3] pb-3">
+        <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 ">
+          <h2 className="font-heading text-xl font-[650] text-ink-900 border-[#ECEAE3] pb-3">
             Itemized Invoice Breakdown
           </h2>
 
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-start border-collapse">
               <thead>
-                <tr className="border-b border-[#ECEAE3] text-left text-[11px] font-mono uppercase text-ink-500">
+                <tr className=" border-[#ECEAE3] text-left text-[11px] font-mono uppercase text-ink-500">
                   <th className="py-2 font-medium">Description</th>
                   <th className="py-2 text-center font-medium">Qty</th>
                   <th className="py-2 text-right font-medium">Rate</th>
                   <th className="py-2 text-right font-medium">Amount</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-bone-300 font-mono">
+              <tbody className=" divide-bone-300 font-mono">
                 {invoice.lineItems.map((item) => (
                   <tr key={item.id}>
                     <td className="py-3 font-medium text-ink-600">{item.description}</td>
@@ -190,7 +190,7 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
           </div>
 
           {/* FINANCIAL TOTALS CARD */}
-          <div className="p-6 rounded-[18px] bg-white border border-[#ECEAE3] space-y-2 text-xs font-mono">
+          <div className="p-6 rounded-[18px] bg-white space-y-2 text-xs font-mono">
             <div className="flex justify-between text-ink-500">
               <span>Subtotal (Net)</span>
               <span className="font-medium text-ink-600">{formatPenceToGBP(invoice.subtotalPence)}</span>
@@ -201,7 +201,7 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
               <span className="font-medium text-ink-600">{formatPenceToGBP(invoice.vatPence)}</span>
             </div>
 
-            <div className="flex justify-between text-base font-medium text-ink-600 pt-2 border-t border-[#ECEAE3]">
+            <div className="flex justify-between text-base font-medium text-ink-600 pt-2 border-[#ECEAE3]">
               <span>Total Invoice Amount</span>
               <span>{formatPenceToGBP(invoice.totalPence)}</span>
             </div>
@@ -211,7 +211,7 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
               <span className="font-medium">-{formatPenceToGBP(invoice.depositPaidPence || 0)}</span>
             </div>
 
-            <div className="flex justify-between text-lg font-medium text-ink-600 pt-2 border-t border-[#ECEAE3]">
+            <div className="flex justify-between text-lg font-medium text-ink-600 pt-2 border-[#ECEAE3]">
               <span>Balance Due</span>
               <span className="text-[#1D201E] font-black">{formatPenceToGBP(invoice.balanceDuePence || 0)}</span>
             </div>
@@ -234,15 +234,15 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
                 type="button"
                 onClick={() => handlePayStripe("full_balance")}
                 disabled={payingStripe}
-                className="w-full py-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-heading font-semibold text-xs hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 flex items-center justify-center gap-2 border border-[#ECEAE3]"
+                className="w-full py-4 rounded-md bg-[#B7F56A] text-[#1D201E] font-heading font-semibold text-xs hover:bg-[#A2EA4E] cursor-pointer disabled:opacity-50 transition-colors duration-150 flex items-center justify-center gap-2 "
               >
                 <CreditCard className="w-4 h-4 text-[#1D201E]" />
                 <span>{payingStripe ? "Opening Stripe Checkout..." : `Pay Balance Online via Card (${formatPenceToGBP(invoice.balanceDuePence)}) →`}</span>
               </button>
 
               {/* BACS UK Bank Transfer Details Card */}
-              <div className="p-5 rounded-[18px] bg-white border border-[#ECEAE3] space-y-2 text-xs font-mono">
-                <div className="flex items-center gap-2 text-ink-600 font-medium border-b border-[#ECEAE3] pb-2">
+              <div className="p-5 rounded-[18px] bg-white space-y-2 text-xs font-mono">
+                <div className="flex items-center gap-2 text-ink-600 font-medium border-[#ECEAE3] pb-2">
                   <Building2 className="w-4 h-4 text-ink-600" />
                   <span>Direct UK Bank Transfer (BACS)</span>
                 </div>

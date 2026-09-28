@@ -52,7 +52,7 @@ export function HeroService({
             
             {/* 1. Eyebrow */}
             <SectionReveal disabled>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 ts-eyebrow">
                 <Sparkles className="w-4 h-4 text-[#1D201E] shrink-0" aria-hidden="true" />
                 <span>{eyebrow}</span>
               </div>
@@ -72,7 +72,7 @@ export function HeroService({
 
             {/* 4. Postcode / Bedroom Input (WCAG 2.1 Compliant) */}
             <SectionReveal disabled className="space-y-3 max-w-xl">
-              <div className="p-1.5 sm:p-2 rounded-[16px] sm:rounded-full flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-white border border-[#ECEAE3] focus-within:ring-2 focus-within:ring-[#1D201E] ">
+              <div className="p-1.5 sm:p-2 rounded-[16px] sm:rounded-full flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-white focus-within:ring-2 focus-within:ring-[#1D201E] ">
                 <div className="flex items-center gap-2 pl-3 sm:pl-4 w-full">
                   <MapPin className="w-4 h-4 text-[#1D201E] shrink-0" aria-hidden="true" />
                   <label htmlFor="service-hero-postcode" className="sr-only">
@@ -106,15 +106,15 @@ export function HeroService({
 
             {/* 5. Metrics Cards Stagger */}
             <StaggerGrid disabled className="pt-4 grid grid-cols-3 gap-3" staggerDelay={0.07}>
-              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5 ">
+              <StaggerItem className="bg-white rounded-[16px] p-4 text-start space-y-0.5 ">
                 <div className="font-heading text-xl sm:text-2xl font-bold text-[#1D201E]">{startingPrice}</div>
                 <div className="text-sm text-[#1D201E] font-medium">{startingPriceLabel}</div>
               </StaggerItem>
-              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5 ">
+              <StaggerItem className="bg-white rounded-[16px] p-4 text-start space-y-0.5 ">
                 <div className="font-heading text-xl sm:text-2xl font-bold text-[#1D201E]">48 Hours</div>
                 <div className="text-sm text-[#1D201E] font-medium">Re-Clean Support</div>
               </StaggerItem>
-              <StaggerItem className="bg-[#F6F5F1] rounded-[16px] p-4 border border-[#ECEAE3] text-start space-y-0.5 ">
+              <StaggerItem className="bg-white rounded-[16px] p-4 text-start space-y-0.5 ">
                 <div className="font-heading text-xl sm:text-2xl font-bold text-[#1D201E]">London</div>
                 <div className="text-sm text-[#1D201E] font-medium">Service Coverage</div>
               </StaggerItem>
@@ -135,11 +135,11 @@ export function HeroService({
               />
 
               {/* Overlay Badge */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 bg-[#F6F5F1]/95 backdrop-blur-md px-4 py-2 rounded-[16px] border border-[#ECEAE3] flex items-center gap-3 text-start whitespace-nowrap ">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 bg-[#F6F5F1]/95 backdrop-blur-md px-4 py-2 rounded-[16px] flex items-center gap-3 text-start whitespace-nowrap ">
                 <div className="font-heading text-xs sm:text-sm font-bold text-[#1D201E]">
                   {overlayBadge}
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-[11px] font-mono font-bold">
+                <span className="px-2.5 py-0.5 rounded-md bg-[#EAF8D6] text-[#1D201E] text-[11px] font-mono font-bold">
                   VERIFIED
                 </span>
               </div>

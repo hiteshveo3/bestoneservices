@@ -44,12 +44,12 @@ export function PromoBanner() {
   };
 
   return (
-    <div className="bg-[#B7F56A] text-[#1D201E] w-full flex items-center justify-center z-[60] relative font-sans border-b border-[#ECEAE3]/40">
+    <div className="bg-[#B7F56A] text-[#1D201E] w-full flex items-center justify-center z-[60] relative font-sans border-[#ECEAE3]/40">
       <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center gap-2 sm:gap-4">
 
         {/* Compact single-line content on mobile, full copy from sm+ */}
         <div className="flex-1 min-w-0 flex items-center gap-2 sm:gap-4 sm:flex-wrap justify-center text-center">
-          <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-md bg-[#B7F56A] text-[#1D201E] text-[11px] font-bold uppercase tracking-wider shrink-0">
+          <span className="inline-flex items-center gap-1.5 ts-eyebrow">
             Direct Booking Offer
           </span>
           <span className="hidden sm:inline text-xs sm:text-sm font-normal text-[#1D201E]/95 tracking-tight">

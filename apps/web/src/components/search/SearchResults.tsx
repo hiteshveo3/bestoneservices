@@ -90,7 +90,7 @@ export function SearchResults() {
     <div className="space-y-6">
       
       {/* 1. TOP STICKY FILTER TOOLBAR: Just like reference site */}
-      <div className="sticky top-[56px] lg:top-[72px] z-30 bg-[#F6F5F1]/95 backdrop-blur-md border-b border-[#ECEAE3] py-3.5 ">
+      <div className="sticky top-[56px] lg:top-[72px] z-30 bg-[#F6F5F1]/95 backdrop-blur-md border-[#ECEAE3] py-3.5 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
           {/* Row 1: Spacious Search Field + Sort Control + All Filters Drawer Trigger */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
@@ -112,13 +112,13 @@ export function SearchResults() {
               <button
                 type="button"
                 onClick={() => setMobileDrawerOpen(true)}
-                className="h-10 px-3.5 rounded-[12px] border border-[#ECEAE3] bg-white hover:border-[#ECEAE3] hover:bg-[#F6F5F1] text-[#1D201E] font-semibold text-xs transition-all cursor-pointer flex items-center gap-1.5 shrink-0 "
+                className="h-10 px-3.5 rounded-[12px] bg-white hover:border-[#ECEAE3] hover:bg-[#F6F5F1] text-[#1D201E] font-semibold text-xs transition-all cursor-pointer flex items-center gap-1.5 shrink-0 "
                 aria-label="Open filter drawer"
               >
                 <HugeiconsIcon icon={FilterIcon} size={15} strokeWidth={2} />
                 <span>All Filters</span>
                 {activeFilterCount > 0 && (
-                  <span className="inline-flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-[#B7F56A] text-[#1D201E] text-[10px] font-bold font-mono">
+                  <span className="inline-flex h-4 min-w-4 px-1 items-center justify-center rounded-md bg-[#B7F56A] text-[#1D201E] text-[10px] font-bold font-mono">
                     {activeFilterCount}
                   </span>
                 )}
@@ -160,9 +160,9 @@ export function SearchResults() {
         <QuickFilterShortcuts onSelect={applyQuickFilter} />
 
         {/* Title & Result Count */}
-        <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-[#ECEAE3]">
+        <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-[#ECEAE3]">
           <div className="text-start">
-            <h1 className="font-heading text-xl sm:text-2xl font-bold text-[#1D201E]">
+            <h1 className="font-heading text-xl sm:text-2xl font-[650] text-[#1D201E]">
               Services: {heading}
             </h1>
             <p className="text-xs text-[#1D201E]/70 mt-0.5">
@@ -179,11 +179,11 @@ export function SearchResults() {
           {/* Left Column: Service Listing Cards */}
           <div className="space-y-4">
             {filteredServices.length === 0 ? (
-              <div className="rounded-[22px] bg-white border-2 border-[#ECEAE3] p-8 sm:p-12 text-center  space-y-4">
+              <div className="rounded-[22px] bg-white border-2 border-[#ECEAE3] p-8 sm:p-12 text-center space-y-4">
                 <div className="w-14 h-14 rounded-full bg-[#EAF8D6]/60 text-[#1D201E] flex items-center justify-center mx-auto">
                   <HugeiconsIcon icon={SparklesIcon} size={28} strokeWidth={1.8} />
                 </div>
-                <h2 className="font-heading text-xl font-bold text-[#1D201E]">
+                <h2 className="font-heading text-xl font-[650] text-[#1D201E]">
                   No matching services found
                 </h2>
                 <p className="mx-auto max-w-md text-xs sm:text-sm text-[#1D201E]/75 leading-relaxed">
@@ -192,7 +192,7 @@ export function SearchResults() {
                 <button
                   type="button"
                   onClick={clearAllFilters}
-                  className="px-5 py-2.5 rounded-[10px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] text-xs font-bold transition-colors  cursor-pointer inline-flex items-center gap-1.5"
+                  className="px-5 py-2.5 rounded-[10px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] text-xs font-bold transition-colors cursor-pointer inline-flex items-center gap-1.5"
                 >
                   Clear all filters
                 </button>
@@ -205,7 +205,7 @@ export function SearchResults() {
           </div>
 
           {/* Right Column: Exact Homepage / Service Page Sticky Sidebar */}
-          <aside className="hidden lg:flex lg:sticky lg:top-[230px] min-w-0 flex-col gap-4 bg-white border border-[#ECEAE3] rounded-[22px] p-6  text-start">
+          <aside className="hidden lg:flex lg:sticky lg:top-[230px] min-w-0 flex-col gap-4 bg-white rounded-[22px] p-6 text-start">
             <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#1D201E]">
               Book a service
             </p>
@@ -236,7 +236,7 @@ export function SearchResults() {
             <div className="flex flex-col gap-1 pt-1 text-xs text-[#1D201E]">
               <span className="flex items-center gap-2">
                 Last reviewed:
-                <span className="px-2 py-0.5 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] font-bold uppercase text-[10px] text-[#1D201E]">
+                <span className="px-2 py-0.5 rounded-md bg-white font-bold uppercase text-[10px] text-[#1D201E]">
                   September 2026
                 </span>
               </span>
@@ -274,20 +274,20 @@ function ServiceCardItem({
   service: DirectoryService;
 }) {
   return (
-    <article className="group bg-white rounded-[22px] border-2 border-[#ECEAE3] hover:border-[#ECEAE3] transition-colors duration-200 p-4 sm:p-5 flex flex-col sm:flex-row gap-5  text-start">
+    <article className="group bg-white rounded-[22px] border-2 border-[#ECEAE3] hover:border-[#ECEAE3] transition-colors duration-200 p-4 sm:p-5 flex flex-col sm:flex-row gap-5 text-start">
       {/* Left Media Block */}
-      <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full sm:w-[220px] md:w-[240px] shrink-0 rounded-[14px] overflow-hidden bg-[#F6F5F1] border border-[#ECEAE3]/60">
+      <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full sm:w-[220px] md:w-[240px] shrink-0 rounded-[14px] overflow-hidden bg-white ">
         <ServiceCardMotion category={service.category} serviceName={service.name} serviceId={service.id} />
 
         {/* Badges on Image */}
         <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
           {service.popular && (
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#B7F56A] text-[#1D201E] border border-[#ECEAE3] ">
+            <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#B7F56A] text-[#1D201E] ">
               Popular
             </span>
           )}
           {service.emergencyEligible && (
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/95 text-[#1D201E] border border-[#ECEAE3]  flex items-center gap-1">
+            <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/95 text-[#1D201E] flex items-center gap-1">
               <HugeiconsIcon icon={FlashIcon} size={11} strokeWidth={2} className="text-[#1D201E]" />
               <span>Same-Day</span>
             </span>
@@ -300,7 +300,7 @@ function ServiceCardItem({
         <div className="space-y-2">
           {/* Metadata Row */}
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#EAF8D6]/70 text-[#1D201E]">
+            <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-[#EAF8D6]/70 text-[#1D201E]">
               {service.categoryLabel}
             </span>
             <span className="text-xs text-[#1D201E]/40">•</span>
@@ -333,7 +333,7 @@ function ServiceCardItem({
               {service.badges.map((b) => (
                 <span
                   key={b}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#F6F5F1] border border-[#ECEAE3] text-[11px] font-medium text-[#1D201E]/75"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-white text-[11px] font-medium text-[#1D201E]/75"
                 >
                   <HugeiconsIcon icon={Tick01Icon} size={12} strokeWidth={2.4} className="text-emerald-700" />
                   <span>{b}</span>
@@ -344,7 +344,7 @@ function ServiceCardItem({
         </div>
 
         {/* Pricing & Dual Action Buttons */}
-        <div className="pt-4 mt-3 border-t border-[#ECEAE3] flex flex-wrap items-center justify-between gap-3">
+        <div className="pt-4 mt-3 border-[#ECEAE3] flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-col">
             <span className="text-[10px] font-mono uppercase tracking-wider text-[#1D201E]/60">
               Transparent Pricing
@@ -357,7 +357,7 @@ function ServiceCardItem({
           <div className="flex items-center gap-2">
             <a
               href="tel:02080047788"
-              className="h-10 px-3.5 rounded-[10px] bg-[#EAF8D6] border border-[#ECEAE3] hover:bg-[#A2EA4E] text-[#1D201E] text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="h-10 px-3.5 rounded-[10px] bg-[#EAF8D6] hover:bg-[#A2EA4E] text-[#1D201E] text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <HugeiconsIcon icon={Call02Icon} size={15} strokeWidth={1.8} className="text-[#1D201E]" />
               <span className="hidden sm:inline">Call</span>
@@ -365,7 +365,7 @@ function ServiceCardItem({
 
             <Link
               href={service.href}
-              className="h-10 px-4 rounded-[10px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] text-xs font-semibold transition-colors  flex items-center gap-1.5 cursor-pointer"
+              className="h-10 px-4 rounded-[10px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <span>{service.ctaText}</span>
               <HugeiconsIcon icon={ArrowRight01Icon} size={14} strokeWidth={2} />

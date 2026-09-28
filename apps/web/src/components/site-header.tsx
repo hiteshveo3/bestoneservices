@@ -144,10 +144,10 @@ export function SiteHeader() {
                       aria-expanded={isOpen}
                       aria-controls={`mega-menu-${cat.id}`}
                       className={`px-3.5 xl:px-4 py-2 rounded-[10px] font-medium flex items-center gap-1.5 transition-colors duration-150 text-decoration-none cursor-pointer whitespace-nowrap focus-visible:outline-none ${
-                        isOpen || isRouteActive
-                          ? "bg-[#EAF8D6] text-[#1D201E] font-semibold "
-                          : "text-[#1D201E] hover:bg-[#EAF8D6]/40"
-                      }`}
+ isOpen || isRouteActive
+ ? "bg-[#EAF8D6] text-[#1D201E] font-semibold "
+ : "text-[#1D201E] hover:bg-[#EAF8D6]/40"
+ }`}
                     >
                       <span>{cat.label}</span>
                       <HugeiconsIcon icon={ChevronDownIcon} size={14} className={`text-[#1D201E] transition-transform duration-200 ${isOpen ? "rotate-180 text-[#1D201E]" : ""}`} />
@@ -171,6 +171,15 @@ export function SiteHeader() {
               <HugeiconsIcon icon={Search01Icon} size={20} strokeWidth={1.8} className="text-[#1D201E] shrink-0" />
             </Link>
 
+            <a
+              href={siteContact.getWhatsappUrl("Hi Bestone, I'd like a price for a job.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp us"
+              className="grid h-10 w-10 place-items-center rounded-[10px] bg-white text-[#1D201E] md:hidden"
+            >
+              <MessageCircle className="size-5" aria-hidden="true" />
+            </a>
             {/* Primary conversion CTA: WhatsApp (white) + Get your price (lime) */}
             <a
               href={siteContact.getWhatsappUrl("Hi Bestone, I'd like a price for a job.")}
@@ -231,8 +240,9 @@ export function SiteHeader() {
                 <summary>{category.label}</summary>
                 <div className="grid gap-0.5 pb-3">
                   {category.columns[0]?.items.map((item) => (
-                    <Link key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="rounded-lg px-2 py-2.5 text-[15px] font-medium text-[#1D201E] no-underline hover:bg-white">
-                      {item.label}
+                    <Link key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-between gap-3 rounded-lg px-2 py-2.5 text-[15px] font-medium text-[#1D201E] no-underline hover:bg-white">
+                      <span>{item.label}</span>
+                      {item.price ? <span className="ts-fig text-lg"><small>from</small>{item.price}</span> : null}
                     </Link>
                   ))}
                   <Link href={category.href} onClick={() => setMobileMenuOpen(false)} className="rounded-lg px-2 py-2.5 text-[15px] font-semibold text-[#1D201E] no-underline hover:bg-white">
@@ -248,9 +258,9 @@ export function SiteHeader() {
           </nav>
           <div className="p-4">
             {siteConfig.bookingEnabled ? (
-              <Link href="/booking/" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#1D201E] bg-[#B7F56A] px-6 py-2 text-base font-semibold text-[#1D201E] no-underline">Get a Quote<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#1D201E]" /></Link>
+              <Link href="/booking/" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#1D201E] bg-[#B7F56A] px-6 py-2 text-base font-semibold text-[#1D201E] no-underline">Get a Quote<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#1D201E]" /></Link>
             ) : (
-              <a href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services.")} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#1D201E] bg-[#B7F56A] px-6 py-2 text-base font-semibold text-[#1D201E] no-underline">Book via WhatsApp<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#1D201E]" /></a>
+              <a href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services.")} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#1D201E] bg-[#B7F56A] px-6 py-2 text-base font-semibold text-[#1D201E] no-underline">Book via WhatsApp<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#1D201E]" /></a>
             )}
           </div>
         </div>

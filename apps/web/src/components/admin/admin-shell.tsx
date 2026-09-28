@@ -131,7 +131,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen bg-[#F6F5F1] text-start flex flex-col font-sans">
         
         {/* TOP BAR */}
-        <header className="sticky top-0 z-30 bg-white border-b border-[#ECEAE3]">
+        <header className="sticky top-0 z-30 bg-white border-[#ECEAE3]">
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
             
             <div className="flex items-center gap-3">
@@ -155,7 +155,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             {/* Global Search Bar Trigger */}
             <div 
               onClick={() => setSearchModalOpen(true)}
-              className="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#F6F5F1] text-sm text-ink-500 w-64 lg:w-96 cursor-pointer hover:bg-[#EAF8D6] transition-colors duration-150"
+              className="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#F6F5F1] text-sm text-ink-500 w-64 lg:w-96 cursor-pointer hover:bg-[#EAF8D6] transition-colors duration-150"
             >
               <Search className="w-4 h-4 text-ink-500 shrink-0" />
               <span className="text-xs text-ink-500 font-medium flex-1">Search Bestone navigation or customers...</span>
@@ -177,7 +177,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
 
               <Link
                 href="/"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F6F5F1] text-ink-600 text-xs font-medium hover:bg-[#EAF8D6] text-decoration-none"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#F6F5F1] text-ink-600 text-xs font-medium hover:bg-[#EAF8D6] text-decoration-none"
               >
                 <span>Live Website</span>
                 <ChevronRight className="w-3 h-3 text-ink-600" />
@@ -213,7 +213,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           
           {/* DESKTOP SIDEBAR */}
           <aside className="hidden lg:block w-64 shrink-0 space-y-6">
-            <div className="bg-white rounded-[16px] p-4 space-y-5 sticky top-22 max-h-[calc(100vh-7rem)] overflow-y-auto border border-[#ECEAE3]">
+            <div className="bg-white rounded-[16px] p-4 space-y-5 sticky top-22 max-h-[calc(100vh-7rem)] overflow-y-auto ">
               {ADMIN_NAV.map((group) => (
                 <div key={group.title} className="space-y-1">
                   <span className="text-[10px] font-mono font-medium uppercase text-ink-500 px-3 tracking-wider block">
@@ -247,7 +247,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]" } border border-[#ECEAE3]`}
+                        className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]" } `}
                       >
                         <div className="flex items-center gap-2.5">
                           <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-ink-600" : "text-ink-500"}`} />
@@ -265,8 +265,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           {mobileMenuOpen && (
             <div className="fixed inset-0 z-40 lg:hidden flex">
               <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-xs" onClick={() => setMobileMenuOpen(false)} />
-              <div className="relative w-72 max-w-[80vw] bg-white h-full p-4 space-y-6 overflow-y-auto z-50 text-start border border-[#ECEAE3]">
-                <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-4">
+              <div className="relative w-72 max-w-[80vw] bg-white h-full p-4 space-y-6 overflow-y-auto z-50 text-start ">
+                <div className="flex items-center justify-between border-[#ECEAE3] pb-4">
                   <span className="font-heading font-medium text-lg text-ink-900">Admin Menu</span>
                   <button
                     type="button"
@@ -313,10 +313,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                             href={item.href}
                             onClick={() => setMobileMenuOpen(false)}
                             className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${
-                              isActive
-                                ? "bg-[#B7F56A] text-[#1D201E] font-medium"
-                                : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]"
-                            }`}
+ isActive
+ ? "bg-[#B7F56A] text-[#1D201E] font-medium"
+ : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                           >
                             <div className="flex items-center gap-2.5">
                               <Icon className="w-4 h-4 text-ink-600 shrink-0" />

@@ -231,7 +231,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
 
   if (loading) {
     return (
-      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
         <Spinner size={32} className="mx-auto" />
         <p className="text-sm font-medium text-ink-600">Loading booking operational workspace...</p>
       </div>
@@ -240,11 +240,11 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
 
   if (!booking) {
     return (
-      <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto ">
         <AlertCircle className="w-10 h-10 text-danger-500 mx-auto" />
         <h3 className="font-heading text-lg font-medium text-ink-900">Booking Not Found</h3>
         <p className="text-xs text-ink-500">The requested booking record does not exist or was moved.</p>
-        <Link href="/admin/bookings" className="px-5 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none">
+        <Link href="/admin/bookings" className="px-5 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none">
           Return to Booking Queue
         </Link>
       </div>
@@ -262,7 +262,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
       <div className="flex items-center justify-between">
         <Link
           href="/admin/bookings"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to Bookings Queue</span>
@@ -289,18 +289,18 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
       )}
 
       {/* WORKSPACE HEADER */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 ">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-2">
               <span className="font-heading font-medium text-2xl sm:text-3xl text-ink-900">
                 {booking.reference}
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+              <span className="ts-eyebrow">
                 {booking.status.replace("_", " ")}
               </span>
             </div>
-            <h1 className="font-heading text-lg font-medium text-ink-900">
+            <h1 className="font-heading text-lg font-[650] text-ink-900">
               {booking.serviceNameSnapshot}
             </h1>
             <p className="text-xs font-mono text-ink-500">
@@ -324,8 +324,8 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
         <div className="lg:col-span-8 space-y-6">
           
           {/* 1. Service Details Snapshot */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
               Service Specifications
             </h3>
 
@@ -356,7 +356,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
             </div>
 
             {booking.notes && (
-              <div className="pt-3 border-t border-[#ECEAE3] space-y-1">
+              <div className="pt-3 border-[#ECEAE3] space-y-1">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Customer Booking Notes</span>
                 <p className="text-xs text-ink-600 italic bg-[#F6F5F1] p-3 rounded-[18px] leading-relaxed">
                   &quot;{booking.notes}&quot;
@@ -366,8 +366,8 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
           </div>
 
           {/* 2. Scheduling & Slot Confirmation */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-2">
               <h3 className="font-heading text-lg font-medium text-ink-900">Schedule & Time Slot</h3>
               <button
                 type="button"
@@ -388,7 +388,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                       type="date"
                       value={confirmedDate}
                       onChange={(e) => setConfirmedDate(e.target.value)}
-                      className="w-full p-2.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600"
+                      className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600"
                       required
                     />
                   </div>
@@ -397,7 +397,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                     <select
                       value={confirmedSlot}
                       onChange={(e) => setConfirmedSlot(e.target.value as "morning" | "afternoon" | "evening")}
-                      className="w-full p-2.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600"
+                      className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600"
                     >
                       <option value="morning">Morning (8am - 12pm)</option>
                       <option value="afternoon">Afternoon (12pm - 4pm)</option>
@@ -413,14 +413,14 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                     value={confirmedExactTime}
                     onChange={(e) => setConfirmedExactTime(e.target.value)}
                     placeholder="e.g. 10:30 AM arrival confirmed with team"
-                    className="w-full p-2.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600"
+                    className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={submittingSchedule}
-                  className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer"
+                  className="px-4 py-2 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer"
                 >
                   {submittingSchedule ? "Saving..." : "Confirm Schedule Update"}
                 </button>
@@ -449,8 +449,8 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
           </div>
 
           {/* 3. Pricing Lifecycle & Adjustments */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-2">
               <h3 className="font-heading text-lg font-medium text-ink-900">Commercial Pricing & Adjustments</h3>
               <button
                 type="button"
@@ -473,7 +473,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                       min="0"
                       value={newPricePounds}
                       onChange={(e) => setNewPricePounds(parseFloat(e.target.value) || 0)}
-                      className="w-full p-2.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600"
+                      className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600"
                       required
                     />
                   </div>
@@ -483,7 +483,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                     <select
                       value={priceReason}
                       onChange={(e) => setPriceReason(e.target.value as PriceChangeReason)}
-                      className="w-full p-2.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600"
+                      className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600"
                     >
                       <option value="scope_differed_from_booking">Scope Differed From Booking</option>
                       <option value="additional_time">Additional Time Required</option>
@@ -504,7 +504,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                     value={priceDetails}
                     onChange={(e) => setPriceDetails(e.target.value)}
                     placeholder="Provide details explaining the price adjustment..."
-                    className="w-full p-2.5 rounded-[18px] bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600"
+                    className="w-full p-2.5 rounded-[18px] bg-white text-xs font-medium text-ink-600"
                     required={priceReason === "other"}
                   />
                 </div>
@@ -512,7 +512,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                 <button
                   type="submit"
                   disabled={submittingPrice}
-                  className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer"
+                  className="px-4 py-2 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] cursor-pointer"
                 >
                   {submittingPrice ? "Recording..." : "Save Price Adjustment & Record Audit"}
                 </button>
@@ -527,7 +527,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-[18px] bg-[#EAF8D6] border border-[#ECEAE3] space-y-1">
+                  <div className="p-3.5 rounded-[18px] bg-[#EAF8D6] space-y-1">
                     <span className="text-xs text-ink-600 uppercase font-medium block">CONFIRMED FINAL PRICE</span>
                     <div className="font-heading font-medium text-xl text-ink-900">
                       {confirmedPriceDisplay}
@@ -537,7 +537,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
 
                 {/* Price History Log */}
                 {booking.pricing?.priceHistory && booking.pricing.priceHistory.length > 0 && (
-                  <div className="space-y-2 pt-2 border-t border-[#ECEAE3]">
+                  <div className="space-y-2 pt-2 border-[#ECEAE3]">
                     <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Adjustment History Log</span>
                     <div className="space-y-2">
                       {booking.pricing.priceHistory.map((rec, idx) => (
@@ -557,8 +557,8 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
           </div>
 
           {/* 4. Timeline Events Feed */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
               Booking Events Timeline
             </h3>
 
@@ -590,8 +590,8 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
         <div className="lg:col-span-4 space-y-6">
           
           {/* 1. Status Transition Actions */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
               Status Transition Control
             </h3>
 
@@ -628,7 +628,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
               <button
                 type="submit"
                 disabled={submittingStatus}
-                className="w-full py-3 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border border-[#ECEAE3]"
+                className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer "
               >
                 {submittingStatus ? "Updating..." : `Transition to ${targetStatus.replace("_", " ").toUpperCase()}`}
               </button>
@@ -636,8 +636,8 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
           </div>
 
           {/* 2. Customer Contact Snapshot */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
               Customer Contact Snapshot
             </h3>
 
@@ -661,7 +661,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
                 </a>
               </div>
 
-              <div className="pt-2 border-t border-[#ECEAE3] space-y-1">
+              <div className="pt-2 border-[#ECEAE3] space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-ink-500 uppercase">
                   <MapPin className="w-3.5 h-3.5 text-ink-600 shrink-0" />
                   <span>Service Address</span>
@@ -675,8 +675,8 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
           </div>
 
           {/* 3. Private Internal Notes (Strictly Admin Access Only) */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-2">
               <h3 className="font-heading text-lg font-medium text-ink-900 flex items-center gap-1.5">
                 <Lock className="w-4 h-4 text-[#1D201E]" />
                 <span>Internal Notes</span>
@@ -695,7 +695,7 @@ export default function AdminBookingDetailPage({ params }: { params: Promise<{ i
               <button
                 type="submit"
                 disabled={submittingNote || !newNote.trim()}
-                className="w-full py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-1.5"
+                className="w-full py-2 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-semibold hover:bg-[#A2EA4E] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-1.5"
               >
                 <Send className="w-3 h-3 text-[#1D201E]" />
                 <span>Add Internal Note</span>

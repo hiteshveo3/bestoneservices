@@ -1,85 +1,46 @@
 import Link from "next/link";
-import { Search, Home, Sparkles, Bug, Trees, Truck, Calculator, MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Button, Eyebrow, Petals } from "@/components/touchstone";
 
+/** Lab 03 S61 C: the page has moved, and every service is one tap away. */
 export default function NotFound() {
   const shortcuts = [
-    { label: "End of Tenancy Cleaning", href: "/cleaning-services/end-of-tenancy-cleaning/", icon: Sparkles },
-    { label: "Pest Control Services", href: "/pest-control-services/", icon: Bug },
-    { label: "Gardening & Clearance", href: "/gardening/", icon: Trees },
-    { label: "House Removals & Storage", href: "/removals/", icon: Truck },
-    { label: "Instant Price Calculator", href: "/prices/", icon: Calculator },
-    { label: "London Coverage Areas", href: "/areas/", icon: MapPin },
+    { label: "Pest control", href: "/pest-control-services/" },
+    { label: "End of tenancy cleaning", href: "/cleaning-services/end-of-tenancy-cleaning/" },
+    { label: "Gardening", href: "/gardening/" },
+    { label: "Removals", href: "/removals/" },
+    { label: "Every price", href: "/prices/" },
+    { label: "Areas we cover", href: "/areas/" },
   ];
 
   return (
-    <>
-      <main id="main-content" className="py-16 text-start min-h-[70vh] flex items-center justify-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 w-full">
-          
-          {/* HERO RECOVERY CARD */}
-          <div className="bg-[#F6F5F1] rounded-[24px] p-8 sm:p-12 border border-[#ECEAE3]  space-y-6 text-start">
-            <div className="space-y-2">
-              <span className="px-3.5 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E]  text-xs font-mono font-semibold font-medium uppercase tracking-wider">
-                ERROR 404
-              </span>
-              <h1 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight text-ink-900">
-                We Couldn&apos;t Find That Page
-              </h1>
-              <p className="text-lg text-ink-500 max-w-xl leading-relaxed">
-                The page may have moved, or the web address might be incorrect. Use the search tool or popular service shortcuts below to recover quickly.
-              </p>
-            </div>
-
-            {/* ACTION BUTTONS */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                href="/search/"
-                className="px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 inline-flex items-center gap-2 cursor-pointer text-decoration-none"
-              >
-                <Search className="w-4 h-4 text-[#1D201E]" />
-                <span>Search Bestone Services</span>
-              </Link>
-
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#F6F5F1] border border-[#ECEAE3] text-[#1D201E] hover:opacity-90 transition-opacity duration-200 text-decoration-none gap-2 cursor-pointer"
-              >
-                <Home className="w-4 h-4 text-ink-600" />
-                <span>Return to Homepage</span>
-              </Link>
-            </div>
+    <main id="main-content" className="min-h-[70vh] bg-paper text-ink">
+      <div className="mx-auto grid max-w-[1240px] gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1fr_1fr] lg:px-8">
+        <div className="grid content-start gap-5">
+          <Petals size={64} />
+          <p className="ts-fig m-0 text-[96px]">404</p>
+          <h1 className="ts-head m-0 text-[clamp(32px,4vw,48px)]">
+            This page has moved. <span className="ts-soft">Everything else is one tap away.</span>
+          </h1>
+          <div className="flex flex-wrap gap-2">
+            <Button href="/prices/" size="lg">See every price</Button>
+            <Button href="/" variant="white" size="lg">Home</Button>
           </div>
-
-          {/* POPULAR SHORTCUTS GRID */}
-          <div className="space-y-4 text-start">
-            <h2 className="font-heading text-xl font-medium text-ink-900">Popular Service Destinations</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {shortcuts.map((sc, idx) => {
-                const Icon = sc.icon;
-                return (
-                  <Link
-                    key={idx}
-                    href={sc.href}
-                    className="p-5 rounded-[20px] bg-white border border-[#ECEAE3]  hover:border-[#1D201E] transition-colors duration-200 flex items-center justify-between text-ink-700 text-decoration-none group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-[12px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
-                        <Icon className="w-5 h-5 text-[#1D201E]" />
-                      </div>
-                      <span className="font-heading font-medium text-sm group-hover:underline">{sc.label}</span>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-[#1D201E] opacity-0 group-hover:opacity-100 transition-opacity duration-150 shrink-0" />
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
         </div>
-      </main>
-
-    </>
+        <div className="grid content-start gap-3">
+          <Eyebrow>Popular pages</Eyebrow>
+          <ul className="m-0 grid list-none gap-1 p-0">
+            {shortcuts.map((s) => (
+              <li key={s.href}>
+                <Link href={s.href} className="flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3.5 font-semibold no-underline transition-colors duration-150 hover:bg-lime-soft">
+                  {s.label}
+                  <ArrowRight className="size-4 text-muted" aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </main>
   );
 }
-
-

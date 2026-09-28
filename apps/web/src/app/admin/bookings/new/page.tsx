@@ -101,7 +101,7 @@ export default function AdminNewBookingPage() {
       <div className="flex items-center justify-between">
         <Link
           href="/admin/bookings"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#ECEAE3] text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to Bookings Queue</span>
@@ -110,12 +110,12 @@ export default function AdminNewBookingPage() {
         <span className="text-xs font-mono font-medium uppercase text-ink-500">MANUAL ENQUIRY FORM</span>
       </div>
 
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#ECEAE3]">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 ">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
           <Sparkles className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
           <span>Admin Phone / Email Enquiry Entry</span>
         </div>
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Create Manual Booking</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Create Manual Booking</h1>
         <p className="text-sm text-ink-500">Enter enquiry details taken over phone or email. Uses canonical server reference generation.</p>
       </div>
 
@@ -129,8 +129,8 @@ export default function AdminNewBookingPage() {
       <form onSubmit={handleSubmit} className="space-y-6">
         
         {/* 1. Category & Service Selector */}
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
             Service Category & Name
           </h3>
 
@@ -170,8 +170,8 @@ export default function AdminNewBookingPage() {
         </div>
 
         {/* 2. Customer Contact */}
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
             Customer Contact Information
           </h3>
 
@@ -215,8 +215,8 @@ export default function AdminNewBookingPage() {
         </div>
 
         {/* 3. Address & Schedule */}
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#ECEAE3] pb-2">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
             Address & Requested Schedule
           </h3>
 
@@ -286,7 +286,7 @@ export default function AdminNewBookingPage() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-4 rounded-full bg-[#B7F56A] text-[#1D201E] font-heading font-medium text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border border-[#ECEAE3]"
+          className="w-full py-4 rounded-xl bg-[#B7F56A] text-[#1D201E] font-heading font-medium text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer "
         >
           {submitting ? "Creating Booking Record..." : "Submit Manual Booking Record"}
         </button>

@@ -22,10 +22,10 @@ export function SmartPricingCTA({
   const pricingHref = `/prices/?category=${encodeURIComponent(category)}&service=${encodeURIComponent(serviceId)}#smart-calculator`;
 
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[20px] p-6 sm:p-8 border border-[#ECEAE3] space-y-4 text-start ">
+    <SectionReveal className="bg-white rounded-[20px] p-6 sm:p-8 space-y-4 text-start ">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1.5 max-w-xl">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs font-bold uppercase">
+          <div className="inline-flex items-center gap-1.5 ts-eyebrow">
             <Tag className="w-3.5 h-3.5 text-[#1D201E] shrink-0" aria-hidden="true" />
             <span>Instant Estimator</span>
           </div>

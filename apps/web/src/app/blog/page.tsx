@@ -77,7 +77,7 @@ export default function BlogIndexPage() {
       {/* ===================================================================
           1. CLEAN EDITORIAL HERO
           =================================================================== */}
-      <section className="bg-[#F6F5F1] border-b border-[#ECEAE3]">
+      <section className="bg-[#F6F5F1] border-[#ECEAE3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-0">
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#1D201E]/80 font-medium">
             <Link href="/" className="hover:underline">Home</Link>
@@ -88,12 +88,12 @@ export default function BlogIndexPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-6">
           <div>
-            <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#EAF8D6]/80 border border-[#ECEAE3] text-xs font-bold uppercase tracking-wider text-[#1D201E] w-fit ">
+            <span className="inline-flex items-center gap-1.5 ts-eyebrow">
               Property insights &amp; guides
             </span>
           </div>
 
-          <h1 className="m-0 font-heading text-4xl sm:text-5xl lg:text-[52px] font-semibold leading-[1.06] tracking-tight text-[#1D201E] max-w-3xl">
+          <h1 className="m-0 font-heading text-4xl sm:text-5xl lg:text-[52px] font-[650] leading-[1.06] tracking-tight text-[#1D201E] max-w-3xl">
             Bestone Knowledge Hub
           </h1>
           <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1D201E]/90 max-w-2xl font-normal">
@@ -113,7 +113,7 @@ export default function BlogIndexPage() {
             return (
               <article
                 key={post.slug}
-                className="group bg-white border border-[#ECEAE3] rounded-[18px] p-5 flex flex-col gap-2.5  hover:border-[#1D201E] transition-colors duration-150"
+                className="group bg-white rounded-[18px] p-5 flex flex-col gap-2.5 hover:bg-[#EAF8D6] transition-colors duration-150"
               >
                 <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] text-[#1D201E]">
                   <HugeiconsIcon icon={Icon} size={20} strokeWidth={1.8} className="text-[#1D201E]" />
@@ -123,7 +123,7 @@ export default function BlogIndexPage() {
                   {post.category}
                 </span>
 
-                <h2 className="m-0 font-heading text-lg font-semibold leading-snug text-[#1D201E]">
+                <h2 className="m-0 font-heading text-lg font-[650] leading-snug text-[#1D201E]">
                   <Link href={`/blog/${post.slug}/`} className="text-decoration-none text-[#1D201E]">
                     {post.title}
                   </Link>
@@ -133,7 +133,7 @@ export default function BlogIndexPage() {
                   {post.description}
                 </p>
 
-                <div className="mt-auto pt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#ECEAE3]">
+                <div className="mt-auto pt-3 flex flex-wrap items-center justify-between gap-2 border-[#ECEAE3]">
                   <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1D201E]/70">
                     <HugeiconsIcon icon={Clock01Icon} size={14} strokeWidth={1.8} className="text-[#1D201E]/70 shrink-0" />
                     {post.readTime}
@@ -154,10 +154,10 @@ export default function BlogIndexPage() {
         {/* ===================================================================
             3. BOTTOM CALLOUT — light editorial, lime stripe
             =================================================================== */}
-        <section className="mt-12 sm:mt-16 p-6 sm:p-11 rounded-[26px] bg-white border border-[#ECEAE3] grid md:grid-cols-[1fr_auto] gap-6 sm:gap-7 items-center relative overflow-hidden">
+        <section className="mt-12 sm:mt-16 p-6 sm:p-11 rounded-[26px] bg-white grid md:grid-cols-[1fr_auto] gap-6 sm:gap-7 items-center relative overflow-hidden">
           <span className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#B7F56A] rounded-l-[26px]" aria-hidden="true" />
           <div className="space-y-3">
-            <h2 data-reveal className="m-0 font-heading text-2xl sm:text-4xl font-semibold tracking-tight text-[#1D201E]">
+            <h2 data-reveal className="m-0 font-heading text-2xl sm:text-4xl font-[650] tracking-tight text-[#1D201E]">
               Need the job done, not just the guide?
             </h2>
             <p className="m-0 text-base leading-relaxed text-[#1D201E]/80 max-w-xl font-normal">

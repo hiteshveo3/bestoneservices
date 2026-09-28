@@ -1,9 +1,9 @@
 "use client";
 
 import { useId, useState } from "react";
-import { ChevronLeft, Clock, MapPin, User, Check, MessageCircle, Phone, AlertCircle } from "lucide-react";
+import { DayStrip, Sundial } from "@/components/touchstone/sundial";
+import { ChevronLeft, MapPin, User, Check, MessageCircle, Phone, AlertCircle } from "lucide-react";
 import { CONTACT } from "@/config/contact";
-import { CustomDatePicker } from "@/components/ui/custom-date-picker";
 
 interface BookingData {
   service: string;
@@ -48,9 +48,9 @@ const SERVICES = [
 ];
 
 const TIME_RANGES = [
-  { id: "morning", label: "Morning", time: "8:00 AM - 12:00 PM" },
-  { id: "afternoon", label: "Afternoon", time: "12:00 PM - 4:00 PM" },
-  { id: "evening", label: "Evening", time: "4:00 PM - 8:00 PM" },
+  { id: "morning", label: "Morning", time: "8am–12pm" },
+  { id: "afternoon", label: "Afternoon", time: "12–4pm" },
+  { id: "evening", label: "Evening", time: "4–8pm" },
 ];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -198,20 +198,20 @@ export function ModernBookingWizard() {
   const whatsappMessage = buildWhatsappMessage(formData);
 
   return (
-    <div className="min-h-screen bg-[#F6F5F1] pb-32">
+    <div className="min-h-screen bg-[image:var(--grad-wash)] pb-32">
       {/* Header */}
-      <div className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-[#ECEAE3]">
+      <div className="sticky top-0 z-30 bg-[#F6F5F1]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between mb-4">
             <button
               onClick={() => step > 0 && setStep(step - 1)}
               disabled={step === 0}
               aria-label="Go back to previous step"
-              className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-[#F6F5F1] rounded-[12px] text-[#1D201E] disabled:opacity-30 transition-colors duration-150"
+              className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-[#F6F5F1] rounded-[12px] text-[#1D201E] disabled:opacity-30 transition-colors duration-150"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <h1 className="font-heading text-2xl font-medium text-ink-900">
+            <h1 className="font-heading text-2xl font-[650] text-ink-900">
               Book Now
             </h1>
             <div className="w-9" />
@@ -222,9 +222,7 @@ export function ModernBookingWizard() {
             {steps.map((s, i) => (
               <div
                 key={i}
-                className={`flex-1 h-1 rounded-full ${
-                  i <= step ? "bg-[#B7F56A]" : "bg-[#ECEAE3]"
-                }`}
+                className={`h-2 flex-1 rounded ${i <= step ? "bg-[image:var(--grad-lime)]" : "bg-[#ECEAE3]"}`}
               />
             ))}
           </div>
@@ -238,7 +236,7 @@ export function ModernBookingWizard() {
         {step === 0 && (
           <div className="space-y-4">
             <div className="mb-6">
-              <h2 className="text-3xl font-heading font-medium text-ink-900 mb-2">
+              <h2 className="text-3xl font-heading font-[650] text-ink-900 mb-2">
                 What service do you need?
               </h2>
               <p className="text-ink-500">Choose the service that fits your needs</p>
@@ -251,7 +249,7 @@ export function ModernBookingWizard() {
                   onClick={() => handleServiceSelect(service.id)}
                   role="radio"
                   aria-checked={formData.service === service.id}
-                  className={`p-6 rounded-[20px] border transition-colors duration-200 text-start group ${ formData.service === service.id ? "border-[#ECEAE3] bg-[#EAF8D6]/40 text-[#1D201E] " : "border-[#ECEAE3] bg-white hover:border-[#ECEAE3] text-ink-900" }`}
+                  className={`p-6 rounded-[20px] transition-colors duration-200 text-start group ${ formData.service === service.id ? " bg-[#EAF8D6]/40 text-[#1D201E] " : " bg-white hover:border-[#ECEAE3] text-ink-900" }`}
                 >
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-medium text-ink-600 text-lg">
@@ -273,57 +271,27 @@ export function ModernBookingWizard() {
         {step === 1 && (
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl font-heading font-medium text-ink-900 mb-2">
+              <h2 className="text-3xl font-heading font-[650] text-ink-900 mb-2">
                 When do you need it?
               </h2>
               <p className="text-ink-500">Select your preferred date and time</p>
             </div>
 
-            {/* Custom Date Picker */}
-            <div>
-              <CustomDatePicker
-                id={fieldId("date")}
-                label="Select date"
-                value={formData.date}
-                onChange={set("date")}
-                minDate={new Date().toISOString().split("T")[0]}
-                error={errors.date}
-              />
+            {/* Touchstone sundial: working days, then the part of the day (Lab 04 R1 C + D) */}
+            <div className="grid gap-2">
+              <p className="m-0 text-sm font-semibold text-[#1D201E]" id={fieldId("date-label")}>Pick a day</p>
+              <DayStrip value={formData.date} onChange={set("date")} labelledBy={fieldId("date-label")} />
+              <FieldError id={errorId("date")} message={errors.date} />
             </div>
-
-            {/* Time Range */}
-            <div>
-              <label className="block text-sm font-semibold text-[#1D201E] mb-3" id={fieldId("time-label")}>
-                <Clock className="w-4 h-4 inline mr-2 text-[#1D201E]" aria-hidden="true" />
-                Select time slot
-              </label>
-              <div
-                className="grid grid-cols-3 gap-3"
-                role="radiogroup"
-                aria-labelledby={fieldId("time-label")}
-                aria-describedby={errors.timeRange ? errorId("timeRange") : undefined}
-              >
-                {TIME_RANGES.map((range) => (
-                  <button
-                    key={range.id}
-                    type="button"
-                    onClick={() => handleTimeSelect(range.id)}
-                    disabled={!formData.date}
-                    role="radio"
-                    aria-checked={formData.timeRange === range.id}
-                    className={`p-4 rounded-[14px] border-2 transition-all text-center cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed ${
-                      formData.timeRange === range.id
-                        ? "border-[#1D201E] bg-[#EAF8D6] text-[#1D201E]  font-bold scale-[1.02]"
-                        : "border-[#ECEAE3] bg-white hover:border-[#ECEAE3] hover:bg-[#F6F5F1]"
-                    }`}
-                  >
-                    <p className="font-bold text-[#1D201E] text-sm">
-                      {range.label}
-                    </p>
-                    <p className="text-xs text-[#1D201E]/70 mt-1 font-medium">{range.time}</p>
-                  </button>
-                ))}
-              </div>
+            <div className="grid gap-2">
+              <p className="m-0 text-sm font-semibold text-[#1D201E]" id={fieldId("time-label")}>And a time</p>
+              <Sundial
+                parts={TIME_RANGES.map((r) => ({ id: r.id, label: r.label, time: r.time }))}
+                value={formData.timeRange}
+                onChange={handleTimeSelect}
+                disabled={!formData.date}
+                labelledBy={fieldId("time-label")}
+              />
               <FieldError id={errorId("timeRange")} message={errors.timeRange} />
             </div>
           </div>
@@ -333,7 +301,7 @@ export function ModernBookingWizard() {
         {step === 2 && (
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl font-heading font-medium text-ink-900 mb-2">
+              <h2 className="text-3xl font-heading font-[650] text-ink-900 mb-2">
                 Where is your property?
               </h2>
               <p className="text-[#1D201E]/70 font-medium">Help us locate your property across Greater London</p>
@@ -399,7 +367,7 @@ export function ModernBookingWizard() {
         {step === 3 && (
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl font-heading font-medium text-ink-900 mb-2">
+              <h2 className="text-3xl font-heading font-[650] text-ink-900 mb-2">
                 Almost there!
               </h2>
               <p className="text-[#1D201E]/70 font-medium">Your contact details for booking confirmation</p>
@@ -477,7 +445,7 @@ export function ModernBookingWizard() {
               </div>
 
               {/* Summary — announced to screen readers as it becomes complete */}
-              <div className="bg-white p-5 rounded-[20px] border border-[#ECEAE3] space-y-2" aria-live="polite">
+              <div className="bg-white p-5 rounded-[20px] space-y-2" aria-live="polite">
                 <p className="text-sm text-ink-500">
                   <strong>Service:</strong> {SERVICES.find(s => s.id === formData.service)?.name}
                 </p>
@@ -513,7 +481,7 @@ export function ModernBookingWizard() {
                     </a>
                     <a
                       href={CONTACT.mobile.tel}
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white text-[#1D201E] border border-[#ECEAE3] hover:opacity-90 transition-opacity duration-200 cursor-pointer gap-2"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white text-[#1D201E] hover:opacity-90 transition-opacity duration-200 cursor-pointer gap-2"
                     >
                       <Phone className="w-4 h-4" />
                       Call us instead
@@ -521,7 +489,7 @@ export function ModernBookingWizard() {
                   </div>
                   <details className="text-xs text-ink-500">
                     <summary className="cursor-pointer select-none">What we&apos;ll send</summary>
-                    <pre className="mt-2 whitespace-pre-wrap break-words rounded-[12px] bg-[#F6F5F1] border border-[#ECEAE3] p-3 text-xs text-ink-600">
+                    <pre className="mt-2 whitespace-pre-wrap break-words rounded-[12px] bg-white p-3 text-xs text-ink-600">
                       {whatsappMessage}
                     </pre>
                   </details>
@@ -535,8 +503,8 @@ export function ModernBookingWizard() {
         {/* Sidebar — what happens after the customer submits, kept visible
             alongside the form on desktop rather than only shown afterward. */}
         <aside className="hidden lg:block space-y-4">
-          <div className="rounded-[24px] border border-[#ECEAE3] bg-white p-6  lg:sticky lg:top-32">
-            <h2 className="text-base font-medium text-ink-900">What happens next</h2>
+          <div className="rounded-[24px] bg-white p-6 lg:sticky lg:top-32">
+            <h2 className="text-base font-[650] text-ink-900">What happens next</h2>
             <ol className="mt-4 space-y-3 text-sm text-ink-600">
               {[
                 "We confirm availability for your date within 2 working hours.",
@@ -553,7 +521,7 @@ export function ModernBookingWizard() {
             </ol>
             <a
               href={CONTACT.mobile.tel}
-              className="mt-5 inline-flex w-full items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white text-[#1D201E] border border-[#ECEAE3] hover:opacity-90 transition-opacity duration-200 cursor-pointer gap-2"
+              className="mt-5 inline-flex w-full items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-white text-[#1D201E] hover:opacity-90 transition-opacity duration-200 cursor-pointer gap-2"
             >
               <Phone className="w-4 h-4" />
               Prefer to call? {CONTACT.mobile.display}
@@ -563,12 +531,12 @@ export function ModernBookingWizard() {
       </div>
 
       {/* Sticky Bottom CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-[#ECEAE3] z-30 ">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-[#ECEAE3] z-30 ">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-4">
           <button
             onClick={advance}
             disabled={isSubmitting}
-            className="w-full px-6 py-3.5 bg-[#B7F56A] text-[#1D201E] font-bold text-base rounded-[14px] border-none hover:bg-[#A2EA4E] disabled:opacity-50 transition-all  flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]"
+            className="w-full px-6 py-3.5 bg-[#B7F56A] text-[#1D201E] font-bold text-base rounded-[14px] border-none hover:bg-[#A2EA4E] disabled:opacity-50 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]"
           >
             {isSubmitting ? (
               <>

@@ -14,7 +14,7 @@ export function HeroAbout() {
           
           <div className="lg:col-span-6 space-y-6 text-start">
             <SectionReveal disabled>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 ts-eyebrow">
                 <Sparkles className="w-4 h-4 text-[#1D201E] shrink-0" />
                 <span>About Bestone Services</span>
               </div>
@@ -41,17 +41,17 @@ export function HeroAbout() {
           </div>
 
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-[20px] border border-[#ECEAE3] overflow-hidden bg-[#F6F5F1] aspect-[4/3] max-h-[460px] ">
+            <div className="relative rounded-[20px] overflow-hidden bg-white aspect-[4/3] max-h-[460px] ">
               <ImageReveal disabled 
-                src="/images/about-team-v1.png" 
+                src="/images/service/best-one-team-hero-v1.webp" 
                 alt="About Bestone Services Team" 
                 className="w-full h-full"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-[#F6F5F1]/95 backdrop-blur-md p-3.5 rounded-[16px] border border-[#ECEAE3] flex items-center justify-between text-start ">
+              <div className="absolute bottom-4 left-4 right-4 bg-[#F6F5F1]/95 backdrop-blur-md p-3.5 rounded-[16px] flex items-center justify-between text-start ">
                 <div className="font-heading text-base font-bold text-[#1D201E]">
                   Serving London Properties
                 </div>
-                <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] border border-[#ECEAE3] text-xs font-mono font-bold">
+                <span className="px-3 py-1 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-bold">
                   TRUSTED
                 </span>
               </div>

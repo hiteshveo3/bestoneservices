@@ -29,10 +29,10 @@ export function ServiceStickyAction({
           duration: MOTION_DURATION.fast,
           ease: MOTION_EASE,
         }}
-        className="pointer-events-auto bg-[#F6F5F1]/95 backdrop-blur-md p-2 sm:p-2.5 rounded-full border border-[#ECEAE3] flex items-center justify-between gap-3 sm:gap-4 max-w-lg w-full mx-4 sm:mx-auto "
+        className="pointer-events-auto bg-[#F6F5F1]/95 backdrop-blur-md p-2 sm:p-2.5 rounded-full flex items-center justify-between gap-3 sm:gap-4 max-w-lg w-full mx-4 sm:mx-auto "
       >
         <div className="flex items-center gap-3 px-3">
-          <span className="px-3 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E] font-bold font-mono text-sm sm:text-base shrink-0 border border-[#ECEAE3]">
+          <span className="px-3 py-1 rounded-xl bg-[#EAF8D6] text-[#1D201E] font-bold font-mono text-sm sm:text-base shrink-0 ">
             {startingPrice}
           </span>
           <span className="text-base font-semibold text-[#1D201E] truncate">

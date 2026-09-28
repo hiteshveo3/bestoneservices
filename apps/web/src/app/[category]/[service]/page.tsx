@@ -6,7 +6,7 @@ import { locations } from "@/content/locations";
 import { servicePageSchema } from "@/lib/structured-data";
 import { generateServiceOfferSchema, generateCostFaqSchema } from "@/lib/service-offer-schema";
 import { absoluteUrl } from "@/config/site";
-import { MintLimeServiceLayout } from "@/components/service/mint-lime-service-layout";
+import { ServiceLayout } from "@/components/service/service-layout";
 
 // A handful of the highest-search-volume locations, used as real internal
 // links to that service's location page (instead of the old hardcoded
@@ -117,7 +117,7 @@ export default async function ServicePage({ params }: { params: Promise<{ catego
   return (
     <main id="main-content" className="text-start">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <MintLimeServiceLayout
+      <ServiceLayout
         category={category}
         service={service}
         categoryLabel={serviceCatalog[category as ServiceCategory].label}

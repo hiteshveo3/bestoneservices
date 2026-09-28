@@ -107,14 +107,14 @@ export default function AdminCommunicationsPage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER BAR */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#ECEAE3]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 ">
         <span className="text-xs font-mono font-medium uppercase text-ink-500">COMMUNICATIONS CENTER</span>
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Customer Direct Chat & Automated Triggers</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Customer Direct Chat & Automated Triggers</h1>
         <p className="text-sm text-ink-500">Real-time customer messaging, support inbox, and SMS/Email trigger logs</p>
       </div>
 
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#ECEAE3]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Loading communications inbox...</p>
         </div>
@@ -122,10 +122,10 @@ export default function AdminCommunicationsPage() {
         <div className="grid lg:grid-cols-12 gap-6">
           
           {/* CONVERSATIONS INBOX LIST (4 Cols) */}
-          <div className="lg:col-span-4 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-3">
+          <div className="lg:col-span-4 bg-white rounded-[18px] p-6 space-y-4 ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <span className="text-xs font-mono font-medium uppercase text-ink-500">CUSTOMER INBOX</span>
-              <span className="px-2.5 py-0.5 rounded-full bg-[#F6F5F1] text-ink-500 text-[10px] font-mono font-medium">
+              <span className="px-2.5 py-0.5 rounded-md bg-[#F6F5F1] text-ink-500 text-[10px] font-mono font-medium">
                 {conversations.length} CHATS
               </span>
             </div>
@@ -137,7 +137,7 @@ export default function AdminCommunicationsPage() {
                     key={conv.id}
                     type="button"
                     onClick={() => setSelectedConvId(conv.id)}
-                    className={`w-full p-4 rounded-[18px] text-start transition-colors duration-200 border cursor-pointer ${ selectedConv?.id === conv.id ? "bg-[#EAF8D6]/70 border-[#ECEAE3] " : "bg-white border-[#ECEAE3] hover:border-[#1D201E]" }`}
+                    className={`w-full p-4 rounded-[18px] text-start transition-colors duration-200 cursor-pointer ${ selectedConv?.id === conv.id ? "bg-[#EAF8D6]/70 " : "bg-white hover:border-[#1D201E]" }`}
                   >
                     <div className="flex justify-between items-center text-xs font-mono">
                       <span className="font-medium text-ink-600">{conv.bookingReference}</span>
@@ -160,17 +160,17 @@ export default function AdminCommunicationsPage() {
           </div>
 
           {/* ACTIVE CHAT WORKSPACE (5 Cols) */}
-          <div className="lg:col-span-5 bg-white rounded-[18px] p-6 space-y-4 flex flex-col h-[650px] border border-[#ECEAE3]">
+          <div className="lg:col-span-5 bg-white rounded-[18px] p-6 space-y-4 flex flex-col h-[650px] ">
             {selectedConv ? (
               <>
-                <div className="border-b border-[#ECEAE3] pb-3 flex justify-between items-center">
+                <div className=" border-[#ECEAE3] pb-3 flex justify-between items-center">
                   <div>
                     <span className="text-[10px] font-mono uppercase text-ink-500">LIVE CHAT CHANNEL</span>
                     <h3 className="font-heading font-medium text-base text-ink-900">
                       {selectedConv.customerName} ({selectedConv.bookingReference})
                     </h3>
                   </div>
-                  <span className="px-2 py-0.5 rounded-full bg-[#F6F5F1] text-[10px] font-mono text-ink-500">
+                  <span className="px-2 py-0.5 rounded-md bg-[#F6F5F1] text-[10px] font-mono text-ink-500">
                     {selectedConv.customerEmail}
                   </span>
                 </div>
@@ -184,7 +184,7 @@ export default function AdminCommunicationsPage() {
                         className={`flex flex-col ${isAdmin ? "items-end" : "items-start"}`}
                       >
                         <div
-                          className={`max-w-xs p-3 rounded-[18px] text-xs font-medium space-y-1 ${ isAdmin ? "bg-[#B7F56A] text-[#1D201E] rounded-br-none" : "bg-[#F6F5F1] text-ink-600 rounded-bl-none border border-[#ECEAE3]" }`}
+                          className={`max-w-xs p-3 rounded-[18px] text-xs font-medium space-y-1 ${ isAdmin ? "bg-[#B7F56A] text-[#1D201E] rounded-br-none" : "bg-white text-ink-600 rounded-bl-none " }`}
                         >
                           <span className={`text-[10px] font-mono font-medium uppercase block ${isAdmin ? "text-[#1D201E]" : "text-ink-500"}`}>
                             {msg.senderName} ({msg.senderRole})
@@ -203,7 +203,7 @@ export default function AdminCommunicationsPage() {
                   </div>
                 )}
 
-                <form onSubmit={handleAdminReply} className="flex gap-2 pt-2 border-t border-[#ECEAE3]">
+                <form onSubmit={handleAdminReply} className="flex gap-2 pt-2 border-[#ECEAE3]">
                   <input
                     type="text"
                     value={replyText}
@@ -232,8 +232,8 @@ export default function AdminCommunicationsPage() {
           </div>
 
           {/* AUTOMATED TRIGGERS LOG FEED (3 Cols) */}
-          <div className="lg:col-span-3 bg-white rounded-[18px] p-6 space-y-4 border border-[#ECEAE3]">
-            <div className="border-b border-[#ECEAE3] pb-3">
+          <div className="lg:col-span-3 bg-white rounded-[18px] p-6 space-y-4 ">
+            <div className=" border-[#ECEAE3] pb-3">
               <span className="text-xs font-mono font-medium uppercase text-ink-500">SMS & EMAIL LOGS</span>
               <h3 className="font-heading font-medium text-sm text-ink-900">Trigger Dispatches</h3>
             </div>
@@ -241,16 +241,16 @@ export default function AdminCommunicationsPage() {
             {commLogs.length > 0 ? (
               <div className="space-y-3 max-h-[550px] overflow-y-auto pr-1">
                 {commLogs.map((log) => (
-                  <div key={log.id} className="p-3 rounded-[18px] bg-white border border-[#ECEAE3] space-y-1.5 text-xs font-mono">
+                  <div key={log.id} className="p-3 rounded-[18px] bg-white space-y-1.5 text-xs font-mono">
                     <div className="flex justify-between items-center">
-                      <span className="px-2 py-0.5 rounded-full bg-success-50 text-success-900 text-[9px] font-medium uppercase">
+                      <span className="px-2 py-0.5 rounded-xl bg-success-50 text-success-900 text-[9px] font-medium uppercase">
                         {log.channel} • {log.triggerEvent.replace(/_/g, " ")}
                       </span>
                     </div>
 
                     <p className="font-medium text-ink-600">{log.bookingReference}</p>
                     <p className="text-[10px] text-ink-500 truncate">{log.recipientEmail}</p>
-                    <p className="text-[10px] text-ink-600 italic bg-white p-2 rounded-[18px] border border-[#ECEAE3]">
+                    <p className="text-[10px] text-ink-600 italic bg-white p-2 rounded-[18px] ">
                       &ldquo;{log.messageSnippet}&rdquo;
                     </p>
                   </div>

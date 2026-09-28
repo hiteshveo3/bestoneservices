@@ -52,7 +52,7 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen bg-[#F6F5F1] text-start flex flex-col font-sans">
         
         {/* CUSTOMER TOP NAVIGATION BAR */}
-        <header className="sticky top-0 z-30 bg-white border-b border-[#ECEAE3]">
+        <header className="sticky top-0 z-30 bg-white border-[#ECEAE3]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
             
             <div className="flex items-center gap-3">
@@ -79,7 +79,7 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
 
               <Link
                 href="/"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F6F5F1] text-ink-600 text-xs font-medium hover:bg-[#EAF8D6] text-decoration-none"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#F6F5F1] text-ink-600 text-xs font-medium hover:bg-[#EAF8D6] text-decoration-none"
               >
                 <span>Public Website</span>
                 <ChevronRight className="w-3 h-3 text-ink-600" />
@@ -112,7 +112,7 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
           
           {/* DESKTOP CUSTOMER SIDEBAR */}
           <aside className="hidden lg:block w-56 shrink-0 space-y-4">
-            <div className="bg-white rounded-[16px] p-4 space-y-2 sticky top-22 border border-[#ECEAE3]">
+            <div className="bg-white rounded-[16px] p-4 space-y-2 sticky top-22 ">
               <span className="text-[10px] font-mono font-medium uppercase text-ink-500 px-3 tracking-wider block mb-2">
                 MY ACCOUNT
               </span>
@@ -124,7 +124,7 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]" } border border-[#ECEAE3]`}
+                    className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]" } `}
                   >
                     <div className="flex items-center gap-2.5">
                       <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-ink-600" : "text-ink-500"}`} />
@@ -145,8 +145,8 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
           {mobileMenuOpen && (
             <div className="fixed inset-0 z-40 lg:hidden flex">
               <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-xs" onClick={() => setMobileMenuOpen(false)} />
-              <div className="relative w-64 max-w-[75vw] bg-white h-full p-4 space-y-6 overflow-y-auto z-50 text-start border border-[#ECEAE3]">
-                <div className="flex items-center justify-between border-b border-[#ECEAE3] pb-4">
+              <div className="relative w-64 max-w-[75vw] bg-white h-full p-4 space-y-6 overflow-y-auto z-50 text-start ">
+                <div className="flex items-center justify-between border-[#ECEAE3] pb-4">
                   <span className="font-heading font-medium text-lg text-ink-900">Account Menu</span>
                   <button
                     type="button"
@@ -168,10 +168,10 @@ export function CustomerShell({ children }: { children: React.ReactNode }) {
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
                         className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${
-                          isActive
-                            ? "bg-[#B7F56A] text-[#1D201E] font-medium"
-                            : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]"
-                        }`}
+ isActive
+ ? "bg-[#B7F56A] text-[#1D201E] font-medium"
+ : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                       >
                         <div className="flex items-center gap-2.5">
                           <Icon className="w-4 h-4 text-ink-600 shrink-0" />

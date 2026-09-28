@@ -12,8 +12,8 @@ const HIDDEN_PREFIXES = ["/booking", "/admin", "/account"];
 const REVEAL_AT = 420;
 
 /**
- * Mobile-only conversion bar that slides in on scroll and sits directly above
- * MobileBottomNav. Deliberately one action — the bottom bar already carries
+ * Mobile-only conversion bar that slides in on scroll and sits at the bottom of
+ * the screen on phones. Deliberately one action — the bottom bar already carries
  * navigation, so this stays a single lime button.
  */
 export function MobileFloatingCta() {
@@ -35,9 +35,9 @@ export function MobileFloatingCta() {
     <div
       aria-hidden={!visible}
       className={`fixed left-0 right-0 z-30 lg:hidden px-4 transition-[opacity,transform] duration-200 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
-      }`}
-      style={{ bottom: "calc(env(safe-area-inset-bottom) + 72px)" }}
+ visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+ }`}
+      style={{ bottom: "calc(env(safe-area-inset-bottom) + 10px)" }}
     >
       <div className="flex items-center justify-between gap-2 rounded-[18px] bg-white py-2 pl-4 pr-2">
         <span className="grid leading-tight">

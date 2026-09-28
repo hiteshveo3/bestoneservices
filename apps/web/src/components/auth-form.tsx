@@ -23,13 +23,13 @@ function AuthFrame({ children, title, subtitle }: { children: React.ReactNode; t
       <div className="w-full max-w-4xl grid lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Left Column: Bestone Value & Identity (Desktop) */}
-        <div className="hidden lg:flex lg:col-span-5 p-8 rounded-[16px] bg-white space-y-6 flex-col justify-between text-start border border-[#ECEAE3]">
+        <div className="hidden lg:flex lg:col-span-5 p-8 rounded-[16px] bg-white space-y-6 flex-col justify-between text-start ">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF8D6] text-[#1D201E]  text-xs font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#EAF8D6] text-[#1D201E] text-xs font-semibold">
               <Sparkles className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
               <span>Bestone Account</span>
             </div>
-            <h2 className="font-heading font-medium text-2xl text-ink-900 leading-tight">
+            <h2 className="font-heading font-[650] text-2xl text-ink-900 leading-tight">
               {title}
             </h2>
             <p className="text-sm text-ink-500 leading-relaxed">
@@ -37,7 +37,7 @@ function AuthFrame({ children, title, subtitle }: { children: React.ReactNode; t
             </p>
           </div>
 
-          <div className="space-y-3 pt-6 border-t border-[#ECEAE3]">
+          <div className="space-y-3 pt-6 border-[#ECEAE3]">
             <div className="flex items-center gap-2 text-xs font-medium text-ink-600">
               <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
               <span>Verified Customer & Admin Security</span>
@@ -49,7 +49,7 @@ function AuthFrame({ children, title, subtitle }: { children: React.ReactNode; t
         </div>
 
         {/* Right Column: Interactive Auth Form */}
-        <div className="lg:col-span-7 bg-white rounded-[16px] p-6 sm:p-10 space-y-6 text-start border border-[#ECEAE3]">
+        <div className="lg:col-span-7 bg-white rounded-[16px] p-6 sm:p-10 space-y-6 text-start ">
           {children}
         </div>
 
@@ -115,7 +115,7 @@ export function LoginForm({ next }: { next?: string }) {
       subtitle="Access your bookings, track estimates, view invoices, and manage your property preferences securely."
     >
       <div className="space-y-2">
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Sign In</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Sign In</h1>
         <p className="text-sm text-ink-500">Enter your account credentials to continue</p>
       </div>
 
@@ -171,7 +171,7 @@ export function LoginForm({ next }: { next?: string }) {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-3.5 px-6 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#ECEAE3]"
+          className="w-full py-3.5 px-6 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 "
         >
           <span>{submitting ? "Signing in..." : "Sign In"}</span>
           <ArrowRight className="w-4 h-4 text-[#1D201E]" />
@@ -179,7 +179,7 @@ export function LoginForm({ next }: { next?: string }) {
       </form>
 
       <div className="relative py-2">
-        <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#ECEAE3]"></div></div>
+        <div className="absolute inset-0 flex items-center"><div className="w-full border-[#ECEAE3]"></div></div>
         <div className="relative flex justify-center text-xs font-mono text-ink-500 uppercase">
           <span className="bg-white px-3">or continue with</span>
         </div>
@@ -189,7 +189,7 @@ export function LoginForm({ next }: { next?: string }) {
         type="button"
         disabled={submitting}
         onClick={handleGoogleSubmit}
-        className="w-full py-3 px-6 rounded-full bg-[#F6F5F1] text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
+        className="w-full py-3 px-6 rounded-xl bg-[#F6F5F1] text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
       >
         <GoogleMark />
         <span>Continue with Google</span>
@@ -268,7 +268,7 @@ export function RegisterForm() {
       subtitle="Join thousands of property owners and tenants across London managing cleaning, pest control, and removals online."
     >
       <div className="space-y-2">
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Create Account</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Create Account</h1>
         <p className="text-sm text-ink-500">Fast registration with full account control</p>
       </div>
 
@@ -360,7 +360,7 @@ export function RegisterForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-3.5 px-6 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#ECEAE3]"
+          className="w-full py-3.5 px-6 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 "
         >
           <span>{submitting ? "Creating account..." : "Create Account"}</span>
           <ArrowRight className="w-4 h-4 text-[#1D201E]" />
@@ -368,7 +368,7 @@ export function RegisterForm() {
       </form>
 
       <div className="relative py-2">
-        <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#ECEAE3]"></div></div>
+        <div className="absolute inset-0 flex items-center"><div className="w-full border-[#ECEAE3]"></div></div>
         <div className="relative flex justify-center text-xs font-mono text-ink-500 uppercase">
           <span className="bg-white px-3">or continue with</span>
         </div>
@@ -378,7 +378,7 @@ export function RegisterForm() {
         type="button"
         disabled={submitting}
         onClick={handleGoogleSubmit}
-        className="w-full py-3 px-6 rounded-full bg-[#F6F5F1] text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
+        className="w-full py-3 px-6 rounded-xl bg-[#F6F5F1] text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-3"
       >
         <GoogleMark />
         <span>Continue with Google</span>
@@ -428,7 +428,7 @@ export function ResetForm() {
       subtitle="Enter your verified email address and we'll send you an instant reset link."
     >
       <div className="space-y-2">
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Reset Password</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Reset Password</h1>
         <p className="text-sm text-ink-500">Password recovery link dispatch</p>
       </div>
 
@@ -441,7 +441,7 @@ export function ResetForm() {
           </p>
           <Link
             href="/account/login"
-            className="inline-block px-6 py-2.5 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] text-decoration-none"
+            className="inline-block px-6 py-2.5 rounded-xl bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] text-decoration-none"
           >
             Back to Sign In
           </Link>
@@ -469,7 +469,7 @@ export function ResetForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-3.5 px-6 rounded-full bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 border border-[#ECEAE3]"
+            className="w-full py-3.5 px-6 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none flex items-center justify-center gap-2 "
           >
             <span>{submitting ? "Sending reset link..." : "Send Reset Link"}</span>
             <ArrowRight className="w-4 h-4 text-[#1D201E]" />

@@ -41,7 +41,7 @@ export function EditorialStorytelling({
             </div>
           )}
 
-          <h2 className="font-heading text-2xl sm:text-4xl font-medium text-ink-900 tracking-tight leading-tight">
+          <h2 className="font-heading text-2xl sm:text-4xl font-[650] text-ink-900 tracking-tight leading-tight">
             {title}
           </h2>
 
@@ -67,7 +67,7 @@ export function EditorialStorytelling({
 
         {/* IMAGE CONTAINER (Unwrapped, Open Canvas) */}
         <div className={`relative ${isTextLeft ? "lg:order-2" : "lg:order-1"}`}>
-          <div className="relative rounded-[16px] overflow-hidden border border-[#ECEAE3] bg-[#F6F5F1] aspect-4/3">
+          <div className="relative rounded-[16px] overflow-hidden bg-white aspect-4/3">
             <Image
               src={imageUrl}
               alt={imageAlt}

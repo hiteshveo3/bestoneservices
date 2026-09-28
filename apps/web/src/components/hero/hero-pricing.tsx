@@ -13,7 +13,7 @@ export function HeroPricing() {
           {/* Left Column: Information-Led Pricing Value */}
           <div className="lg:col-span-6 space-y-6 text-start">
             <SectionReveal disabled>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 ts-eyebrow">
                 <Tag className="w-4 h-4 text-[#1D201E]" />
                 <span>Clear & Transparent Pricing</span>
               </div>
@@ -53,10 +53,10 @@ export function HeroPricing() {
                 { title: "Gardening Care", rate: "£70/hr min", desc: "2-gardener team model" },
                 { title: "House Removals", rate: "From £80/hr", desc: "2 or 3 men + Luton Van" },
               ].map((card, i) => (
-                <StaggerItem key={i} className="bg-[#F6F5F1] rounded-[16px] p-5 border border-[#ECEAE3] space-y-2 text-start ">
+                <StaggerItem key={i} className="bg-white rounded-[16px] p-5 space-y-2 text-start ">
                   <div className="flex justify-between items-start">
                     <span className="font-heading text-base font-bold text-[#1D201E]">{card.title}</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs font-mono font-bold">
+                    <span className="px-2.5 py-0.5 rounded-md bg-[#EAF8D6] text-[#1D201E] text-xs font-mono font-bold">
                       {card.rate}
                     </span>
                   </div>

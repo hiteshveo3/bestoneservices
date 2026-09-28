@@ -197,18 +197,18 @@ export function CustomDatePicker({
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`w-full min-h-[52px] px-4 py-3 rounded-[14px] bg-white border-2 text-start flex items-center justify-between gap-3 cursor-pointer transition-all  focus:outline-none ${
-          error 
-            ? "border-red-500 ring-2 ring-red-100" 
-            : isOpen 
-              ? "border-[#1D201E] ring-4 ring-[#1D201E]/30" 
-              : "border-[#ECEAE3] hover:border-[#ECEAE3]"
-        }`}
+        className={`w-full min-h-[52px] px-4 py-3 rounded-[14px] bg-white border-2 text-start flex items-center justify-between gap-3 cursor-pointer transition-all focus:outline-none ${
+ error 
+ ? "border-red-500 ring-2 ring-red-100" 
+ : isOpen 
+ ? "border-[#1D201E] ring-4 ring-[#1D201E]/30" 
+ : "border-[#ECEAE3] hover:border-[#ECEAE3]"
+ }`}
       >
         <div className="flex items-center gap-3 min-w-0">
           <div className={`w-9 h-9 rounded-[10px] flex items-center justify-center shrink-0 transition-colors ${
-            value ? "bg-[#EAF8D6] text-[#1D201E]" : "bg-[#F6F5F1] text-[#1D201E]/60"
-          }`}>
+ value ? "bg-[#EAF8D6] text-[#1D201E]" : "bg-[#F6F5F1] text-[#1D201E]/60"
+ }`}>
             <HugeiconsIcon icon={Calendar03Icon} size={18} strokeWidth={2} />
           </div>
           <div className="truncate">
@@ -224,7 +224,7 @@ export function CustomDatePicker({
           </div>
         </div>
 
-        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#F6F5F1] border border-[#ECEAE3] text-[#1D201E] shrink-0">
+        <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-white text-[#1D201E] shrink-0">
           {isOpen ? "Close" : "Change"}
         </span>
       </button>
@@ -242,29 +242,29 @@ export function CustomDatePicker({
         <div 
           role="dialog"
           aria-label="Calendar date picker"
-          className="absolute left-0 top-[calc(100%+8px)] z-50 w-full sm:w-[350px] bg-white rounded-[18px] border-2 border-[#ECEAE3]  p-4 animate-in fade-in-50 zoom-in-95 duration-150"
+          className="absolute left-0 top-[calc(100%+8px)] z-50 w-full sm:w-[350px] bg-white rounded-[18px] border-2 border-[#ECEAE3] p-4 animate-in fade-in-50 zoom-in-95 duration-150"
         >
           {/* Quick Choice Chips */}
-          <div className="flex items-center gap-2 pb-3 mb-3 border-b border-[#ECEAE3] overflow-x-auto">
+          <div className="flex items-center gap-2 pb-3 mb-3 border-[#ECEAE3] overflow-x-auto">
             <button
               type="button"
               onClick={() => selectQuick(tomorrowISO)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                value === tomorrowISO
-                  ? "bg-[#B7F56A] text-[#1D201E]"
-                  : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6] border border-[#ECEAE3]"
-              }`}
+              className={`px-3 py-1 rounded-md text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+ value === tomorrowISO
+ ? "bg-[#B7F56A] text-[#1D201E]"
+ : "bg-white text-[#1D201E] hover:bg-[#EAF8D6] "
+ }`}
             >
               Tomorrow
             </button>
             <button
               type="button"
               onClick={() => selectQuick(weekendISO)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                value === weekendISO
-                  ? "bg-[#B7F56A] text-[#1D201E]"
-                  : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6] border border-[#ECEAE3]"
-              }`}
+              className={`px-3 py-1 rounded-md text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+ value === weekendISO
+ ? "bg-[#B7F56A] text-[#1D201E]"
+ : "bg-white text-[#1D201E] hover:bg-[#EAF8D6] "
+ }`}
             >
               This Weekend
             </button>
@@ -325,14 +325,14 @@ export function CustomDatePicker({
                     setIsOpen(false);
                   }}
                   className={`w-full aspect-square rounded-[10px] text-xs font-semibold flex items-center justify-center transition-all cursor-pointer relative ${
-                    isSelected
-                      ? "bg-[#B7F56A] text-[#1D201E]  scale-105 font-bold z-10"
-                      : disabled
-                        ? "text-gray-300 cursor-not-allowed hover:bg-transparent"
-                        : isToday
-                          ? "bg-[#EAF8D6] text-[#1D201E] hover:bg-[#A2EA4E]"
-                          : "text-[#1D201E] hover:bg-[#F6F5F1] hover:border hover:border-[#ECEAE3]"
-                  }`}
+ isSelected
+ ? "bg-[#B7F56A] text-[#1D201E] scale-105 font-bold z-10"
+ : disabled
+ ? "text-gray-300 cursor-not-allowed hover:bg-transparent"
+ : isToday
+ ? "bg-[#EAF8D6] text-[#1D201E] hover:bg-[#A2EA4E]"
+ : "text-[#1D201E] hover:bg-[#F6F5F1] hover:border hover:border-[#ECEAE3]"
+ }`}
                 >
                   <span>{day}</span>
                   {isToday && !isSelected && (
@@ -344,7 +344,7 @@ export function CustomDatePicker({
           </div>
 
           {/* Footer note */}
-          <div className="mt-3 pt-2.5 border-t border-[#ECEAE3] flex items-center justify-between text-[11px] text-[#1D201E]/70">
+          <div className="mt-3 pt-2.5 border-[#ECEAE3] flex items-center justify-between text-[11px] text-[#1D201E]/70">
             <span className="flex items-center gap-1">
               <HugeiconsIcon icon={CheckmarkCircle02Icon} size={12} strokeWidth={2} className="text-[#1D201E]" />
               Same-day & next-day slots

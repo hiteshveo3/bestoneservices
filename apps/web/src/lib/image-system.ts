@@ -9,19 +9,19 @@ export const ASPECT_RATIOS: Record<ImageVariant, string> = {
 
 export const VERTICAL_IMAGES = {
   cleaning: {
-    hero: "/images/service-card-cleaning-v1.png",
+    hero: "/images/service/best-one-cleaner-kitchen-v1.webp",
     alt: "Bestone Services Professional End of Tenancy Cleaning",
   },
   "pest-control": {
-    hero: "/images/service-card-pest-control-v1.png",
+    hero: "/images/service/best-one-pest-technician-hero-v1.webp",
     alt: "Bestone Services Certified Pest Control Technician",
   },
   gardening: {
-    hero: "/images/service-card-gardening-v1.png",
+    hero: "/images/service/best-one-team-hero-v1.webp",
     alt: "Bestone Services 2-Gardener Maintenance Team",
   },
   removals: {
-    hero: "/images/service-card-removals-v1.png",
+    hero: "/images/service/best-one-team-hero-v1.webp",
     alt: "Bestone Services House Removals & Moving Team",
   },
 };

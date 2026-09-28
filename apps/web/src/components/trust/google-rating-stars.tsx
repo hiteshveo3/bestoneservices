@@ -16,8 +16,8 @@ export function GoogleRatingStars({ rating = 5.0, className = "" }: GoogleRating
         <Star
           key={i}
           className={`w-4 h-4 shrink-0 ${
-            i < fullStars ? "fill-warning-500 text-warning-500" : "fill-ink-200 text-ink-300"
-          }`}
+ i < fullStars ? "fill-warning-500 text-warning-500" : "fill-ink-200 text-ink-300"
+ }`}
         />
       ))}
     </div>

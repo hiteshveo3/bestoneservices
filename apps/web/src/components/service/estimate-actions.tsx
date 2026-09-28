@@ -77,7 +77,7 @@ export function EstimateActions({ currentState, onRestoreState }: EstimateAction
                 if (onRestoreState) onRestoreState(resumePrompt);
                 setResumePrompt(null);
               }}
-              className="px-4 py-2 rounded-full bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-[#B7F56A] text-[#1D201E] text-sm font-semibold hover:bg-[#A2EA4E] cursor-pointer"
             >
               Continue Estimate
             </button>
@@ -101,7 +101,7 @@ export function EstimateActions({ currentState, onRestoreState }: EstimateAction
         <button
           type="button"
           onClick={handleSave}
-          className="px-4 py-2.5 rounded-full bg-white border border-[#ECEAE3] text-ink-600 text-sm font-medium hover:bg-[#EAF8D6] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer"
+          className="px-4 py-2.5 rounded-xl bg-white text-ink-600 text-sm font-medium hover:bg-[#EAF8D6] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer"
         >
           {saved ? <Check className="w-4 h-4 text-ink-600" /> : <Bookmark className="w-4 h-4 text-ink-600" />}
           <span>{saved ? "Saved on this device" : "Save Estimate"}</span>
@@ -110,7 +110,7 @@ export function EstimateActions({ currentState, onRestoreState }: EstimateAction
         <button
           type="button"
           onClick={handleShare}
-          className="px-4 py-2.5 rounded-full bg-white border border-[#ECEAE3] text-ink-600 text-sm font-medium hover:bg-[#EAF8D6] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer"
+          className="px-4 py-2.5 rounded-xl bg-white text-ink-600 text-sm font-medium hover:bg-[#EAF8D6] transition-colors duration-150 inline-flex items-center gap-2 cursor-pointer"
         >
           {copied ? <Check className="w-4 h-4 text-ink-600" /> : <Share2 className="w-4 h-4 text-ink-600" />}
           <span>{copied ? "Link Copied!" : "Share Estimate"}</span>

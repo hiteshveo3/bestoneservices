@@ -46,9 +46,9 @@ export function CategorizedFaqHub({
   };
 
   return (
-    <SectionReveal className="bg-[#F6F5F1] rounded-[16px] p-6 sm:p-10 border border-[#ECEAE3] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#ECEAE3] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-10 space-y-6 text-start">
+      <div className="space-y-1 border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 ts-eyebrow">
           <HelpCircle className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
           <span>HELP & CLARIFICATIONS</span>
         </div>
@@ -66,7 +66,7 @@ export function CategorizedFaqHub({
                 key={cat.id}
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`snap-start px-4 py-2 rounded-full text-sm font-medium transition-colors duration-150 cursor-pointer whitespace-nowrap border ${ isSelected ? "bg-[#B7F56A] text-[#1D201E] border-ink-900 font-medium " : "bg-[#F6F5F1] text-[#1D201E] border-[#ECEAE3] hover:bg-[#EAF8D6]" }`}
+                className={`snap-start px-4 py-2 rounded-xl text-sm font-medium transition-colors duration-150 cursor-pointer whitespace-nowrap ${ isSelected ? "bg-[#B7F56A] text-[#1D201E] border-ink-900 font-medium " : "bg-white text-[#1D201E] hover:bg-[#EAF8D6]" }`}
               >
                 {cat.label}
               </button>
@@ -83,7 +83,7 @@ export function CategorizedFaqHub({
             <div
               key={item.id}
               id={item.id}
-              className="rounded-[16px] bg-[#F6F5F1] border border-[#ECEAE3] overflow-hidden transition-colors duration-150"
+              className="rounded-[16px] bg-white overflow-hidden transition-colors duration-150"
             >
               <button
                 type="button"
@@ -96,7 +96,7 @@ export function CategorizedFaqHub({
               </button>
 
               {isOpen && (
-                <div className="px-4 sm:px-5 pb-5 pt-1 border-t border-[#ECEAE3] text-base text-ink-500 leading-relaxed font-normal">
+                <div className="px-4 sm:px-5 pb-5 pt-1 border-[#ECEAE3] text-base text-ink-500 leading-relaxed font-normal">
                   {item.answer}
                 </div>
               )}

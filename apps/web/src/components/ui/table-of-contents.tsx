@@ -20,7 +20,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   return (
     <nav 
       aria-label="Table of Contents"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 bg-[#F6F5F1] rounded-[16px] border border-[#ECEAE3] text-start"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 bg-white rounded-[16px] text-start"
     >
       {/* Desktop Horizontal Navigation Rail */}
       <div className="hidden sm:flex items-center gap-6 overflow-x-auto text-base font-medium text-ink-600">
@@ -57,7 +57,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
         </button>
 
         {mobileOpen && (
-          <ul className="pt-3 border-t border-[#ECEAE3] space-y-2 list-none p-0 m-0 text-base">
+          <ul className="pt-3 border-[#ECEAE3] space-y-2 list-none p-0 m-0 text-base">
             {items.map((item) => (
               <li key={item.id}>
                 <a

@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { AnimatedIllustration } from "@/components/illustrations/animated-illustration";
+import { Petals } from "@/components/touchstone";
 
 export type IllustrationCard = {
   slug: string;
@@ -18,61 +17,33 @@ type SitewideIllustrationGridProps = {
   cards: readonly IllustrationCard[];
 };
 
-export function SitewideIllustrationGrid({
-  eyebrow,
-  title,
-  description,
-  cards,
-}: SitewideIllustrationGridProps) {
+/** Touchstone card grid: the four-petal bullet, a title and one sentence. No images. */
+export function SitewideIllustrationGrid({ eyebrow, title, description, cards }: SitewideIllustrationGridProps) {
   return (
-    <section className="py-16 sm:py-20 bg-white text-start">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-9 space-y-3">
-          <span className="px-4 py-1.5 rounded-full bg-[#EAF8D6] border border-[#ECEAE3] text-[#1D201E] text-xs sm:text-sm font-bold uppercase tracking-wider inline-block">
-            {eyebrow}
-          </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-medium text-[#1D201E]">{title}</h2>
-          {description ? <p className="text-lg leading-relaxed text-[#1D201E]/70">{description}</p> : null}
+    <section className="bg-white text-start">
+      <div className="mx-auto grid max-w-[1240px] gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div className="grid max-w-3xl gap-3">
+          <p className="ts-eyebrow m-0">{eyebrow}</p>
+          <h2 className="ts-head m-0 text-[clamp(28px,3.4vw,40px)]">{title}</h2>
+          {description ? <p className="m-0 text-lg text-[#5A605C]">{description}</p> : null}
         </div>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card) => {
             const content = (
               <>
-                <div className="relative aspect-[3/2] overflow-hidden rounded-[22px] bg-[#F6F5F1]">
-                  {card.imageSrc ? (
-                    <Image
-                      src={card.imageSrc}
-                      alt={card.imageAlt ?? card.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover"
-                    />
-                  ) : (
-                    <AnimatedIllustration slug={card.slug} alt={card.title} />
-                  )}
-                </div>
-                <div className="space-y-2 px-1 pt-4">
-                  <h3 className="font-heading text-xl font-medium text-[#1D201E]">{card.title}</h3>
-                  <p className="text-base leading-relaxed text-[#1D201E]/70">{card.description}</p>
-                </div>
+                <Petals size={36} />
+                <b className="text-[17px]">{card.title}</b>
+                <span className="text-[15px] text-[#5A605C]">{card.description}</span>
               </>
             );
-
+            const cls = "grid content-start gap-3 rounded-2xl bg-[#F6F5F1] p-5 no-underline";
             const isExternal = card.href ? /^https?:\/\//.test(card.href) : false;
-
             return card.href ? (
-              <Link
-                key={card.slug}
-                href={card.href}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
-                className="group block rounded-[24px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D201E]"
-              >
+              <Link key={card.slug} href={card.href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined} className={`${cls} transition-colors duration-150 hover:bg-[#EAF8D6]`}>
                 {content}
               </Link>
             ) : (
-              <article key={card.slug} className="rounded-[24px]">
+              <article key={card.slug} className={cls}>
                 {content}
               </article>
             );

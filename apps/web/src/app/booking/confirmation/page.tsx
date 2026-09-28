@@ -49,7 +49,7 @@ export default async function ConfirmationPage({
             <CheckCircle2 className="w-12 h-12 text-[#1D201E]" />
           </div>
 
-          <h1 className="font-heading text-4xl font-medium text-ink-900 mb-2">
+          <h1 className="font-heading text-4xl font-[650] text-ink-900 mb-2">
             Booking Confirmed!
           </h1>
           <p className="text-lg text-ink-500">
@@ -58,16 +58,16 @@ export default async function ConfirmationPage({
         </div>
 
         {/* Booking Details Card */}
-        <div className="bg-[#F6F5F1] rounded-[18px] border border-[#ECEAE3] p-8 mb-8 space-y-6">
+        <div className="bg-white rounded-[18px] p-8 mb-8 space-y-6">
           {/* Reference Number */}
-          <div className="border-b border-[#ECEAE3] pb-6 flex items-center justify-between">
+          <div className=" border-[#ECEAE3] pb-6 flex items-center justify-between">
             <div>
               <p className="text-sm text-ink-500 mb-1">Booking Reference</p>
               <p className="font-mono font-bold text-2xl text-[#1D201E]">
                 {bookingId}
               </p>
             </div>
-            <span className="px-3 py-1 rounded-full bg-[#B7F56A] text-[#1D201E] text-xs font-bold font-mono">
+            <span className="px-3 py-1 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-bold font-mono">
               CONFIRMED
             </span>
           </div>
@@ -127,8 +127,8 @@ export default async function ConfirmationPage({
         </div>
 
         {/* What Happens Next */}
-        <div className="bg-[#F6F5F1] rounded-[18px] border border-[#ECEAE3] p-8 mb-8">
-          <h2 className="font-heading text-2xl font-medium text-ink-900 mb-6">
+        <div className="bg-white rounded-[18px] p-8 mb-8">
+          <h2 className="font-heading text-2xl font-[650] text-ink-900 mb-6">
             What Happens Next?
           </h2>
 
@@ -172,7 +172,7 @@ export default async function ConfirmationPage({
         </div>
 
         {/* Contact Info */}
-        <div className="bg-[#EAF8D6]/50 rounded-[18px] border border-[#ECEAE3]/30 p-8 mb-8">
+        <div className="bg-[#EAF8D6]/50 rounded-[18px] p-8 mb-8">
           <h3 className="font-heading text-xl font-medium text-ink-900 mb-4">
             Need Help?
           </h3>
