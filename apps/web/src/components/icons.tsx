@@ -90,7 +90,7 @@ import {
   UserIcon,
   ViewIcon,
   ViewOffSlashIcon,
-  WhatsappIcon,
+  WhatsappBusinessIcon,
   Xls01Icon,
 } from "@hugeicons/core-free-icons";
 
@@ -165,7 +165,7 @@ export const LogOut = icon(Logout01Icon, "LogOut");
 export const Mail = icon(Mail01Icon, "Mail");
 export const MapPin = icon(Location01Icon, "MapPin");
 export const Menu = icon(Menu01Icon, "Menu");
-export const MessageCircle = icon(WhatsappIcon, "MessageCircle");
+export const MessageCircle = icon(WhatsappBusinessIcon, "MessageCircle");
 export const MessageSquare = icon(Message01Icon, "MessageSquare");
 export const Minus = icon(MinusSignIcon, "Minus");
 export const Navigation = icon(Navigation03Icon, "Navigation");
