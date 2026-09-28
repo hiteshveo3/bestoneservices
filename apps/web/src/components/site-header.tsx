@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight01Icon, Search01Icon, ChevronDownIcon, Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
-import { MessageCircle } from "@/components/icons";
+import { MessageCircle, Phone } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { siteContact } from "@/config/site-contact";
 import { megaMenuData } from "@/config/site-navigation";
@@ -102,23 +102,12 @@ export function SiteHeader() {
         className="sticky top-0 z-50 bg-[#F6F5F1] relative w-full"
         onMouseLeave={handleMouseLeave}
       >
-        {/* Touchstone S13 B: slim info row above the main row (desktop) */}
-        <div className="hidden lg:block">
-          <div className="max-w-7xl mx-auto px-8 pt-2">
-            <p className="m-0 flex flex-wrap gap-x-6 gap-y-1 rounded-[10px] bg-white px-3 py-2 text-[13px] text-[#5A605C]">
-              <span>Open <b className="text-[#1D201E]">Mon–Sat, 8am–8pm</b></span>
-              <span>Call <a href={siteContact.phoneHref} className="font-semibold text-[#1D201E] no-underline tabular-nums">{siteContact.phoneDisplay}</a></span>
-              <span>Based in <b className="text-[#1D201E]">Ilford, IG1</b></span>
-              <span>Prices shown <b className="text-[#1D201E]">before you book</b></span>
-            </p>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[56px] lg:h-[72px] flex items-center justify-between gap-2 lg:gap-4 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 lg:h-16 flex items-center justify-between gap-2 lg:gap-4 w-full">
           
           {/* Brand Logo & Primary Navigation Group */}
           <div className="flex items-center gap-3 lg:gap-6 shrink-0 min-w-0">
             <Logo href="/" className="cursor-pointer">
-              <span className="font-heading font-extrabold text-[22px] sm:text-2xl tracking-[-0.02em] text-[#1D201E] whitespace-nowrap">Bestone</span>
+              <span className="font-heading font-extrabold text-[22px] sm:text-2xl tracking-[-0.02em] text-[#1D201E] whitespace-nowrap">Bestone Services</span>
             </Logo>
 
             {/* Desktop Nav - 4 Distinct Categories with Mega Menu Triggers */}
@@ -143,7 +132,7 @@ export function SiteHeader() {
                       }}
                       aria-expanded={isOpen}
                       aria-controls={`mega-menu-${cat.id}`}
-                      className={`px-3.5 xl:px-4 py-2 rounded-[10px] font-medium flex items-center gap-1.5 transition-colors duration-150 text-decoration-none cursor-pointer whitespace-nowrap focus-visible:outline-none ${
+                      className={`px-2.5 xl:px-3 py-2 rounded-[10px] font-medium flex items-center gap-1.5 transition-colors duration-150 text-decoration-none cursor-pointer whitespace-nowrap focus-visible:outline-none ${
  isOpen || isRouteActive
  ? "bg-[#EAF8D6] text-[#1D201E] font-semibold "
  : "text-[#1D201E] hover:bg-[#EAF8D6]/40"
@@ -176,16 +165,23 @@ export function SiteHeader() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp us"
-              className="grid h-10 w-10 place-items-center rounded-[10px] bg-white text-[#1D201E] md:hidden"
+              className="grid h-10 w-10 place-items-center rounded-[10px] bg-white text-[#1D201E] xl:hidden"
             >
               <MessageCircle className="size-5" aria-hidden="true" />
+            </a>
+            <a
+              href={siteContact.phoneHref}
+              className="hidden xl:inline-flex min-h-10 items-center gap-2 rounded-[10px] px-2 text-[15px] font-semibold text-[#1D201E] no-underline tabular-nums hover:bg-[#EAF8D6]"
+            >
+              <Phone className="size-4" />
+              <span>{siteContact.phoneDisplay}</span>
             </a>
             {/* Primary conversion CTA: WhatsApp (white) + Get your price (lime) */}
             <a
               href={siteContact.getWhatsappUrl("Hi Bestone, I'd like a price for a job.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex min-h-10 items-center gap-2 rounded-[10px] bg-white px-3.5 text-[15px] font-semibold text-[#1D201E] no-underline transition-colors duration-150 hover:bg-[#EAF8D6]"
+              className="hidden xl:inline-flex min-h-10 items-center gap-2 rounded-[10px] bg-white px-3.5 text-[15px] font-semibold text-[#1D201E] no-underline transition-colors duration-150 hover:bg-[#EAF8D6]"
             >
               <MessageCircle className="size-4" aria-hidden="true" />
               <span>WhatsApp</span>

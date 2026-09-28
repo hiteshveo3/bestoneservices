@@ -90,7 +90,7 @@ export function SearchResults() {
     <div className="space-y-6">
       
       {/* 1. TOP STICKY FILTER TOOLBAR: Just like reference site */}
-      <div className="sticky top-[56px] lg:top-[72px] z-30 bg-[#F6F5F1]/95 backdrop-blur-md border-[#ECEAE3] py-3.5 ">
+      <div className="sticky top-14 lg:top-16 z-30 bg-[#F6F5F1]/95 backdrop-blur-md border-[#ECEAE3] py-3.5 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
           {/* Row 1: Spacious Search Field + Sort Control + All Filters Drawer Trigger */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">

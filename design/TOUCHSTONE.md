@@ -75,6 +75,7 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | 2026-09-28 | Prices on cards sit in the soft lime price tile (R4 C) | Lab 04 |
 | 2026-09-28 | Secondary buttons, text links and sizes kept as shown (R5) | Lab 04 |
 | 2026-09-28 | One icon set: Hugeicons only. Named icons live in `components/icons.tsx`; lucide is removed; no glyph icons (★ ✕ ⚡ ✓ →) in the UI | Client |
+| 2026-09-28 | Sticky header is one row; the S13 B info row read as a second header. WhatsApp uses the WhatsApp Business mark | Client |
 
 ## Open
 
@@ -99,6 +100,7 @@ a professional firm, the speed of a responder, the manners of a good neighbour.
 | Brand name "Bestone" / "Bestone Services Ltd" in all copy and metadata | Done |
 | Components: Button, Price, PriceTile, PriceList, Facts, Plaque, Hallmarks, Stamp, Petals, FloorPlan, BigFacts, FaqSplit, SlimCta, Section | Done |
 | Header (info row, grouped phone menu), footer legal line, phone sticky bar | Done |
+| Header cut to one slim row (64px desktop, 56px phone): info row removed, phone number in the row on wide screens; WhatsApp Business icon; one-line offer banner on phones | Done |
 | Homepage rebuilt from the library (S17, S24, S23, S35, S42, S40, S21, S38, S56, S57, S55, S58) | Done |
 | Service page template for every service and location page (S16, S19, S25, S27, S35 B, S42, S37 piping, S55 B, S58 A) | Done |
 | Service hubs (S18 wash hero with price list, priced cards, every other service as a list), gardening, removals | Done |
