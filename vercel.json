@@ -6,6 +6,7 @@
   "outputDirectory": "apps/web/.next",
   "git": {
     "deploymentEnabled": {
+      "claude/sharp-hawking-iytf87": false,
       "claude/**": false
     }
   }
