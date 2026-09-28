@@ -1,28 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
-import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  ArrowRight01Icon,
-  CheckmarkBadge01Icon,
-  Bug01Icon,
-  Tick01Icon,
-  Clock01Icon,
-  Leaf01Icon,
-  Location01Icon,
-  Call02Icon,
-  Invoice01Icon,
-  Shield01Icon,
-  SparklesIcon,
-  DeliveryTruck01Icon,
-} from "@hugeicons/core-free-icons";
-import { GoogleReviewsSection } from "@/components/trust/google-reviews-section";
-import { HomeFaq } from "@/components/home/home-faq";
+import { ArrowRight, Camera, FileText, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { siteContact } from "@/config/site-contact";
-import { HeroHome } from "@/components/hero";
-import { BLOG_POSTS } from "@/config/blog-data";
-import { CONTACT } from "@/config/contact";
-import { SECONDARY_BUTTON_CLASS, SIDEBAR_CALL_BUTTON_CLASS } from "@/lib/ui-classes";
 import { siteConfig } from "@/config/site";
+import { BLOG_POSTS } from "@/config/blog-data";
+import { GOOGLE_PROFILES } from "@/config/google-business-profiles";
 import { organisationSchema, websiteSchema } from "@/lib/structured-data";
+import {
+  BigFacts,
+  Button,
+  Eyebrow,
+  Facts,
+  FaqSplit,
+  FloorPlan,
+  Petals,
+  Plaque,
+  PriceList,
+  PriceTile,
+  Section,
+  SectionHead,
+  SlimCta,
+  type PriceRow,
+} from "@/components/touchstone";
 
 // Explicit rather than relying on the root layout's inherited defaults —
 // keeps the homepage's canonical self-referencing even if that default
@@ -60,104 +59,50 @@ export default function HomePage() {
     },
   ];
 
-  const STATS = [
-    { value: "32", label: "London boroughs covered, plus M25 surrounding postcodes" },
-    { value: "48hr", label: "Re-clean guarantee on every end of tenancy booking" },
-    { value: "2hr", label: "Average emergency pest control dispatch time" },
-    { value: "5,000+", label: "Completed London property jobs since launch" },
+  const whatsapp = siteContact.getWhatsappUrl("Hi Bestone, I'd like a price for a job.");
+  const priceHref = siteConfig.bookingEnabled ? "/booking/" : "/prices/";
+
+  // Lab 03 S24 A — prices from the current price list only.
+  const PRICE_ROWS: PriceRow[] = [
+    { name: "Mice control", note: "per species, written guarantee", amount: "£99", from: true, href: "/pest-control-services/mice-control/" },
+    { name: "End of tenancy cleaning", note: "studio flat, 48-hour re-clean", amount: "£130", from: true, href: "/cleaning-services/end-of-tenancy-cleaning/" },
+    { name: "Garden care", note: "two gardeners, first hour, then £50/hr", amount: "£70", href: "/gardening/" },
+    { name: "Removals", note: "two movers and a van, per hour", amount: "£80", from: true, href: "/removals/" },
   ];
 
-  const VERTICALS = [
+  // Priorities from the business: pest control first, end of tenancy second.
+  const LEAD_SERVICES = [
     {
-      id: "cleaning",
-      icon: SparklesIcon,
-      title: "Cleaning",
-      desc: "Guaranteed End of Tenancy Cleaning across London, plus move-out cleans, oven restoration and carpet steam extraction.",
-      href: "/cleaning-services/end-of-tenancy-cleaning/",
-    },
-    {
-      id: "pest-control",
-      icon: Bug01Icon,
-      title: "Pest Control",
-      desc: "Licensed local treatment for rat control, bed bugs, cockroach eradication and emergency wasp nest removal.",
+      title: "Pest control",
+      desc: "Mice, rats, bed bugs, wasps and cockroaches, treated by our own technicians with a written guarantee.",
+      chips: ["Inspection", "Treatment plan", "Report"],
+      amount: "£90",
+      unit: "single visit, 1 bed",
       href: "/pest-control-services/",
+      image: "/images/service/best-one-pest-technician-hero-v1.webp",
+      alt: "Bestone pest technician in uniform inside a London home",
     },
     {
-      id: "gardening",
-      icon: Leaf01Icon,
-      title: "Gardening",
-      desc: "Two-gardener clearance teams for lawn mowing, hedge cutting, overhauls and green waste disposal.",
-      href: "/gardening/",
-    },
-    {
-      id: "removals",
-      icon: DeliveryTruck01Icon,
-      title: "Removals",
-      desc: "House removals and Man & Van with 2 or 3 man teams, transit insurance and optional full packing.",
-      href: "/removals/",
+      title: "End of tenancy",
+      desc: "An agency-checklist clean with a free re-clean if the agent flags anything within 48 hours.",
+      chips: ["Checklist", "Oven", "48h re-clean"],
+      amount: "£130",
+      unit: "studio flat",
+      href: "/cleaning-services/end-of-tenancy-cleaning/",
+      image: "/images/service/best-one-cleaner-kitchen-v1.webp",
+      alt: "Bestone cleaner cleaning a kitchen",
     },
   ];
-
-  const REASONS = [
-    {
-      num: "01",
-      icon: Shield01Icon,
-      title: "Written guarantees",
-      desc: "A 48-hour re-clean commitment on tenancy work, and 1-month or 3-month written guarantees on pest treatment. Put in writing before the team arrives, not after a dispute.",
-    },
-    {
-      num: "02",
-      icon: Invoice01Icon,
-      title: "Prices fixed upfront",
-      desc: "Every rate is published before you book — no callout surcharges, no hidden materials line, no revised invoice once the work is done. What the quote says is what you pay.",
-    },
-    {
-      num: "03",
-      icon: CheckmarkBadge01Icon,
-      title: "Vetted local teams",
-      desc: "Licensed, insured and DBS-checked specialists working from our Ilford operations hub, so the same standards apply whether you are in Stratford or Romford.",
-    },
+  const MORE_SERVICES = [
+    { title: "Garden care", desc: "Two-gardener team for maintenance, clearance, lawns and hedges.", amount: "£70", unit: "first hour", href: "/gardening/" },
+    { title: "Removals", desc: "Two or three movers with a van, blankets and transit cover.", amount: "£80", unit: "per hour", href: "/removals/" },
   ];
 
-  const PROCESS_STEPS = [
-    {
-      step: "1",
-      title: "Tell us the property and the job",
-      desc: "Pick your service and property size. The calculator returns a fixed, itemised price in under 60 seconds — no callback required to find out what it costs.",
-    },
-    {
-      step: "2",
-      title: "Confirm a slot that suits you",
-      desc: "Choose your date and access arrangements. You get a named team, a confirmed arrival window, and the full scope of work in writing before anyone is dispatched.",
-    },
-    {
-      step: "3",
-      title: "Work completed and guaranteed",
-      desc: "The team works to the published checklist and signs it off with you. If anything is flagged afterwards, the relevant guarantee brings them back at no extra cost.",
-    },
-  ];
-
-  const PRICE_ROWS = [
-    {
-      service: "End of tenancy cleaning",
-      from: "From £130",
-      detail: "Studio through 4-bed. Agency inventory checklist, oven and carpets included.",
-    },
-    {
-      service: "Pest control treatment",
-      from: "From £90",
-      detail: "Rats, mice, bed bugs, cockroaches, ants, fleas and wasp nests. Follow-up included.",
-    },
-    {
-      service: "Gardening & clearance",
-      from: "From £70",
-      detail: "Two-gardener team, first hour. £50 each additional hour, green waste billed per bag.",
-    },
-    {
-      service: "Removals & Man & Van",
-      from: "From £80/hr",
-      detail: "2-man team with Luton or panel van. 3-man teams and full packing available.",
-    },
+  const STEPS = [
+    { title: "Get your price", desc: "Pick the service and property size." },
+    { title: "Choose a time", desc: "Two-hour arrival windows, Mon–Sat." },
+    { title: "Meet your technician", desc: "Uniformed, carrying photo ID." },
+    { title: "Get your record", desc: "Report, photos and invoice." },
   ];
 
   const COVERAGE = [
@@ -173,7 +118,6 @@ export default function HomePage() {
     "Greater London M25",
   ];
 
-  const guides = Object.values(BLOG_POSTS).slice(0, 3);
 
   // Homepage is the site's primary entity anchor, but previously carried no
   // structured data at all — Organization/WebSite/FAQPage schema were only
@@ -187,7 +131,7 @@ export default function HomePage() {
         "@type": "WebPage",
         "@id": `${siteConfig.url}/#webpage`,
         url: siteConfig.url,
-        name: "Cleaning, Pest Control, Gardening & Removals | Best One Services London",
+        name: "Cleaning, Pest Control, Gardening & Removals | Bestone London",
         description: siteConfig.description,
         inLanguage: "en-GB",
         isPartOf: { "@id": `${siteConfig.url}/#website` },
@@ -204,382 +148,206 @@ export default function HomePage() {
     ],
   };
 
+  const guides = Object.values(BLOG_POSTS).slice(0, 3);
+  const google = GOOGLE_PROFILES.pestControl;
+
   return (
-    <main id="main-content" className="min-h-screen bg-[#F9FCF5] text-[#1F3A00] text-start">
+    <main id="main-content" className="min-h-screen bg-paper text-ink">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
 
-      {/* ===================================================================
-          1. CLEAN EDITORIAL HERO SECTION
-          =================================================================== */}
-      <HeroHome />
-
-      {/* ===================================================================
-          2. KEY STATS SECTION
-          =================================================================== */}
-      <section className="border-b border-[#E5FBC9] bg-[#F9FCF5]">
-        <div data-reveal-group className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid gap-6 grid-cols-2 md:grid-cols-4">
-          {STATS.map((stat, idx) => (
-            <div key={idx} className="flex flex-col gap-1.5">
-              <span className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                {stat.value}
-              </span>
-              <span className="text-sm leading-snug text-[#1F3A00]">
-                {stat.label}
-              </span>
+      {/* S17 · Home hero, two-weight headline (Lab 04 R3 B), prices before you ask */}
+      <section className="bg-paper">
+        <div className="mx-auto grid max-w-[1240px] gap-8 px-4 pb-14 pt-8 sm:px-6 sm:pt-12 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
+            <div className="grid content-start gap-5">
+              <Eyebrow>London property services</Eyebrow>
+              <h1 className="ts-head m-0 text-[clamp(40px,5.6vw,68px)] leading-none">
+                Priced before we arrive. <span className="ts-soft">Proven after we leave.</span>
+              </h1>
+              <p className="m-0 max-w-[56ch] text-lg text-muted">
+                Pest control, end of tenancy cleaning, gardening and removals from our own uniformed team. A fixed price before you book, and a written record after every job.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Button href={priceHref} size="lg">Get your price</Button>
+                <Button href={whatsapp} variant="white" size="lg" icon={<MessageCircle className="size-[18px]" aria-hidden="true" />}>WhatsApp us</Button>
+              </div>
+              <Facts items={[<><b>5,000+</b> jobs completed</>, "Written guarantees", "Own staff, no franchise"]} />
             </div>
-          ))}
+            <div className="relative min-h-[280px] overflow-hidden rounded-2xl bg-stone max-lg:aspect-[4/3] max-lg:min-h-0">
+              <Image src="/images/service/best-one-team-hero-v1.webp" alt="Bestone cleaner and pest technician in charcoal uniforms with lime piping" fill priority sizes="(max-width: 1024px) 100vw, 46vw" className="object-cover object-top" />
+            </div>
+          </div>
+          <div className="grid gap-2.5">
+            <Eyebrow>Prices, before you ask</Eyebrow>
+            <div className="rounded-2xl bg-white p-2">
+              <PriceList rows={PRICE_ROWS} />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ===================================================================
-          3. MAIN EDITORIAL CONTENT + STICKY BOOKING SIDEBAR
-          =================================================================== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_330px] gap-12 sm:gap-16 items-start">
-
-          {/* LEFT MAIN CONTENT COLUMN */}
-          <div className="flex flex-col gap-16 min-w-0">
-
-            {/* SECTION 1: FOUR SERVICE VERTICALS */}
-            <section id="services" className="scroll-mt-24 flex flex-col gap-6">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                Four property services, one accountable team
-              </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
-                Most property problems arrive together — a tenancy ends, the garden is overgrown, and something has been heard in the loft. Running them through one provider means one point of contact, one standard of work, and one guarantee to hold us to.
-              </p>
-
-              <div data-reveal-group className="grid sm:grid-cols-2 gap-4">
-                {VERTICALS.map((vert) => {
-                  const Icon = vert.icon;
-                  return (
-                    <Link
-                      key={vert.id}
-                      href={vert.href}
-                      className="group bg-white border border-[#E5FBC9] rounded-[18px] p-5 flex flex-col gap-2.5 shadow-2xs hover:border-[#1F3A00] transition-colors duration-150"
-                    >
-                      <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] text-[#1F3A00]">
-                        <HugeiconsIcon icon={Icon} size={20} strokeWidth={1.8} className="text-[#1F3A00]" />
-                      </span>
-                      <strong className="text-base font-semibold text-[#1F3A00]">{vert.title}</strong>
-                      <span className="text-sm leading-relaxed text-[#1F3A00]">
-                        {vert.desc}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 pt-1 text-sm font-semibold text-[#1F3A00]">
-                        Explore {vert.title}
-                        <HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2} className="text-[#1F3A00]" />
-                      </span>
-                    </Link>
-                  );
-                })}
+      {/* S23 A · Services, weighted by what the business does most */}
+      <Section id="services" tone="white">
+        <SectionHead eyebrow="Four services" title="One team" soft="for the whole property." action={<Button href="/prices/" variant="link">See every price</Button>} />
+        <div className="grid gap-3 md:grid-cols-2">
+          {LEAD_SERVICES.map((svc) => (
+            <article key={svc.title} className="grid overflow-hidden rounded-2xl bg-paper">
+              <div className="relative aspect-[16/9] bg-stone">
+                <Image src={svc.image} alt={svc.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-[50%_30%]" />
               </div>
-
-              <div className="p-6 bg-[#B7F56A] rounded-[18px] font-heading font-medium text-lg sm:text-xl leading-snug text-[#1F3A00] border border-[#99D055]">
-                Every service is priced upfront and backed in writing. If the work is flagged after we leave, the relevant guarantee brings the team back at no additional cost.
+              <div className="grid gap-3 p-5">
+                <h3 className="ts-head m-0 text-[28px]">{svc.title}</h3>
+                <p className="m-0 text-muted">{svc.desc}</p>
+                <ul className="m-0 flex list-none flex-wrap gap-1.5 p-0">
+                  {svc.chips.map((c) => (
+                    <li key={c} className="rounded-md bg-lime-soft px-2.5 py-1 text-[13px] font-semibold">{c}</li>
+                  ))}
+                </ul>
+                <PriceTile amount={svc.amount} unit={svc.unit} action={<Button href={svc.href} variant="white" size="sm">See {svc.title.toLowerCase()}</Button>} />
               </div>
-            </section>
-
-            {/* SECTION 2: WHY BEST ONE */}
-            <section id="why-us" className="scroll-mt-24 flex flex-col gap-6">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                Why property managers and tenants use us
-              </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
-                Three things separate a dependable property contractor from a quote that unravels at handover:
-              </p>
-
-              <div className="grid sm:grid-cols-3 gap-px bg-[#99D055] rounded-[20px] overflow-hidden border border-[#99D055]">
-                {REASONS.map((reason, idx) => {
-                  const Icon = reason.icon;
-                  return (
-                    <div key={idx} className="bg-white p-6 border-t-4 border-[#B7F56A] flex flex-col gap-2.5">
-                      <span className="text-xs font-bold tracking-wider text-[#1F3A00]">POINT {reason.num}</span>
-                      <span className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#B7F56A] text-[#1F3A00]">
-                        <HugeiconsIcon icon={Icon} size={20} strokeWidth={1.8} className="text-[#1F3A00]" />
-                      </span>
-                      <strong className="font-heading text-2xl font-semibold text-[#1F3A00]">{reason.title}</strong>
-                      <span className="text-sm leading-relaxed text-[#1F3A00]">
-                        {reason.desc}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-
-            {/* SECTION 3: HOW IT WORKS */}
-            <section id="process" className="scroll-mt-24 flex flex-col gap-6">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                How booking works
-              </h2>
-
-              <div className="divide-y divide-[#E5FBC9] border-y border-[#E5FBC9]">
-                {PROCESS_STEPS.map((step, idx) => (
-                  <div key={idx} className="grid grid-cols-[48px_1fr] gap-5 py-5 items-start">
-                    <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#B7F56A] text-[#1F3A00] font-bold text-sm border border-[#99D055]">
-                      {step.step}
-                    </span>
-                    <div className="space-y-1">
-                      <h3 className="m-0 text-lg font-semibold text-[#1F3A00]">{step.title}</h3>
-                      <p className="m-0 text-base leading-relaxed text-[#1F3A00]">
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* SECTION 4: PRICE SNAPSHOT TABLE */}
-            <section id="prices" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                What each service starts at
-              </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
-                Published starting rates across all four verticals. Final quotes depend on property size and scope, and are confirmed before you commit:
-              </p>
-
-              <div className="overflow-x-auto border border-[#E5FBC9] rounded-[20px] bg-white shadow-2xs">
-                <table className="w-full min-w-[500px] border-collapse text-left text-sm">
-                  <thead>
-                    <tr className="bg-[#DCFAB7] text-[#1F3A00]">
-                      <th className="p-3.5 sm:p-4 font-semibold">Service</th>
-                      <th className="p-3.5 sm:p-4 font-semibold">Starting rate</th>
-                      <th className="p-3.5 sm:p-4 font-semibold">What that covers</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-[#E5FBC9] text-[#1F3A00]">
-                    {PRICE_ROWS.map((row, idx) => (
-                      <tr key={idx}>
-                        <td className="p-3.5 sm:p-4 font-semibold text-[#1F3A00]">{row.service}</td>
-                        <td className="p-3.5 sm:p-4 font-medium text-[#1F3A00]">{row.from}</td>
-                        <td className="p-3.5 sm:p-4">{row.detail}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/prices/#smart-calculator"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
-                >
-                  Calculate My Price
-                </Link>
-                <Link
-                  href="/prices/"
-                  className={`inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium ${SECONDARY_BUTTON_CLASS}`}
-                >
-                  Full Price Guide
-                </Link>
-              </div>
-            </section>
-
-            {/* SECTION 6: COVERAGE */}
-            <section id="coverage" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                London coverage
-              </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
-                Teams operate from our Ilford hub across Greater London and surrounding M25 postcodes. Availability is confirmed against your postcode, service and requested timing when you book:
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {COVERAGE.map((area) => (
-                  <span
-                    key={area}
-                    className="px-3 py-1 rounded-full bg-white border border-[#E5FBC9] text-xs font-semibold text-[#1F3A00]"
-                  >
-                    {area}
-                  </span>
-                ))}
-              </div>
-
-              <p className="m-0 flex flex-wrap items-center gap-2 text-sm text-[#1F3A00]">
-                <HugeiconsIcon icon={Tick01Icon} size={16} strokeWidth={2.5} className="text-[#1F3A00] shrink-0" />
-                Not sure about your postcode?
-                <Link href="/areas/" className="font-semibold underline underline-offset-2 text-[#1F3A00]">
-                  See all covered areas →
-                </Link>
-              </p>
-            </section>
-
-            {/* SECTION 7: LATEST GUIDES */}
-            <section id="guides" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                Property guides from our specialists
-              </h2>
-              <p className="m-0 text-base sm:text-lg leading-relaxed text-[#1F3A00]">
-                Checklists and practical advice written by the inspectors and technicians who do the work:
-              </p>
-
-              <div data-reveal-group className="grid sm:grid-cols-3 gap-3.5">
-                {guides.map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}/`}
-                    className="flex flex-col gap-1.5 p-5 border border-[#E5FBC9] rounded-[16px] bg-white hover:border-[#1F3A00] transition-colors duration-150"
-                  >
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#1F3A00]">
-                      {post.category}
-                    </span>
-                    <strong className="text-base font-semibold leading-snug text-[#1F3A00]">
-                      {post.title}
-                    </strong>
-                    <span className="text-sm leading-relaxed text-[#1F3A00]">
-                      {post.description}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 pt-1 text-xs font-semibold text-[#1F3A00]">
-                      <HugeiconsIcon icon={Clock01Icon} size={14} strokeWidth={1.8} className="text-[#1F3A00] shrink-0" />
-                      {post.readTime}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-
-              <p className="m-0">
-                <Link href="/blog/" className="text-sm font-semibold underline underline-offset-2 text-[#1F3A00]">
-                  Read all property guides →
-                </Link>
-              </p>
-            </section>
-
-            {/* SECTION 8: FAQS */}
-            <section id="faq" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                Frequently asked questions
-              </h2>
-              <HomeFaq items={FAQ_DATA} />
-            </section>
-
-            {/* SECTION 9: LONDON OPERATIONS HUB */}
-            <section id="hub" className="scroll-mt-24 flex flex-col gap-5">
-              <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-                Our London operations hub
-              </h2>
-
-              <div className="grid sm:grid-cols-2 gap-5 items-center p-5 bg-[#DCFAB7] rounded-[20px] border border-[#E5FBC9]">
-                <div className="flex flex-col gap-3">
-                  <p className="m-0 text-base leading-relaxed text-[#1F3A00]">
-                    Best One Property Services operates from Ilford, dispatching cleaning, pest control, gardening and removals teams across Greater London and the Home Counties seven days a week.
-                  </p>
-                  <div className="flex flex-col gap-2.5 text-sm font-medium text-[#1F3A00]">
-                    <span className="flex items-start gap-2.5">
-                      <HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.8} className="mt-0.5 shrink-0 text-[#1F3A00]" />
-                      28–42 Clements Rd, Ilford IG1 1BA, London
-                    </span>
-                    <span className="flex items-start gap-2.5">
-                      <HugeiconsIcon icon={Call02Icon} size={16} strokeWidth={1.8} className="mt-0.5 shrink-0 text-[#1F3A00]" />
-                      Office {CONTACT.landline.display} · Mobile {CONTACT.mobile.display}
-                    </span>
-                    <span className="flex items-start gap-2.5">
-                      <HugeiconsIcon icon={Clock01Icon} size={16} strokeWidth={1.8} className="mt-0.5 shrink-0 text-[#1F3A00]" />
-                      Mon–Sun 07:00–21:00, emergency support outside hours
-                    </span>
-                  </div>
-                </div>
-
-                <div className="h-[300px] rounded-md overflow-hidden border border-[#1F3A00]">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.5761637722508!2d0.06920557551979871!3d51.557670407031175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a7d80d5b802f%3A0x81c2f6f8cfbc3a12!2sBestone%20Pest%20Control%20Services%20London!5e0!3m2!1sen!2s!4v1787314561837!5m2!1sen!2s"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    title="Bestone Pest Control Services London Google Map Location"
-                  />
-                </div>
-              </div>
-            </section>
-
-          </div>
-
-          {/* ===================================================================
-              RIGHT COLUMN: STICKY BOOKING SIDEBAR
-              =================================================================== */}
-          <aside className="lg:sticky lg:top-28 min-w-0 flex flex-col gap-4 bg-white border border-[#E5FBC9] rounded-[22px] p-6 shadow-2xs">
-            <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#1F3A00]">
-              Book a service
-            </p>
-            <h3 className="m-0 font-heading text-2xl font-semibold leading-tight text-[#1F3A00]">
-              Fixed price in 60 seconds
-            </h3>
-            <p className="m-0 text-sm leading-relaxed text-[#1F3A00]">
-              Choose your service and property size for an itemised quote with no callout fees — then pick a slot that suits you.
-            </p>
-
-            <Link
-              href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-full px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer shadow-2xs"
-            >
-              Get Instant Quote
-            </Link>
-
-            <Link
-              href="/contact/"
-              className={`flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md font-inter text-base font-medium ${SIDEBAR_CALL_BUTTON_CLASS}`}
-            >
-              <HugeiconsIcon icon={Call02Icon} size={18} strokeWidth={1.8} className="text-[#1F3A00]" />
-              <span>Call Us</span>
-            </Link>
-
-            <div className="flex flex-col gap-1 pt-1 text-xs text-[#1F3A00]">
-              <span className="flex items-center gap-2">
-                Last reviewed:
-                <span className="px-2 py-0.5 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] font-bold uppercase text-[10px] text-[#1F3A00]">
-                  September 2026
-                </span>
-              </span>
-              <span>All 32 boroughs · 7 days a week</span>
-            </div>
-          </aside>
-
+            </article>
+          ))}
         </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {MORE_SERVICES.map((svc) => (
+            <article key={svc.title} className="relative grid gap-3 overflow-hidden rounded-2xl bg-paper p-5">
+              <Petals className="pointer-events-none absolute -right-6 -top-6" size={110} />
+              <h3 className="ts-head m-0 text-[28px]">{svc.title}</h3>
+              <p className="m-0 max-w-[40ch] text-muted">{svc.desc}</p>
+              <PriceTile amount={svc.amount} unit={svc.unit} action={<Button href={svc.href} variant="white" size="sm">See {svc.title.toLowerCase()}</Button>} />
+            </article>
+          ))}
+        </div>
+      </Section>
 
-        {/* ===================================================================
-            4. VERIFIED GOOGLE BUSINESS REVIEWS (Social proof before closing CTA)
-            =================================================================== */}
-        <section id="reviews" className="mt-16 scroll-mt-24">
-          <GoogleReviewsSection category="pest-control" />
-        </section>
+      {/* S35 B · Facts as figures */}
+      <Section>
+        <SectionHead eyebrow="In numbers" title="What we stand behind" soft="in writing." />
+        <BigFacts
+          items={[
+            { figure: "5,000+", label: "jobs completed across London" },
+            { figure: "48h", label: "free re-clean if the agent flags anything" },
+            { figure: "1–3", label: "month written pest guarantees" },
+            { figure: "0", label: "franchises between you and the team" },
+          ]}
+        />
+      </Section>
 
-        {/* ===================================================================
-            5. BOTTOM CALLOUT BANNER — Closing CTA
-            =================================================================== */}
-        <section className="mt-16 p-8 sm:p-11 rounded-[26px] bg-white border border-[#E5FBC9] grid md:grid-cols-[1fr_auto] gap-7 items-center relative overflow-hidden">
-          {/* Lime accent stripe */}
-          <span className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#B7F56A] rounded-l-[26px]" aria-hidden="true" />
-          <div className="space-y-3">
-            <h2 data-reveal className="m-0 font-heading text-3xl sm:text-4xl font-semibold tracking-tight text-[#1F3A00]">
-              Everything your property needs. One trusted team.
-            </h2>
-            <p className="m-0 text-base leading-relaxed text-[#1F3A00]/80 max-w-xl font-normal">
-              Get a transparent quote for cleaning, pest control, gardening or removals — with the guarantee written in before the team is dispatched.
-            </p>
+      {/* S42 · How a job works */}
+      <Section tone="white">
+        <SectionHead eyebrow="How it works" title="Four steps," soft="nothing hidden." />
+        <ol className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2 lg:grid-cols-4">
+          {STEPS.map((step, i) => (
+            <li key={step.title} className="grid content-start gap-3 rounded-2xl bg-paper p-5">
+              <Plaque n={i + 1} state={i === STEPS.length - 1 ? "done" : undefined} />
+              <b className="text-[17px]">{step.title}</b>
+              <span className="text-[15px] text-muted">{step.desc}</span>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      {/* S40 · Our own team, with the uniform piping */}
+      <Section>
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
+          <div className="relative min-h-[280px] overflow-hidden rounded-2xl bg-stone max-lg:aspect-[4/3] max-lg:min-h-0">
+            <Image src="/images/service/best-one-cleaner-handover-v1.webp" alt="Bestone cleaner at a property handover" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/prices/#smart-calculator"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer"
-            >
-              Book a Service
-            </Link>
-            <Link
-              href="/contact/"
-              className={`inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium ${SECONDARY_BUTTON_CLASS}`}
-            >
-              Contact Support
-            </Link>
+          <div className="ts-piped grid content-start gap-4 rounded-2xl bg-white py-7 pl-8 pr-6">
+            <Eyebrow>Our team</Eyebrow>
+            <h2 className="ts-head m-0 text-[clamp(28px,3.4vw,40px)]">The people at your door <span className="ts-soft">work for us.</span></h2>
+            <p className="m-0 text-lg text-muted">No franchise, no marketplace, no agency staff. Every cleaner and technician is employed by Bestone, wears our uniform and carries photo ID.</p>
+            <Facts items={["Uniformed", "Photo ID", "Branded vans"]} />
           </div>
-        </section>
+        </div>
+      </Section>
 
-      </div>
+      {/* S21 · Landlords and agents */}
+      <Section id="landlords" tone="white">
+        <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <div className="grid content-start gap-5">
+            <Eyebrow>For landlords and letting agents</Eyebrow>
+            <h2 className="ts-head m-0 text-[clamp(30px,4vw,48px)]">Every property you let, <span className="ts-soft">on record.</span></h2>
+            <p className="m-0 max-w-[56ch] text-lg text-muted">Book cleaning, pest control and garden work for one flat or fifty. Every job comes back with an invoice, photos and a report you can forward to a tenant or a deposit scheme.</p>
+            <ul className="ts-rows m-0 list-none p-0">
+              {[
+                { icon: FileText, text: "Invoice per property" },
+                { icon: Camera, text: "Before and after photo report" },
+                { icon: ShieldCheck, text: "Pest treatment report and guarantee" },
+              ].map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-center gap-3 px-3 py-2.5">
+                  <span className="grid size-9 place-items-center rounded-[10px] bg-lime-soft"><Icon className="size-5" aria-hidden="true" /></span>
+                  {text}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-2">
+              <Button href={siteContact.getWhatsappUrl("Hi Bestone, I manage rental properties and would like to set up an account.")} size="lg">Talk to us about your properties</Button>
+            </div>
+          </div>
+          <div className="grid place-items-center rounded-2xl bg-paper p-5">
+            <FloorPlan className="h-auto w-full max-w-[520px]" label="Illustration: a flat's floor plan with the kitchen, living room and bathroom signed off" />
+          </div>
+        </div>
+      </Section>
 
+      {/* S38 · Rating, S56 · Areas */}
+      <Section>
+        <div className="grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid content-start gap-3 rounded-2xl bg-white p-6">
+            <Eyebrow>Google reviews</Eyebrow>
+            <div className="flex flex-wrap items-center gap-4">
+              <span className="ts-fig text-[64px]">{google.rating.toFixed(1)}</span>
+              <div>
+                <p className="m-0 text-lg tracking-[3px]" aria-label={`${google.rating.toFixed(1)} out of 5 stars`}>★★★★★</p>
+                <p className="m-0 text-sm text-muted">{google.reviewCount} Google reviews</p>
+              </div>
+            </div>
+            <Button href={google.reviewUrl} variant="link" className="justify-self-start">Read them on Google</Button>
+          </div>
+          <div className="grid content-start gap-4 rounded-2xl bg-white p-6">
+            <Eyebrow>Areas we cover</Eyebrow>
+            <p className="m-0 text-muted">From our base at {siteContact.address.street}, {siteContact.address.locality} {siteContact.address.postcode}, across Greater London.</p>
+            <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-1.5 p-0">
+              {COVERAGE.map((area) => (
+                <li key={area} className="rounded-lg bg-paper px-3 py-2.5 text-sm font-semibold">{area}</li>
+              ))}
+            </ul>
+            <Button href="/areas/" variant="link" className="justify-self-start">See all areas</Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* S57 · Guides */}
+      <Section tone="white">
+        <SectionHead eyebrow="Guides" title="Know before" soft="you book." action={<Button href="/blog/" variant="link">All guides</Button>} />
+        <div className="grid gap-3 md:grid-cols-3">
+          {guides.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}/`} className="grid content-start gap-2 rounded-2xl bg-paper p-5 no-underline transition-colors duration-150 hover:bg-lime-soft">
+              <span className="ts-eyebrow">{post.category}</span>
+              <b className="text-[17px] leading-snug">{post.title}</b>
+              <span className="text-sm text-muted">{post.readTime}</span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* S55 B · Questions, S58 A · slim close */}
+      <Section>
+        <FaqSplit
+          items={FAQ_DATA.map((f) => ({ q: f.q, a: f.a }))}
+          help={
+            <>
+              <p className="m-0 text-muted">Can&apos;t see yours? Ask us on WhatsApp, Mon–Sat, 8am–8pm.</p>
+              <div className="flex flex-wrap gap-2">
+                <Button href={whatsapp} variant="white" size="sm" icon={<MessageCircle className="size-4" aria-hidden="true" />}>Ask us</Button>
+                <Button href={siteContact.phoneHref} variant="white" size="sm" icon={<Phone className="size-4" aria-hidden="true" />}>{siteContact.phoneDisplay}</Button>
+              </div>
+            </>
+          }
+        />
+        <SlimCta title="Your price in a minute." soft="No call needed." action={<Button href={priceHref} iconEnd={<ArrowRight className="size-4" aria-hidden="true" />}>Get your price</Button>} />
+      </Section>
     </main>
   );
 }

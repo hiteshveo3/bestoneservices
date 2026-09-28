@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Bestone Design Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Archivo:ital,wdth,wght@0,62..125,400..800;1,62..125,400..800&display=swap">
+<link rel="stylesheet" href="touchstone.css">
+<style>
+  /* Lab chrome only. Components come from touchstone.css. */
+  body { background: #E9E7E0; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 150px; display: grid; gap: 64px; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { font-weight: 700; font-size: 17px; }
+  .brand span { color: var(--muted); font-weight: 500; }
+  .steps { display: flex; flex-wrap: wrap; gap: 6px; }
+  .steps li { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
+  .steps li.done { background: var(--lime-soft); color: var(--ink); }
+  .steps li.on { background: var(--lime); color: var(--ink); }
+  .steps a { text-decoration: none; }
+  .intro { display: grid; gap: 18px; max-width: 800px; }
+  .locked { display: grid; gap: 12px; }
+  .locked ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .locked li { background: var(--surface); border-radius: 14px; padding: 14px 16px; display: grid; gap: 2px; font-size: 14px; color: var(--muted); }
+  .locked li b { color: var(--ink); font-size: 15px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 6px; }
+  .jump a { text-decoration: none; background: var(--surface); padding: 8px 12px; border-radius: 10px; font-size: 14px; font-weight: 600; }
+  .jump a:hover { background: var(--lime-soft); }
+  .group { display: grid; gap: 44px; scroll-margin-top: 16px; }
+  .g-head { display: grid; gap: 8px; max-width: 760px; }
+  .sec { display: grid; gap: 14px; scroll-margin-top: 16px; }
+  .sec-h { display: flex; gap: 10px 12px; align-items: baseline; flex-wrap: wrap; }
+  .sec-h b { font-family: var(--f-head); font-stretch: 82%; font-weight: 700; font-size: 14px; background: var(--surface); padding: 3px 8px; border-radius: 6px; }
+  .sec-h h3 { font-size: 20px; font-weight: 700; }
+  .sec-h p { flex-basis: 100%; color: var(--muted); font-size: 15px; max-width: 72ch; }
+  .vars { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 16px; align-items: start; }
+  .vars.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
+  .vars.wide { grid-template-columns: 1fr; }
+  .var { display: grid; gap: 8px; min-width: 0; }
+  .var-cap { display: flex; gap: 10px; align-items: center; font-size: 14px; }
+  .var-cap span { color: var(--muted); }
+  .pick { font-weight: 700; font-size: 14px; padding: 7px 12px; border-radius: 8px; background: var(--surface); min-height: 36px; white-space: nowrap; }
+  .pick[aria-pressed="true"] { background: var(--lime); }
+  .pick[aria-pressed="true"]::before { content: "✓ "; }
+  .stage { background: var(--surface); border-radius: 20px; padding: 20px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+  .stage.paper { background: var(--page); }
+  .stage.flush { padding: 0; overflow: hidden; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .note-s { font-size: 12px; color: var(--muted); }
+  .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ba-lbl { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .picks-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--surface); padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 16px; font-size: 15px; }
+  .picks-bar output { font-weight: 700; }
+  .copied { color: var(--muted); font-size: 14px; }
+  .notes { width: 100%; }
+
+  /* Foundations */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .swatch { border-radius: 12px; overflow: hidden; background: var(--surface); font-size: 13px; }
+  .swatch i { display: block; height: 56px; }
+  .swatch div { padding: 8px 10px; display: grid; gap: 1px; }
+  .swatch em { font-style: normal; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .scale { display: grid; gap: 4px; }
+  .scale > div { display: grid; grid-template-columns: 110px 1fr; gap: 14px; align-items: baseline; padding: 10px 14px; border-radius: 10px; }
+  .scale > div:nth-child(odd) { background: var(--page); }
+  .scale small { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .space-row { display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; }
+  .space-row div { display: grid; gap: 4px; justify-items: center; font-size: 12px; color: var(--muted); }
+  .space-row i { display: block; width: 28px; background: var(--lime); border-radius: 3px; }
+  .radius-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .radius-row div { width: 64px; height: 64px; background: var(--lime-soft); display: grid; place-items: end center; padding-bottom: 4px; font-size: 12px; }
+
+  /* Ornaments */
+  .piped { position: relative; overflow: hidden; }
+  .piped::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--lime); }
+  .piped::after { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 3px; background: var(--lime); }
+  .stamp { display: inline-grid; justify-items: center; gap: 2px; padding: 10px 16px; border-radius: 10px; background: var(--lime-soft); transform: rotate(-5deg); font-family: var(--f-head); font-stretch: 80%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 13px; }
+  .stamp b { font-size: 22px; letter-spacing: 0.02em; }
+  .stamp small { font-family: var(--f-body); font-stretch: 100%; font-weight: 600; font-size: 11px; letter-spacing: 0.06em; color: var(--muted); }
+  .petal-corner { position: relative; overflow: hidden; }
+  .petal-corner > svg.orn { position: absolute; right: -26px; top: -26px; width: 120px; height: 120px; }
+
+  /* Mock parts */
+  .hdr { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-head); font-stretch: 90%; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+  .logo svg { width: 30px; height: 30px; }
+  .nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  .nav a { text-decoration: none; padding: 10px 12px; border-radius: 10px; font-weight: 500; font-size: 15px; }
+  .nav a.on { background: var(--lime-soft); font-weight: 600; }
+  .util { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); padding: 8px 12px; border-radius: 10px; background: var(--page); }
+  .util b { color: var(--ink); }
+  .mega { display: grid; grid-template-columns: repeat(4, 1fr) 1.1fr; gap: 20px; }
+  .mega h4 { font-size: 14px; margin-bottom: 6px; }
+  .mega li { display: flex; justify-content: space-between; gap: 8px; padding: 7px 10px; border-radius: 8px; font-size: 14px; }
+  .mega li:hover { background: var(--page); }
+  .mega li span { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .split { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(18px, 3vw, 36px); }
+  .split > .copy { display: grid; gap: 16px; align-content: start; }
+  .split > .photo { min-height: 260px; }
+  .pl { display: grid; gap: 2px; }
+  .pl li { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 8px; }
+  .pl li:nth-child(odd) { background: var(--page); }
+  .stage.paper .pl li:nth-child(odd), .paper .pl li:nth-child(odd) { background: var(--surface); }
+  .pl .n { font-weight: 600; }
+  .pl .s { display: block; font-size: 13px; color: var(--muted); font-weight: 400; }
+  .pl .fig { font-size: 28px; }
+  .tiles4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .tiles4 li { background: var(--surface); border-radius: 12px; padding: 14px; display: grid; gap: 4px; min-height: 104px; align-content: space-between; }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; color: var(--muted); }
+  .crumbs li + li::before { content: "/"; margin-right: 6px; color: var(--faint); }
+  .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+  .tabs a { text-decoration: none; padding: 9px 14px; border-radius: 10px; font-size: 15px; font-weight: 600; color: var(--muted); background: var(--page); }
+  .tabs a.on { background: var(--lime); color: var(--ink); }
+  .svc-a { background: var(--surface); border-radius: var(--r-card); overflow: hidden; display: grid; }
+  .svc-a .photo { border-radius: 0; aspect-ratio: 16 / 9; }
+  .svc-a .body { padding: 18px; display: grid; gap: 10px; }
+  .svc-b { background: var(--surface); border-radius: var(--r-card); overflow: hidden; display: grid; grid-template-columns: 40% 1fr; }
+  .svc-b .photo { border-radius: 0; min-height: 180px; }
+  .svc-b .body { padding: 18px; display: grid; gap: 10px; align-content: start; }
+  .svc-c { background: var(--surface); border-radius: var(--r-card); padding: 16px; display: grid; gap: 10px; }
+  .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .incl { display: flex; flex-wrap: wrap; gap: 6px; }
+  .phones { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .faq-p { display: grid; gap: 6px; }
+  .faq-p details { background: var(--page); border-radius: 12px; padding: 0 16px; }
+  .faq-p summary { list-style: none; cursor: pointer; padding: 14px 0; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; }
+  .faq-p summary::-webkit-details-marker { display: none; }
+  .faq-p summary::after { content: "+"; font-family: var(--f-head); font-size: 22px; line-height: 1; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; background: var(--surface); flex: none; }
+  .faq-p details[open] summary::after { content: "–"; background: var(--lime); }
+  .faq-p details p { padding-bottom: 14px; color: var(--muted); }
+  .doc { background: var(--surface); border-radius: 12px; padding: clamp(18px, 3vw, 32px); display: grid; gap: 18px; max-width: 760px; }
+  .doc-h { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .kv { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .kv div { background: var(--page); border-radius: 8px; padding: 8px 10px; display: grid; font-size: 13px; }
+  .kv b { font-size: 14px; }
+  .skel { background: linear-gradient(90deg, var(--surface-2) 0%, var(--page) 50%, var(--surface-2) 100%) 0 0 / 200% 100%; border-radius: 8px; animation: sk 1.4s linear infinite; }
+  @keyframes sk { to { background-position: -200% 0; } }
+  .alert { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; font-size: 15px; }
+  .alert b { display: block; }
+  .toast { display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 12px 12px 16px; border-radius: 14px; background: var(--ink-2); color: #fff; font-size: 15px; }
+  .ftr { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 24px; }
+  .ftr h4 { font-size: 14px; margin-bottom: 8px; }
+  .ftr li { padding: 4px 0; font-size: 14px; color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .locked ul { grid-template-columns: 1fr 1fr; }
+    .split, .svc-b, .mega, .ftr { grid-template-columns: 1fr; }
+    .split > .photo { aspect-ratio: 4 / 3; min-height: 0; }
+    .tiles4 { grid-template-columns: 1fr 1fr; }
+    .kv { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding-inline: 16px; gap: 52px; }
+    .locked ul, .tiles4, .before-after { grid-template-columns: 1fr; }
+    .scale > div { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.2 1.3a11 11 0 0 0 5.9 5.9L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/><path d="M9 11h6M9 14h4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2 2M14 9l2 2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="petals" viewBox="0 0 100 100"><g fill="#EAF8D6"><circle cx="50" cy="25" r="22"/><circle cx="75" cy="50" r="22"/><circle cx="50" cy="75" r="22"/><circle cx="25" cy="50" r="22"/></g><rect x="40" y="40" width="20" height="20" rx="3" transform="rotate(45 50 50)" fill="#B7F56A"/></symbol>
+  <symbol id="plan" viewBox="0 0 280 180">
+    <g fill="none" stroke="#3A3F3C" stroke-width="3" stroke-linecap="round">
+      <rect x="4" y="4" width="272" height="172" rx="3"/>
+      <path d="M150 4v62M150 104v72M4 96h82M120 96h30M210 104v72M150 104h60M236 104h40"/>
+    </g>
+    <g fill="none" stroke="#8B908B" stroke-width="1.5">
+      <path d="M86 96a34 34 0 0 1 34-34M150 66a38 38 0 0 1 38 38M210 104a26 26 0 0 1 26 -26"/>
+    </g>
+    <g font-family="Albert Sans, Arial, sans-serif" font-size="11" fill="#5A605C" font-weight="600">
+      <text x="18" y="28">Kitchen</text><text x="166" y="28">Living room</text><text x="18" y="124">Bedroom</text><text x="162" y="128">Bath</text><text x="220" y="128">Hall</text>
+    </g>
+    <g><circle cx="30" cy="70" r="9" fill="#B7F56A"/><circle cx="30" cy="70" r="3" fill="#1D201E"/><circle cx="262" cy="160" r="9" fill="#B7F56A"/><circle cx="262" cy="160" r="3" fill="#1D201E"/><circle cx="176" cy="160" r="9" fill="#B7F56A"/><circle cx="176" cy="160" r="3" fill="#1D201E"/></g>
+  </symbol>
+</svg>
+
+<div class="wrap">
+
+  <header class="bar">
+    <p class="brand">Bestone <span>Design Lab</span></p>
+    <ol class="steps" aria-label="Lab stages">
+      <li class="done"><a href="01-name.html">01 Name ✓</a></li>
+      <li class="done"><a href="02-directions.html">02 Directions ✓</a></li>
+      <li class="on">03 Library</li>
+      <li><a href="index.html">04 Refine</a></li>
+      <li>05 Pages</li>
+    </ol>
+  </header>
+
+  <section class="intro">
+    <p class="eyebrow">Lab 03 · Library</p>
+    <h1 class="h-display">Touchstone, the whole library at once</h1>
+    <p class="lead">Sixty numbered sections on one page, so everything can be decided in one pass. Fonts and colours are locked. Tap <b>Pick</b> on each variant you want (or <b>Keep</b> on single designs), add notes at the bottom, then press <b>Copy my picks</b> and paste the list to me.</p>
+  </section>
+
+  <section class="locked" aria-labelledby="lk">
+    <h2 id="lk" class="h4">Locked</h2>
+    <ul>
+      <li><b>Type: Portland</b>Archivo condensed headings, Albert Sans text. Open, readable, classic with a modern stretch.</li>
+      <li><b>Colour: Record</b>Warm paper, white surfaces, charcoal text, lime for actions and done states.</li>
+      <li><b>Booking: Portland</b>Refined further below, with three more modern variants.</li>
+      <li><b>Secondary buttons are white</b>on the paper page, so they stand out. Soft grey only on white.</li>
+      <li><b>Markers are ink on lime</b>A bare lime dot on paper can't be read. Every marker is a lime tile with an ink tick.</li>
+      <li><b>Gradients, in moderation</b>Lime gradients for main actions and progress, soft washes behind heroes and booking.</li>
+    </ul>
+  </section>
+
+  <nav class="jump" aria-label="Jump to group">
+    <a href="#g-fix">Fixes</a><a href="#g-found">Foundations</a><a href="#g-lang">Ornament &amp; type</a><a href="#g-act">Actions</a><a href="#g-nav">Navigation</a><a href="#g-hero">Heroes</a><a href="#g-svc">Services &amp; prices</a><a href="#g-tbl">Tables</a><a href="#g-proof">Proof</a><a href="#g-proc">Process</a><a href="#g-form">Forms</a><a href="#g-book">Booking</a><a href="#g-content">Content</a><a href="#g-state">States</a><a href="#g-doc">Documents</a><a href="#g-send">Send picks</a>
+  </nav>
+
+  <!-- ============ FIXES ============ -->
+  <div class="group" id="g-fix">
+    <div class="g-head"><p class="eyebrow">Your notes from Lab 02</p><h2 class="h1">Two fixes</h2></div>
+    <section class="sec">
+      <header class="sec-h"><b>F1</b><h3>WhatsApp button on the page</h3><p>Grey on paper had too little contrast. Secondary buttons on the paper page are now white.</p></header>
+      <div class="before-after">
+        <div class="stage paper"><span class="ba-lbl">Before</span><div class="row"><span class="btn btn-primary">Get your price</span><span class="btn" style="background:#E7E5DD">WhatsApp us</span></div></div>
+        <div class="stage paper"><span class="ba-lbl">After</span><div class="row"><span class="btn btn-primary">Get your price</span><span class="btn btn-white"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp us</span></div></div>
+      </div>
+    </section>
+    <section class="sec">
+      <header class="sec-h"><b>F2</b><h3>Fact markers</h3><p>The small lime dots disappeared on paper. Markers are now lime tiles carrying an ink tick.</p></header>
+      <div class="before-after">
+        <div class="stage paper"><span class="ba-lbl">Before</span><div class="row" style="gap:8px 18px; font-size:15px"><span style="display:flex;gap:8px;align-items:center"><i style="width:8px;height:8px;background:var(--lime);border-radius:2px"></i><b>5,000+</b> jobs completed</span><span style="display:flex;gap:8px;align-items:center"><i style="width:8px;height:8px;background:var(--lime);border-radius:2px"></i>Written guarantees</span></div></div>
+        <div class="stage paper"><span class="ba-lbl">After</span><div class="facts"><span class="fact"><i class="tick"></i><span><b>5,000+</b> jobs completed</span></span><span class="fact"><i class="tick"></i>Written guarantees</span></div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ FOUNDATIONS ============ -->
+  <div class="group" id="g-found">
+    <div class="g-head"><p class="eyebrow">Locked, shown for reference</p><h2 class="h1">Foundations</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>C</b><h3>Colour</h3><p>Record palette. Contrast figures are text on the paper page. Lime is about 1.2:1 on paper, so it is never text and never a bare mark.</p></header>
+      <div class="swatch-grid">
+        <div class="swatch"><i style="background:#F6F5F1"></i><div><b>Paper</b><em>#F6F5F1 · page</em></div></div>
+        <div class="swatch"><i style="background:#FFFFFF"></i><div><b>White</b><em>#FFFFFF · surfaces</em></div></div>
+        <div class="swatch"><i style="background:#ECEAE3"></i><div><b>Stone</b><em>#ECEAE3 · fields, quiet fills</em></div></div>
+        <div class="swatch"><i style="background:#1D201E"></i><div><b>Charcoal</b><em>#1D201E · text ≈15:1</em></div></div>
+        <div class="swatch"><i style="background:#5A605C"></i><div><b>Muted</b><em>#5A605C · text ≈6:1</em></div></div>
+        <div class="swatch"><i style="background:#B7F56A"></i><div><b>Lime</b><em>#B7F56A · ink on it ≈13:1</em></div></div>
+        <div class="swatch"><i style="background:#EAF8D6"></i><div><b>Lime soft</b><em>#EAF8D6 · selected, chips</em></div></div>
+        <div class="swatch"><i style="background:#FCF0CF"></i><div><b>Amber soft</b><em>#FCF0CF · waiting</em></div></div>
+        <div class="swatch"><i style="background:#FBE2DD"></i><div><b>Red soft</b><em>#FBE2DD · errors</em></div></div>
+        <div class="swatch"><i style="background:var(--grad-lime)"></i><div><b>Lime gradient</b><em>main actions, progress</em></div></div>
+        <div class="swatch"><i style="background:var(--grad-wash)"></i><div><b>Lime wash</b><em>behind heroes, booking</em></div></div>
+        <div class="swatch"><i style="background:var(--grad-lime-soft)"></i><div><b>Soft gradient</b><em>highlight panels</em></div></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>T</b><h3>Type scale</h3><p>Archivo condensed for headings and every figure; Albert Sans for reading and controls.</p></header>
+      <div class="stage scale">
+        <div><small>Display 68/68</small><span class="h-display">Priced before</span></div>
+        <div><small>H1 52/54</small><span class="h1">Mice control in Ilford</span></div>
+        <div><small>H2 40/42</small><span class="h2">What's included</span></div>
+        <div><small>H3 28/31</small><span class="h3">Written guarantee</span></div>
+        <div><small>H4 18/23</small><span class="h4">Pick a time</span></div>
+        <div><small>Lead 18/29</small><span class="lead">A fixed price before you book, and a written record after every job.</span></div>
+        <div><small>Body 16/26</small><span>Our technician inspects every room, treats the activity and shows you where mice get in.</span></div>
+        <div><small>Small 14/21</small><span class="body-s muted">Prices include VAT where it applies. Parking is charged at cost.</span></div>
+        <div><small>Eyebrow 12</small><span class="eyebrow">End of tenancy cleaning</span></div>
+        <div><small>Figure</small><span class="fig" style="font-size:48px">£130 · 48h · 5,000+</span></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S</b><h3>Space, corners, icons</h3><p>An 8-point rhythm with 4 for tight spots. Corners grow with the size of the object. One icon set, 1.75 stroke, sitting in soft lime discs when it leads a block.</p></header>
+      <div class="vars">
+        <div class="stage"><p class="eyebrow">Spacing</p><div class="space-row"><div><i style="height:4px"></i>4</div><div><i style="height:8px"></i>8</div><div><i style="height:12px"></i>12</div><div><i style="height:16px"></i>16</div><div><i style="height:24px"></i>24</div><div><i style="height:32px"></i>32</div><div><i style="height:48px"></i>48</div><div><i style="height:64px"></i>64</div><div><i style="height:96px"></i>96</div></div></div>
+        <div class="stage"><p class="eyebrow">Corners</p><div class="radius-row"><div style="border-radius:6px">6</div><div style="border-radius:8px">8</div><div style="border-radius:12px">12</div><div style="border-radius:16px">16</div><div style="border-radius:24px">24</div><div style="border-radius:32px">32</div></div><p class="note-s">6 chips · 8 rows · 12 controls · 16 cards · 24 panels · 32 phone sheets</p></div>
+        <div class="stage"><p class="eyebrow">Icons</p><div class="row"><span class="icon-disc"><svg class="icon"><use href="#i-phone"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-chat"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-cal"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-clock"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-pin"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-shield"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-file"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-key"/></svg></span><span class="icon-disc"><svg class="icon"><use href="#i-camera"/></svg></span></div><p class="note-s">Replaces the two icon libraries in use today.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ORNAMENT & TYPE ============ -->
+  <div class="group" id="g-lang">
+    <div class="g-head"><p class="eyebrow">The industry's own ornament, like Itqan's naqsh</p><h2 class="h1">Ornament and type</h2><p class="lead">Six ornaments taken from the trade itself. Keep the ones you like; the system will use two or three at most.</p></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S01</b><h3>Hallmarks</h3><p>Four small punches carry four facts, the way a British hallmark records maker, standard, office and year. For proof points and document headers.</p></header>
+      <div class="vars"><figure class="var" data-v="Keep"><div class="stage paper">
+        <div class="row"><span class="marks"><span class="mark m-shield">B1</span><span class="mark m-oct">£</span><span class="mark m-oval">IG1</span><span class="mark m-sq">26</span></span></div>
+        <div class="rows on-page" style="--cols: 90px 1fr; font-size:14px"><div><span class="muted">B1</span><b>Our own team</b></div><div><span class="muted">£</span><b>Priced before the visit</b></div><div><span class="muted">IG1</span><b>Based in Ilford</b></div><div><span class="muted">26</span><b>Record dated 2026</b></div></div>
+      </div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S02</b><h3>Floor plans</h3><p>The language of lettings. A simple plan shows the fix, never the pest: sealed entry points, rooms cleaned, boxes per room. For illustrations, reports and landlord pages.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Plan with sealed points"><div class="stage"><svg viewBox="0 0 280 180" style="width:100%;height:auto" role="img" aria-label="Floor plan with three sealed entry points"><use href="#plan"/></svg><p class="note-s">Lime points: entry gaps sealed during the visit.</p></div></figure>
+        <figure class="var" data-v="B" data-cap="Plan with rooms done"><div class="stage"><svg viewBox="0 0 280 180" style="width:100%;height:auto" role="img" aria-label="Floor plan with rooms marked cleaned"><rect x="6" y="6" width="142" height="88" fill="#EAF8D6"/><rect x="152" y="6" width="122" height="96" fill="#EAF8D6"/><rect x="152" y="106" width="56" height="68" fill="#EAF8D6"/><use href="#plan"/></svg><p class="note-s">Soft lime rooms: cleaned and signed off. Bedroom still to do.</p></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S03</b><h3>Uniform piping</h3><p>The lime piping on the uniform traces one seam of a card. The only line the system allows, because it is ornament, not a divider.</p></header>
+      <div class="vars"><figure class="var" data-v="Keep"><div class="stage paper"><div class="card piped" style="padding:22px 22px 22px 28px"><p class="eyebrow">Our team</p><p class="h3" style="margin-top:6px">Uniformed, vetted, ours</p><p class="muted" style="margin-top:8px">Every technician and cleaner is on our payroll and wears the Bestone uniform.</p></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S04</b><h3>Four petals</h3><p>The logo's four petals, one per service, as a quiet corner mark or a bullet. Echoes the logo without copying its colours.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Corner mark"><div class="stage paper"><div class="card petal-corner" style="padding:24px"><svg class="orn" aria-hidden="true"><use href="#petals"/></svg><p class="eyebrow">Four services</p><p class="h3" style="margin-top:6px; max-width:16ch">One team for the whole property</p></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Service bullets"><div class="stage"><ul class="rows" style="--cols: 32px 1fr auto"><li><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><use href="#petals"/></svg><b>Pest control</b><span class="muted">from £99</span></li><li><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><use href="#petals"/></svg><b>Cleaning</b><span class="muted">from £130</span></li><li><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><use href="#petals"/></svg><b>Gardening</b><span class="muted">£70 first hour</span></li><li><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><use href="#petals"/></svg><b>Removals</b><span class="muted">from £80/hr</span></li></ul></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S05</b><h3>The streak</h3><p>The mark a touchstone leaves. Once per screen, under the one word that matters.</p></header>
+      <div class="vars"><figure class="var" data-v="Keep"><div class="stage paper"><p class="h1">Proven after we <span class="streak">leave</span>.</p></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S06</b><h3>Sign-off stamp</h3><p>The inventory clerk's stamp. For done states, reports and the end of a booking.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Report stamp"><div class="stage paper" style="place-items:center; min-height:150px"><span class="stamp">Checked<b>13 Oct 2026</b><small>Bestone · Ref 0412</small></span></div></figure>
+        <figure class="var" data-v="B" data-cap="Inline done stamp"><div class="stage"><div class="rows" style="--cols: 1fr auto"><div><b>Kitchen and oven</b><span class="stamp" style="transform:rotate(-3deg); padding:4px 10px; font-size:11px">Done</span></div><div><b>Bathroom descale</b><span class="stamp" style="transform:rotate(2deg); padding:4px 10px; font-size:11px">Done</span></div><div><b>Carpets</b><span class="chip chip-amber">In progress</span></div></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S07</b><h3>Headline treatments</h3><p>Ways of writing a heading. Each page type can use one.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Streak word"><div class="stage paper"><p class="h1">Priced before we arrive. Proven after we <span class="streak">leave</span>.</p></div></figure>
+        <figure class="var" data-v="B" data-cap="Figure-led"><div class="stage paper"><p class="fig" style="font-size:88px">£99</p><p class="h3">Mice control, priced before we arrive.</p></div></figure>
+        <figure class="var" data-v="C" data-cap="Two weights"><div class="stage paper"><p class="h1">Priced before.<br><span style="font-weight:400; color:var(--muted)">Proven after.</span></p></div></figure>
+        <figure class="var" data-v="D" data-cap="Question and answer"><div class="stage paper"><p class="h1">Mice tonight?</p><p class="h1" style="font-style:italic; font-weight:500">Leave it with us.</p></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S08</b><h3>Price figures</h3><p>How a price sits in running layouts.</p></header>
+      <div class="vars">
+        <figure class="var" data-v="A" data-cap="From + figure"><div class="stage paper"><p class="fig" style="font-size:48px"><small>from</small>£130</p><p class="muted body-s">Studio flat, fixed price</p></div></figure>
+        <figure class="var" data-v="B" data-cap="Figure and unit"><div class="stage paper"><p style="display:flex; align-items:baseline; gap:8px"><span class="fig" style="font-size:48px">£70</span><span class="muted">first hour, then £50/hr</span></p></div></figure>
+        <figure class="var" data-v="C" data-cap="Price tile"><div class="stage paper"><div style="background:var(--grad-lime-soft); border-radius:12px; padding:14px 16px; display:grid; gap:4px"><span class="eyebrow">Fixed price</span><span class="fig" style="font-size:48px">£200</span><span class="body-s muted">1 bedroom, confirmed before you book</span></div></div></figure>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ACTIONS ============ -->
+  <div class="group" id="g-act">
+    <div class="g-head"><p class="eyebrow">Buttons and every state</p><h2 class="h1">Actions</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S09</b><h3>Main button: solid or gradient</h3><p>Same shapes, two finishes for the primary action. Gradient adds a more modern feel; solid is calmer.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Solid lime"><div class="stage paper"><div class="row"><span class="btn btn-primary">Default</span><span class="btn btn-primary is-hover">Hover</span><span class="btn btn-primary is-focus">Focus</span><span class="btn btn-primary is-active">Pressed</span><span class="btn is-disabled">Disabled</span><span class="btn btn-primary"><i class="spin"></i>Booking…</span></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Lime gradient"><div class="stage paper"><div class="row"><span class="btn btn-grad">Default</span><span class="btn btn-grad is-hover">Hover</span><span class="btn btn-grad is-focus">Focus</span><span class="btn btn-grad is-active">Pressed</span><span class="btn is-disabled">Disabled</span><span class="btn btn-grad"><i class="spin"></i>Booking…</span></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S10</b><h3>Secondary, link and sizes</h3><p>White on paper, stone on white. The text link carries a lime underline, never lime text.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="Keep"><div class="stage paper"><div class="row"><span class="btn btn-white">On paper</span><span class="btn btn-white is-hover">Hover</span><a class="btn btn-link" href="#s10">See all prices</a></div><div class="card row"><span class="btn btn-soft">On white</span><span class="btn btn-soft is-hover">Hover</span></div><div class="row"><span class="btn btn-primary btn-sm">Small 40</span><span class="btn btn-primary">Default 48</span><span class="btn btn-primary btn-lg">Large 56</span></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S11</b><h3>WhatsApp and call</h3><p>The two contact actions every page carries.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Icon + label"><div class="stage paper"><div class="row"><span class="btn btn-white"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp us</span><span class="btn btn-white"><svg class="icon"><use href="#i-phone"/></svg>020 8079 7336</span></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Contact tiles"><div class="stage paper"><div class="row" style="display:grid; grid-template-columns:1fr 1fr; gap:8px"><div class="card" style="display:flex; gap:12px; align-items:center; padding:14px"><span class="icon-disc"><svg class="icon"><use href="#i-chat"/></svg></span><span><b>WhatsApp</b><span class="body-s muted" style="display:block">Replies 8am–8pm</span></span></div><div class="card" style="display:flex; gap:12px; align-items:center; padding:14px"><span class="icon-disc"><svg class="icon"><use href="#i-phone"/></svg></span><span><b>Call</b><span class="body-s muted tab" style="display:block">020 8079 7336</span></span></div></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S12</b><h3>Sticky phone bar</h3><p>Stays at the bottom of every page on phones.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Two actions"><div class="stage paper"><div style="background:var(--surface); border-radius:18px; padding:8px; display:grid; grid-template-columns:auto 1fr; gap:8px; max-width:380px"><span class="btn btn-soft"><svg class="icon"><use href="#i-chat"/></svg></span><span class="btn btn-grad">Get your price</span></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Price + action"><div class="stage paper"><div style="background:var(--surface); border-radius:18px; padding:8px 8px 8px 16px; display:flex; justify-content:space-between; align-items:center; gap:8px; max-width:380px"><span><span class="body-s muted" style="display:block">Mice control</span><span class="fig" style="font-size:24px"><small>from</small>£99</span></span><span class="btn btn-grad">Book</span></div></div></figure>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <div class="group" id="g-nav">
+    <div class="g-head"><p class="eyebrow">Header, menus, wayfinding</p><h2 class="h1">Navigation</h2><p class="note-s">The mark and wordmark here stand in for the real logo.</p></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S13</b><h3>Desktop header</h3><p>A: one row. B: a slim info row above, for hours and the phone number.</p></header>
+      <div class="vars wide">
+        <figure class="var" data-v="A" data-cap="One row"><div class="stage"><div class="hdr"><span class="logo"><svg viewBox="0 0 100 100"><use href="#petals"/></svg>Bestone</span><nav class="nav"><a class="on" href="#s13">Pest control</a><a href="#s13">Cleaning</a><a href="#s13">Gardening</a><a href="#s13">Removals</a><a href="#s13">Prices</a><a href="#s13">Areas</a></nav><div class="row"><span class="btn btn-soft btn-sm"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</span><span class="btn btn-primary btn-sm">Get your price</span></div></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Info row + main row"><div class="stage" style="gap:10px"><div class="util"><span>Open <b>Mon–Sat, 8am–8pm</b></span><span>Call <b class="tab">020 8079 7336</b></span><span>Based in <b>Ilford, IG1</b></span><span>Prices shown <b>before you book</b></span></div><div class="hdr"><span class="logo"><svg viewBox="0 0 100 100"><use href="#petals"/></svg>Bestone</span><nav class="nav"><a href="#s13">Services</a><a href="#s13">Prices</a><a href="#s13">Landlords</a><a href="#s13">Areas</a><a href="#s13">Guides</a></nav><span class="btn btn-primary btn-sm">Get your price</span></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S14</b><h3>Services menu</h3><p>Every service with its starting price, so the menu itself answers "how much?".</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage"><div class="mega">
+        <div><h4>Pest control</h4><ul><li>Mice control<span>£99</span></li><li>Rat control<span></span></li><li>Bed bugs<span></span></li><li>Wasp nests<span></span></li><li>Cockroaches<span></span></li></ul></div>
+        <div><h4>Cleaning</h4><ul><li>End of tenancy<span>£130</span></li><li>Deep clean<span></span></li><li>After builders<span></span></li><li>Carpets<span></span></li><li>Ovens<span></span></li></ul></div>
+        <div><h4>Gardening</h4><ul><li>Maintenance<span>£70</span></li><li>Clearance<span></span></li><li>Lawns and hedges<span></span></li></ul></div>
+        <div><h4>Removals</h4><ul><li>House removals<span>£80/hr</span></li><li>Man and van<span></span></li><li>Packing<span>£30/hr</span></li></ul></div>
+        <div style="background:var(--grad-lime-soft); border-radius:14px; padding:16px; display:grid; gap:10px; align-content:start"><p class="eyebrow">Prices before you ask</p><p class="h3">Every price, one page</p><span class="btn btn-white btn-sm">See the price list</span></div>
+      </div><p class="note-s">Only prices from the current price list are shown; the rest fill in as the client confirms them.</p></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S15</b><h3>Phone menu</h3><p>A: one list with prices. B: grouped by service.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Price list menu"><div class="stage paper" style="justify-items:center"><div class="phone"><div class="ph-top"><span class="logo" style="font-size:18px"><svg viewBox="0 0 100 100" style="width:24px;height:24px"><use href="#petals"/></svg>Bestone</span><span class="btn btn-soft btn-sm">Close</span></div><ul class="pl"><li><span class="n">Mice control</span><span class="fig"><small>from</small>£99</span></li><li><span class="n">End of tenancy</span><span class="fig"><small>from</small>£130</span></li><li><span class="n">Garden care</span><span class="fig">£70</span></li><li><span class="n">Removals</span><span class="fig"><small>from</small>£80</span></li></ul><div class="row" style="display:grid; grid-template-columns:1fr 1fr"><span class="btn btn-soft">Landlords</span><span class="btn btn-soft">Areas</span></div><span class="btn btn-grad btn-block">Get your price</span></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Grouped menu"><div class="stage paper" style="justify-items:center"><div class="phone"><div class="ph-top"><span class="logo" style="font-size:18px"><svg viewBox="0 0 100 100" style="width:24px;height:24px"><use href="#petals"/></svg>Bestone</span><span class="btn btn-soft btn-sm">Close</span></div><div class="faq-p"><details open><summary>Pest control</summary><p>Mice · Rats · Bed bugs · Wasps · Cockroaches</p></details><details><summary>Cleaning</summary><p>End of tenancy · Deep · After builders</p></details><details><summary>Gardening</summary><p>Maintenance · Clearance</p></details><details><summary>Removals</summary><p>House moves · Man and van · Packing</p></details></div><span class="btn btn-grad btn-block">Get your price</span></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S16</b><h3>Breadcrumbs and page tabs</h3><p>Where you are, and quick jumps within a long service page.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage"><ol class="crumbs"><li>Home</li><li>Pest control</li><li>Mice control</li></ol><div class="tabs"><a class="on" href="#s16">Overview</a><a href="#s16">Price</a><a href="#s16">How it works</a><a href="#s16">Guarantee</a><a href="#s16">Questions</a></div></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ HEROES ============ -->
+  <div class="group" id="g-hero">
+    <div class="g-head"><p class="eyebrow">The first screen of each page type</p><h2 class="h1">Heroes</h2><p class="lead">Photos are from the current site. Beside copy, a photo is as tall as the copy.</p></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S17</b><h3>Home: price list hero</h3><p>The Lab 02 hero with both fixes and the record-style price list.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper">
+        <div class="split">
+          <div class="copy">
+            <p class="eyebrow">London property services</p>
+            <h2 class="h-display">Priced before we arrive. Proven after we <span class="streak">leave</span>.</h2>
+            <p class="lead">Pest control, end of tenancy cleaning, gardening and removals from our own uniformed team. A fixed price before you book, and a written record after every job.</p>
+            <div class="row"><span class="btn btn-grad btn-lg">Get your price</span><span class="btn btn-white btn-lg"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp us</span></div>
+            <div class="facts"><span class="fact"><i class="tick"></i><span><b>5,000+</b> jobs completed</span></span><span class="fact"><i class="tick"></i>Written guarantees</span><span class="fact"><i class="tick"></i>Own staff, no franchise</span></div>
+          </div>
+          <div class="photo fill"><img src="../../apps/web/public/images/service/best-one-team-hero-v1.webp" alt="Bestone cleaner and pest technician in charcoal uniforms"></div>
+        </div>
+        <p class="eyebrow" style="margin-top:8px">Prices, before you ask</p>
+        <ul class="pl"><li><span class="n">Mice control<span class="s">per species, written guarantee</span></span><span class="fig"><small>from</small>£99</span></li><li><span class="n">End of tenancy cleaning<span class="s">studio flat, 48-hour re-clean</span></span><span class="fig"><small>from</small>£130</span></li><li><span class="n">Garden care<span class="s">two gardeners, first hour, then £50/hr</span></span><span class="fig">£70</span></li><li><span class="n">Removals<span class="s">two movers and a van, per hour</span></span><span class="fig"><small>from</small>£80</span></li></ul>
+      </div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S18</b><h3>Home: lime wash hero</h3><p>A more modern take: a soft lime gradient, the price chooser inside the hero, the photo framed on white.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage flush"><div style="background:var(--grad-wash); padding:clamp(18px,3vw,36px)"><div class="split">
+        <div class="copy">
+          <p class="eyebrow">Pest control · Cleaning · Gardening · Removals</p>
+          <h2 class="h-display">One team. One price. Before we arrive.</h2>
+          <div class="card" style="display:grid; gap:12px">
+            <div class="seg lime" role="radiogroup" aria-label="Service"><button type="button" role="radio" aria-checked="true">Pest</button><button type="button" role="radio" aria-checked="false">Cleaning</button><button type="button" role="radio" aria-checked="false">Garden</button><button type="button" role="radio" aria-checked="false">Removals</button></div>
+            <ul class="pl"><li><span class="n">Mice control</span><span class="fig"><small>from</small>£99</span></li><li><span class="n">Rat control</span><span class="muted body-s">price on inspection</span></li></ul>
+            <span class="btn btn-grad btn-block">Book pest control</span>
+          </div>
+        </div>
+        <div class="photo fill"><img src="../../apps/web/public/images/service/best-one-pest-technician-hero-v1.webp" alt="Bestone pest technician inside a London home"></div>
+      </div></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S19</b><h3>Service hero</h3><p>Top of a service page: the price is in the first line of sight.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper"><div class="split">
+        <div class="copy">
+          <ol class="crumbs"><li>Home</li><li>Pest control</li><li>Mice control</li></ol>
+          <h2 class="h1">Mice control</h2>
+          <p style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap"><span class="fig" style="font-size:64px"><small>from</small>£99</span><span class="muted">per species, written guarantee</span></p>
+          <p class="lead">A technician inspects every room, treats the activity and shows you exactly where mice get in.</p>
+          <div class="row"><span class="btn btn-grad btn-lg">Book mice control</span><span class="btn btn-white btn-lg"><svg class="icon"><use href="#i-chat"/></svg>Ask a question</span></div>
+          <div class="facts"><span class="fact"><i class="tick"></i>Inspection included</span><span class="fact"><i class="tick"></i>1 or 3 month guarantee</span><span class="fact"><i class="tick"></i>Treatment report</span></div>
+        </div>
+        <div class="photo fill"><img src="../../apps/web/public/images/service/best-one-pest-technician-hero-v1.webp" alt="Bestone pest technician"></div>
+      </div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S20</b><h3>Urgent hero</h3><p>For the tenant at 11pm. No photo, no pest: two big ways to reach us and what happens next.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="Keep"><div class="stage paper">
+          <p class="eyebrow">Mice, rats, wasps</p>
+          <p class="h-display">Found something tonight?</p>
+          <p class="h1" style="font-style:italic; font-weight:500">Leave it with us.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px"><span class="btn btn-grad btn-lg"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp now</span><span class="btn btn-white btn-lg"><svg class="icon"><use href="#i-phone"/></svg>Call</span></div>
+          <ol class="rows on-page" style="--cols: 42px 1fr"><li><span class="plq">1</span><span>Send a photo or describe what you saw</span></li><li><span class="plq">2</span><span>Get a fixed price and the first free slot</span></li><li><span class="plq">3</span><span>A named technician arrives in uniform</span></li></ol>
+          <p class="note-s">We reply Mon–Sat, 8am–8pm. Messages sent later are answered first thing.</p>
+        </div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S21</b><h3>Landlord hero</h3><p>For landlords and agents: one account for every property, with the paperwork done.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage"><div class="split">
+        <div class="copy">
+          <p class="eyebrow">For landlords and letting agents</p>
+          <h2 class="h1">Every property you let, <span class="streak">on record</span>.</h2>
+          <p class="lead">Book cleaning, pest control and garden work for one flat or fifty. Every job comes back with an invoice, photos and a report you can forward to a tenant or a deposit scheme.</p>
+          <div class="row"><span class="btn btn-grad btn-lg">Set up a landlord account</span><span class="btn btn-soft btn-lg">Talk to us</span></div>
+          <ul class="rows" style="--cols: 42px 1fr"><li><span class="icon-disc" style="width:36px;height:36px"><svg class="icon"><use href="#i-file"/></svg></span><span>Invoice per property</span></li><li><span class="icon-disc" style="width:36px;height:36px"><svg class="icon"><use href="#i-camera"/></svg></span><span>Before and after photo report</span></li><li><span class="icon-disc" style="width:36px;height:36px"><svg class="icon"><use href="#i-shield"/></svg></span><span>Pest treatment report and guarantee</span></li></ul>
+        </div>
+        <div class="card-soft" style="display:grid; place-items:center; padding:20px"><svg viewBox="0 0 280 180" style="width:100%; height:auto" role="img" aria-label="Floor plan illustration with rooms signed off"><rect x="6" y="6" width="142" height="88" fill="#EAF8D6"/><rect x="152" y="6" width="122" height="96" fill="#EAF8D6"/><use href="#plan"/></svg></div>
+      </div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S22</b><h3>Area hero</h3><p>Top of a local page: the place, our base and what we do there.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper"><div class="split">
+        <div class="copy">
+          <ol class="crumbs"><li>Home</li><li>Areas</li><li>Ilford</li></ol>
+          <h2 class="h1">Pest control and cleaning in Ilford</h2>
+          <p class="lead">Our base is on Clements Road, IG1, so Ilford jobs are rarely more than a short drive for the team.</p>
+          <div class="row"><span class="chip chip-lime">IG1</span><span class="chip chip-lime">IG2</span><span class="chip chip-lime">IG3</span><span class="chip chip-lime">IG4</span><span class="chip chip-lime">IG6</span></div>
+          <div class="row"><span class="btn btn-grad">Get your price</span><span class="btn btn-white"><svg class="icon"><use href="#i-pin"/></svg>28–42 Clements Rd</span></div>
+        </div>
+        <div class="card" style="display:grid; gap:4px"><p class="eyebrow" style="margin-bottom:6px">In Ilford we do</p><ul class="pl"><li><span class="n">Mice control</span><span class="fig" style="font-size:22px"><small>from</small>£99</span></li><li><span class="n">End of tenancy</span><span class="fig" style="font-size:22px"><small>from</small>£130</span></li><li><span class="n">Garden care</span><span class="fig" style="font-size:22px">£70</span></li><li><span class="n">Removals</span><span class="fig" style="font-size:22px"><small>from</small>£80</span></li></ul></div>
+      </div></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ SERVICES & PRICES ============ -->
+  <div class="group" id="g-svc">
+    <div class="g-head"><p class="eyebrow">Our strongest message: the price, before anyone asks</p><h2 class="h1">Services and prices</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S23</b><h3>Service cards</h3><p>A: photo on top. B: photo beside, for lists. C: no photo, for dense grids.</p></header>
+      <div class="vars">
+        <figure class="var" data-v="A" data-cap="Photo top"><div class="stage paper"><article class="svc-a"><div class="photo"><img src="../../apps/web/public/images/service/best-one-cleaner-kitchen-v1.webp" alt="Bestone cleaner in a kitchen"></div><div class="body"><h3 class="h3">End of tenancy</h3><p class="muted">An agency-checklist clean with a free re-clean if anything is flagged.</p><div class="incl"><span class="chip chip-lime">Checklist</span><span class="chip chip-lime">Oven</span><span class="chip chip-lime">48h re-clean</span></div><div class="foot-row"><span class="fig" style="font-size:32px"><small>from</small>£130</span><span class="btn btn-soft btn-sm">See prices</span></div></div></article></div></figure>
+        <figure class="var" data-v="B" data-cap="Photo beside"><div class="stage paper"><article class="svc-b"><div class="photo"><img src="../../apps/web/public/images/service/best-one-pest-technician-hero-v1.webp" alt="Bestone pest technician"></div><div class="body"><h3 class="h3">Mice control</h3><p class="muted body-s">Inspection, treatment and proofing advice.</p><span class="fig" style="font-size:30px"><small>from</small>£99</span><a class="btn btn-link" href="#s23">See mice control</a></div></article></div></figure>
+        <figure class="var" data-v="C" data-cap="Compact, no photo"><div class="stage paper"><div class="svc-c"><div class="foot-row"><span class="plq">1</span><span class="chip">Pest control</span></div><h3 class="h3">Mice control</h3><p class="muted body-s">Inspection, treatment and proofing advice.</p><div class="foot-row"><span class="fig" style="font-size:30px"><small>from</small>£99</span><svg class="icon"><use href="#i-arrow"/></svg></div></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S24</b><h3>Price list</h3><p>A: record rows, the Record direction you liked. B: tiles.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Record rows"><div class="stage"><ul class="pl"><li><span class="n">Mice control<span class="s">per species</span></span><span class="fig"><small>from</small>£99</span></li><li><span class="n">End of tenancy<span class="s">studio flat</span></span><span class="fig"><small>from</small>£130</span></li><li><span class="n">Garden care<span class="s">two gardeners, first hour</span></span><span class="fig">£70</span></li><li><span class="n">Removals<span class="s">two movers and a van, per hour</span></span><span class="fig"><small>from</small>£80</span></li></ul></div></figure>
+        <figure class="var" data-v="B" data-cap="Tiles"><div class="stage paper"><ul class="tiles4" style="grid-template-columns:1fr 1fr"><li><span class="n" style="font-weight:600">Mice control</span><span class="fig" style="font-size:30px"><small>from</small>£99</span></li><li><span style="font-weight:600">End of tenancy</span><span class="fig" style="font-size:30px"><small>from</small>£130</span></li><li><span style="font-weight:600">Garden care</span><span class="fig" style="font-size:30px">£70</span></li><li><span style="font-weight:600">Removals</span><span class="fig" style="font-size:30px"><small>from</small>£80</span></li></ul></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S25</b><h3>Price explorer</h3><p>Pick the property size; the price and the button follow. Prices from the current list.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage"><div class="split">
+        <div class="copy">
+          <p class="eyebrow">End of tenancy cleaning</p>
+          <h3 class="h2">One fixed price for your property</h3>
+          <div class="seg lime" role="radiogroup" aria-label="Property size" id="seg"><button type="button" role="radio" aria-checked="false" data-i="0">Studio</button><button type="button" role="radio" aria-checked="true" data-i="1">1 bed</button><button type="button" role="radio" aria-checked="false" data-i="2">2 bed</button><button type="button" role="radio" aria-checked="false" data-i="3">3 bed</button><button type="button" role="radio" aria-checked="false" data-i="4">4 bed</button></div>
+          <p style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap"><span class="fig" id="pbFig" style="font-size:80px">£200</span><span class="muted" id="pbNote">1 bedroom, standard clean.</span></p>
+          <div class="row"><span class="btn btn-grad btn-lg" id="pbBtn">Book at £200</span><span class="btn btn-soft btn-lg"><svg class="icon"><use href="#i-chat"/></svg>Ask on WhatsApp</span></div>
+        </div>
+        <div style="display:grid; gap:14px; align-content:start"><p class="eyebrow">Included</p><ul class="rows" style="--cols: 24px 1fr"><li><i class="tick"></i>Full agency inventory checklist</li><li><i class="tick"></i>Kitchen appliances and oven</li><li><i class="tick"></i>Bathrooms descaled and sanitised</li><li><i class="tick"></i>Free re-clean if flagged within 48 hours</li></ul></div>
+      </div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S26</b><h3>Hourly price table</h3><p>For services priced by time and team size.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div class="tbl-scroll"><table class="tbl"><thead><tr><th>Service</th><th>Team</th><th class="num">Rate</th></tr></thead><tbody><tr><td>Garden care</td><td>2 gardeners</td><td class="num"><b>£70</b> first hour, <b>£50</b> after</td></tr><tr><td>Green waste</td><td>per bag</td><td class="num"><b>£5</b> standard, <b>£50</b> jumbo</td></tr><tr><td>Removals</td><td>2 movers + van</td><td class="num"><b>£80–£120</b>/hr</td></tr><tr><td>Removals</td><td>3 movers + van</td><td class="num"><b>£120–£160</b>/hr</td></tr><tr><td>Packing</td><td>per packer</td><td class="num">from <b>£30</b>/hr</td></tr></tbody></table></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S27</b><h3>What changes the price</h3><p>Honest drivers, so the fixed price never feels arbitrary.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper"><div class="rows on-page" style="--cols: 42px 1fr"><div><span class="plq">1</span><span><b>Property size</b><span class="body-s muted" style="display:block">Studio to four bedrooms, fixed per size</span></span></div><div><span class="plq">2</span><span><b>Extra bathrooms</b><span class="body-s muted" style="display:block">Two are included from three bedrooms</span></span></div><div><span class="plq">3</span><span><b>Carpets</b><span class="body-s muted" style="display:block">Steam cleaning is added per room</span></span></div></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S28</b><h3>Add-ons</h3><p>Tick what you need; the total updates. Add-on prices will come from the client's list.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div style="display:grid; gap:6px"><div class="choice on"><span class="cbox on"></span><span style="flex:1"><b>End of tenancy, 1 bed</b><span class="body-s muted" style="display:block">Base price</span></span><b class="fig" style="font-size:22px">£200</b></div><div class="choice"><span class="cbox"></span><span style="flex:1"><b>Carpet steam clean</b><span class="body-s muted" style="display:block">Per room</span></span><span class="muted body-s">from list</span></div><div class="choice"><span class="cbox"></span><span style="flex:1"><b>Mattress sanitising</b><span class="body-s muted" style="display:block">Per mattress</span></span><span class="muted body-s">from list</span></div></div><div class="ph-bar"><div><small>Total, fixed</small><b>£200</b></div><span class="btn btn-grad">Continue</span></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S29</b><h3>Member rate</h3><p>The Bestone Club rate from the current config, shown next to the standard price.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper"><div class="card" style="display:grid; gap:12px"><p class="eyebrow">Packing service</p><div style="display:grid; grid-template-columns:1fr 1fr; gap:8px"><div style="background:var(--page); border-radius:12px; padding:14px"><span class="body-s muted">Standard</span><p class="fig" style="font-size:36px">£30<small>/hr</small></p></div><div style="background:var(--grad-lime-soft); border-radius:12px; padding:14px"><span class="body-s"><b>Club members</b></span><p class="fig" style="font-size:36px">£25<small>/hr</small></p></div></div><p class="body-s muted">Save £5 an hour on packing across London.</p></div></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ TABLES ============ -->
+  <div class="group" id="g-tbl">
+    <div class="g-head"><p class="eyebrow">Inspired by the Record direction: tone, not lines</p><h2 class="h1">Tables</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S30</b><h3>Record table</h3><p>The base table: alternating tone, tabular figures, no rules.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div class="tbl-scroll"><table class="tbl"><thead><tr><th>Property</th><th>Includes</th><th class="num">Fixed price</th></tr></thead><tbody><tr><td>Studio</td><td>Standard clean</td><td class="num"><b>£130</b></td></tr><tr><td>1 bedroom</td><td>Checklist, appliances, bathroom</td><td class="num"><b>£200</b></td></tr><tr><td>2 bedrooms</td><td>Kitchen, bathroom, living, hall</td><td class="num"><b>£230</b></td></tr><tr><td>3 bedrooms</td><td>Up to 2 bathrooms</td><td class="num"><b>£300</b></td></tr><tr><td>4 bedrooms</td><td>Multiple bathrooms, oven degrease</td><td class="num"><b>£350</b></td></tr></tbody></table></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S31</b><h3>Included matrix</h3><p>Standard against premium, with ticks in lime tiles.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div class="tbl-scroll"><table class="tbl"><thead><tr><th>Studio flat</th><th>Standard</th><th>Premium</th></tr></thead><tbody><tr><td>Tenancy checklist clean</td><td><i class="tick"></i></td><td><i class="tick"></i></td></tr><tr><td>Carpet steam clean</td><td class="muted">—</td><td><i class="tick"></i></td></tr><tr><td>Deodorising</td><td class="muted">—</td><td><i class="tick"></i></td></tr></tbody><tfoot><tr><td>Fixed price</td><td class="fig" style="font-size:24px">£130</td><td class="fig" style="font-size:24px">£160</td></tr></tfoot></table></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S32</b><h3>Treatment plan</h3><p>Visits laid out as a schedule. Example plan; the client confirms the real one.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div class="tbl-scroll"><table class="tbl"><thead><tr><th>Visit</th><th>When</th><th>What happens</th></tr></thead><tbody><tr><td><span class="plq done">1</span></td><td>Day 1</td><td>Inspection, treatment, entry points marked</td></tr><tr><td><span class="plq">2</span></td><td>Day 7–10</td><td>Check activity, top up treatment</td></tr><tr><td><span class="plq todo">3</span></td><td>Day 14–21</td><td>Final check, proofing advice, report</td></tr></tbody></table></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S33</b><h3>Admin bookings table</h3><p>For the dashboard. Status is a chip with a word, never colour alone.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage"><div class="tbl-scroll"><table class="tbl" style="min-width:720px"><thead><tr><th>Ref</th><th>Service</th><th>Property</th><th>When</th><th>Status</th><th class="num">Price</th></tr></thead><tbody><tr><td class="tab">0412</td><td>End of tenancy</td><td>Flat 2, IG1</td><td class="tab">Tue 13 Oct, 8am</td><td><span class="chip chip-solid">Confirmed</span></td><td class="num">£200</td></tr><tr><td class="tab">0413</td><td>Mice control</td><td>House, E17</td><td class="tab">Tue 13 Oct, 2pm</td><td><span class="chip chip-lime"><span class="dot"></span>On the way</span></td><td class="num">£99</td></tr><tr><td class="tab">0414</td><td>Garden care</td><td>House, RM1</td><td class="tab">Wed 14 Oct</td><td><span class="chip chip-amber">Needs price</span></td><td class="num">—</td></tr><tr><td class="tab">0415</td><td>Removals</td><td>Flat 9, E15</td><td class="tab">Thu 15 Oct</td><td><span class="chip chip-red">Cancelled</span></td><td class="num">—</td></tr></tbody></table></div><p class="note-s">Example rows.</p></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S34</b><h3>Invoice lines</h3><p>Line items with a clear total, the same on screen and on paper.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div class="tbl-scroll"><table class="tbl"><thead><tr><th>Item</th><th class="num">Qty</th><th class="num">Amount</th></tr></thead><tbody><tr><td>End of tenancy clean, 1 bedroom</td><td class="num">1</td><td class="num">£200.00</td></tr><tr><td>Oven clean</td><td class="num">1</td><td class="num muted">Included</td></tr><tr><td>48-hour re-clean cover</td><td class="num">1</td><td class="num muted">Included</td></tr></tbody><tfoot><tr><td colspan="2">Total</td><td class="num fig" style="font-size:28px">£200.00</td></tr></tfoot></table></div></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ PROOF ============ -->
+  <div class="group" id="g-proof">
+    <div class="g-head"><p class="eyebrow">Facts the business stands behind, never superlatives</p><h2 class="h1">Proof</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S35</b><h3>Facts row</h3><p>Three facts under a hero or before a closing call to action.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Ticks"><div class="stage paper"><div class="facts"><span class="fact"><i class="tick"></i><span><b>5,000+</b> jobs completed</span></span><span class="fact"><i class="tick"></i>Written guarantees</span><span class="fact"><i class="tick"></i>Own staff, no franchise</span></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Big figures"><div class="stage paper"><div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px"><div class="card" style="padding:14px"><p class="fig" style="font-size:40px">5,000+</p><p class="body-s muted">jobs completed</p></div><div class="card" style="padding:14px"><p class="fig" style="font-size:40px">48h</p><p class="body-s muted">re-clean promise</p></div><div class="card" style="padding:14px"><p class="fig" style="font-size:40px">0</p><p class="body-s muted">franchises in between</p></div></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S36</b><h3>Credentials you can check</h3><p>Registration numbers with a link to the public register. Shown as pending until the client sends each one.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div class="rows" style="--cols: 44px 1fr auto"><div><span class="icon-disc" style="width:36px;height:36px"><svg class="icon"><use href="#i-file"/></svg></span><span><b>Company</b><span class="body-s muted tab" style="display:block">Bestone Services Ltd · 15574809</span></span><a class="btn btn-link btn-sm" href="#s36">Check</a></div><div><span class="icon-disc" style="width:36px;height:36px"><svg class="icon"><use href="#i-shield"/></svg></span><span><b>Waste carrier</b><span class="body-s muted" style="display:block">Environment Agency register</span></span><span class="chip chip-amber">Awaiting number</span></div><div><span class="icon-disc" style="width:36px;height:36px"><svg class="icon"><use href="#i-shield"/></svg></span><span><b>Rodenticide certificate</b><span class="body-s muted" style="display:block">CRRU-approved, RSPH/BPCA</span></span><span class="chip chip-amber">Awaiting copy</span></div><div><span class="icon-disc" style="width:36px;height:36px"><svg class="icon"><use href="#i-shield"/></svg></span><span><b>Public liability insurance</b><span class="body-s muted" style="display:block">Insurer and cover amount</span></span><span class="chip chip-amber">Awaiting copy</span></div></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S37</b><h3>Guarantees</h3><p>What we stand behind, per service, in writing.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper"><div style="display:grid; grid-template-columns:1fr 1fr; gap:8px"><div class="card piped" style="padding:18px 18px 18px 24px; display:grid; gap:6px"><p class="fig" style="font-size:44px">48h</p><p><b>Re-clean</b></p><p class="body-s muted">If the agent flags anything within 48 hours, we come back free.</p></div><div class="card piped" style="padding:18px 18px 18px 24px; display:grid; gap:6px"><p class="fig" style="font-size:44px">1–3<small> months</small></p><p><b>Pest guarantee</b></p><p class="body-s muted">Written guarantee with every treatment plan.</p></div></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S38</b><h3>Google rating</h3><p>The real figure with its count, nothing rounded up.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper"><div class="card" style="display:flex; gap:16px; align-items:center; flex-wrap:wrap"><p class="fig" style="font-size:56px">5.0</p><div><p aria-label="5 out of 5 stars" style="display:flex; gap:3px">★★★★★</p><p class="body-s muted">16 Google reviews</p></div><a class="btn btn-link" href="#s38" style="margin-left:auto">Read them on Google</a></div><p class="note-s">Stars sit in charcoal; lime would not be readable at this size.</p></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S39</b><h3>Review cards</h3><p>Text always comes from Google exactly as written. Placeholder text shown here.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Quote card"><div class="stage paper"><blockquote class="card" style="display:grid; gap:12px"><p class="h3" style="font-weight:500">"Review text appears here, pulled from Google as written."</p><p class="body-s muted">Reviewer's first name · Service · Month 2026</p></blockquote></div></figure>
+        <figure class="var" data-v="B" data-cap="Review with job record"><div class="stage paper"><div class="card" style="display:grid; gap:12px"><p>"Review text appears here, pulled from Google as written."</p><div class="rows" style="--cols: 80px 1fr; font-size:14px"><div><span class="muted">Service</span><b>End of tenancy</b></div><div><span class="muted">Area</span><b>Ilford</b></div></div></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S40</b><h3>Our own team</h3><p>Uniform, payroll, one accountable company.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper"><div class="split"><div class="photo fill"><img src="../../apps/web/public/images/service/best-one-cleaner-handover-v1.webp" alt="Bestone cleaner at a property handover"></div><div class="copy"><p class="eyebrow">Our team</p><h3 class="h2">The people at your door work for us</h3><p class="lead">No franchise, no marketplace, no agency staff. Every cleaner and technician is employed by Bestone, wears our uniform and carries photo ID.</p><div class="facts"><span class="fact"><i class="tick"></i>Uniformed</span><span class="fact"><i class="tick"></i>Photo ID</span><span class="fact"><i class="tick"></i>Branded vans</span></div></div></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S41</b><h3>Who's coming</h3><p>Sent the evening before every visit.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper"><div class="card" style="display:grid; gap:12px"><div class="who" style="background:var(--lime-wash)"><span class="avatar">S</span><div><b>Sam is coming tomorrow</b><small>Pest technician · shows photo ID at the door</small></div></div><div class="rows" style="--cols: 70px 1fr; font-size:14px"><div><span class="muted">When</span><b class="tab">Tue 13 Oct, 8–10am</b></div><div><span class="muted">Van</span><b>Bestone livery, lime piping</b></div></div></div><p class="note-s">Example name.</p></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ PROCESS ============ -->
+  <div class="group" id="g-proc">
+    <div class="g-head"><p class="eyebrow">Plaques from Threshold, the ticket from Sorted</p><h2 class="h1">Process</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S42</b><h3>Steps in a row</h3><p>How a job works, four steps across, stacked on phones.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper"><ol style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:8px"><li class="card" style="display:grid; gap:10px"><span class="plq">1</span><b>Get your price</b><span class="body-s muted">Pick the service and size.</span></li><li class="card" style="display:grid; gap:10px"><span class="plq">2</span><b>Choose a time</b><span class="body-s muted">Two-hour arrival windows.</span></li><li class="card" style="display:grid; gap:10px"><span class="plq">3</span><b>Meet your technician</b><span class="body-s muted">Name and photo the night before.</span></li><li class="card" style="display:grid; gap:10px"><span class="plq done">4</span><b>Get your record</b><span class="body-s muted">Report, photos and invoice.</span></li></ol></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S43</b><h3>Visit timeline</h3><p>For multi-visit treatments, stacked down the page.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><ol style="display:grid; gap:4px"><li style="display:grid; grid-template-columns:42px 1fr; gap:14px; padding:10px; border-radius:12px; background:var(--lime-wash)"><span class="plq done">1</span><span><b>Inspection and treatment</b><span class="body-s muted" style="display:block">Tue 13 Oct · done, report sent</span></span></li><li style="display:grid; grid-template-columns:42px 1fr; gap:14px; padding:10px; border-radius:12px"><span class="plq">2</span><span><b>Follow-up check</b><span class="body-s muted" style="display:block">Tue 20 Oct · booked</span></span></li><li style="display:grid; grid-template-columns:42px 1fr; gap:14px; padding:10px; border-radius:12px; background:var(--page)"><span class="plq todo">3</span><span><b>Final check and proofing</b><span class="body-s muted" style="display:block">To be booked</span></span></li></ol></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S44</b><h3>Job status</h3><p>A: the ticket. B: a progress line with a gradient fill.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Ticket"><div class="stage"><ol class="ticket"><li class="done">✓ Booked</li><li class="now">On the way</li><li>Done</li><li>Report sent</li></ol></div></figure>
+        <figure class="var" data-v="B" data-cap="Progress line"><div class="stage"><div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600"><span>Booked</span><span>On the way</span><span class="muted">Done</span><span class="muted">Report</span></div><div class="progress"><i style="width:42%"></i></div><p class="body-s muted">Sam left the last job at 9:40. Arriving by 10am.</p></div></figure>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ FORMS ============ -->
+  <div class="group" id="g-form">
+    <div class="g-head"><p class="eyebrow">Nothing browser-drawn</p><h2 class="h1">Forms</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S45</b><h3>Text fields and states</h3><p>Filled stone fields; an ink ring on focus; the message says how to fix it.</p></header>
+      <div class="vars"><figure class="var" data-v="Keep"><div class="stage">
+        <div class="field"><label for="f1">Postcode</label><input class="input" id="f1" placeholder="e.g. IG1 1BA"></div>
+        <div class="field"><label for="f2">Postcode · focus</label><input class="input is-focus" id="f2" value="IG1 1"></div>
+        <div class="field"><label for="f3">Postcode · error</label><input class="input is-error" id="f3" value="IG1"><span class="msg-error">Add the last three characters, for example IG1 1BA.</span></div>
+        <div class="field"><label for="f4">Postcode · checked</label><input class="input is-ok" id="f4" value="IG1 1BA"><span class="msg-ok"><i class="tick"></i>We cover IG1.</span></div>
+        <div class="field"><label for="f5">Reference · disabled</label><input class="input" id="f5" value="BST-2610-0412" disabled></div>
+      </div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S46</b><h3>Select, dates and times</h3><p>Our own select menu and date picker, never the browser's.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage">
+        <div class="field select"><span class="lbl">Property size</span><div class="input"><span>1 bedroom</span><span aria-hidden="true">▾</span></div><ul class="menu"><li>Studio<span class="muted">£130</span></li><li class="on">1 bedroom<span>£200</span></li><li>2 bedrooms<span class="muted">£230</span></li></ul></div>
+        <div class="dates"><button type="button" aria-pressed="false">Mon<b>12</b>Oct</button><button type="button" aria-pressed="true">Tue<b>13</b>Oct</button><button type="button" aria-pressed="false">Wed<b>14</b>Oct</button><button type="button" aria-pressed="false">Thu<b>15</b>Oct</button></div>
+        <div class="slots"><button type="button" aria-pressed="true">8–10am</button><button type="button" aria-pressed="false">10am–12pm</button><button type="button" disabled>12–2pm · full</button><button type="button" aria-pressed="false">2–4pm</button></div>
+      </div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S47</b><h3>Choices, ticks and switches</h3><p>Big tap areas; selected has lime fill and an ink ring.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage">
+        <div class="choice on"><span class="radio"></span><span><b>I'm the landlord</b><span class="body-s muted" style="display:block">Invoice and report come to you</span></span></div>
+        <div class="choice"><span class="radio"></span><span><b>I'm the tenant</b><span class="body-s muted" style="display:block">We copy in your landlord if you like</span></span></div>
+        <div class="row" style="gap:10px"><span class="cbox on"></span><span>Send the photo report to my agent</span></div>
+        <div class="row" style="gap:10px; justify-content:space-between"><span>Text me when the technician is on the way</span><span class="toggle on" role="switch" aria-checked="true"></span></div>
+      </div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S48</b><h3>Photo and message</h3><p>"Show us the problem" speeds up a fixed price.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><div class="upload"><span class="icon-disc"><svg class="icon"><use href="#i-camera"/></svg></span><b>Add photos</b><span class="muted">Up to 5 photos help us price it before we visit</span></div><div class="field"><label for="f6">Anything we should know?</label><textarea class="input" id="f6" placeholder="Parking, access, pets, keys with the agent…"></textarea></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S49</b><h3>Quick quote</h3><p>Three fields and a price. The short form for any page.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper"><div class="card" style="display:grid; gap:12px"><p class="h3">Get your price in a minute</p><div class="field"><span class="lbl">Service</span><div class="seg lime" role="radiogroup" aria-label="Service"><button type="button" role="radio" aria-checked="false">Pest</button><button type="button" role="radio" aria-checked="true">Cleaning</button><button type="button" role="radio" aria-checked="false">Garden</button><button type="button" role="radio" aria-checked="false">Move</button></div></div><div class="field"><label for="f7">Postcode</label><input class="input" id="f7" placeholder="e.g. IG1 1BA"></div><span class="btn btn-grad btn-block btn-lg">Show my price</span></div></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ BOOKING ============ -->
+  <div class="group" id="g-book">
+    <div class="g-head"><p class="eyebrow">Portland, refined, plus three more modern takes</p><h2 class="h1">Mobile booking</h2><p class="lead">Readability stays. The modern feel comes from gradients, bigger figures, larger corners and one decision per screen.</p></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S50</b><h3>Booking screens</h3><p>The same step, four ways.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Portland refined"><div class="stage paper" style="justify-items:center"><div class="phone">
+          <div class="ph-top">End of tenancy <span>Step 3 of 4</span></div>
+          <ol class="ticket" style="grid-template-columns:repeat(4,1fr)"><li class="done">Service</li><li class="done">Property</li><li class="now">Time</li><li>Details</li></ol>
+          <p class="h3">Pick a time</p>
+          <div class="dates"><button type="button" aria-pressed="false">Mon<b>12</b>Oct</button><button type="button" aria-pressed="true">Tue<b>13</b>Oct</button><button type="button" aria-pressed="false">Wed<b>14</b>Oct</button><button type="button" aria-pressed="false">Thu<b>15</b>Oct</button></div>
+          <div class="slots"><button type="button" aria-pressed="true">8–10am</button><button type="button" aria-pressed="false">10am–12pm</button><button type="button" disabled>12–2pm · full</button><button type="button" aria-pressed="false">2–4pm</button></div>
+          <div class="ph-bar"><div><small>1 bed · Tue 13 Oct</small><b>£200</b></div><span class="btn btn-primary">Continue</span></div>
+        </div></div></figure>
+        <figure class="var" data-v="B" data-cap="Lime wash"><div class="stage paper" style="justify-items:center"><div class="phone wash">
+          <div class="ph-top">End of tenancy <span>3 of 4</span></div>
+          <div class="progress"><i style="width:72%"></i></div>
+          <p class="h2">When should we come?</p>
+          <div class="dates"><button type="button" aria-pressed="false" style="background:var(--surface)">Mon<b>12</b>Oct</button><button type="button" aria-pressed="true">Tue<b>13</b>Oct</button><button type="button" aria-pressed="false" style="background:var(--surface)">Wed<b>14</b>Oct</button><button type="button" aria-pressed="false" style="background:var(--surface)">Thu<b>15</b>Oct</button></div>
+          <div class="slots"><button type="button" aria-pressed="true">8–10am</button><button type="button" aria-pressed="false" style="background:var(--surface)">10am–12pm</button><button type="button" disabled>12–2pm · full</button><button type="button" aria-pressed="false" style="background:var(--surface)">2–4pm</button></div>
+          <div class="ph-bar" style="background:var(--surface)"><div><small>Fixed price</small><b>£200</b></div><span class="btn btn-grad">Continue</span></div>
+        </div></div></figure>
+        <figure class="var" data-v="C" data-cap="One big question"><div class="stage paper" style="justify-items:center"><div class="phone">
+          <div class="ph-top"><span class="plq">3</span><span>of 4 · about 1 minute left</span></div>
+          <p class="h-display" style="font-size:44px">What time suits you on Tuesday?</p>
+          <div style="display:grid; gap:6px"><div class="choice on"><span class="radio"></span><span style="flex:1"><b>8–10am</b></span><span class="chip chip-solid">Earliest</span></div><div class="choice"><span class="radio"></span><b>10am–12pm</b></div><div class="choice"><span class="radio"></span><b>2–4pm</b></div></div>
+          <span class="btn btn-grad btn-lg btn-block">Continue · £200</span>
+        </div></div></figure>
+        <figure class="var" data-v="D" data-cap="Summary on top"><div class="stage paper" style="justify-items:center"><div class="phone">
+          <div style="background:var(--grad-lime-soft); border-radius:20px; padding:14px 16px; display:grid; gap:2px"><span class="body-s muted">End of tenancy · 1 bedroom</span><span class="fig" style="font-size:40px">£200</span><span class="body-s">Fixed price, 48-hour re-clean included</span></div>
+          <p class="h3">Pick a day</p>
+          <div class="dates"><button type="button" aria-pressed="false">Mon<b>12</b>Oct</button><button type="button" aria-pressed="true">Tue<b>13</b>Oct</button><button type="button" aria-pressed="false">Wed<b>14</b>Oct</button><button type="button" aria-pressed="false">Thu<b>15</b>Oct</button></div>
+          <p class="h3">And a time</p>
+          <div class="slots"><button type="button" aria-pressed="true">8–10am</button><button type="button" aria-pressed="false">10am–12pm</button></div>
+          <span class="btn btn-grad btn-lg btn-block">Continue</span>
+        </div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S51</b><h3>Your details</h3><p>The last step: short, with the landlord or tenant choice.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper" style="justify-items:center"><div class="phone">
+        <div class="ph-top">Your details <span>4 of 4</span></div><div class="progress"><i style="width:96%"></i></div>
+        <div class="field"><label for="f8">Full name</label><input class="input" id="f8" placeholder="As on the booking"></div>
+        <div class="field"><label for="f9">Mobile</label><input class="input" id="f9" placeholder="07…" inputmode="tel"></div>
+        <div class="choice on"><span class="radio"></span><span><b>I'm the landlord or agent</b></span></div>
+        <span class="btn btn-grad btn-lg btn-block">Book for £200</span>
+        <p class="note-s">No payment taken now. Pay after the job.</p>
+      </div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S52</b><h3>Summary sheet</h3><p>Slides up from the bottom bar to show everything before booking.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper" style="justify-items:center"><div class="phone" style="border-radius:32px 32px 20px 20px">
+        <div style="width:44px; height:5px; border-radius:3px; background:var(--surface-3); justify-self:center"></div>
+        <p class="h3">Your booking</p>
+        <div class="rows" style="--cols: 80px 1fr; font-size:14px"><div><span class="muted">Service</span><b>End of tenancy, 1 bed</b></div><div><span class="muted">When</span><b class="tab">Tue 13 Oct, 8–10am</b></div><div><span class="muted">Where</span><b>IG1 1BA</b></div><div><span class="muted">Includes</span><b>Oven, 48h re-clean</b></div></div>
+        <div class="ph-bar"><div><small>Fixed price</small><b>£200</b></div><span class="btn btn-grad">Book now</span></div>
+      </div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S53</b><h3>Confirmation</h3><p>Ticket, who's coming, the record, and the voice line from Sorted.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper" style="justify-items:center"><div class="phone">
+        <div class="ph-top">Booking confirmed <span class="tab">Ref 0412</span></div>
+        <ol class="ticket"><li class="done">✓ Booked</li><li class="now">On the way</li><li>Done</li><li>Report</li></ol>
+        <div class="who"><span class="avatar">S</span><div><b>Sam is your cleaner</b><small>Shows photo ID at the door</small></div></div>
+        <div class="rows" style="--cols: 64px 1fr; font-size:14px"><div><span class="muted">When</span><b class="tab">Tue 13 Oct, 8–10am</b></div><div><span class="muted">Price</span><b>£200, fixed</b></div><div><span class="muted">After</span><b>Photo report and invoice</b></div></div>
+        <p class="h3" style="font-style:italic; font-weight:500">Leave it with us.</p>
+        <div class="row" style="display:grid; grid-template-columns:1fr 1fr"><span class="btn btn-soft btn-sm">Add to calendar</span><span class="btn btn-soft btn-sm">Change time</span></div>
+      </div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S54</b><h3>Job done</h3><p>The sign-off: stamp, report and a gentle review request.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper" style="justify-items:center"><div class="phone wash">
+        <div style="justify-self:center"><span class="stamp">Done<b>13 Oct 2026</b><small>Ref 0412</small></span></div>
+        <p class="h2" style="text-align:center">Your flat is ready for the checkout.</p>
+        <span class="btn btn-white btn-block"><svg class="icon"><use href="#i-file"/></svg>Open photo report</span>
+        <span class="btn btn-white btn-block"><svg class="icon"><use href="#i-file"/></svg>Download invoice</span>
+        <span class="btn btn-grad btn-block">Leave a Google review</span>
+      </div></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="group" id="g-content">
+    <div class="g-head"><p class="eyebrow">Questions, places, guides, endings</p><h2 class="h1">Content sections</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S55</b><h3>Questions</h3><p>A: rounded panels. B: heading and help beside the list.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Panels"><div class="stage"><div class="faq-p"><details open><summary>Is the price really fixed?</summary><p>Yes. The price for your property size is confirmed before you book and does not change on the day.</p></details><details><summary>What if the agent flags something?</summary><p>Tell us within 48 hours and we come back to re-clean it free.</p></details><details><summary>Do I need to be home?</summary><p>No. Many landlords leave keys with the agent; we return them the same day.</p></details></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Split with help"><div class="stage"><div style="display:grid; grid-template-columns:0.8fr 1.2fr; gap:16px"><div style="display:grid; gap:10px; align-content:start"><p class="h3">Questions</p><p class="body-s muted">Can't see yours?</p><span class="btn btn-soft btn-sm"><svg class="icon"><use href="#i-chat"/></svg>Ask us</span></div><div class="faq-p"><details open><summary>Is the price fixed?</summary><p>Yes, confirmed before you book.</p></details><details><summary>Do I need to be home?</summary><p>No, keys can stay with the agent.</p></details></div></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S56</b><h3>Areas we cover</h3><p>Places as tiles that fill their rows, grouped by side of London.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage"><p class="eyebrow">East London and Essex borders</p><ul style="display:grid; grid-template-columns:repeat(auto-fill, minmax(120px,1fr)); gap:6px"><li class="chip chip-lime" style="justify-content:space-between; padding:10px 12px"><span>Ilford</span><svg class="icon" style="width:16px;height:16px"><use href="#i-pin"/></svg></li><li class="chip" style="padding:10px 12px">Barking</li><li class="chip" style="padding:10px 12px">Romford</li><li class="chip" style="padding:10px 12px">Stratford</li><li class="chip" style="padding:10px 12px">Walthamstow</li><li class="chip" style="padding:10px 12px">Leyton</li><li class="chip" style="padding:10px 12px">Dagenham</li><li class="chip" style="padding:10px 12px">Woodford</li></ul><p class="note-s">Example list; the real one comes from the verified areas data.</p></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S57</b><h3>Guide cards</h3><p>Photo, topic, title and reading time. No description.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage paper"><div style="display:grid; grid-template-columns:1fr 1fr; gap:10px"><article class="svc-a"><div class="photo"><img src="../../apps/web/public/images/service/best-one-cleaner-oven-v1.webp" alt="Oven being cleaned"></div><div class="body"><span class="eyebrow">Checkout</span><b>What agents check at checkout</b><span class="body-s muted">6 min read</span></div></article><article class="svc-a"><div class="photo"><img src="../../apps/web/public/images/service/best-one-cleaner-bathroom-v1.webp" alt="Bathroom being cleaned"></div><div class="body"><span class="eyebrow">Prices</span><b>Mouse control costs in London</b><span class="body-s muted">4 min read</span></div></article></div></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S58</b><h3>Closing call to action</h3><p>A: slim band for mid-page. B: the last word of a page, on the lime wash.</p></header>
+      <div class="vars two">
+        <figure class="var" data-v="A" data-cap="Slim band"><div class="stage paper"><div class="card" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap"><span><b>Your price in a minute.</b> <span class="muted">No call needed.</span></span><span class="btn btn-grad">Get your price</span></div></div></figure>
+        <figure class="var" data-v="B" data-cap="Closing panel"><div class="stage flush"><div style="background:var(--grad-wash); padding:28px; display:grid; gap:14px; justify-items:start"><p class="h1">Priced before. <span class="streak">Proven</span> after.</p><p class="muted">Pest control, cleaning, gardening and removals across London.</p><div class="row"><span class="btn btn-grad btn-lg">Get your price</span><span class="btn btn-white btn-lg"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</span></div></div></div></figure>
+      </div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S59</b><h3>Footer</h3><p>Light, quiet directory. The legal line carries the registered name and number.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage"><div class="ftr"><div style="display:grid; gap:10px; align-content:start"><span class="logo"><svg viewBox="0 0 100 100"><use href="#petals"/></svg>Bestone</span><p class="body-s muted">Pest control, cleaning, gardening and removals across London, from our own team in Ilford.</p><div class="row"><span class="btn btn-soft btn-sm"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</span><span class="btn btn-soft btn-sm tab">020 8079 7336</span></div></div><div><h4>Services</h4><ul><li>Pest control</li><li>Cleaning</li><li>Gardening</li><li>Removals</li></ul></div><div><h4>Help</h4><ul><li>Prices</li><li>Guides</li><li>Areas</li><li>Contact</li></ul></div><div><h4>Company</h4><ul><li>About</li><li>Landlords</li><li>Privacy</li><li>Terms</li></ul></div></div><div style="background:var(--page); border-radius:10px; padding:10px 14px; font-size:13px; color:var(--muted)">Bestone Services Ltd · Company no. 15574809 · 28–42 Clements Rd, Ilford IG1 1BA</div></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ STATES ============ -->
+  <div class="group" id="g-state">
+    <div class="g-head"><p class="eyebrow">Feedback, empty, loading, error</p><h2 class="h1">States</h2></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S60</b><h3>Alerts and toasts</h3><p>Each state says what happened and what to do next.</p></header>
+      <div class="vars two"><figure class="var" data-v="Keep"><div class="stage">
+        <div class="alert" style="background:var(--lime-soft)"><i class="tick"></i><span><b>Booked for Tue 13 Oct, 8–10am</b>We sent the details to your phone.</span></div>
+        <div class="alert" style="background:var(--amber-soft); color:var(--amber-ink)"><svg class="icon"><use href="#i-clock"/></svg><span><b>Price needs a quick check</b>Your garden is larger than our standard sizes. We'll reply on WhatsApp within the hour.</span></div>
+        <div class="alert" style="background:var(--red-soft); color:var(--red-ink)"><svg class="icon"><use href="#i-shield"/></svg><span><b>That slot has just gone</b>Pick another time; your price stays the same.</span></div>
+        <div class="toast"><span>Photo report sent to your agent</span><span class="btn btn-primary btn-sm">Undo</span></div>
+      </div><p class="note-s">The toast is the only dark element: a small floating message, not a section.</p></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S61</b><h3>Empty, loading, error</h3><p>Every list and page has all three designed.</p></header>
+      <div class="vars">
+        <figure class="var" data-v="A" data-cap="Empty"><div class="stage" style="justify-items:center; text-align:center; padding:28px"><svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true"><use href="#petals"/></svg><b>No bookings yet</b><p class="body-s muted">Your first booking will show here with its status and report.</p><span class="btn btn-grad btn-sm">Get your price</span></div></figure>
+        <figure class="var" data-v="B" data-cap="Loading"><div class="stage"><div class="skel" style="height:22px; width:60%"></div><div class="skel" style="height:14px"></div><div class="skel" style="height:14px; width:80%"></div><div class="skel" style="height:48px; border-radius:12px"></div></div></figure>
+        <figure class="var" data-v="C" data-cap="Error page"><div class="stage paper" style="padding:28px"><p class="fig" style="font-size:64px">404</p><p class="h3">This page has moved</p><p class="body-s muted">The price list and every service are one tap away.</p><div class="row"><span class="btn btn-grad btn-sm">See prices</span><span class="btn btn-white btn-sm">Home</span></div></div></figure>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ DOCUMENTS ============ -->
+  <div class="group" id="g-doc">
+    <div class="g-head"><p class="eyebrow">The paperwork landlords and agents keep</p><h2 class="h1">Documents</h2><p class="lead">Same system on screen and on paper: hallmarks in the header, record rows, the sign-off stamp.</p></div>
+
+    <section class="sec">
+      <header class="sec-h"><b>S62</b><h3>Photo report</h3><p>Before and after per room, with the checklist and sign-off.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper"><article class="doc">
+        <div class="doc-h"><div><span class="logo" style="font-size:20px"><svg viewBox="0 0 100 100" style="width:26px;height:26px"><use href="#petals"/></svg>Bestone</span><p class="h3" style="margin-top:8px">End of tenancy photo report</p></div><span class="marks"><span class="mark m-shield">B1</span><span class="mark m-oct">£</span><span class="mark m-oval">IG1</span><span class="mark m-sq">26</span></span></div>
+        <div class="kv"><div><span class="muted">Ref</span><b class="tab">0412</b></div><div><span class="muted">Property</span><b>Flat 2, IG1</b></div><div><span class="muted">Date</span><b class="tab">13 Oct 2026</b></div><div><span class="muted">Cleaner</span><b>Sam</b></div></div>
+        <p class="h4">Kitchen</p>
+        <div class="before-after"><div class="ph-ph">Before photo</div><div class="ph-ph" style="background:var(--lime-soft)">After photo</div></div>
+        <div class="rows" style="--cols: 24px 1fr"><div><i class="tick"></i>Oven, hob and extractor degreased</div><div><i class="tick"></i>Fridge and freezer cleaned inside</div><div><i class="tick"></i>Cupboards wiped inside and out</div></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap"><p class="body-s muted">Re-clean cover until 15 Oct 2026, 8am.</p><span class="stamp">Checked<b>13 Oct 2026</b><small>Ref 0412</small></span></div>
+      </article></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S63</b><h3>Treatment report</h3><p>What was found, what was done and where, on the floor plan. No pest pictures.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper"><article class="doc">
+        <div class="doc-h"><p class="h3">Mice treatment report</p><span class="chip chip-solid">Visit 1 of 3</span></div>
+        <div class="kv"><div><span class="muted">Ref</span><b class="tab">0413</b></div><div><span class="muted">Property</span><b>House, E17</b></div><div><span class="muted">Date</span><b class="tab">13 Oct 2026</b></div><div><span class="muted">Guarantee</span><b>3 months</b></div></div>
+        <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:16px"><svg viewBox="0 0 280 180" style="width:100%; height:auto; background:var(--page); border-radius:10px" role="img" aria-label="Floor plan showing three sealed entry points"><use href="#plan"/></svg><div class="rows" style="--cols: 1fr; font-size:14px"><div><b>Activity found</b><span class="muted">Kitchen, under sink; hall cupboard</span></div><div><b>Treatment</b><span class="muted">Tamper-resistant stations, 3 placed</span></div><div><b>Entry points sealed</b><span class="muted">3, marked in lime on the plan</span></div><div><b>Next visit</b><span class="muted tab">Tue 20 Oct</span></div></div></div>
+      </article></div></figure></div>
+    </section>
+
+    <section class="sec">
+      <header class="sec-h"><b>S64</b><h3>Invoice</h3><p>The printed invoice, with the registered name and number the law requires.</p></header>
+      <div class="vars wide"><figure class="var" data-v="Keep"><div class="stage paper"><article class="doc">
+        <div class="doc-h"><div><span class="logo" style="font-size:20px"><svg viewBox="0 0 100 100" style="width:26px;height:26px"><use href="#petals"/></svg>Bestone</span><p class="body-s muted" style="margin-top:6px">Bestone Services Ltd · Company no. 15574809<br>28–42 Clements Rd, Ilford IG1 1BA</p></div><div style="text-align:right"><p class="h3">Invoice</p><p class="body-s muted tab">INV-0412 · 13 Oct 2026</p></div></div>
+        <table class="tbl"><thead><tr><th>Item</th><th class="num">Amount</th></tr></thead><tbody><tr><td>End of tenancy clean, 1 bedroom, Flat 2, IG1</td><td class="num">£200.00</td></tr><tr><td>Oven clean</td><td class="num muted">Included</td></tr></tbody><tfoot><tr><td>Total due</td><td class="num fig" style="font-size:30px">£200.00</td></tr></tfoot></table>
+        <p class="body-s muted">Pay by bank transfer within 7 days. Reference INV-0412.</p>
+      </article><p class="note-s">Payment terms are an example; the client confirms theirs.</p></div></figure></div>
+    </section>
+  </div>
+
+  <!-- ============ SEND ============ -->
+  <section class="panel" id="g-send" style="display:grid; gap:14px; background:var(--lime-soft)">
+    <p class="eyebrow">Send your picks</p>
+    <h2 class="h1">One message, and I build it</h2>
+    <p>Your picks are listed below as you tap. Add notes (anything to change, any section to drop), then copy and paste it to me in one message. Picks stay saved in this browser.</p>
+    <div class="field notes"><label for="notes">Notes</label><textarea class="input" id="notes" style="background:var(--surface)" placeholder="e.g. S18 but with the S17 photo · drop S04 · S50 B, and make the dates bigger"></textarea></div>
+    <pre id="summary" style="margin:0; white-space:pre-wrap; background:var(--surface); border-radius:12px; padding:14px; font: 500 14px/1.6 var(--f-body)"></pre>
+  </section>
+
+</div>
+
+<div class="picks-bar"><span><output id="count">0</output> picks</span><button type="button" class="btn btn-grad btn-sm" id="copy">Copy my picks</button><span class="copied" id="copied" aria-live="polite"></span></div>
+
+<script>
+(function () {
+  var KEY = 'touchstone-lab03-picks', NKEY = 'touchstone-lab03-notes';
+  var picks = {};
+  try { picks = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { picks = {}; }
+  var notes = document.getElementById('notes');
+  try { notes.value = localStorage.getItem(NKEY) || ''; } catch (e) {}
+
+  document.querySelectorAll('.sec').forEach(function (sec) {
+    var idEl = sec.querySelector('.sec-h b'); if (!idEl) return;
+    var sid = idEl.textContent.trim();
+    if (!/^S\d+$/.test(sid)) return;
+    sec.id = sid.toLowerCase();
+    sec.querySelectorAll('figure.var').forEach(function (fig) {
+      var v = fig.dataset.v || 'Keep';
+      var cap = document.createElement('figcaption');
+      cap.className = 'var-cap';
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'pick';
+      btn.textContent = v === 'Keep' ? 'Keep' : 'Pick ' + v;
+      var key = sid + ':' + v;
+      btn.setAttribute('aria-pressed', String(!!picks[key]));
+      btn.addEventListener('click', function () {
+        if (picks[key]) delete picks[key]; else picks[key] = true;
+        btn.setAttribute('aria-pressed', String(!!picks[key]));
+        save();
+      });
+      cap.appendChild(btn);
+      if (fig.dataset.cap) { var s = document.createElement('span'); s.textContent = fig.dataset.cap; cap.appendChild(s); }
+      fig.insertBefore(cap, fig.firstChild);
+    });
+  });
+
+  function summary() {
+    var by = {};
+    Object.keys(picks).forEach(function (k) { var p = k.split(':'); (by[p[0]] = by[p[0]] || []).push(p[1]); });
+    var ids = Object.keys(by).sort(function (a, b) { return parseInt(a.slice(1), 10) - parseInt(b.slice(1), 10); });
+    var lines = ['Touchstone Lab 03 picks'];
+    ids.forEach(function (id) { lines.push(id + ': ' + by[id].sort().join(', ')); });
+    if (notes.value.trim()) lines.push('', 'Notes: ' + notes.value.trim());
+    return { text: lines.join('\n'), count: Object.keys(picks).length };
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(picks)); localStorage.setItem(NKEY, notes.value); } catch (e) {}
+    var s = summary();
+    document.getElementById('count').textContent = s.count;
+    document.getElementById('summary').textContent = s.text;
+  }
+  notes.addEventListener('input', save);
+  save();
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var text = summary().text, out = document.getElementById('copied');
+    function fallback() {
+      var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select();
+      var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(t);
+      out.textContent = ok ? 'Copied. Paste it to me.' : 'Select the list at the bottom and copy it.';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { out.textContent = 'Copied. Paste it to me.'; }, fallback);
+    } else { fallback(); }
+  });
+
+  var prices = [[130, 'Studio flat, standard clean.'], [200, '1 bedroom, standard clean.'], [230, '2 bedrooms, standard clean.'], [300, '3 bedrooms, up to two bathrooms.'], [350, '4 bedrooms, multiple bathrooms.']];
+  var seg = document.getElementById('seg');
+  if (seg) seg.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    seg.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-checked', String(x === b)); });
+    var p = prices[Number(b.dataset.i)];
+    document.getElementById('pbFig').textContent = '£' + p[0];
+    document.getElementById('pbNote').textContent = p[1];
+    document.getElementById('pbBtn').textContent = 'Book at £' + p[0];
+  });
+  document.querySelectorAll('.seg:not(#seg)').forEach(function (g) {
+    g.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-checked', String(x === b)); }); });
+  });
+  document.querySelectorAll('.dates, .slots').forEach(function (g) {
+    g.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b || b.disabled) return; g.querySelectorAll('button:not(:disabled)').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); });
+  });
+})();
+</script>
+</body>
+</html>

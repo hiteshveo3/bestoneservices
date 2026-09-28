@@ -197,7 +197,7 @@ export function SearchField({
           icon={Search01Icon}
           size={18}
           strokeWidth={1.8}
-          className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-[#1F3A00]/60 z-10"
+          className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-[#1D201E]/60 z-10"
           aria-hidden="true"
         />
         <input
@@ -215,7 +215,7 @@ export function SearchField({
             if (onSearch) onSearch(e.target.value);
           }}
           onKeyDown={handleKeyDown}
-          className="w-full h-11 pl-10 pr-24 rounded-[12px] border border-[#E5FBC9] bg-white text-sm text-[#1F3A00] placeholder:text-[#1F3A00]/45 focus:border-[#B7F56A] focus:ring-2 focus:ring-[#B7F56A]/30 focus:outline-none transition-all shadow-2xs hover:border-[#B7F56A]"
+          className="w-full h-11 pl-10 pr-24 rounded-[12px] border border-[#ECEAE3] bg-white text-sm text-[#1D201E] placeholder:text-[#1D201E]/45 focus:border-[#1D201E] focus:ring-2 focus:ring-[#1D201E]/30 focus:outline-none transition-all hover:border-[#ECEAE3]"
         />
 
         <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
@@ -227,7 +227,7 @@ export function SearchField({
                 if (onSearch) onSearch("");
                 inputRef.current?.focus();
               }}
-              className="p-1 rounded-md text-[#1F3A00]/50 hover:text-[#1F3A00] hover:bg-[#F9FCF5] cursor-pointer"
+              className="p-1 rounded-md text-[#1D201E]/50 hover:text-[#1D201E] hover:bg-[#F6F5F1] cursor-pointer"
               aria-label="Clear search input"
             >
               <HugeiconsIcon icon={Cancel01Icon} size={15} strokeWidth={2} />
@@ -235,7 +235,7 @@ export function SearchField({
           )}
           <button
             type="submit"
-            className="h-8 px-3.5 rounded-[8px] bg-[#B7F56A] hover:bg-[#a6ec55] text-[#1F3A00] font-bold text-xs transition-colors shrink-0 cursor-pointer flex items-center justify-center shadow-2xs"
+            className="h-8 px-3.5 rounded-[8px] bg-[#B7F56A] hover:bg-[#A2EA4E] text-[#1D201E] font-bold text-xs transition-colors shrink-0 cursor-pointer flex items-center justify-center "
           >
             <span>{buttonLabel}</span>
           </button>
@@ -244,15 +244,15 @@ export function SearchField({
 
       {/* Auto-suggestions & Recents Dropdown */}
       {open && suggestions.length > 0 && (
-        <div className="absolute left-0 top-[calc(100%+6px)] z-50 w-full min-w-[300px] sm:min-w-[420px] max-w-[calc(100vw-32px)] bg-white rounded-[14px] border-2 border-[#B7F56A] shadow-2xl overflow-hidden py-1.5 text-start animate-in fade-in-50 duration-150">
-          <div className="px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#1F3A00]/70 flex items-center justify-between border-b border-[#E5FBC9] bg-[#F9FCF5]">
+        <div className="absolute left-0 top-[calc(100%+6px)] z-50 w-full min-w-[300px] sm:min-w-[420px] max-w-[calc(100vw-32px)] bg-white rounded-[14px] border-2 border-[#ECEAE3] overflow-hidden py-1.5 text-start animate-in fade-in-50 duration-150">
+          <div className="px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#1D201E]/70 flex items-center justify-between border-[#ECEAE3] bg-[#F6F5F1]">
             <span>{value.trim() ? "Suggested Services" : "Recent Searches"}</span>
             {value.trim() && (
-              <HugeiconsIcon icon={SparklesIcon} size={13} strokeWidth={1.8} className="text-[#1F3A00]/50" />
+              <HugeiconsIcon icon={SparklesIcon} size={13} strokeWidth={1.8} className="text-[#1D201E]/50" />
             )}
           </div>
 
-          <ul role="listbox" className="max-h-72 overflow-y-auto py-1 divide-y divide-[#E5FBC9]/40">
+          <ul role="listbox" className="max-h-72 overflow-y-auto py-1 ">
             {suggestions.map((item, idx) => {
               const active = idx === cursor;
               return (
@@ -263,21 +263,21 @@ export function SearchField({
                   onClick={() => handleSelect(item)}
                   onMouseEnter={() => setCursor(idx)}
                   className={`px-3.5 py-2.5 flex items-center justify-between gap-3 cursor-pointer transition-colors text-sm ${
-                    active ? "bg-[#DCFAB7]/60 text-[#1F3A00]" : "text-[#1F3A00]/90 hover:bg-[#F9FCF5]"
-                  }`}
+ active ? "bg-[#EAF8D6]/60 text-[#1D201E]" : "text-[#1D201E]/90 hover:bg-[#F6F5F1]"
+ }`}
                 >
                   <div className="flex items-center gap-2.5 min-w-0 flex-1">
                     {item.isRecent ? (
-                      <HugeiconsIcon icon={Clock01Icon} size={16} strokeWidth={1.8} className="text-[#1F3A00]/50 shrink-0" />
+                      <HugeiconsIcon icon={Clock01Icon} size={16} strokeWidth={1.8} className="text-[#1D201E]/50 shrink-0" />
                     ) : (
-                      <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#DCFAB7] text-[#1F3A00] font-semibold shrink-0 whitespace-nowrap">
+                      <span className="text-[11px] px-2 py-0.5 rounded-md bg-[#EAF8D6] text-[#1D201E] font-semibold shrink-0 whitespace-nowrap">
                         {item.category}
                       </span>
                     )}
-                    <span className="truncate font-medium text-[#1F3A00]">{item.title}</span>
+                    <span className="truncate font-medium text-[#1D201E]">{item.title}</span>
                   </div>
 
-                  <span className="text-xs text-[#1F3A00]/60 shrink-0 flex items-center gap-1 pl-2">
+                  <span className="text-xs text-[#1D201E]/60 shrink-0 flex items-center gap-1 pl-2">
                     <span className="hidden sm:inline truncate max-w-[140px]">{item.hint}</span>
                     <HugeiconsIcon icon={ArrowRight01Icon} size={14} strokeWidth={1.8} />
                   </span>

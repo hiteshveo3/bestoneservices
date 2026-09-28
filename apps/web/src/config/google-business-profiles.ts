@@ -1,5 +1,5 @@
 /**
- * Best One Services - Master Google Business Profile Configuration
+ * Bestone Services - Master Google Business Profile Configuration
  * Centralized dataset for verified Google Business Profiles, Google Maps URLs, and Google Reviews
  */
 
@@ -45,7 +45,7 @@ export const GOOGLE_PROFILES: Record<"pestControl" | "cleaning", GoogleBusinessP
         id: "g-rev-1",
         author: "Abdullah Amjad Basra",
         rating: 5,
-        text: "Great service, friendly staff, and very reasonable prices. They responded quickly and did an excellent job. I highly recommend Best One Service.",
+        text: "Great service, friendly staff, and very reasonable prices. They responded quickly and did an excellent job. I highly recommend Bestone Service.",
         date: "3 weeks ago",
         serviceId: "home-inspection",
       },
@@ -69,7 +69,7 @@ export const GOOGLE_PROFILES: Record<"pestControl" | "cleaning", GoogleBusinessP
         id: "g-rev-4",
         author: "Shawn Darson",
         rating: 5,
-        text: "I had a bed bug issue that was causing a lot of stress, and I’m so glad I contacted Best One Services for Pest Control. From the first call, their team was understanding and professional. They scheduled an inspection quickly and resolved it.",
+        text: "I had a bed bug issue that was causing a lot of stress, and I’m so glad I contacted Bestone Services for Pest Control. From the first call, their team was understanding and professional. They scheduled an inspection quickly and resolved it.",
         date: "a year ago",
         serviceId: "bed-bug-control",
       },

@@ -6,6 +6,7 @@ import { fetchInvoiceDetail } from "@/lib/repositories/invoices";
 import { formatPenceToGBP } from "@/lib/booking-domain";
 import { type InvoiceItem } from "@/types/invoice";
 import { Spinner } from "@/components/ui/spinner";
+import { siteContact } from "@/config/site-contact";
 import { 
   AlertCircle, 
   Printer, 
@@ -89,13 +90,13 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
   if (!invoice) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center p-6">
-        <div className="bg-[#F9FCF5] rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#B7F56A]">
+        <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto ">
           <AlertCircle className="w-10 h-10 text-danger-500 mx-auto" />
           <h3 className="font-heading text-lg font-medium text-ink-900">Invoice Reference Not Found</h3>
           <p className="text-xs text-ink-500">
             The invoice reference <span className="font-mono font-medium text-ink-600">{invoiceId}</span> was not found.
           </p>
-          <Link href="/account/invoices" className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-xs inline-block text-decoration-none border border-[#E5FBC9]">
+          <Link href="/account/invoices" className="px-5 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none ">
             View Your Invoices
           </Link>
         </div>
@@ -103,163 +104,138 @@ export default function PublicInvoicePage({ params }: { params: Promise<{ id: st
     );
   }
 
-  const getStatusBadge = (status: string) => {
-    switch (status) {
-      case "paid":
-        return <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">PAID IN FULL</span>;
-      case "partially_paid":
-        return <span className="px-3 py-1 rounded-full bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">DEPOSIT PAID</span>;
-      default:
-        return <span className="px-3 py-1 rounded-full bg-danger-50 text-danger-900 text-xs font-mono font-medium uppercase">PAYMENT DUE</span>;
-    }
-  };
+  const statusChip =
+    invoice.paymentStatus === "paid" ? (
+      <span className="ts-chip" data-tone="solid">Paid in full</span>
+    ) : invoice.paymentStatus === "partially_paid" ? (
+      <span className="ts-chip bg-warning-50! text-warning-900!">Deposit paid</span>
+    ) : (
+      <span className="ts-chip bg-danger-50! text-danger-900!">Payment due</span>
+    );
+  const fmtDate = (d: unknown) => (d ? new Date(d as string).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "—");
+  const bank = siteContact.bankTransfer;
 
   return (
-    <div className="min-h-screen bg-white py-8 px-4 sm:px-6 text-start">
-      <div className="max-w-3xl mx-auto space-y-6">
-        
-        {/* HEADER BAR */}
-        <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#B7F56A]">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#E5FBC9] pb-4">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-medium text-ink-500 uppercase">BEST ONE SERVICES • VAT TAX INVOICE</span>
-              <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">
-                Invoice {invoice.reference}
-              </h1>
-              <p className="text-xs font-mono text-ink-500">
-                Booking Reference: <span className="font-medium text-ink-600">{invoice.bookingReference}</span>
-              </p>
-            </div>
-
-            <div className="flex flex-col items-end gap-1.5">
-              {getStatusBadge(invoice.paymentStatus)}
-
-              <button
-                type="button"
-                onClick={() => window.print()}
-                className="text-[11px] font-mono text-ink-500 hover:text-ink-600 inline-flex items-center gap-1 cursor-pointer border-none bg-transparent"
-              >
-                <Printer className="w-3.5 h-3.5" />
-                <span>Print Tax Invoice / Receipt</span>
-              </button>
-            </div>
+    <div className="min-h-screen bg-paper px-4 py-8 text-ink sm:px-6 print:bg-white print:p-0">
+      {/* Lab 03 S64 · the invoice as a document, the same on screen and on paper */}
+      <article className="mx-auto grid max-w-3xl gap-6 rounded-3xl bg-white p-6 sm:p-10 print:rounded-none">
+        <header className="flex flex-wrap items-start justify-between gap-6">
+          <div className="grid gap-1.5">
+            <span className="ts-head text-[26px]">Bestone</span>
+            <p className="m-0 text-[13px] leading-relaxed text-muted">
+              {siteContact.companyName} · Company no. 15574809<br />
+              {siteContact.address.formatted}
+            </p>
           </div>
-
-          <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono">
-            <div className="p-3.5 rounded-[18px] bg-[#F9FCF5] space-y-1 border border-[#B7F56A]">
-              <span className="text-ink-500 uppercase block">BILLED TO</span>
-              <p className="font-medium text-ink-600">{invoice.customerName}</p>
-              <p className="text-ink-500">{invoice.customerEmail}</p>
-            </div>
-
-            <div className="p-3.5 rounded-[18px] bg-[#F9FCF5] space-y-1 border border-[#B7F56A]">
-              <span className="text-ink-500 uppercase block">PAYMENT TERMS</span>
-              <p className="font-medium text-ink-600">Due on Receipt / Completion</p>
-              <p className="text-ink-500">Due Date: {new Date(invoice.dueDate as string).toLocaleDateString("en-GB")}</p>
-            </div>
+          <div className="grid justify-items-end gap-2 text-right">
+            <h1 className="ts-head m-0 text-[32px]">Invoice</h1>
+            {statusChip}
+            <button type="button" onClick={() => window.print()} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink print:hidden">
+              <Printer className="size-4" aria-hidden="true" /> Print or save as PDF
+            </button>
           </div>
+        </header>
+
+        <dl className="m-0 grid grid-cols-2 gap-1.5 sm:grid-cols-4">
+          {[
+            ["Invoice", invoice.reference],
+            ["Booking", invoice.bookingReference],
+            ["Issued", fmtDate(invoice.issuedAt)],
+            ["Due", fmtDate(invoice.dueDate)],
+          ].map(([k, v]) => (
+            <div key={k} className="grid rounded-lg bg-paper px-3 py-2">
+              <dt className="text-[12px] text-muted">{k}</dt>
+              <dd className="m-0 text-[14px] font-semibold tabular-nums">{v}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <div className="grid gap-1">
+          <p className="ts-eyebrow m-0">Billed to</p>
+          <p className="m-0 font-semibold">{invoice.customerName}</p>
+          <p className="m-0 text-sm text-muted">{invoice.customerEmail}</p>
         </div>
 
-        {/* ITEMIZED BILL TABLE */}
-        <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#B7F56A]">
-          <h2 className="font-heading text-xl font-medium text-ink-900 border-b border-[#E5FBC9] pb-3">
-            Itemized Invoice Breakdown
-          </h2>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs text-start border-collapse">
-              <thead>
-                <tr className="border-b border-[#E5FBC9] text-left text-[11px] font-mono uppercase text-ink-500">
-                  <th className="py-2 font-medium">Description</th>
-                  <th className="py-2 text-center font-medium">Qty</th>
-                  <th className="py-2 text-right font-medium">Rate</th>
-                  <th className="py-2 text-right font-medium">Amount</th>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[520px] border-separate border-spacing-y-0.5 text-[15px] tabular-nums">
+            <thead>
+              <tr className="text-left">
+                <th scope="col" className="ts-eyebrow px-3 py-2 font-semibold">Item</th>
+                <th scope="col" className="ts-eyebrow px-3 py-2 text-center font-semibold">Qty</th>
+                <th scope="col" className="ts-eyebrow px-3 py-2 text-right font-semibold">Rate</th>
+                <th scope="col" className="ts-eyebrow px-3 py-2 text-right font-semibold">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {invoice.lineItems.map((item, i) => (
+                <tr key={item.id} className={i % 2 === 0 ? "bg-paper" : ""}>
+                  <td className="rounded-l-lg px-3 py-3 font-semibold">{item.description}</td>
+                  <td className="px-3 py-3 text-center text-muted">{item.quantity}</td>
+                  <td className="px-3 py-3 text-right text-muted">{formatPenceToGBP(item.unitPricePence)}</td>
+                  <td className="rounded-r-lg px-3 py-3 text-right font-semibold">{formatPenceToGBP(item.totalPence)}</td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-bone-300 font-mono">
-                {invoice.lineItems.map((item) => (
-                  <tr key={item.id}>
-                    <td className="py-3 font-medium text-ink-600">{item.description}</td>
-                    <td className="py-3 text-center text-ink-500">{item.quantity}</td>
-                    <td className="py-3 text-right text-ink-500">{formatPenceToGBP(item.unitPricePence)}</td>
-                    <td className="py-3 text-right font-medium text-ink-600">{formatPenceToGBP(item.totalPence)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* FINANCIAL TOTALS CARD */}
-          <div className="p-6 rounded-[18px] bg-white border border-[#B7F56A] space-y-2 text-xs font-mono">
-            <div className="flex justify-between text-ink-500">
-              <span>Subtotal (Net)</span>
-              <span className="font-medium text-ink-600">{formatPenceToGBP(invoice.subtotalPence)}</span>
-            </div>
-
-            <div className="flex justify-between text-ink-500">
-              <span>UK VAT ({invoice.vatPercentage}%)</span>
-              <span className="font-medium text-ink-600">{formatPenceToGBP(invoice.vatPence)}</span>
-            </div>
-
-            <div className="flex justify-between text-base font-medium text-ink-600 pt-2 border-t border-[#E5FBC9]">
-              <span>Total Invoice Amount</span>
-              <span>{formatPenceToGBP(invoice.totalPence)}</span>
-            </div>
-
-            <div className="flex justify-between text-success-900 pt-1">
-              <span>Deposit Paid</span>
-              <span className="font-medium">-{formatPenceToGBP(invoice.depositPaidPence || 0)}</span>
-            </div>
-
-            <div className="flex justify-between text-lg font-medium text-ink-600 pt-2 border-t border-[#E5FBC9]">
-              <span>Balance Due</span>
-              <span className="text-[#1F3A00] font-black">{formatPenceToGBP(invoice.balanceDuePence || 0)}</span>
-            </div>
-          </div>
-
-          {/* PAYMENT NOTICE ALERTS */}
-          {stripeNotice && (
-            <div className="p-4 rounded-[18px] bg-warning-50 border border-warning-500 text-warning-900 text-xs font-medium flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 text-warning-900 shrink-0" />
-              <span>{stripeNotice}</span>
-            </div>
-          )}
-
-          {/* PAYMENT ACTIONS */}
-          {invoice.paymentStatus !== "paid" && (
-            <div className="space-y-4 pt-2">
-              
-              {/* Online Card Payment Button */}
-              <button
-                type="button"
-                onClick={() => handlePayStripe("full_balance")}
-                disabled={payingStripe}
-                className="w-full py-4 rounded-full bg-[#1F3A00] text-[#B7F56A] font-heading font-semibold text-xs hover:bg-[#2d5004] cursor-pointer disabled:opacity-50 transition-colors duration-150 flex items-center justify-center gap-2 border border-[#E5FBC9]"
-              >
-                <CreditCard className="w-4 h-4 text-white" />
-                <span>{payingStripe ? "Opening Stripe Checkout..." : `Pay Balance Online via Card (${formatPenceToGBP(invoice.balanceDuePence)}) →`}</span>
-              </button>
-
-              {/* BACS UK Bank Transfer Details Card */}
-              <div className="p-5 rounded-[18px] bg-white border border-[#B7F56A] space-y-2 text-xs font-mono">
-                <div className="flex items-center gap-2 text-ink-600 font-medium border-b border-[#E5FBC9] pb-2">
-                  <Building2 className="w-4 h-4 text-ink-600" />
-                  <span>Direct UK Bank Transfer (BACS)</span>
-                </div>
-                <div className="grid grid-cols-2 gap-2 text-ink-500 pt-1">
-                  <div>Account Name: <span className="font-medium text-ink-600">Best One Services Ltd</span></div>
-                  <div>Sort Code: <span className="font-medium text-ink-600">20-00-00</span></div>
-                  <div>Account No: <span className="font-medium text-ink-600">88776655</span></div>
-                  <div>Reference: <span className="font-medium text-ink-600">{invoice.reference}</span></div>
-                </div>
-              </div>
-
-            </div>
-          )}
-
+              ))}
+            </tbody>
+          </table>
         </div>
 
-      </div>
+        <dl className="ts-rows m-0 ml-auto grid w-full max-w-sm">
+          {[
+            ["Subtotal", formatPenceToGBP(invoice.subtotalPence)],
+            [`VAT (${invoice.vatPercentage}%)`, formatPenceToGBP(invoice.vatPence)],
+            ["Total", formatPenceToGBP(invoice.totalPence)],
+            ["Deposit paid", `−${formatPenceToGBP(invoice.depositPaidPence || 0)}`],
+          ].map(([k, v]) => (
+            <div key={k} className="flex justify-between gap-4 px-3 py-2 text-[15px]">
+              <dt className="text-muted">{k}</dt>
+              <dd className="m-0 font-semibold tabular-nums">{v}</dd>
+            </div>
+          ))}
+          <div className="flex items-baseline justify-between gap-4 px-3 pt-3">
+            <dt className="font-semibold">Balance due</dt>
+            <dd className="ts-fig m-0 text-[36px]">{formatPenceToGBP(invoice.balanceDuePence || 0)}</dd>
+          </div>
+        </dl>
+
+        {invoice.paymentStatus === "paid" ? (
+          <div className="justify-self-end">
+            <span className="ts-stamp">Paid<b>{fmtDate(invoice.paidAt)}</b><small>{invoice.reference}</small></span>
+          </div>
+        ) : null}
+
+        {stripeNotice && (
+          <div className="flex items-start gap-2 rounded-xl bg-warning-50 p-4 text-sm text-warning-900 print:hidden">
+            <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+            <span>{stripeNotice}</span>
+          </div>
+        )}
+
+        {invoice.paymentStatus !== "paid" && (
+          <div className="grid gap-3 print:hidden">
+            <button
+              type="button"
+              onClick={() => handlePayStripe("full_balance")}
+              disabled={payingStripe}
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-[14px] bg-lime px-6 text-[17px] font-semibold text-ink transition-colors duration-150 hover:bg-lime-2 disabled:bg-stone disabled:text-faint"
+            >
+              <CreditCard className="size-5" aria-hidden="true" />
+              <span>{payingStripe ? "Opening secure checkout…" : `Pay ${formatPenceToGBP(invoice.balanceDuePence)} by card`}</span>
+            </button>
+            {bank ? (
+              <div className="grid gap-2 rounded-2xl bg-paper p-4 text-[15px]">
+                <p className="m-0 flex items-center gap-2 font-semibold"><Building2 className="size-4" aria-hidden="true" /> Or pay by bank transfer</p>
+                <dl className="m-0 grid gap-1 sm:grid-cols-2">
+                  {[["Account name", bank.accountName], ["Sort code", bank.sortCode], ["Account number", bank.accountNumber], ["Reference", invoice.reference]].map(([k, v]) => (
+                    <div key={k} className="flex justify-between gap-3 sm:block"><dt className="text-muted">{k}</dt><dd className="m-0 font-semibold tabular-nums">{v}</dd></div>
+                  ))}
+                </dl>
+              </div>
+            ) : (
+              <p className="m-0 text-sm text-muted">To pay by bank transfer, ask us for the account details on {siteContact.phoneDisplay} and quote {invoice.reference}.</p>
+            )}
+          </div>
+        )}
+      </article>
     </div>
   );
 }

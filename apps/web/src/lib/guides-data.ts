@@ -59,13 +59,13 @@ export const GUIDES_DATABASE: GuidePost[] = [
     categoryLabel: "Pest Control Guide",
     tags: ["Rodents", "Mice", "Inspection", "Pest Prevention"],
     author: {
-      name: "Best One Pest Control Team",
+      name: "Bestone Pest Control Team",
       role: "Certified Pest Technicians",
     },
     publishedAt: "2026-02-01",
     updatedAt: "2026-02-07",
     readingTime: 6,
-    heroImage: "/images/end-of-tenancy-hero.jpg",
+    heroImage: "/images/service/best-one-cleaner-hero-v2.webp",
     heroCaption: "A professional pest technician inspecting hidden kitchen kickboard gaps.",
     featured: true,
     keyTakeaways: [
@@ -108,7 +108,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
       },
       {
         type: "image",
-        url: "/images/end-of-tenancy-hero.jpg",
+        url: "/images/service/best-one-cleaner-hero-v2.webp",
         alt: "Inspecting entry points under kitchen sink units",
         caption: "Figure 1: Pipe penetrations behind kitchen kickboards are primary mouse entry points.",
         isWide: false,
@@ -148,7 +148,7 @@ export const GUIDES_DATABASE: GuidePost[] = [
       {
         type: "serviceCTA",
         title: "Suspect Mice in Your Property?",
-        text: "Best One offers 2-visit targeted rodent treatments with professional ingress sealing and written guarantees.",
+        text: "Bestone offers 2-visit targeted rodent treatments with professional ingress sealing and written guarantees.",
         buttonText: "View Mouse Control Services",
         href: "/pest-control-services/mice-control/",
       },
@@ -220,12 +220,12 @@ export const GUIDES_DATABASE: GuidePost[] = [
     categoryLabel: "Checklist",
     tags: ["Cleaning", "Move-Out", "Deposit", "Inventory"],
     author: {
-      name: "Best One Cleaning Services",
+      name: "Bestone Cleaning Services",
       role: "Tenancy Operations Team",
     },
     publishedAt: "2026-01-15",
     readingTime: 5,
-    heroImage: "/images/end-of-tenancy-hero.jpg",
+    heroImage: "/images/service/best-one-cleaner-hero-v2.webp",
     keyTakeaways: [
       "Property must be emptied of all personal belongings prior to deep cleaning.",
       "Appliance degreasing (oven, extractor fan, fridge) is the #1 item checked by clerks.",
@@ -291,12 +291,12 @@ export const GUIDES_DATABASE: GuidePost[] = [
     categoryLabel: "Cost Guide",
     tags: ["Pricing", "Pest Control", "Rates"],
     author: {
-      name: "Best One Commercial Team",
+      name: "Bestone Commercial Team",
       role: "Pricing Specialist",
     },
     publishedAt: "2026-01-28",
     readingTime: 4,
-    heroImage: "/images/end-of-tenancy-hero.jpg",
+    heroImage: "/images/service/best-one-cleaner-hero-v2.webp",
     contentBlocks: [
       {
         type: "paragraph",

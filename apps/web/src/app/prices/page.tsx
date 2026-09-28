@@ -9,6 +9,7 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import { RateTabs } from "@/components/ui/rate-tabs";
 import { getCalculatorConfig } from "@/config/pricing-calculator-config";
 import { PRICING_FAQS } from "@/config/pricing-faqs";
+import { buttonClass, SlimCta } from "@/components/touchstone";
 
 export default function PricingPage() {
   const schema = generatePricingPageSchema();
@@ -21,48 +22,44 @@ export default function PricingPage() {
   ];
 
   return (
-    <main id="main-content" className="space-y-24 text-start">
+    <main id="main-content" className="space-y-20 bg-paper text-start text-ink">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      {/* 1. HERO — single centered column */}
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-12 text-center flex flex-col items-center gap-6">
-        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFAB7] border border-[#99D055] font-mono text-[11px] font-medium uppercase tracking-wider text-[#1F3A00]">
-          Fixed prices · confirmed before we arrive
-        </span>
-        <h1 className="font-heading font-semibold text-[clamp(2.4rem,5.6vw,4rem)] leading-[1.02] tracking-tight text-[#1F3A00] max-w-[19ch]">
-          Every price we charge, on one page.
-        </h1>
-        <p className="text-lg text-[#1F3A00]/70 leading-relaxed max-w-[56ch]">
-          Browse our fixed rates for cleaning, pest control, gardening and removals — or build an itemised quote for your exact property in under a minute.
-        </p>
-        <div className="flex flex-col items-center gap-3 pt-1">
-          <Link
-            href="#smart-calculator"
-            className="inline-flex items-center h-[54px] px-8 rounded-md font-inter text-base font-bold bg-[#B7F56A] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200"
-          >
-            Calculate my price
-          </Link>
-          <Link href="#rates" className="text-sm font-medium text-[#1F3A00]/70 hover:text-[#1F3A00] hover:underline underline-offset-2">
-            or browse all rates
-          </Link>
-        </div>
-        <div className="flex flex-wrap justify-center gap-2.5 pt-4">
-          {chips.map((chip) => (
-            <span
-              key={chip.label}
-              className="inline-flex items-baseline gap-2 px-4 py-2 rounded-full bg-white border border-[#E5FBC9] text-sm text-[#1F3A00]"
-            >
-              {chip.label} <span className="font-mono font-bold">{chip.value}</span>
-            </span>
-          ))}
+      {/* 1. HERO — two weights, and the four starting prices as record rows (S17 / S24 A) */}
+      <section className="bg-paper">
+        <div className="mx-auto grid max-w-[1240px] gap-8 px-4 pt-8 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pt-12">
+          <div className="grid content-start gap-5">
+            <p className="ts-eyebrow m-0">Fixed prices, confirmed before we arrive</p>
+            <h1 className="ts-head m-0 text-[clamp(38px,5vw,60px)] leading-none">
+              Every price we charge, <span className="ts-soft">on one page.</span>
+            </h1>
+            <p className="m-0 max-w-[56ch] text-lg text-muted">
+              Browse the fixed rates for cleaning, pest control, gardening and removals, or build an itemised price for your property in under a minute.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Link href="#smart-calculator" className={buttonClass("primary", "lg")}>Calculate my price</Link>
+              <Link href="#rates" className={buttonClass("white", "lg")}>Browse all rates</Link>
+            </div>
+          </div>
+          <div className="grid content-start gap-2.5 rounded-3xl bg-white p-4 sm:p-5">
+            <p className="ts-eyebrow m-0 px-1.5">Starting prices</p>
+            <ul className="ts-rows m-0 list-none p-0">
+              {chips.map((chip) => (
+                <li key={chip.label} className="flex items-baseline justify-between gap-3 px-3.5 py-3">
+                  <span className="font-semibold">{chip.label}</span>
+                  <span className="ts-fig text-[26px]">{chip.value}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* 2. HOW THIS PAGE WORKS — orientation strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-4 sm:gap-10 sm:grid-cols-3 py-6 border-t border-b border-[#E5FBC9]">
-          <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1F3A00]/60 m-0">How this page works</p>
-          <p className="text-base text-[#1F3A00]/70 leading-relaxed sm:col-span-2 m-0">
+        <div className="grid gap-4 sm:gap-10 sm:grid-cols-3 py-6 border-[#ECEAE3]">
+          <p className="ts-eyebrow m-0">How this page works</p>
+          <p className="text-base text-[#1D201E]/70 leading-relaxed sm:col-span-2 m-0">
             Rates below are fixed, not estimates. Pick a category to see its full price list, or use the calculator to add your property size and any extras — it shows the itemised total, not just a final number.
           </p>
         </div>
@@ -71,22 +68,22 @@ export default function PricingPage() {
       {/* 3. QUOTE CALCULATOR — centerpiece */}
       <section id="smart-calculator" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="space-y-2 pb-7">
-          <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1F3A00]/60 m-0">Quote calculator</p>
-          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3.4vw,2.6rem)] leading-tight tracking-tight text-[#1F3A00] max-w-[24ch] m-0">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1D201E]/60 m-0">Quote calculator</p>
+          <h2 className="font-heading font-[650] text-[clamp(1.75rem,3.4vw,2.6rem)] leading-tight tracking-tight text-[#1D201E] max-w-[24ch] m-0">
             Build your exact price
           </h2>
         </div>
-        <Suspense fallback={<div className="p-8 text-center bg-white rounded-[24px] border border-[#E5FBC9]">Loading pricing engine…</div>}>
+        <Suspense fallback={<div className="p-8 text-center bg-white rounded-[24px] ">Loading pricing engine…</div>}>
           <InstantEstimator />
         </Suspense>
       </section>
 
       {/* 4. WHY THESE NUMBERS HOLD — consolidated trust section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-3 items-start py-10 border-t border-[#E5FBC9]">
+        <div className="grid gap-8 sm:grid-cols-3 items-start py-10 border-[#ECEAE3]">
           <div className="space-y-3">
-            <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1F3A00]/60 m-0">Why these numbers hold</p>
-            <h2 className="font-heading font-semibold text-[clamp(1.6rem,3.2vw,2.4rem)] leading-tight tracking-tight text-[#1F3A00] m-0">
+            <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1D201E]/60 m-0">Why these numbers hold</p>
+            <h2 className="font-heading font-[650] text-[clamp(1.6rem,3.2vw,2.4rem)] leading-tight tracking-tight text-[#1D201E] m-0">
               The price you calculate is the price you pay.
             </h2>
           </div>
@@ -109,12 +106,12 @@ export default function PricingPage() {
               },
             ].map((row) => (
               <div key={row.title} className="flex gap-4">
-                <span className="flex shrink-0 items-center justify-center w-[38px] h-[38px] rounded-full bg-[#DCFAB7] border border-[#99D055]">
-                  <row.icon className="w-[18px] h-[18px] text-[#1F3A00]" />
+                <span className="flex shrink-0 items-center justify-center w-[38px] h-[38px] rounded-full bg-[#EAF8D6] ">
+                  <row.icon className="w-[18px] h-[18px] text-[#1D201E]" />
                 </span>
                 <div className="space-y-1">
-                  <strong className="font-semibold text-base text-[#1F3A00]">{row.title}</strong>
-                  <p className="text-sm text-[#1F3A00]/70 leading-relaxed m-0">{row.body}</p>
+                  <strong className="font-semibold text-base text-[#1D201E]">{row.title}</strong>
+                  <p className="text-sm text-[#1D201E]/70 leading-relaxed m-0">{row.body}</p>
                 </div>
               </div>
             ))}
@@ -125,8 +122,8 @@ export default function PricingPage() {
       {/* 5. FULL RATE CARD — tab-filtered, one category visible at a time */}
       <section id="rates" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="space-y-2 pb-8">
-          <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1F3A00]/60 m-0">Full rate card</p>
-          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3.4vw,2.6rem)] leading-tight tracking-tight text-[#1F3A00] max-w-[26ch] m-0">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1D201E]/60 m-0">Full rate card</p>
+          <h2 className="font-heading font-[650] text-[clamp(1.75rem,3.4vw,2.6rem)] leading-tight tracking-tight text-[#1D201E] max-w-[26ch] m-0">
             Every rate, by category
           </h2>
         </div>
@@ -136,29 +133,16 @@ export default function PricingPage() {
       {/* 6. FAQ ACCORDION */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-8">
-          <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1F3A00]/60 m-0">Questions</p>
-          <h2 className="font-heading font-semibold text-3xl text-[#1F3A00] m-0">Before you book</h2>
-          <p className="text-base text-[#1F3A00]/70 m-0">Something not covered here? Ask us directly — we answer with a number, not a range.</p>
+          <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#1D201E]/60 m-0">Questions</p>
+          <h2 className="font-heading font-[650] text-3xl text-[#1D201E] m-0">Before you book</h2>
+          <p className="text-base text-[#1D201E]/70 m-0">Something not covered here? Ask us directly — we answer with a number, not a range.</p>
         </div>
         <FaqAccordion items={PRICING_FAQS} />
       </section>
 
-      {/* 7. FINAL CTA — white card, centered, single button */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="bg-white rounded-[24px] p-10 sm:p-16 border border-[#E5FBC9] shadow-2xs flex flex-col items-center text-center gap-4">
-          <h2 className="font-heading font-semibold text-[clamp(1.75rem,3.6vw,2.75rem)] leading-tight tracking-tight text-[#1F3A00] max-w-[24ch] m-0">
-            Get your number in under a minute.
-          </h2>
-          <p className="text-base text-[#1F3A00]/70 max-w-[52ch] m-0">
-            Pick your service, add your property details, and see the itemised total before you commit to anything.
-          </p>
-          <Link
-            href="#smart-calculator"
-            className="mt-2 inline-flex items-center h-[54px] px-8 rounded-md font-inter text-base font-bold bg-[#B7F56A] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200"
-          >
-            Calculate my price
-          </Link>
-        </div>
+      {/* 7. S58 A · the slim closing band */}
+      <section className="mx-auto max-w-[1240px] px-4 pb-16 sm:px-6 lg:px-8">
+        <SlimCta title="Your number in under a minute." soft="Nothing to commit to." action={<Link href="#smart-calculator" className={buttonClass("primary")}>Calculate my price</Link>} />
       </section>
     </main>
   );

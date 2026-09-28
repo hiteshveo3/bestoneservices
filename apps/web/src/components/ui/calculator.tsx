@@ -256,10 +256,10 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
     <div
       ref={containerRef}
       id="smart-calculator"
-      className="bg-white rounded-[24px] p-6 sm:p-8 border border-[#E5FBC9] shadow-2xs text-start scroll-mt-24"
+      className="bg-white rounded-[24px] p-6 sm:p-8 text-start scroll-mt-24"
     >
       <noscript>
-        <div className="p-4 rounded-[16px] bg-[#DCFAB7] border border-[#99D055] text-sm text-[#1F3A00]">
+        <div className="p-4 rounded-[16px] bg-[#EAF8D6] text-sm text-[#1D201E]">
           This calculator needs JavaScript enabled. You can see every rate directly on the{" "}
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- noscript fallback must use a plain anchor; next/link requires JS */}
           <a href="/prices/#rates" className="font-semibold underline underline-offset-2">price list</a> instead.
@@ -273,19 +273,19 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
         {/* MAIN STEP FLOW */}
         <div className="min-w-0 space-y-6">
           <div className="flex items-center justify-between gap-4">
-            <span className="text-xs font-mono font-medium text-[#1F3A00]/60 uppercase tracking-wider">{stepLabel}</span>
+            <span className="text-xs font-mono font-medium text-[#1D201E]/60 uppercase tracking-wider">{stepLabel}</span>
             {cat && (
               <button
                 type="button"
                 onClick={reset}
-                className="text-xs font-medium text-[#1F3A00]/60 underline underline-offset-2 hover:text-[#1F3A00] cursor-pointer"
+                className="text-xs font-medium text-[#1D201E]/60 underline underline-offset-2 hover:text-[#1D201E] cursor-pointer"
               >
                 Start again
               </button>
             )}
           </div>
 
-          <div className="h-[3px] rounded-full bg-[#E5FBC9] overflow-hidden">
+          <div className="h-[3px] rounded-full bg-[#ECEAE3] overflow-hidden">
             <div
               className="h-full rounded-full bg-[#B7F56A] transition-all duration-200 ease-out"
               style={{ width: `${progressPct}%` }}
@@ -294,7 +294,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
 
           {isCategory && (
             <div className="space-y-4">
-              <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#1F3A00]">What do you need?</h3>
+              <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#1D201E]">What do you need?</h3>
               <div role="group" aria-label="Service category" className="grid gap-3 grid-cols-1 sm:grid-cols-2">
                 {(Object.keys(config) as CalcCategory[]).map((key) => {
                   const Icon = CATEGORY_ICONS[key];
@@ -305,13 +305,13 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                       type="button"
                       aria-pressed={isOn}
                       onClick={() => pickCategory(key)}
-                      className={`p-4 rounded-[16px] border text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1.5 ${
-                        isOn ? "bg-[#B7F56A] border-[#99D055] text-[#1F3A00]" : "bg-white border-[#E5FBC9] text-[#1F3A00] hover:bg-[#DCFAB7]/40"
-                      }`}
+                      className={`p-4 rounded-2xl text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1.5 ${
+ isOn ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                     >
-                      <Icon className="w-5 h-5 text-[#1F3A00]" />
+                      <Icon className="w-5 h-5 text-[#1D201E]" />
                       <span className="font-heading font-semibold text-base">{config[key].label}</span>
-                      <span className="font-mono text-xs text-[#1F3A00]/60">{config[key].fromNote}</span>
+                      <span className="text-xs text-[#5A605C]">{config[key].fromNote}</span>
                     </button>
                   );
                 })}
@@ -321,7 +321,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
 
           {isChoiceStep && (
             <div className="space-y-4">
-              <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#1F3A00]">{choiceTitle}</h3>
+              <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#1D201E]">{choiceTitle}</h3>
               <div role="radiogroup" aria-label={choiceTitle} className="grid gap-2.5 grid-cols-1 sm:grid-cols-2">
                 {choiceItems.map((item) => {
                   const isOn = sel[stepId]?.label === item.label;
@@ -332,12 +332,12 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                       role="radio"
                       aria-checked={isOn}
                       onClick={() => choose(stepId, item)}
-                      className={`p-4 rounded-[16px] border text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1 ${
-                        isOn ? "bg-[#B7F56A] border-[#99D055] text-[#1F3A00]" : "bg-white border-[#E5FBC9] text-[#1F3A00] hover:bg-[#DCFAB7]/40"
-                      }`}
+                      className={`p-4 rounded-2xl text-start cursor-pointer transition-colors duration-150 flex flex-col gap-1 ${
+ isOn ? "bg-[#B7F56A] text-[#1D201E]" : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                     >
                       <span className="font-semibold text-sm">{item.label}</span>
-                      <span className="font-mono text-xs text-[#1F3A00]/60">{item.note}</span>
+                      <span className="text-xs text-[#5A605C]">{item.note}</span>
                     </button>
                   );
                 })}
@@ -348,11 +348,11 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
           {isAddons && cfg && (
             <div className="space-y-4">
               <div className="space-y-1">
-                <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#1F3A00]">Anything to add?</h3>
-                <p className="text-sm text-[#1F3A00]/60">Optional. Skip this if you don&apos;t need extras.</p>
+                <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#1D201E]">Anything to add?</h3>
+                <p className="text-sm text-[#1D201E]/60">Optional. Skip this if you don&apos;t need extras.</p>
               </div>
               {cfg.addons.length === 0 ? (
-                <p className="text-sm text-[#1F3A00]/60">No optional add-ons for this service — continue to your quote.</p>
+                <p className="text-sm text-[#1D201E]/60">No optional add-ons for this service — continue to your quote.</p>
               ) : (
                 <div className="flex flex-col gap-2">
                   {cfg.addons.map((add) => {
@@ -364,19 +364,19 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                         role="checkbox"
                         aria-checked={isOn}
                         onClick={() => toggleAddon(add.label, add.price)}
-                        className={`flex items-center gap-3.5 w-full p-3.5 rounded-[14px] border cursor-pointer transition-colors duration-150 ${
-                          isOn ? "bg-white border-[#1F3A00]" : "bg-white border-[#E5FBC9] hover:bg-[#DCFAB7]/20"
-                        }`}
+                        className={`flex items-center gap-3.5 w-full p-3.5 rounded-xl cursor-pointer transition-colors duration-150 ${
+ isOn ? "bg-[#EAF8D6]" : "bg-[#F6F5F1] hover:bg-[#EAF8D6]"
+ }`}
                       >
                         <span
-                          className={`flex shrink-0 items-center justify-center w-5 h-5 rounded-[6px] border ${
-                            isOn ? "bg-[#B7F56A] border-[#99D055]" : "bg-white border-[#E5FBC9]"
-                          }`}
+                          className={`flex shrink-0 items-center justify-center w-5 h-5 rounded-[6px] ${
+ isOn ? "bg-[#B7F56A] " : "bg-white "
+ }`}
                         >
-                          {isOn && <Check className="w-3.5 h-3.5 text-[#1F3A00]" />}
+                          {isOn && <Check className="w-3.5 h-3.5 text-[#1D201E]" />}
                         </span>
-                        <span className="flex-1 min-w-0 text-start text-sm font-medium text-[#1F3A00]">{add.label}</span>
-                        <span className="font-mono text-sm font-medium text-[#1F3A00]">+£{add.price}</span>
+                        <span className="flex-1 min-w-0 text-start text-sm font-medium text-[#1D201E]">{add.label}</span>
+                        <span className="font-mono text-sm font-medium text-[#1D201E]">+£{add.price}</span>
                       </button>
                     );
                   })}
@@ -389,33 +389,33 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
             <div className="space-y-5">
               <div className="space-y-1.5">
                 <PricePromiseBadge variant={cat === "removals" || cat === "gardening" ? "range" : "fixed"} />
-                <h3 className="font-heading text-2xl sm:text-3xl font-medium text-[#1F3A00]">
+                <h3 className="font-heading text-2xl sm:text-3xl font-medium text-[#1D201E]">
                   Your {cfg.label.toLowerCase()} quote
                 </h3>
               </div>
 
-              <div className="border-t border-[#E5FBC9]">
+              <div className=" border-[#ECEAE3]">
                 {lines.map((line, i) => (
-                  <div key={i} className="flex items-baseline justify-between gap-4 py-3 border-b border-[#E5FBC9]">
-                    <span className="text-sm text-[#1F3A00]/85">{line.label}</span>
-                    <span className="font-mono text-sm font-medium text-[#1F3A00]">{line.value}</span>
+                  <div key={i} className="flex items-baseline justify-between gap-4 py-3 border-[#ECEAE3]">
+                    <span className="text-sm text-[#1D201E]/85">{line.label}</span>
+                    <span className="font-mono text-sm font-medium text-[#1D201E]">{line.value}</span>
                   </div>
                 ))}
                 <div className="flex items-baseline justify-between gap-4 pt-4">
-                  <span className="text-base font-semibold text-[#1F3A00]">Total</span>
+                  <span className="text-base font-semibold text-[#1D201E]">Total</span>
                   <motion.span
                     key={pulse}
                     initial={{ scale: 1 }}
                     animate={{ scale: [1, 1.02, 1] }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="font-mono text-3xl font-bold tracking-tight text-[#1F3A00]"
+                    className="font-mono text-3xl font-bold tracking-tight text-[#1D201E]"
                   >
                     {totalLabel}
                   </motion.span>
                 </div>
               </div>
 
-              <p className="text-sm leading-relaxed text-[#1F3A00]/85 bg-[#F9FCF5] border border-[#E5FBC9] rounded-[16px] p-4">
+              <p className="text-sm leading-relaxed text-[#1D201E]/85 bg-white rounded-[16px] p-4">
                 <strong className="font-semibold">{cfg.guarantee}</strong> Fixed price, confirmed before we arrive, no hidden fees.
               </p>
 
@@ -424,34 +424,34 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                   href={whatsappQuoteHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[160px] px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex-1 min-w-[160px] px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <MessageCircle className="w-4 h-4 text-[#1F3A00] shrink-0" />
+                  <MessageCircle className="w-4 h-4 text-[#1D201E] shrink-0" />
                   <span>Book This Now via WhatsApp</span>
                 </a>
                 <a
                   href={whatsappQuoteHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[200px] px-6 py-3 rounded-md font-inter text-base font-medium bg-white border border-[#1F3A00] text-[#1F3A00] hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex-1 min-w-[200px] px-6 py-3 rounded-md font-inter text-base font-medium bg-white border border-[#1D201E] text-[#1D201E] hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <MessageCircle className="w-4 h-4 text-[#1F3A00] shrink-0" />
+                  <MessageCircle className="w-4 h-4 text-[#1D201E] shrink-0" />
                   <span>Send Me This Quote on WhatsApp</span>
                 </a>
               </div>
 
-              <p className="text-xs text-[#1F3A00]/60">
+              <p className="text-xs text-[#1D201E]/60">
                 Market context: London providers typically quote {cfg.marketContext.match(/£[\d,]+[\s–-]*[£\d,]*/)?.[0] ?? cfg.marketContext} for this. Ours is the rate above.
               </p>
             </div>
           )}
 
           {!isResult && cat && (
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-[#E5FBC9]">
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-[#ECEAE3]">
               <button
                 type="button"
                 onClick={back}
-                className="flex items-center gap-1.5 px-2 py-2 text-sm font-medium text-[#1F3A00]/70 hover:text-[#1F3A00] hover:underline underline-offset-2 cursor-pointer"
+                className="flex items-center gap-1.5 px-2 py-2 text-sm font-medium text-[#1D201E]/70 hover:text-[#1D201E] hover:underline underline-offset-2 cursor-pointer"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back</span>
@@ -460,9 +460,9 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
                 type="button"
                 disabled={nextDisabled}
                 onClick={() => !nextDisabled && setStep((s) => s + 1)}
-                className={`min-w-[170px] px-6 py-3 rounded-md font-inter text-base font-medium flex items-center justify-center gap-2 transition-opacity duration-200 ${
-                  nextDisabled ? "bg-[#DCFAB7] text-[#1F3A00]/60 cursor-not-allowed" : "bg-[#B7F56A] text-[#1F3A00] hover:opacity-90 cursor-pointer"
-                }`}
+                className={`min-w-[170px] min-h-12 px-5 rounded-xl text-base font-semibold flex items-center justify-center gap-2 transition-colors duration-150 ${
+ nextDisabled ? "bg-[#ECEAE3] text-[#8B908B] cursor-not-allowed" : "bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] cursor-pointer"
+ }`}
               >
                 <span>{nextLabel}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -475,22 +475,22 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
         {!narrow && (
           <aside
             aria-label="Running quote"
-            className="sticky top-20 bg-[#F9FCF5] rounded-[16px] p-6 border border-[#E5FBC9] space-y-4 text-start"
+            className="sticky top-20 bg-white rounded-[16px] p-6 space-y-4 text-start"
           >
-            <span className="text-xs font-mono font-medium text-[#1F3A00]/60 uppercase tracking-wider">Your quote so far</span>
+            <span className="text-xs font-mono font-medium text-[#1D201E]/60 uppercase tracking-wider">Your quote so far</span>
             <div aria-live="polite" className="flex flex-col gap-1">
               <motion.span
                 key={pulse}
                 initial={{ scale: 1 }}
                 animate={{ scale: [1, 1.02, 1] }}
                 transition={{ duration: 0.18, ease: "easeOut" }}
-                className="font-mono text-4xl font-bold tracking-tight text-[#1F3A00]"
+                className="font-mono text-4xl font-bold tracking-tight text-[#1D201E]"
               >
                 {totalLabel}
               </motion.span>
-              <span className="text-sm text-[#1F3A00]/60">{totalCaption}</span>
+              <span className="text-sm text-[#1D201E]/60">{totalCaption}</span>
             </div>
-            <div className="h-px bg-[#E5FBC9]" />
+            <div className="h-px bg-[#ECEAE3]" />
             <div className="space-y-2">
               {cfg && <SummaryRow label="Service" value={cfg.label} />}
               {Object.entries(sel).map(([k, v]) => (
@@ -498,7 +498,7 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
               ))}
               {Object.keys(addons).length > 0 && <SummaryRow label="Add-ons" value={`${Object.keys(addons).length} selected`} />}
             </div>
-            <p className="text-xs leading-relaxed text-[#1F3A00]/60">
+            <p className="text-xs leading-relaxed text-[#1D201E]/60">
               Prices shown are the amount you pay. VAT and travel within our coverage area are included.
             </p>
           </aside>
@@ -508,15 +508,15 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
       {/* MOBILE STICKY TOTAL BAR — narrow container, mid-flow only */}
       {narrow && cat && !isResult && (
         <div
-          className="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 bg-white border-t border-[#E5FBC9] shadow-lg"
+          className="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 bg-white border-[#ECEAE3] "
           style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
         >
           <div className="max-w-md mx-auto flex items-center justify-between gap-4">
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-[#1F3A00]/60">Estimated total</span>
-              <span className="font-mono text-xl font-bold tracking-tight text-[#1F3A00]">{totalLabel}</span>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-[#1D201E]/60">Estimated total</span>
+              <span className="font-mono text-xl font-bold tracking-tight text-[#1D201E]">{totalLabel}</span>
             </div>
-            <span className="text-xs text-[#1F3A00]/60 text-end">{totalCaption}</span>
+            <span className="text-xs text-[#1D201E]/60 text-end">{totalCaption}</span>
           </div>
         </div>
       )}
@@ -527,8 +527,8 @@ export function InstantEstimator({ defaultVertical }: InstantEstimatorProps = {}
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-3">
-      <span className="text-xs text-[#1F3A00]/60">{label}</span>
-      <span className="text-sm font-semibold text-[#1F3A00] text-end">{value}</span>
+      <span className="shrink-0 text-xs text-[#5A605C]">{label}</span>
+      <span className="min-w-0 break-words text-sm font-semibold text-[#1D201E] text-end">{value}</span>
     </div>
   );
 }

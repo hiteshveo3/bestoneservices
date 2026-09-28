@@ -2,9 +2,9 @@ import { serviceFaqSchema } from "@/content/service-types";
 
 export const endOfTenancyContent = {
   title: "End of Tenancy Cleaning",
-  seoTitle: "End of Tenancy Cleaning | Best One Services",
+  seoTitle: "End of Tenancy Cleaning | Bestone Services",
   description:
-    "Professional end of tenancy cleaning for tenants, landlords and letting agents. Tell Best One Services about your property and request a clear quote.",
+    "Professional end of tenancy cleaning for tenants, landlords and letting agents. Tell Bestone Services about your property and request a clear quote.",
   hero: {
     eyebrow: "End of tenancy cleaning",
     heading: "End of tenancy cleaning for a smoother handover.",

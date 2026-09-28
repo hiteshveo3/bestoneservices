@@ -51,7 +51,7 @@ export function generatePricingPageSchema() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Clear Pricing & Service Estimator | Best One Services",
+        name: "Clear Pricing & Service Estimator | Bestone Services",
         description: "Transparent, deterministic pricing for End of Tenancy Cleaning, Pest Control, Gardening, and Removals across Greater London.",
         inLanguage: "en-GB",
         isPartOf: { "@id": `${siteConfig.url}/#website` },

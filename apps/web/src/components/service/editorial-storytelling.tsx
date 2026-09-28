@@ -41,7 +41,7 @@ export function EditorialStorytelling({
             </div>
           )}
 
-          <h2 className="font-heading text-2xl sm:text-4xl font-medium text-ink-900 tracking-tight leading-tight">
+          <h2 className="font-heading text-2xl sm:text-4xl font-[650] text-ink-900 tracking-tight leading-tight">
             {title}
           </h2>
 
@@ -55,8 +55,8 @@ export function EditorialStorytelling({
             <ul className="space-y-2 pt-2 text-sm font-medium text-ink-600 list-none p-0">
               {bulletPoints.map((bp, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <div className="w-5 h-5 rounded-full bg-[#1F3A00] text-white flex items-center justify-center font-medium shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-white" />
+                  <div className="w-5 h-5 rounded-full bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-[#1D201E]" />
                   </div>
                   <span>{bp}</span>
                 </li>
@@ -67,7 +67,7 @@ export function EditorialStorytelling({
 
         {/* IMAGE CONTAINER (Unwrapped, Open Canvas) */}
         <div className={`relative ${isTextLeft ? "lg:order-2" : "lg:order-1"}`}>
-          <div className="relative rounded-[16px] overflow-hidden border border-[#B7F56A] bg-[#F9FCF5] aspect-4/3">
+          <div className="relative rounded-[16px] overflow-hidden bg-white aspect-4/3">
             <Image
               src={imageUrl}
               alt={imageAlt}

@@ -86,7 +86,7 @@ export default function AdminCommunicationsPage() {
           bookingReference: selectedConv.bookingReference,
           text: replyText.trim(),
           senderRole: "admin",
-          senderName: "Best One Support",
+          senderName: "Bestone Support",
         }),
       });
 
@@ -107,14 +107,14 @@ export default function AdminCommunicationsPage() {
     <div className="space-y-6 text-start">
       
       {/* HEADER BAR */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 ">
         <span className="text-xs font-mono font-medium uppercase text-ink-500">COMMUNICATIONS CENTER</span>
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Customer Direct Chat & Automated Triggers</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Customer Direct Chat & Automated Triggers</h1>
         <p className="text-sm text-ink-500">Real-time customer messaging, support inbox, and SMS/Email trigger logs</p>
       </div>
 
       {loading ? (
-        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+        <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
           <Spinner size={32} className="mx-auto" />
           <p className="text-sm font-medium text-ink-600">Loading communications inbox...</p>
         </div>
@@ -122,10 +122,10 @@ export default function AdminCommunicationsPage() {
         <div className="grid lg:grid-cols-12 gap-6">
           
           {/* CONVERSATIONS INBOX LIST (4 Cols) */}
-          <div className="lg:col-span-4 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="lg:col-span-4 bg-white rounded-[18px] p-6 space-y-4 ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <span className="text-xs font-mono font-medium uppercase text-ink-500">CUSTOMER INBOX</span>
-              <span className="px-2.5 py-0.5 rounded-full bg-[#F9FCF5] text-ink-500 text-[10px] font-mono font-medium">
+              <span className="px-2.5 py-0.5 rounded-md bg-[#F6F5F1] text-ink-500 text-[10px] font-mono font-medium">
                 {conversations.length} CHATS
               </span>
             </div>
@@ -137,7 +137,7 @@ export default function AdminCommunicationsPage() {
                     key={conv.id}
                     type="button"
                     onClick={() => setSelectedConvId(conv.id)}
-                    className={`w-full p-4 rounded-[18px] text-start transition-colors duration-200 border cursor-pointer ${ selectedConv?.id === conv.id ? "bg-[#DCFAB7]/70 border-[#99D055] " : "bg-white border-[#E5FBC9] hover:border-[#1F3A00]" }`}
+                    className={`w-full p-4 rounded-[18px] text-start transition-colors duration-200 cursor-pointer ${ selectedConv?.id === conv.id ? "bg-[#EAF8D6]/70 " : "bg-white hover:border-[#1D201E]" }`}
                   >
                     <div className="flex justify-between items-center text-xs font-mono">
                       <span className="font-medium text-ink-600">{conv.bookingReference}</span>
@@ -153,24 +153,24 @@ export default function AdminCommunicationsPage() {
               </div>
             ) : (
               <div className="p-8 text-center space-y-2">
-                <MessageSquare className="w-8 h-8 text-[#1F3A00] mx-auto" />
+                <MessageSquare className="w-8 h-8 text-[#1D201E] mx-auto" />
                 <p className="text-xs font-medium text-ink-600">No active chat conversations.</p>
               </div>
             )}
           </div>
 
           {/* ACTIVE CHAT WORKSPACE (5 Cols) */}
-          <div className="lg:col-span-5 bg-white rounded-[18px] p-6 space-y-4 flex flex-col h-[650px] border border-[#E5FBC9]">
+          <div className="lg:col-span-5 bg-white rounded-[18px] p-6 space-y-4 flex flex-col h-[650px] ">
             {selectedConv ? (
               <>
-                <div className="border-b border-[#E5FBC9] pb-3 flex justify-between items-center">
+                <div className=" border-[#ECEAE3] pb-3 flex justify-between items-center">
                   <div>
                     <span className="text-[10px] font-mono uppercase text-ink-500">LIVE CHAT CHANNEL</span>
                     <h3 className="font-heading font-medium text-base text-ink-900">
                       {selectedConv.customerName} ({selectedConv.bookingReference})
                     </h3>
                   </div>
-                  <span className="px-2 py-0.5 rounded-full bg-[#F9FCF5] text-[10px] font-mono text-ink-500">
+                  <span className="px-2 py-0.5 rounded-md bg-[#F6F5F1] text-[10px] font-mono text-ink-500">
                     {selectedConv.customerEmail}
                   </span>
                 </div>
@@ -184,9 +184,9 @@ export default function AdminCommunicationsPage() {
                         className={`flex flex-col ${isAdmin ? "items-end" : "items-start"}`}
                       >
                         <div
-                          className={`max-w-xs p-3 rounded-[18px] text-xs font-medium space-y-1 ${ isAdmin ? "bg-[#1F3A00] text-white rounded-br-none" : "bg-[#F9FCF5] text-ink-600 rounded-bl-none border border-[#E5FBC9]" }`}
+                          className={`max-w-xs p-3 rounded-[18px] text-xs font-medium space-y-1 ${ isAdmin ? "bg-[#B7F56A] text-[#1D201E] rounded-br-none" : "bg-white text-ink-600 rounded-bl-none " }`}
                         >
-                          <span className={`text-[10px] font-mono font-medium uppercase block ${isAdmin ? "text-[#1F3A00]" : "text-ink-500"}`}>
+                          <span className={`text-[10px] font-mono font-medium uppercase block ${isAdmin ? "text-[#1D201E]" : "text-ink-500"}`}>
                             {msg.senderName} ({msg.senderRole})
                           </span>
                           <p>{msg.text}</p>
@@ -203,37 +203,37 @@ export default function AdminCommunicationsPage() {
                   </div>
                 )}
 
-                <form onSubmit={handleAdminReply} className="flex gap-2 pt-2 border-t border-[#E5FBC9]">
+                <form onSubmit={handleAdminReply} className="flex gap-2 pt-2 border-[#ECEAE3]">
                   <input
                     type="text"
                     value={replyText}
                     onChange={(e) => setReplyText(e.target.value)}
                     placeholder="Type official admin reply..."
-                    className="flex-1 p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                    className="flex-1 p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                     required
                   />
 
                   <button
                     type="submit"
                     disabled={sending || !replyText.trim()}
-                    className="px-4 py-3 rounded-[18px] bg-[#1F3A00] text-[#B7F56A] hover:bg-[#2d5004] text-xs font-medium cursor-pointer disabled:opacity-50 transition-colors duration-150 border-none flex items-center gap-1 shrink-0"
+                    className="px-4 py-3 rounded-[18px] bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium cursor-pointer disabled:opacity-50 transition-colors duration-150 border-none flex items-center gap-1 shrink-0"
                   >
                     <span>Reply</span>
-                    <Send className="w-3.5 h-3.5 text-white" />
+                    <Send className="w-3.5 h-3.5 text-[#1D201E]" />
                   </button>
                 </form>
               </>
             ) : (
               <div className="p-12 text-center my-auto space-y-2">
-                <MessageSquare className="w-8 h-8 text-[#1F3A00] mx-auto" />
+                <MessageSquare className="w-8 h-8 text-[#1D201E] mx-auto" />
                 <p className="text-xs font-medium text-ink-600">Select a chat conversation from the inbox to reply.</p>
               </div>
             )}
           </div>
 
           {/* AUTOMATED TRIGGERS LOG FEED (3 Cols) */}
-          <div className="lg:col-span-3 bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-            <div className="border-b border-[#E5FBC9] pb-3">
+          <div className="lg:col-span-3 bg-white rounded-[18px] p-6 space-y-4 ">
+            <div className=" border-[#ECEAE3] pb-3">
               <span className="text-xs font-mono font-medium uppercase text-ink-500">SMS & EMAIL LOGS</span>
               <h3 className="font-heading font-medium text-sm text-ink-900">Trigger Dispatches</h3>
             </div>
@@ -241,16 +241,16 @@ export default function AdminCommunicationsPage() {
             {commLogs.length > 0 ? (
               <div className="space-y-3 max-h-[550px] overflow-y-auto pr-1">
                 {commLogs.map((log) => (
-                  <div key={log.id} className="p-3 rounded-[18px] bg-white border border-[#E5FBC9] space-y-1.5 text-xs font-mono">
+                  <div key={log.id} className="p-3 rounded-[18px] bg-white space-y-1.5 text-xs font-mono">
                     <div className="flex justify-between items-center">
-                      <span className="px-2 py-0.5 rounded-full bg-success-50 text-success-900 text-[9px] font-medium uppercase">
+                      <span className="px-2 py-0.5 rounded-xl bg-success-50 text-success-900 text-[9px] font-medium uppercase">
                         {log.channel} • {log.triggerEvent.replace(/_/g, " ")}
                       </span>
                     </div>
 
                     <p className="font-medium text-ink-600">{log.bookingReference}</p>
                     <p className="text-[10px] text-ink-500 truncate">{log.recipientEmail}</p>
-                    <p className="text-[10px] text-ink-600 italic bg-white p-2 rounded-[18px] border border-[#E5FBC9]">
+                    <p className="text-[10px] text-ink-600 italic bg-white p-2 rounded-[18px] ">
                       &ldquo;{log.messageSnippet}&rdquo;
                     </p>
                   </div>
@@ -258,7 +258,7 @@ export default function AdminCommunicationsPage() {
               </div>
             ) : (
               <div className="p-6 text-center space-y-2">
-                <Mail className="w-6 h-6 text-[#1F3A00] mx-auto" />
+                <Mail className="w-6 h-6 text-[#1D201E] mx-auto" />
                 <p className="text-xs font-medium text-ink-600">No trigger logs recorded yet.</p>
               </div>
             )}

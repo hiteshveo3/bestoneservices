@@ -190,7 +190,7 @@ export const SEARCH_INDEX: SearchResultItem[] = [
   },
   {
     id: "about-page",
-    title: "About Best One Services Ltd",
+    title: "About Bestone Services Ltd",
     category: "Pages",
     href: "/about/",
     aliases: ["about", "company", "team", "guarantee"],

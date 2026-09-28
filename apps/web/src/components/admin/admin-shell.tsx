@@ -128,17 +128,17 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
 
   return (
     <ProtectedRoute requireAdmin>
-      <div className="min-h-screen bg-[#F9FCF5] text-start flex flex-col font-sans">
+      <div className="min-h-screen bg-[#F6F5F1] text-start flex flex-col font-sans">
         
         {/* TOP BAR */}
-        <header className="sticky top-0 z-30 bg-white border-b border-[#E5FBC9]">
+        <header className="sticky top-0 z-30 bg-white border-[#ECEAE3]">
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
             
             <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-[16px] text-ink-600 hover:bg-[#DCFAB7] border-none cursor-pointer"
+                className="lg:hidden p-2 rounded-xl text-ink-600 hover:bg-[#EAF8D6] border-none cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -146,8 +146,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
 
               <Logo href="/admin" className="text-ink-600 font-medium">
                 <div className="flex flex-col">
-                  <span className="font-heading font-medium text-base leading-none">Best One</span>
-                  <span className="text-[11px] font-mono font-medium text-ink-500 uppercase tracking-wider">Admin Console</span>
+                  <span className="ts-head text-[22px] leading-none">Bestone</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">Admin Console</span>
                 </div>
               </Logo>
             </div>
@@ -155,11 +155,11 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             {/* Global Search Bar Trigger */}
             <div 
               onClick={() => setSearchModalOpen(true)}
-              className="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#F9FCF5] text-sm text-ink-500 w-64 lg:w-96 cursor-pointer hover:bg-[#DCFAB7] transition-colors duration-150"
+              className="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#F6F5F1] text-sm text-ink-500 w-64 lg:w-96 cursor-pointer hover:bg-[#EAF8D6] transition-colors duration-150"
             >
               <Search className="w-4 h-4 text-ink-500 shrink-0" />
-              <span className="text-xs text-ink-500 font-medium flex-1">Search Best One navigation or customers...</span>
-              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white text-ink-500">Cmd+K</span>
+              <span className="text-xs text-ink-500 font-medium flex-1">Search Bestone navigation or customers...</span>
+              <span className="text-[11px] font-semibold px-1.5 py-0.5 rounded-md bg-white text-muted">Cmd+K</span>
             </div>
 
             {/* Admin Actions, Notifications & Profile */}
@@ -167,7 +167,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
               <button
                 type="button"
                 onClick={() => setSearchModalOpen(true)}
-                className="md:hidden p-2 rounded-full text-ink-600 hover:bg-[#DCFAB7] border-none cursor-pointer"
+                className="md:hidden p-2 rounded-full text-ink-600 hover:bg-[#EAF8D6] border-none cursor-pointer"
                 aria-label="Open Search"
               >
                 <Search className="w-5 h-5" />
@@ -177,26 +177,26 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
 
               <Link
                 href="/"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F9FCF5] text-ink-600 text-xs font-medium hover:bg-[#DCFAB7] text-decoration-none"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#F6F5F1] text-ink-600 text-xs font-semibold hover:bg-[#EAF8D6] text-decoration-none"
               >
                 <span>Live Website</span>
                 <ChevronRight className="w-3 h-3 text-ink-600" />
               </Link>
 
-              <div className="flex items-center gap-2 pl-2 border-l border-[#E5FBC9]">
-                <div className="w-8 h-8 rounded-full bg-[#1F3A00] text-white flex items-center justify-center font-medium text-xs">
+              <div className="flex items-center gap-2 pl-2  border-[#ECEAE3]">
+                <div className="w-8 h-8 rounded-full bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium text-xs">
                   {adminName.charAt(0).toUpperCase()}
                 </div>
                 <div className="hidden sm:flex flex-col text-start">
                   <span className="font-medium text-xs text-ink-600 leading-tight">{adminName}</span>
-                  <span className="text-[10px] font-mono font-medium text-success-900 uppercase">Super Admin</span>
+                  <span className="text-[11px] text-muted">Super Admin</span>
                 </div>
               </div>
 
               <button
                 type="button"
                 onClick={() => signOutUser()}
-                className="p-2 rounded-full text-ink-500 hover:text-ink-600 hover:bg-[#DCFAB7] border-none cursor-pointer"
+                className="p-2 rounded-full text-ink-500 hover:text-ink-600 hover:bg-[#EAF8D6] border-none cursor-pointer"
                 title="Sign Out"
               >
                 <LogOut className="w-4 h-4" />
@@ -213,10 +213,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           
           {/* DESKTOP SIDEBAR */}
           <aside className="hidden lg:block w-64 shrink-0 space-y-6">
-            <div className="bg-white rounded-[16px] p-4 space-y-5 sticky top-22 max-h-[calc(100vh-7rem)] overflow-y-auto border border-[#E5FBC9]">
+            <div className="bg-white rounded-[16px] p-4 space-y-5 sticky top-22 max-h-[calc(100vh-7rem)] overflow-y-auto ">
               {ADMIN_NAV.map((group) => (
                 <div key={group.title} className="space-y-1">
-                  <span className="text-[10px] font-mono font-medium uppercase text-ink-500 px-3 tracking-wider block">
+                  <span className="ts-eyebrow block px-3 pb-1">
                     {group.title}
                   </span>
                   {group.items.map((item) => {
@@ -230,13 +230,13 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                           key={item.href}
                           aria-disabled="true"
                           title={`${item.label} is not available yet`}
-                          className="flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium text-ink-500/50 cursor-not-allowed"
+                          className="flex items-center justify-between min-h-10 px-3 py-2 rounded-xl text-sm font-medium text-ink-500/50 cursor-not-allowed"
                         >
                           <div className="flex items-center gap-2.5">
                             <Icon className="w-4 h-4 shrink-0 text-ink-500/50" />
                             <span>{item.label}</span>
                           </div>
-                          <span className="text-[9px] font-mono text-ink-500 bg-[#F9FCF5] px-1.5 py-0.5 rounded">
+                          <span className="text-[11px] font-semibold text-muted bg-[#F6F5F1] px-1.5 py-0.5 rounded-md">
                             Soon
                           </span>
                         </div>
@@ -247,10 +247,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#1F3A00] text-white font-medium " : "text-ink-500 hover:text-[#1F3A00] hover:bg-[#DCFAB7]" } border border-[#E5FBC9]`}
+                        className={`flex items-center justify-between min-h-10 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-150 text-decoration-none ${ isActive ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]" } `}
                       >
                         <div className="flex items-center gap-2.5">
-                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-ink-600" : "text-ink-500"}`} />
+                          <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-ink" : "text-muted"}`} />
                           <span>{item.label}</span>
                         </div>
                       </Link>
@@ -265,13 +265,13 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           {mobileMenuOpen && (
             <div className="fixed inset-0 z-40 lg:hidden flex">
               <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-xs" onClick={() => setMobileMenuOpen(false)} />
-              <div className="relative w-72 max-w-[80vw] bg-white h-full p-4 space-y-6 overflow-y-auto z-50 text-start border border-[#E5FBC9]">
-                <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-4">
-                  <span className="font-heading font-medium text-lg text-ink-900">Admin Menu</span>
+              <div className="relative w-72 max-w-[80vw] bg-white h-full p-4 space-y-6 overflow-y-auto z-50 text-start ">
+                <div className="flex items-center justify-between border-[#ECEAE3] pb-4">
+                  <span className="ts-head text-xl">Admin Menu</span>
                   <button
                     type="button"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="p-1 rounded-[16px] text-ink-600 border-none bg-transparent cursor-pointer"
+                    className="p-1 rounded-xl text-ink-600 border-none bg-transparent cursor-pointer"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -280,7 +280,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                 <div className="space-y-5">
                   {ADMIN_NAV.map((group) => (
                     <div key={group.title} className="space-y-1">
-                      <span className="text-[10px] font-mono font-medium uppercase text-ink-500 px-3 tracking-wider block">
+                      <span className="ts-eyebrow block px-3 pb-1">
                         {group.title}
                       </span>
                       {group.items.map((item) => {
@@ -294,13 +294,13 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                               key={item.href}
                               aria-disabled="true"
                               title={`${item.label} is not available yet`}
-                              className="flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium text-ink-500/50 cursor-not-allowed"
+                              className="flex items-center justify-between min-h-10 px-3 py-2 rounded-xl text-sm font-medium text-ink-500/50 cursor-not-allowed"
                             >
                               <div className="flex items-center gap-2.5">
                                 <Icon className="w-4 h-4 shrink-0 text-ink-500/50" />
                                 <span>{item.label}</span>
                               </div>
-                              <span className="text-[9px] font-mono text-ink-500 bg-[#F9FCF5] px-1.5 py-0.5 rounded">
+                              <span className="text-[11px] font-semibold text-muted bg-[#F6F5F1] px-1.5 py-0.5 rounded-md">
                                 Soon
                               </span>
                             </div>
@@ -312,11 +312,11 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                             key={item.href}
                             href={item.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className={`flex items-center justify-between px-3 py-2.5 rounded-[16px] text-xs font-medium transition-colors duration-150 text-decoration-none ${
-                              isActive
-                                ? "bg-[#1F3A00] text-white font-medium"
-                                : "text-ink-500 hover:text-[#1F3A00] hover:bg-[#DCFAB7]"
-                            }`}
+                            className={`flex items-center justify-between min-h-10 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-150 text-decoration-none ${
+ isActive
+ ? "bg-[#B7F56A] text-[#1D201E] font-medium"
+ : "text-ink-500 hover:text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                           >
                             <div className="flex items-center gap-2.5">
                               <Icon className="w-4 h-4 text-ink-600 shrink-0" />

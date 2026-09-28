@@ -101,7 +101,7 @@ export default function AdminNewBookingPage() {
       <div className="flex items-center justify-between">
         <Link
           href="/admin/bookings"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#E5FBC9] text-xs font-medium text-ink-600 hover:bg-[#DCFAB7] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to Bookings Queue</span>
@@ -110,12 +110,12 @@ export default function AdminNewBookingPage() {
         <span className="text-xs font-mono font-medium uppercase text-ink-500">MANUAL ENQUIRY FORM</span>
       </div>
 
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#E5FBC9]">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-medium">
-          <Sparkles className="w-3.5 h-3.5 text-white shrink-0" />
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 ">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-medium">
+          <Sparkles className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
           <span>Admin Phone / Email Enquiry Entry</span>
         </div>
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Create Manual Booking</h1>
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Create Manual Booking</h1>
         <p className="text-sm text-ink-500">Enter enquiry details taken over phone or email. Uses canonical server reference generation.</p>
       </div>
 
@@ -129,8 +129,8 @@ export default function AdminNewBookingPage() {
       <form onSubmit={handleSubmit} className="space-y-6">
         
         {/* 1. Category & Service Selector */}
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
             Service Category & Name
           </h3>
 
@@ -147,7 +147,7 @@ export default function AdminNewBookingPage() {
                   else if (v === "gardening") { setServiceId("garden-clearance"); setServiceName("Overgrown Garden Clearance"); }
                   else if (v === "removals") { setServiceId("house-removals"); setServiceName("House Removals & Moving"); }
                 }}
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
               >
                 <option value="cleaning">Cleaning Services</option>
                 <option value="pest">Pest Control</option>
@@ -162,7 +162,7 @@ export default function AdminNewBookingPage() {
                 type="text"
                 value={serviceName}
                 onChange={(e) => setServiceName(e.target.value)}
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -170,8 +170,8 @@ export default function AdminNewBookingPage() {
         </div>
 
         {/* 2. Customer Contact */}
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
             Customer Contact Information
           </h3>
 
@@ -183,7 +183,7 @@ export default function AdminNewBookingPage() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="e.g. Sarah Jones"
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -195,7 +195,7 @@ export default function AdminNewBookingPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="sarah@example.com"
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -207,7 +207,7 @@ export default function AdminNewBookingPage() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+44 7700 900000"
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -215,8 +215,8 @@ export default function AdminNewBookingPage() {
         </div>
 
         {/* 3. Address & Schedule */}
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
             Address & Requested Schedule
           </h3>
 
@@ -228,7 +228,7 @@ export default function AdminNewBookingPage() {
                 value={addressLine1}
                 onChange={(e) => setAddressLine1(e.target.value)}
                 placeholder="e.g. 42 High Street"
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -240,7 +240,7 @@ export default function AdminNewBookingPage() {
                 value={postcode}
                 onChange={(e) => setPostcode(e.target.value.toUpperCase())}
                 placeholder="e.g. IG1 1BA"
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -251,7 +251,7 @@ export default function AdminNewBookingPage() {
                 type="date"
                 value={requestedDate}
                 onChange={(e) => setRequestedDate(e.target.value)}
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -261,7 +261,7 @@ export default function AdminNewBookingPage() {
               <select
                 value={requestedSlot}
                 onChange={(e) => setRequestedSlot(e.target.value as "morning" | "afternoon" | "evening")}
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
               >
                 <option value="morning">Morning (8am - 12pm)</option>
                 <option value="afternoon">Afternoon (12pm - 4pm)</option>
@@ -277,7 +277,7 @@ export default function AdminNewBookingPage() {
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Notes from customer phone call or email..."
               rows={3}
-              className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs text-ink-600 border-none resize-none"
+              className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs text-ink-600 border-none resize-none"
             />
           </div>
         </div>
@@ -286,7 +286,7 @@ export default function AdminNewBookingPage() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-4 rounded-full bg-[#1F3A00] text-white font-heading font-medium text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer border border-[#E5FBC9]"
+          className="w-full py-4 rounded-xl bg-[#B7F56A] text-[#1D201E] font-heading font-medium text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer "
         >
           {submitting ? "Creating Booking Record..." : "Submit Manual Booking Record"}
         </button>

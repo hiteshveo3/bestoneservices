@@ -29,7 +29,7 @@ const TRIOS: Record<ServiceLine, ServiceTrio> = {
 
 /** Neutral fallback for anything that is not one of the four service lines. */
 const NEUTRAL: ServiceTrio = {
-  base: "bg-ink-900", tint: "bg-white", ink: "text-ink-900", border: "border-[#E5FBC9]",
+  base: "bg-ink-900", tint: "bg-white", ink: "text-ink-900", border: "border-[#ECEAE3]",
 };
 
 /**

@@ -20,8 +20,8 @@ export function Spinner({
 }) {
   const ring =
     tone === "on-dark"
-      ? "border-[#B7F56A]/30 border-t-[#B7F56A]"
-      : "border-[#1F3A00]/25 border-t-[#1F3A00]";
+      ? "border-[#ECEAE3]/30 border-t-[#ECEAE3]"
+      : "border-[#1D201E]/25 border-t-[#1D201E]";
 
   return (
     <span

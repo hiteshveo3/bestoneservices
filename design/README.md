@@ -1,18 +1,9 @@
-# Design Review Package
+# Design
 
-This folder contains the design-only phase for Best One Services.
+The Bestone design system is **Touchstone**. Start with [TOUCHSTONE.md](TOUCHSTONE.md):
+philosophy, house rules, every decision with its source, open questions and build progress.
 
-## Review files
-
-- `prototype/index.html` — interactive website page-layout review
-- `design-spec.md` — website design system, sitemap, page goals, responsive rules, components, and data model
-- `mobile-app-spec.md` — Flutter customer-app information architecture, screen list, flows, and UX direction
-- `../launch-checklist.md` — missing facts, assets, legal work, security work, and production tests
-
-Open `prototype/index.html` in a browser. Use the left page selector to review all ten layouts and the Desktop/Mobile controls to compare responsive behaviour.
-
-The prototype is intentionally not connected to Firebase. Form buttons display a design-only notice and do not submit or store data.
-
-## Approval boundary
-
-Approval of this package authorises neither production implementation nor launch. Next.js/Firebase and Flutter implementation should start only after the website and app design directions are approved.
+- `lab/` — the design labs, viewable in a browser: `01-name.html`, `02-directions.html`,
+  `03-library.html` and the latest lab at `index.html`. `lab/touchstone.css` is the lab stylesheet.
+- `touchstone-codemod.py` — the one-off colour migration applied to `apps/web/src`.
+- `mobile-app-spec.md` — information architecture for the future customer app.

@@ -36,18 +36,18 @@ export function ServiceCardMotion({ category, serviceName, serviceId }: ServiceC
     <div
       role="img"
       aria-label={`${serviceName} service illustration`}
-      className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#F4FBEA] text-[#1F3A00]"
+      className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#F6F5F1] text-[#1D201E]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,#ffffff_0,transparent_32%),linear-gradient(135deg,#f9fcf5_0%,#e7f7ce_100%)]" />
       <div className="absolute -right-10 -bottom-10 h-36 w-36 rounded-full bg-[#B7F56A]/35 blur-2xl" />
 
       {category === "cleaning" && (
         <>
-          <motion.div animate={reduceMotion ? undefined : { rotate: [0, 7, 0], y: [0, -4, 0] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] border border-[#B7F56A] bg-white shadow-sm">
-            <Sparkles className="h-11 w-11 text-[#4E8C16]" strokeWidth={1.7} />
+          <motion.div animate={reduceMotion ? undefined : { rotate: [0, 7, 0], y: [0, -4, 0] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] bg-white ">
+            <Sparkles className="h-11 w-11 text-[#1D201E]" strokeWidth={1.7} />
           </motion.div>
           <motion.span animate={animation} className="absolute left-[22%] top-[24%] h-3 w-3 rounded-full bg-[#B7F56A]" />
-          <motion.span animate={animation} transition={{ ...floatTransition, delay: 0.6 }} className="absolute right-[20%] bottom-[25%] h-2 w-2 rounded-full bg-[#1F3A00]/25" />
+          <motion.span animate={animation} transition={{ ...floatTransition, delay: 0.6 }} className="absolute right-[20%] bottom-[25%] h-2 w-2 rounded-full bg-[#1D201E]/25" />
           <motion.div animate={reduceMotion ? undefined : { x: [-36, 36, -36] }} transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[20%] h-1.5 w-20 rounded-full bg-[#B7F56A]" />
         </>
       )}
@@ -69,18 +69,18 @@ export function ServiceCardMotion({ category, serviceName, serviceId }: ServiceC
 
       {category === "pest-control" && !isRodentService && !suppliedRodentImage && (
         <>
-          <motion.div animate={reduceMotion ? undefined : { scale: [1, 1.07, 1] }} transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }} className="relative z-10 grid h-24 w-24 place-items-center rounded-full border-[3px] border-[#B7F56A] bg-white shadow-sm">
-            <Bug className="h-10 w-10 text-[#1F3A00]" strokeWidth={1.7} />
-            <ShieldCheck className="absolute -right-3 -bottom-2 h-9 w-9 rounded-full bg-[#B7F56A] p-1.5 text-[#1F3A00]" strokeWidth={2} />
+          <motion.div animate={reduceMotion ? undefined : { scale: [1, 1.07, 1] }} transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }} className="relative z-10 grid h-24 w-24 place-items-center rounded-full border-[3px] border-[#ECEAE3] bg-white ">
+            <Bug className="h-10 w-10 text-[#1D201E]" strokeWidth={1.7} />
+            <ShieldCheck className="absolute -right-3 -bottom-2 h-9 w-9 rounded-full bg-[#B7F56A] p-1.5 text-[#1D201E]" strokeWidth={2} />
           </motion.div>
-          <motion.span animate={reduceMotion ? undefined : { scale: [0.86, 1.08, 0.86], opacity: [0.3, 0.7, 0.3] }} transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }} className="absolute h-36 w-36 rounded-full border border-[#B7F56A]" />
+          <motion.span animate={reduceMotion ? undefined : { scale: [0.86, 1.08, 0.86], opacity: [0.3, 0.7, 0.3] }} transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }} className="absolute h-36 w-36 rounded-full border border-[#ECEAE3]" />
         </>
       )}
 
       {category === "gardening" && (
         <>
-          <motion.div animate={reduceMotion ? undefined : { rotate: [-5, 6, -5], y: [0, -4, 0] }} transition={floatTransition} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] border border-[#B7F56A] bg-white shadow-sm">
-            <Leaf className="h-12 w-12 text-[#4E8C16]" strokeWidth={1.6} />
+          <motion.div animate={reduceMotion ? undefined : { rotate: [-5, 6, -5], y: [0, -4, 0] }} transition={floatTransition} className="relative z-10 grid h-24 w-24 place-items-center rounded-[28px] bg-white ">
+            <Leaf className="h-12 w-12 text-[#1D201E]" strokeWidth={1.6} />
           </motion.div>
           {["left-[22%] top-[28%]", "right-[20%] top-[26%]", "right-[25%] bottom-[22%]"].map((position, index) => (
             <motion.span key={position} animate={reduceMotion ? undefined : { y: [-5, 6, -5], rotate: [-10, 8, -10] }} transition={{ duration: 2.6, repeat: Infinity, delay: index * 0.35, ease: "easeInOut" }} className={`absolute ${position} h-4 w-2 rounded-full bg-[#B7F56A]`} />
@@ -91,8 +91,8 @@ export function ServiceCardMotion({ category, serviceName, serviceId }: ServiceC
       {category === "removals" && (
         <>
           <motion.div animate={reduceMotion ? undefined : { x: [-8, 8, -8] }} transition={floatTransition} className="relative z-10 flex items-end gap-2">
-            <div className="grid h-20 w-20 place-items-center rounded-[22px] border border-[#B7F56A] bg-white shadow-sm"><Package className="h-10 w-10 text-[#1F3A00]" strokeWidth={1.7} /></div>
-            <Truck className="mb-1 h-11 w-11 text-[#4E8C16]" strokeWidth={1.7} />
+            <div className="grid h-20 w-20 place-items-center rounded-[22px] bg-white "><Package className="h-10 w-10 text-[#1D201E]" strokeWidth={1.7} /></div>
+            <Truck className="mb-1 h-11 w-11 text-[#1D201E]" strokeWidth={1.7} />
           </motion.div>
           <motion.div animate={reduceMotion ? undefined : { x: [-42, 42, -42] }} transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[22%] h-1.5 w-24 rounded-full bg-[#B7F56A]" />
         </>

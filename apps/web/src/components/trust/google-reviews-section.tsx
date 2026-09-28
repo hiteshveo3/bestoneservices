@@ -37,11 +37,11 @@ function GoogleIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 // Avatar color palette for customer initials
 const AVATAR_COLORS = [
-  "bg-[#DCFAB7] text-[#1F3A00]",
-  "bg-[#E5FBC9] text-[#1F3A00]",
-  "bg-[#F0FDF4] text-[#166534]",
-  "bg-[#ECFDF5] text-[#065F46]",
-  "bg-[#F7FEE7] text-[#3F6212]",
+  "bg-[#EAF8D6] text-[#1D201E]",
+  "bg-[#ECEAE3] text-[#1D201E]",
+  "bg-[#F6F5F1] text-[#1D201E]",
+  "bg-[#F6F5F1] text-[#1D201E]",
+  "bg-[#F6F5F1] text-[#1D201E]",
 ];
 
 export function GoogleReviewsSection({
@@ -69,17 +69,17 @@ export function GoogleReviewsSection({
 
   return (
     <SectionReveal className="w-full text-start">
-      <div className="rounded-[26px] bg-white border border-[#E5FBC9] p-6 sm:p-10 shadow-2xs space-y-8">
+      <div className="rounded-[26px] bg-white p-6 sm:p-10 space-y-8">
         
         {/* TOP HEADER: Google Trust Summary & Actions */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#E5FBC9]">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-[#ECEAE3]">
           
           {/* Left: Google Trust Header */}
           <div className="space-y-2.5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F9FCF5] border border-[#D1E8B8] text-xs font-semibold text-[#1F3A00]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white text-xs font-semibold text-[#1D201E]">
               <GoogleIcon className="w-4 h-4" />
               <span>Google Business Profile</span>
-              <span className="w-1 h-1 rounded-full bg-[#1F3A00]/40" />
+              <span className="w-1 h-1 rounded-full bg-[#1D201E]/40" />
               <span className="text-emerald-700 flex items-center gap-1 font-bold">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 Verified
@@ -87,18 +87,18 @@ export function GoogleReviewsSection({
             </div>
 
             <div className="flex items-baseline gap-3">
-              <span className="font-heading text-4xl sm:text-5xl font-bold text-[#1F3A00] tracking-tight">
+              <span className="font-heading text-4xl sm:text-5xl font-bold text-[#1D201E] tracking-tight">
                 {profile.rating.toFixed(1)}
               </span>
               <div className="space-y-0.5">
                 <GoogleRatingStars rating={profile.rating} />
-                <span className="text-xs font-semibold text-[#1F3A00]/70 block">
-                  Based on <strong className="text-[#1F3A00]">{profile.reviewCount} Google Reviews</strong>
+                <span className="text-xs font-semibold text-[#1D201E]/70 block">
+                  Based on <strong className="text-[#1D201E]">{profile.reviewCount} Google Reviews</strong>
                 </span>
               </div>
             </div>
 
-            <h3 className="font-heading text-base sm:text-lg font-bold text-[#1F3A00]">
+            <h3 className="font-heading text-base sm:text-lg font-bold text-[#1D201E]">
               {profile.businessName}
             </h3>
           </div>
@@ -109,19 +109,19 @@ export function GoogleReviewsSection({
               href={profile.reviewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-11 px-5 rounded-full bg-[#1F3A00] hover:bg-[#2e5400] text-white font-semibold text-xs sm:text-sm transition-all duration-200 inline-flex items-center gap-2 shadow-2xs hover:shadow-xs text-decoration-none"
+              className="h-11 px-5 rounded-md bg-[#B7F56A] hover:bg-[#B7F56A] text-[#1D201E] font-semibold text-xs sm:text-sm transition-all duration-200 inline-flex items-center gap-2 hover: text-decoration-none"
             >
               <span>Read Reviews on Google</span>
-              <ExternalLink className="w-3.5 h-3.5 text-white/80 shrink-0" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#1D201E]/80 shrink-0" />
             </a>
 
             <a
               href={profile.reviewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-11 px-5 rounded-full bg-white border border-[#B7F56A] hover:bg-[#DCFAB7] text-[#1F3A00] font-semibold text-xs sm:text-sm transition-all duration-200 inline-flex items-center gap-2 text-decoration-none shadow-2xs"
+              className="h-11 px-5 rounded-md bg-white hover:bg-[#EAF8D6] text-[#1D201E] font-semibold text-xs sm:text-sm transition-all duration-200 inline-flex items-center gap-2 text-decoration-none "
             >
-              <Edit3 className="w-3.5 h-3.5 text-[#1F3A00] shrink-0" />
+              <Edit3 className="w-3.5 h-3.5 text-[#1D201E] shrink-0" />
               <span>Write a Review</span>
             </a>
 
@@ -130,7 +130,7 @@ export function GoogleReviewsSection({
               <button
                 type="button"
                 onClick={handleScrollLeft}
-                className="w-10 h-10 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] hover:bg-[#1F3A00] hover:border-[#1F3A00] text-[#1F3A00] hover:text-white flex items-center justify-center transition-colors cursor-pointer shadow-2xs"
+                className="w-10 h-10 rounded-full bg-white hover:bg-[#B7F56A] hover:bg-[#EAF8D6] text-[#1D201E] hover:text-[#1D201E] flex items-center justify-center transition-colors cursor-pointer "
                 aria-label="Previous Google review"
               >
                 <ChevronLeft className="w-5 h-5 text-current" />
@@ -138,7 +138,7 @@ export function GoogleReviewsSection({
               <button
                 type="button"
                 onClick={handleScrollRight}
-                className="w-10 h-10 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] hover:bg-[#1F3A00] hover:border-[#1F3A00] text-[#1F3A00] hover:text-white flex items-center justify-center transition-colors cursor-pointer shadow-2xs"
+                className="w-10 h-10 rounded-full bg-white hover:bg-[#B7F56A] hover:bg-[#EAF8D6] text-[#1D201E] hover:text-[#1D201E] flex items-center justify-center transition-colors cursor-pointer "
                 aria-label="Next Google review"
               >
                 <ChevronRight className="w-5 h-5 text-current" />
@@ -162,22 +162,22 @@ export function GoogleReviewsSection({
             return (
               <div
                 key={rev.id}
-                className="snap-start w-[290px] sm:w-[330px] rounded-[20px] bg-[#F9FCF5] border border-[#E5FBC9] p-5 sm:p-6 text-start flex flex-col justify-between shrink-0 shadow-2xs hover:shadow-xs transition-shadow duration-200"
+                className="snap-start w-[290px] sm:w-[330px] rounded-[20px] bg-white p-5 sm:p-6 text-start flex flex-col justify-between shrink-0 hover: transition-shadow duration-200"
               >
                 <div className="space-y-3.5">
                   {/* Review Header: User Avatar + Name + Date + Google G */}
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3 min-w-0">
                       <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0 shadow-2xs ${avatarColor}`}
+                        className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${avatarColor}`}
                       >
                         {initial}
                       </div>
                       <div className="min-w-0">
-                        <h4 className="text-sm font-bold text-[#1F3A00] truncate">
+                        <h4 className="text-sm font-bold text-[#1D201E] truncate">
                           {rev.author}
                         </h4>
-                        <span className="text-xs text-[#1F3A00]/55 font-medium block">
+                        <span className="text-xs text-[#1D201E]/55 font-medium block">
                           {rev.date}
                         </span>
                       </div>
@@ -191,13 +191,13 @@ export function GoogleReviewsSection({
                   </div>
 
                   {/* Review Text */}
-                  <p className="text-sm text-[#1F3A00]/85 leading-relaxed font-normal italic line-clamp-5">
+                  <p className="text-sm text-[#1D201E]/85 leading-relaxed font-normal italic line-clamp-5">
                     &quot;{rev.text}&quot;
                   </p>
                 </div>
 
                 {/* Card Footer: Verified Badge + Direct Map Link */}
-                <div className="pt-3.5 mt-3 border-t border-[#E5FBC9] flex items-center justify-between text-xs">
+                <div className="pt-3.5 mt-3 border-[#ECEAE3] flex items-center justify-between text-xs">
                   <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     Verified on Google
@@ -206,7 +206,7 @@ export function GoogleReviewsSection({
                     href={profile.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1F3A00]/70 hover:text-[#1F3A00] font-bold text-[11px] underline underline-offset-2 flex items-center gap-1 text-decoration-none transition-colors"
+                    className="text-[#1D201E]/70 hover:text-[#1D201E] font-bold text-[11px] underline underline-offset-2 flex items-center gap-1 text-decoration-none transition-colors"
                   >
                     <span>Verify</span>
                     <ExternalLink className="w-3 h-3 text-current" />

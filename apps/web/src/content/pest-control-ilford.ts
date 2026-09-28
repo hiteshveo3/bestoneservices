@@ -2,14 +2,14 @@ import { serviceFaqSchema } from "@/content/service-types";
 
 export const pestControlIlfordContent = {
   title: "Pest Control in Ilford",
-  seoTitle: "Pest Control Ilford | 24-Hour Pest Services | Best One Services",
+  seoTitle: "Pest Control Ilford | 24-Hour Pest Services | Bestone Services",
   description:
-    "Pest control in Ilford for homes, rental properties and businesses. Report the pest signs, affected areas and property details to Best One Services for a tailored quote.",
+    "Pest control in Ilford for homes, rental properties and businesses. Report the pest signs, affected areas and property details to Bestone Services for a tailored quote.",
   hero: {
     eyebrow: "Ilford pest control",
     heading: "Pest control in Ilford for homes, rentals and businesses.",
     summary:
-      "From rat and mice activity to bed bugs, wasps, cockroaches and other pest concerns, tell Best One Services what you have noticed and where it is happening. Our Ilford team is open 24 hours for enquiries.",
+      "From rat and mice activity to bed bugs, wasps, cockroaches and other pest concerns, tell Bestone Services what you have noticed and where it is happening. Our Ilford team is open 24 hours for enquiries.",
   },
   intro:
     "Every pest problem is different. A clear description of the signs, affected rooms, property type and access details helps our team understand the situation before discussing the most relevant service.",
@@ -17,7 +17,7 @@ export const pestControlIlfordContent = {
     {
       question: "Do you provide pest control in Ilford?",
       answer:
-        "Yes. Best One Services provides pest-control services for homes, rental properties and business premises in Ilford. Tell us the property postcode, pest signs and affected areas when you enquire.",
+        "Yes. Bestone Services provides pest-control services for homes, rental properties and business premises in Ilford. Tell us the property postcode, pest signs and affected areas when you enquire.",
     },
     {
       question: "Which pest-control services are available in Ilford?",
@@ -27,7 +27,7 @@ export const pestControlIlfordContent = {
     {
       question: "Can I call outside normal office hours?",
       answer:
-        "Yes. Best One Services is open 24 hours. Call the team or submit an online enquiry with the pest details and property postcode.",
+        "Yes. Bestone Services is open 24 hours. Call the team or submit an online enquiry with the pest details and property postcode.",
     },
     {
       question: "What should I include in an Ilford pest-control enquiry?",

@@ -1,5 +1,5 @@
 /**
- * Best One Club - Membership Configuration Foundation
+ * Bestone Club - Membership Configuration Foundation
  * Centralized dataset for verified member benefits and rate rules
  */
 
@@ -17,7 +17,7 @@ export interface BestOneClubConfig {
 
 export const BEST_ONE_CLUB_CONFIG: BestOneClubConfig = {
   enabled: true,
-  title: "Best One Club Member Rates",
+  title: "Bestone Club Member Rates",
   verifiedBenefits: [
     {
       serviceId: "removals",

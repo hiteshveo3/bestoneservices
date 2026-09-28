@@ -32,7 +32,7 @@ export function AnimatedServiceProcess() {
     <div className="grid gap-6 md:grid-cols-3">
       {steps.map((item) => (
         <article key={item.step} className="space-y-5">
-          <div className="relative aspect-[3/2] overflow-hidden rounded-[24px] bg-[#F9FCF5] border border-[#E5FBC9] shadow-2xs">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-[24px] bg-white ">
             <Image
               src={item.image}
               alt={item.alt}
@@ -43,11 +43,11 @@ export function AnimatedServiceProcess() {
           </div>
 
           <div className="space-y-2 px-1 text-start">
-            <span className="font-mono text-xs font-bold text-[#1F3A00] bg-[#DCFAB7] border border-[#99D055] px-2.5 py-0.5 rounded-full uppercase inline-block tracking-wide">
+            <span className="ts-eyebrow">
               STEP {item.step}
             </span>
-            <h3 className="font-heading text-xl font-bold text-[#1F3A00]">{item.title}</h3>
-            <p className="text-base leading-relaxed text-[#1F3A00]">{item.description}</p>
+            <h3 className="font-heading text-xl font-bold text-[#1D201E]">{item.title}</h3>
+            <p className="text-base leading-relaxed text-[#1D201E]">{item.description}</p>
           </div>
         </article>
       ))}

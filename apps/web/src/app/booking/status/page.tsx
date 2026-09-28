@@ -49,21 +49,21 @@ export default function GuestBookingStatusPage() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "new":
-        return <span className="px-2.5 py-1 rounded-full bg-info-50 text-info-900 text-xs font-mono font-medium uppercase">Enquiry Received</span>;
+        return <span className="px-2.5 py-1 rounded-md bg-info-50 text-info-900 text-xs font-mono font-medium uppercase">Enquiry Received</span>;
       case "awaiting_confirmation":
-        return <span className="px-2.5 py-1 rounded-full bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">Awaiting Confirmation</span>;
+        return <span className="px-2.5 py-1 rounded-md bg-warning-50 text-warning-900 text-xs font-mono font-medium uppercase">Awaiting Confirmation</span>;
       case "confirmed":
-        return <span className="px-2.5 py-1 rounded-full bg-[#1F3A00] text-white text-xs font-mono font-medium uppercase">Confirmed</span>;
+        return <span className="ts-chip">Confirmed</span>;
       case "scheduled":
-        return <span className="px-2.5 py-1 rounded-full bg-success-50 text-success-900 text-xs font-mono font-medium uppercase">Scheduled</span>;
+        return <span className="px-2.5 py-1 rounded-md bg-success-50 text-success-900 text-xs font-mono font-medium uppercase">Scheduled</span>;
       case "in_progress":
-        return <span className="px-2.5 py-1 rounded-full bg-[#F9FCF5] text-[#1F3A00] text-xs font-mono font-medium uppercase">In Progress</span>;
+        return <span className="px-2.5 py-1 rounded-md bg-[#F6F5F1] text-[#1D201E] text-xs font-mono font-medium uppercase">In Progress</span>;
       case "completed":
-        return <span className="px-2.5 py-1 rounded-full bg-ink-200 text-ink-600 text-xs font-mono font-medium uppercase">Completed</span>;
+        return <span className="px-2.5 py-1 rounded-md bg-ink-200 text-ink-600 text-xs font-mono font-medium uppercase">Completed</span>;
       case "cancelled":
-        return <span className="px-2.5 py-1 rounded-full bg-danger-50 text-danger-900 text-xs font-mono font-medium uppercase">Cancelled</span>;
+        return <span className="px-2.5 py-1 rounded-md bg-danger-50 text-danger-900 text-xs font-mono font-medium uppercase">Cancelled</span>;
       default:
-        return <span className="px-2.5 py-1 rounded-full bg-ink-100 text-ink-600 text-xs font-mono font-medium uppercase">{status}</span>;
+        return <span className="px-2.5 py-1 rounded-md bg-ink-100 text-ink-600 text-xs font-mono font-medium uppercase">{status}</span>;
     }
   };
 
@@ -73,21 +73,21 @@ export default function GuestBookingStatusPage() {
         
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#B7F56A] text-xs font-medium text-ink-600 hover:bg-[#DCFAB7] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to Home</span>
         </Link>
 
         {/* HEADER & FORM CARD */}
-        <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-6 border border-[#B7F56A]">
+        <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 ">
           <div className="space-y-1">
             <span className="text-xs font-mono font-medium uppercase text-ink-500">GUEST ACCESS PORTAL</span>
-            <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Track Guest Booking Status</h1>
+            <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Track Guest Booking Status</h1>
             <p className="text-sm text-ink-500">Enter your booking reference and email address to check your appointment schedule</p>
           </div>
 
-          <form onSubmit={handleLookup} className="space-y-4 pt-2 border-t border-[#E5FBC9]">
+          <form onSubmit={handleLookup} className="space-y-4 pt-2 border-[#ECEAE3]">
             <div className="space-y-1">
               <label className="text-xs font-mono font-medium text-ink-500 uppercase block">Booking Reference *</label>
               <input
@@ -95,7 +95,7 @@ export default function GuestBookingStatusPage() {
                 value={reference}
                 onChange={(e) => setReference(e.target.value)}
                 placeholder="e.g. BOS-2026-8A39F"
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-sm font-mono font-medium text-ink-600 border-none focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-sm font-mono font-medium text-ink-600 border-none focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                 required
               />
             </div>
@@ -107,7 +107,7 @@ export default function GuestBookingStatusPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="The email used during booking..."
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-sm font-medium text-ink-600 border-none focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-sm font-medium text-ink-600 border-none focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                 required
               />
             </div>
@@ -115,9 +115,9 @@ export default function GuestBookingStatusPage() {
             <button
               type="submit"
               disabled={loading || !reference.trim() || !email.trim()}
-              className="w-full py-3 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-sm hover:bg-[#2d5004] transition-colors duration-150 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 border border-[#E5FBC9]"
+              className="w-full py-3 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] transition-colors duration-150 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 "
             >
-              <Search className="w-4 h-4 text-white" />
+              <Search className="w-4 h-4 text-[#1D201E]" />
               <span>{loading ? "Searching Firestore..." : "Lookup Booking Status"}</span>
             </button>
           </form>
@@ -133,13 +133,13 @@ export default function GuestBookingStatusPage() {
 
         {/* RESULTS CARD */}
         {loading ? (
-          <div className="bg-[#F9FCF5] rounded-[18px] p-8 text-center space-y-3 border border-[#B7F56A]">
+          <div className="bg-white rounded-[18px] p-8 text-center space-y-3 ">
             <Spinner size={32} className="mx-auto" />
             <p className="text-sm font-medium text-ink-600">Querying guest booking records...</p>
           </div>
         ) : booking ? (
-          <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-6 border-l-4 border-l-blue-500 border border-[#B7F56A]">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E5FBC9] pb-4">
+          <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6  border-l-blue-500 ">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-[#ECEAE3] pb-4">
               <div className="space-y-0.5">
                 <span className="font-heading font-medium text-2xl text-ink-900">{booking.reference}</span>
                 <span className="text-xs font-mono text-ink-500 block capitalize">Category: {booking.categoryId}</span>
@@ -174,12 +174,12 @@ export default function GuestBookingStatusPage() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-[#E5FBC9] space-y-2">
+            <div className="pt-4 border-[#ECEAE3] space-y-2">
               <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-ink-500 uppercase">
                 <MapPin className="w-3.5 h-3.5 text-ink-600 shrink-0" />
                 <span>Service Location</span>
               </div>
-              <p className="text-xs text-ink-600 font-medium leading-relaxed bg-[#F9FCF5] p-3 rounded-[18px]">
+              <p className="text-xs text-ink-600 font-medium leading-relaxed bg-[#F6F5F1] p-3 rounded-[18px]">
                 {booking.address?.addressLine1}, {booking.address?.city}, <strong>{booking.address?.postcode}</strong>
               </p>
             </div>
@@ -194,7 +194,7 @@ export default function GuestBookingStatusPage() {
             </div>
           </div>
         ) : searched && !loading && (
-          <div className="bg-[#F9FCF5] rounded-[18px] p-8 text-center space-y-3 border border-[#B7F56A]">
+          <div className="bg-white rounded-[18px] p-8 text-center space-y-3 ">
             <AlertCircle className="w-8 h-8 text-warning-500 mx-auto" />
             <p className="text-sm font-medium text-ink-600">No Booking Record Found</p>
             <p className="text-xs text-ink-500">Double check your reference number (e.g. BOS-2026-XXXXX) and email address.</p>

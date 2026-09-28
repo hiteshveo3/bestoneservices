@@ -26,9 +26,9 @@ export function PeopleAlsoNeed({
   if (!services || services.length === 0) return null;
 
   return (
-    <SectionReveal className="bg-[#F8F9FA] rounded-[16px] p-6 sm:p-8 border border-[#E5FBC9] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#E5FBC9] text-ink-600 text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 space-y-6 text-start">
+      <div className="space-y-1 border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
           <Sparkles className="w-3.5 h-3.5 text-ink-600 shrink-0" />
           <span>Complementary Care</span>
         </div>
@@ -41,14 +41,14 @@ export function PeopleAlsoNeed({
           <StaggerItem key={idx}>
             <Link
               href={item.href}
-              className="group p-5 rounded-[16px] bg-white border border-[#B7F56A] hover:bg-[#DCFAB7] transition-colors duration-150 text-decoration-none flex flex-col justify-between h-full space-y-3 block"
+              className="group p-5 rounded-[16px] bg-white hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none flex flex-col justify-between h-full space-y-3 block"
             >
               <div className="space-y-1">
                 <div className="flex justify-between items-start gap-2">
                   <h4 className="font-heading text-lg font-medium text-ink-900 group-hover:text-ink-900 leading-snug">
                     {item.title}
                   </h4>
-                  <span className="px-2.5 py-0.5 rounded bg-[#F9FCF5] text-ink-600 text-xs font-mono font-medium shrink-0 border border-[#B7F56A]">
+                  <span className="px-2.5 py-0.5 rounded bg-white text-ink-600 text-xs font-mono font-medium shrink-0 ">
                     {item.priceDisplay}
                   </span>
                 </div>

@@ -104,7 +104,7 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
 
   if (authLoading || loading) {
     return (
-      <div className="bg-[#F9FCF5] rounded-[18px] p-12 text-center space-y-3 border border-[#B7F56A]">
+      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
         <Spinner size={32} className="mx-auto" />
         <p className="text-sm font-medium text-ink-600">Opening direct support chat...</p>
       </div>
@@ -115,7 +115,7 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
     <div className="space-y-6 text-start max-w-3xl mx-auto">
       
       {/* HEADER BAR */}
-      <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-3 border border-[#B7F56A]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-3 ">
         <div className="flex items-center justify-between">
           <Link
             href={`/account/bookings/${bookingId}`}
@@ -125,21 +125,21 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
             <span>Back to Booking Details</span>
           </Link>
 
-          <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white text-[10px] font-mono font-medium uppercase">
+          <span className="ts-eyebrow">
             LIVE SUPPORT CHAT
           </span>
         </div>
 
         <div>
           <span className="text-xs font-mono text-ink-500">DIRECT COMMUNICATION</span>
-          <h1 className="font-heading text-2xl font-medium text-ink-900">
+          <h1 className="font-heading text-2xl font-[650] text-ink-900">
             Booking #{booking?.reference || bookingId} Support Chat
           </h1>
         </div>
       </div>
 
       {/* CHAT MESSAGES CARD */}
-      <div className="bg-[#F9FCF5] rounded-[18px] p-6 space-y-4 flex flex-col h-[500px] border border-[#B7F56A]">
+      <div className="bg-white rounded-[18px] p-6 space-y-4 flex flex-col h-[500px] ">
         
         {/* MESSAGES DISPLAY AREA */}
         <div className="flex-1 overflow-y-auto space-y-3 pr-2">
@@ -152,9 +152,9 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
                   className={`flex flex-col ${isCustomer ? "items-end" : "items-start"}`}
                 >
                   <div
-                    className={`max-w-md p-3.5 rounded-[18px] text-xs font-medium space-y-1 ${ isCustomer ? "bg-[#1F3A00] text-white rounded-br-none" : "bg-[#F9FCF5] text-ink-600 rounded-bl-none border border-[#E5FBC9]" }`}
+                    className={`max-w-md p-3.5 rounded-[18px] text-xs font-medium space-y-1 ${ isCustomer ? "bg-[#B7F56A] text-[#1D201E] rounded-br-none" : "bg-white text-ink-600 rounded-bl-none " }`}
                   >
-                    <span className={`text-[10px] font-mono font-medium uppercase block ${isCustomer ? "text-[#1F3A00]" : "text-ink-500"}`}>
+                    <span className={`text-[10px] font-mono font-medium uppercase block ${isCustomer ? "text-[#1D201E]" : "text-ink-500"}`}>
                       {msg.senderName} ({msg.senderRole})
                     </span>
                     <p className="leading-relaxed">{msg.text}</p>
@@ -164,7 +164,7 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
             })
           ) : (
             <div className="p-8 text-center space-y-2 my-auto">
-              <MessageSquare className="w-8 h-8 text-[#1F3A00] mx-auto" />
+              <MessageSquare className="w-8 h-8 text-[#1D201E] mx-auto" />
               <p className="text-xs font-medium text-ink-600">No messages in this chat conversation yet.</p>
               <p className="text-[11px] text-ink-500">Send a message below to reach our dispatch & operations team.</p>
             </div>
@@ -180,23 +180,23 @@ export default function CustomerBookingChatPage({ params }: { params: Promise<{ 
         )}
 
         {/* INPUT FORM */}
-        <form onSubmit={handleSendMessage} className="flex gap-2 pt-2 border-t border-[#E5FBC9]">
+        <form onSubmit={handleSendMessage} className="flex gap-2 pt-2 border-[#ECEAE3]">
           <input
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
-            placeholder="Type your message for Best One support..."
-            className="flex-1 p-3.5 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+            placeholder="Type your message for Bestone support..."
+            className="flex-1 p-3.5 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
             required
           />
 
           <button
             type="submit"
             disabled={sending || !inputText.trim()}
-            className="px-5 py-3.5 rounded-[18px] bg-[#1F3A00] text-[#B7F56A] hover:bg-[#2d5004] text-xs font-medium cursor-pointer disabled:opacity-50 transition-colors duration-150 border-none flex items-center gap-1.5 shrink-0"
+            className="px-5 py-3.5 rounded-[18px] bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium cursor-pointer disabled:opacity-50 transition-colors duration-150 border-none flex items-center gap-1.5 shrink-0"
           >
             <span>Send</span>
-            <Send className="w-3.5 h-3.5 text-white" />
+            <Send className="w-3.5 h-3.5 text-[#1D201E]" />
           </button>
         </form>
 

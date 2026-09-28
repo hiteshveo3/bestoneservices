@@ -1,119 +1,97 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { Truck, Sparkles, Award } from "lucide-react";
-import { SmartPricingCTA } from "@/components/service/smart-pricing-cta";
+import { Clock, Package, Truck } from "lucide-react";
 import { InstantEstimator } from "@/components/ui/calculator";
-import { ButtonLink } from "@/components/button-link";
 import { siteContact } from "@/config/site-contact";
+import { ServiceHubHero, HubSection } from "@/components/service/service-hub";
+import { Button, SlimCta, type PriceRow } from "@/components/touchstone";
 
 export const metadata: Metadata = {
-  title: "Professional Home & Office Removals",
-  description: "Reliable home and office removals, man & van, and packing services across London. Special rates available for Best One Club members.",
+  title: "House Removals and Man and Van",
+  description: "Home and office removals, man and van and packing across London. Two or three movers with a van from £80 an hour; packing from £30 an hour.",
   alternates: { canonical: "/removals/" },
 };
 
+const PRICE_ROWS: PriceRow[] = [
+    { name: "Removals, two movers and a van", note: "per hour", amount: "£80", from: true, href: "/removals/" },
+    { name: "Removals, three movers and a van", note: "per hour", amount: "£120", from: true, href: "/removals/" },
+    { name: "Packing", note: "per packer, per hour", amount: "£30", from: true, href: "/removals/" },
+];
+
+const FEATURES = [
+    { icon: Truck, title: "Movers and van", desc: "Two or three movers with a van, protective blankets and straps." },
+    { icon: Clock, title: "Hourly, shown upfront", desc: "£80–£120 an hour for two movers, £120–£160 for three." },
+    { icon: Package, title: "Packing if you want it", desc: "Packing from £30 an hour, or £25 for Bestone Club members." },
+];
+
+// Rates from the current price list (config/pricing-data.ts).
+const RATES: Array<[string, string, string]> = [
+    ["Removals", "2 movers + van", "£80–£120/hr"],
+    ["Removals", "3 movers + van", "£120–£160/hr"],
+    ["Packing", "per packer", "from £30/hr"],
+];
+
 export default function RemovalsPage() {
+  const whatsapp = siteContact.getWhatsappUrl("Hi Bestone, I'd like to book a move.");
   return (
-    <main className="space-y-16 py-10 text-start">
-      {/* Canvas Header Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
-        <div className="space-y-6 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-xs font-mono font-semibold uppercase border border-[#E5FBC9]">
-            <Truck className="w-4 h-4 text-[#1F3A00]" />
-            <span>REMOVALS & STORAGE VERTICAL</span>
-          </div>
+    <main id="main-content" className="min-h-screen bg-paper text-ink">
+      <ServiceHubHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "Removals" }]}
+        eyebrow="Removals across London"
+        title="Moving day,"
+        soft="handled by the hour."
+        lead="Two or three movers with a van, blankets and transit cover, plus packing if you want it. The hourly rate is shown before you book."
+        rows={PRICE_ROWS}
+        primary={{ label: "Book a move", href: whatsapp }}
+        facts={["Two or three movers", "Van and blankets", "Transit cover"]}
+        pricesNote="Every price is confirmed before anyone arrives."
+      />
 
-          <h1 className="font-heading text-4xl sm:text-6xl font-medium text-ink-900 tracking-tight leading-tight">
-            Home & Office Removals, Man & Van Services
-          </h1>
-
-          <p className="text-lg sm:text-xl text-ink-500 max-w-2xl mx-auto font-normal leading-relaxed">
-            Professional moving teams (2 or 3 men + van) from £80–£120/hr. Full packing, protective wrapping, and special Best One Club member rates available.
-          </p>
-
-          <div className="pt-2 flex justify-center items-center gap-4">
-            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like to book a move team with Best One Services.")} variant="dark">
-              Book Move Team
-            </ButtonLink>
-          </div>
-
-          <div className="pt-4 flex justify-center">
-            <div className="relative max-w-lg w-full bg-[#F9FCF5] rounded-[24px] p-6 border border-[#B7F56A] shadow-2xs">
-              <Image
-                src="/images/man-with-van.png"
-                alt="Professional Best One Man with a Van removal team"
-                width={1448}
-                height={1086}
-                className="w-full h-auto max-h-72 object-contain mx-auto"
-              />
+      <HubSection tone="white" eyebrow="What you get" title="One team," soft="the whole job.">
+        <div className="grid gap-2 md:grid-cols-3">
+          {FEATURES.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="grid content-start gap-3 rounded-2xl bg-paper p-5">
+              <span className="grid size-11 place-items-center rounded-xl bg-lime-soft"><Icon className="size-5" aria-hidden="true" /></span>
+              <b className="text-[17px]">{title}</b>
+              <span className="text-[15px] text-muted">{desc}</span>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </HubSection>
 
-      {/* Smart Pricing CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SmartPricingCTA 
-          title="Estimate Your Moving & Removal Cost"
-          subtitle="Choose team size (2 or 3 men), vehicle option, and estimated hours to calculate your moving cost."
-          buttonText="Estimate My Move"
-          category="removals"
-          serviceId="removals-main"
-        />
-      </section>
+      <HubSection eyebrow="Rates" title="Priced by the hour," soft="shown upfront.">
+        <div className="overflow-x-auto rounded-2xl bg-white p-2">
+          <table className="w-full min-w-[520px] border-separate border-spacing-y-0.5 text-[15px] tabular-nums">
+            <thead>
+              <tr className="text-left">
+                <th scope="col" className="ts-eyebrow px-3.5 py-2 font-semibold">Service</th>
+                <th scope="col" className="ts-eyebrow px-3.5 py-2 font-semibold">Team</th>
+                <th scope="col" className="ts-eyebrow px-3.5 py-2 text-right font-semibold">Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              {RATES.map(([service, team, rate], i) => (
+                <tr key={service + team} className={i % 2 === 0 ? "bg-paper" : ""}>
+                  <td className="rounded-l-lg px-3.5 py-3 font-semibold">{service}</td>
+                  <td className="px-3.5 py-3 text-muted">{team}</td>
+                  <td className="rounded-r-lg px-3.5 py-3 text-right font-semibold">{rate}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="grid gap-3 rounded-2xl bg-white p-5 sm:grid-cols-[1fr_auto] sm:items-center">
+          <div className="grid gap-1">
+            <p className="ts-eyebrow m-0">Bestone Club</p>
+            <p className="m-0 text-[17px]"><b>Packing at £25 an hour</b> <span className="text-muted">instead of £30 for club members.</span></p>
+          </div>
+          <Button href={siteContact.getWhatsappUrl("Hi Bestone, I'd like to join the Bestone Club.")} variant="soft">Join the club</Button>
+        </div>
+      </HubSection>
 
-      {/* Instant Calculator — embedded inline, not hidden behind /prices/ */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <HubSection tone="white" eyebrow="Estimate" title="Your price" soft="in a minute.">
         <InstantEstimator defaultVertical="removals" />
-      </section>
-
-      {/* Best One Club Spotlight (White Card on Canvas) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white text-ink-700 rounded-[24px] p-8 sm:p-10 border-2 border-[#B7F56A] shadow-2xs space-y-4 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-xs font-mono font-semibold uppercase">
-              <Award className="w-4 h-4 text-[#1F3A00]" />
-              <span>BEST ONE CLUB EXCLUSIVE</span>
-            </div>
-            <h3 className="font-heading text-2xl font-medium text-ink-900">Save £5/Hour On Packing Services</h3>
-            <p className="text-base text-ink-500 max-w-xl leading-relaxed">
-              Best One Club members get exclusive discounted rates on packing services (£25/hr vs £30/hr standard) plus priority booking windows.
-            </p>
-          </div>
-
-          <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like to join the Best One Club.")} variant="dark" className="shrink-0">
-            Join Best One Club
-          </ButtonLink>
-        </div>
-      </section>
-
-      {/* Final Brand CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="brand-cta-section p-8 sm:p-14 text-center space-y-6 relative overflow-hidden rounded-[28px] border border-[#3A5C13]">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-base font-mono font-medium uppercase tracking-wider">
-            <Sparkles className="w-4 h-4 text-[#1F3A00]" />
-            <span>SAFE & GUARANTEED REMOVALS</span>
-          </div>
-
-          <h2 className="font-heading text-3xl sm:text-5xl font-medium tracking-tight max-w-3xl mx-auto text-[#F9FCF5]">
-            Ready to Move Property stress-free?
-          </h2>
-
-          <p className="text-lg text-[#DFFBBC] max-w-xl mx-auto font-normal">
-            Book our 2 or 3-men team with protective Luton vans and upfront hourly rates.
-          </p>
-
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink href={siteContact.getWhatsappUrl("Hi, I'd like an instant quote from Best One Services.")} variant="white" className="w-full sm:w-auto">
-              Get Instant Quote Now
-            </ButtonLink>
-            <ButtonLink href="/contact/" variant="outline" className="w-full sm:w-auto" showArrow={false}>
-              Contact Support Team
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
+        <SlimCta title="Rather talk it through?" soft="We reply on WhatsApp, Mon–Sat, 8am–8pm." action={<Button href={whatsapp}>Book a move</Button>} />
+      </HubSection>
     </main>
   );
 }

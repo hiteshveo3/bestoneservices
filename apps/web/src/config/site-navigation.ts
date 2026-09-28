@@ -3,6 +3,8 @@ export interface MegaMenuItem {
   href: string;
   badge?: string;
   isFeatured?: boolean;
+  /** Starting price shown beside the link (Touchstone S14). From the approved price list only. */
+  price?: string;
 }
 
 export interface MegaMenuColumn {
@@ -35,12 +37,12 @@ export const megaMenuData: MegaMenuCategory[] = [
       {
         title: "Cleaning Services",
         items: [
-          { label: "End of Tenancy Cleaning", href: "/cleaning-services/end-of-tenancy-cleaning/", badge: "Popular" },
+          { label: "End of Tenancy Cleaning", href: "/cleaning-services/end-of-tenancy-cleaning/", price: "£130", badge: "Popular" },
           { label: "Regular Domestic Cleaning", href: "/cleaning-services/end-of-tenancy-cleaning/#calculator" },
           { label: "Deep House Cleaning", href: "/cleaning-services/end-of-tenancy-cleaning/" },
           { label: "After Builders Cleaning", href: "/cleaning-services/after-builders-cleaning/" },
           { label: "Carpet & Rug Steam Cleaning", href: "/cleaning-services/carpet-cleaning/" },
-          { label: "Oven & Appliance Cleaning", href: "/cleaning-services/oven-cleaning-service/" },
+          { label: "Oven & Appliance Cleaning", href: "/cleaning-services/oven-cleaning-service/", price: "£45" },
           { label: "Window Cleaning", href: "/cleaning-services/window-cleaning/" },
           { label: "Mattress Steam Sanitising", href: "/cleaning-services/mattress-cleaning-service/" },
         ],
@@ -70,12 +72,12 @@ export const megaMenuData: MegaMenuCategory[] = [
       {
         title: "Pest Treatments",
         items: [
-          { label: "Mice Control & Proofing", href: "/pest-control-services/mice-control/", badge: "Popular" },
-          { label: "Rat Control Packages", href: "/pest-control-services/rat-control/" },
-          { label: "Cockroach Eradication", href: "/pest-control-services/cockroach-control/" },
-          { label: "Flea & Insect Spraying", href: "/pest-control-services/flea-treatment/" },
-          { label: "Bed Bug Heat Treatment", href: "/pest-control-services/bed-bug-treatment/" },
-          { label: "Wasp Nest Removal", href: "/pest-control-services/wasp-treatment/" },
+          { label: "Mice Control & Proofing", href: "/pest-control-services/mice-control/", price: "£99", badge: "Popular" },
+          { label: "Rat Control Packages", href: "/pest-control-services/rat-control/", price: "£109" },
+          { label: "Cockroach Eradication", href: "/pest-control-services/cockroach-control/", price: "£119" },
+          { label: "Flea & Insect Spraying", href: "/pest-control-services/flea-treatment/", price: "£89" },
+          { label: "Bed Bug Heat Treatment", href: "/pest-control-services/bed-bug-treatment/", price: "£149" },
+          { label: "Wasp Nest Removal", href: "/pest-control-services/wasp-treatment/", price: "£59" },
         ],
       },
       {
@@ -103,7 +105,7 @@ export const megaMenuData: MegaMenuCategory[] = [
       {
         title: "Gardening Services",
         items: [
-          { label: "Garden Maintenance", href: "/gardening/", badge: "Popular" },
+          { label: "Garden Maintenance", href: "/gardening/", price: "£70", badge: "Popular" },
           { label: "Garden Clearance & Waste", href: "/gardening/" },
           { label: "Lawn Mowing & Hedge Care", href: "/gardening/" },
         ],
@@ -133,9 +135,9 @@ export const megaMenuData: MegaMenuCategory[] = [
       {
         title: "Moving Services",
         items: [
-          { label: "House Removals", href: "/removals/", badge: "Popular" },
+          { label: "House Removals", href: "/removals/", price: "£80/hr", badge: "Popular" },
           { label: "Man & Van Moving", href: "/removals/" },
-          { label: "Packing Services & Boxes", href: "/removals/" },
+          { label: "Packing Services & Boxes", href: "/removals/", price: "£30/hr" },
         ],
       },
       {
@@ -181,7 +183,7 @@ export const footerNavigation = [
       { href: "/areas/", label: "Areas We Cover" },
       { href: "/prices/", label: "Starting Prices" },
       { href: "/guides/", label: "Service Guides" },
-      { href: "/about/", label: "About Best One" },
+      { href: "/about/", label: "About Bestone" },
     ],
   },
 ] as const;

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight01Icon, Search01Icon, ChevronDownIcon, Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
+import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { siteContact } from "@/config/site-contact";
 import { megaMenuData } from "@/config/site-navigation";
@@ -98,21 +99,30 @@ export function SiteHeader() {
     <>
       {/* HEADER CONTAINER (No overflow-hidden so absolute mega menu drops down cleanly) */}
       <header 
-        className="sticky top-0 z-50 bg-[#F9FCF5]/95 backdrop-blur-md border-b border-[#E5FBC9] relative w-full"
+        className="sticky top-0 z-50 bg-[#F6F5F1] relative w-full"
         onMouseLeave={handleMouseLeave}
       >
+        {/* Touchstone S13 B: slim info row above the main row (desktop) */}
+        <div className="hidden lg:block">
+          <div className="max-w-7xl mx-auto px-8 pt-2">
+            <p className="m-0 flex flex-wrap gap-x-6 gap-y-1 rounded-[10px] bg-white px-3 py-2 text-[13px] text-[#5A605C]">
+              <span>Open <b className="text-[#1D201E]">Mon–Sat, 8am–8pm</b></span>
+              <span>Call <a href={siteContact.phoneHref} className="font-semibold text-[#1D201E] no-underline tabular-nums">{siteContact.phoneDisplay}</a></span>
+              <span>Based in <b className="text-[#1D201E]">Ilford, IG1</b></span>
+              <span>Prices shown <b className="text-[#1D201E]">before you book</b></span>
+            </p>
+          </div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[56px] lg:h-[72px] flex items-center justify-between gap-2 lg:gap-4 w-full">
           
           {/* Brand Logo & Primary Navigation Group */}
           <div className="flex items-center gap-3 lg:gap-6 shrink-0 min-w-0">
             <Logo href="/" className="cursor-pointer">
-              <div className="font-heading font-bold text-base sm:text-lg tracking-[-0.02em] text-[#1F3A00] flex items-center whitespace-nowrap">
-                <span>{siteConfig.name}</span>
-              </div>
+              <span className="font-heading font-extrabold text-[22px] sm:text-2xl tracking-[-0.02em] text-[#1D201E] whitespace-nowrap">Bestone</span>
             </Logo>
 
             {/* Desktop Nav - 4 Distinct Categories with Mega Menu Triggers */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 text-sm xl:text-base font-semibold text-[#1F3A00]" aria-label="Primary navigation">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 text-sm xl:text-base font-semibold text-[#1D201E]" aria-label="Primary navigation">
               {megaMenuData.map((cat) => {
                 const isOpen = activeCategory === cat.id;
                 const isRouteActive = isNavActive(cat.id);
@@ -133,14 +143,14 @@ export function SiteHeader() {
                       }}
                       aria-expanded={isOpen}
                       aria-controls={`mega-menu-${cat.id}`}
-                      className={`px-3.5 xl:px-4 py-2 rounded-full font-medium flex items-center gap-1.5 transition-colors duration-150 text-decoration-none cursor-pointer whitespace-nowrap focus-visible:outline-none ${
-                        isOpen || isRouteActive
-                          ? "bg-[#DCFAB7] text-[#1F3A00] font-semibold shadow-2xs"
-                          : "text-[#1F3A00] hover:bg-[#DCFAB7]/40"
-                      }`}
+                      className={`px-3.5 xl:px-4 py-2 rounded-[10px] font-medium flex items-center gap-1.5 transition-colors duration-150 text-decoration-none cursor-pointer whitespace-nowrap focus-visible:outline-none ${
+ isOpen || isRouteActive
+ ? "bg-[#EAF8D6] text-[#1D201E] font-semibold "
+ : "text-[#1D201E] hover:bg-[#EAF8D6]/40"
+ }`}
                     >
                       <span>{cat.label}</span>
-                      <HugeiconsIcon icon={ChevronDownIcon} size={14} className={`text-[#1F3A00] transition-transform duration-200 ${isOpen ? "rotate-180 text-[#1F3A00]" : ""}`} />
+                      <HugeiconsIcon icon={ChevronDownIcon} size={14} className={`text-[#1D201E] transition-transform duration-200 ${isOpen ? "rotate-180 text-[#1D201E]" : ""}`} />
                     </Link>
                   </div>
                 );
@@ -154,33 +164,38 @@ export function SiteHeader() {
             {/* Search — icon only, identical at every breakpoint */}
             <Link
               href="/search/"
-              className="grid h-10 w-10 place-items-center rounded-md bg-transparent border-0 text-[#1F3A00] cursor-pointer transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#99D055] shrink-0"
+              className="grid h-10 w-10 place-items-center rounded-md bg-transparent border-0 text-[#1D201E] cursor-pointer transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D201E] shrink-0"
               aria-label="Search site"
               title="Search services"
             >
-              <HugeiconsIcon icon={Search01Icon} size={20} strokeWidth={1.8} className="text-[#1F3A00] shrink-0" />
+              <HugeiconsIcon icon={Search01Icon} size={20} strokeWidth={1.8} className="text-[#1D201E] shrink-0" />
             </Link>
 
-            {/* Primary conversion CTA */}
-            {siteConfig.bookingEnabled ? (
-              <Link
-                href="/booking/"
-                className="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer text-decoration-none whitespace-nowrap gap-2"
-              >
-                <span>Book a Service</span>
-                <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="stroke-[2.5] shrink-0 text-[#1F3A00]" />
-              </Link>
-            ) : (
-              <a
-                href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 cursor-pointer text-decoration-none whitespace-nowrap gap-2"
-              >
-                <span>Book via WhatsApp</span>
-                <HugeiconsIcon icon={ArrowRight01Icon} size={16} className="stroke-[2.5] shrink-0 text-[#1F3A00]" />
-              </a>
-            )}
+            <a
+              href={siteContact.getWhatsappUrl("Hi Bestone, I'd like a price for a job.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp us"
+              className="grid h-10 w-10 place-items-center rounded-[10px] bg-white text-[#1D201E] md:hidden"
+            >
+              <MessageCircle className="size-5" aria-hidden="true" />
+            </a>
+            {/* Primary conversion CTA: WhatsApp (white) + Get your price (lime) */}
+            <a
+              href={siteContact.getWhatsappUrl("Hi Bestone, I'd like a price for a job.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex min-h-10 items-center gap-2 rounded-[10px] bg-white px-3.5 text-[15px] font-semibold text-[#1D201E] no-underline transition-colors duration-150 hover:bg-[#EAF8D6]"
+            >
+              <MessageCircle className="size-4" aria-hidden="true" />
+              <span>WhatsApp</span>
+            </a>
+            <Link
+              href={siteConfig.bookingEnabled ? "/booking/" : "/prices/"}
+              className="hidden sm:inline-flex min-h-10 items-center rounded-[10px] bg-[#B7F56A] px-4 text-[15px] font-semibold text-[#1D201E] no-underline transition-colors duration-150 hover:bg-[#A2EA4E] whitespace-nowrap"
+            >
+              Get your price
+            </Link>
             <button
               ref={mobileMenuButtonRef}
               type="button"
@@ -188,7 +203,7 @@ export function SiteHeader() {
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-primary-menu"
               aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
-              className="lg:hidden grid h-10 w-10 place-items-center text-[#1F3A00] bg-transparent border-0 cursor-pointer"
+              className="lg:hidden grid h-10 w-10 place-items-center text-[#1D201E] bg-transparent border-0 cursor-pointer"
             >
               <HugeiconsIcon icon={mobileMenuOpen ? Cancel01Icon : Menu01Icon} size={25} strokeWidth={1.8} />
             </button>
@@ -217,26 +232,35 @@ export function SiteHeader() {
           role="dialog"
           aria-modal="true"
           aria-label="Main menu"
-          className="fixed inset-x-0 top-[56px] bottom-0 z-40 overflow-y-auto bg-[#F9FCF5] lg:hidden"
+          className="fixed inset-x-0 top-[56px] bottom-0 z-40 overflow-y-auto bg-[#F6F5F1] lg:hidden"
         >
-          <nav className="border-t border-[#E5FBC9] px-4 py-5" aria-label="Mobile primary navigation">
+          <nav className="ts-faq px-4 py-4" aria-label="Mobile primary navigation">
             {megaMenuData.map((category) => (
-              <Link key={category.id} href={category.href} onClick={() => setMobileMenuOpen(false)} className="flex min-h-13 items-center justify-between border-b border-[#E5FBC9] text-lg font-semibold text-[#1F3A00] no-underline">
-                <span>{category.label}</span><HugeiconsIcon icon={ArrowRight01Icon} size={20} className="text-[#1F3A00]" />
-              </Link>
+              <details key={category.id}>
+                <summary>{category.label}</summary>
+                <div className="grid gap-0.5 pb-3">
+                  {category.columns[0]?.items.map((item) => (
+                    <Link key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-between gap-3 rounded-lg px-2 py-2.5 text-[15px] font-medium text-[#1D201E] no-underline hover:bg-white">
+                      <span>{item.label}</span>
+                      {item.price ? <span className="ts-fig text-lg"><small>from</small>{item.price}</span> : null}
+                    </Link>
+                  ))}
+                  <Link href={category.href} onClick={() => setMobileMenuOpen(false)} className="rounded-lg px-2 py-2.5 text-[15px] font-semibold text-[#1D201E] no-underline hover:bg-white">
+                    All {category.label.toLowerCase()}
+                  </Link>
+                </div>
+              </details>
             ))}
-            <Link href="/prices/" onClick={() => setMobileMenuOpen(false)} className="flex min-h-13 items-center justify-between border-b border-[#E5FBC9] text-lg font-semibold text-[#1F3A00] no-underline">
-              <span>Prices</span><HugeiconsIcon icon={ArrowRight01Icon} size={20} className="text-[#1F3A00]" />
-            </Link>
-            <Link href="/contact/" onClick={() => setMobileMenuOpen(false)} className="flex min-h-13 items-center justify-between border-b border-[#E5FBC9] text-lg font-semibold text-[#1F3A00] no-underline">
-              <span>Contact</span><HugeiconsIcon icon={ArrowRight01Icon} size={20} className="text-[#1F3A00]" />
-            </Link>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <Link href="/prices/" onClick={() => setMobileMenuOpen(false)} className="grid min-h-12 place-items-center rounded-xl bg-white font-semibold text-[#1D201E] no-underline">Prices</Link>
+              <Link href="/contact/" onClick={() => setMobileMenuOpen(false)} className="grid min-h-12 place-items-center rounded-xl bg-white font-semibold text-[#1D201E] no-underline">Contact</Link>
+            </div>
           </nav>
           <div className="p-4">
             {siteConfig.bookingEnabled ? (
-              <Link href="/booking/" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#1F3A00] bg-[#1F3A00] px-6 py-2 text-base font-semibold text-[#B7F56A] no-underline">Get a Quote<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#B7F56A]" /></Link>
+              <Link href="/booking/" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#1D201E] bg-[#B7F56A] px-6 py-2 text-base font-semibold text-[#1D201E] no-underline">Get a Quote<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#1D201E]" /></Link>
             ) : (
-              <a href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Best One Services.")} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#1F3A00] bg-[#1F3A00] px-6 py-2 text-base font-semibold text-[#B7F56A] no-underline">Book via WhatsApp<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#B7F56A]" /></a>
+              <a href={siteContact.getWhatsappUrl("Hi, I'd like to book a service with Bestone Services.")} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#1D201E] bg-[#B7F56A] px-6 py-2 text-base font-semibold text-[#1D201E] no-underline">Book via WhatsApp<HugeiconsIcon icon={ArrowRight01Icon} size={18} className="text-[#1D201E]" /></a>
             )}
           </div>
         </div>

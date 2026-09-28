@@ -50,14 +50,14 @@ export default function ProfilePage() {
 
   return (
     <div className="space-y-6 text-start">
-      <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-2 border border-[#B7F56A]">
-        <h1 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Profile & Security</h1>
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-2 ">
+        <h1 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Profile & Security</h1>
         <p className="text-sm text-ink-500">Manage your identity and contact details</p>
       </div>
 
-      <div className="bg-[#F9FCF5] rounded-[18px] p-6 sm:p-8 space-y-6 max-w-2xl border border-[#B7F56A]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-6 max-w-2xl ">
         {successMessage && (
-          <div className="p-3.5 rounded-[18px] bg-[#F9FCF5] text-[#1F3A00] text-sm font-medium flex items-center gap-2 border-none">
+          <div className="p-3.5 rounded-[18px] bg-[#F6F5F1] text-[#1D201E] text-sm font-medium flex items-center gap-2 border-none">
             <CheckCircle2 className="w-4 h-4 text-ink-600 shrink-0" />
             <span>{successMessage}</span>
           </div>
@@ -80,7 +80,7 @@ export default function ProfilePage() {
                 onChange={(e) => setDisplayName(e.target.value)}
                 placeholder="Your full name"
                 required
-                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
               />
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function ProfilePage() {
                 type="email"
                 value={user?.email || ""}
                 readOnly
-                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F9FCF5] border-none text-base text-ink-500 font-medium cursor-not-allowed"
+                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F6F5F1] border-none text-base text-ink-500 font-medium cursor-not-allowed focus:bg-white focus:border-[#1D201E]"
               />
             </div>
             <p className="text-xs text-ink-500">Email address is managed through Firebase Authentication identity.</p>
@@ -108,7 +108,7 @@ export default function ProfilePage() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="07123 456789"
-                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F9FCF5] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                className="w-full pl-10 pr-4 py-3 rounded-[18px] bg-[#F6F5F1] border-none text-base text-ink-600 font-medium focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
               />
             </div>
           </div>
@@ -117,16 +117,16 @@ export default function ProfilePage() {
             <button
               type="submit"
               disabled={submitting}
-              className="px-6 py-3 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-sm hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer border-none border border-[#E5FBC9]"
+              className="px-6 py-3 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer border-none "
             >
               {submitting ? "Saving changes..." : "Save Profile Details"}
             </button>
           </div>
         </form>
 
-        <div className="pt-6 border-t border-[#E5FBC9] space-y-3">
+        <div className="pt-6 border-[#ECEAE3] space-y-3">
           <h3 className="font-heading font-medium text-base text-ink-900">Security Details</h3>
-          <div className="p-4 rounded-[18px] bg-[#F9FCF5] space-y-2 text-xs font-mono text-ink-500">
+          <div className="p-4 rounded-[18px] bg-[#F6F5F1] space-y-2 text-xs font-mono text-ink-500">
             <div className="flex items-center justify-between text-ink-600 font-medium">
               <span>Firebase Auth UID:</span>
               <span>{user?.uid}</span>

@@ -22,9 +22,9 @@ export function BookingDecisionSupport({
   if (!questions || questions.length === 0) return null;
 
   return (
-    <SectionReveal className="bg-[#F8F9FA] rounded-[16px] p-6 sm:p-8 border border-[#E5FBC9] space-y-6 text-start">
-      <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ink-100 border border-[#E5FBC9] text-ink-600 text-xs font-mono font-medium uppercase">
+    <SectionReveal className="bg-white rounded-[16px] p-6 sm:p-8 space-y-6 text-start">
+      <div className="space-y-1 border-[#ECEAE3] pb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ink-100 border border-[#ECEAE3] text-ink-600 text-xs font-mono font-medium uppercase">
           <HelpCircle className="w-3.5 h-3.5 text-ink-600 shrink-0" />
           <span>Decision Support</span>
         </div>
@@ -34,7 +34,7 @@ export function BookingDecisionSupport({
 
       <div className="space-y-4">
         {questions.map((item, idx) => (
-          <div key={idx} className="p-4 rounded-[16px] bg-white border border-[#B7F56A] space-y-1.5">
+          <div key={idx} className="p-4 rounded-[16px] bg-white space-y-1.5">
             <div className="font-heading font-medium text-base text-ink-900 flex items-center gap-2">
               <Check className="w-4 h-4 text-ink-600 shrink-0" />
               <span>{item.question}</span>

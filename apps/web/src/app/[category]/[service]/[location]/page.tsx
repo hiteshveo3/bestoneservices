@@ -6,7 +6,7 @@ import { getServiceLocationContent } from "@/content/service-location-content";
 import { servicePageSchema } from "@/lib/structured-data";
 import { generateServiceOfferSchema, generateCostFaqSchema } from "@/lib/service-offer-schema";
 import { absoluteUrl } from "@/config/site";
-import { MintLimeServiceLayout } from "@/components/service/mint-lime-service-layout";
+import { ServiceLayout } from "@/components/service/service-layout";
 
 const VALID_CATEGORIES: ServiceCategory[] = ["pest-control-services", "cleaning-services"];
 
@@ -62,7 +62,7 @@ export default async function ServiceLocationPage({
   return (
     <main id="main-content" className="text-start">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <MintLimeServiceLayout 
+      <ServiceLayout 
         category={category}
         service={service}
         categoryLabel={serviceCatalog[category as ServiceCategory].label}

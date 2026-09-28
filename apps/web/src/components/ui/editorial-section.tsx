@@ -24,7 +24,7 @@ export function EditorialSection({
 }: EditorialSectionProps) {
   return (
     <section id={id} className={`space-y-6 text-start ${className}`}>
-      <SectionReveal className="space-y-2 border-b border-[#E5FBC9] pb-4">
+      <SectionReveal className="space-y-2 border-[#ECEAE3] pb-4">
         {(sequence || categoryLabel) && (
           <div className="flex items-center gap-2 text-xs font-mono font-medium text-ink-500 uppercase tracking-wider">
             {sequence && <span className="text-ink-600 font-medium">{sequence}</span>}
@@ -33,7 +33,7 @@ export function EditorialSection({
           </div>
         )}
 
-        <h2 className="font-heading text-2xl sm:text-4xl font-medium text-ink-900 tracking-tight">
+        <h2 className="font-heading text-2xl sm:text-4xl font-[650] text-ink-900 tracking-tight">
           {title}
         </h2>
 

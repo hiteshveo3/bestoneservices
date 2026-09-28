@@ -105,11 +105,11 @@ export default function ArticleDetailPage() {
             
             {/* HERO HEADER */}
             <div className="space-y-4 text-start">
-              <span className="px-3.5 py-1 rounded-full bg-[#DCFAB7] text-[#1F3A00] text-xs font-mono font-semibold uppercase tracking-wider inline-block">
+              <span className="ts-eyebrow">
                 {guide.categoryLabel}
               </span>
 
-              <h1 className="font-heading text-3xl sm:text-5xl font-medium text-ink-900 tracking-tight leading-[1.15]">
+              <h1 className="font-heading text-3xl sm:text-5xl font-[650] text-ink-900 tracking-tight leading-[1.15]">
                 {guide.title}
               </h1>
 
@@ -120,7 +120,7 @@ export default function ArticleDetailPage() {
               )}
 
               {/* AUTHOR & PUBLISHED META BAR (16px readable UI font) */}
-              <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-b border-[#E5FBC9] py-3 text-base text-ink-500">
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-[#ECEAE3] py-3 text-base text-ink-500">
                 <div className="flex flex-wrap items-center gap-4">
                   <span className="flex items-center gap-1.5 font-medium text-ink-600">
                     <User className="w-4 h-4 text-ink-600 shrink-0" />
@@ -142,7 +142,7 @@ export default function ArticleDetailPage() {
                   <button
                     type="button"
                     onClick={handleShare}
-                    className="px-4 py-2 rounded-full bg-[#F9FCF5] border-none text-ink-600 font-medium text-sm hover:bg-[#DCFAB7] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-[#F6F5F1] border-none text-ink-600 font-medium text-sm hover:bg-[#EAF8D6] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
                   >
                     <Copy className="w-4 h-4 text-ink-600 shrink-0" />
                     <span>{copied ? "Copied" : "Share"}</span>
@@ -151,9 +151,9 @@ export default function ArticleDetailPage() {
                   <button
                     type="button"
                     onClick={() => setIsSaved(!isSaved)}
-                    className={`px-4 py-2 rounded-full border-none text-sm font-medium transition-colors duration-150 flex items-center gap-1.5 cursor-pointer ${
-                      isSaved ? "bg-[#1F3A00] text-white font-medium" : "bg-[#F9FCF5] text-[#1F3A00] hover:bg-[#DCFAB7]"
-                    }`}
+                    className={`px-4 py-2 rounded-xl border-none text-sm font-medium transition-colors duration-150 flex items-center gap-1.5 cursor-pointer ${
+ isSaved ? "bg-[#B7F56A] text-[#1D201E] font-medium" : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6]"
+ }`}
                   >
                     <Bookmark className="w-4 h-4 text-ink-600 shrink-0" />
                     <span>{isSaved ? "Saved" : "Save"}</span>
@@ -165,7 +165,7 @@ export default function ArticleDetailPage() {
             {/* HERO MEDIA */}
             {guide.heroImage && (
               <figure className="space-y-2">
-                <div className="relative rounded-[18px] overflow-hidden border border-[#E5FBC9] aspect-16/9 bg-[#F9FCF5]">
+                <div className="relative rounded-[18px] overflow-hidden aspect-16/9 bg-white">
                   <Image
                     src={guide.heroImage}
                     alt={guide.title}
@@ -185,7 +185,7 @@ export default function ArticleDetailPage() {
 
             {/* MOBILE TABLE OF CONTENTS POPOVER */}
             {headings.length > 0 && (
-              <div className="lg:hidden p-4 rounded-[18px] bg-[#F9FCF5] border border-[#E5FBC9] space-y-2">
+              <div className="lg:hidden p-4 rounded-[18px] bg-white space-y-2">
                 <button
                   type="button"
                   onClick={() => setMobileTocOpen(!mobileTocOpen)}
@@ -199,7 +199,7 @@ export default function ArticleDetailPage() {
                 </button>
 
                 {mobileTocOpen && (
-                  <ul className="space-y-2 pt-2 border-t border-[#E5FBC9] list-none p-0">
+                  <ul className="space-y-2 pt-2 border-[#ECEAE3] list-none p-0">
                     {headings.map((h) => (
                       <li key={h.id}>
                         <a
@@ -218,10 +218,10 @@ export default function ArticleDetailPage() {
 
             {/* KEY TAKEAWAYS BLOCK */}
             {guide.keyTakeaways && guide.keyTakeaways.length > 0 && (
-              <div className="p-6 sm:p-8 rounded-[24px] bg-[#F9FCF5] border border-[#E5FBC9] space-y-4 text-start shadow-2xs">
+              <div className="p-6 sm:p-8 rounded-[24px] bg-white space-y-4 text-start ">
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-[12px] bg-[#DCFAB7] text-[#1F3A00] flex items-center justify-center font-medium">
-                    <ShieldCheck className="w-5 h-5 text-[#1F3A00] shrink-0" />
+                  <div className="w-10 h-10 rounded-[12px] bg-[#EAF8D6] text-[#1D201E] flex items-center justify-center font-medium">
+                    <ShieldCheck className="w-5 h-5 text-[#1D201E] shrink-0" />
                   </div>
                   <h3 className="font-heading font-medium text-xl text-ink-900">Key Takeaways</h3>
                 </div>
@@ -256,8 +256,8 @@ export default function ArticleDetailPage() {
                       key={idx}
                       id={headingId}
                       className={`font-heading font-medium text-ink-900 tracking-tight scroll-mt-24 ${
-                        block.level === 2 ? "text-2xl sm:text-3xl pt-4 border-b border-[#E5FBC9] pb-2" : "text-xl sm:text-2xl pt-2"
-                      }`}
+ block.level === 2 ? "text-2xl sm:text-3xl pt-4 border-b border-[#ECEAE3] pb-2" : "text-xl sm:text-2xl pt-2"
+ }`}
                     >
                       {block.text}
                     </Tag>
@@ -266,7 +266,7 @@ export default function ArticleDetailPage() {
 
                 if (block.type === "pullFact") {
                   return (
-                    <div key={idx} className="py-4 border-y border-[#E5FBC9] space-y-2 text-start my-6">
+                    <div key={idx} className="py-4 border-[#ECEAE3] space-y-2 text-start my-6">
                       <div className="font-heading font-medium text-4xl sm:text-5xl text-ink-900">
                         {block.stat}
                       </div>
@@ -279,7 +279,7 @@ export default function ArticleDetailPage() {
                 if (block.type === "image") {
                   return (
                     <figure key={idx} className="space-y-2 my-6">
-                      <div className="relative rounded-[18px] overflow-hidden border border-[#E5FBC9] aspect-16/9 bg-[#F9FCF5]">
+                      <div className="relative rounded-[18px] overflow-hidden aspect-16/9 bg-white">
                         <Image src={block.url} alt={block.alt} fill sizes="(max-width: 1024px) 100vw, 760px" className="object-cover" />
                       </div>
                       {block.caption && (
@@ -293,10 +293,10 @@ export default function ArticleDetailPage() {
                   return (
                     <div key={idx} className="space-y-3 my-6">
                       {block.title && <h4 className="font-heading font-medium text-xl text-ink-900">{block.title}</h4>}
-                      <div className="overflow-x-auto rounded-[18px] border border-[#B7F56A] bg-[#F9FCF5]">
+                      <div className="overflow-x-auto rounded-[18px] bg-white">
                         <table className="w-full text-start border-collapse text-base">
                           <thead>
-                            <tr className="bg-[#F9FCF5] border-b border-[#E5FBC9] text-ink-600 font-medium">
+                            <tr className="bg-[#F6F5F1] border-[#ECEAE3] text-ink-600 font-medium">
                               {block.headers.map((h, i) => (
                                 <th key={i} className="p-4 text-start">{h}</th>
                               ))}
@@ -304,7 +304,7 @@ export default function ArticleDetailPage() {
                           </thead>
                           <tbody>
                             {block.rows.map((row, rIdx) => (
-                              <tr key={rIdx} className="border-b border-[#E5FBC9] last:border-none">
+                              <tr key={rIdx} className=" border-[#ECEAE3] last:border-none">
                                 {row.map((cell, cIdx) => (
                                   <td key={cIdx} className="p-4 text-ink-600">{cell}</td>
                                 ))}
@@ -324,13 +324,13 @@ export default function ArticleDetailPage() {
                   return (
                     <div
                       key={idx}
-                      className={`p-6 rounded-[18px] border-l-4 space-y-2 my-6 ${
-                        block.variant === "safety" || block.variant === "important"
-                          ? "bg-danger-50 border-danger-500 text-ink-600"
-                          : block.variant === "pricing"
-                          ? "bg-[#DCFAB7] border-[#99D055] text-ink-600"
-                          : "bg-[#F9FCF5] border-ink-900 text-ink-600"
-                      }`}
+                      className={`p-6 rounded-[18px]  space-y-2 my-6 ${
+ block.variant === "safety" || block.variant === "important"
+ ? "bg-danger-50 border-danger-500 text-ink-600"
+ : block.variant === "pricing"
+ ? "bg-[#EAF8D6] border-[#ECEAE3] text-ink-600"
+ : "bg-[#F6F5F1] border-ink-900 text-ink-600"
+ }`}
                     >
                       <div className="flex items-center gap-2 font-heading font-medium text-lg">
                         {block.variant === "safety" && <AlertTriangle className="w-5 h-5 text-danger-500 shrink-0" />}
@@ -341,10 +341,10 @@ export default function ArticleDetailPage() {
                         <div className="pt-2">
                           <Link
                             href={block.ctaHref}
-                            className="px-4 py-2 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-sm hover:bg-[#2d5004] text-decoration-none inline-flex items-center gap-1.5"
+                            className="px-4 py-2 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-sm hover:bg-[#A2EA4E] text-decoration-none inline-flex items-center gap-1.5"
                           >
                             <span>{block.ctaText}</span>
-                            <ArrowRight className="w-4 h-4 text-white" />
+                            <ArrowRight className="w-4 h-4 text-[#1D201E]" />
                           </Link>
                         </div>
                       )}
@@ -356,8 +356,8 @@ export default function ArticleDetailPage() {
                   return (
                     <div key={idx} className="space-y-4 my-6">
                       {block.items.map((st) => (
-                        <div key={st.number} className="p-5 rounded-[18px] bg-[#F9FCF5] border-none space-y-2 flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-[18px] bg-[#1F3A00] text-white flex items-center justify-center font-heading font-medium text-lg shrink-0">
+                        <div key={st.number} className="p-5 rounded-[18px] bg-[#F6F5F1] border-none space-y-2 flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-heading font-medium text-lg shrink-0">
                             {st.number}
                           </div>
                           <div className="space-y-1">
@@ -372,7 +372,7 @@ export default function ArticleDetailPage() {
 
                 if (block.type === "checklist") {
                   return (
-                    <div key={idx} className="p-6 rounded-[18px] bg-white border border-[#B7F56A] space-y-4 my-6">
+                    <div key={idx} className="p-6 rounded-[18px] bg-white space-y-4 my-6">
                       <h4 className="font-heading font-medium text-xl text-ink-900">{block.title}</h4>
                       <ul className="space-y-2.5 list-none p-0 text-base text-ink-600">
                         {block.items.map((item, i) => (
@@ -388,15 +388,15 @@ export default function ArticleDetailPage() {
 
                 if (block.type === "serviceCTA") {
                   return (
-                    <div key={idx} className="p-8 sm:p-10 rounded-[28px] bg-[#1F3A00] text-[#DFFBBC] space-y-4 my-8 text-start border border-[#3A5C13]">
-                      <h3 className="font-heading text-2xl font-medium text-white">{block.title}</h3>
+                    <div key={idx} className="p-8 sm:p-10 rounded-[28px] bg-[#B7F56A] text-[#1D201E] space-y-4 my-8 text-start ">
+                      <h3 className="font-heading text-2xl font-medium text-[#1D201E]">{block.title}</h3>
                       <p className="text-base text-ink-300 leading-relaxed max-w-xl">{block.text}</p>
                       <Link
                         href={block.href}
-                        className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1F3A00] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none gap-2 cursor-pointer"
+                        className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none gap-2 cursor-pointer"
                       >
                         <span>{block.buttonText}</span>
-                        <ArrowRight className="w-4 h-4 text-[#1F3A00]" />
+                        <ArrowRight className="w-4 h-4 text-[#1D201E]" />
                       </Link>
                     </div>
                   );
@@ -404,7 +404,7 @@ export default function ArticleDetailPage() {
 
                 if (block.type === "pricingCTA") {
                   return (
-                    <div key={idx} className="p-6 rounded-[24px] bg-white border border-[#B7F56A] shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4 my-6">
+                    <div key={idx} className="p-6 rounded-[24px] bg-white flex flex-col sm:flex-row items-center justify-between gap-4 my-6">
                       <div>
                         <span className="text-xs font-mono font-medium text-ink-500 uppercase">VERIFIED ESTIMATE</span>
                         <h4 className="font-heading text-xl font-medium text-ink-900">{block.serviceName}</h4>
@@ -412,7 +412,7 @@ export default function ArticleDetailPage() {
                       </div>
                       <Link
                         href={block.href}
-                        className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#1F3A00] text-[#B7F56A] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none shrink-0 cursor-pointer"
+                        className="inline-flex items-center justify-center px-6 py-3 rounded-md font-inter text-base font-medium bg-[#B7F56A] text-[#1D201E] border-none hover:opacity-90 transition-opacity duration-200 text-decoration-none shrink-0 cursor-pointer"
                       >
                         Check Your Price
                       </Link>
@@ -422,7 +422,7 @@ export default function ArticleDetailPage() {
 
                 if (block.type === "sources") {
                   return (
-                    <div key={idx} className="pt-6 border-t border-[#E5FBC9] space-y-2 text-sm text-ink-500">
+                    <div key={idx} className="pt-6 border-[#ECEAE3] space-y-2 text-sm text-ink-500">
                       <span className="font-medium text-ink-600 block">{block.title || "References & Industry Sources"}</span>
                       <ul className="space-y-1 list-none p-0">
                         {block.links.map((link, lIdx) => (
@@ -447,14 +447,14 @@ export default function ArticleDetailPage() {
             </div>
 
             {/* AUTHOR CREDIT BLOCK */}
-            <div className="p-6 rounded-[18px] bg-[#F9FCF5] flex items-center gap-4 text-start">
-              <div className="w-12 h-12 rounded-[18px] bg-[#1F3A00] text-white flex items-center justify-center font-heading font-medium text-xl shrink-0">
-                <User className="w-6 h-6 text-white" />
+            <div className="p-6 rounded-[18px] bg-[#F6F5F1] flex items-center gap-4 text-start">
+              <div className="w-12 h-12 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-heading font-medium text-xl shrink-0">
+                <User className="w-6 h-6 text-[#1D201E]" />
               </div>
               <div className="space-y-1">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase block">AUTHOR & EXPERTISE</span>
                 <h4 className="font-heading font-medium text-lg text-ink-900">{guide.author.name}</h4>
-                <p className="text-sm text-ink-500">{guide.author.role} • Best One Services London Operations</p>
+                <p className="text-sm text-ink-500">{guide.author.role} • Bestone Services London Operations</p>
               </div>
             </div>
 
@@ -465,8 +465,8 @@ export default function ArticleDetailPage() {
             
             {/* ON THIS PAGE TABLE OF CONTENTS */}
             {headings.length > 0 && (
-              <div className="bg-[#F9FCF5] rounded-[18px] p-6 border border-[#B7F56A] space-y-4 text-start">
-                <div className="flex items-center gap-2 border-b border-[#E5FBC9] pb-3">
+              <div className="bg-white rounded-[18px] p-6 space-y-4 text-start">
+                <div className="flex items-center gap-2 border-[#ECEAE3] pb-3">
                   <List className="w-4 h-4 text-ink-600 shrink-0" />
                   <span className="font-heading font-medium text-lg text-ink-900">On This Page</span>
                 </div>
@@ -479,10 +479,10 @@ export default function ArticleDetailPage() {
                         <a
                           href={`#${h.id}`}
                           className={`flex items-center gap-2 py-1 text-decoration-none transition-colors duration-150 ${
-                            isActive
-                              ? "text-ink-600 font-medium border-l-2 border-[#99D055] pl-2"
-                              : "text-ink-500 hover:text-ink-600 font-normal"
-                          }`}
+ isActive
+ ? "text-ink-600 font-medium  border-[#ECEAE3] pl-2"
+ : "text-ink-500 hover:text-ink-600 font-normal"
+ }`}
                         >
                           <span className="truncate">{h.text}</span>
                         </a>
@@ -494,10 +494,10 @@ export default function ArticleDetailPage() {
             )}
 
             {/* CONTEXTUAL SERVICE CARD */}
-            <div className="bg-[#F9FCF5] rounded-[18px] p-6 border border-[#B7F56A] space-y-4 text-start">
+            <div className="bg-white rounded-[18px] p-6 space-y-4 text-start">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-[18px] bg-[#1F3A00] text-white flex items-center justify-center font-medium">
-                  <Calculator className="w-4 h-4 text-white shrink-0" />
+                <div className="w-8 h-8 rounded-[18px] bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium">
+                  <Calculator className="w-4 h-4 text-[#1D201E] shrink-0" />
                 </div>
                 <span className="font-heading font-medium text-lg text-ink-900">Need This Service?</span>
               </div>
@@ -506,10 +506,10 @@ export default function ArticleDetailPage() {
               </p>
               <Link
                 href="/prices/#smart-calculator"
-                className="w-full py-3 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] text-decoration-none flex items-center justify-center gap-2 border border-[#E5FBC9]"
+                className="w-full py-3 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] text-decoration-none flex items-center justify-center gap-2 "
               >
                 <span>Calculate Your Price</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+                <ArrowRight className="w-4 h-4 text-[#1D201E]" />
               </Link>
             </div>
 
@@ -518,12 +518,12 @@ export default function ArticleDetailPage() {
         </div>
 
         {/* RELATED GUIDES SECTION WITH 3:2 IMAGES */}
-        <section className="pt-10 border-t border-[#E5FBC9] space-y-6 text-start">
+        <section className="pt-10 border-[#ECEAE3] space-y-6 text-start">
           <div className="space-y-1">
-            <span className="px-3.5 py-1 rounded-full bg-[#1F3A00] text-white text-sm font-medium uppercase tracking-wide">
+            <span className="px-3.5 py-1 rounded-xl bg-[#B7F56A] text-[#1D201E] text-sm font-medium uppercase tracking-wide">
               RECOMMENDED READING
             </span>
-            <h2 className="font-heading text-3xl font-medium text-ink-900">Related Articles & Guides</h2>
+            <h2 className="font-heading text-3xl font-[650] text-ink-900">Related Articles & Guides</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -531,20 +531,20 @@ export default function ArticleDetailPage() {
               <Link
                 key={rel.id}
                 href={`/guides/${rel.category}/${rel.slug}/`}
-                className="bg-[#F9FCF5] rounded-[18px] p-5 border border-[#B7F56A] space-y-4 text-decoration-none text-ink-600 flex flex-col justify-between group"
+                className="bg-white rounded-[18px] p-5 space-y-4 text-decoration-none text-ink-600 flex flex-col justify-between group"
               >
                 <div className="space-y-3">
-                  <div className="relative rounded-[18px] overflow-hidden border border-[#E5FBC9] aspect-3/2 bg-[#F9FCF5]">
+                  <div className="relative rounded-[18px] overflow-hidden aspect-3/2 bg-white">
                     <Image src={rel.heroImage} alt={rel.title} fill sizes="(max-width: 768px) 100vw, 300px" className="object-cover" />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] text-xs font-mono font-medium uppercase text-ink-600 inline-block">
+                  <span className="px-3 py-1 rounded-md bg-white text-xs font-mono font-medium uppercase text-ink-600 inline-block">
                     {rel.categoryLabel}
                   </span>
                   <h3 className="font-heading text-xl font-medium text-ink-900 leading-snug">{rel.title}</h3>
                   <p className="text-base text-ink-500 leading-relaxed line-clamp-2">{rel.excerpt}</p>
                 </div>
 
-                <div className="flex items-center justify-between text-sm font-medium text-ink-600 pt-2 border-t border-[#E5FBC9]">
+                <div className="flex items-center justify-between text-sm font-medium text-ink-600 pt-2 border-[#ECEAE3]">
                   <span>{rel.readingTime} min read</span>
                   <ArrowRight className="w-4 h-4 text-ink-600" />
                 </div>

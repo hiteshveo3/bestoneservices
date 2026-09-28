@@ -241,7 +241,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
 
   if (loading) {
     return (
-      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-12 text-center space-y-3 ">
         <Spinner size={32} className="mx-auto" />
         <p className="text-sm font-medium text-ink-600">Loading service package editor & pricing engine...</p>
       </div>
@@ -250,11 +250,11 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
 
   if (!service) {
     return (
-      <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-10 text-center space-y-4 max-w-md mx-auto ">
         <AlertCircle className="w-10 h-10 text-danger-500 mx-auto" />
         <h3 className="font-heading text-lg font-medium text-ink-900">Service Package Not Found</h3>
         <p className="text-xs text-ink-500">The requested service package record does not exist or was moved.</p>
-        <Link href="/admin/services" className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-white font-medium text-xs inline-block text-decoration-none border border-[#E5FBC9]">
+        <Link href="/admin/services" className="px-5 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] font-medium text-xs inline-block text-decoration-none ">
           Return to Service Catalog
         </Link>
       </div>
@@ -284,7 +284,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
       <div className="flex items-center justify-between">
         <Link
           href="/admin/services"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-[#E5FBC9] text-xs font-medium text-ink-600 hover:bg-[#DCFAB7] transition-colors duration-150 text-decoration-none"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white text-xs font-medium text-ink-600 hover:bg-[#EAF8D6] transition-colors duration-150 text-decoration-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-ink-600" />
           <span>Back to Catalog Queue</span>
@@ -311,16 +311,16 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
       )}
 
       {/* WORKSPACE HEADER & DRAFT / PREVIEW / PUBLISH TOOLBAR */}
-      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 border border-[#E5FBC9]">
+      <div className="bg-white rounded-[18px] p-6 sm:p-8 space-y-4 ">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-2">
-              <h1 className="font-heading font-medium text-2xl sm:text-3xl text-ink-900">
+              <h1 className="font-heading font-[650] text-2xl sm:text-3xl text-ink-900">
                 {service.name}
               </h1>
-              <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium uppercase ${
-                service.status === "published" ? "bg-[#1F3A00] text-white" : "bg-warning-50 text-warning-900"
-              }`}>
+              <span className={`px-3 py-1 rounded-md text-xs font-mono font-medium uppercase ${
+ service.status === "published" ? "bg-[#B7F56A] text-[#1D201E]" : "bg-warning-50 text-warning-900"
+ }`}>
                 {service.status}
               </span>
             </div>
@@ -334,7 +334,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
             <button
               type="button"
               onClick={() => setPreviewModalOpen(true)}
-              className="px-4 py-2.5 rounded-full bg-[#F9FCF5] text-ink-600 hover:bg-[#DCFAB7] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none border border-[#E5FBC9]"
+              className="px-4 py-2.5 rounded-md bg-white text-ink-600 hover:bg-[#EAF8D6] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none "
             >
               <Eye className="w-4 h-4 text-ink-600" />
               <span>Customer Preview</span>
@@ -345,7 +345,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 type="button"
                 onClick={handleUnpublish}
                 disabled={submitting}
-                className="px-4 py-2.5 rounded-full bg-warning-50 text-warning-900 hover:bg-warning-500 text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
+                className="px-4 py-2.5 rounded-md bg-warning-50 text-warning-900 hover:bg-warning-500 text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none"
               >
                 <span>Revert to Draft</span>
               </button>
@@ -354,9 +354,9 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 type="button"
                 onClick={handlePublish}
                 disabled={submitting}
-                className="px-5 py-2.5 rounded-full bg-[#1F3A00] text-[#B7F56A] hover:bg-[#2d5004] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none border border-[#E5FBC9]"
+                className="px-5 py-2.5 rounded-md bg-[#B7F56A] text-[#1D201E] hover:bg-[#A2EA4E] text-xs font-medium inline-flex items-center gap-1.5 cursor-pointer border-none "
               >
-                <Send className="w-4 h-4 text-white" />
+                <Send className="w-4 h-4 text-[#1D201E]" />
                 <span>Publish Package (v{(service.version || 1) + 1})</span>
               </button>
             )}
@@ -367,8 +367,8 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
       {/* SERVICE SPECIFICATIONS FORM */}
       <form onSubmit={handleSaveDetails} className="space-y-6">
         
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
             General Specifications & Copy
           </h3>
 
@@ -379,7 +379,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-sm font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-sm font-medium text-ink-600 border-none"
                 required
               />
             </div>
@@ -391,7 +391,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 value={badgeLabel}
                 onChange={(e) => setBadgeLabel(e.target.value)}
                 placeholder="e.g. 48-HOUR RE-CLEAN GUARANTEE"
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
               />
             </div>
           </div>
@@ -402,7 +402,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
               value={shortDescription}
               onChange={(e) => setShortDescription(e.target.value)}
               rows={3}
-              className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none resize-none"
+              className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none resize-none"
               required
             />
           </div>
@@ -414,14 +414,14 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
               value={guaranteeText}
               onChange={(e) => setGuaranteeText(e.target.value)}
               placeholder="e.g. Includes 48-Hour Re-Clean Guarantee"
-              className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+              className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
             />
           </div>
         </div>
 
         {/* PRICING MATRIX CONFIGURATION */}
-        <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-          <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2 flex items-center gap-1.5">
+        <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+          <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2 flex items-center gap-1.5">
             <PoundSterling className="w-4 h-4 text-ink-600" />
             <span>Pricing Engine Matrix Configuration</span>
           </h3>
@@ -430,53 +430,53 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
             <div className="space-y-3">
               <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Property Size Room Matrix Rates (£ GBP)</span>
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                <div className="p-3 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+                <div className="p-3 rounded-[18px] bg-white space-y-1 ">
                   <label className="text-[10px] font-mono font-medium text-ink-500 uppercase block">Studio Flat</label>
                   <input
                     type="number"
                     value={studioPounds}
                     onChange={(e) => setStudioPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 "
                   />
                 </div>
 
-                <div className="p-3 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+                <div className="p-3 rounded-[18px] bg-white space-y-1 ">
                   <label className="text-[10px] font-mono font-medium text-ink-500 uppercase block">1 Bedroom</label>
                   <input
                     type="number"
                     value={oneBedPounds}
                     onChange={(e) => setOneBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 "
                   />
                 </div>
 
-                <div className="p-3 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+                <div className="p-3 rounded-[18px] bg-white space-y-1 ">
                   <label className="text-[10px] font-mono font-medium text-ink-500 uppercase block">2 Bedroom</label>
                   <input
                     type="number"
                     value={twoBedPounds}
                     onChange={(e) => setTwoBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 "
                   />
                 </div>
 
-                <div className="p-3 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+                <div className="p-3 rounded-[18px] bg-white space-y-1 ">
                   <label className="text-[10px] font-mono font-medium text-ink-500 uppercase block">3 Bedroom</label>
                   <input
                     type="number"
                     value={threeBedPounds}
                     onChange={(e) => setThreeBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 "
                   />
                 </div>
 
-                <div className="p-3 rounded-[18px] bg-white space-y-1 border border-[#E5FBC9]">
+                <div className="p-3 rounded-[18px] bg-white space-y-1 ">
                   <label className="text-[10px] font-mono font-medium text-ink-500 uppercase block">4 Bedroom</label>
                   <input
                     type="number"
                     value={fourBedPounds}
                     onChange={(e) => setFourBedPounds(parseFloat(e.target.value) || 0)}
-                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 border border-[#E5FBC9]"
+                    className="w-full p-2 rounded-[18px] bg-white text-sm font-medium text-ink-600 "
                   />
                 </div>
               </div>
@@ -489,7 +489,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                   type="number"
                   value={hourlyRatePounds}
                   onChange={(e) => setHourlyRatePounds(parseFloat(e.target.value) || 0)}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-sm font-medium text-ink-600 border-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-sm font-medium text-ink-600 border-none"
                 />
               </div>
 
@@ -499,7 +499,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                   type="number"
                   value={minHours}
                   onChange={(e) => setMinHours(parseInt(e.target.value, 10) || 1)}
-                  className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-sm font-medium text-ink-600 border-none"
+                  className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-sm font-medium text-ink-600 border-none"
                 />
               </div>
             </div>
@@ -510,7 +510,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 type="number"
                 value={basePricePounds}
                 onChange={(e) => setBasePricePounds(parseFloat(e.target.value) || 0)}
-                className="w-full p-3 rounded-[18px] bg-[#F9FCF5] text-sm font-medium text-ink-600 border-none"
+                className="w-full p-3 rounded-[18px] bg-[#F6F5F1] text-sm font-medium text-ink-600 border-none"
               />
             </div>
           )}
@@ -520,8 +520,8 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
         <div className="grid lg:grid-cols-2 gap-6">
           
           {/* Features Bullets */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
               Feature Bullets Checklist
             </h3>
 
@@ -531,12 +531,12 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 value={newFeatureText}
                 onChange={(e) => setNewFeatureText(e.target.value)}
                 placeholder="Add feature item (e.g. Deep oven cleaning)..."
-                className="flex-1 p-2.5 rounded-[18px] bg-[#F9FCF5] text-xs text-ink-600 border-none"
+                className="flex-1 p-2.5 rounded-[18px] bg-[#F6F5F1] text-xs text-ink-600 border-none"
               />
               <button
                 type="button"
                 onClick={handleAddFeature}
-                className="px-3.5 py-2.5 rounded-[18px] bg-[#1F3A00] text-white text-xs font-medium cursor-pointer border-none"
+                className="px-3.5 py-2.5 rounded-[18px] bg-[#B7F56A] text-[#1D201E] text-xs font-medium cursor-pointer border-none"
               >
                 Add Feature
               </button>
@@ -559,8 +559,8 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
           </div>
 
           {/* Add-ons Options */}
-          <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
-            <h3 className="font-heading text-lg font-medium text-ink-900 border-b border-[#E5FBC9] pb-2">
+          <div className="bg-white rounded-[18px] p-6 space-y-4 ">
+            <h3 className="font-heading text-lg font-medium text-ink-900 border-[#ECEAE3] pb-2">
               Add-On Extras Manager
             </h3>
 
@@ -570,21 +570,21 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 value={newAddOnName}
                 onChange={(e) => setNewAddOnName(e.target.value)}
                 placeholder="Add-on item name..."
-                className="sm:col-span-7 p-2.5 rounded-[18px] bg-[#F9FCF5] text-xs text-ink-600 border-none"
+                className="sm:col-span-7 p-2.5 rounded-[18px] bg-[#F6F5F1] text-xs text-ink-600 border-none"
               />
               <input
                 type="number"
                 value={newAddOnPrice}
                 onChange={(e) => setNewAddOnPrice(parseFloat(e.target.value) || 0)}
                 placeholder="Price (£)"
-                className="sm:col-span-3 p-2.5 rounded-[18px] bg-[#F9FCF5] text-xs font-medium text-ink-600 border-none"
+                className="sm:col-span-3 p-2.5 rounded-[18px] bg-[#F6F5F1] text-xs font-medium text-ink-600 border-none"
               />
               <button
                 type="button"
                 onClick={handleAddAddOn}
-                className="sm:col-span-2 p-2.5 rounded-[18px] bg-[#1F3A00] text-white text-xs font-medium cursor-pointer border-none flex items-center justify-center"
+                className="sm:col-span-2 p-2.5 rounded-[18px] bg-[#B7F56A] text-[#1D201E] text-xs font-medium cursor-pointer border-none flex items-center justify-center"
               >
-                <Plus className="w-4 h-4 text-white" />
+                <Plus className="w-4 h-4 text-[#1D201E]" />
               </button>
             </div>
 
@@ -610,7 +610,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-4 rounded-full bg-[#1F3A00] text-white font-heading font-medium text-sm hover:bg-[#2d5004] cursor-pointer transition-colors duration-150 border border-[#E5FBC9]"
+          className="w-full py-4 rounded-xl bg-[#B7F56A] text-[#1D201E] font-heading font-medium text-sm hover:bg-[#A2EA4E] cursor-pointer transition-colors duration-150 "
         >
           {submitting ? "Saving Specifications..." : "Save Service Package Specifications"}
         </button>
@@ -619,10 +619,10 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
       {/* MODAL: LIVE CUSTOMER PREVIEW */}
       {previewModalOpen && (
         <div className="fixed inset-0 bg-ink-900/60 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-[18px] max-w-xl w-full p-6 sm:p-8 space-y-6 text-start border border-[#E5FBC9]">
-            <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+          <div className="bg-white rounded-[18px] max-w-xl w-full p-6 sm:p-8 space-y-6 text-start ">
+            <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
               <div className="inline-flex items-center gap-2">
-                <Eye className="w-4 h-4 text-[#1F3A00]" />
+                <Eye className="w-4 h-4 text-[#1D201E]" />
                 <h3 className="font-heading font-medium text-lg text-ink-900">Live Customer Booking Preview</h3>
               </div>
               <button
@@ -635,20 +635,20 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
             </div>
 
             {/* PREVIEW CARD */}
-            <div className="bg-white rounded-[18px] p-6 space-y-4 border border-[#E5FBC9]">
+            <div className="bg-white rounded-[18px] p-6 space-y-4 ">
               <div className="flex items-center justify-between">
-                <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white text-[10px] font-mono font-medium uppercase">
+                <span className="ts-chip">
                   {service.categoryId}
                 </span>
                 {badgeLabel && (
-                  <span className="px-3 py-1 rounded-full bg-[#1F3A00] text-white text-[10px] font-mono font-medium uppercase">
+                  <span className="ts-chip">
                     {badgeLabel}
                   </span>
                 )}
               </div>
 
               <div>
-                <h2 className="font-heading text-xl font-medium text-ink-900">{name}</h2>
+                <h2 className="font-heading text-xl font-[650] text-ink-900">{name}</h2>
                 <p className="text-xs text-ink-500 leading-relaxed mt-1">{shortDescription}</p>
               </div>
 
@@ -661,9 +661,9 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                         key={sz}
                         type="button"
                         onClick={() => setPreviewSize(sz)}
-                        className={`px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer border-none ${
-                          previewSize === sz ? "bg-[#1F3A00] text-white" : "bg-white text-ink-600 border border-[#E5FBC9]"
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer border-none ${
+ previewSize === sz ? "bg-[#B7F56A] text-[#1D201E]" : "bg-white text-ink-600 "
+ }`}
                       >
                         {sz}
                       </button>
@@ -672,7 +672,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
                 </div>
               )}
 
-              <div className="p-4 rounded-[18px] bg-white space-y-2 border border-[#E5FBC9]">
+              <div className="p-4 rounded-[18px] bg-white space-y-2 ">
                 <div className="flex justify-between items-center">
                   <span className="text-xs font-mono font-medium text-ink-500 uppercase">Calculated Estimate</span>
                   <span className="font-heading font-medium text-2xl text-ink-900">
@@ -686,7 +686,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
 
               {guaranteeText && (
                 <div className="flex items-center gap-2 text-xs font-medium text-ink-600">
-                  <ShieldCheck className="w-4 h-4 text-[#1F3A00] shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-[#1D201E] shrink-0" />
                   <span>{guaranteeText}</span>
                 </div>
               )}
@@ -695,7 +695,7 @@ export default function AdminServiceDetailPage({ params }: { params: Promise<{ i
             <button
               type="button"
               onClick={() => setPreviewModalOpen(false)}
-              className="w-full py-3 rounded-full bg-[#1F3A00] text-white text-xs font-medium cursor-pointer"
+              className="w-full py-3 rounded-md bg-[#B7F56A] text-[#1D201E] text-xs font-medium cursor-pointer"
             >
               Close Preview Mode
             </button>

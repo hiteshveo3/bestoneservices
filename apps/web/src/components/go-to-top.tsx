@@ -40,9 +40,9 @@ export function GoToTop() {
             type="button"
             onClick={scrollToTop}
             aria-label="Scroll to top of page"
-            className="w-12 h-12 rounded-full bg-[#B7F56A] text-[#1F3A00] flex items-center justify-center cursor-pointer hover:opacity-90 border border-[#B7F56A] shadow-sm transition-opacity duration-150 focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+            className="w-12 h-12 rounded-full bg-[#B7F56A] text-[#1D201E] flex items-center justify-center cursor-pointer hover:opacity-90 border border-[#ECEAE3] transition-opacity duration-150 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
           >
-            <HugeiconsIcon icon={ArrowUp01Icon} size={20} strokeWidth={2.5} className="text-[#1F3A00]" />
+            <HugeiconsIcon icon={ArrowUp01Icon} size={20} strokeWidth={2.5} className="text-[#1D201E]" />
           </button>
         </motion.div>
       )}

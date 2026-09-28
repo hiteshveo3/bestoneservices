@@ -207,10 +207,10 @@ export function BookingWizard() {
           
           {/* STEP 1: SERVICE CATEGORY SELECTION */}
           {state.currentStep === 1 && (
-            <div className="bg-white rounded-[16px] p-6 sm:p-10 border border-[#E5FBC9] space-y-6">
-              <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
+            <div className="bg-white rounded-[16px] p-6 sm:p-10 space-y-6">
+              <div className="space-y-1 border-[#ECEAE3] pb-4">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Step 1 of 5</span>
-                <h2 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Select Your Required Service</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Select Your Required Service</h2>
                 <p className="text-base text-ink-500">Choose the service vertical for your property.</p>
               </div>
 
@@ -230,7 +230,7 @@ export function BookingWizard() {
                       key={serv.id}
                       type="button"
                       onClick={() => updateState({ vertical: serv.id as "cleaning" | "pest" | "gardening" | "removals", serviceName: serv.title })}
-                      className={`p-6 rounded-[16px] border-none text-start transition-colors duration-150 cursor-pointer space-y-3 focus:outline-none focus:ring-2 focus:ring-[#99D055] ${ isSelected ? "bg-[#1F3A00] text-white font-medium " : "bg-[#F9FCF5] text-[#1F3A00] hover:bg-[#DCFAB7]" } border border-[#E5FBC9]`}
+                      className={`p-6 rounded-[16px] border-none text-start transition-colors duration-150 cursor-pointer space-y-3 focus:outline-none focus:ring-2 focus:ring-[#1D201E] ${ isSelected ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-[#F6F5F1] text-[#1D201E] hover:bg-[#EAF8D6]" } border border-[#ECEAE3]`}
                     >
                       <div className="flex justify-between items-center font-heading text-lg font-medium">
                         <div className="flex items-center gap-2.5">
@@ -251,10 +251,10 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-8 py-3.5 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer flex items-center gap-2 border border-[#E5FBC9]"
+                  className="px-8 py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer flex items-center gap-2 "
                 >
                   <span>Continue to Job Details</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#1D201E]" />
                 </button>
               </div>
             </div>
@@ -262,10 +262,10 @@ export function BookingWizard() {
 
           {/* STEP 2: JOB & PROPERTY SPECIFICATIONS */}
           {state.currentStep === 2 && (
-            <div className="bg-white rounded-[16px] p-6 sm:p-10 border border-[#E5FBC9] space-y-6">
-              <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
+            <div className="bg-white rounded-[16px] p-6 sm:p-10 space-y-6">
+              <div className="space-y-1 border-[#ECEAE3] pb-4">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Step 2 of 5</span>
-                <h2 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Property & Service Specifications</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Property & Service Specifications</h2>
                 <p className="text-base text-ink-500">Specify your property details for an upfront calculation.</p>
               </div>
 
@@ -277,7 +277,7 @@ export function BookingWizard() {
                   value={state.addressLine1 || ""}
                   onChange={(e) => updateState({ addressLine1: e.target.value })}
                   placeholder="House number and street"
-                  className="w-full max-w-md p-3.5 rounded-[16px] bg-[#F9FCF5] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                  className="w-full max-w-md p-3.5 rounded-[16px] bg-[#F6F5F1] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                 />
                 {formErrors.addressLine1 && <p className="text-xs text-danger-500 font-mono">{formErrors.addressLine1}</p>}
               </div>
@@ -291,7 +291,7 @@ export function BookingWizard() {
                   value={state.postcode}
                   onChange={(e) => updateState({ postcode: e.target.value.toUpperCase() })}
                   placeholder="e.g. E15 2AB, IG1 1AA"
-                  className="w-full max-w-md p-3.5 rounded-[16px] bg-[#F9FCF5] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                  className="w-full max-w-md p-3.5 rounded-[16px] bg-[#F6F5F1] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                 />
                 {formErrors.postcode && (
                   <p className="text-xs text-danger-500 font-mono flex items-center gap-1 pt-1">
@@ -303,7 +303,7 @@ export function BookingWizard() {
 
               {/* Category-Specific Controls */}
               {state.vertical === "cleaning" && (
-                <div className="space-y-5 pt-2 border-t border-[#E5FBC9]">
+                <div className="space-y-5 pt-2 border-[#ECEAE3]">
                   <div className="space-y-2">
                     <label className="text-sm font-mono text-ink-500 uppercase block font-medium">Property Size *</label>
                     <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
@@ -318,7 +318,7 @@ export function BookingWizard() {
                           key={size.id}
                           type="button"
                           onClick={() => updateState({ propertySize: size.id as "studio" | "1bed" | "2bed" | "3bed" | "4bed" })}
-                          className={`p-3.5 rounded-[16px] text-base font-medium border-none transition-colors duration-150 cursor-pointer ${ state.propertySize === size.id ? "bg-[#1F3A00] text-white font-medium " : "bg-[#F9FCF5] text-[#1F3A00] hover:bg-[#DCFAB7]" } border border-[#E5FBC9]`}
+                          className={`p-3.5 rounded-[16px] text-base font-medium border-none transition-colors duration-150 cursor-pointer ${ state.propertySize === size.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-white text-[#1D201E] hover:bg-[#EAF8D6]" } `}
                         >
                           {size.label}
                         </button>
@@ -329,7 +329,7 @@ export function BookingWizard() {
               )}
 
               {state.vertical === "pest" && (
-                <div className="space-y-5 pt-2 border-t border-[#E5FBC9]">
+                <div className="space-y-5 pt-2 border-[#ECEAE3]">
                   <div className="space-y-2">
                     <label className="text-sm font-mono text-ink-500 uppercase block font-medium">Pest Type *</label>
                     <div className="grid sm:grid-cols-3 gap-3">
@@ -342,7 +342,7 @@ export function BookingWizard() {
                           key={pt.id}
                           type="button"
                           onClick={() => updateState({ pestType: pt.id as "rodents" | "bedbugs" | "wasps" })}
-                          className={`p-4 rounded-[16px] text-base font-medium border-none text-start transition-colors duration-150 cursor-pointer ${ state.pestType === pt.id ? "bg-[#1F3A00] text-white font-medium " : "bg-[#F9FCF5] text-[#1F3A00] hover:bg-[#DCFAB7]" } border border-[#E5FBC9]`}
+                          className={`p-4 rounded-[16px] text-base font-medium border-none text-start transition-colors duration-150 cursor-pointer ${ state.pestType === pt.id ? "bg-[#B7F56A] text-[#1D201E] font-medium " : "bg-white text-[#1D201E] hover:bg-[#EAF8D6]" } `}
                         >
                           {pt.title}
                         </button>
@@ -356,7 +356,7 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="px-6 py-3 rounded-full bg-[#F9FCF5] border-none text-ink-600 font-medium text-base hover:bg-[#DCFAB7] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-3 rounded-xl bg-[#F6F5F1] border-none text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 text-ink-600" />
                   <span>Back</span>
@@ -365,10 +365,10 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-8 py-3.5 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer flex items-center gap-2 border border-[#E5FBC9]"
+                  className="px-8 py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer flex items-center gap-2 "
                 >
                   <span>Continue to Date & Time</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#1D201E]" />
                 </button>
               </div>
             </div>
@@ -376,10 +376,10 @@ export function BookingWizard() {
 
           {/* STEP 3: DATE & TIME SELECTION */}
           {state.currentStep === 3 && (
-            <div className="bg-white rounded-[16px] p-6 sm:p-10 border border-[#E5FBC9] space-y-6">
-              <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
+            <div className="bg-white rounded-[16px] p-6 sm:p-10 space-y-6">
+              <div className="space-y-1 border-[#ECEAE3] pb-4">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Step 3 of 5</span>
-                <h2 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Preferred Service Date & Time</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Preferred Service Date & Time</h2>
                 <p className="text-base text-ink-500">Select your preferred booking slot for service delivery.</p>
               </div>
 
@@ -393,7 +393,7 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="px-6 py-3 rounded-full bg-[#F9FCF5] border-none text-ink-600 font-medium text-base hover:bg-[#DCFAB7] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-3 rounded-xl bg-[#F6F5F1] border-none text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 text-ink-600" />
                   <span>Back</span>
@@ -402,10 +402,10 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-8 py-3.5 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer flex items-center gap-2 border border-[#E5FBC9]"
+                  className="px-8 py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer flex items-center gap-2 "
                 >
                   <span>Continue to Contact Info</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#1D201E]" />
                 </button>
               </div>
             </div>
@@ -413,10 +413,10 @@ export function BookingWizard() {
 
           {/* STEP 4: CONTACT & PROPERTY ADDRESS DETAILS */}
           {state.currentStep === 4 && (
-            <div className="bg-white rounded-[16px] p-6 sm:p-10 border border-[#E5FBC9] space-y-6">
-              <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
+            <div className="bg-white rounded-[16px] p-6 sm:p-10 space-y-6">
+              <div className="space-y-1 border-[#ECEAE3] pb-4">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Step 4 of 5</span>
-                <h2 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Contact & Address Details</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Contact & Address Details</h2>
                 <p className="text-base text-ink-500">Provide contact details for service dispatch.</p>
               </div>
 
@@ -429,7 +429,7 @@ export function BookingWizard() {
                     value={state.fullName || ""}
                     onChange={(e) => updateState({ fullName: e.target.value })}
                     placeholder="e.g. Sarah Jenkins"
-                    className="w-full p-3.5 rounded-[16px] bg-[#F9FCF5] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                    className="w-full p-3.5 rounded-[16px] bg-[#F6F5F1] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                   />
                   {formErrors.fullName && <p className="text-xs text-danger-500 font-mono pt-1">{formErrors.fullName}</p>}
                 </div>
@@ -442,7 +442,7 @@ export function BookingWizard() {
                     value={state.phone || ""}
                     onChange={(e) => updateState({ phone: e.target.value })}
                     placeholder="e.g. 07700 900123"
-                    className="w-full p-3.5 rounded-[16px] bg-[#F9FCF5] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                    className="w-full p-3.5 rounded-[16px] bg-[#F6F5F1] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                   />
                   {formErrors.phone && <p className="text-xs text-danger-500 font-mono pt-1">{formErrors.phone}</p>}
                 </div>
@@ -455,7 +455,7 @@ export function BookingWizard() {
                     value={state.email || ""}
                     onChange={(e) => updateState({ email: e.target.value })}
                     placeholder="sarah@example.com"
-                    className="w-full p-3.5 rounded-[16px] bg-[#F9FCF5] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#99D055]"
+                    className="w-full p-3.5 rounded-[16px] bg-[#F6F5F1] border border-transparent text-base font-medium text-ink-600 focus:outline-none focus:ring-2 focus:ring-[#1D201E]"
                   />
                   {formErrors.email && <p className="text-xs text-danger-500 font-mono pt-1">{formErrors.email}</p>}
                 </div>
@@ -465,7 +465,7 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="px-6 py-3 rounded-full bg-[#F9FCF5] border-none text-ink-600 font-medium text-base hover:bg-[#DCFAB7] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-3 rounded-xl bg-[#F6F5F1] border-none text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 text-ink-600" />
                   <span>Back</span>
@@ -474,10 +474,10 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-8 py-3.5 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer flex items-center gap-2 border border-[#E5FBC9]"
+                  className="px-8 py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer flex items-center gap-2 "
                 >
                   <span>Review Booking Details</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#1D201E]" />
                 </button>
               </div>
             </div>
@@ -485,10 +485,10 @@ export function BookingWizard() {
 
           {/* STEP 5: REVIEW & LOCK BOOKING */}
           {state.currentStep === 5 && (
-            <div className="bg-white rounded-[16px] p-6 sm:p-10 border border-[#E5FBC9] space-y-6">
-              <div className="space-y-1 border-b border-[#E5FBC9] pb-4">
+            <div className="bg-white rounded-[16px] p-6 sm:p-10 space-y-6">
+              <div className="space-y-1 border-[#ECEAE3] pb-4">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase block">Step 5 of 5</span>
-                <h2 className="font-heading text-2xl sm:text-3xl font-medium text-ink-900">Review & Confirm Request</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-[650] text-ink-900">Review & Confirm Request</h2>
                 <p className="text-base text-ink-500">Verify your booking details before sending.</p>
               </div>
 
@@ -499,20 +499,20 @@ export function BookingWizard() {
                 </div>
               )}
 
-              <div className="p-6 rounded-[16px] bg-[#F9FCF5] space-y-4 text-start">
-                <div className="flex justify-between border-b border-[#E5FBC9] pb-2 text-base font-medium text-ink-600">
+              <div className="p-6 rounded-[16px] bg-[#F6F5F1] space-y-4 text-start">
+                <div className="flex justify-between border-[#ECEAE3] pb-2 text-base font-medium text-ink-600">
                   <span>Service:</span>
                   <span className="capitalize">{state.vertical} ({state.serviceName})</span>
                 </div>
-                <div className="flex justify-between border-b border-[#E5FBC9] pb-2 text-base font-medium text-ink-600">
+                <div className="flex justify-between border-[#ECEAE3] pb-2 text-base font-medium text-ink-600">
                   <span>Postcode:</span>
                   <span>{state.postcode}</span>
                 </div>
-                <div className="flex justify-between border-b border-[#E5FBC9] pb-2 text-base font-medium text-ink-600">
+                <div className="flex justify-between border-[#ECEAE3] pb-2 text-base font-medium text-ink-600">
                   <span>Preferred Date:</span>
                   <span>{state.preferredDate || "As soon as possible"} ({state.timeSlot || "morning"})</span>
                 </div>
-                <div className="flex justify-between border-b border-[#E5FBC9] pb-2 text-base font-medium text-ink-600">
+                <div className="flex justify-between border-[#ECEAE3] pb-2 text-base font-medium text-ink-600">
                   <span>Contact:</span>
                   <span>{state.fullName} ({state.phone})</span>
                 </div>
@@ -523,7 +523,7 @@ export function BookingWizard() {
               </div>
 
               {/* CUSTOMER PRICING DISCLAIMER */}
-              <div className="bg-white p-4 rounded-[16px] border border-[#E5FBC9] flex items-start gap-3">
+              <div className="bg-white p-4 rounded-[16px] flex items-start gap-3">
                 <Info className="w-5 h-5 text-ink-600 shrink-0 mt-0.5" />
                 <p className="text-xs text-ink-500 leading-relaxed">
                   <strong>Pricing Disclaimer:</strong> The booking estimate is based on the information provided. The final price may change if the actual service time, scope of work, additional services, or on-site requirements differ. Any material change will be communicated before finalisation.
@@ -555,7 +555,7 @@ export function BookingWizard() {
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="px-6 py-3 rounded-full bg-[#F9FCF5] border-none text-ink-600 font-medium text-base hover:bg-[#DCFAB7] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-3 rounded-xl bg-[#F6F5F1] border-none text-ink-600 font-medium text-base hover:bg-[#EAF8D6] transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 text-ink-600" />
                   <span>Back</span>
@@ -565,10 +565,10 @@ export function BookingWizard() {
                   type="button"
                   disabled={isSubmitting || !state.termsAccepted || !state.privacyAccepted}
                   onClick={handleSubmitBooking}
-                  className="px-8 py-3.5 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] transition-colors duration-150 cursor-pointer flex items-center gap-2 disabled:opacity-50 border border-[#E5FBC9]"
+                  className="px-8 py-3.5 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] transition-colors duration-150 cursor-pointer flex items-center gap-2 disabled:opacity-50 "
                 >
                   <span>{isSubmitting ? "Submitting Request..." : "Confirm & Send Booking"}</span>
-                  <Check className="w-4 h-4 text-white" />
+                  <Check className="w-4 h-4 text-[#1D201E]" />
                 </button>
               </div>
             </div>
@@ -576,13 +576,13 @@ export function BookingWizard() {
 
           {/* STEP 6: SUCCESS CONFIRMATION SCREEN */}
           {state.currentStep === 6 && (
-            <div className="bg-white rounded-[16px] p-8 sm:p-12 border border-[#E5FBC9] text-center space-y-6">
-              <div className="w-16 h-16 rounded-full bg-[#1F3A00] text-white flex items-center justify-center font-medium mx-auto">
-                <CheckCircle2 className="w-8 h-8 text-white" />
+            <div className="bg-white rounded-[16px] p-8 sm:p-12 text-center space-y-6">
+              <div className="w-16 h-16 rounded-full bg-[#B7F56A] text-[#1D201E] flex items-center justify-center font-medium mx-auto">
+                <CheckCircle2 className="w-8 h-8 text-[#1D201E]" />
               </div>
               <div className="space-y-2">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase">BOOKING RECEIVED</span>
-                <h2 className="font-heading text-3xl font-medium text-ink-900 font-mono">Reference: {bookingRef}</h2>
+                <h2 className="font-heading text-3xl font-[650] text-ink-900 font-mono">Reference: {bookingRef}</h2>
                 <p className="text-base text-ink-500 max-w-md mx-auto">
                   We&apos;ve received your request! Our team will review your booking details and confirm your appointment slot shortly.
                 </p>
@@ -590,13 +590,13 @@ export function BookingWizard() {
               <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
                 <Link
                   href="/account/dashboard"
-                  className="px-6 py-3 rounded-full bg-[#1F3A00] text-[#B7F56A] font-semibold text-base hover:bg-[#2d5004] text-decoration-none inline-block border border-[#E5FBC9]"
+                  className="px-6 py-3 rounded-xl bg-[#B7F56A] text-[#1D201E] font-semibold text-base hover:bg-[#A2EA4E] text-decoration-none inline-block "
                 >
                   View My Dashboard →
                 </Link>
                 <Link
                   href="/"
-                  className="px-6 py-3 rounded-full bg-[#F9FCF5] text-ink-600 font-medium text-base hover:bg-[#DCFAB7] text-decoration-none inline-block border border-[#E5FBC9]"
+                  className="px-6 py-3 rounded-xl bg-white text-ink-600 font-medium text-base hover:bg-[#EAF8D6] text-decoration-none inline-block "
                 >
                   Return to Homepage
                 </Link>
@@ -609,32 +609,32 @@ export function BookingWizard() {
         {/* RIGHT COLUMN: STICKY BOOKING SUMMARY SIDEBAR (4 Columns on Desktop) */}
         {state.currentStep <= 5 && (
           <div className="hidden lg:block lg:col-span-4 space-y-4 sticky top-20">
-            <div className="bg-white rounded-[16px] p-6 border border-[#E5FBC9] space-y-4 text-start">
-              <div className="flex items-center justify-between border-b border-[#E5FBC9] pb-3">
+            <div className="bg-white rounded-[16px] p-6 space-y-4 text-start">
+              <div className="flex items-center justify-between border-[#ECEAE3] pb-3">
                 <span className="font-heading font-medium text-lg text-ink-900">Your Booking</span>
                 <ShieldCheck className="w-5 h-5 text-ink-600 shrink-0" />
               </div>
 
               <div className="space-y-2 text-base text-ink-500">
-                <div className="flex justify-between border-b border-[#E5FBC9] pb-2">
+                <div className="flex justify-between border-[#ECEAE3] pb-2">
                   <span>Service:</span>
                   <span className="font-medium text-ink-600 capitalize">{state.vertical}</span>
                 </div>
                 {state.postcode && (
-                  <div className="flex justify-between border-b border-[#E5FBC9] pb-2">
+                  <div className="flex justify-between border-[#ECEAE3] pb-2">
                     <span>Postcode:</span>
                     <span className="font-medium text-ink-600">{state.postcode}</span>
                   </div>
                 )}
                 {state.preferredDate && (
-                  <div className="flex justify-between border-b border-[#E5FBC9] pb-2">
+                  <div className="flex justify-between border-[#ECEAE3] pb-2">
                     <span>Date:</span>
                     <span className="font-medium text-ink-600">{state.preferredDate}</span>
                   </div>
                 )}
               </div>
 
-              <div className="p-4 rounded-[16px] bg-[#F9FCF5] space-y-1">
+              <div className="p-4 rounded-[16px] bg-[#F6F5F1] space-y-1">
                 <span className="text-xs font-mono font-medium text-ink-500 uppercase">ESTIMATED PRICE</span>
                 <div className="font-heading font-medium text-3xl text-ink-900">
                   £{estimate.priceMin}{estimate.priceMax ? ` – £${estimate.priceMax}` : ""}

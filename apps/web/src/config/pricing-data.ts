@@ -182,7 +182,7 @@ export const masterPricingData: Record<"cleaning" | "pest-control" | "gardening"
     id: "removals",
     title: "Removals & Storage Pricing",
     subtitle: "Reliable Man & Van, House Removals, Office Moves & Professional Packing",
-    badge: "BEST ONE CLUB MEMBER DISCOUNTS",
+    badge: "BESTONE CLUB MEMBER DISCOUNTS",
     description: "Fully insured moving teams with 2-men or 3-men vehicle options, packing services, and club member rates.",
     startingRateDisplay: "From £80/hr",
     pricingType: "hourly",
@@ -195,7 +195,7 @@ export const masterPricingData: Record<"cleaning" | "pest-control" | "gardening"
       { id: "van_2men", name: "2 Men + 1 Luton Van", propertySize: "1-2 Bed Moves", startingPrice: 80, maxPrice: 120, unit: "per hour (min 2 hrs)", features: ["2 Professional movers", "Fully equipped Luton van", "Blankets, straps & tail-lift", "Goods-in-transit insurance"] },
       { id: "van_3men", name: "3 Men + 1 Large Van", propertySize: "3-4 Bed Moves", startingPrice: 120, maxPrice: 160, unit: "per hour (min 2 hrs)", features: ["3 Professional movers", "Large capacity vehicle", "Heavy furniture lifting", "Full loading & unloading"] },
       { id: "packing_standard", name: "Full Packing Service (Standard Rate)", propertySize: "Per Hour", startingPrice: 30, unit: "per hour per packer", features: ["Professional packing team", "Fragile item bubble wrapping", "Box labeling by room"] },
-      { id: "packing_member", name: "Full Packing Service (Best One Club Rate)", propertySize: "Per Hour", startingPrice: 25, unit: "per hour per packer", features: ["£5/hr discount for members", "Free box tape included", "Priority scheduling"] },
+      { id: "packing_member", name: "Full Packing Service (Bestone Club Rate)", propertySize: "Per Hour", startingPrice: 25, unit: "per hour per packer", features: ["£5/hr discount for members", "Free box tape included", "Priority scheduling"] },
     ],
     addOns: [
       { name: "Cardboard Moving Boxes Pack", priceDisplay: "£35 / 10 boxes" },

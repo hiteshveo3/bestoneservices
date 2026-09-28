@@ -16,7 +16,7 @@ export const PRICING_FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "What are the rates for Man & Van Removals?",
-    a: "Removals start at £80–£120 per hour for 2 Men + 1 Luton Van (minimum £160/2 hours) or £120–£160 per hour for 3 Men + Large Van. Full packing is £30/hr standard or £25/hr for Best One Club members.",
+    a: "Removals start at £80–£120 per hour for 2 Men + 1 Luton Van (minimum £160/2 hours) or £120–£160 per hour for 3 Men + Large Van. Full packing is £30/hr standard or £25/hr for Bestone Club members.",
   },
   {
     q: "Is the calculator price the final price?",

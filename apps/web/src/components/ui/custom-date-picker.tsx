@@ -184,7 +184,7 @@ export function CustomDatePicker({
       {label && (
         <label 
           htmlFor={inputId} 
-          className="text-sm font-semibold text-[#1F3A00] block"
+          className="text-sm font-semibold text-[#1D201E] block"
         >
           {label}
         </label>
@@ -197,34 +197,34 @@ export function CustomDatePicker({
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`w-full min-h-[52px] px-4 py-3 rounded-[14px] bg-white border-2 text-start flex items-center justify-between gap-3 cursor-pointer transition-all shadow-2xs focus:outline-none ${
-          error 
-            ? "border-red-500 ring-2 ring-red-100" 
-            : isOpen 
-              ? "border-[#1F3A00] ring-4 ring-[#B7F56A]/30" 
-              : "border-[#D1E8B8] hover:border-[#99D055]"
-        }`}
+        className={`w-full min-h-[52px] px-4 py-3 rounded-[14px] bg-white border-2 text-start flex items-center justify-between gap-3 cursor-pointer transition-all focus:outline-none ${
+ error 
+ ? "border-red-500 ring-2 ring-red-100" 
+ : isOpen 
+ ? "border-[#1D201E] ring-4 ring-[#1D201E]/30" 
+ : "border-[#ECEAE3] hover:border-[#ECEAE3]"
+ }`}
       >
         <div className="flex items-center gap-3 min-w-0">
           <div className={`w-9 h-9 rounded-[10px] flex items-center justify-center shrink-0 transition-colors ${
-            value ? "bg-[#DCFAB7] text-[#1F3A00]" : "bg-[#F9FCF5] text-[#1F3A00]/60"
-          }`}>
+ value ? "bg-[#EAF8D6] text-[#1D201E]" : "bg-[#F6F5F1] text-[#1D201E]/60"
+ }`}>
             <HugeiconsIcon icon={Calendar03Icon} size={18} strokeWidth={2} />
           </div>
           <div className="truncate">
             {value ? (
-              <span className="font-semibold text-base text-[#1F3A00]">
+              <span className="font-semibold text-base text-[#1D201E]">
                 {formatDisplayDate(value)}
               </span>
             ) : (
-              <span className="text-base text-[#1F3A00]/45 font-medium">
+              <span className="text-base text-[#1D201E]/45 font-medium">
                 {placeholder}
               </span>
             )}
           </div>
         </div>
 
-        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#F9FCF5] border border-[#E5FBC9] text-[#1F3A00] shrink-0">
+        <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-white text-[#1D201E] shrink-0">
           {isOpen ? "Close" : "Change"}
         </span>
       </button>
@@ -234,7 +234,7 @@ export function CustomDatePicker({
           {error}
         </p>
       ) : helperText ? (
-        <p className="text-xs text-[#1F3A00]/60 pt-0.5">{helperText}</p>
+        <p className="text-xs text-[#1D201E]/60 pt-0.5">{helperText}</p>
       ) : null}
 
       {/* Popover Calendar */}
@@ -242,29 +242,29 @@ export function CustomDatePicker({
         <div 
           role="dialog"
           aria-label="Calendar date picker"
-          className="absolute left-0 top-[calc(100%+8px)] z-50 w-full sm:w-[350px] bg-white rounded-[18px] border-2 border-[#B7F56A] shadow-2xl p-4 animate-in fade-in-50 zoom-in-95 duration-150"
+          className="absolute left-0 top-[calc(100%+8px)] z-50 w-full sm:w-[350px] bg-white rounded-[18px] border-2 border-[#ECEAE3] p-4 animate-in fade-in-50 zoom-in-95 duration-150"
         >
           {/* Quick Choice Chips */}
-          <div className="flex items-center gap-2 pb-3 mb-3 border-b border-[#E5FBC9] overflow-x-auto">
+          <div className="flex items-center gap-2 pb-3 mb-3 border-[#ECEAE3] overflow-x-auto">
             <button
               type="button"
               onClick={() => selectQuick(tomorrowISO)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                value === tomorrowISO
-                  ? "bg-[#1F3A00] text-[#B7F56A]"
-                  : "bg-[#F9FCF5] text-[#1F3A00] hover:bg-[#DCFAB7] border border-[#E5FBC9]"
-              }`}
+              className={`px-3 py-1 rounded-md text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+ value === tomorrowISO
+ ? "bg-[#B7F56A] text-[#1D201E]"
+ : "bg-white text-[#1D201E] hover:bg-[#EAF8D6] "
+ }`}
             >
               Tomorrow
             </button>
             <button
               type="button"
               onClick={() => selectQuick(weekendISO)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                value === weekendISO
-                  ? "bg-[#1F3A00] text-[#B7F56A]"
-                  : "bg-[#F9FCF5] text-[#1F3A00] hover:bg-[#DCFAB7] border border-[#E5FBC9]"
-              }`}
+              className={`px-3 py-1 rounded-md text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+ value === weekendISO
+ ? "bg-[#B7F56A] text-[#1D201E]"
+ : "bg-white text-[#1D201E] hover:bg-[#EAF8D6] "
+ }`}
             >
               This Weekend
             </button>
@@ -272,7 +272,7 @@ export function CustomDatePicker({
 
           {/* Month & Year Navigation Header */}
           <div className="flex items-center justify-between mb-3 px-1">
-            <h4 className="font-heading font-bold text-base text-[#1F3A00]">
+            <h4 className="font-heading font-bold text-base text-[#1D201E]">
               {MONTH_NAMES[viewMonth]} {viewYear}
             </h4>
 
@@ -282,7 +282,7 @@ export function CustomDatePicker({
                 onClick={prevMonth}
                 disabled={!canGoPrev}
                 aria-label="Previous month"
-                className="w-8 h-8 rounded-[8px] flex items-center justify-center text-[#1F3A00] hover:bg-[#DCFAB7] disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed transition-colors"
+                className="w-8 h-8 rounded-[8px] flex items-center justify-center text-[#1D201E] hover:bg-[#EAF8D6] disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed transition-colors"
               >
                 <HugeiconsIcon icon={ArrowLeft01Icon} size={16} strokeWidth={2.2} />
               </button>
@@ -290,7 +290,7 @@ export function CustomDatePicker({
                 type="button"
                 onClick={nextMonth}
                 aria-label="Next month"
-                className="w-8 h-8 rounded-[8px] flex items-center justify-center text-[#1F3A00] hover:bg-[#DCFAB7] cursor-pointer transition-colors"
+                className="w-8 h-8 rounded-[8px] flex items-center justify-center text-[#1D201E] hover:bg-[#EAF8D6] cursor-pointer transition-colors"
               >
                 <HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2.2} />
               </button>
@@ -300,7 +300,7 @@ export function CustomDatePicker({
           {/* Weekday Labels */}
           <div className="grid grid-cols-7 gap-1 mb-1.5 text-center">
             {WEEKDAYS.map((wd) => (
-              <span key={wd} className="text-[11px] font-bold uppercase tracking-wider text-[#1F3A00]/50 py-1">
+              <span key={wd} className="text-[11px] font-bold uppercase tracking-wider text-[#1D201E]/50 py-1">
                 {wd}
               </span>
             ))}
@@ -325,18 +325,18 @@ export function CustomDatePicker({
                     setIsOpen(false);
                   }}
                   className={`w-full aspect-square rounded-[10px] text-xs font-semibold flex items-center justify-center transition-all cursor-pointer relative ${
-                    isSelected
-                      ? "bg-[#1F3A00] text-[#B7F56A] shadow-md scale-105 font-bold z-10"
-                      : disabled
-                        ? "text-gray-300 cursor-not-allowed hover:bg-transparent"
-                        : isToday
-                          ? "bg-[#DCFAB7] text-[#1F3A00] hover:bg-[#cbf799]"
-                          : "text-[#1F3A00] hover:bg-[#F9FCF5] hover:border hover:border-[#B7F56A]"
-                  }`}
+ isSelected
+ ? "bg-[#B7F56A] text-[#1D201E] scale-105 font-bold z-10"
+ : disabled
+ ? "text-gray-300 cursor-not-allowed hover:bg-transparent"
+ : isToday
+ ? "bg-[#EAF8D6] text-[#1D201E] hover:bg-[#A2EA4E]"
+ : "text-[#1D201E] hover:bg-[#F6F5F1] hover:border hover:border-[#ECEAE3]"
+ }`}
                 >
                   <span>{day}</span>
                   {isToday && !isSelected && (
-                    <span className="absolute bottom-1 w-1 h-1 rounded-full bg-[#1F3A00]" />
+                    <span className="absolute bottom-1 w-1 h-1 rounded-full bg-[#B7F56A]" />
                   )}
                 </button>
               );
@@ -344,15 +344,15 @@ export function CustomDatePicker({
           </div>
 
           {/* Footer note */}
-          <div className="mt-3 pt-2.5 border-t border-[#E5FBC9] flex items-center justify-between text-[11px] text-[#1F3A00]/70">
+          <div className="mt-3 pt-2.5 border-[#ECEAE3] flex items-center justify-between text-[11px] text-[#1D201E]/70">
             <span className="flex items-center gap-1">
-              <HugeiconsIcon icon={CheckmarkCircle02Icon} size={12} strokeWidth={2} className="text-[#1F3A00]" />
+              <HugeiconsIcon icon={CheckmarkCircle02Icon} size={12} strokeWidth={2} className="text-[#1D201E]" />
               Same-day & next-day slots
             </span>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="font-bold text-[#1F3A00] hover:underline cursor-pointer"
+              className="font-bold text-[#1D201E] hover:underline cursor-pointer"
             >
               Done
             </button>

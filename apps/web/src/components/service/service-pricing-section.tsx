@@ -27,29 +27,29 @@ export function ServicePricingSection() {
   const activePrice = tier === "standard" ? currentTier.standardPrice : currentTier.premiumPrice;
 
   return (
-    <section id="pricing" className="bg-[#F8F9FA] rounded-[16px] p-8 sm:p-12 border border-[#E5FBC9] space-y-8 text-start">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E5FBC9] pb-6">
+    <section id="pricing" className="bg-white rounded-[16px] p-8 sm:p-12 space-y-8 text-start">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-[#ECEAE3] pb-6">
         <div>
-          <span className="px-3.5 py-1 rounded-full bg-ink-100 border border-[#E5FBC9] text-ink-600 text-base font-mono font-medium uppercase">
-            OFFICIAL BEST ONE PRICING DATA
+          <span className="px-3.5 py-1 rounded-xl bg-ink-100 border border-[#ECEAE3] text-ink-600 text-base font-mono font-medium uppercase">
+            OFFICIAL BESTONE PRICING DATA
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-medium text-ink-900 pt-2">
+          <h2 className="font-heading text-3xl sm:text-4xl font-[650] text-ink-900 pt-2">
             End of Tenancy Rates By Property Size
           </h2>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setTier("standard")}
-            className={`px-4 py-2.5 rounded-full text-base font-bold transition-colors duration-150 cursor-pointer ${ tier === "standard" ? "bg-[#1F3A00] text-[#B7F56A] border border-[#1F3A00]" : "bg-[#F9FCF5] text-[#1F3A00] hover:text-[#1F3A00] border border-[#B7F56A]" }`}
+            className={`px-4 py-2.5 rounded-xl text-base font-bold transition-colors duration-150 cursor-pointer ${ tier === "standard" ? "bg-[#B7F56A] text-[#1D201E] border-[#1D201E]" : "bg-white text-[#1D201E] hover:text-[#1D201E] " }`}
           >
             Standard Package
           </button>
           <button
             onClick={() => setTier("premium")}
-            className={`px-4 py-2.5 rounded-full text-base font-bold transition-colors duration-150 cursor-pointer flex items-center gap-1.5 ${ tier === "premium" ? "bg-[#1F3A00] text-[#B7F56A] border border-[#1F3A00]" : "bg-[#F9FCF5] text-[#1F3A00] hover:text-[#1F3A00] border border-[#B7F56A]" }`}
+            className={`px-4 py-2.5 rounded-xl text-base font-bold transition-colors duration-150 cursor-pointer flex items-center gap-1.5 ${ tier === "premium" ? "bg-[#B7F56A] text-[#1D201E] border-[#1D201E]" : "bg-white text-[#1D201E] hover:text-[#1D201E] " }`}
           >
             <span>Premium Package</span>
-            <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#DCFAB7] text-[#1F3A00] border border-[#99D055]">
+            <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#EAF8D6] text-[#1D201E] ">
               Recommended
             </span>
           </button>
@@ -65,7 +65,7 @@ export function ServicePricingSection() {
             <button
               key={item.sizeKey}
               onClick={() => setSelectedSize(item.sizeKey)}
-              className={`p-4 rounded-[16px] border transition-colors duration-150 text-start cursor-pointer ${ isSelected ? "bg-[#1F3A00] border-[#1F3A00] text-[#B7F56A] shadow-2xs" : "bg-[#F9FCF5] border-[#E5FBC9] text-[#1F3A00] hover:bg-[#DCFAB7]/60" }`}
+              className={`p-4 rounded-[16px] transition-colors duration-150 text-start cursor-pointer ${ isSelected ? "bg-[#B7F56A] border-[#1D201E] text-[#1D201E] " : "bg-white text-[#1D201E] hover:bg-[#EAF8D6]/60" }`}
             >
               <div className="font-heading font-semibold text-base">{item.label}</div>
               <div className="font-heading font-bold text-2xl pt-1">£{displayPrice}</div>
@@ -78,15 +78,15 @@ export function ServicePricingSection() {
       </div>
 
       {/* Selected Pricing Highlight Container */}
-      <div className="p-6 rounded-[20px] bg-white border border-[#B7F56A] flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xs">
+      <div className="p-6 rounded-[20px] bg-white flex flex-col md:flex-row items-center justify-between gap-6 ">
         <div className="space-y-2 text-start">
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-[#DCFAB7] text-[#1F3A00] border border-[#99D055] text-xs font-mono font-bold">
+            <span className="px-3 py-1 rounded-md bg-[#EAF8D6] text-[#1D201E] text-xs font-mono font-bold">
               {currentTier.label} — {tier.toUpperCase()} PACKAGE
             </span>
           </div>
-          <div className="font-heading text-4xl font-bold text-[#1F3A00] pt-1">
-            £{activePrice} <span className="text-base font-normal text-[#1F3A00]">(Flat-Rate Quote)</span>
+          <div className="font-heading text-4xl font-bold text-[#1D201E] pt-1">
+            £{activePrice} <span className="text-base font-normal text-[#1D201E]">(Flat-Rate Quote)</span>
           </div>
           <p className="text-base text-ink-500 font-normal">
             {tier === "standard"
@@ -101,7 +101,7 @@ export function ServicePricingSection() {
       </div>
 
       {/* Official Business Pricing Rules Box */}
-      <div className="p-6 rounded-[16px] bg-white border border-[#B7F56A] space-y-4">
+      <div className="p-6 rounded-[16px] bg-white space-y-4">
         <div className="flex items-center gap-2 font-heading font-medium text-xl text-ink-900">
           <Info className="w-5 h-5 text-ink-600 shrink-0" />
           <span>Official Pricing Terms & Conditions</span>
